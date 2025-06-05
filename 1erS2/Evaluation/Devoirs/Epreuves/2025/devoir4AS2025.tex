@@ -1,0 +1,143 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{float}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                                                     \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{$^{er}$S2} & \textbf{Date: 10/05/2025} & \textbf{Durée : 4 heures} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Devoir n$ ^{\circ} $ 2 Du 2$ ^\text{\bf nd} $ Semestre}}
+                                                              \end{center}}}                                                                                                                               \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Exercice 1 :} 8 pts }
+Calculer les limites suivantes :
+
+\[
+    \textbf{a. } \lim_{x \to +\infty} \frac{-x^2 + 3}{3x^4 + x + 2}\quad\quad\quad\quad \textbf{b. } \lim_{x \to 1} \frac{x^2 + x - 2}{x - 1}\quad\quad\quad\quad \textbf{c. } \lim_{x \to -\infty} \sqrt{x^{2}+3}+x\quad\quad \textbf{d. }\lim_{x \to +\infty} \frac{\sqrt{x^2 - 4}}{x - 2}
+\]
+
+\[
+    \textbf{e. }\lim_{x \to +\infty} \frac{x}{\sqrt{x^2 +1}-1} \quad\quad \textbf{f. }\lim_{x \to 4} \frac{\sqrt{2x + 1} - 3}{x - 4}\quad\quad \textbf{g. }\lim_{x \to 0} \frac{\sqrt{4 - x} - \sqrt{4 + x}}{x}\quad\quad  \textbf{h. }\lim\limits_{x \to -\infty} \frac{\sqrt{3x^2 + 3x + 2}}{2x + 3}
+\]
+
+\section*{\underline{Exercice 2 :} 8 pts }
+Soit \( g \) la fonction définie par :
+\(
+g(x) =
+\begin{cases}
+    x + \sqrt{|x^2 - x|},     & \text{si } x \geq 0 \\
+    \frac{x - x(x-2)}{x - 1}, & \text{si } x < 0
+\end{cases}
+\)
+
+\begin{enumerate}
+    \item Justifier que la fonction \( g \) est définie sur \( D_g = \mathbb{R} \).
+    \item Déterminer les limites aux bornes de l'ensemble de définition.
+    \item Étudier la continuité de \( g \) sur \( [0, +\infty[ \)
+    \item Étudier la continuité de \( g \) sur \( ]-\infty, 0[ \)
+    \item Étudier la continuité de \( g \) en \( 0 \)
+    \item En déduire l'ensemble de continuité de \( g \)
+    \item Soit \( f \) une fonction dont sa représentation graphique est ci-dessous. \( f \) est-elle continue sur \( [-3, -1] \) ? Justifier.
+          % Inclusion de l'image ici
+          \begin{center}
+              \begin{figure}[H]
+                  \centering \includegraphics[width=0.5\textwidth]{Screenshot from 2025-04-28 19-44-54.png} % Remplacer "votre_image.png" par le nom de votre fichier image
+                  \caption{Représentation graphique de la fonction \( f \).}
+                  \label{fig:fonction_f}
+              \end{figure}
+          \end{center}
+\end{enumerate}
+\section*{\underline{Exercice 3 :} 4 pts }
+\begin{enumerate}
+    \item Déterminer le domaine de définition des fonctions suivantes :
+    \begin{enumerate}
+        \item  \( f(x) = \frac{(x - 3)(x + 8)}{x^2 - 2} \)
+        \item \( g(x) = \frac{2x^2 - 8x + 2}{\sqrt{x^2 - 4}} \)
+        \item \( h(x) = \left\{
+        \begin{array}{ll}
+            \frac{x^2 - 2x}{x - 1} & \text{si } x < 0 \\
+            \sqrt{x^2 + x} & \text{si } x \geq 0
+        \end{array}
+    \right. \)
+    \end{enumerate}
+    \item Soit \( f(x) = \sqrt{x + 1} \) et \( g(x) = \frac{x + 2}{x - 3} \) deux fonctions.
+\begin{enumerate}
+    \item Déterminer \( Df \) et \( Dg \)
+    \item Déterminer \( Dg \circ f \) puis calculer \( g \circ f(x) \)
+\end{enumerate}
+    
+\end{enumerate}
+\end{document}
