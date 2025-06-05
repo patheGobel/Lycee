@@ -1,0 +1,193 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb, mathrsfs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{yhmath}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tkz-tab}
+\usepackage{multicol}
+\usepackage[top=1.8cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\begin{document}
+\small
+
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{Dénombrement}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : Première S2}\\[-0.1cm]
+    \textbf{Année scolaire : 2024 -- 2025}
+\end{center}
+
+% Titre rouge
+\section*{\underline{\textcolor{red}{I. Rappel sur la théorie des ensembles}}}
+
+\subsubsection*{\underline{\textcolor{red}{1. Définition et vocabulaire}}}
+
+Un ensemble est un regroupement d’objet défini par une caractéristique commune ou par une énumération complète.\\
+Chaque objet de l’ensemble est appelé un \textcolor{red}{\underline{élément}}.\\
+Un ensemble est dit \textcolor{red}{\underline{fini}} s’il est constitué d’un nombre fini d’éléments et ce nombre est appelé le \textcolor{red}{\underline{cardinal}} de l’ensemble.\\
+Il existe un ensemble qui ne contient aucun élément, il est appelé \textcolor{red}{\underline{l’ensemble vide}} noté \textcolor{red}{\( \varnothing \)}.
+
+\textbf{\underline{\textcolor{red}{Exemples :}}}\\
+$E = \{ a, b, c, d, e \}$ \quad ; \quad $J = \{ x \in \mathbb{R} \mid x \geq 2 \}$\\
+$K = \{ 1, 2, 3, 4, 5, 6 \}$ \quad ; \quad $P = \{ n \in \mathbb{N} \mid 10 \leq n \leq 100 \}$
+
+\textbf{\underline{\textcolor{red}{Solution :}}}\\
+\textbf{$E$, $K$ et $P$ sont des ensembles finis.}\\
+$\text{card}(E) = 5$ \quad ; \quad $\text{card}(P) = 91$ \quad ; \quad $\text{card}(K) = 6$ \quad ; \quad $\text{card}(\varnothing) = 0$
+
+\subsubsection*{\underline{\textcolor{red}{2. Partie d’un ensemble :}}}
+
+Soit $E$ un ensemble fini de cardinal $n$.\\
+$A$ est dit un sous-ensemble ou une partie de $E$ ssi $x \in A \Rightarrow x \in E$ $\Leftrightarrow$ \textcolor{red}{\underline{$A \subset E$}} \quad (\textcolor{red}{\small $A$ inclue dans $E$})\\
+On écrit que $A \in \mathcal{P}(E)$ où $\mathcal{P}(E)$ est l’ensemble des sous-ensembles de $E$ et 
+\[
+\textcolor{red}{\underline{\text{card} \; \mathcal{P}(E) = 2^{\text{card}(E)}} \quad \Rightarrow \quad \text{card} \; \mathcal{P}(E) = 2^n}
+\]
+
+\textcolor{red}{\underline{Exemple :}} Soit $E = \{1\, ;\, 2\, ;\, 3\}$\\
+$\text{card}(E) = 3$\\
+$\text{card}(\mathcal{P}(E)) = 2^3 = 8$\\
+\[
+\mathcal{P}(E) = \left\{ 
+E\, ;\,
+\varnothing\, ;\,
+\{1\}\, ;\,
+\{2\}\, ;\,
+\{3\}\, ;\,
+\{1,2\}\, ;\,
+\{1,3\}\, ;\,
+\{2,3\}
+\right\}
+\]
+
+\subsubsection*{\underline{\textcolor{red}{3. Complémentaire d’un ensemble}}}
+
+Soit $E$ un ensemble fini non vide, $A$ un sous-ensemble de $E$.\\
+On appelle \textbf{complémentaire de $A$}, l’ensemble des éléments de $E$ qui ne sont pas dans $A$,\\
+noté $\overline{A}$. \quad $x \in \overline{A} \Leftrightarrow x \in E$ et $x \notin A$.\( \boxed{\textcolor{red}{\text{card} \; \overline{A} = \text{card} \; E - \text{card} \; A}} \)
+
+\subsubsection*{\underline{\textcolor{red}{4. Réunion et intersection}}}
+
+Soit $A$ et $B$ deux sous-ensembles de $E$.\\
+La réunion de $A$ et $B$ est un sous-ensemble de $E$ noté :
+
+\[
+\textcolor{red}{A \cup B = \{ x \in E \mid x \in A \text{ ou } x \in B \}}
+\quad \Leftrightarrow \quad
+x \in \textcolor{red}{A \cup B} \Leftrightarrow x \in A \text{ ou } x \in B
+\]
+
+\vspace{0.3cm}
+\underline{\textbf{Propriétés :}}
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textcolor{red}{$A \cup B \subset E$}
+    \item \textcolor{red}{$A \subset A \cup B$}
+    \item \textcolor{red}{$B \subset A \cup B$}
+    \item \textcolor{red}{$A \cup E = E$}
+    \item \textcolor{red}{$A \cup \overline{A} = E$}
+    \item \textcolor{red}{$A \cup \varnothing = A$}
+\end{itemize}
+\end{multicols}
+
+L’intersection de $A$ et $B$ est un sous-ensemble de $E$ noté :\\
+\[
+\textcolor{red}{A \cap B = \left\{ x \in E \mid x \in A \text{ et } x \in B \right\}}
+\quad \Leftrightarrow \quad
+x \in A \cap B \Leftrightarrow x \in A \text{ et } x \in B
+\]
+
+\textbf{\underline{\textcolor{red}{Propriétés :}}}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textcolor{red}{$A \cap B \subset E$}
+    \item \textcolor{red}{$A \cap E = A$}
+    \item \textcolor{red}{$A \cap \overline{A} = \varnothing$}
+    \item \textcolor{red}{$A \cap B \subset A$}
+    \item \textcolor{red}{$A \cap B \subset B$}
+    \item \textcolor{red}{$A \cap \varnothing = \varnothing$}
+\end{itemize}
+\end{multicols}
+
+\begin{center}
+\textcolor{red}{\Large $\text{card}(A \cup B) = \text{card}(A) + \text{card}(B) - \text{card}(A \cap B)$}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tikzpicture}
+    % Cercles A et B
+    \draw[thick] (0,0) circle(1.8cm);
+    \draw[thick] (2.5,0) circle(1.8cm);
+    
+    % Étiquettes des ensembles
+    \node at (-1.2,-1.5) {$A$};
+    \node at (3.7,-1.5) {$B$};
+
+    % Intersection
+    \node at (1.25,0) {\small $A \cap B$};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+\textbf{\underline{Diagramme de Venn}}
+\end{center}
+
+\subsubsection*{\underline{\textcolor{red}{5. Différence de deux ensembles}}}
+
+Soit $A$ et $B$ deux sous-ensembles de $E$.\\
+On appelle \textbf{la différence entre $A$ et $B$} le sous-ensemble de $E$ noté :\\
+
+\( \textcolor{red}{A \setminus B = \{ x \in E \mid x \in A \text{ et } x \notin B \}} \quad \text{(on lit $A$ sans $B$)} \)
+
+\(x \in A \setminus B \Leftrightarrow x \in A \text{ et } x \notin B\)
+
+\(\textcolor{red}{A \setminus B = A \cap \overline{B}}\)
+
+\(\textcolor{red}{\text{card}(A \setminus B) = \text{card}(A) - \text{card}(A \cap B)}\)
+
+\subsubsection*{\underline{\textcolor{red}{6. Différence symétrique}}}
+
+On appelle \textbf{différence symétrique} le sous-ensemble de $E$ noté :
+
+\(\textcolor{red}{A \, \triangle \, B = (A \setminus B) \cup (B \setminus A)}\)
+
+\(\textcolor{red}{\text{card}(A \, \triangle \, B) = \text{card}(A) + \text{card}(B) - 2 \, \text{card}(A \cap B)}\)
+
+\subsubsection*{\underline{\textcolor{red}{Exercice d'application}}}
+
+Dans une classe de 45 élèves, 33 ont la moyenne en PC et 24 ont la moyenne en math, 20 élèves ont la moyenne en math et en PC.
+
+\begin{enumerate}
+    \item Calculer le nombre d’élèves qui ont la moyenne en Math \textbf{ou} PC.
+    \item Calculer le nombre d’élèves qui ont la moyenne \textbf{qu’en} Math.
+    \item Calculer le nombre d’élèves qui ont la moyenne \textbf{qu’en une seule} des deux matières.
+    \item Calculer le nombre d’élèves qui \textbf{n’ont la moyenne ni en Math ni en PC}.
+\end{enumerate}
+
+On notera par $A$ l’ensemble des élèves qui ont la moyenne en PC, $B$ ceux en Maths.
+
+\subsubsection*{\underline{\textcolor{red}{Solution}}}
+
+\begin{itemize}
+    \item $\text{card}(A) = 33$ ; \quad $\text{card}(B) = 24$ ; \quad $\text{card}(A \cap B) = 20$
+\end{itemize}
+
+\textbf{1.} \quad $\text{card}(A \cup B) = \text{card}(A) + \text{card}(B) - \text{card}(A \cap B)$
+
+\[
+\text{card}(A \cup B) = 33 + 24 - 20 = 37
+\]
+
+Il y a \textbf{37 élèves} qui ont la moyenne en Math ou en PC.
+
+\end{document}
