@@ -1,0 +1,139 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{tcolorbox} % Pour encadrer avec fond coloré
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection : 2,5 pts}} \ignorespaces
+}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+\hrule % Barre horizontale
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
+        Lycée Dindéfélo & \quad\quad\quad Test n°6 & 15 mars 2025 \\
+    \end{tabular}
+    \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
+    \hrule % Barre horizontale
+\end{center}
+
+\begin{center}
+    \textbf{\Large Produit scalaire et fonctions} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : $1^\text{ère}$ S2} \\[0.2cm]
+    \textbf{\small Durée : 10 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /5}
+\end{center}
+
+% Nom de l'élève
+\textbf{\small Nom de l’élève :} \underline{\hspace{8cm}} \\[0.5cm]
+
+\question
+\begin{center}
+    \begin{tikzpicture}
+        % Définition des points
+        \coordinate (B) at (0,0);
+        \coordinate (C) at (6,0);
+        \coordinate (A) at (2,3);
+
+        % Dessin du triangle
+        \draw (B) -- (A) -- (C) -- cycle;
+
+        % Étiquetage des sommets
+        \node[above left] at (A) {\textbf{A}};
+        \node[below left] at (B) {\textbf{B}};
+        \node[below right] at (C) {\textbf{C}};
+
+        % Étiquetage des côtés
+        \node[below] at (3,0) {\textit{a}};
+        \node[above right] at (3,2.1) {\textit{b}};
+        \node[left] at (1,1.5) {\textit{c}};
+    \end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item Donnons une formule d’Al-Kashi appliquée à ce triangle.\textbf{ 0,5 pt}\\[0.2cm]
+        \begin{tcolorbox}[colback=green!20, colframe=green!80, sharp corners]
+        \[
+        \mathbf{a^2 = b^2 + c^2 - 2bc\cos(A)}
+        \]
+    \end{tcolorbox}
+    \item Donnons la loi des sinus.\textbf{ 0,5 pt}\\[0.2cm]
+        \begin{tcolorbox}[colback=green!20, colframe=green!80, sharp corners]
+        \[
+        \mathbf{\frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)}}
+        \]
+    \end{tcolorbox}
+    \item Donnons l'équation du cercle de centre I $\begin{pmatrix} a \\ b \end{pmatrix}$ et de rayon r .\textbf{ 0,5 pt}\\[0.2cm]
+        \begin{tcolorbox}[colback=green!20, colframe=green!80, sharp corners]
+        \[
+        \mathbf{(x - a)^2 + (y - b)^2 = r^2}
+        \]
+    \end{tcolorbox}
+    \item Soient \( A \) et \( B \) deux points du plan et \( I \) milieu du segment \([AB]\). Pour tout point \( M \)  du plan, donner la formule du Théorème de la médiane.\textbf{ 0,75 pt}\\[0.2cm]
+    $$MA^{2}+MB^{2} = 2MI^{2}+\frac{AB^{2}}{2}$$
+\end{enumerate}
+
+\question\\
+Dans chaque cas, donner le domaine de définition\textbf{ 1 pt $+$ 1,75 pt}.
+
+$f(x) = \sqrt{x^{2}+16}$\\[0.2cm]
+
+$f \quad \exists $ ssi  $ x^{2}+16 \geq 0 $
+
+$\begin{aligned}
+    x^{2}+16 \geq 0 &\iff x^{2} \geq -16\textbf{ Tjv}\\
+                &\iff x \in \mathbb{R}
+\end{aligned}$
+
+$Df=\mathbb{R}$
+
+    \begin{tcolorbox}[colback=green!20, colframe=green!80, sharp corners]
+        \[
+        \mathbf{Df=\mathbb{R}}
+        \]
+    \end{tcolorbox}
+    
+$g(x) = \frac{\sqrt{x}}{\sqrt{x^{2}+9}}$\\[0.2cm]
+$f \quad \exists $ ssi  $ x^{2}+9 > 0 $ et $x \geq 0$
+
+$\begin{aligned}
+    x^{2}+9 > 0 &\iff x^{2} > -9 \text{ et } x\geq 0\\
+                &\iff \textbf{ Tjv} \text{ et } x\in [0; +\infty[ \\
+                &\iff x \in \mathbb{R} \text{ et } x\in [0; +\infty[ \\
+                &\iff x \in \mathbb{R} \cap [0; +\infty[ \\
+\end{aligned}$
+
+$ Df=[0; +\infty[ $
+
+    \begin{tcolorbox}[colback=green!20, colframe=green!80, sharp corners]
+        \[
+        \mathbf{Df=[0; +\infty[}
+        \]
+    \end{tcolorbox}
+\end{document}
