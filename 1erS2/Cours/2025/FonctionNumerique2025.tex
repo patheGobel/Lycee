@@ -1,0 +1,551 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\begin{document}
+
+\textbf{Chapitre 02 : Fonction Numériques}
+
+\section*{I.Définition de fonction et application}
+\subsection*{1.Définition et présentation d'une fonction}
+
+Soient $E$ et $F$ deux ensembles, on appelle \textbf{fonction} toute relation qui associe à tout élément de $E$ \underline{au plus} un élément de $F$.
+
+    \begin{tikzpicture}[scale=2]
+        % set A
+        \draw[line width=1pt] (0,0) ellipse (1cm and 2cm);
+        \node[above] at (0,2.2) (A) {$A$};
+        \fill (0,1.4) circle(1pt) node[left] (a) {$a$}; 
+        \fill (-0.5,0.7) circle(1pt) node[left] (b) {$b$};
+        \fill (0,0) circle(1pt) node[left] (c) {$c$};
+        \fill (-0.5,-0.7) circle(1pt) node[left] (d) {$d$};
+        \fill (0,-1.4) circle(1pt) node[left] (e) {$e$};
+        
+        %set B
+        \draw[line width=1pt] (5,0) ellipse (1cm and 2cm);
+        \node[above] at (5,2.2) (B) {$B$};
+        \fill (5,1.4) circle(1pt) node[right] (p) {$p$}; 
+        \fill (4.5,0.6) circle(1pt) node[right] (q) {$q$};
+        \fill (5,-0.2) circle(1pt) node[right] (r) {$r$};
+        \fill (4.5,-1.0) circle(1pt) node[right] (s) {$s$};
+        
+        % relations
+        \draw[-latex,cyan] (a) -- (r);
+        \draw[-latex,cyan] (b) -- (p);
+        \draw[-latex,cyan] (c) -- (s);
+        \draw[-latex,cyan] (d) -- (s);
+        \draw[-latex,cyan] (e) -- (q);
+    \end{tikzpicture}
+
+$h$ \textbf{est une fonction} car élément de A est associé à au maximum 1 élément de B.
+
+    \begin{tikzpicture}[scale=2]
+        % set A
+        \draw[line width=1pt] (0,0) ellipse (1cm and 2cm);
+        \node[above] at (0,2.2) (A) {$A$};
+        \fill (0,1.4) circle(1pt) node[left] (a) {$a$}; 
+        \fill (-0.5,0.7) circle(1pt) node[left] (b) {$b$};
+        \fill (0,0) circle(1pt) node[left] (c) {$c$};
+        \fill (-0.5,-0.7) circle(1pt) node[left] (d) {$d$};
+        \fill (0,-1.4) circle(1pt) node[left] (e) {$e$};
+        
+        %set B
+        \draw[line width=1pt] (5,0) ellipse (1cm and 2cm);
+        \node[above] at (5,2.2) (B) {$B$};
+        \fill (5,1.4) circle(1pt) node[right] (p) {$p$}; 
+        \fill (4.5,0.6) circle(1pt) node[right] (q) {$q$};
+        \fill (5,-0.2) circle(1pt) node[right] (r) {$r$};
+        \fill (4.5,-1.0) circle(1pt) node[right] (s) {$s$};
+        
+        % relations
+        \draw[-latex,cyan] (a) -- (r);
+        \draw[-latex,cyan] (d) -- (s);
+        \draw[-latex,cyan] (e) -- (q);
+    \end{tikzpicture}
+
+$h$ \textbf{est une fonction} car  est associé à deux valeurs distinctes.
+
+
+    \begin{tikzpicture}[scale=2]
+        % set A
+        \draw[line width=1pt] (0,0) ellipse (1cm and 2cm);
+        \node[above] at (0,2.2) (A) {$A$};
+        \fill (0,1.4) circle(1pt) node[left] (a) {$a$}; 
+        \fill (-0.5,0.7) circle(1pt) node[left] (b) {$b$};
+        \fill (0,0) circle(1pt) node[left] (c) {$c$};
+        \fill (-0.5,-0.7) circle(1pt) node[left] (d) {$d$};
+        \fill (0,-1.4) circle(1pt) node[left] (e) {$e$};
+        
+        %set B
+        \draw[line width=1pt] (5,0) ellipse (1cm and 2cm);
+        \node[above] at (5,2.2) (B) {$B$};
+        \fill (5,1.4) circle(1pt) node[right] (p) {$p$}; 
+        \fill (4.5,0.6) circle(1pt) node[right] (q) {$q$};
+        \fill (5,-0.2) circle(1pt) node[right] (r) {$r$};
+        \fill (4.5,-1.0) circle(1pt) node[right] (s) {$s$};
+        
+        % relations
+        \draw[-latex,cyan] (a) -- (p);
+        \draw[-latex,cyan] (c) -- (p);
+        \draw[-latex,cyan] (c) -- (s);
+        \draw[-latex,cyan] (d) -- (s);
+        \draw[-latex,cyan] (e) -- (q);
+    \end{tikzpicture}
+
+$h$ \textbf{n'est pas une fonction} car $d$ est associé à deux valeurs distinctes.
+
+\textbf{NB :}
+\begin{itemize}
+    \item \( E \) est appelé \textbf{l'ensemble de départ} et \( F \) est appelé \textbf{l'ensemble d'arrivée}.
+    \item Si \( f \) est une fonction, on dit que \( f \) est une fonction de \( E \) dans \( F \) ou \( E \) dans \( F \) on note \( E \to F \).
+    \item On appelle \textbf{fonction réelle} toute relation qui à chaque élément de \( \mathbb{R} \) associe un élément de \( \mathbb{R} \).
+\end{itemize}
+
+\subsection*{Notation et Vocabulaire}
+
+La fonction réelle \( f \) est notée :
+\[
+    f : \mathbb{R} \to \mathbb{R}
+\]
+\[
+    x \mapsto f(x)
+\]
+
+\begin{itemize}
+    \item \( x \) est appelé \textbf{antécédent}.
+    \item Le réel \( y = f(x) \) est appelé \textbf{image} de \( x \) par \( f \).
+    \item On dit que \( f \) est une fonction dont la variable \( x \) est réelle.
+\end{itemize}
+
+\subsection*{Exemples de fonctions réelles}
+
+\begin{enumerate}
+
+     \item[a)] Soit la fonction \( f \) définie par :
+    \[
+    \begin{aligned}
+        f : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto x + 1
+    \end{aligned}
+    \]
+    \item[b] Soit la fonction \( g \) définie par :
+    \[
+    \begin{aligned}
+        g : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto x^2 + 8x + 1
+    \end{aligned}
+    \]
+    
+    \item[c)] Soit la fonction \( h \) définie par :
+    \[
+    \begin{aligned}
+        h : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto \sqrt{8x + 1}
+    \end{aligned}
+    \]
+    
+    \item[d)] Soit la fonction \( k \) définie par :
+    \[
+    \begin{aligned}
+        k : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto \frac{2x}{x+1}
+    \end{aligned}
+    \]
+\end{enumerate}
+
+\textbf{Remarque :}
+\begin{itemize}
+    \item \( f \) et \( g \) sont appelées \textbf{fonctions polynomiales}.
+    \item \( h \) est une fonction \textbf{irrationnelle}.
+    \item \( k \) est une fonction \textbf{rationnelle}.
+\end{itemize}
+
+\subsection*{Exemple : Exercice d'application}
+
+\begin{center}
+\begin{tikzpicture}
+    % Ensemble A
+    \draw[line width=1pt] (-2,2) ellipse (1 and 3.4);
+    \node[above] at (-2,5.5) {\textbf{A}};
+
+    % Éléments de A
+    \node (a1) at (-2,4.3) {1};
+    \node (a2) at (-2,3.2) {2};
+    \node (a3) at (-2,2) {3};
+    \node (a4) at (-2,0.9) {4};
+    \node (a5) at (-2,-0.2) {5};
+    \node (a6) at (-2,-1) {6};
+
+    % Ensemble B
+    \draw[line width=1pt] (2,2) ellipse (1 and 3.4);
+    \node[above] at (2,5.5) {\textbf{B}};
+
+    % Éléments de B
+    \node (b1) at (2,4.3) {12};
+    \node (b2) at (2,3.5) {6};
+    \node (b3) at (2,3) {4};
+    \node (b4) at (2,2) {17};
+    \node (b5) at (2,1) {0};
+    \node (b6) at (2,0.2) {11};
+    \node (b6) at (2,-0.5) {15};
+
+    % Flèches représentant la fonction
+    \draw[->,red,thick] (a1) -- (b4);
+    \draw[->,red,thick] (a2) -- (b3);
+    \draw[->,red,thick] (a3) -- (b5);
+    \draw[->,red,thick] (a4) -- (b4);
+    \draw[->,red,thick] (a5) -- (b1);
+    
+\end{tikzpicture}
+\end{center}
+
+\textbf{Questions :}
+\begin{enumerate}
+    \item Donner l'image de 1, de 4 et de 6.
+    \item Donner l'antécédent de 12, de 11, de 4 et de 6.
+\end{enumerate}
+
+\textbf{\textcolor{red}{Correction}}
+
+\subsection*{2)Définition et présentation d'une application}
+
+\subsubsection*{a.Activité}
+\textbf{En considérant les trois diagrammes suivants :}
+\begin{enumerate}
+    \item Pour chaque fonction supprimmer les antécédents qui n'ont pas d'image.
+    \item Dans chaque cas, attribue une nouvelle lettre à l'ensemble de départ.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+
+    % Premier diagramme
+    % Ensemble A
+    \draw[line width=1pt] (-4,2) ellipse (1.2 and 2.5);
+    \node[above] at (-4,4) {\textbf{A}};
+
+    % Éléments de A
+    \node (a1) at (-4,3.5) {1};
+    \node (a2) at (-4,2.5) {8.5};
+    \node (a3) at (-4,1.5) {14};
+    \node (a4) at (-4,0.5) {7};
+    \node (a5) at (-4,-0.5) {4.5};
+    \node (a6) at (-4,-1.5) {9};
+
+    % Ensemble B
+    \draw[line width=1pt] (-1,2) ellipse (1.2 and 2.5);
+    \node[above] at (-1,4) {\textbf{B}};
+
+    % Éléments de B
+    \node (b1) at (-1,3.5) {1,2};
+    \node (b2) at (-1,2.5) {0};
+    \node (b3) at (-1,1.5) {0.7};
+    \node (b4) at (-1,0.5) {7};
+    \node (b5) at (-1,-0.5) {13};
+    \node (b6) at (-1,-1.5) {10.5};
+
+    % Flèches
+    \draw[->,red,thick] (a1) -- (b1);
+    \draw[->,red,thick] (a2) -- (b3);
+    \draw[->,red,thick] (a3) -- (b4);
+    \draw[->,red,thick] (a4) -- (b5);
+    \draw[->,red,thick] (a5) -- (b6);
+
+    % Deuxième diagramme
+    % Ensemble A
+    \draw[line width=1pt] (3,2) ellipse (1.2 and 2.5);
+    \node[above] at (3,4) {\textbf{A}};
+
+    % Éléments de A
+    \node (c1) at (3,3.5) {1,2};
+    \node (c2) at (3,2.5) {4,5};
+    \node (c3) at (3,1.5) {5,7};
+    \node (c4) at (3,0.5) {7,8};
+    \node (c5) at (3,-0.5) {4,5};
+    \node (c6) at (3,-1.5) {5,7};
+
+    % Ensemble B
+    \draw[line width=1pt] (6,2) ellipse (1.2 and 2.5);
+    \node[above] at (6,4) {\textbf{B}};
+
+    % Éléments de B
+    \node (d1) at (6,3.5) {12};
+    \node (d2) at (6,2.5) {6,4};
+    \node (d3) at (6,1.5) {17};
+    \node (d4) at (6,0.5) {0};
+    \node (d5) at (6,-0.5) {9};
+
+    % Flèches
+    \draw[->,red,thick] (c1) -- (d1);
+    \draw[->,red,thick] (c2) -- (d2);
+    \draw[->,red,thick] (c3) -- (d3);
+    \draw[->,red,thick] (c4) -- (d4);
+    \draw[->,red,thick] (c5) -- (d5);
+
+\end{tikzpicture}
+\end{center}
+\subsubsection*{b.Domaine de définition ou ensemble de définition}
+Soit $f$ une fonction numérique de variable réelle.
+
+\section*{\color{red}IV. Image directe - Image réciproque par une application}
+
+\subsection*{\color{red}1. Image directe}
+
+\subsubsection*{\color{red}a. Définition}
+Soit $f$ une fonction définie de \( E \to F \) et \( A \) une partie de \( E \). On appelle image directe (image de \( A \) par \( f \)), notée \( f(A) \), l'ensemble des images par \( f \) de tous les éléments de \( A \cap Df \).
+
+\[
+f(A) = \{ y \in F \mid \exists x \in A \cap Df, y = f(x) \}
+\]
+\subsection*{\color{red}b. Exemple} % Seule la section est en rouge
+\text{Soit }
+    \[
+    \begin{aligned}
+ f : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto \frac{1}{x + 1}
+    \end{aligned}
+    \]
+
+Trouver les images par \( f \) de chacun des sous-intervalles de \( \mathbb{R} \) suivants :
+\[
+A = ]-1, 4] \quad ; \quad B = [-5, 3]
+\]
+
+$f$ existe ssi $x\neq -1$ 
+
+Donc $Df=\mathbb{R}\setminus\{-1\}$
+
+$\star \forall x \in A$, $x\in Df$, calculons $f(A)$ 
+
+$
+\begin{aligned}
+x \in A &\implies -1<x\leq 4\\
+&\implies 0<x+1\leq 5\\
+&\implies \frac{1}{5}\leq\frac{1}{x+1}\\
+&\implies \frac{1}{5}\leq f(x)\\
+&\implies f(x)\in \left]\frac{1}{5};+\infty\right[\\
+\end{aligned}
+$
+
+$
+f(A) = \left[ \frac{1}{5}, +\infty \right]
+$
+
+\[
+\forall x \in B \cap \mathcal{D}_f \Rightarrow x \in [-5; -1[ \cup ]-1; 3]
+\]
+
+\[
+x \in [-5; -1[ \quad \text{ou} \quad x \in ]-1; 3]
+\]
+
+\[
+-5 \leq x < -1 \quad \text{ou} \quad -1 < x \leq 3
+\]
+
+\[
+-4 \leq x+1 < 0 \quad \text{ou} \quad 0 < x+1 \leq 4
+\]
+
+\[
+-\frac{1}{4} > \frac{1}{x+1} \quad \text{ou} \quad \frac{1}{4} \leq \frac{1}{x+1}
+\]
+
+\[
+f(x) \leq -\frac{1}{4} \quad \text{ou} \quad f(x) \geq \frac{1}{4}
+\]
+
+\[
+f(B) = ]-\infty; -\frac{1}{4}] \cup [\frac{1}{4}; +\infty[
+\]
+\section*{\textcolor{red}{2) Image réciproque}}
+
+\subsection*{\textcolor{red}{a) Définition :}}
+Soit \( f \) une fonction définie de \( E \) vers \( F \), d'ensemble de définition \( \mathcal{D}_f \), et \( B \) une partie de \( F \). On appelle \textcolor{red}{image réciproque} de \( B \) par \( f \), la \textcolor{red}{partie de \( \mathcal{D}_f \)} notée : \( f^{-1}(B) \), constituée des antécédents par \( f \) de tous les éléments de \( B \).
+
+\subsection*{\textcolor{red}{b) Remarque : Comment trouver l'image réciproque ?}}
+Pour trouver l'image réciproque d'un intervalle \( B \) dans \( \mathbb{R} \) par une fonction \( f \), d'ensemble de \noindent \textbf{\textcolor{blue}{définition}} \textcolor{red}{\( \mathcal{D}_f \)}\textbf{\textcolor{blue}{, on résout l’un des systèmes d’inconnues suivants :}}
+
+\begin{itemize}
+    \item \textbf{\textcolor{red}{Si \( B = [a ; b] \), alors on résout :}}
+    \[
+    \begin{cases}
+        x \in \mathcal{D}_f \\
+        a \leq f(x) \leq b
+    \end{cases}
+    \]
+
+    \item \textbf{\textcolor{red}{Si \( B = ]a ; b] \), alors on résout :}}
+    \[
+    \begin{cases}
+        x \in \mathcal{D}_f \\
+        a < f(x) \leq b
+    \end{cases}
+    \]
+
+    \item \textbf{\textcolor{red}{Si \( B = [a ; b[ \), alors on résout :}}
+    \[
+    \begin{cases}
+        x \in \mathcal{D}_f \\
+        a \leq f(x) < b
+    \end{cases}
+    \]
+
+    \item \textbf{\textcolor{red}{Si \( B = ]-\infty ; b] \), alors on résout :}}
+    \[
+    \begin{cases}
+        x \in \mathcal{D}_f \\
+        f(x) \leq b
+    \end{cases}
+    \]
+
+    \item \textbf{\textcolor{red}{Si \( B = [a ; +\infty[ \), alors on résout :}}
+    \[
+    \begin{cases}
+        x \in \mathcal{D}_f \\
+        f(x) \geq a
+    \end{cases}
+    \]
+
+    \item \textbf{\textcolor{red}{Si \( B = \{ b \} \), alors on résout :}}
+    \[
+    \begin{cases}
+        x \in \mathcal{D}_f \\
+        f(x) = b
+    \end{cases}
+    \]
+\end{itemize}
+
+\subsection*{\textcolor{red}{c) Exemple :}}
+Soit
+    \[
+    \begin{aligned}
+ f : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto 2x - 1
+    \end{aligned}
+    \]
+
+    \[
+    \begin{aligned}
+ g : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto x^2 - x - 2
+    \end{aligned}
+    \]
+
+\begin{enumerate}
+    \item Trouver l’image réciproque par \( f \) de \( B = [1,3] \).
+    \item Trouver l’image réciproque par \( g \) de \( B = \{0\} \).
+\end{enumerate}
+
+\textbf{\underline{Résolution}}
+
+\begin{enumerate}
+    \item[1)] Pour \( B = [1,3] \), déterminons l’image réciproque par \( f \).
+
+    \begin{itemize}
+        \item \( f(x) \) :
+        
+        \[
+        \left\{
+        \begin{array}{l}
+            x \in \mathcal{D}_f  \\
+            1 \leq f(x) \leq 3
+        \end{array}
+        \right.
+        \]
+
+        \[
+        \left\{
+        \begin{array}{l}
+            x \in \mathbb{R} \\
+            1 \leq 2x - 1 \leq 3
+        \end{array}
+        \right.
+        \]
+
+        \[
+        \left\{
+        \begin{array}{l}
+            x \in \mathbb{R} \\
+            1 + 1 \leq 2x - 1 + 1 \leq 3 + 1
+        \end{array}
+        \right.
+        \]
+
+        \[
+        \left\{
+        \begin{array}{l}
+            x \in \mathbb{R} \\
+            2 \leq 2x \leq 4
+        \end{array}
+        \right.
+        \]
+
+        \[
+        \left\{
+        \begin{array}{l}
+            x \in \mathbb{R} \\
+            \frac{2}{2} \leq \frac{2x}{2} \leq \frac{4}{2}
+        \end{array}
+        \right.
+        \]
+
+        \[
+        \left\{
+        \begin{array}{l}
+            x \in \mathbb{R} \\
+            1 \leq x \leq 2
+        \end{array}
+        \right.
+        \]
+
+    \end{itemize}
+
+    \[
+    \boxed{f^{-1}(B) = [1,2]}
+    \]
+
+    \item[2)] Pour \( g(x) \) :
+\end{enumerate}
+ \[
+    D_g = \mathbb{R}
+    \]
+
+    \[
+    \left\{
+    \begin{array}{l}
+        x \in \mathbb{R} \\
+        x^2 - x - 2 = 0
+    \end{array}
+    \right.
+    \]
+
+    \[
+    \left\{
+    \begin{array}{l}
+        x \in \mathbb{R} \\
+        (x - 1)(x + 2) = 0
+    \end{array}
+    \right.
+    \]
+
+    \[
+    \left\{
+    \begin{array}{l}
+        x \in \mathbb{R} \\
+        x = -1 \quad \text{ou} \quad x = 2
+    \end{array}
+    \right.
+    \]
+
+    \[
+    \boxed{g^{-1}(B) = \{-1,2\}}
+    \]
+
+\vspace{0.5cm}
+\textcolor{red}{\textbf{\underline{REMARQUE !!!}}}  
+
+Toute application à la fois \underline{injective} et \underline{surjective} est forcément \textcolor{red}{\underline{bijective}}.
+\end{document}
