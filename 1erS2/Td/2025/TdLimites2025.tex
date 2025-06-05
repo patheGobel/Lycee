@@ -1,0 +1,261 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{S2} & \textbf{Date: 15/04/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Limites-Continuités}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\textbf{\underline{Exercice 1}}
+
+Calculer les limites suivantes :
+
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}[align=left]
+    \item $\displaystyle \lim\limits_{x \to 0} -x^2 - 2x + 4$
+    \item $\displaystyle \lim\limits_{x \to 2} \frac{x^3 - 8}{x - 2}$
+    \item $\displaystyle \lim\limits_{x \to 3} \frac{\sqrt{x + 1} - 1}{x - 3}$
+    \item $\displaystyle \lim\limits_{x \to 9} \frac{x - 9}{\sqrt{x} - 3}$
+    \item  $\displaystyle \lim\limits_{x \to -3} \frac{x^{2} - 9}{2x^{2} + 6x}$
+    \item $\displaystyle \lim\limits_{x \to -5} \frac{\sqrt{-x} - \sqrt{5}}{x + 5}$
+    \item $\displaystyle \lim\limits_{x \to 1} \frac{2x - 2}{x^2 + 4x - 5}$
+    \item $\displaystyle \lim\limits_{x \to 4} \frac{x^3 - 4x^2 - 6x + 24}{x - 4}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} -5x^3 - 3x + 4$
+    \item $\displaystyle \lim\limits_{x \to -\infty} -4x^3 + 7x^2 + 3$
+    \item $\displaystyle \lim\limits_{x \to +\infty} 2x^4 - 3x^2 + 7$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \frac{-5x + 2}{2x + 5}$
+    \item $\displaystyle \lim\limits_{x \to -\infty} \frac{2x + 7}{x^2 + 5}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \frac{3x^3 + 2x + 4}{x^2 - 5x + 1}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \frac{x^2 - x + 1}{2x^2 - 5x + 1}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \frac{\sqrt{3x^2 + 3x + 2}}{2x + 3}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \sqrt{x^2 + 4x + 3} - 3x$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \sqrt{x^2 + x} - x$
+    \item $\displaystyle \lim\limits_{x \to \pm\infty} x - \sqrt{x^2 + 3x - 1}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} 3x - 1 - \sqrt{9x^2 - 3}$
+    \item $\displaystyle \lim\limits_{x \to -\infty} \sqrt{x^2 + 3x + 7} - x$
+    \item $\displaystyle \lim\limits_{x \to -\infty} \frac{2x + \sqrt{x^2 + 1}}{x}$
+    \item $\displaystyle  \lim\limits_{x \to -\infty} \frac{x^2 - 3x + 1}{-2x+5}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \frac{\sqrt{x^2 + 1}}{x} - \sqrt{x}$
+    \item $\displaystyle \lim\limits_{x \to -\infty} (2x - 1)^2(x - 5)^3$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \frac{x - \sqrt{x^2 + x + 1}}{2x - \sqrt{4x^2 + x}}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \sqrt{x + 2} - \sqrt{x}$
+    \item $\displaystyle \lim\limits_{x \to 2} \frac{x + 2}{\sqrt{x + 7} - 3}$
+    \item $\displaystyle \lim\limits_{x \to -3} \frac{\sqrt{x^2 + 7} - 4}{x + 3}$
+    \item $\displaystyle \lim\limits_{x \to 3} \frac{\sqrt{x + 1} - 2}{\sqrt{x^2 - x - 6}}$
+    \item $\displaystyle \lim\limits_{x \to 4} \frac{x\sqrt{x} - 8}{4 - x}$
+    \item $\displaystyle \lim\limits_{x \to \pm\infty} \sqrt{x^4 + x^2 + 2} - (x^2 + x)$
+    \item $\displaystyle \lim\limits_{x \to 3} \frac{\sqrt{3x} - 3}{\sqrt{x + 1} - \sqrt{3x - 5}}$
+    \item $\displaystyle \lim\limits_{x \to 0} \frac{\sqrt{x^2 + x + 1} - 1}{\sqrt{x + 2} - \sqrt{3x + 2}}$
+    \item $\displaystyle \lim\limits_{x \to 2} \frac{\sqrt{x^2 + 1} + \sqrt{x + 3}}{x - 2}$
+    \item $\displaystyle \lim\limits_{x \to 1^+} \frac{\sqrt{x - 2}}{x^2 - 5x + 4}$
+    \item $\displaystyle \lim\limits_{x \to 0} \frac{\sqrt{1 + x^2} - 1}{\sqrt{x}}$
+    \item $\displaystyle \lim\limits_{x \to 8} \frac{\sqrt[3]{x}-2}{\sqrt[3]{x + 19} - 3}$
+    \item $\displaystyle \lim\limits_{x \to +\infty} \sqrt{x + \sqrt{x + \sqrt{x}}} - \sqrt{x}$
+    \item $\displaystyle \lim\limits_{x \to \pm\infty} \frac{x - |x|}{3x + 2}$
+    \item $\displaystyle \lim\limits_{x \to \pm\infty} \frac{2x - 1 - \sqrt{4x^2 + 2x - 5}}{x - 3 + \sqrt{3x^{2} - x + 2}}$
+    \item $\displaystyle \lim\limits_{x \to 2} \frac{x - 2}{|x - 2|}$
+    \item $\displaystyle \lim\limits_{x \to -\infty} \frac{\sqrt{3x^2 + 1} + 5x}{3x - 1}$
+    \item $\displaystyle \lim\limits_{x \to 2} \left( \frac{5}{x^2 - 4} - \frac{1}{x - 2} \right)$
+    \item $\displaystyle \lim\limits_{x \to 1} \frac{\sqrt{x + 3} - \sqrt{5 - x}}{\sqrt{2x + 7} - \sqrt{10 - x}}$
+    \item $\displaystyle \lim\limits_{x \to 2} \frac{x}{\sqrt{x^2 + x - 2}}$
+\end{enumerate}
+\end{multicols}
+
+\textbf{\underline{Exercice 2} \quad Limites trigonométriques} \\
+Calculer les limites suivantes :
+
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}[leftmargin=*]
+    \item $\displaystyle \lim_{x \to 0} \frac{\sin 3x}{2x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\tan 2x}{5x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\sin 3x}{\sin 5x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{1-\cos x}{\sin x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\sin 2x}{x \cos x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{x^2 + \sin x}{x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\sin x + \tan x}{\sqrt{x^2} }$
+    \item $\displaystyle \lim_{x \to 0} \frac{\tan 3x}{1 - \sqrt{x + 1}}$
+    \item $\displaystyle \lim_{x \to 0} \frac{1 + \sin x - \cos x}{1 - \sin x - \cos x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\cos x - 1}{x^2 + x^3}$
+    \item $\displaystyle \lim_{x \to 0} \frac{3\sin^2 x - \cos x + 1}{x^2}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\sin x - \tan x}{x^3}$
+    \item $\displaystyle \lim_{x \to +\infty} x \sin\left(\frac{1}{x}\right)$ 
+    \item $\displaystyle \lim_{x \to 0} \frac{1 - \cos x}{\sin^2 \pi x}$
+    \item $\displaystyle \lim_{x \to \frac{\pi}{4}} \frac{\sin x - \cos x}{x - \frac{\pi}{4}}$
+    \item $\displaystyle \lim_{x \to \frac{\pi}{6}} \frac{\cos x - \sqrt{3} \sin x}{ x - \frac{\pi}{6}}$
+    \item $\displaystyle \lim_{x \to \frac{\pi}{4}} \frac{\tan x - 1}{\cos x - \sin x}$
+    \item $\displaystyle \lim_{x \to \frac{\pi}{6}} \frac{\sin\left(\frac{\pi}{6} - x\right)}{1 - 2\sin x}$
+    \item $\displaystyle \lim_{x \to 0} \frac{\sqrt{1 + \sin x} - \sqrt{1 - \sin x}}{\tan x}$
+    \item $\displaystyle \lim_{x \to \frac{\pi}{2}} \frac{\cos x}{1 - \sin x}$
+    \item  $\displaystyle \lim_{x \to 0 }\frac{\sin x + \tan x}{x}$
+    \item  $\displaystyle \lim_{x \to 0 }\frac{\sqrt{1+\sin x}-1}{\sin 2x}$
+    \item  $\displaystyle \lim_{x \to 0 }\frac{\cos x^2 - 1}{x\tan x}$
+    \item  $\displaystyle \lim_{x \to 0 }\frac{1 - \cos x}{x\sin x}$
+    \item  $\displaystyle \lim_{x \to 0 }\frac{\tan 2x}{\sin 3x}$
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\textbf{\underline{Exercice 3} :} \\
+Calculer la limite à gauche et à droite de \( f \) en \( x_0 \). \( f \) admet-elle une limite en \( x_0 \) ?
+
+\textbf{a)} \( f(x) = 
+\begin{cases}
+2x^2 - 1 & \text{si } x \leq 1 \\
+\dfrac{x^2 + x - 2}{x^2 - 3x + 2} & \text{si } x > 1
+\end{cases} 
+\quad x_0 = 1 \)
+
+\textbf{b)} \( f(x) = 
+\begin{cases}
+\dfrac{\sqrt{6 - x} - 2}{x - 2} & \text{si } x \leq 2 \\
+\dfrac{\sqrt{3 - x} - 1}{4\sqrt{2x} - 8} & \text{si } x > 2
+\end{cases} 
+\quad x_0 = 2 \)
+
+\textbf{\underline{Exercice 4} :} Déterminer la limite de \( f \) aux bornes de \( D_f \).
+   \(\textbf{1)} f(x)=\dfrac{x^2 - 9x + 2}{-x + 1}\quad\\ \textbf{2)} f(x) = \dfrac{4x + 3}{4x^2 - 1}\)
+  \(\textbf{3)} f(x) = \dfrac{3x^2 - 4x^3 + 2x - 1}{x^3 - x^2 - x + 1}\quad \\\textbf{4)} f(x) = x + \sqrt{x^2 + 1}\)
+
+\textbf{\underline{Exercice 5} : Prolongement par continuité}
+Dans chacun des cas suivants, dites si \( f \) est prolongeable par continuité en \( a \).
+\begin{enumerate}
+  \item \( f(x) = \dfrac{x^2 - 3x + 2}{3x^2 - 7x + 2}, \quad a = 2 \)
+  \item \( f(x) = \dfrac{x - \sqrt{x}}{\sqrt{x}}, \quad a = 0 \)
+  \item \( f(x) = \dfrac{\sin^2 x}{x}, \quad a = 0 \)
+  \item \( f(x) = \dfrac{x - \sqrt{x}}{x}, \quad a = 0 \)
+  \item \( f(x) = \dfrac{\sqrt{x^2 - x + 1} - x}{x - 1}, \quad a = 1 \)
+  \item \( f(x) = \dfrac{\sin(x - 1)}{x - 1}, \quad a = 1 \)
+\end{enumerate}
+\textbf{\underline{Exercice 6} :} Étudier la continuité de \( f \) en \( x_0 \).
+\begin{enumerate}[leftmargin=*]
+  \item \( f(x) = 3x^2 - 5x - 7, \quad x_0 = 2 \)
+  \item \( f(x) = \dfrac{3x^2 - 5x - 7}{8x^3 - 5x + 3}, \quad x_0 = 1 \)
+  \item \( f(x) = \dfrac{x^3 - 4}{x + 2}, \quad x_0 = -2 \)
+  \item \( f(x) = \sqrt{\dfrac{x(x-1)}{x+2}}, \quad x_0 = 1 \)
+  \item \(
+    f(x) =
+    \begin{cases}
+      \dfrac{x^2 - |x|}{x^2 + |x|} & \text{si } x \neq 0 \\
+      -1 & \text{si } x = 0
+    \end{cases},
+    \quad x_0 = 0
+    \)
+  \item \(
+    g(x) =
+    \begin{cases}
+      \dfrac{x+1}{\sqrt{x^2 - 1}} & \text{si } x \neq -1 \\
+      0 & \text{si } x = -1
+    \end{cases},
+    \quad x_0 = -1
+    \)
+  \item \(
+    f(x) =
+    \begin{cases}
+      \dfrac{x - \sqrt{x} - 2}{\sqrt{x } - 2} & \text{si } x \neq 4 \\
+      3 & \text{si } x = 4
+    \end{cases},
+    \quad x_0 = 4
+    \)
+  \item \(
+    f(x) =
+    \begin{cases}
+      x^2 + 4 & \text{si } x \leq 2 \\
+      3x + 2 & \text{si } x > 2
+    \end{cases},
+    \quad x_0 = 2
+    \)
+  \item \(
+    f(x) =
+    \begin{cases}
+      3x - 1 & \text{si } x < 1 \\
+      \dfrac{x - 1}{x + 1} & \text{si } x \geq 1
+    \end{cases},
+    \quad x_0 = 1
+    \)
+\end{enumerate}
+\end{multicols}
+
+\end{document}

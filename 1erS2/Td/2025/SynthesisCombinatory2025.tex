@@ -1,0 +1,42 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\begin{document}
+
+\section*{\textcolor{red}{Exercice}}
+
+Soit l'urne suivante :
+
+\begin{center}
+\begin{tikzpicture}
+    % Boules vertes (4)
+    \fill[black] (0,0) circle(5pt);
+    \fill[black] (1,0) circle(5pt);
+    \fill[black] (2,0) circle(5pt);
+    \fill[black] (3,0) circle(5pt);
+    % Boules noires (3)
+    \fill[green] (0.5,-1) circle(5pt);
+    \fill[green] (1.5,-1) circle(5pt);
+    \fill[green] (2.5,-1) circle(5pt);
+    % Boules rouges (2)
+    \fill[red] (1,-2) circle(5pt);
+    \fill[red] (2,-2) circle(5pt);
+\end{tikzpicture}
+\end{center}
+
+On tire 4 boules de l'urne. Déterminer le nombre de cas où l'on obtient :
+
+\begin{enumerate}[label=\textcolor{blue}{\textbf{\arabic*.}}]
+    \item Exactement une verte parmi les boules tirées.
+    \item Au moins deux vertes parmi les boules tirées.
+    \item Au plus une rouge parmi les boules tirées.
+    \item Aucune boule noire.
+    \item Une rouge puis deux noires puis une verte.
+\end{enumerate}
+
+\end{document}

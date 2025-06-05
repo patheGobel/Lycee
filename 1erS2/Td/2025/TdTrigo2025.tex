@@ -1,0 +1,356 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{S2} & \textbf{Date: 29/05/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Trigonométrique}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\small
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\textbf{\underline{Exercice 1}}\textbf{ Mesure principale}\\
+Détermine la mesure principale de \( \alpha \) :\\
+\(
+\alpha = \frac{37\pi}{4} \;;\; \alpha = \frac{103\pi}{6} \;;\; \alpha = -\frac{58\pi}{3} \;;\; \alpha = \frac{153\pi}{1047} \;;\; \alpha = -27\pi \;;\; \alpha = \frac{47\pi}{3}
+\alpha = -\frac{469\pi}{5} \;;\; \alpha = -\frac{1005\pi}{2} \;;\; \alpha = \frac{139\pi}{7} \;;\; \alpha = 1108\pi \;;\; \alpha = 713\pi \;;\; \alpha = -\pi.
+\)
+
+\textbf{\underline{Exercice 2}}
+
+\textit{ABC} est un triangle équilatéral de centre \( S \) tel que 
+\( (\overrightarrow{AB}, \overrightarrow{AC}) \) ait pour mesure \( \frac{\pi}{3} \). 
+Déterminer en radian et en degré les mesures principales des angles suivants : 
+\( (\overrightarrow{BC}, \overrightarrow{SA}) \), 
+\( (\overrightarrow{SA}, \overrightarrow{SB}) \), 
+\( (\overrightarrow{SA}, \overrightarrow{CA}) \) et 
+\( (\overrightarrow{SA}, \overrightarrow{AB}) \).
+
+\textbf{\underline{Exercice 3}}
+
+On considère les angles suivants :
+
+\((\overrightarrow{AB}, \overrightarrow{AC}) = \frac{63\pi}{4} \ [2\pi] \;;\quad 
+(\overrightarrow{AC}, \overrightarrow{AE}) = -\frac{221\pi}{12} \ [2\pi] \;;\quad 
+(\overrightarrow{AE}, \overrightarrow{AD}) = -\frac{89\pi}{3}.\)
+\begin{enumerate}
+    \item Déterminer leurs mesures principales.
+    \item  Montrer que le triangle \( ABD \) est rectangle en \( A \).
+\end{enumerate}
+
+\textbf{\underline{Exercice 4}}
+
+\textbf{I.} Soit \( (\overrightarrow{u}, \overrightarrow{v}) = -\frac{\pi}{9} \) et 
+\( (\overrightarrow{v}, \overrightarrow{w}) = \frac{\pi}{4} \).\\
+Déterminer la mesure principale de :\\
+\( (\overrightarrow{u}, \overrightarrow{w}) \;;\; (-\overrightarrow{u}, \overrightarrow{v}) \;;\; 
+(-\overrightarrow{v}, -2\overrightarrow{w}) \) et \( (-2\overrightarrow{u}, \overrightarrow{w}) \).
+
+\textbf{II.} Dans la figure suivante, \textit{ABC} est un triangle équilatéral direct, 
+\textit{CBD}, \textit{ACE} et \textit{AFB} sont des triangles rectangles et isocèles respectivement en 
+\( D, E \) et \( F \).
+
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{chemin/vers/figure.png}
+\end{center}
+
+Déterminer la mesure principale des angles suivants :
+\( (\overrightarrow{AC}, \overrightarrow{AE}) \;;\; 
+(\overrightarrow{BD}, \overrightarrow{BF}) \;;\; 
+(\overrightarrow{BA}, \overrightarrow{AC}) \;;\; 
+(\overrightarrow{DC}, \overrightarrow{CA}) \;;\; \)
+\( (\overrightarrow{EA}, \overrightarrow{CB}) \).
+
+\textbf{\underline{Exercice 5}}
+\textbf{ Calcul de \( \cos x \), \( \sin x \) et \( \tan x \)} 
+
+\begin{enumerate}
+    \item Calculer \( \cos x \) et \( \tan x \) sachant que \( \sin x = \frac{\sqrt{5}}{5} \) et \( x \in \left] \frac{\pi}{2}, \pi \right[ \).
+
+    \item Calculer \( \cos x \), \( \sin x \) et \( \tan x \) sachant que \( \cos(5\pi - x) = \frac{4}{5} \) et \( x \in \left] 0, \pi \right[ \).
+
+    \item Calculer
+
+    \item Calculer \( \cos x \), \( \sin x \) et \( \tan x \) sachant que \( \sin(-x) = \frac{2}{\sqrt{13}} \) et \( x \in \left] -\pi, -\frac{\pi}{2} \right[ \).
+\end{enumerate}
+\textbf{\underline{Exercice 6}}
+
+Soient \( A, B \) et \( C \) les mesures principales des angles d’un triangle quelconque.\\
+Démontrer que :
+
+\begin{enumerate}
+    \item \( \sin(B + C) = \sin A \) et \( \cos(B + C) = -\cos A \).
+
+    \item \( \sin(2B + 2C) = -\sin 2A \) et \( \cos(2B + 2C) = \cos 2A \)
+
+    \item \( \sin\left( \frac{B + C}{2} \right) = \cos\left( \frac{A}{2} \right) \) et 
+    \( \cos\left( \frac{B + C}{2} \right) = \sin\left( \frac{A}{2} \right) \).
+\end{enumerate}
+\textbf{\underline{Exercice 7}}
+
+\textbf{I.} Montrer que les expressions \( A, B \) et \( C \) suivantes sont indépendantes de \( \theta \).\\
+\(
+A = (\cos \theta + \sin \theta)^2 + (\cos \theta - \sin \theta)^2
+\)\\
+\(
+B = \sin^4 \theta - \cos^4 \theta + 2\cos^2 \theta
+\)\\
+\(
+C = (a \cos \theta + b \sin \theta)^2 + (a \cos \theta - b \sin \theta)^2 \quad \text{avec } a \text{ et } b \text{ des réels.}
+\)
+
+\textbf{II.} Simplifier les expressions suivantes :\\
+
+\(
+A = \sin(\pi - x) + \cos(5\pi + x) - \sin(4\pi - x) + \cos(8\pi + x)
+\)\\
+\(
+B = \sin\left( \frac{\pi}{2} - x \right) + \cos(\pi - x) + \sin\left( x + \frac{\pi}{2} \right) + \cos(\pi - x) + \sin(-x)
+\)\\
+\(
+C = \cos\left( \frac{\pi}{2} - \right) - \cos(-x + 2k\pi) + \cos(3\pi + x) + \sin\left( x - \frac{7\pi}{2} \right)
+\)\\
+\(
+D = \cos\left( \frac{\pi}{2} - x \right) - \sin\left( x + \frac{\pi}{2} \right) + \cos\left( \frac{7\pi}{2} - x \right) - \sin\left( x + \frac{5\pi}{2} \right)
+\)\\
+\(
+E = \tan\left( \frac{\pi}{2} - x \right) + \frac{1}{\tan\left( \frac{\pi}{2} + x \right)} - \tan\left( \frac{7\pi}{2} + x \right) - \frac{1}{\tan\left( \frac{7\pi}{2} - x \right)}
+\)\\
+\(
+F = \frac{-\cos\left( 3x + \frac{\pi}{2} \right) + \cos\left( \frac{3\pi}{2} - 3x \right) + \sin(x + k\pi)}{
+\cos(3x - \pi) + \cos(k\pi + 3x) + 3\sin\left( \frac{3\pi}{2} - 3x \right)}
+\)\\
+\(
+G = \tan\left( x + \frac{3\pi}{2} \right) + \tan\left( x - \frac{5\pi}{2} \right) + \cot x - \cot(\pi - x)
+\)
+\textbf{\underline{Exercice 8}}
+\textbf{ Montrer les égalités suivantes} 
+
+\( (\sin x + \cos x)^2 + (\cos x - \sin x)^2 = 2 \)\\
+\( (\sin x + \cos x)^2 - (\sin x - \cos x)^2 = 4 \sin x \cos x \)\\
+\( (1 + \cos x + \sin x)^2 = 2(1 + \cos x)(1 + \sin x) \)\\
+\( \cos^4 x - \sin^4 x = \cos 2x\\
+\tan^2 a + \cot^2 a = \frac{1}{\sin^2 a \cos^2 a} \)\\
+\( \cos^4 x + \sin^4 x = 1 - 2 \sin^2 x \cos^2 x ; \frac{1 - \sin x}{\cos x} = \frac{1 + \sin x}{1 - \cos x} \)\\
+\( \frac{\cos x}{\sin x} = \frac{1 + \cos x}{\sin x} \)\\
+\( \cos^6 x + \sin^6 x = 1 - 3 \sin^2 x \cos^2 x \\ \frac{1}{1 + \cos x} = \frac{\sin x}{1 + \cos x} \)\\
+\( 2\cos(a + b)\sin(a - b) = \sin 2a - \sin 2b \)\\
+\( 2\sin(a + b)\sin(a - b) = \cos 2a - \cos 2b \)\\
+\( \sin 3a \sin^3 a - \cos 3a \cos^3 a = \cos^3 2a \)\\
+\( \cot^2 a - \cos^2 a = \cot^2 a \cos^2 a \\ \tan 2a - \tan a = \frac{\tan a}{\cos 2a} \)\\
+\( \cos^2 a - \sin^2 a = \cos a \cos 3a \quad ; \quad \sin 2a = \frac{2}{\tan a + \frac{1}{\tan a}} \)
+
+\textbf{\underline{Exercice 9}}
+
+\textbf{I.} En remarquant que \( \frac{\pi}{4} = 2 \times \frac{\pi}{8} \), démontrer que :
+
+\begin{enumerate}
+    \item \( \cos \frac{\pi}{8} = \frac{\sqrt{2 + \sqrt{2}}}{2} \quad \text{et} \quad \sin \frac{\pi}{8} = \frac{\sqrt{2 - \sqrt{2}}}{2} \)
+
+    \item Calculer \( \cos \frac{3\pi}{8} \) et \( \sin \frac{3\pi}{8} \) sachant que \( \frac{3\pi}{8} = \frac{\pi}{2} - \frac{\pi}{8} \).
+
+    \item Déterminer par la même méthode \( \cos \frac{\pi}{12} \) et \( \sin \frac{\pi}{12} \).
+\end{enumerate}
+
+\textbf{II.} En utilisant la relation \( 2 \cos^2 x = 1 + \cos 2x \), démontrer que pour tout réel \( x \) :
+
+\begin{enumerate}
+    \item \( \cos^4 x = \frac{1}{8}(\cos 4x + 4 \cos 2x + 3) \)
+
+    \item \( \sin^4 x = \frac{1}{8}(\cos 4x - 4 \cos 2x + 3) \)
+\end{enumerate}
+\textbf{\underline{Exercice 10}}
+\begin{enumerate}
+    \item Résoudre dans \( \mathbb{R} \) les équations suivantes :\\
+    \( \sin x = \sin\left( -\frac{\pi}{4} \right) \;;\; \cos 3x = \cos \frac{\pi}{6} \)\\
+    \( \cos\left( x - \frac{\pi}{3} \right) = \cos\left( 2x - \frac{\pi}{4} \right) \;;\; \sin\left( 4x + \frac{\pi}{3} \right) - \sin\left( \frac{\pi}{4} \right) = 0 \)\\
+    \( 2 \sin\left( 4x + \frac{\pi}{3} \right) = \sqrt{2} \;;\; \sqrt{2} \cos\left( x + \frac{\pi}{4} \right) = 1 \)\\
+    \( \cos\left( 2x - \frac{\pi}{3} \right) = -\frac{\sqrt{3}}{2} \;;\; \sin\left( 3x + \frac{\pi}{4} \right) = \frac{\sqrt{2}}{2} \)\\
+    \( \cos x - \sin\left( x + \frac{\pi}{2} \right) = 0 \;;\; \tan 2x = \tan \frac{\pi}{6} \)
+
+    \item Résoudre dans \( [0 ; 2\pi[ \) puis dans \( ]-\pi ; \pi[ \) :\\
+    \( \cos\left( 2x - \frac{\pi}{4} \right) = \cos\left( x + \frac{\pi}{6} \right) \;;\; 4\cos^2 x - 3 = 0 \)\\
+    \( \sqrt{2} \cos^2 x - \cos x - \sqrt{2} = 0 \;;\; 4\sin^2\left( x + \frac{\pi}{6} \right) = 1 \)\\
+    \( \cos^2 4x - \sin^2 3x = 0 \;;\; \sin 2x + \sin 3x = 0 \)\\
+    \( 2\sin^2 x + \sqrt{3} \sin x - 3 = 0 \;;\; \sin x = \cos 2x \)\\
+    \( \cos x + \sin x = \sqrt{2} \;;\; \cos 2x - \sin 2x = -1 \)\\
+    \( \tan^2 x - 3 \tan x - 1 = 0 \;;\; \sqrt{3} \cos x - 3 \sin x = 0 \)\\
+    \( \tan^2 x + (1 + \sqrt{3}) \tan x + \sqrt{3} = 0 \)
+
+    \item Résoudre dans \( D \) les inéquations suivantes :\\
+    \( \cos x \leq \cos \frac{\pi}{2} \) et \( D = \mathbb{R} \;;\; 2\cos x - 1 \geq 0 \) et \( D = \mathbb{R} \)\\
+    \( \cos x - \cos \frac{\pi}{6} \leq 0 \) et \( D = ]-\pi ; \pi[ \)\\
+    \( \sqrt{2} \sin\left( 2x + \frac{\pi}{2} \right) - 1 \leq 0 \) et \( D = [0 ; 2\pi[ \)\\
+    \( \sin^2 x - \frac{1}{2} \leq 0 \) et \( D = ]-\pi ; \pi[ \)\\
+    \( \cos x (2 \sin x - 1) \leq 0 \) et \( D = ]-\pi ; \pi[ \)\\
+    \( 2 \cos^2 x + \sqrt{3} \cos x \geq 0 \) et \( D = [0 ; 2\pi[ \)\\
+    \( \frac{1 - 2\cos x}{2 \sin x - \sqrt{3}} \geq 0 \) et \( D = ]-\pi ; \pi[ \)\\
+    \( \frac{2 \cos 2x - 1}{1 + 2 \cos 2x} < 0 \) et \( D = [0 ; 2\pi[ \)
+\end{enumerate}
+\textbf{\underline{Exercice 11}}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Sachant que \( \frac{7\pi}{12} = \frac{\pi}{3} + \frac{\pi}{4} \), donner les valeurs exactes de \( \cos \frac{7\pi}{12} \) et \( \sin \frac{7\pi}{12} \).
+        \item En déduire les valeurs exactes de \( \cos \frac{\pi}{12} \) et \( \sin \frac{\pi}{12} \).
+    \end{enumerate}
+
+    \item Retrouver autrement les valeurs exactes de \( \cos \frac{\pi}{12} \) et \( \sin \frac{\pi}{12} \).
+
+    \item Résoudre dans \( \mathbb{R} \) l’équation\\
+    \( (E) : \cos 4x + \sin 4x = \frac{1 - \sqrt{3}}{2} \).\\
+    Préciser les solutions de \( (E) \) qui appartiennent à l’intervalle \( [0 ; 2\pi[ \).
+
+    \item Placer les images des solutions de \( (E) \) sur le cercle trigonométrique.
+
+    \item 
+    \begin{enumerate}
+        \item Calculer \( (\cos^2 x + \sin^2 x)^2 \) de deux façons différentes.
+        \item Déterminer l’expression de \( \sin^2 2x \) en fonction de \( \cos 4x \).
+        \item En déduire que l’expression de :
+        
+        \( \cos^6 x + \sin^6 x = \frac{5}{8} + \frac{3}{8} \cos 4x \).
+    \end{enumerate}
+\end{enumerate}
+\textbf{\underline{Exercice 12}}
+
+Soit le polynôme défini par :\\
+\( P(x) = 8x^3 - 4\sqrt{2}x^2 - 2x + \sqrt{2} \).
+
+\begin{enumerate}
+    \item Montrer que \( P(x) = 8\left(x - \frac{1}{2}\right)\left(x + \frac{1}{2}\right)\left(x - \frac{\sqrt{2}}{2}\right) \).
+
+    \item Résoudre dans \( \mathbb{R} \), \( P(x) = 0 \) puis \( P(x) \geq 0 \).
+
+    \item Résoudre dans \( \mathbb{R} \) :\\
+    \( 8 \sin^3 x - 4\sqrt{2} \sin^2 x - 2 \sin x + \sqrt{2} = 0 \).
+
+    \item Résoudre dans \( \mathbb{R} \) :\\
+    \( 8 \sin^3 x - 4\sqrt{2} \sin^2 x - 2 \sin x + \sqrt{2} \geq 0 \).
+\end{enumerate}
+\textbf{\underline{Exercice 13}}
+On se propose de résoudre l’équation \( (E) \) :\\
+\( \cos 3x - 7 \cos 2x + 7 \cos x - 1 = 0 \).
+
+\begin{enumerate}
+    \item Exprimer \( \cos 2x \) et \( \cos 3x \) en fonction de \( \cos x \).
+
+    \item Montrer que \( (E) \) est équivalente à :\\
+    \( 2 \cos^3 x - 7 \cos^2 x + 2 \cos x + 3 = 0 \).
+
+    \item Résoudre dans \( \mathbb{R} \) l’équation :\\
+    \( 2X^3 - 7X^2 + 2X + 3 = 0 \).
+
+    \item En déduire les solutions dans \( ] -\pi ; \pi] \) de l’équation \( (E) \).
+\end{enumerate}
+
+\textbf{\underline{Exercice 14}}
+\begin{enumerate}
+    \item \( a \) et \( b \) sont deux réels de l’intervalle \( \left[ 0 ; \frac{\pi}{2} \right] \) tels que :
+    \( \cos a = \frac{1}{3} \) et \( \sin b = \frac{4 + \sqrt{2}}{6} \).
+    \begin{enumerate}[label=\textbf{\alph*})]
+        \item Calculer \( \sin a \), \( \cos 2a \), \( \sin 2a \), \( \cos \frac{a}{2} \) et \( \sin \frac{a}{2} \).
+        \item Vérifier que \( \cos b = \frac{4 - \sqrt{2}}{6} \).
+        \item Calculer \( \cos(a + b) \) et \( \sin(a + b) \). En déduire \( a + b \).
+    \end{enumerate}
+
+    \item On donne : \( \cos \frac{\pi}{8} = \frac{\sqrt{2 + \sqrt{2}}}{2} \) et \( \sin \frac{\pi}{8} = \frac{\sqrt{2 - \sqrt{2}}}{2} \).
+    \begin{enumerate}
+        \item Trouver la valeur exacte de \( \cos \frac{3\pi}{8} \) et \( \sin \frac{3\pi}{8} \).
+        \item On pose :\\
+        \( A = \cos^2 \frac{\pi}{8} + \cos^2 \frac{3\pi}{8} + \cos^2 \frac{5\pi}{8} + \cos^2 \frac{7\pi}{8} \)\\
+        \( B = \sin^2 \frac{\pi}{8} + \sin^2 \frac{3\pi}{8} + \sin^2 \frac{5\pi}{8} + \sin^2 \frac{7\pi}{8} \)\\
+        En remarquant que \( \frac{3\pi}{8} = \frac{\pi}{2} - \frac{\pi}{8} \), \( \frac{5\pi}{8} = \frac{\pi}{2} + \frac{\pi}{8} \)
+        et \( \frac{7\pi}{8} = \pi - \frac{\pi}{8} \), calculer \( A \) et \( B \).
+    \end{enumerate}
+
+    \item \( x \) étant un réel non multiple de \( \frac{\pi}{2} \),
+    \begin{enumerate}
+        \item Démontrer que \( \frac{\sin 3x}{\sin x} - \frac{\cos 3x}{\cos x} = 2 \).
+        \item Exprimer en fonction de \( \cos 2x \) :
+        \( \frac{\sin 3x}{\sin x} - \frac{\cos 3x}{\cos x} \) et 
+        \( \frac{\sin 5x}{\sin x} - \frac{\cos 5x}{\cos x} \).
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\end{document}
