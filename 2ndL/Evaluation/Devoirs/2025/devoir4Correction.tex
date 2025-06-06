@@ -1,0 +1,595 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{tkz-tab}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 2nd}\textbf{L} &\textbf{Date: 19/03/2025} & \textbf{Durée : 3 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction du devoir n$ ^{\circ} $ 1 du 2$ ^\text{\bf nd} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Exercice 1 :} 6 points ( Application Affine et Factorisation  )}
+
+\begin{enumerate}
+    \item Soit la fonction affine \( f(x) = 2x + 1 \).
+    \begin{enumerate}
+        \item Calculer \( f(1) \) puis conclure.
+
+        \(f(1) = 2 \times 1 + 1 = 3\)
+
+        Donc, l'image de 1 par la fonction \( f \) est 3.
+
+        \item Résoudre \( f(x) = 5 \) puis conclure.
+
+ \(        f(x) = 5 \Rightarrow 2x + 1 = 5 \Rightarrow 2x = 4 \Rightarrow x = 2\)
+
+        Donc, l'antécédent de 5 par la fonction \( f \) est 2.
+    \end{enumerate}
+
+    \item Déterminer le taux d’accroissement de la fonction affine telle que : \( f(3)=3 \) et \( f(2)=4 \).
+
+    \[
+    \text{Taux d'accroissement} = \frac{f(3) - f(2)}{3 - 2} = \frac{3 - 4}{1} = -1
+    \]
+
+    Donc, le taux d’accroissement de cette fonction affine entre 2 et 3 est \( -1 \).
+\item Factorisons au mieux :
+
+\begin{align*}
+\textbf{A} &= x^3 - 8 + 2(x - 2)^2 \\ 
+  &= (x - 2)(x^2 + 2x + 2^2) + 2(x - 2)(x + 2) \\ 
+  &= (x - 2)\left[(x^2 + 2x + 2^2) + 2(x + 2)\right] \\ 
+  &= (x - 2)\left[x^2 + 2x + 4 + 2x + 4\right] \\ 
+  &= (x - 2)\left[x^2 + 4x + 8\right].
+\end{align*}
+$$\textcolor{red}{\boxed{A=(x - 2)\left[x^2 + 4x + 8\right]}}$$
+
+\item Factoriser, si possible, les trinômes suivants :
+
+$
+\textbf{B}(x) = -2x^2 + 4x + 6.
+$
+
+\(
+\text{Calcul du discriminant :}\\
+\begin{aligned}
+\Delta &= b^2 - 4ac \\
+       &= 4^2 - 4(-2)(6) \\
+       &= 16 + 48 \\
+       &= 64.
+\end{aligned}
+\)
+
+\(
+\text{Racines :}\\
+\begin{aligned}
+x_1 &= \frac{-b - \sqrt{\Delta}}{2a} = \frac{-4 - \sqrt{64}}{2(-2)} = \frac{-4 - 8}{-4} = \frac{-12}{-4} = 3, \\
+x_2 &= \frac{-b + \sqrt{\Delta}}{2a} = \frac{-4 + \sqrt{64}}{2(-2)} = \frac{-4 + 8}{-4} = \frac{4}{-4} = -1.
+\end{aligned}
+\)
+
+\(\text{Forme factorisée :}\\
+\begin{aligned}
+\textbf{B}(x) &= -2(x - 3)(x + 1).
+\end{aligned}
+\)
+
+\textcolor{red}{\boxed{\textbf{B}(x) = -2(x - 3)(x + 1).}}
+
+\(
+\textbf{C}(x) = x^2 - 8x + 17.
+\)
+
+\(
+\begin{aligned}
+\text{Calcul du discriminant :} \\
+\Delta &= b^2 - 4ac \\
+      &= (-8)^2 - 4(1)(17) \\
+      &= 64 - 68 \\
+      &= -4.
+\end{aligned}
+\)
+
+\(
+\text{Le discriminant est négatif, donc } \textbf{C}(x) \text{ n'est pas factorisable sur } \mathbb{R}.
+\)
+
+\(
+\textcolor{red}{\boxed{\textbf{C}(x) \text{ n'admet pas de factorisation réelle.}}}
+\)
+
+\(
+\begin{aligned}
+\textbf{D}(x) &= -9x^2 + 6x - 1.
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+\text{Calcul du discriminant :} \\
+\Delta &= b^2 - 4ac \\
+      &= 6^2 - 4(-9)(-1) \\
+      &= 36 - 36 \\
+      &= 0.
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+\text{Racine unique :} \\
+x_0 &= \frac{-b}{2a} = \frac{-6}{2(-9)} = \frac{-6}{-18} = \frac{1}{3}.
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+\text{Forme factorisée :} \\
+\textbf{D}(x) &= -9(x - \frac{1}{3})^2.
+\end{aligned}
+\)
+
+\(
+\textcolor{red}{\boxed{\textbf{D}(x) = -9\left(x - \frac{1}{3}\right)^2.}}
+\)
+
+\end{enumerate}
+
+\section*{\underline{Exercice 2 :} 4 points ( Résolution de systèmes par la méthode de Cramer )}
+Résolvons chacun des systèmes suivants en utilisant la méthode de Cramer :
+
+\(\textbf{a)}\quad
+\begin{cases}
+3x - y + 2 = 0 \\
+3x - y - 1 = 0
+\end{cases}\implies
+\begin{cases}
+3x - y = -2 \\
+3x - y = 1
+\end{cases}
+\)
+
+
+\(
+\text{Calcul du déterminant de } : \\
+\Delta = \left| \begin{matrix} 3 & -1 \\ 3 & -1 \end{matrix} \right| = (3)(-1) - (3)(-1) = -3 + 3 = 0.
+\)
+
+\(
+\Delta_{x} = \left| \begin{matrix} -2 & -1 \\ 1 & -1 \end{matrix} \right| = (-2)(-1) - (1)(-1) = 2 + 1 = 3.
+\)
+
+\(
+\Delta_{y} = \left| \begin{matrix} 3 & -2 \\ 3 & 1 \end{matrix} \right| = (3)(1) - (3)(-2) = 3 + 6 = 9.
+\)
+
+\(
+\Delta=0, \Delta_{x}\neq 0 \textbf{ et } \Delta_{y}\neq 0
+\)
+
+\(
+\textcolor{red}{\boxed{\text{Le système n'admet pas de solution.}}}\\
+\)
+
+\(\textbf{b)} \quad
+\begin{aligned}
+\begin{cases}
+2y + x = 5 \\
+-y + 7 = 4
+\end{cases}&\implies
+\begin{cases}
+x+2y = 5 \\
+0-y  = -3
+\end{cases}
+\end{aligned}
+\)
+
+
+\(
+\text{Calcul du déterminant de } : \\
+\Delta = \left| \begin{matrix} 1 & 2 \\ 0 & -1 \end{matrix} \right| = (1)(-1) - (0)(2) = -1.
+\)
+
+\(
+\text{Le déterminant est non nul, nous pouvons utiliser la règle de Cramer.}
+\)
+
+\(
+\text{Calcul de } x : \quad
+x = \frac{\Delta_{x}}{\Delta} = \frac{\left| \begin{matrix} 5 & 2 \\ 3 & -1 \end{matrix} \right|}{-1}
+= \frac{(5)(-1) - (3)(2)}{-1} = \frac{-5 - 6}{-1} = \frac{-11}{-1} = 11.
+\)
+
+\(
+\text{Calcul de } y : \quad
+y = \frac{\Delta_{y}}{\Delta} = \frac{\left| \begin{matrix} 1 & 5 \\ 0 & 3 \end{matrix} \right|}{-1}
+= \frac{(1)(3) - (0)(5)}{-1} = \frac{3}{-1} = -3.
+\)
+
+\(
+\text{Solution du système :} \quad
+\textcolor{red}{\boxed{S=\left\lbrace  \left( 11, \, -3 \right)  \right\rbrace }}.
+\)
+
+\(\textbf{c)} \quad
+\begin{cases}
+3x - y = 2 \\
+2x - y = 1
+\end{cases}
+\)
+
+
+\(
+\text{Calcul du déterminant de } : \\
+\Delta = \left| \begin{matrix} 3 & -1 \\ 2 & -1 \end{matrix} \right| = (3)(-1) - (2)(-1) = -3 + 2 = -1.
+\)
+
+\(
+\text{Le déterminant est non nul, nous pouvons utiliser la règle de Cramer.}
+\)
+
+\(
+\text{Calcul de } x : \quad
+x = \frac{\Delta_{x}}{\Delta} = \frac{\left| \begin{matrix} 2 & -1 \\ 1 & -1 \end{matrix} \right|}{-1}
+= \frac{(2)(-1) - (1)(-1)}{-1} = \frac{-2 + 1}{-1} = \frac{-1}{-1} = 1.
+\)
+
+\(
+\text{Calcul de } y : \quad
+y = \frac{\Delta_{y}}{\Delta} = \frac{\left| \begin{matrix} 3 & 2 \\ 2 & 1 \end{matrix} \right|}{-1}
+= \frac{(3)(1) - (2)(2)}{-1} = \frac{3 - 4}{-1} = \frac{-1}{-1} = 1.
+\)
+
+\(
+\text{Solution du système :} \quad
+\textcolor{red}{\boxed{S=\left\lbrace  \left( 1, \, 1 \right)  \right\rbrace }}.
+\)
+
+\(\textbf{d)} \quad
+\begin{aligned}
+\begin{cases}
+x + y = 3 \\
+-y + 4 = x - 2
+\end{cases}&\implies
+\begin{cases}
+x + y = 3 \\
+-x-y  = - 6
+\end{cases}\implies
+\begin{cases}
+x + y = 3 \\
+x+y  =  6
+\end{cases}
+\end{aligned}
+\)\\
+
+\(
+\text{Calcul du déterminant de }: \\
+\Delta = \left| \begin{matrix} 1 & 1 \\ -1 & -1 \end{matrix} \right| = (1)(1) - (1)(1) = -1 + 1 = 0.
+\)
+
+\(
+\Delta_{x} = \left| \begin{matrix} 3 & 1 \\ 6 & 1 \end{matrix} \right| = (3)(1) - (6)(1) = -3 + 6 = 3.
+\)
+
+\(
+\Delta_{y} = \left| \begin{matrix} 1 & 3 \\ 1 & 6 \end{matrix} \right| = (1)(6) - (1)(3) = -6 + 3 = -3.
+\)
+
+\(
+\Delta=0, \Delta_{x}\neq 0 \textbf{ et } \Delta_{y}\neq 0
+\)
+
+\(
+\textcolor{red}{\boxed{\text{Le système n'admet pas de solution.}}}
+\)
+
+\section*{\underline{Exercice 3 :} 6 points ( Équations et inéquations du second degré )}
+
+Résolvons dans \(\mathbb{R}\) les équations et inéquations suivantes :
+
+\[ \textbf{a)} \, -x^2 - x + 2 = 0 \]
+
+\(
+\text{Identifions les coefficients :} \quad a = -1, \quad b = -1, \quad c = 2.
+\)
+
+\(
+\text{Calcul du discriminant } \Delta : \quad
+\Delta = b^2 - 4ac = (-1)^2 - 4(-1)(2) = 1 + 8 = 9.
+\)
+
+\(
+\text{Le discriminant est positif, il y a donc deux solutions distinctes.}
+\)
+
+\(
+\text{Calcul des solutions :} \quad
+x = \frac{-b \pm \sqrt{\Delta}}{2a} = \frac{-(-1) \pm \sqrt{9}}{2(-1)} = \frac{1 \pm 3}{-2}.
+\)
+
+\(
+\text{Les deux solutions sont :} \quad
+x_1 = \frac{1 + 3}{-2} = \frac{4}{-2} = -2 \quad \text{et} \quad x_2 = \frac{1 - 3}{-2} = \frac{-2}{-2} = 1.
+\)
+
+\(
+\text{Les solutions de l'équation sont :} \quad
+\textcolor{red}{\boxed{S=\left\lbrace  -2 , 1\right\rbrace  }}.
+\)
+\\
+\[ \textbf{b)} \, -9x^2 + 12x - 3 = 0 \]
+
+\(
+\text{Identifions les coefficients :} \quad a = -9, \quad b = 12, \quad c = -3.
+\)
+
+\(
+\text{Calcul du discriminant } \Delta : \quad
+\Delta = b^2 - 4ac = 12^2 - 4(-9)(-3) = 144 - 108 = 36.
+\)
+
+\(
+\text{Le discriminant est positif, il y a donc deux solutions distinctes.}
+\)
+
+\(
+\text{Calcul des solutions :} \quad
+x = \frac{-b \pm \sqrt{\Delta}}{2a} = \frac{-12 \pm \sqrt{36}}{2 \times (-9)} = \frac{-12 \pm 6}{-18}.
+\)
+
+\(
+\text{Les deux solutions sont :} \quad
+x_1 = \frac{-12 + 6}{-18} = \frac{-6}{-18} = \frac{1}{3} \quad \text{et} \quad
+x_2 = \frac{-12 - 6}{-18} = \frac{-18}{-18} = 1.
+\)
+
+\(
+\text{Les solutions de l'équation sont :} \quad
+\textcolor{red}{\boxed{S=\left\lbrace \frac{1}{3} , 1 \right\rbrace}}.
+\)
+
+\[ \textbf{c)} \, -3x^2 + 4x - 2 \leq 0 \]
+
+Posons \( -3x^2 + 4x - 2 = 0 \)
+
+\(
+\text{Identifions les coefficients :} \quad a = -3, \quad b = 4, \quad c = -2.
+\)
+
+\(
+\text{Calcul du discriminant } \Delta : \quad
+\Delta = b^2 - 4ac = (4)^2 - 4(-3)(-2) = 16 - 24  = -8.
+\)
+
+\(
+\text{Le discriminant est négatif, donc il y a pas de solutions.}
+\)
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[lgt = 2.9, espcl = 1.75, deltacl = 0.7]
+        {$x$/.9, $-3x^2 + 4x - 2$/.9}
+        {$-\infty$,,$+\infty$}
+        \tkzTabLine{,-,}
+    \end{tikzpicture}
+
+\(
+\text{Les solutions de l'équation sont :} \quad
+\textcolor{red}{\boxed{S=\mathbb{R} }}.
+\)
+\\
+\[
+\textbf{d)} \, 8x^2 + 34x + 21 < 0
+\]
+
+Posons \( 8x^2 + 34x + 21 = 0 \)
+
+\(
+\text{Identifions les coefficients :} \quad a = 8, \quad b = 34, \quad c = 21.
+\)
+
+\(
+\text{Calcul du discriminant } \Delta : \quad
+\Delta = b^2 - 4ac = (34)^2 - 4(8)(21) = 1156 - 672  = 484.
+\)
+
+\(
+\text{Le discriminant est positif, il y a donc deux solutions distinctes.}
+\)
+
+\(
+\text{Calcul des solutions :} \quad
+x = \frac{-b \pm \sqrt{\Delta}}{2a} = \frac{-(34) \pm \sqrt{484}}{2(8)} = \frac{-34 \pm 22}{16}.
+\)
+
+\(
+\text{Les deux solutions sont :} \quad
+x_1 = \frac{-34 + 22}{16} = \frac{-12}{16} = -\dfrac{3}{4} \quad \text{et} \quad x_2 = \frac{-34 - 22}{16} = \frac{-56}{16} = \frac{-7}{2}.
+\)
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[lgt = 2.5, espcl = 1.75, deltacl = 0.7]
+        {$x$/.9, $2x^2 - x - 3$/.9}
+        {$-\infty$,$\frac{-7}{2}$,$\dfrac{-3}{4}$,$+\infty$}
+        \tkzTabLine{,+,z,-,z,+}
+    \end{tikzpicture}
+
+\(
+\text{Les solutions de l'équation sont :} \quad
+\textcolor{red}{\boxed{S=\left]\frac{-7}{2};\frac{-3}{4} \right[ }}.
+\)
+
+\[
+\textbf{e)} \, 2x^2 - x - 3 > 0
+\]
+
+Posons \( 2x^2 - x - 3 = 0 \)
+
+\(
+\text{Identifions les coefficients :} \quad a = 2, \quad b = -1, \quad c = -3.
+\)
+
+\(
+\text{Calcul du discriminant } \Delta : \quad
+\Delta = b^2 - 4ac = (-1)^2 - 4(2)(-3) = 1 + 24  = 25.
+\)
+
+\(
+\text{Le discriminant est positif, il y a donc deux solutions distinctes.}
+\)
+
+\(
+\text{Calcul des solutions :} \quad
+x = \frac{-b \pm \sqrt{\Delta}}{2a} = \frac{-(-1) \pm \sqrt{25}}{2(2)} = \frac{1 \pm 5}{4}.
+\)
+
+\(
+\text{Les deux solutions sont :} \quad
+x_1 = \frac{1 + 5}{4} = \frac{6}{4} = \frac{3}{2} \quad \text{et} \quad x_2 = \frac{1 - 5}{4} = -\frac{4}{4} = -1.
+\)
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[lgt = 2.5, espcl = 1.75, deltacl = 0.7]
+        {$x$/.9, $2x^2 - x - 3$/.9}
+        {$-\infty$,$1$,$\frac{3}{2}$,$+\infty$}
+        \tkzTabLine{,+,z,-,z,+}
+    \end{tikzpicture}
+
+\(
+\text{Les solutions de l'équation sont :} \quad
+\textcolor{red}{\boxed{S=\left]-\infty;-1 \right[ \cup\left] \frac{3}{2};+\infty \right[ }}.
+\)
+
+\[
+\textbf{f)} \, 4 - 9x^2 \geq 0
+\]
+
+\text{Résolvons d'abord l'équation associée :} \( \quad 4 - 9x^2 = 0 \)
+
+\(
+\text{Isolons } x^2 : \quad 9x^2 = 4 \quad \Rightarrow \quad x^2 = \frac{4}{9}.
+\)
+
+\(
+\text{En prenant la racine carrée :} \quad x = \pm \sqrt{\frac{4}{9}} = \pm \frac{2}{3}.
+\)
+
+\(
+\text{Les racines sont donc :} \quad x_1 = -\frac{2}{3}, \quad x_2 = \frac{2}{3}.
+\)
+
+\text{On étudie le signe de } \( 4 - 9x^2 \).
+
+\text{Remarquons que } \( 4 - 9x^2 = -9x^2 + 4 \), \text{ une fonction trinôme de degré 2 avec } \( a = -9 < 0 \).
+
+\text{Elle est donc négative à l’extérieur des racines, positive entre les racines.}
+
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[lgt = 2.5, espcl = 1.75, deltacl = 0.7]
+    {$x$/.9, $4 - 9x^2$/.9}
+    {$-\infty$, $-\frac{2}{3}$, $\frac{2}{3}$, $+\infty$}
+    \tkzTabLine{,-,z,+,z,-}
+\end{tikzpicture}
+
+\(
+\text{On cherche les valeurs pour lesquelles } 4 - 9x^2 \geq 0.
+\)
+
+\(
+\text{Donc la solution est :} \quad
+\textcolor{red}{\boxed{S = \left[-\frac{2}{3}, \frac{2}{3} \right]}}.
+\)
+
+
+\section*{\underline{Exercice 4 :} 4 points ( Union et Intersection d'Intervalles )}  
+
+\begin{enumerate}  
+    \item On considère \( I = [-1, 5] \) et \( J = [0, 7] \).\\
+    Déterminons \( I \cup J \) et \( I \cap J \) :
+    \begin{itemize}
+        \item \(\textcolor{red}{\boxed{ I \cup J = [-1, 7]}} \)
+        \item \(\textcolor{red}{\boxed{ I \cap J = [0, 5]}} \)
+    \end{itemize}
+
+    \item On considère \( K = [-7, -3] \) et \( L = [1, 3] \).\\
+    Déterminons \( K \cup L \)  et \( K \cap L \) :
+    \begin{itemize}
+        \item  \(\textcolor{red}{\boxed{ K \cup L = [-7, -3]\cup[1, 3]}}  \)
+        \item \(\textcolor{red}{\boxed{K \cap L = \varnothing}}
+        \)
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
