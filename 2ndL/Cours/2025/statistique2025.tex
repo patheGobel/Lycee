@@ -1,0 +1,579 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath, amssymb, mathrsfs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{yhmath}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tkz-tab}
+\usepackage{multicol}
+\usepackage[top=1.8cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\begin{document}
+\small
+
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{STATISTIQUE}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 2ndL}\\[-0.1cm]
+    \textbf{Année scolaire : 2024 -- 2025}
+\end{center}
+
+% Titre rouge
+\section*{\underline{\textcolor{red}{I. Rappel : vocabulaire des séries statistiques}}}
+
+\begin{enumerate}[leftmargin=1.5cm, label=\textbf{\arabic*)}]
+    
+    \item \textbf{Population} \\
+    \begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+        \textcolor{blue}{\textbf{Définition :}} Ensemble d’individus ou d’objets sur lesquels porte l’étude statistique.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black, boxrule=0.5pt]
+        \textcolor{red}{\textbf{Exemple :}} Les élèves d’un lycée.
+    \end{tcolorbox}
+    
+    \item \textbf{Individu} \\
+    \begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+        \textcolor{blue}{\textbf{Définition :}} Élément de la population étudiée.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black, boxrule=0.5pt]
+        \textcolor{red}{\textbf{Exemple :}} Un élève du lycée.
+    \end{tcolorbox}
+    
+    \item \textbf{Échantillon} \\
+    \begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+        \textcolor{blue}{\textbf{Définition :}} Sous-ensemble de la population, souvent utilisé lorsque la population est trop grande pour être étudiée en entier.
+    \end{tcolorbox}
+    \begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black, boxrule=0.5pt]
+        \textcolor{red}{\textbf{Exemple :}} Une classe de 1\textsuperscript{re} S parmi toutes les classes du lycée.
+    \end{tcolorbox}
+    
+    \item \textbf{Caractère} \\
+    \begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+        \textcolor{blue}{\textbf{Définition :}} Propriété ou caractéristique étudiée chez les individus de la population.
+    \end{tcolorbox}
+    
+    \begin{multicols}{2}
+        \begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+            \textbf{Caractère qualitatif} \\
+            \textcolor{blue}{\textbf{Définition :}} Ne s’exprime pas par un nombre. \\
+            \textcolor{red}{\textbf{Exemple :}} Couleur des yeux (bleu, marron…).
+        \end{tcolorbox}
+        
+        \begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+            \textbf{Caractère quantitatif} \\
+            \textcolor{blue}{\textbf{Définition :}} Peut être mesuré ou compté. \\
+            \textcolor{red}{\textbf{Exemple :}} L’âge des élèves (14, 15, 16 ans…).
+        \end{tcolorbox}
+    \end{multicols}
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+Un caractère quantitatif peut être :
+\begin{itemize}
+    \item \textbf{Discret} : il prend un nombre fini ou dénombrable de valeurs.\\
+    \textcolor{blue}{\textbf{Exemple :}} Le nombre de frères et sœurs d’un élève (0, 1, 2, 3…).
+
+    \item \textbf{Continu} : il peut prendre une infinité de valeurs dans un intervalle donné.\\
+    \textcolor{blue}{\textbf{Exemple :}} Le poids d’un élève en kg (53,2 kg ; 54,8 kg ; etc.).
+\end{itemize}
+\end{tcolorbox}
+
+
+\subsection*{\textbf{a) Caractère quantitatif discret}}
+
+\textbf{Exemple :} L’âge des élèves dans une classe.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Âge (en années)} & 15 & 16 & 17 & 18 \\
+    \hline
+    \textbf{Effectif}         & 2  & 5  & 8  & 5 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Remarque :} On peut lister toutes les valeurs possibles du caractère (15, 16, 17, 18).
+\end{tcolorbox}
+
+\subsection*{\textbf{b) Caractère quantitatif continu}}
+
+\textbf{Exemple :} Le poids des élèves en kilogrammes.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Poids (en kg)} & $[40\,;\,50[$ & $[50\,;\,60[$ & $[60\,;\,70[$ \\
+    \hline
+    \textbf{Effectif}        & 4             & 5             & 1 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Remarque :} Le poids peut prendre toutes les valeurs réelles dans un intervalle, comme 52,3 kg ou 48,7 kg.
+\end{tcolorbox}
+
+\item \textbf{Modalité d’un caractère qualitatif} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+    \textcolor{blue}{\textbf{Définition :}} Une modalité est une valeur possible prise par un caractère qualitatif.
+\end{tcolorbox}
+
+\textbf{Exemple :} On interroge des élèves sur leur ethnie. L'ethnie est un caractère qualitatif dont les modalités sont : Diola, Sérère, Peul, Lebou.
+
+\vspace{0.3cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ethnie} & Diola & Sérère & Peul & Lebou \\
+    \hline
+    \textbf{Effectif} & 3 & 5 & 8 & 7 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Remarque :} Les modalités sont les différentes réponses possibles au caractère qualitatif "Ethnie".
+\end{tcolorbox}
+
+\item \textbf{Effectif partiel} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+    \textcolor{blue}{\textbf{Définition :}} 
+    L'effectif partiel est le nombre d'individus possédant une même valeur d’un caractère.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\textbf{Exemple :} On interroge des élèves sur leur ethnie. Voici les résultats obtenus :
+
+\vspace{0.3cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ethnie} & Diola & Sérère & Peul & Lebou \\
+    \hline
+    \textbf{Effectif partiel} & 3 & 5 & 8 & 7 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Lecture du tableau :}
+\begin{itemize}
+    \item L’effectif partiel des \textbf{Diola} est 3.
+    \item L’effectif partiel des \textbf{Sérère} est 5.
+    \item L’effectif partiel des \textbf{Peul} est 8.
+    \item L’effectif partiel des \textbf{Lebou} est 7.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!60!black, boxrule=0.5pt]
+%\textbf{Effectif total :} $3 + 5 + 8 + 7 = 23$. Il y a donc 23 élèves interrogés.
+\end{tcolorbox}
+
+\item \textbf{Effectif total} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+    \textcolor{blue}{\textbf{Définition :}} 
+    L’effectif total est le nombre total d’individus interrogés ou observés dans une étude statistique.
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\textbf{Exemple :} Reprenons le tableau des ethnies étudiées :
+
+\vspace{0.3cm}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Ethnie} & Diola & Sérère & Peul & Lebou \\
+    \hline
+    \textbf{Effectif partiel} & 3 & 5 & 8 & 7 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Calcul de l’effectif total :} \\
+\[
+N = 3 + 5 + 8 + 7 = 23
+\]
+Il y a donc \textbf{23 élèves} au total dans la population observée.
+\end{tcolorbox}
+
+\item \textbf{Notation} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+On note :
+\begin{itemize}
+    \item \( x_i \) : une valeur prise par le caractère étudié (appelée \textbf{modalité}) ;
+    \item \( n_i \) : l’\textbf{effectif partiel} associé à la modalité \( x_i \) ;
+    \item \( N \) : l’\textbf{effectif total}, c’est-à-dire la somme de tous les effectifs partiels :
+    \[
+    N = \sum_{i=1}^{p} n_i
+    \]
+    où \( p \) est le nombre de valeurs différentes (ou modalités) du caractère étudié.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\textbf{Exemple :}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \( x_i \) (Ethnie) & Diola & Sérère & Peul & Lebou \\
+    \hline
+    \( n_i \) (Effectif) & 3 & 5 & 8 & 7 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\[
+N = \sum_{i=1}^{4} n_i = 3 + 5 + 8 + 7 = 23
+\]
+
+\item \textbf{Fréquence} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+\textcolor{blue}{\textbf{Définition :}}  
+La fréquence d’une valeur \( x_i \) est le quotient de l’effectif partiel \( n_i \) par l’effectif total \( N \). Elle représente la proportion d’individus correspondant à cette valeur.
+
+\[
+f_i = \frac{n_i}{N}
+\]
+où :
+\begin{itemize}
+    \item \( f_i \) : fréquence associée à la valeur \( x_i \),
+    \item \( n_i \) : effectif partiel de \( x_i \),
+    \item \( N \) : effectif total.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\textbf{Exemple :}
+
+\[
+f_{\text{Diola}} = \frac{3}{23}, \quad
+f_{\text{Sérère}} = \frac{5}{23}, \quad
+f_{\text{Peul}} = \frac{8}{23}, \quad
+f_{\text{Lebou}} = \frac{7}{23}
+\]
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Remarque :} La somme des fréquences est toujours égale à 1 :
+\[
+\sum_{i=1}^{p} f_i = 1
+\]
+\end{tcolorbox}
+
+\item \textbf{Fréquence en pourcentage} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+\textcolor{blue}{\textbf{Définition :}}  
+La fréquence en pourcentage est la fréquence exprimée sur 100 au lieu de 1.
+
+\[
+\text{Fréquence en \%} = f_i \times 100 = \frac{n_i}{N} \times 100
+\]
+
+où :
+\begin{itemize}
+    \item \( f_i \) est la fréquence de la valeur \( x_i \),
+    \item \( n_i \) est l’effectif partiel,
+    \item \( N \) est l’effectif total.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\textbf{Exemple :}
+
+\[
+f_{\text{Diola}} = \frac{3}{23} \quad \Rightarrow \quad \text{Fréquence en \%} = \frac{3}{23} \times 100 \approx 13{,}04\,\%
+\]
+
+\[
+f_{\text{Peul}} = \frac{8}{23} \quad \Rightarrow \quad \text{Fréquence en \%} \approx 34{,}78\,\%
+\]
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Remarque :} La somme des fréquences en pourcentage est toujours égale à 100\%.
+\end{tcolorbox}
+
+\item \textbf{Effectif cumulé croissant[ECC]-Fréquence cumulée croissante[FCC]}
+\begin{enumerate}
+    \item \textbf{Effectif cumulé croissant[ECC]} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+\textcolor{blue}{\textbf{Définition :}}  
+L’effectif cumulé croissant est la somme des effectifs partiels des valeurs inférieures ou égales à une valeur donnée.
+
+\[
+N_i = \sum_{j=1}^{i} n_j
+\]
+
+où :
+\begin{itemize}
+    \item \( N_i \) est l’effectif cumulé croissant jusqu’à la \( i \)-ème valeur,
+    \item \( n_j \) est l’effectif partiel de la \( j \)-ème valeur.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\textbf{Exemple :}
+
+\[
+\begin{aligned}
+N_1 &= n_1 = 3 \\
+N_2 &= n_1 + n_2 = 3 + 5 = 8 \\
+N_3 &= n_1 + n_2 + n_3 = 3 + 5 + 8 = 16 \\
+N_4 &= n_1 + n_2 + n_3 + n_4 = 3 + 5 + 8 + 7 = 23
+\end{aligned}
+\]
+
+\textbf{Reprend le tableu age}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Âge (en années)} & 15 & 16 & 17 & 18 & \textbf{Total} \\
+    \hline
+    \textbf{Effectif \( n_i \)} & 1 & 3 & 4 & 2 & 10 \\
+    \hline
+    \textbf{ECC \( N_i \)} & 1 & 4 & 8 & 10 & -- \\
+    \hline
+\end{tabular}
+\end{center}
+
+
+\item \textbf{Fréquence cumulée croissante[FCC]} \\
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, boxrule=0.5pt]
+\textcolor{blue}{\textbf{Définition :}}  
+La fréquence cumulée croissante est la somme des fréquences des valeurs inférieures ou égales à une valeur donnée.
+
+\[
+F_i = \sum_{j=1}^{i} f_j
+\]
+
+où :
+\begin{itemize}
+    \item \( F_i \) est la fréquence cumulée jusqu’à \( x_i \),
+    \item \( f_j = \dfrac{n_j}{N} \) est la fréquence de la valeur \( x_j \).
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\textbf{Exemple :}
+
+\[
+\begin{aligned}
+F_1 &= \frac{3}{23} \approx 0{,}130 \\
+F_2 &= \frac{3+5}{23} = \frac{8}{23} \approx 0{,}348 \\
+F_3 &= \frac{3+5+8}{23} = \frac{16}{23} \approx 0{,}696 \\
+F_4 &= \frac{3+5+8+7}{23} = 1
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!60!black, boxrule=0.5pt]
+\textbf{Remarque :} La fréquence cumulée croissante de la dernière valeur est toujours égale à 1 (ou 100\%).
+\end{tcolorbox}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Âge (en années)} & 15 & 16 & 17 & 18 & \textbf{Total} \\
+    \hline
+    \textbf{Effectif \( n_i \)} & 1 & 3 & 4 & 2 & 10 \\
+    \hline
+    \textbf{ECC \( N_i \)} & 1 & 4 & 8 & 10 & -- \\
+    \hline
+    \textbf{Fréquence \( f_i \)} & 0{,}1 & 0{,}3 & 0{,}4 & 0{,}2 & 1 \\
+    \hline
+    \textbf{Fréquence en \%} & 10\,\% & 30\,\% & 40\,\% & 20\,\% & 100\,\% \\
+    \hline
+    \textbf{Fréquence cumulée} & 0{,}1 & 0{,}4 & 0{,}8 & 1 & -- \\
+    \hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+
+\item \textbf{Effectif cumulé décroissant[EDC]-Fréquence cumulée décroissante[FDC]}
+\vspace{0.2cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    \textbf{Âges} & 15 & 16 & 17 & 18 & \textbf{Total} \\
+    \hline
+    \textbf{Effectif \( n_i \)} & 1 & 3 & 4 & 2 & 10 \\
+    \hline
+    \textbf{E.C.D} & 10 & 9 & 6 & 2 & -- \\
+    \hline
+    \textbf{Fréquence \( f_i \)} & 0{,}1 & 0{,}3 & 0{,}4 & 0{,}2 & 1 \\
+    \hline
+    \textbf{\%} & 10 & 30 & 40 & 20 & 100 \\
+    \hline
+    \textbf{F.C.D} & 100 & 90 & 60 & 20 & -- \\
+    \hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+\section*{\textcolor{red}{II. Représentation graphique}}
+
+\subsection*{Diagramme en bâtons(Âges)}
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tikzpicture}
+    % Axes
+    \draw[->] (0,0) -- (5.5,0) node[right] {Âges};
+    \draw[->] (0,0) -- (0,5) node[above] {Effectifs};
+
+    % Graduations horizontales et labels
+    \foreach \x/\age in {1/15, 2/16, 3/17, 4/18}
+        \draw (\x,0) -- (\x,0.2) node[below=4pt] {\age};
+
+    % Graduations verticales
+    \foreach \y in {1,...,4}
+        \draw (0,\y) -- (-0.1,\y) node[left] {\y};
+
+    % Bâtons fins
+    \foreach \x/\h in {1/1, 2/3, 3/4, 4/2}
+        \draw[thick] (\x,0) -- (\x,\h);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Diagramme en bandes (ethnies)}
+
+\begin{center}
+\begin{tikzpicture}
+    % Axes
+    \draw[->] (0,0) -- (5.5,0) node[right] {Ethnies};
+    \draw[->] (0,0) -- (0,5) node[above] {Effectifs};
+
+    % Graduations verticales
+    \foreach \y in {1,...,4}
+        \draw (0,\y) -- (-0.1,\y) node[left] {\y};
+
+    % Noms des ethnies
+    \foreach \x/\ethnie in {1/Diola, 2/Sérère, 3/Peul}
+        \node at (\x+0.25, -0.3) {\ethnie};
+
+    % Barres verticales (bandes)
+    \draw[fill=cyan!40] (1,0) rectangle (1.5,4);   % Diola
+    \draw[fill=cyan!40] (2,0) rectangle (2.5,2);   % Sérère
+    \draw[fill=cyan!40] (3,0) rectangle (3.5,4);   % Peul
+\end{tikzpicture}
+\end{center}
+\subsection*{1. Histogramme}
+
+\begin{center}
+\begin{tikzpicture}
+    % Axes
+    \draw[->] (0,0) -- (6.5,0) node[right] {Poids (kg)};
+    \draw[->] (0,0) -- (0,6) node[above] {Effectif};
+
+    % Graduation verticale
+    \foreach \y in {1,...,5}
+        \draw (0,\y) -- (-0.1,\y) node[left] {\y};
+
+    % Graduation horizontale (bornes de classes)
+    \foreach \x/\label in {1/40, 2/50, 3/60, 4/70}
+        \draw (\x,0) -- (\x,0.2) node[below=4pt] {\label};
+
+    % Barres de l’histogramme
+    \draw[fill=blue!40] (1,0) rectangle (2,4); % [40;50[
+    \draw[fill=blue!40] (2,0) rectangle (3,5); % [50;60[
+    \draw[fill=blue!40] (3,0) rectangle (4,1); % [60;70[
+\end{tikzpicture}
+\end{center}
+
+\subsection*{2. Diagramme circulaire}
+
+\begin{tcolorbox}[colback=green!5, colframe=green!80!black, title=Formule de l'angle d'un secteur]
+\centering
+\textbf{Angle} $= \dfrac{n_i}{N} \times 360^\circ$ \quad ou \quad \textbf{Angle} $= f_i \times 360^\circ$
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tikzpicture}
+    % Couleurs
+    \definecolor{diola}{RGB}{135,206,250}
+    \definecolor{serere}{RGB}{255,192,203}
+    \definecolor{peul}{RGB}{144,238,144}
+
+    % Tranches (angles en degrés)
+    \fill[diola] (0,0) -- (0:3) arc (0:144:3) -- cycle;
+    \fill[serere] (0,0) -- (144:3) arc (144:216:3) -- cycle;
+    \fill[peul] (0,0) -- (216:3) arc (216:360:3) -- cycle;
+
+    % Légendes
+    \node at (72:2.2) {Diola (4)};
+    \node at (180:2.4) {Sérère (2)};
+    \node at (288:2.3) {Peul (4)};
+\end{tikzpicture}
+\end{center}
+\section*{IV. Paramètre de position}
+
+\subsection*{IV. Paramètre de position}
+
+\subsubsection*{1. Cas discret}
+
+\begin{itemize}
+    \item \textbf{Mode} : valeur la plus fréquente dans la série.\\
+    Une série peut être :
+    \begin{itemize}
+        \item \textbf{Unimodale} : si elle a un seul mode ;
+        \item \textbf{Bimodale} : si elle a deux modes de même fréquence ;
+        \item \textbf{Multimodale} : si elle a plusieurs valeurs ayant la même fréquence maximale.
+    \end{itemize}
+
+    \item \textbf{Moyenne} :
+    
+    \begin{tcolorbox}[colback=white, colframe=black, title=Moyenne d’une série discrète]
+    \[
+    \overline{X} = \frac{\sum x_i}{N}
+    \]
+    \end{tcolorbox}
+    
+    \textbf{Exemple :}\\
+    Les notes obtenues par un élève en mathématiques à un devoir sont : 12 ; 13 ; 08 ; 10 ; 11
+
+    \[
+    \overline{X} = \frac{12 + 13 + 08 + 10 + 11}{5} = \frac{54}{5} = 10{,}8
+    \]
+\end{itemize}
+
+\end{document}
