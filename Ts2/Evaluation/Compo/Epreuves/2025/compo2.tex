@@ -1,0 +1,231 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S2} &\textbf{Date: 22/05/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Composition Du 2$ ^\text{\bf nd} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\section*{\underline{Exercice 1 :($3$ pts)} Restitution de Connaissances}
+\begin{enumerate}
+    \item Soit \( \Omega \) l’univers associé à une expérience aléatoire \( E \) et \( p \) une probabilité définie sur \( \Omega \).\\
+    Recopie et complète les relations ci-dessous :
+    \begin{enumerate}
+        \item \( \mathbb{P}(\Omega) = \ldots \) \hfill \textbf{(0,25 pt)}
+        \item \( \mathbb{P}(\varnothing) = \ldots \) \hfill \textbf{(0,25 pt)}
+        \item Si \( A \) et \( B \) sont deux événements incompatibles de \( \Omega \), alors \( \mathbb{P}(A \cup B) = \ldots \)\hfill \textbf{(0,25 pt)}
+        \item Soit \( D \) un événement quelconque de \( \Omega \). \( \mathbb{P}(D) = 1{,}5 \) est-il possible ?\\
+        Si non, justifier votre réponse. \hfill \textbf{(0,25 pt)}
+    \end{enumerate}
+    
+    \item Soit \( f \) une fonction continue sur un intervalle \( I \) et \( (u_n) \) une suite convergente vers un nombre réel \( L \in I \), définie par \( u_{n+1} = f(u_n) \).\\
+    Répondre par vrai ou faux à l’affirmation : \textbf{\( L \) est solution de l’équation \( f(L) = L \)}. \hfill \textbf{(0,5 pt)}
+    
+    \item Soit \( (u_n) \) une suite géométrique de raison \( q = \frac{1}{2} \) et de premier terme \( u_2 = -3 \).\\
+    Choisir la bonne réponse dans chaque cas : \hfill (\( \textbf{3} \times \textbf{0,25 pt} \))
+
+    \begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+        \hline
+        \textbf{Réponses} & \textbf{A} & \textbf{B} & \textbf{C} \\
+        \hline
+        \( \lim u_n \) est : & \( -\infty \) & \( +\infty \) & \( 0 \) \\
+        \hline
+        L’expression de \( u_n \) est : & 
+        \( -3\left( \frac{1}{2} \right)^n \) & 
+        \( -3\left( \frac{1}{2} \right)^{n-3} \) & 
+        \( -3\left( \frac{1}{2} \right)^{n-2} \) \\
+        \hline
+        L’expression de \( S_n = u_2 + u_3 + \cdots + u_n \) est : & 
+        \( u_0 \times \dfrac{1 - 0{,}5^{n-1}}{0{,}5} \) & 
+        \( u_2 \times \dfrac{1 - 0{,}5^{n-2}}{0{,}5} \) & 
+        \( u_2 \times \dfrac{1 - 0{,}5^{n-2}}{0{,}5} \) \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+\end{enumerate}
+
+\section*{\underline{Exercice 2 :($3$ pts)} }
+Le plan complexe est muni d’un repère orthonormé direct \( (O ; \vec{u}, \vec{v}) \). 
+
+\begin{enumerate}
+    \item On considère la transformation \( S \) du plan d’écriture complexe \( z' = (1 - i\sqrt{3})z + 2 \).\\
+    Déterminer la nature de \( S \). \hfill \textbf{(0,5 pt)}
+    
+    \item Déterminer le rapport et l’angle de \( S \). \hfill \textbf{(0,5 pt)}
+    
+    \item Déterminer l’affixe du point \( C \) image par \( S \) du point \( A(2 - i\sqrt{3}) \). \hfill \textbf{(1 pt)}
+    
+    \item Quelle est l’affixe du point image par \( S \) du point \( D\left(-\dfrac{2\sqrt{3}}{3}i\right) \) ?\\
+    Que représente \( D \) pour la transformation \( S \) ? \hfill \textbf{(0,75 +0,25 pt)}
+\end{enumerate}
+\section*{\underline{Exercice 3 :($4$ pts)} }
+
+On dispose de deux urnes identiques \( u_1 \) et \( u_2 \) contenant des boules indiscernables au toucher :\\
+\( u_1 \) contient 3 boules blanches et 6 boules noires.\\
+\( u_2 \) contient deux boules noires, une blanche et une rouge.\\
+
+Une épreuve consiste à tirer au hasard une boule dans \( u_1 \), la mettre dans \( u_2 \), et tirer ensuite au hasard une boule dans \( u_2 \).\\
+On note \( B_k \) l'événement : « Tirer une boule blanche dans \( u_k \) », \( N_k \) l'événement : « Tirer une boule noire dans \( u_k \) », avec \( k\in \{ 1,2 \} \).\\
+\( R \) l'événement : « Tirer une boule rouge dans \( u_2 \) ».
+\begin{enumerate}
+    \item Construire un arbre pondéré correspondant à cette épreuve. \hfill \textbf{(0,5 pt)}
+    \item 
+    \begin{enumerate}
+        \item Montrer que \( \mathbb{P}(N_2) = \dfrac{8}{15} \). \hfill \textbf{(0,5 pt)}
+        \item Déterminer la probabilité de l’événement \( B_2 \). \hfill \textbf{(0,5 pt)}
+        \item Déterminer la probabilité de tirer une boule blanche de \( u_1 \), sachant que la boule tirée dans \( u_2 \) est noire. \hfill \textbf{(0,5 pt)}
+    \end{enumerate}
+
+    \item Un joueur mise 500F et effectue une épreuve. Si à la fin de l’épreuve le joueur tire une boule blanche dans \( u_2 \), il reçoit 3000F ; si la boule tirée dans \( u_2 \) est noire, le joueur ne reçoit rien et si elle est rouge, il reçoit 500F.\\
+    On désigne \( X \) le gain du joueur (gain = différence entre ce qu’il reçoit et sa mise).
+
+    \begin{enumerate}
+        \item Donner la loi de probabilité de \( X \). \hfill \textbf{(0,5 pt)}
+        \item Calculer l’espérance mathématique, la variance et l’écart-type de \( X \). \hfill \textbf{(0,75 pt)}
+        \item Déterminer la fonction de répartition de \( X \) et la représenter. \hfill \textbf{(0,75 pt)}
+    \end{enumerate}
+
+    \item Un joueur participe à plusieurs parties du jeu et on suppose que les épreuves sont indépendantes.\\
+    Quelle est le nombre minimal de parties pour que la probabilité de réaliser au moins une fois l’événement \( X = 2500 \) soit supérieure à 0{,}97 ? \hfill \textbf{(0,25 pt)}
+\end{enumerate}
+
+\section*{\underline{Problème :}\quad\textbf{10 pts}} 
+Le plan est muni d’un repère orthonormé \( (O ; I ; J) \) et \( \mathcal{C}_f \) la courbe représentative de \( f \) dans ce plan.
+
+\vspace{0.4em}
+\subsection*{\underline{Partie A:}\quad\textbf{2,5 pts}}
+On considère la fonction \( g \) définie sur \( ]0 ; +\infty[ \) par \( g(x) = \ln\left( \frac{x+1}{x} \right) - \frac{1}{x+1} \).
+
+\begin{enumerate}
+    \item Calculer les limites \( \lim\limits_{x \to 0^+} g(x) \) et \( \lim\limits_{x \to +\infty} g(x) \). \hfill \textbf{(0,5 pt)}
+    \item Étudier les variations de \( g \) et dresser le tableau de variations de \( g \). \hfill \textbf{(1,5 pt)}
+    \item Déduire du tableau de variations le signe de \( g(x) \) pour tout \( x > 0 \). \hfill \textbf{(0,5 pt)}
+\end{enumerate}
+
+\vspace{0.4em}
+\subsection*{\underline{Partie B:}\quad\textbf{5 pts}}
+On considère la fonction \( f \) donnée par :
+\(
+f(x) =
+\begin{cases}
+x \ln\left( \frac{x+1}{x} \right) + 1 & \text{si } x > 0 \\
+(x^2 - 3x + 1)e^x & \text{si } x \leq 0
+\end{cases}
+\)
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Déterminer le domaine de définition de \( f \). \hfill \textbf{(0,5 pt)}
+        \item Calculer les limites aux bornes de \( D_f \). \hfill \textbf{(0,5 pt)}
+        \item En déduire l’existence d’asymptotes dont on précisera la nature et l’équation. \hfill \textbf{(0,5 pt)}
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item Étudier la continuité de \( f \) en 0. \hfill \textbf{(0,75 pt)}
+        \item Étudier la dérivabilité de \( f \) en 0 et interpréter les résultats. \hfill \textbf{(0,75 + 0,25 pt)}
+    \end{enumerate}
+
+    \item Montrer que 
+    \(
+    f'(x) = 
+    \begin{cases}
+    g(x) & \text{si } x > 0 \\
+    (x^2 - x - 2)e^x & \text{si } x < 0
+    \end{cases}
+    \) \hfill \textbf{(1 pt)}
+
+    \item Dresser le tableau de variations de \( f \). \hfill \textbf{(0,75 pt)}
+\end{enumerate}
+
+\vspace{0.4em}
+\subsection*{\underline{Partie C:}\quad\textbf{2,5 pts}}
+Soit \( h \) la restriction de \( f \) sur l’intervalle \( ]0 ; +\infty[ \).
+\begin{enumerate}
+    \item Montrer que \( h \) est bijective de \( ]0 ; +\infty[ \) vers un intervalle \( J \) à préciser. \hfill \textbf{(0,5 pt)}
+    \item Étudier la dérivabilité de \( h^{-1} \) sur \( J \). \hfill \textbf{(0,5 pt)}
+    \item Tracer sur le même graphe les asymptotes, \( \mathcal{C}_f \) et \( \mathcal{C}_{h^{-1}} \). \hfill \textbf{(1,5 pt)}
+\end{enumerate}
+\end{document}
