@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection (1 point) :}} \ignorespaces
+}
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.9}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+\begin{document}
+\hrule % Barre horizontale
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
+        Lycée Dindéfélo & \quad\quad Test 8 & 25 Novembre 2024 \\
+    \end{tabular}
+    \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
+    \hrule % Barre horizontale
+\end{center}
+\begin{center}
+    \textbf{\Large Interprétaion-Primitives} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : Terminale S2} \\[0.2cm]
+    \textbf{\small Durée : 10 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /5}
+\end{center}
+
+% Nom de l'élève
+\textbf{\small Nom de l'élève :} \underline{\hspace{8cm}} \\[0.5cm]
+
+% Introduction aux questions
+Complétez les exercices suivants en utilisant le cours et vos connaissances. \\[0.3cm]
+
+\question
+Dans chacun des cas donner la primitive $F_{n}$ de $f_{n}$
+
+$f_1(x)=5x^3-3x^{2}+7 \quad\quad\quad F_1(x)=$\\
+
+$f_2(x)=2\cos(x)-3\sin(x) \quad\quad F_2(x)=$\\
+
+\question\
+La droite d'équation cartésienne \( x=a \) est un axe de symétrie de la courbe \( C_{f} \) si les deux conditions suivantes sont réalisées :
+\begin{itemize}
+\item[•] 
+\vspace{0.5cm}
+\item[•] 
+\vspace{0.5cm}
+\end{itemize}
+Soit \( f(x)=2x^{2}-2x+1 \). Montrer que \( x=\frac{1}{2} \) est un axe de symétrie pour la courbe \( (C_{f}) \). \underline{\hspace{15cm}}\\[0.3cm]\\
+\underline{\hspace{20cm}}\\
+
+\question\\
+Le point \( I(a ; b) \) est un centre de symétrie de la courbe \( (C_{f}) \) si les deux conditions suivantes sont réalisées  :
+\begin{itemize}
+\item[•] 
+\vspace{0.5cm}
+\item[•] 
+\vspace{0.5cm}
+\end{itemize}
+
+Soit \( f(x)=\frac{3x+1}{2x-6} \). Montrer que \( I(3 ; \frac{3}{2}) \) est un centre de symétrie pour la courbe \( (C_{f}) \).
+
+\underline{\hspace{15cm}}\\[0.3cm]
+\underline{\hspace{20cm}}
+\question\
+Enoncer le théorème des valeurs intermediaries.\\
+\underline{\hspace{20cm}}\\
+\underline{\hspace{20cm}}\\
+\underline{\hspace{20cm}}\\
+\question Enoncer le théorème d’existence et d’unicité d’une solution\\
+\underline{\hspace{20cm}}\\
+\underline{\hspace{20cm}}\\
+\underline{\hspace{20cm}}\\
+\end{document}
