@@ -1,0 +1,334 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{diagbox}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof : M. BA}}
+\cfoot{\bf \thepage / \pageref{LastPage}}
+
+\newcommand{\exo}[1]{%
+        \textbf{\underline{Exercice #1}}
+}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025} \\ \hline
+                \textbf{Matière : Mathématiques} & \textbf{Niveau : T S2} & \textbf{Date : 29/05/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                  \textbf{{\Large\sffamily TD : Statistiques}}
+                \end{center}}} \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\noindent
+\section*{\underline{Exercice 1}(BAC 2005)}
+Une entreprise a mis au point un nouveau produit et cherche à fixer le prix de vente.\\
+Une enquête est réalisée auprès des clients potentiels ; les résultats sont donnés dans le tableau suivant où \( y_i \) représente le nombre d’exemplaires du produit que les clients sont disposés à acheter si le prix de vente, exprimé en milliers de francs, est \( x_i \) :
+
+\vspace{0.3cm}
+\begin{center}
+\begin{tabular}{|c|cccccccc|}
+\hline
+\( x_i \) & 60 & 80 & 100 & 120 & 140 & 160 & 180 & 200 \\
+\hline
+\( y_i \) & 952 & 805 & 630 & 522 & 510 & 324 & 205 & 84 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{enumerate}
+    \item \textbf{\textcolor{red}{Calculer le coefficient de corrélation linéaire de \( y \) et \( x \).}}\\
+    La valeur trouvée justifie-t-elle la recherche d’un ajustement linéaire ?
+
+    \item \textbf{\textcolor{red}{Déterminer l’équation de la droite de régression de \( y \) en \( x \).}}
+
+    \item \textbf{\textcolor{red}{Les frais de conception du produit se sont élevés à 28 millions de francs. Le prix de fabrication de chaque produit est de 25 000 francs.}}
+
+    \begin{enumerate}
+        \item \textbf{Déduire de la précédente question que le bénéfice \( z \) en fonction du prix de vente \( x \) est donné par l’égalité :}
+        \[
+        z = -5{,}95x^2 + 1426{,}25x - 59937{,}5
+        \]
+        où \( x \) et \( z \) sont exprimés en milliers de francs.
+
+        \item \textbf{Déterminer le prix de vente \( x \) permettant de réaliser un bénéfice maximum et calculer ce bénéfice.}
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.4cm}
+\textcolor{red}{\textbf{NB}} : Prendre 2 chiffres après la virgule sans arrondir.
+
+\vspace{0.2cm}
+\textcolor{red}{\textbf{Rappel}} : Bénéfice = Prix de vente – prix de revient.
+\section*{\underline{Exercice 2}(04,5 points)(BAC 2008)}
+
+Dans cet exercice, le détail des calculs n’est pas exigé. On donnera les formules utilisées pour répondre aux questions. Les résultats seront donnés à \( 10^{-1} \) près.\\
+Le tableau ci-dessous donne le poids moyen (\( y \)) d’un enfant en fonction de son âge (\( x \)).
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\( x \) (années) & 0 & 1 & 2 & 4 & 7 & 11 & 12 \\
+\hline
+\( y \) (kg) & 3{,}5 & 6{,}5 & 9{,}5 & 14 & 21 & 32{,}5 & 34 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item Représenter le nuage de points de cette série statistique dans le plan muni du repère orthonormal.
+
+    \hspace{0.5cm} \textit{Unité graphique : en abscisse 1 cm pour 1 année et en ordonnée 1 cm pour 2 kg.} \hfill \textbf{(01 point)}
+
+    \item Déterminer les coordonnées du point moyen \( G \) puis placer \( G \). \hfill \textbf{(0,5 point)}
+
+    \item
+    \begin{enumerate}
+        \item Déterminer le coefficient de corrélation linéaire \( r \). \hfill \textbf{(0,5 point)}
+        \item Interpréter votre résultat. \hfill \textbf{(0,5 point)}
+    \end{enumerate}
+
+    \item Donner une équation de la droite de régression (D) de \( y \) en \( x \).\\
+    \hspace*{0.5cm} Tracer (D). \hfill \textbf{(0,5 point + 0,5 point)}
+
+    \item
+    \begin{enumerate}
+        \item Déterminer graphiquement, à partir de quel âge le poids sera supérieur à 15 kg. Expliciter votre raisonnement. \hfill \textbf{(0,5 point)}
+        \item Retrouver ce résultat par le calcul. \hfill \textbf{(0,5 point)}
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 3}(03 points)(BAC 2009)}
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+    \item (\(X, Y\)) est une série statistique double. Soit \( (D_1) \) la droite de régression de \( Y \) en \( X \).\\
+
+    Soit \( (D_2) \) la droite de régression de \( X \) en \( Y \). On suppose que :
+    \[
+    (D_1) : y = a x + b \quad \text{et} \quad (D_2) : x = a' y + b'
+    \]
+    
+    Soit \( r \) le coefficient de corrélation linéaire entre \( X \) et \( Y \).\\
+    
+    Établir que \( r^2 = aa' \). \hfill \textbf{(01 point)}
+    
+    \item Dans une entreprise, une étude simultanée portant sur deux caractères \( X \) et \( Y \) donne les résultats suivants :
+    \begin{itemize}
+        \item la droite de régression de \( Y \) en \( X \) a pour équation : \( 2{,}4x - y = 0 \)
+        \item la droite de régression de \( X \) en \( Y \) a pour équation : \( 3{,}5y - 9x + 24 = 0 \)
+    \end{itemize}
+
+    \begin{enumerate}
+        \item Calculer le coefficient de corrélation linéaire entre \( X \) et \( Y \), sachant que leur covariance est positive. \hfill \textbf{(0,5 point)}
+        
+        \item Calculer la moyenne de chacun des caractères \( X \) et \( Y \). \hfill \textbf{(0,75 + 0,75 point)}
+    \end{enumerate}
+\end{enumerate}
+\section*{\underline{Exercice 4}(03 points)(BAC 2010)}
+Une étude sur le nombre d’années d’exercice \( X \), des ouvriers d’une entreprise et leur salaire mensuel \( Y \) en milliers de francs, a donné les résultats indiqués dans le tableau ci-dessous avec des données manquantes désignées par \( a \) et \( b \).
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\diagbox[width=4em]{\( Y \)}{\( X \)} & 2 & 6 & 10 & 14 & 18 & 22 \\
+\hline
+75 & \( a \) & 5 & 0 & 0 & 0 & 0 \\
+\hline
+125 & 0 & 7 & 1 & 0 & 2 & 0 \\
+\hline
+175 & 2 & 0 & 9 & 1 & 5 & 4 \\
+\hline
+225 & 0 & 1 & 0 & 3 & \( b \) & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item Déterminer \( a \) et \( b \) pour que la moyenne de la série marginale de \( X \) soit égale à \( \frac{596}{59} \) et celle de la série marginale de \( Y \) soit \( \frac{8450}{59} \). \hfill \textbf{(0,25 + 0,25 pt)}
+    
+    \item Dans la suite, on suppose que \( a = 40 \) et \( b = 20 \). À chaque valeur \( x_i \) de \( X \), on associe la moyenne \( m_i \) de la série conditionnelle : \( Y/X = x_i \).\\
+    On obtient ainsi la série double \( (X, M) \) définie par le tableau ci-dessous. Les calculs se feront à deux chiffres après la virgule.
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \( X \) & 2 & 6 & 10 & 14 & 18 & 22 \\
+    \hline
+    \( M \) & 80 & 113 & 170 & 189 & 199 & 185 \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \begin{enumerate}
+        \item Calculer le coefficient de corrélation de \( X \) et \( M \) puis interpréter le résultat. \hfill \textbf{(1,75 pt)}
+        
+        \item Déterminer l’équation de la droite de régression de \( M \) en \( X \). \hfill \textbf{(0,5 pt)}
+        
+        \item Quelle serait le salaire moyen d’un ouvrier de l’entreprise si son ancienneté était 30 ans, si cette tendance se poursuit. \hfill \textbf{(0,25 pt)}
+    \end{enumerate}
+\end{enumerate}
+\section*{\underline{Exercice 5}(05 points)(BAC 2013)}
+\noindent
+Le tableau statistique ci-dessous donne le degré de salinité \( Y_i \) du Lac Rose pendant le \( i^\text{ème} \) mois de pluie, noté \( X_i \).
+
+\vspace{0.4cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\( X_i \) & 0 & 1 & 2 & 3 & 4 \\
+\hline
+\( Y_i \) & 4{,}26 & 3{,}4 & 2{,}01 & 1{,}16 & 1{,}01 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+Dans ce qui suit il faudra rappeler chaque formule le cas échéant, avant de faire les calculs. On donnera les valeurs approchées par excès des résultats à \( 10^{-3} \) près.
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Déterminer le coefficient de corrélation linéaire de cette série \((X, Y)\) et interpréter le résultat.
+        \hfill \textbf{(01,5 point = 0,25pt + 1,25pt)}
+
+        \item Quelle est l’équation de la droite de régression de \( Y \) en \( X \). 
+        \hfill \textbf{(0,5 pt = 0,25pt + 0,25pt)}
+
+        \item Cette équation permet-elle d’estimer le degré de salinité du lac au \(6^\text{ième}\) mois de pluie, le cas échéant ?\\
+        Justifier la réponse.
+        \hfill \textbf{(0,25pt)}
+    \end{enumerate}
+
+    \item On pose \( Z = \ln(Y - 1) \).
+    \begin{enumerate}
+        \item Donner le tableau correspondant à la série \((X, Z)\). Les résultats seront arrondis au millième près.
+        \hfill \textbf{(0,5 pt)}
+
+        \item Donner le coefficient de corrélation linéaire de cette série \((X, Z)\).
+        \hfill \textbf{(01,5 point = 0,25pt + 1,25pt)}
+
+        \item Donner l’équation de la droite de régression de \( Z \) en \( X \), puis exprimer \( Y \) en fonction de \( X \).
+        \hfill \textbf{(0,5 pt = 0,25pt + 0,25pt)}
+
+        \item Utiliser cette équation pour répondre à la question 1(c).
+        \hfill \textbf{(0,25pt)}
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\underline{Exercice 6}(02,5 points)(BAC 2015)}
+\vspace{0.3cm}
+
+Au Sénégal, une entreprise veut vérifier l’efficacité de son service de publicité. Elle a relevé chaque mois durant une période de 6 mois les sommes \( X \) consacrées à la publicité et le chiffre d’affaire constaté \( Y \) (en milliards de FCFA).\\
+
+On donne le tableau ci-dessous :
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Rang du mois & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+\( X \) & 1{,}2 & 0{,}5 & 1 & 1 & 1{,}5 & 1{,}8 \\
+\hline
+\( Y \) & 19 & 49 & 100 & 125 & 148 & 181 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.4cm}
+
+Les résultats seront donnés au centième près.\\
+Le détail des calculs n’est pas indispensable. On précisera les formules utilisées.
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+    \item Calculer le coefficient de corrélation linéaire de \( X \) et \( Y \). \hfill \textbf{(01 pt)}
+
+    \item 
+    \begin{enumerate}
+        \item Déterminer l’équation de la droite de régression de \( Y \) en \( X \). \hfill \textbf{(01 pt)}
+
+        \item Déterminer la somme qu’il faut investir en publicité si l’on désire avoir un chiffre d’affaire de 300 milliards si cette tendance se poursuit. \hfill \textbf{(0,5 pt)}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

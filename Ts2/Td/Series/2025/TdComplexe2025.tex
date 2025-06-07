@@ -1,0 +1,493 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.6}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2024-2025}\\
+Date : 03/01/2025\\
+Classe : Terminale S2\\
+Professeur : M. BA
+\end{minipage}
+\vspace{1cm}
+\begin{center}
+\textbf{\textcolor{red}{Nombres Complexes}}
+\end{center}
+\vspace{1cm}
+\section*{\textcolor{black}{Exercice 1 :}}
+\begin{enumerate}
+    \item Déterminer le module et un argument des nombres complexes suivants :
+    \begin{enumerate}
+        \item $2i$ ;
+        \item $\sqrt{3} + 3i$ ;
+        \item $\sqrt{6} + i\sqrt{2}$ ;
+        \item $5$ ;
+        \item $\left(\frac{1}{2}-i\frac{\sqrt{3}}{2}\right)^3$ ;
+        \item $\left(\frac{1}{2}+i\frac{\sqrt{3}}{2}\right)\left(-\frac{1}{2}+i\frac{\sqrt{3}}{2}\right)$ ;
+        \item $\frac{-1+i\sqrt{3}}{\sqrt{3} + i}$.
+    \end{enumerate}
+    \item Écrire sous forme trigonométrique les nombres complexes suivants :
+    \begin{enumerate}
+        \item $(2+2i)(1-i)$ ;
+        \item $\frac{-1+i\sqrt{3}}{1+i}$ ;
+        \item $\frac{\sqrt{2}}{1+i}$ ;
+        \item $\frac{-2i}{1+i\sqrt{3}}$ ;
+        \item $(-1-i)^4$ ;
+        \item $\left(\frac{1+i\sqrt{3}}{1-i}\right)^2$.
+    \end{enumerate}
+    \item Soit $z_1 = 1+i$ et $z_2 = 1+i\sqrt{3}$.
+    \begin{enumerate}
+        \item Déterminer le module et un argument de $z_1$ et $z_2$.
+        \item Écrire sous forme algébrique et sous forme trigonométrique le produit $z_1z_2$.
+        \item En déduire les valeurs de $\cos\frac{7\pi}{12}$ et $\sin\frac{7\pi}{12}$.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 2 :}}
+\begin{enumerate}
+    \item Mettre sous forme alg\'ebrique les nombres complexes suivants :
+    \begin{enumerate}
+        \item $z_1 = (1 - i)(5 + i)$
+        \item $z_2 = (2 - 3i)^2$
+        \item $z_3 = \frac{1}{3 + 2i}$
+        \item $z_4 = \frac{4 - 5i}{3 + 2i}$
+    \end{enumerate}
+    \item \`Ecrire en fonction de $\overline{z}$ les conjugu\'es des nombres complexes suivants :
+    \begin{enumerate}
+        \item $z_1 = 1 + iz$
+        \item $z_2 = i(z + 3)$
+        \item $z_3 = \frac{1 - z}{1 + iz}$
+        \item $z_4 = \frac{1 + 3z}{i + 2z}$
+    \end{enumerate}
+    \item D\'eterminer un argument de $z$ dans chacun des cas suivants :
+    \begin{enumerate}
+        \item $z = -1 + i$
+        \item $z = \sqrt{6} + i\sqrt{6}$
+        \item $z = \frac{1}{2} - i\frac{\sqrt{3}}{2}$
+        \item $z = (2 + 2i)(1 - i)$
+        \item $z = \frac{-1 + i\sqrt{3}}{1 + i}$
+        \item $z = (-1 - i)^4$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 3 :}}
+Le plan est muni d'un rep\`ere orthonorm\'e direct.
+\begin{enumerate}
+    \item D\'eterminer puis construire l'ensemble des points $M$ du plan d'affixe $z$ v\'erifiant :
+    \begin{enumerate}
+        \item $|z - 3| = |z + i|$
+        \item $|iz + 3| = |z + 4 + i|$
+        \item $|\overline{z} + \frac{1}{3}i| = 3$
+        \item $|z - \overline{z} + i| = 2$
+        \item $|\overline{z} - 2 + i| = |z + 5 - 2i|$
+        \item $|\overline{z} - 2 + i| = |z + 5 - 2i|$
+    \end{enumerate}
+    \item Pour tout nombre complexe $z \neq -1 + 2i$, on pose $Z = \frac{z - 2 + 4i}{z + 1 - 2i}$.
+
+    Déterminer l'ensemble des points $M$ du plan tels que :
+
+\begin{enumerate}
+        \item $|Z| = 1$
+        \item $|Z| = 2$
+        \item $Z$ soit un réel.
+        \item $Z$ soit un imaginaire pur.
+\end{enumerate}
+    \item Pour tout complexe $z \neq i$, on pose
+    \(
+    U = \frac{z + i}{z - i}.
+    \)
+    
+    Déterminer l’ensemble des points $M$ d’affixe $z$ tels que :
+    \begin{enumerate}
+        \item $U \in \mathbb{R}^*_{-}$
+        \item $U \in \mathbb{R}^*_{+}$
+        \item $U \in i\mathbb{R}$
+    \end{enumerate}
+\end{enumerate}
+\section*{\textcolor{green}{Correction Exercice 3 :}}
+Pour tout complexe $z \neq i$, on pose
+    \(
+    U = \frac{z + i}{z - i}.
+    \)
+    
+
+\begin{enumerate}
+\item Déterminons l’ensemble des points $M$ d’affixe $z$ tels que :
+
+Nous cherchons l’ensemble des points \( M \) d’affixe \( z = x + iy \) tels que :
+
+\[
+U = \frac{x^2 + y^2 - 1 + 2ix}{x^2 + (y-1)^2}
+\]
+    \begin{enumerate}
+        \item $U \in \mathbb{R}^*_{-}$
+
+$
+\begin{aligned}
+U \in \mathbb{R}^*_{-} &\implies  \operatorname{Im}(U) < 0\\
+											 &\implies \frac{2x}{x^2 + (y-1)^2}
+\end{aligned}
+$
+
+Le dénominateur \( x^2 + (y-1)^2 \) étant toujours strictement positif sauf en \( (0,1) \), le signe de \( \operatorname{Im}(U) \) dépend uniquement du numérateur \( 2x \).
+
+Ainsi, on doit avoir : $2x < 0 \quad \Longrightarrow \quad x < 0$
+
+\textbf{Conclusion}
+
+L’ensemble des points \( M(x, y) \) tels que \( \operatorname{Im}(U) < 0 \) est donné par :
+
+\[
+\{ (x, y) \in \mathbb{R}^2 \mid x < 0 \}.
+\]
+
+Autrement dit, il s’agit du demi-plan strictement à gauche de l’axe des ordonnées \( x = 0 \).
+
+        \item $U \in \mathbb{R}^*_{+}$
+        
+$
+\begin{aligned}
+U \in \mathbb{R}^*_{+} &\implies  \operatorname{Im}(U) > 0\\
+											 &\implies \frac{2x}{x^2 + (y-1)^2}
+\end{aligned}
+$
+
+Le dénominateur \( x^2 + (y-1)^2 \) étant toujours strictement positif sauf en \( (0,1) \), le signe de \( \operatorname{Im}(U) \) dépend uniquement du numérateur \( 2x \).
+
+Ainsi, on doit avoir : $2x > 0 \quad \Longrightarrow \quad x > 0$
+
+\textbf{Conclusion}
+
+L’ensemble des points \( M(x, y) \) tels que \( \operatorname{Im}(U) > 0 \) est donné par :
+
+\[
+\{ (x, y) \in \mathbb{R}^2 \mid x > 0 \}.
+\]
+
+Autrement dit, il s’agit du demi-plan strictement à droite de l’axe des ordonnées \( x = 0 \).
+        \item $U \in i\mathbb{R}$
+        
+$
+\begin{aligned}
+U \in i\mathbb{R} &\implies  \operatorname{Re}(U) = 0\\
+											 &\implies \frac{x^2 + y^2 - 1}{x^2 + (y-1)^2}
+\end{aligned}
+$
+
+\textbf{Conclusion}
+
+L’ensemble des points \( M(x, y) \) tels que \( \operatorname{Re}(U) = 0 \) est donné par :
+
+\[
+\{ (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1 \}.
+\]
+
+Autrement dit, il s’agit du cercle de centre \( (0,0) \) et de rayon \( 1 \). 
+    \end{enumerate}
+\end{enumerate}
+\section*{\textcolor{black}{Exercice 4 :}}
+Soit le nombre complexe 
+\(
+z = \frac{2(-1 + i\sqrt{3})}{1 + i\sqrt{3}}.
+\)
+
+\begin{enumerate}
+    \item Déterminer $Re(z)$ et $Im(z)$.
+    \item Déterminer le module et un argument de $z$.
+    \item En déduire le module et un argument de :
+    \(
+    \frac{1}{z}, \quad \frac{i}{z} \quad \text{et} \quad \frac{1 + i}{z}.
+    \)
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 5 :}}
+\begin{enumerate}
+    \item On pose $z_1 = \frac{\sqrt{6} + i\sqrt{2}}{2}$ ; $z_2 = 1 - i$ et $z_3 = \frac{z_1}{z_2}$.
+    \begin{enumerate}
+        \item Déterminer un argument de $z_1$, $z_2$ et $z_3$.
+        \item En déduire les valeurs exactes de $\cos\left(\frac{5\pi}{12}\right)$ et $\sin\left(\frac{5\pi}{12}\right)$.
+    \end{enumerate}
+    \item On considère les nombres complexes : $a = 1 - i$, $b = 1 - i\sqrt{3}$ et $Z = \frac{a^5}{b^4}$.
+    \begin{enumerate}
+        \item Déterminer une écriture trigonométrique de $Z$.
+        \item Déterminer une écriture cartésienne de $Z$. \\
+        En déduire les valeurs de $\cos\left(\frac{\pi}{12}\right)$ et de $\sin\left(\frac{\pi}{12}\right)$.
+        \item Calculer $Z^{12}$ et $Z^{2024}$.
+        \item Pour quelles valeurs de l’entier naturel $n$ :
+        
+        $Z^{n}$ est un réel.\\
+        $Z^{n}$ est un imaginaire pur.\\
+    \end{enumerate}
+\end{enumerate}
+\section*{\textcolor{black}{Exercice 6 :}}
+On donne $u = \sqrt{2 - \sqrt{2}} + i \sqrt{2 + \sqrt{2}}.$
+
+\begin{enumerate}
+    \item Calculer $u^2$ et $u^4$ sous forme algébrique.
+    \item En déduire le module et un argument de $u$.
+    \item Soit $M$ le point d’affixe $z \in \mathbb{C}$.\\ Déterminer l’ensemble des points $M$ tels que $|uz| = 8$.
+\end{enumerate}
+\section*{\textcolor{black}{Exercice 7 :}}
+
+Soit dans le plan complexe les points $A$, $B$ et $C$ d’affixes respectives $a$, $b$ et $c$ avec $a = -1 - i$, $b = 2 + i$ et $c = 4i$.
+
+\begin{enumerate}
+    \item Représenter les points $A$, $B$ et $C$.
+    \item Déterminer la forme trigonométrique de $\frac{a - b}{c - b}$.\\  
+    En déduire que le triangle $ABC$ est rectangle isocèle.
+    \item Déterminer l’affixe du point $D$ tel que $ABCD$ soit un carré.
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 8 :}}
+
+\begin{enumerate}
+    \item Résoudre dans $\mathbb{C}$ les équations suivantes :
+    \begin{enumerate}
+        \item $\overline{z} = i - z$
+        \item $2z + \overline{z} = i - z$
+        \item $2z^2 - 6z + 5 = 0$
+        \item $z^2 + z + 1 = 0$
+        \item $z^2 - (1 + 2i)z + i - 1 = 0$
+        \item $z² - \sqrt{3}z - i = 0$
+        \item $z^2 - (3 + 4i)z - 1 + 5i = 0$
+        \item $4z^2 - 2z + 1 = 0$
+    \end{enumerate}
+
+    \item Résoudre dans $\mathbb{C}$ chacune des équations suivantes sachant qu’elles admettent une solution réelle :
+    \begin{enumerate}
+        \item $z^3 - (1 + i)z^2 - 2(1 + i)z + 8 = 0$
+        \item $iz^3 + (3 - 5i)z^2 + (16 - 2i)z + 30i = 0$
+    \end{enumerate}
+
+    \item Résoudre chacune des équations suivantes sachant qu’elles admettent une solution imaginaire pure :
+    \begin{enumerate}
+        \item $z^3 - (3 + 4i)z^2 - 6(3 - 2i)z + 72i = 0$
+        \item $z^3 + (5i - 1)z^2 - (4i + 7)z + 3 - 3i = 0$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 9 :}}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Résoudre dans $\mathbb{C}$ l'équation 
+        \[
+        Z^2 - 6Z + 13 = 0.
+        \]
+
+        \item En déduire les solutions de l'équation :
+        \[
+        \left( \frac{z - 3i}{z + 2i} \right)^2 - 6 \left( \frac{z - 3i}{z + 2i} \right) + 13 = 0.
+        \]
+    \end{enumerate}
+
+    \item Soit $\theta \in [0; \pi]$, donner sous forme trigonométrique les solutions dans $\mathbb{C}$ des équations suivantes :
+    \begin{enumerate}
+        \item $Z^2 + 2(1 - \cos \theta)Z + 2(1 - \cos \theta) = 0.$
+        \item $Z^2 - (2^{\theta+1} \cos \theta)Z + 2^{2\theta} = 0.$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 10 :}}
+
+\begin{enumerate}
+    \item Résoudre dans $\mathbb{C}$, $z^3 = 1$.
+
+    \item
+    \begin{enumerate}
+        \item Développer $(\sqrt{2} - i\sqrt{2})^3$.
+
+        \item Soit l'équation $(E) : z^3 = 4\sqrt{2}(-1 - i)$.
+
+        En posant $u = \frac{z}{\sqrt{2} - i\sqrt{2}}$, déterminer sous forme algébrique puis sous forme trigonométrique les racines de l'équation $(E)$.
+    \end{enumerate}
+
+    \item En déduire les valeurs exactes de $\cos\frac{5\pi}{12}$ et $\sin\frac{5\pi}{12}$.
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 11 :}}
+
+\begin{enumerate}
+    \item Montrer que $(1 + i)^6 = -8i$.
+
+    \item On considère l'équation $(E) : z^2 = -8i$.
+    \begin{enumerate}
+        \item Déduire de la question 1 une résolution de l'équation $(E)$.
+        \item Donner sous forme algébrique les solutions de $(E)$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Déduire également de 1 une solution notée $t$ de l'équation $(E') : z^3 = -8i$.
+        \item On pose $j = e^{i\left(\frac{2\pi}{3}\right)}$. \\ 
+        Montrer que $jt$ et $j^2t$ sont aussi des solutions de $(E')$.
+    \end{enumerate}
+\end{enumerate}
+\section*{\textcolor{black}{Exercice 12 :}}
+
+\begin{enumerate}
+    \item Résoudre dans l’ensemble $\mathbb{C}$ des nombres complexes les équations suivantes :
+    \begin{enumerate}
+        \item $z^2 - 2z + 5 = 0$
+        \item $z^2 - 2(1 + \sqrt{3})z + 5 + 2\sqrt{3} = 0$
+    \end{enumerate}
+
+    \item On considère dans le plan complexe rapporté à un repère orthonormal $(O; \vec{u}, \vec{v})$ d’unité graphique $2\ \text{cm}$, les points $A$, $B$, $C$ et $D$ d’affixes respectives $1 + 2i$, $1 + \sqrt{3} + i$,\\ $1 + \sqrt{3} - i$ et $1 - 2i$.
+    \begin{enumerate}
+        
+        \item Placer les points $A$, $B$, $C$ et $D$ et préciser la nature du quadrilatère $ABCD$.
+
+        \item Vérifier que 
+        \[
+        \frac{Z_D - Z_B}{Z_A - Z_B} = i\sqrt{3}.
+        \]
+        Que peut-on en déduire pour les droites $(AB)$ et $(BD)$ ?
+
+        \item Prouver que les points $A$, $B$, $C$ et $D$ appartiennent à un même cercle $\Gamma$ dont on précisera le rayon et le centre. Tracer $\Gamma$.
+    \end{enumerate}
+
+    \item On considère l’équation :
+    \[
+    z^2 - 2(1 + 2\cos\theta)z + 5 + 4\cos\theta = 0,
+    \]
+    où $\theta$ est un nombre réel quelconque.
+    \begin{enumerate}
+        \item Résoudre l’équation dans $\mathbb{C}$.
+
+        \item Montrer que les points ayant pour affixe les solutions de l’équation appartiennent à $\Gamma$.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 13 :}}
+
+On considère l’équation 
+\[
+(E) : z^3 + 9iz^2 + 2(6i - 11)z - 3(4i + 12) = 0.
+\]
+
+\begin{enumerate}
+    \item Démontrer que l’équation $(E)$ admet une solution réelle $z_1$ et une solution imaginaire pure $z_2$.
+
+    \item Résoudre dans $\mathbb{C}$ l’équation $(E)$.
+
+    \item Démontrer que les points images des solutions de $(E)$ sont alignés.
+\end{enumerate}
+
+\section*{\textcolor{black}{Exercice 14 :}}
+
+Soit la suite $(z_n)$ définie par :
+\[
+\begin{cases}
+z_0 = i \\
+z_{n+1} = (1 + i)z_n + 2i
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item Calculer $z_1$ et $z_2$.
+
+    \item On considère la suite $(U_n)$ définie par $U_n = z_n + 2$.
+    \begin{enumerate}
+        \item Montrer que $U_n = (2 + i)(1 + i)^n$.
+        \item Exprimer $z_n$ en fonction de $n$.
+    \end{enumerate}
+
+    \item Soit $M_{n+1}$, $M_n$, $A$ et $B$ les points d’affixes respectives : $z_{n+1}$, $z_n$, $i$ et $-\frac{1}{2} - \frac{1}{2}i$.
+
+    \begin{enumerate}
+        \item Démontrer que $\frac{AM_{n+1}}{BM_n} = \sqrt{2}$.
+        \item Démontrer que 
+        \[
+        (\overrightarrow{BM_n}; \overrightarrow{AM_{n+1}}) = \frac{\pi}{4} \, [2\pi].
+        \]
+    \end{enumerate}
+\end{enumerate}
+\section*{\textcolor{black}{Exercice 15 :}}
+
+On considère la suite $(z_n)$ de nombres complexes telle que $z_0 = 0$, $z_1 = i$ et pour tout entier $n \geq 2$ :
+\[
+z_n - z_{n-1} = i(z_{n-1} - z_{n-2}) \tag{1}
+\]
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item On pose $v_n = z_n - z_{n-1}$ pour tout entier $n \geq 1$. \\
+        Exprimer $v_n$ en fonction de $n$.
+
+        \item En déduire que $z_n = \frac{1 - i}{2}(i^n - 1)$.
+
+        \item Démontrer que la suite $(z_n)$ est périodique.
+    \end{enumerate}
+
+    \item On note $M_n$ l’image dans le plan du complexe $z_n$.
+    \begin{enumerate}
+        \item Marquer les points $M_0$, $M_1$, $M_2$ et $M_3$.
+
+        \item Que peut-on dire des points $M_0$, $M_1$, $M_2$ et $M_3$ ?
+
+        \item Interpréter en module et argument la relation (1), puis déterminer la nature du polygone $M_nM_{n+1}M_{n+2}M_{n+3}$ pour tout entier naturel $n$.
+    \end{enumerate}
+\end{enumerate}
+\section*{\textcolor{black}{Exercice 16 BAC 2023:(04 pts)}}
+
+Le plan complexe est muni d’un repère orthonormé direct $(O; \vec{u}, \vec{v})$. Soit le nombre complexe $a$ défini par 
+\[
+a = \sqrt{2 - \sqrt{3}} - i\sqrt{2 + \sqrt{3}}.
+\]
+
+\begin{enumerate}
+    \item Montrer que $a^2 = -2\sqrt{3} - 2i$, puis en déduire le module de $a$. \hfill \textbf{0,5 + 0,5 pt}
+
+    \item Écrire $a^2$ sous forme trigonométrique puis vérifier qu’une des mesures de l’argument de $a$ est $\frac{19\pi}{12}$. \hfill \textbf{0,5 + 0,5 pt}
+
+    \item En déduire les valeurs exactes de $\cos\left(\frac{7\pi}{12}\right)$ et $\sin\left(\frac{7\pi}{12}\right)$, puis de $\cos\left(\frac{\pi}{12}\right)$ et $\sin\left(\frac{\pi}{12}\right)$. \hfill \textbf{01 pt}
+
+    \item Représenter sur le même graphique les points images de $a$, $-a$ et $a^2$. \hfill \textbf{01 pt}
+\end{enumerate}
+
+\end{document}
