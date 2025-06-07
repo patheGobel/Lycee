@@ -1,0 +1,578 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{multicol}
+\usepackage{fancybox}
+\usepackage{relsize}
+\usepackage{setspace}
+\usepackage{graphicx}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.6}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2024-2025}\\
+Date : 27	/02/2025\\
+Classe : Terminale S2\\
+Professeur : M. BA
+\end{minipage}
+\vspace{1cm}
+\begin{center}
+\textbf{\textcolor{red}{Généralités sur les fonctions}}
+\end{center}
+\vspace{1cm}
+
+\fbox{\textbf{Exercice 1}} \quad \textbf{Déterminer le domaine de définition des fonctions suivantes :}
+
+\bigskip
+
+\noindent
+\begin{multicols}{3}
+\smaller
+\setstretch{2.5} % Augmente l'espacement entre les lignes
+\begin{enumerate}
+    \item $f(x) = \dfrac{2x^2 - 5x + 15}{8x^2 - 5x - 3}$
+    \item $f(x) = \dfrac{4x^2 - 5x + 15}{x^3 + 6x}$
+    \item $f(x) = \sqrt{x^2 - 3x - 18}$
+    \item $f(x) = \sqrt{4x - x^3}$
+    \item $f(x) = \sqrt{\dfrac{x^2 + x - 6}{-x^2 + x - 1}}$
+    \item $f(x) = \dfrac{\sqrt{-4x+1}}{x+2}$
+    \item $f(x) = \dfrac{x^2 + 5x - 7}{\sqrt{2x^2 + 3x - 2}}$
+    \item $f(x) = \dfrac{\sqrt{x^2 - x}}{(x-2)(x+3)}$
+    \item $f(x) = \sqrt{\dfrac{(1-x)(2+x)}{x^2 + x}}$
+    \item $f(x) = \sqrt{|x-1|} - 2$
+    \item $f(x) = \dfrac{\sqrt{x-1}}{|2x-5| -2}$
+\end{enumerate}
+
+\columnbreak
+
+\begin{enumerate}
+    \setcounter{enumi}{11}
+    \item $f(x) = \sqrt{|1 - 3x| - x + 2}$
+    \item $f(x) = \dfrac{4x^2 -1}{6x^2 - |13x - 5|}$
+    \item $f(x) = \dfrac{\sqrt{2-3x+1}}{|x| - 1}$
+    \item $f(x) = \dfrac{x^2 + 2x}{\sqrt{x+3} - \sqrt{2x-1}}$
+    \item $f(x) = \dfrac{1}{|x| + x}$
+    \item $f(x) = \sqrt{3 - |2x + 5|}$
+    \item $f(x) = \sqrt{2x + 1} - \sqrt{7 - 6x}$
+    \item $f(x) = \dfrac{x^2 + 1}{x - E(x)}$
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{x}{x^2 - 1}, & \text{si } x \leq 0 \\
+            f(x) = \sqrt{x - 1}, & \text{si } x > 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \sqrt{x^2 - 2x} + x, & \text{si } x > 0 \\
+            f(x) = \dfrac{x^2}{x+1}, & \text{si } x < 0
+        \end{array}
+    \right.$
+\end{enumerate}
+
+\columnbreak
+
+\begin{enumerate}
+    \setcounter{enumi}{21}
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = |x + 1| - \dfrac{2}{x+2}, & \text{si } x < 0 \\
+            f(x) = x^2 \sqrt{4 - x}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = x \sqrt{\left| \dfrac{x+1}{x} \right|}, & \text{si } x < 0 \\
+            f(x) = \dfrac{x^3 - x^2}{x^2 + 1}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = x\sqrt{-x} + 1, & \text{si } x \leq 0 \\
+            f(x) = \dfrac{1 - x}{1 + x^3}, & \text{si } x > 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{x(x-2)}{x-1}, & \text{si } x < 0 \\
+            f(x) = x + \sqrt{x^2 - 4}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{3}{|x+1| - 2}, & \text{si } x \leq 1 \\
+            f(x) = \sqrt{x - 3}, & \text{si } x > 1
+        \end{array}
+    \right.$
+\end{enumerate}
+\end{multicols}
+
+\fbox{\textbf{Exercice 2}} \quad \textbf{Dans chacun des cas suivants, dites si $f$ est une application}
+
+\bigskip
+
+\noindent
+\begin{multicols}{3}
+\noindent
+\renewcommand{\arraystretch}{1.3} % Augmente l'espacement vertical entre les lignes
+\begin{tabular}{rcl}
+    $f : \mathbb{R}$ & $\to$ & $\mathbb{R}$ \\
+    $x$ & $\mapsto$ & $\dfrac{x^2 - 1}{x^2 + 1}$
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{rcl}
+    $f : \mathbb{R}$ & $\to$ & $\mathbb{R}$ \\
+    $x$ & $\mapsto$ & $\sqrt{x^2 - 1} - 1$
+\end{tabular}
+
+\columnbreak
+
+\begin{tabular}{rcl}
+    $f : \mathbb{R}$ & $\to$ & $\mathbb{R}$ \\
+    $x$ & $\mapsto$ & $\dfrac{x}{\sqrt{x^2+1}}$
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{rcl}
+    $f : [0; +\infty[$ & $\to$ & $\mathbb{R}$ \\
+    $x$ & $\mapsto$ & $\dfrac{x}{\sqrt{x^2+1}}$
+\end{tabular}
+
+\columnbreak
+
+\begin{tabular}{rcl}
+    $f : \mathbb{R}$ & $\to$ & $\mathbb{R}$ \\
+    $x$ & $\mapsto$ & $x - \sqrt{x}$
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{rcl}
+    $f : [2; +\infty[$ & $\to$ & $\mathbb{R}$ \\
+    $x$ & $\mapsto$ & $\sqrt{x - 2}$
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{rcl}
+    $f : \mathbb{R}$ & $\to$ & $\mathbb{Z}$ \\
+    $x$ & $\mapsto$ & $E(x)$
+\end{tabular}
+
+\end{multicols}
+
+\fbox{\textbf{Exercice 3}} \quad \textbf{Égalité de deux fonctions}
+
+\begin{enumerate}
+    \item  Soit les fonctions \( f(x) = \dfrac{x^3 - x^2 + 2x - 2}{x^2 + 2} \) et \( g(x) = x - 1 \).
+
+\begin{enumerate}
+    \item Vérifier que :
+\( (x^2 + 2)(x - 1) = x^3 - x^2 + 2x - 2 \)
+    \item Montrer que \( f \) et \( g \) sont égales.
+\end{enumerate}
+
+\item Soient \( f(x) = 2x + 1 + \dfrac{20}{x - 1} \) et
+\( g(x) = \dfrac{2x^2 - x + 1}{x - 1}. \)
+
+\begin{enumerate}
+\item Montrer que les fonctions \( f \) et \( g \) sont égales.
+\item Dans chacun des cas suivants, déterminer les réels \( a \) et \( b \) pour que les fonctions \( f \) et \( g \) soient égales.
+\( f(x) = -2x^2 - 12x - 16 \) et \( g(x) = -2(x - a)^2 + b \).
+
+\( f(x) = \dfrac{x + 7}{x^2 + 2x - 3} \) et \( g(x) = \dfrac{a}{x - 1} + \dfrac{b}{x + 3} \).
+\end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{Exercice 4}} \quad Soit \( f \) la fonction définie de \( \mathbb{R} \) vers \( \mathbb{R} \) par :  
+\( f(x) = |x - 1| + 2 |3 - x| \).  
+
+Déterminer l’application affine \( g \) qui a même restriction que \( f \) sur l’intervalle \([1;3]\).
+
+\bigskip
+
+\fbox{\textbf{Exercice 5}} \quad Soient \( f \) et \( g \) des fonctions définies par  
+\( f(x) = \dfrac{x - 1}{x - 2} \), \( g(x) = \dfrac{2x - 1}{x - 1} \).
+
+\begin{enumerate}
+    \item Déterminer le domaine de définition et l’expression des fonctions suivantes : \( f + g \), \( fg \), \( \dfrac{f}{g} \) et \( 3f - 2g \).
+    \item Déterminer le domaine de définition de \( f \circ g \). et \( g \circ f \) puis comparer \( f \circ g \) et \( g \circ f \) ; Que peut-on en déduire ?
+\end{enumerate}
+
+\fbox{\textbf{Exercice 6}} \quad \textbf{Composition et décomposition}
+
+\bigskip
+
+\noindent
+\textbf{1.} On considère les fonctions suivantes :  
+\( f(x) = \sqrt{x + 3} \) et \( g(x) = \dfrac{1}{x^2 - 4} \).
+
+\begin{enumerate}
+    \item Déterminer \( D_f \), \( D_g \), \( D_{fog} \) et \( D_{gof} \).
+    \item Calculer \( f \circ g(x) \) et \( g \circ f(x) \).
+\end{enumerate}
+
+\bigskip
+
+\noindent
+\textbf{2.} Trouver deux fonctions \( f \) et \( g \) telles que  
+\( h(x) = (f \circ g)(x) \).
+
+\bigskip
+
+\noindent
+\(
+\begin{array}{ll}
+    \text{a)} \quad h(x) = \sqrt{x^2 + 3x + 1} & \quad
+    \text{d)} \quad h(x) = \dfrac{x^2 + 7}{x^2 - 2} \\
+    \text{b)} \quad h(x) = (3x + 1)^2 & \quad
+    \text{e)} \quad h(x) = (x + 5)^2 + 4 \\
+    \text{c)} \quad h(x) = \dfrac{3}{x^2 - 5x + 6} & \quad
+    \text{f)} \quad h(x) = \dfrac{1}{x - 1}
+\end{array}
+\)
+
+\fbox{\textbf{Exercice 7}} \quad \textbf{Étude de la parité d’une fonction}
+
+\bigskip
+
+Étudier la parité des fonctions suivantes :
+
+\begin{enumerate}
+    \item \( f(x) = 2^x + x^2 - 1 \);
+    \item \( f(x) = x^3 + x \);
+    \item \( f(x) = x^2 - 3|x| + 1 \);
+    \item \( f(x) = \dfrac{|x|}{x^2 + 1} \);
+    \item \( f(x) = \dfrac{x^3}{|x^4 - x^2 + 1|} \);
+    \item \( f(x) = \dfrac{\sqrt{x^2 - 16}}{\sqrt{4 + x^2}} \);
+    \item \( f(x) = \dfrac{\sin x}{2 + \sin^2 x} \);
+    \item \( f(x) = \dfrac{|1 + x| - |1 - x|}{|1 + x| + |1 - x|} \);
+    \item \( f(x) = \dfrac{x + 1}{1 - x^2} \).
+\end{enumerate}
+
+\fbox{\textbf{Exercice 8}}
+
+\bigskip
+
+\textbf{1.} Dans chacun des cas suivants, étudier la périodicité des fonctions numériques et préciser et d’en préciser la période.
+
+\begin{itemize}
+    \item[a)] \( f(x) = \sin x \);
+    \item[b)] \( f(x) = \cos x \);
+    \item[c)] \( f(x) = \dfrac{\sin x}{\cos x} \);
+    \item[d)] \( f(x) = \cos 2x \sin 3x \);
+    \item[e)] \( f(x) = x - E(x) \);
+    \item[f)] \( f(x) = [2x - E(2x)] \sin 3\pi x \);
+    \item[g)] \( f(x) = \dfrac{\cos \pi x}{x - E(x)} \).
+\end{itemize}
+
+\bigskip
+
+\textbf{2.} Soit la fonction numérique \( f \) telle que :
+
+\( f(x + 2) = \dfrac{1 + f(x)}{1 - f(x)}. \)
+
+Calculer \( f(x + 4) \), \( f(x + 6) \), \( f(x + 8) \) en fonction de \( f(x) \).  
+Quelle conclusion peut-on en tirer ?
+
+\fbox{\textbf{Exercice 9}} \quad Étudier le sens de variations de \( f \).
+
+\bigskip
+
+\noindent
+\begin{enumerate}
+    \item \( f(x) = 2x^2 + 3x + 1 \) \quad ; \quad \( f(x) = \sqrt{x^2 - 1} \).
+    \item \( f(x) = \dfrac{2x - 1}{x + 1} \) \quad ; \quad \( f(x) = \sqrt{x^3 + x} \).
+    \item \( f(x) = x^3 - 3x \) \quad ; \quad \( f(x) = \sqrt{x^3 - x} \).
+    \item \( f(x) = |x + 1| - |x - 1| + |2x| \).
+\end{enumerate}
+
+\bigskip
+
+\fbox{\textbf{Exercice 10}} \quad \textbf{Élément de symétrie}
+
+\bigskip
+
+\begin{enumerate}
+    \item  Dans chacun des cas, montrer que \( (C_f) \) admet la droite \( (\Delta) \) pour axe de symétrie.
+
+\begin{enumerate}
+    \item \( f(x) = x^2 + 2x - 3 \) et \( (\Delta) : x = -1 \).
+    \item \( f(x) = -3x^2 + 4x + 1 \) et \( (\Delta) : x = \dfrac{2}{3} \).
+    \item \( f(x) = \dfrac{-2x^2 + 4x - 1}{(x - 1)^2} \) et \( (\Delta) : x = 1 \).
+    \item \( f(x) = \dfrac{x^2 + 4x + 3}{2x^2 + 8x + 9} \) et \( (\Delta) : x = -2 \).
+\end{enumerate}
+
+\item  Dans chacun des cas suivants, montrer que \( (C_f) \) admet le point \( K \) pour centre de symétrie.
+
+\begin{enumerate}
+    \item \( f(x) = \dfrac{x - 4}{x - 2} \) et \( K(2;1) \).
+    \item \( f(x) = -x^3 + 3x + 4 \) et \( K(0;4) \).
+    \item \( f(x) = \dfrac{x^2 - 5x + 7}{x - 2} \) et \( K(2;1) \).
+    \item \( f(x) = \dfrac{x^3 - x^2 - x}{2x^2 - 4 + 1} \) et \( K(1;1) \).
+    \item \( f(x) = \dfrac{1}{x+3} + \dfrac{1}{x+1} \) et \( K(-2;0) \).
+\end{enumerate}
+
+\end{enumerate}
+
+\fbox{\textbf{Exercice 11}}
+
+\bigskip
+
+On considère la fonction \( f \) définie par :  
+\( f(x) = x(1 - x) \) sur \( \mathbb{R} \).
+
+\begin{enumerate}
+    \item Démontrer que \( f(x) \leq \dfrac{1}{4} \) pour tout \( x \in \mathbb{R} \).
+    \item En déduire que la fonction \( f \) admet un maximum en \( x = \dfrac{1}{2} \).
+    \item Démontrer que \( f(x) = \dfrac{1}{4} - \left( x - \dfrac{1}{2} \right)^2 \).
+\end{enumerate}
+
+\fbox{\textbf{Exercice 12}}
+
+\bigskip
+
+Soit l’application \( f \) définie par sa représentation graphique ci-dessous
+
+\bigskip
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{graph1.png} % Remplacez "graph.png" par le nom de votre image
+\end{center}
+
+\bigskip
+
+\begin{enumerate}
+    \item Trouver l’image directe par \( f \) des intervalles suivants : \([ -3; -1 ]\) ; \( ] -1; 4] \) et \(\{ -3; -1 \}\).
+    \item Trouver l’image réciproque par \( f \) des intervalles suivants : \( ]1;3[ \) ; \( ] -\infty; -3] \) et \([ -2; 3 ]\).
+    \item Donner les formules explicites de \( f(x) \).
+    \item Montrer que \( f \) est bijective.
+\end{enumerate}
+
+\fbox{\textbf{Exercice 13}}
+
+\bigskip
+
+Soient les fonctions \( f \) et \( g \) définies respectivement par :
+
+\renewcommand{\arraystretch}{1.3} % Augmente l'espacement vertical entre les lignes
+\begin{tabular}{rcl}
+    $f : \mathbb{R} - \{1\}$ & $\to$ & $\mathbb{R} - \{1\}$ \\
+    $x$ & $\mapsto$ & $\dfrac{x}{x - 1}$
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{rcl}
+    $g : \mathbb{R} - \{1\}$ & $\to$ & $\mathbb{R}^{*}_{+}$ \\
+    $x$ & $\mapsto$ & $3x - 2$
+\end{tabular}
+
+\bigskip
+
+\begin{enumerate}
+    \item Les fonctions \( f \) et \( g \) sont-elles bijectives ?
+    \item Calculer : \( f \circ g(0) \), \( g \circ f(0) \), \( f \circ g(x) \) et \( g \circ f(x) \).
+    \item Trouver \( f([-2; -1]) \) ; \( g([-2;0]) \) ; \( f^{-1}([2;3[) \) et \( f^{-1}(] - \infty; 0[) \).
+    \item Résoudre l’équation \( g(x) = g(x) \).
+    \item Sur quel intervalle \( I \), \( f \) et \( g \) se rencontrent-elles ?
+\end{enumerate}
+
+\fbox{\textbf{Exercice 14}}
+
+\bigskip
+
+La courbe tracée ci-dessous est la représentation graphique d’une fonction \( f \) définie sur \( \mathbb{R} \) par :  
+\[
+f(x) = 3x^2 - x^3.
+\]
+
+\bigskip
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{graph2.png} % Remplacez "graph.png" par le nom de votre image
+\end{center}
+
+\bigskip
+
+\begin{enumerate}
+    \item Dessiner la courbe représentative de la fonction \( g \) définie par : \( g(x) = f(x) - 1 \).
+    
+    \item Soit \( h \) la fonction définie par : \( h(x) = f(x-2) \).
+    \begin{enumerate}
+        \item Dessiner la courbe représentative de la fonction \( h \).
+        \item Donner l’expression de \( h(x) \).
+        \item Établir le tableau de variation de la fonction \( h \).
+    \end{enumerate}
+    
+    \item Soit \( z \) la fonction définie par : \( z(x) = |f(x)| \).
+    \begin{enumerate}
+        \item Donner l’expression de \( z(x) \).
+        \item Établir le tableau de variation de la fonction \( z \).
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{Exercice 15}}
+
+\bigskip
+
+Dans chacun des cas suivants, dire si l’application \( f \) est injective, surjective ou bijective.
+
+\bigskip
+
+\renewcommand{\arraystretch}{1.3} % Augmente l'espacement vertical entre les lignes
+\begin{tabular}{rcl}
+    \( f : \mathbb{R} - \{2\} \) & \( \to \) & \( \mathbb{R} - \{2\} \) \\
+    \( x \) & \( \mapsto \) & \( \dfrac{2x+1}{2x-4} \)
+\end{tabular}
+
+\bigskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{rcl}
+    \( f : [\frac{1}{2}; +\infty[ \) & \( \to \) & \( \mathbb{R} \) \\
+    \( x \) & \( \mapsto \) & \( \sqrt{2x - 1} \)
+\end{tabular}
+
+\bigskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{rcl}
+    \( f : \mathbb{R} \) & \( \to \) & \( \mathbb{R} \) \\
+    \( x \) & \( \mapsto \) & \( x^2 - 2x - 3 \)
+\end{tabular}
+
+\bigskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{rcl}
+    \( f : \mathbb{N} \) & \( \to \) & \( \mathbb{Z} \) \\
+    \( x \) & \( \mapsto \) & \( 2x - 3 \)
+\end{tabular}
+
+\bigskip
+
+\fbox{\textbf{Exercice 16}}
+
+\bigskip
+
+Soit la correspondance :
+
+\bigskip
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{rcl}
+    \( f : \mathbb{R} \) & \( \to \) & \( \mathbb{R} \) \\
+    \( x \) & \( \mapsto \) & \( \sqrt{|1 - x^2|} \)
+\end{tabular}
+
+\bigskip
+
+\begin{enumerate}
+    \item Justifier que \( f \) est une application.
+    \item Soit \( g \) la restriction de \( f \) sur \([1; +\infty[\)
+    \begin{enumerate}
+        \item Montrer que \( g(x) = \sqrt{x^2 - 1} \).
+        \item Déterminer l’image directe par \( g \) de \( A = \{1;2;3\} \).
+        \item Déterminer l’image réciproque par \( g \) de \( B = ]1;4] \).
+        \item  Montrer que \( g \) est une bijection de \([1; +\infty[\) vers un intervalle \( J \) à préciser.
+        \item  Déterminer \( g^{-1}(x) \).
+    \end{enumerate}
+    \item On définit la fonction \( h \) par \( h(x) = \dfrac{x+1}{x-3} \).
+    \begin{enumerate}
+        \item Déterminer \( D_{g \circ h} \) et \( D_{h \circ g} \).
+        \item Expliciter \( g \circ h(x) \).
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{Exercice 18}}
+
+\bigskip
+
+Soit \( f \) et \( g \) les fonctions définies par :  
+
+\( f(x) = -5x + 3 \quad \text{et} \quad g(x) = \dfrac{4x^2 + 1}{x^2 + 2}. \)
+
+\begin{enumerate}
+    \item Démontrer que \( \forall x \in \mathbb{R} \), on a :  
+\( \frac{1}{2} \leq g(x) \leq 4. \)
+    \item Démontrer que \( \forall x \in \mathbb{R} \), on a :  
+    \(  -17 \leq f \circ g(x) \leq \frac{1}{2}. \)
+\end{enumerate}
+
+\bigskip
+
+\fbox{\textbf{Exercice 19}}
+
+\bigskip
+
+Soient \( E \), \( F \) et \( G \) des ensembles non vides. On considère les applications suivantes  
+\( f : E \to F \) et \( g : F \to G \).
+
+\begin{enumerate}
+    \item Montrer que \( g \circ f \) injective implique que \( f \) est injective.
+    \item Montrer que \( g \circ g \) injective et \( f \) surjective implique que \( g \) est injective.
+    \item Montrer que \( g \circ f \) surjective sur \( G \) implique que \( g \) est surjective sur \( G \).
+    \item Montrer que \( g \circ f \) surjective sur \( G \) et \( g \) injective implique que \( f \) est surjective sur \( F \).
+\end{enumerate}
+
+\fbox{\textbf{Exercice 20}}
+
+\bigskip
+
+Soient \( E \), \( F \) et \( G \) des ensembles non vides. On considère les applications suivantes  
+\( f : E \to F \) et \( g : F \to G \).
+
+
+\end{enumerate}
+
+\end{document}
