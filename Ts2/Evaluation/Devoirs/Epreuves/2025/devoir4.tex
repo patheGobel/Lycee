@@ -1,0 +1,195 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S2} &\textbf{Date: 19/04/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Devoir n$ ^{\circ} $ 2 Du 2$ ^\text{\bf nd} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{2.2cm}
+
+\section*{\underline{Exercice 1 :} 5 points (BAC 2022)}
+Le plan complexe est muni d’un repère orthonormé \( (O ; \Vec{u}, \Vec{v}) \), d’unité graphique 1cm.
+
+\begin{enumerate}
+    \item On considère dans \( \mathbb{C} \) le polynôme \( P(z) = z^3 - 5z^2 + 19z + 25 \).
+    \begin{enumerate}
+        \item Montrer que \( -1 \) est solution de l’équation \( P(z) = 0 \). \hfill \textbf{(0.25 pt)}
+        \item En déduire les solutions dans \( \mathbb{C} \) de l’équation \( P(z) = 0 \). \hfill \textbf{(1.25 pt)}
+    \end{enumerate}
+    \item On considère les points \( A, B, C \) et \( D \) d’affixes respectives :
+    \(
+    z_A = -1 ; z_B = 3 + 4i ; z_C = 3 - 4i ; z_D = -7z_A.
+    \)
+    \begin{enumerate}
+        \item On note \( z_1 \) et \( z_2 \) les affixes respectives des vecteurs \( \overrightarrow{AB} \) et \( \overrightarrow{DC} \). Montrer que \( \overrightarrow{AB} \) et \( \overrightarrow{DC} \) sont parallèles. \hfill (01 pt)
+        \item Calculer \( |z_1| \) et \( |z_2| \) puis interpréter géométriquement le résultat. \hfill \textbf{(0.5 pt)}
+        \item On note \( z_3 \) l’affixe du vecteur \( \overrightarrow{BD} \). Comparer \( |z_1| \) et \( |z_3| \) puis interpréter géométriquement le résultat. \hfill \textbf{(0.5 pt)}
+        \item Calculer \( \arg \left(\frac{z_{1}}{z_{2}}\right) \), puis interpréter géométriquement le résultat. \hfill \textbf{(0.5 pt)}
+        \item En déduire la nature précise du quadrilatère \( ABDC \). \hfill \textbf{(1 pt)}
+    \end{enumerate}
+\end{enumerate}
+\section*{\underline{Exercice 2 :} 5,5 points (BAC 2008)}
+
+On dispose de trois urnes $U_1$, $U_2$ et $U_3$ 
+
+\begin{itemize}
+    \item $U_1$ contient 3 boules vertes et 2 boules rouges;
+    \item $U_2$ contient 4 boules vertes et 5 boules jaunes;
+    \item $U_3$ contient 5 boules jaunes, 4 boules rouges et 1 boule verte.
+\end{itemize}
+
+\textbf{Description de l'épreuve}
+
+L'épreuve consiste à tirer une boule dans $U_1$.
+
+Si elle est verte, on la met dans $U_2$ puis on tire une boule dans $U_2$.
+
+Si elle est rouge, on la met dans $U_3$ puis on tire une boule dans $U_3$.
+
+\textbf{Question}
+
+\textbf{A)} 
+\begin{enumerate}
+    \item Calculer la probabilité d'avoir une boule verte au deuxième tirage sachant que la première tirée est verte. \hfill \textbf{(0.5 pt)}
+    \item Calculer la probabilité d'avoir une boule verte au deuxième tirage sachant que la première est rouge. \hfill \textbf{(0.5 pt)}
+    \item En déduire la probabilité d'avoir une boule verte au deuxième tirage. \hfill \textbf{(1 pt)}
+    \item Calculer la probabilité d'avoir une boule jaune au second tirage. \hfill \textbf{(0.5 pt)}
+    \item Calculer la probabilité d'avoir une boule rouge au deuxième tirage. \hfill \textbf{(0.5 pt)}
+\end{enumerate}
+
+\textbf{B)} Au cours de cette épreuve si on obtient au deuxième tirage :
+
+\begin{itemize}
+    \item Une boule verte, on gagne 1000 F
+    \item Une boule jaune, on gagne 500 F
+    \item Une boule rouge, on perd 500 F
+\end{itemize}
+    Soit $X$ la variable aléatoire qui, à chaque boule obtenue au second tirage, associe un gain défini ci-dessus
+\begin{enumerate}
+    \item Déterminer la loi de probabilité de $X$. \hfill \textbf{(0.5 pt)}
+    \item Calculer l'espérance mathématique de $X$. \hfill \textbf{(0.5 pt)}
+\end{enumerate}
+
+\textbf{C)} Cette épreuve est faite par chacun des 15 élèves d'une classe dans les mêmes conditions et d'une manière indépendante.
+
+Les résultats seront donnés au centième près par défaut.
+
+\begin{enumerate}
+    \item Calculer la probabilité pour que 8 élèves obtiennent une boule verte au deuxième tirage. \hfill \textbf{(0.5 pt)}
+    \item Calculer la probabilité pour que seulement les 8 premiers obtiennent une boule verte au deuxième tirage. \hfill \textbf{(0.5 pt)}
+    \item Calculer la probabilité pour qu'au moins un élève obtienne une boule verte au second tirage. \hfill \textbf{(0.5 pt)}
+\end{enumerate}
+
+\section*{\underline{Problème :} 9,5 points (BAC 2007)}
+\subsection*{\underline{\textbf{Partie A}}:\textbf{ 3 pts}}
+Soit $g$ la fonction définie sur $]0 ; +\infty[$ par : 
+\(g(x) = 1 + x + \ln x.\)
+\begin{enumerate}
+    \item Dresser le tableau de variation de $g$. \hfill \textbf{(1.5 pt)}
+
+\item  Montrer qu'il existe un unique réel $\alpha$ solution de l'équation $g(x) = 0$. Vérifier que $\alpha$ appartient à $]0.2 ; 0.3[$. \hfill \textbf{(0.5 pt)}
+
+\item  En déduire le signe de $g$ sur $]0 ; +\infty[$. \hfill \textbf{(0.5 pt)}
+
+\item  Établir la relation $\ln(\alpha) = -1 - \alpha$. \hfill \textbf{(0.5 pt)}
+\end{enumerate}
+\subsection*{\underline{\textbf{Partie B}}:\textbf{ 6,5 pts}}
+On considère la fonction $f$ définie par :
+\(f(x) = 
+\begin{cases} 
+\frac{x \ln x}{1 + x} & \text{si } x > 0 \\
+0 & \text{si } x = 0
+\end{cases}\)
+
+\begin{enumerate}
+    \item Montrer que $f$ est continue en $0$ puis sur $]0 ; +\infty[$. \hfill \textbf{(0.5 + 0.5 pt)}
+
+    \item  Étudier la dérivabilité de $f$ en $0$. Interpréter graphiquement ce résultat. \hfill \textbf{(0.5 + 0.5 pt)}
+
+    \item  Déterminer la limite de $f$ en $+\infty$. \hfill \textbf{(0.5 pt)}
+
+    \item  Montrer que, quel que soit $x$ élément de $]0 ; +\infty[$, 
+\(f'(x) = \frac{g(x)}{(1 + x)^2}.\)
+En déduire le signe de $f'(x)$ sur $]0 ; +\infty[$. \hfill \textbf{(0.5 pt)}
+
+    \item  Montrer que $f(\alpha) = -\alpha$. \hfill \textbf{(0.5 pt)}
+
+    \item  Dresser le tableau de variations de la fonction $f$. \hfill \textbf{(0.5 pt)}
+
+    \item  Représenter la courbe de $f$ dans le plan muni du repère orthonormal $(O ; \vec{i}, \Vec{j})$. Unité graphique : 5 cm. Prendre $\alpha \approx 0.3$. \hfill \textbf{(1.5 pt)}
+\end{enumerate}
+\end{document}
