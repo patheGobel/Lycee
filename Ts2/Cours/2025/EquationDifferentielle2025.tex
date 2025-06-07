@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{tcolorbox} % Pour les encadrés
+\usepackage{mathrsfs}  % Pour une jolie écriture mathématique si besoin
+\usepackage{lmodern}   % Police plus moderne
+
+\begin{document}
+
+\section*{\textcolor{blue}{Chapitre III} \hfill \textcolor{red}{Équation Différentielle (\(\neq\))}}
+
+\subsection*{\underline{\textcolor{red}{I°) Équation du type :}} \quad \( y' + ay = 0 \quad (a \in \mathbb{R}) \)}
+
+\subsubsection*{\textcolor{red}{1/ Définition :}}
+
+Toute équation \((E):\quad y' + ay = 0 \quad (a \in \mathbb{R})\) est appelée \\
+\textcolor{red}{équation différentielle linéaire du premier ordre sans second membre.}
+
+\vspace{0.5cm}
+
+\textbf{\textcolor{red}{Exemple :}} \\
+\((E_1):\quad y' + 2y = 0\) est une équation différentielle linéaire du premier ordre sans second membre.
+
+\subsection*{\underline{\textcolor{red}{I-2) Résolution}}}
+
+On considère l'équation différentielle \((E) :\quad y' + ay = 0 \quad (a \in \mathbb{R})\)
+
+\vspace{0.3cm}
+
+L'\textbf{ensemble des solutions} de \((E)\) est l'\textbf{ensemble des fonctions dérivables sur \(\mathbb{R}\)} vérifiant :
+\begin{center}
+    \begin{tcolorbox}[colback=white, colframe=red, sharp corners=southwest, boxrule=0.7pt]
+        \( f'(x) + af(x) = 0 \)
+    \end{tcolorbox}
+\end{center}
+
+\vspace{0.3cm}
+
+Soit \((E):\quad y' + ay = 0 \quad (a \in \mathbb{R})\)
+
+\begin{itemize}
+    \item La fonction nulle est solution de \((E)\)
+    \item \( y \neq 0 \) avec \( y \) solution de \((E)\) sur \(\mathbb{R}\)
+\end{itemize}
+
+\[
+y' + ay = 0 \quad \Leftrightarrow \quad y' = -ay
+\]
+
+\[
+\frac{y'}{y} = -a
+\]
+
+\vspace{0.3cm}
+
+On intègre :
+
+\begin{align*}
+\int \frac{y'}{y} \, dx &= \int -a \, dx \\
+\ln |y| &= -ax + c \quad \text{(avec \( c \in \mathbb{R} \))} \\
+|y| &= e^{-ax + c} = e^{c} \cdot e^{-ax}
+\end{align*}
+
+D’où :
+
+\[
+y_1 = ke^{-ax} \quad \text{avec } k = e^c \in \mathbb{R}^{*}
+\]
+
+\textbf{Conclusion :} L'ensemble des solutions est :
+\[
+\boxed{y(x) = ke^{-ax},\quad k \in \mathbb{R}}
+\]
+
+\subsection*{\underline{\textcolor{red}{Réciproquement :}}}
+
+Soit \textcolor{blue}{\( y \)} une \textcolor{blue}{fonction de \((\mathbb{R})\)} et \textcolor{red}{\( g(x) = y(x)e^{ax} \)} \\
+Si \( g(x) \) est dérivable sur \( \mathbb{R} \), alors :
+
+\[
+g(x) = y(x) e^{ax}
+\]
+
+On a :
+\[
+g'(x) = y'(x)e^{ax} + ay(x)e^{ax} = e^{ax} \left( y'(x) + ay(x) \right)
+\]
+
+Comme \( y'(x) + ay(x) = 0 \), alors :
+\[
+g'(x) = e^{ax} \cdot 0 = 0
+\Rightarrow g'(x) = 0
+\]
+
+Donc \( g \) est une constante :
+\[
+\text{Il existe } k \in \mathbb{R} \text{ tel que } g(x) = k
+\Rightarrow y(x)e^{ax} = k \Rightarrow y(x) = ke^{-ax}
+\]
+
+\vspace{0.5cm}
+
+\textbf{Conclusion :}
+
+\begin{tcolorbox}[colback=white, colframe=red, sharp corners=southwest, boxrule=1pt]
+\[
+\boxed{(E):\quad y' + ay = 0 \quad \Rightarrow \quad y(x) = ke^{-ax}}
+\]
+\end{tcolorbox}
+\end{document}
