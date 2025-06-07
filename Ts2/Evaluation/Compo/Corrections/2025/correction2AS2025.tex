@@ -1,0 +1,287 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\usetikzlibrary{trees} % Bibliothèque pour les arbres
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S2} &\textbf{Date: 22/05/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction Composition Du 2$ ^\text{\bf nd} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\section*{\underline{Exercice 3 :($4$ pts)} Restitution de Connaissances}
+\begin{enumerate}
+    \item Construisons un arbre pondère correspondant à cette épreuve.
+% Styles pour les différents niveaux de l'arbre
+\tikzstyle{level 1}=[level distance=2.9cm, sibling distance=7cm] % Niveau 1 : distance verticale et entre branches
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=3cm] % Niveau 2 : plus resserré
+\tikzstyle{bag} = [text centered] % Style pour les nœuds intermédiaires
+\tikzstyle{end} = [text centered] % Style pour les feuilles
+\definecolor{darkgreen}{RGB}{0,100,0} % Couleur vert foncé (non utilisée ici)
+\definecolor{darkred}{RGB}{139,0,0} % Couleur rouge foncé
+
+\begin{tikzpicture}[grow=right, sloped] % Arbre qui se développe vers la droite, étiquettes inclinées
+
+% Nœud racine (départ de l'univers)
+\node[bag] {\textcolor{darkred}{}} 
+    child {
+        % Première branche : événement B
+        node[bag] {\textcolor{darkred}{$N_1$}} 
+            child {
+                % Sous-branche de B : issue V
+                node[end] {\textcolor{darkred}{$R_2$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{1}{5}$}} % Probabilité conditionnelle : P(V|B)
+            }
+            child {
+                % Sous-branche de B : issue M
+                node[end] {\textcolor{darkred}{$N_2$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{3}{5}$}} % Probabilité à compléter
+            }
+            child {
+                % Sous-branche de B : issue R
+                node[end] {\textcolor{darkred}{$B_2$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{1}{5}$}} % Probabilité à compléter
+            }
+        edge from parent
+        node[above] {\textcolor{black}{$\frac{6}{9}$}} % Probabilité de B : P(B)
+    }
+    child {
+        % Deuxième branche : événement A
+        node[bag] {\textcolor{darkred}{$B_1$}} 
+            child {
+                % Sous-branche de A : issue V
+                node[end] {\textcolor{darkred}{$R_2$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{1   }{5}$}} % Probabilité à compléter
+            }
+            child {
+                % Sous-branche de A : issue M
+                node[end] {\textcolor{darkred}{$N_2$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{2   }{5}$}} % Probabilité à compléter
+            }
+            child {
+                % Sous-branche de A : issue R
+                node[end] {\textcolor{darkred}{$B2$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{2}{5}$}} % Probabilité conditionnelle : P(R|A)
+            }
+        edge from parent
+        node[above] {\textcolor{black}{$\frac{3}{9}$}} % Probabilité de A : P(A), à compléter
+    };
+\end{tikzpicture}
+\item Montrons que $P(N_{2}) = \frac{8}{15}$
+\begin{enumerate}
+    \item $P(N_{2})$ peut être calculé par la loi des totalisations :
+
+    \(
+    \begin{aligned}
+        P(N_2) &= P(N_2 | B_1) \cdot P(B_1) + P(N_2 | N_1) \cdot P(N_1)\\
+               &= \left( \frac{2}{5} \cdot \frac{1}{3} \right) + \left( \frac{3}{5} \cdot \frac{2}{3} \right)\\
+               &= \frac{2}{15} + \frac{6}{15}\\
+               &= \frac{8}{15}
+    \end{aligned}
+    \)
+    \item Déterminons la probabilité de l'événement $B_{2}$
+
+    \(
+    \begin{aligned}
+        P(B_2) &= P(B_2 | B_1) \cdot P(B_1) + P(B_2 | N_1) \cdot P(N_1)\\
+               &= \left( \frac{1}{5} \cdot \frac{1}{3} \right) + \left( \frac{1}{5} \cdot \frac{2}{3} \right)\\
+               &= \frac{1}{15} + \frac{2}{15}  \\
+               &= \frac{3}{15}\\
+               &= \frac{1}{5}
+    \end{aligned}
+    \)
+    \item Déterminons la probabilité de tirer une boule blanche de $u_{1}$, sachant que la boule tirée dans $u_{2}$ est noire
+On utilise le théorème de Bayes :\\
+ \(
+    \begin{aligned}
+        P(B_1 | N_2) &= \frac{P(N_2 | B_1) \cdot P(B_1)}{P(N_2)}\\
+                    &=  \frac{\left( \frac{2}{5} \right) \cdot \left( \frac{1}{3} \right)}{\frac{8}{15}}\\
+                    &= \frac{\frac{2}{15}}{\frac{8}{15}}  \\
+                    &= \frac{2}{8}\\
+                    &= \frac{1}{4}
+    \end{aligned}
+    \)
+\end{enumerate}
+\item 
+\begin{enumerate}
+    \item Loi de probabilité de $X$ Nous avons les différents gains :
+\begin{itemize}
+    \item Boule blanche dans $u_{2}$ : $3000F - 500F = 2500F$
+    \item Boule noire dans $u_{2}$ : $0F - 500F = -500F$
+    \item Boule rouge dans $u_{2}$ : $500F - 500F = 0F$
+\end{itemize}
+
+Calcul des probabilités de $X$ :
+\begin{itemize}
+    \item $P(X = 2500) = P(B_{2}) = \frac{1}{5}$
+    \item $P(X = -500) = P(N_{2}) = \frac{8}{15}$
+    \item $P(X = 0) = P(R) = \left( \frac{2}{5} \cdot \frac{1}{3} \right) + \left( \frac{1}{5} \cdot \frac{2}{3} \right) = \frac{4}{15}$
+\end{itemize}    
+
+    \item Calculons de l'espérance mathématique, Variance et écart-type de $X$ et écart-type de $X$
+    \begin{itemize}
+        \item \textbf{Espérance mathématique}
+    
+    \(
+    \begin{aligned}
+        E(X) &= 2500 \cdot P(X = 2500) + (-500) \cdot P(X = -500) + 0 \cdot P(X = 0)\\
+             &= 2500 \cdot \frac{1}{5} + (-500) \cdot \frac{8}{15} + 0 \cdot \frac{4}{15}\\
+             &= 500 - \frac{4000}{15}\\
+             &= \frac{7500 - 4000}{15}\\
+             &=\frac{3500}{15} \\
+             &\approx 233.33
+    \end{aligned}
+    \)
+    
+        \item \textbf{Variance de $X$}
+
+    \(
+    \begin{aligned}
+        Var(X) &= E(X^2) - (E(X))^2\\
+    \end{aligned}
+    \)
+
+    \(
+    \begin{aligned}
+        E(X^2) &= (2500^2) \cdot P(X = 2500) + (-500)^2 \cdot P(X = -500) + 0^2 \cdot P(X = 0)\\
+               &= 6250000 \cdot \frac{1}{5} + 250000 \cdot \frac{8}{15}\\
+               &= 1250000 + \frac{2000000}{15}\\
+               &= 1250000 + \frac{133333.33}{1}\\ 
+               &\approx 1383333.33
+    \end{aligned}
+    \)
+    
+Donc, 
+
+\(
+    \begin{aligned}
+        Var(X) &= E(X^2) - (E(X))^2\\
+               &= 1383333.33 - (233.33)^2\\
+               &\approx 1383333.33 - 54444.44\\
+               &\approx 1338898.89\\ 
+    \end{aligned}
+\)
+
+        \item  \textbf{Ecart-type $X$}
+
+$\sigma(X)$ est $\sigma(X) = \sqrt{Var(X)}$
+    \end{itemize}
+    \item Déterminons la fonction de répartition de X et représentons la.
+
+\[
+F(x) = \mathbb{P}(X \leq x)
+\]
+
+\[
+F(x) =
+\begin{cases}
+0 & \text{si } x \in ]{-\infty}, -500[ \\
+\dfrac{8}{15} & \text{si } x \in [-500,\; 0[ \\
+\dfrac{11}{15} & \text{si } x \in [0,\; 2500[ \\
+1 & \text{si } x \in [2500,\; +\infty[
+\end{cases}
+\]
+
+
+\end{enumerate}
+\item Calculons cela pour trouver le nombre minimal de parties.
+Soit \( p = P(N_2) = \dfrac{8}{15} \). On veut trouver le plus petit entier \( n \) tel que :
+\[
+1 - (1 - p)^n > 0{,}97
+\]
+\[
+(1 - \dfrac{8}{15})^n < 0{,}03 \quad \text{soit} \quad \left( \dfrac{7}{15} \right)^n < 0{,}03
+\]
+\[
+n \log\left( \dfrac{7}{15} \right) < \log(0{,}03)
+\]
+\[
+n > \dfrac{\log(0{,}03)}{\log\left( \dfrac{7}{15} \right)} \approx 6{,}6
+\]
+
+\textbf{Donc } \( n = 7 \)
+
+\end{enumerate}
+\end{document}
