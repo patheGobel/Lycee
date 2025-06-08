@@ -1,0 +1,71 @@
+\documentclass{article} % Classe de document standard
+\usepackage{tikz} % Package pour les dessins vectoriels
+\usetikzlibrary{trees} % Bibliothèque pour les arbres
+\usepackage{xcolor} % Pour la gestion des couleurs
+
+\begin{document}
+
+% Styles pour les différents niveaux de l'arbre
+\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=3.5cm] % Niveau 1 : distance verticale et entre branches
+\tikzstyle{level 2}=[level distance=2.5cm, sibling distance=1.5cm] % Niveau 2 : plus resserré
+\tikzstyle{bag} = [text centered] % Style pour les nœuds intermédiaires
+\tikzstyle{end} = [text centered] % Style pour les feuilles
+\definecolor{darkgreen}{RGB}{0,100,0} % Couleur vert foncé (non utilisée ici)
+\definecolor{darkred}{RGB}{139,0,0} % Couleur rouge foncé
+
+\begin{tikzpicture}[grow=right, sloped] % Arbre qui se développe vers la droite, étiquettes inclinées
+
+% Nœud racine (départ de l'univers)
+\node[bag] {\textcolor{darkred}{$\Omega$}} 
+    child {
+        % Première branche : événement B
+        node[bag] {\textcolor{darkred}{$B$}} 
+            child {
+                % Sous-branche de B : issue V
+                node[end] {\textcolor{darkred}{$V$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{1}{16}$}} % Probabilité conditionnelle : P(V|B)
+            }
+            child {
+                % Sous-branche de B : issue M
+                node[end] {\textcolor{darkred}{$M$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\cdots$}} % Probabilité à compléter
+            }
+            child {
+                % Sous-branche de B : issue R
+                node[end] {\textcolor{darkred}{$R$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\cdots$}} % Probabilité à compléter
+            }
+        edge from parent
+        node[above] {\textcolor{black}{$\frac{1}{2}$}} % Probabilité de B : P(B)
+    }
+    child {
+        % Deuxième branche : événement A
+        node[bag] {\textcolor{darkred}{$A$}} 
+            child {
+                % Sous-branche de A : issue V
+                node[end] {\textcolor{darkred}{$V$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\cdots$}} % Probabilité à compléter
+            }
+            child {
+                % Sous-branche de A : issue M
+                node[end] {\textcolor{darkred}{$M$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\cdots$}} % Probabilité à compléter
+            }
+            child {
+                % Sous-branche de A : issue R
+                node[end] {\textcolor{darkred}{$R$}} 
+                edge from parent
+                node[above] {\textcolor{black}{$\frac{3}{10}$}} % Probabilité conditionnelle : P(R|A)
+            }
+        edge from parent
+        node[above] {\textcolor{black}{$\cdots$}} % Probabilité de A : P(A), à compléter
+    };
+
+\end{tikzpicture}
+
+\end{document}
