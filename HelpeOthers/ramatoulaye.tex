@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{1.a. Détermination de la loi de probabilité de $X$}
+
+\textbf{Probabilité d'obtenir un multiple de 3 au lancer du dé.}\\
+Il y a deux multiples de 3 entre 1 et 6 : 3 et 6.\\
+Donc, la probabilité d'obtenir un multiple de 3 est :
+\[
+P(\text{multiple de 3}) = \frac{2}{6} = \frac{1}{3}
+\]
+
+\textbf{Probabilité de ne pas obtenir un multiple de 3 au lancer du dé.}\\
+\[
+P(\text{non multiple de 3}) = 1 - \frac{1}{3} = \frac{2}{3}
+\]
+
+\textbf{Probabilité d'obtenir \(k\) boules noires à partir de U1 (deux tirages avec remise)}\\
+Dans U1, il y a 1 boule noire sur 5.\\
+
+\begin{itemize}
+    \item \(k = 0\) : \(P(X = 0 \mid U1) = \left( \frac{4}{5} \right)^2 = \frac{16}{25}\)
+    \item \(k = 1\) : \(P(X = 1 \mid U1) = 2 \times \frac{1}{5} \times \frac{4}{5} = \frac{8}{25}\)
+    \item \(k = 2\) : \(P(X = 2 \mid U1) = \left( \frac{1}{5} \right)^2 = \frac{1}{25}\)
+\end{itemize}
+
+\textbf{Probabilité d'obtenir \(k\) boules noires à partir de U2 (tirage simultané)}\\
+Dans U2, il y a 2 boules noires sur 5.
+
+\begin{itemize}
+    \item \(k = 0\) : \(P(X = 0 \mid U2) = \frac{3}{5} \times \frac{2}{4} = \frac{3}{10}\)
+    \item \(k = 1\) : \(P(X = 1 \mid U2) = \frac{2}{5} \times \frac{3}{4} + \frac{3}{5} \times \frac{2}{4} = \frac{3}{5}\)
+    \item \(k = 2\) : \(P(X = 2 \mid U2) = \frac{2}{5} \times \frac{1}{4} = \frac{1}{10}\)
+\end{itemize}
+
+\textbf{Loi de probabilité de $X$}
+\[
+\begin{aligned}
+P(X = 0) &= \frac{16}{25} \cdot \frac{1}{3} + \frac{3}{10} \cdot \frac{2}{3} = \frac{16}{75} + \frac{15}{75} = \frac{31}{75} \\
+P(X = 1) &= \frac{8}{25} \cdot \frac{1}{3} + \frac{3}{5} \cdot \frac{2}{3} = \frac{8}{75} + \frac{30}{75} = \frac{38}{75} \\
+P(X = 2) &= \frac{1}{25} \cdot \frac{1}{3} + \frac{1}{10} \cdot \frac{2}{3} = \frac{1}{75} + \frac{5}{75} = \frac{6}{75} = \frac{2}{25}
+\end{aligned}
+\]
+
+\textbf{Réponse :}
+\[
+P(X = 0) = \frac{31}{75}, \quad P(X = 1) = \frac{38}{75}, \quad P(X = 2) = \frac{2}{25}
+\]
+
+\subsection*{1.b. Espérance et écart type de $X$}
+
+\textbf{Espérance :}
+\[
+E(X) = 0 \cdot \frac{31}{75} + 1 \cdot \frac{38}{75} + 2 \cdot \frac{2}{25} = \frac{38}{75} + \frac{4}{25} = \frac{56}{75}
+\]
+
+\textbf{Variance :}
+\[
+\text{Var}(X) = \mathbb{E}(X^2) - \left[\mathbb{E}(X)\right]^2
+\]
+\[
+= \left(0^2 \cdot \frac{31}{75} + 1^2 \cdot \frac{38}{75} + 4 \cdot \frac{2}{25} \right) - \left( \frac{56}{75} \right)^2
+\]
+\[
+= \left( \frac{38}{75} + \frac{8}{25} \right) - \frac{3136}{5625} = \frac{74}{75} - \frac{3136}{5625} = \frac{52514}{5625}
+\]
+
+\textbf{Écart type :}
+\[
+\sigma(X) = \sqrt{\text{Var}(X)} = \sqrt{\frac{52514}{5625}} \approx 0{,}96
+\]
+
+\subsection*{1.c. Fonction de répartition de $X$}
+
+La fonction de répartition \( F(x) = \mathbb{P}(X \leq x) \) est :
+
+\[
+F(x) =
+\begin{cases}
+0 & \text{si } x < 0 \\
+\frac{31}{75} & \text{si } 0 \leq x < 1 \\
+\frac{69}{75} & \text{si } 1 \leq x < 2 \\
+1 & \text{si } x \geq 2
+\end{cases}
+\]
+
+\subsection*{1.d. Probabilité conditionnelle par la formule de Bayes}
+
+On cherche \( P(U2 \mid X=1) \).\\
+Données :
+\[
+P(U2) = \frac{2}{3}, \quad P(X=1 \mid U2) = \frac{3}{5}, \quad P(X=1) = \frac{38}{75}
+\]
+
+Calcul :
+\[
+P(U2 \mid X=1) = \frac{ \frac{3}{5} \cdot \frac{2}{3} }{ \frac{38}{75} } = \frac{2}{5} \div \frac{38}{75} = \frac{2}{5} \cdot \frac{75}{38} = \frac{150}{190} = \frac{15}{19}
+\]
+
+\textbf{Réponse :} La probabilité cherchée est \( \boxed{\dfrac{15}{19}} \).
+
+\end{document}
