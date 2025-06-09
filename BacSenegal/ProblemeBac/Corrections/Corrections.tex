@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\section*{Problème 9 --- BAC 2004 Remplacement}
+
+\textbf{Partie A :} Soit l’équation différentielle :  
+\[
+(E) : -\frac{1}{2} y'' + \frac{3}{2} y' - y = 0
+\]
+
+Déterminer la solution \( g \) de \( (E) \) dont la courbe représentative \( (C) \) passe par le point \( A(0 ; -1) \) et dont la tangente en ce point est parallèle à l’axe des abscisses.
+
+\subsection*{1. Mise sous forme canonique}
+On commence par multiplier l'équation par \( -2 \) :
+\[
+y'' - 3 y' + 2 y = 0
+\]
+
+\subsection*{2. Résolution de l'équation homogène}
+C'est une équation linéaire homogène à coefficients constants. On cherche une solution sous la forme \( y = e^{rx} \).
+
+On résout l'équation caractéristique :
+\[
+r^2 - 3r + 2 = 0 \Rightarrow (r - 1)(r - 2) = 0
+\Rightarrow r_1 = 1 \quad \text{et} \quad r_2 = 2
+\]
+
+Donc la solution générale est :
+\[
+y(x) = \lambda e^{x} + \mu e^{2x}
+\]
+
+\subsection*{3. Détermination des constantes}
+On cherche \( \lambda \) et \( \mu \) tels que :
+\[
+g(0) = -1 \quad \text{et} \quad g'(0) = 0
+\]
+
+On calcule :
+\[
+g(0) = \lambda e^0 + \mu e^0 = \lambda + \mu = -1 \tag{1}
+\]
+\[
+g'(x) = \lambda e^{x} + 2\mu e^{2x} \Rightarrow g'(0) = \lambda + 2\mu = 0 \tag{2}
+\]
+
+Résolvons le système :
+\[
+\begin{cases}
+\lambda + \mu = -1 \\
+\lambda + 2\mu = 0
+\end{cases}
+\Rightarrow \text{Soustraction : } (\lambda + 2\mu) - (\lambda + \mu) = \mu = 1
+\Rightarrow \lambda = -2
+\]
+
+\subsection*{4. Solution particulière}
+
+\[
+\boxed{g(x) = -2 e^x + e^{2x}}
+\]
+
+\end{document}
