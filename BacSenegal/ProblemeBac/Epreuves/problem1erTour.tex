@@ -1,0 +1,172 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof : M. BA}}
+\cfoot{\bf \thepage / \pageref{LastPage}}
+
+\newcommand{\exo}[1]{%
+        \textbf{\underline{Exercice #1}}
+}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025} \\ \hline
+                \textbf{Matière : Mathématiques} & \textbf{Niveau : T S2} & \textbf{Date : 09/06/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                  \textbf{{\Large\sffamily Problèmes proposés au BAC S2 Sénégal de 1999 à 2022}}
+                \end{center}}} \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm}
+
+\exo{1} \textbf{Extrait BAC 1999 1er groupe}
+On considère la fonction \( f \) définie par :
+
+\( 
+f(x) =
+\begin{cases}
+x + \ln\left|\dfrac{x - 1}{x + 1}\right| & \text{si } x \in ]-\infty, -1[ \cup ]-1, 0[ \\
+x^2 e^{-x} & \text{si } x \in [0, +\infty[
+\end{cases}
+\)
+et \( (C_f) \) sa courbe représentative dans un repère orthonormé \( (O; \vec{i}, \vec{j}) \), d’unité 2 cm.
+
+\subsection*{Partie A}
+\begin{enumerate}
+  \item Déterminer l’ensemble de définition \( D_f \) de \( f \). Calculer \( f(-2) \) et \( f(3) \).
+  \item Calculer les limites aux bornes de \( D_f \).
+  \item Étudier la continuité de \( f \) en 0.
+  \item 
+  \begin{enumerate}
+    \item Établir que la dérivée de \( f \) est donnée par :
+    
+\(
+    f'(x) =
+    \begin{cases}
+    \dfrac{x^2 + 1}{x^2 - 1}  \text{si } x \in ]-\infty, -1[ \cup ]-1, 0[ \\
+    x e^{-x}(2 - x) \text{si } x \in [0, +\infty[
+    \end{cases}
+\)
+    \item La fonction \( f \) est-elle dérivable en 0 ? Justifier votre réponse.
+    \item Dresser le tableau de variations de \( f \).
+  \end{enumerate}
+  \item Démontrer que l’équation \( f(x) = 0 \) admet une solution unique \( \alpha \) comprise entre \( -1{,}6 \) et \( -1{,}5 \).
+  \item 
+  \begin{enumerate}
+    \item Justifier que la droite \( (D) \) d’équation \( y = x \) est une asymptote à la courbe \( (C_f) \) en \( -\infty \).
+    \item Étudier la position relative de \( (C_f) \) par rapport à la droite \( (D) \) pour \( x \in ]-\infty, -1[ \cup ]-1, 0[ \).
+    \item Tracer \( (C_f) \).
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie B : } Soit \( g \) la restriction de \( f \) à \( I = [0;2] \).
+\begin{enumerate}
+    \item Montrer que \( g \) définit une bijection de \( I \) vers un intervalle \( J \) à préciser.
+    \item On note \( g^{-1} \) la bijection réciproque de \( g \).
+    \begin{enumerate}
+        \item Résoudre l’équation \( g^{-1}(x) = 1 \).
+        \item Montrer que \( \left(g^{-1}\right)'\left(\dfrac{1}{e}\right) = e \).
+        \item Construire \( (C_{g^{-1}}) \), la courbe de \( g^{-1} \).
+    \end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Partie C : } \( \beta \) étant un réel strictement positif, on pose :
+
+\(I(\beta) = \int_0^{\beta} f(x)\,dx \)
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Interpréter graphiquement \( I(\beta) \).
+        \item En procédant par une intégration par parties, calculer \( I(\beta) \).
+    \end{enumerate}
+    
+    \item Calculer \( \lim_{\beta \to -\infty} I(\beta) \).
+    
+    \item On pose \( \beta = 2 \).
+    \begin{enumerate}
+        \item Calculer \( I(2) \).
+        \item En déduire la valeur en \( \text{cm}^2 \) de l’aire du domaine du plan délimité par la courbe \( (C_f) \), l’axe des abscisses et les droites d’équations \( x = 0 \) et \( x = \dfrac{4}{e^2} \).
+    \end{enumerate}
+\end{enumerate}
+
+\exo{2} 
+\begin{enumerate}
+\item
+\end{enumerate}
+
+\exo{3} 
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+\vspace{1em}
+
+\end{multicols}
+
+\end{document}
