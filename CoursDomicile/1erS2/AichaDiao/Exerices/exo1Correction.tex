@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+\begin{document}
+\hrule % Barre horizontale
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
+        Aïssa Diao & \quad\quad\quad 18H-20H & 10 Juin 2025 \\
+    \end{tabular}
+    \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
+    \hrule % Barre horizontale
+\end{center}
+
+\textbf{\underline{Problème} : \textcolor{red}{(8 points)} (Problème) :}
+
+\textbf{Partie A :} On considère la fonction $g$ définie sur $\mathbb{R}$ par : $g(x) = x^3 + 3x + 2$
+
+\begin{enumerate}
+    \item Étudier les limites de $g$, aux bornes de $D_g$.
+    \item Calculer l'expression de sa dérivée $g'(x)$, puis dresser le tableau de variations de la fonction $g$.
+    \item Montrer que l'équation $g(x) = 0$ admet une unique solution $\alpha$ dans l'intervalle $[-1;0]$
+    \item Donner une valeur approchée de $\alpha$ à $10^{-1}$ près, en utilisant la méthode de dichotomie.
+    \item Déduire des questions précédentes le signe de la fonction $g$ suivant les valeurs de $x$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Partie B :} On considère la fonction $f$ définie sur $\mathbb{R}$ par : 
+\[
+f(x) = \frac{x^3 - 1}{x^2 + 1}
+\]
+
+On note aussi $(\mathcal{C}_f)$ sa représentation graphique dans le plan muni d’un repère orthogonal $(O, \vec{i}, \vec{j})$
+
+\begin{enumerate}
+    \item[1./] Étudier les limites de $f$, aux bornes de $D_f$.
+    \item[2./] Montrer que, pour tout $x \in \mathbb{R}$, 
+    \[
+    f'(x) = \frac{xg(x)}{(x^2+1)^2}
+    \]
+    \item[3./] En déduire le tableau de variations de la fonction $f$. (On précisera la valeur de $f(\alpha)$)
+    \item[4./] Déterminer l’équation de la tangente $(T)$ à $(\mathcal{C}_f)$ au point d’abscisse $x_0 = 0$
+    \item[5.a)] Montrer que $(\mathcal{C}_f)$ admet une asymptote oblique $(\mathcal{A.O})$ (on précisera son équation) en $\pm\infty$.
+    
+    \item[b)] Tracer $(T)$, $(\mathcal{A.O})$ et $(\mathcal{C}_f)$. (unités graphiques conseillées : $1\| \vec{i} \| = 2~\text{cm}$, $1\| \vec{j} \| = 4~\text{cm}$)
+    
+    \item[6./] Construire dans le même repère la courbe de $h$ définie par : 
+    \[
+    h(x) = |f(x)|
+    \]
+\end{enumerate}
+
+\end{document}
