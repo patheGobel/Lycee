@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  9 JUN 2025 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  5 JUN 2025 21:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**devoir4Correction2025.tex
-(./devoir4Correction2025.tex
+**devoir3AS2025.tex
+(./devoir3AS2025.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -440,14 +440,6 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count294
 \enitdp@description=\count295
 )
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count296
-\float@exts=\toks36
-\float@box=\box65
-\@float@everytoks=\toks37
-\@floatcapt=\box66
-)
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
@@ -457,9 +449,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count297
-\Gm@cntv=\count298
-\c@Gm@tempcnt=\count299
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
 \Gm@bindingoffset=\dimen259
 \Gm@wd@mp=\dimen260
 \Gm@odd@mp=\dimen261
@@ -468,22 +460,22 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen264
 \Gm@layouthoffset=\dimen265
 \Gm@layoutvoffset=\dimen266
-\Gm@dimlist=\toks38
+\Gm@dimlist=\toks36
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen267
-\ar@mcellbox=\box67
+\ar@mcellbox=\box65
 \extrarowheight=\dimen268
-\NC@list=\toks39
+\NC@list=\toks37
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box68
+\ar@cellbox=\box66
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip56
-\multirow@cntb=\count300
+\multirow@cntb=\count299
 \multirow@dima=\skip57
 \bigstrutjot=\dimen269
 )
@@ -492,8 +484,8 @@ Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks40
-\verbatim@line=\toks41
+\every@verbatim=\toks38
+\verbatim@line=\toks39
 \verbatim@in@stream=\read3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
@@ -504,28 +496,28 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count301
+\etb@tempcnta=\count300
 )
-\tcb@titlebox=\box69
-\tcb@upperbox=\box70
-\tcb@lowerbox=\box71
-\tcb@phantombox=\box72
-\c@tcbbreakpart=\count302
-\c@tcblayer=\count303
-\c@tcolorbox@number=\count304
-\l__tcobox_tmpa_box=\box73
+\tcb@titlebox=\box67
+\tcb@upperbox=\box68
+\tcb@lowerbox=\box69
+\tcb@phantombox=\box70
+\c@tcbbreakpart=\count301
+\c@tcblayer=\count302
+\c@tcolorbox@number=\count303
+\l__tcobox_tmpa_box=\box71
 \l__tcobox_tmpa_dim=\dimen270
+\tcb@temp=\box72
+\tcb@temp=\box73
 \tcb@temp=\box74
 \tcb@temp=\box75
-\tcb@temp=\box76
-\tcb@temp=\box77
 
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
-\c@tcbrastercolumn=\count305
-\c@tcbrasterrow=\count306
-\c@tcbrasternum=\count307
-\c@tcbraster=\count308
+\c@tcbrastercolumn=\count304
+\c@tcbrasterrow=\count305
+\c@tcbrasternum=\count306
+\c@tcbraster=\count307
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
 (/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -537,7 +529,7 @@ Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 (/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.te
 x
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box78
+\l__tikzfill_img_box=\box76
 )) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
 )) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
@@ -552,9 +544,9 @@ Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 ))
 Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
-\tcb@testbox=\box79
-\tcb@totalupperbox=\box80
-\tcb@totallowerbox=\box81
+\tcb@testbox=\box77
+\tcb@totalupperbox=\box78
+\tcb@totallowerbox=\box79
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
 Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
@@ -565,30 +557,30 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
 \tcbfitdim=\dimen271
 \tcb@lowerfitdim=\dimen272
 \tcb@upperfitdim=\dimen273
-\tcb@cur@hbadness=\count309
+\tcb@cur@hbadness=\count308
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count310
-\lst@gtempboxa=\box82
-\lst@token=\toks42
-\lst@length=\count311
+\lst@mode=\count309
+\lst@gtempboxa=\box80
+\lst@token=\toks40
+\lst@length=\count310
 \lst@currlwidth=\dimen274
-\lst@column=\count312
-\lst@pos=\count313
+\lst@column=\count311
+\lst@pos=\count312
 \lst@lostspace=\dimen275
 \lst@width=\dimen276
-\lst@newlines=\count314
-\lst@lineno=\count315
+\lst@newlines=\count313
+\lst@lineno=\count314
 \lst@maxwidth=\dimen277
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count316
-\lst@skipnumbers=\count317
-\lst@framebox=\box83
+\c@lstnumber=\count315
+\lst@skipnumbers=\count316
+\lst@framebox=\box81
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -600,7 +592,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
 )
-\c@tcblisting=\count318
+\c@tcblisting=\count317
 )) (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
 Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
 
@@ -636,8 +628,8 @@ File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
 )) (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box84
-\sift@deathcycles=\count319
+\@vwid@box=\box82
+\sift@deathcycles=\count318
 \@vwid@loff=\dimen278
 \@vwid@roff=\dimen279
 )
@@ -675,50 +667,49 @@ MM)
 
 (/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
 Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count320
+\c@lastpagecount=\count319
 ) 
 ))
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 7
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 6
 9.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count321
-\l__pdf_internal_box=\box85
+\l__color_backend_stack_int=\count320
+\l__pdf_internal_box=\box83
 )
-(build/devoir4Correction2025.aux)
-\openout1 = `devoir4Correction2025.aux'.
+No file devoir3AS2025.aux.
+\openout1 = `devoir3AS2025.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count322
+\scratchcounter=\count321
 \scratchdimen=\dimen282
-\scratchbox=\box86
-\nofMPsegments=\count323
-\nofMParguments=\count324
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count325
+\scratchbox=\box84
+\nofMPsegments=\count322
+\nofMParguments=\count323
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count324
 \MPscratchDim=\dimen283
-\MPnumerator=\count326
-\makeMPintoPDFobject=\count327
-\everyMPtoPDFconversion=\toks44
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -762,72 +753,87 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count328
+\c@lstlisting=\count327
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks45
-\inpenc@posthook=\toks46
+\inpenc@prehook=\toks43
+\inpenc@posthook=\toks44
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 90
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 80
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 9
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 8
 0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
-f-dist/fonts/enc/dvips/base/8r.enc}
+)
 
-] [2] [3] [4]
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 148.
 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc}
+
+]
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 191.
+
+[2] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(build/devoir4Correction2025.aux)
+(build/devoir3AS2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package lastpage Warning: Rerun to get the references right on input line 191.
+
  ) 
 Here is how much of TeX's memory you used:
- 22250 strings out of 474222
- 475522 string characters out of 5748732
- 1946975 words of memory out of 5000000
- 44081 multiletter control sequences out of 15000+600000
- 580437 words of font info for 93 fonts, out of 8000000 for 9000
+ 22129 strings out of 474222
+ 473358 string characters out of 5748732
+ 1949975 words of memory out of 5000000
+ 43970 multiletter control sequences out of 15000+600000
+ 577856 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,439b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
-b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/devoir4Correction2025.pdf (4 pages, 141132 bytes).
+ 102i,15n,107p,427b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on build/devoir3AS2025.pdf (2 pages, 122536 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

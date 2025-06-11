@@ -1,0 +1,191 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 1}\textbf{$^{er}$S2} &\textbf{Date: 21/01/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Devoir n$ ^{\circ} $ 1 Du 2$ ^\text{\bf nd} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Exercice 1 :} 5 pts }
+Déterminer le domaine de définition dans chaque cas
+\begin{enumerate}
+    \item $f(x) = \sqrt{4x - x^3}$
+    \item $f(x) = \sqrt{|1 - 3x| - x + 2}$
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = x \sqrt{\left| \dfrac{x+1}{x} \right|}, & \text{si } x < 0 \\
+            f(x) = \dfrac{x^3 - x^2}{x^2 + 1}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{x(x-2)}{x-1}, & \text{si } x < 0 \\
+            f(x) = x + \sqrt{x^2 - 4}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{3}{|x+1| - 2}, & \text{si } x \leq 1 \\
+            f(x) = \sqrt{x - 3}, & \text{si } x > 1
+        \end{array}
+    \right.$
+\end{enumerate}
+\section*{\underline{Exercice 2 :} 4 pts }
+
+\begin{enumerate}
+    \item  Dans chacun des cas, montrer que \( (C_f) \) admet la droite \( (\Delta) \) pour axe de symétrie.
+
+\begin{enumerate}
+    \item \( f(x) = -3x^2 + 4x + 1 \) et \( (\Delta) : x = \dfrac{2}{3} \).
+    \item \( f(x) = \dfrac{x^2 + 4x + 3}{2x^2 + 8x + 9} \) et \( (\Delta) : x = -2 \).
+\end{enumerate}
+
+\item  Dans chacun des cas suivants, montrer que \( (C_f) \) admet le point \( I \) pour centre de symétrie.
+
+\begin{enumerate}
+    \item \( f(x) = -x^3 + 3x + 4 \) et \( I(0;4) \).
+    \item \( f(x) = \dfrac{x^3 - x^2 - x}{2x^2 - 4 + 1} \) et \( I(1;1) \).
+    \item \( f(x) = \dfrac{1}{x+3} + \dfrac{1}{x+1} \) et \( I(-2;0) \).
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{\underline{Exercice 3 :} 5pts }
+
+\begin{enumerate}
+    \item Soient les fonctions \( f \) et \( g \) telles que :
+    
+$
+\begin{aligned}
+        f : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto x^2
+\end{aligned}\quad\quad\quad
+\begin{aligned}
+        g : \mathbb{R} &\to \mathbb{R} \\
+        x &\mapsto 2x^2 - 5x - 3
+\end{aligned}
+$
+    \begin{enumerate}
+        \item Montrer que \( f \) et \( g \) sont des applications. \hfill \textbf{(0,5 pt)}
+        \item Les fonctions \( f \) et \( g \) sont-elles injectives ? Surjectives ? \hfill \textbf{(2x0,5 pt)}
+    \end{enumerate}
+
+    \item Soit l’application 
+    
+$    
+\begin{aligned}
+        h : ]3 ; +\infty[ &\to ]0 ; +\infty[ \\
+        x &\mapsto 2x^2 - 5x - 3
+\end{aligned}
+$
+    
+    Démontrer que \( h \) est une bijection. Déterminer sa bijection réciproque \( h^{-1} \). \hfill \textbf{(1 pt)}
+
+    \item On considère les intervalles \( I = [4 ; 5] \) et \( J = [0 ; 4] \).
+\end{enumerate}
+
+Déterminer l’image directe de $I$ par $h$ et l’image réciproque de $J$ par $h$.\hfill \textbf{(2x0,5 pt)}
+
+\section*{\underline{Exercice 4 :} 6 pts }
+Dans le plan, on considère le triangle \( ABC \) tel que \( AB = 2 \), \( AC = 4\sqrt{2} \) et \( BC = 2\sqrt{5} \) (unité cm).  
+\( I \) est le milieu de \( [AB] \).
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer \( \overrightarrow{AB} \cdot \overrightarrow{AC} \). \hfill \textbf{(01 pt)}
+        \item En déduire \( \cos \widehat{BAC} \). \hfill \textbf{(0,5 pt)}
+        \item Quel est l'ensemble des points \( M \) du plan tels que \( \overrightarrow{BA} \cdot \overrightarrow{MC} = 0 \).
+    \end{enumerate}
+    
+    \item Soit l'ensemble \( \mathcal{E} = \{ M \in \mathbb{P} \ / \ MA^2 + MB^2 = 6 \} \)
+    \begin{enumerate}
+        \item Montrer que \( MA^2 + MB^2 = 2MI^2 + 2 \). \hfill \textbf{(01 pt)}
+        \item Déterminer et construire l'ensemble \( \mathcal{E} \). \hfill \textbf{(0,5+0,5 pt)}
+    \end{enumerate}
+    
+    \item Soit \( G \) le barycentre des points pondérés \( (A ; 2) \) ; \( (B ; -3) \) et \( \mathcal{F} = \{ M \in \mathbb{P} \ / \ 2MA^2 - 3MB^2 = 15 \} \)
+    \begin{enumerate}
+        \item Construire \( G \) et calculer \( GA \) et \( GB \). \hfill \textbf{(0,5+0,5 pt)}
+        \item Montrer que \( 2MA^2 - 3MB^2 = -MG^2 + 24 \). \hfill \textbf{(01 pt)}
+        \item Déterminer l’ensemble \( \mathcal{F} \). \hfill \textbf{(0,5 pt)}
+    \end{enumerate}
+\end{enumerate}
+\end{document}
