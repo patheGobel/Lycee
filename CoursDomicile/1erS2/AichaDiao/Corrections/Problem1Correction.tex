@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction}
+
+% Filigrane en fond
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+\hrule
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} 
+        Aïssatou Diao & \quad\quad\quad 18h–20h & 10 juin 2025 \\
+    \end{tabular}
+    \\[-0.01cm]
+    \hrule
+\end{center}
+
+\vspace{0.3cm}
+\textbf{\underline{Problème} : \textcolor{red}{(8 points)}}
+
+\section*{Partie A}
+
+\begin{enumerate}
+    \item \textbf{Étudier les limites de \( g(x) = x^3 + 3x + 2 \) aux bornes de \( \mathbb{R} \) :}
+
+    \begin{itemize}
+        \item Limite quand \( x \to +\infty \) :
+        \[
+        \lim_{x \to +\infty} g(x) = \lim_{x \to +\infty} (x^3 + 3x + 2) = +\infty
+        \]
+        \item Limite quand \( x \to -\infty \) :
+        \[
+        \lim_{x \to -\infty} g(x) = \lim_{x \to -\infty} (x^3 + 3x + 2) = -\infty
+        \]
+    \end{itemize}
+
+    \item \textbf{Calculer la dérivée \( g'(x) \) et dresser le tableau de variations :}
+
+    \[
+    g'(x) = 3x^2 + 3 = 3(x^2 + 1)
+    \]
+    Comme \( x^2 + 1 > 0 \) pour tout \( x \in \mathbb{R} \), on a :
+
+    \[
+    g'(x) > 0 \quad \text{pour tout } x \in \mathbb{R}
+    \]
+    Donc, \( g \) est strictement croissante sur \( \mathbb{R} \).
+
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=1,espcl=3]{$x$/1, $g'(x)$/1, $g(x)$/1}{$-\infty$, $+\infty$}
+        \tkzTabLine{,+,}
+        \tkzTabVar{-/$-\infty$, +/$+\infty$}
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Montrer que l’équation \( g(x) = 0 \) admet une unique solution \( \alpha \) dans \( [-1, 0] \) :}
+
+    Calcul aux bornes :
+    \[
+    g(-1) = (-1)^3 + 3(-1) + 2 = -1 - 3 + 2 = -2 < 0
+    \]
+    \[
+    g(0) = 0 + 0 + 2 = 2 > 0
+    \]
+
+    Comme \( g \) est continue et strictement croissante sur \( [-1, 0] \), il existe une unique solution \( \alpha \in [-1, 0] \) telle que \( g(\alpha) = 0 \), d’après le théorème des valeurs intermédiaires.
+
+    \item \textbf{Donner une valeur approchée de \( \alpha \) à \( 10^{-1} \) près par dichotomie :}
+
+    \begin{itemize}
+        \item \( x = -0{,}5 \Rightarrow g(-0{,}5) = (-0{,}5)^3 + 3(-0{,}5) + 2 = -0{,}125 - 1{,}5 + 2 = 0{,}375 > 0 \Rightarrow \alpha \in [-1, -0{,}5] \)
+        \item \( x = -0{,}75 \Rightarrow g(-0{,}75) = -0{,}422 - 2{,}25 + 2 = -0{,}672 < 0 \Rightarrow \alpha \in [-0{,}75, -0{,}5] \)
+        \item \( x = -0{,}6 \Rightarrow g(-0{,}6) = -0{,}216 - 1{,}8 + 2 = -0{,}016 < 0 \Rightarrow \alpha \in [-0{,}6, -0{,}5] \)
+        \item \( x = -0{,}55 \Rightarrow g(-0{,}55) = -0{,}166 - 1{,}65 + 2 = 0{,}184 > 0 \Rightarrow \alpha \in [-0{,}6, -0{,}55] \)
+    \end{itemize}
+
+    Donc une valeur approchée de \( \alpha \) à \( 10^{-1} \) près est :
+    \[
+    \boxed{-0{,}6}
+    \]
+
+\end{enumerate}
+\section*{Partie B}
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+
+\item \textbf{Montrer que \( f'(x) = \dfrac{x g(x)}{(x^2 + 1)^2} \)}
+
+Posons \( f(x) = \dfrac{x^3 - 1}{x^2 + 1} \), donc :
+\[
+u(x) = x^3 - 1, \quad v(x) = x^2 + 1
+\]
+\[
+u'(x) = 3x^2, \quad v'(x) = 2x
+\]
+\[
+f'(x) = \frac{u'(x)v(x) - u(x)v'(x)}{v(x)^2} = \frac{3x^2(x^2 + 1) - (x^3 - 1)(2x)}{(x^2 + 1)^2}
+\]
+
+Développons le numérateur :
+\[
+3x^2(x^2 + 1) = 3x^4 + 3x^2, \quad (x^3 - 1)(2x) = 2x^4 - 2x
+\]
+\[
+f'(x) = \frac{3x^4 + 3x^2 - 2x^4 + 2x}{(x^2 + 1)^2} = \frac{x^4 + 3x^2 + 2x}{(x^2 + 1)^2}
+\]
+
+Factorisons :
+\[
+x^4 + 3x^2 + 2x = x(x^3 + 3x + 2) = x g(x)
+\]
+
+Donc :
+\[
+\boxed{f'(x) = \frac{x g(x)}{(x^2 + 1)^2}}
+\]
+
+\vspace{0.4cm}
+
+\item \textbf{Étudier les variations de \( f \)}
+
+Les points critiques sont donnés par \( f'(x) = 0 \), soit :
+\[
+x g(x) = 0 \Rightarrow x = 0 \quad \text{ou} \quad g(x) = 0 \Rightarrow x = \alpha \approx -0{,}6
+\]
+
+On étudie le signe de \( f'(x) \) selon les intervalles :
+
+\begin{itemize}
+    \item Pour \( x < \alpha \), on a \( x < 0 \) et \( g(x) < 0 \) donc \( x g(x) > 0 \)
+    \item Pour \( \alpha < x < 0 \), on a \( x < 0 \), \( g(x) > 0 \) donc \( x g(x) < 0 \)
+    \item Pour \( x > 0 \), on a \( x > 0 \), \( g(x) > 0 \) donc \( x g(x) > 0 \)
+\end{itemize}
+
+Donc :
+\[
+f'(x)
+\begin{cases}
+> 0 & \text{si } x \in (-\infty, \alpha) \\
+< 0 & \text{si } x \in (\alpha, 0) \\
+> 0 & \text{si } x \in (0, +\infty)
+\end{cases}
+\]
+
+\textbf{Valeur particulière :} \( f(\alpha) = \dfrac{\alpha^3 - 1}{\alpha^2 + 1} \)
+
+\textbf{Tableau de variations (schématique)} :
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.2, espcl=2.2]{$x$/1, $f'(x)$/1, $f(x)$/2}{$-\infty$, $\alpha$, $0$, $+\infty$}
+\tkzTabLine{,+, -, +,}
+\tkzTabVar{-/ , +/$f(\alpha)$, -/$f(0) = -1$, +/}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.4cm}
+
+\item \textbf{Déterminer l’équation de la tangente \( T \) à la courbe \( (C_f) \) au point d’abscisse \( x_0 = 0 \)}
+
+\[
+f(0) = \frac{0^3 - 1}{0^2 + 1} = -1, \quad
+f'(0) = \frac{0 \cdot g(0)}{(0^2 + 1)^2} = 0
+\]
+
+Donc la tangente \( T \) est horizontale et passe par le point \( (0, -1) \). Son équation est donc :
+
+\[
+\boxed{y = -1}
+\]
+
+\end{enumerate}
+
+\end{document}
