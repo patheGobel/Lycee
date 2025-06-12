@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.17)  11 JUN 2025 22:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.17)  12 JUN 2025 23:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,9 +1099,26 @@ Overfull \hbox (1.52748pt too wide) in paragraph at lines 109--116
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+[]\OT1/lmr/m/n/10.95 Montrer que $\OML/lmm/m/it/10.95 f$ \OT1/lmr/m/n/10.95 ad-
+met une bi-jec-tion
+ []
 
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+[]\OT1/lmr/m/n/10.95 Montrer que $\OML/lmm/m/it/10.95 f$ \OT1/lmr/m/n/10.95 ad-
+met une bi-jec-tion
+ []
+
+[5]
+Overfull \hbox (5.20851pt too wide) detected at line 807
+[] [] \OT1/lmr/m/n/10.95 = \OMS/lmsy/m/n/10.95 ^^@\OT1/lmr/m/n/10.95 1 []  [] [
+] = \OMS/lmsy/m/n/10.95 ^^@\OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 :
+ []
+
+[6] 
 AED: lastpage setting LastPage
-[2] (build/problem1erTour.aux)
+[7] (build/problem1erTour.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1109,31 +1126,31 @@ Package rerunfilecheck Info: File `problem1erTour.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29629 strings out of 480104
- 595747 string characters out of 5892285
- 957518 words of memory out of 5000000
- 47006 multiletter control sequences out of 15000+600000
- 507589 words of font info for 63 fonts, out of 8000000 for 9000
+ 29821 strings out of 480104
+ 597217 string characters out of 5892285
+ 958109 words of memory out of 5000000
+ 47010 multiletter control sequences out of 15000+600000
+ 510532 words of font info for 64 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  100i,12n,104p,432b,1024s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/fonts/type1/publi
 c/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/zapfding/uzdr.pfb>
-Output written on build/problem1erTour.pdf (2 pages, 228547 bytes).
+texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on build/problem1erTour.pdf (7 pages, 302298 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 232 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
