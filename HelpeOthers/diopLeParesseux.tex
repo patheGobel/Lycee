@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\section*{Exercice 2 \hfill 06 points}
+
+Dans le plan complexe rapporté à un repère orthonormé \( (O ; \vec{u}, \vec{v}) \) d’unité graphique \( 1\,\text{cm} \), on considère les points \( A_0, A_1, A_2 \) d’affixe respective \( z_0 = 5 - 4i \), \( z_1 = -1 - 4i \), \( z_2 = -4 - i \).
+
+Soit \( f \) la fonction qui, à tout point \( M(z) \), associe le point \( M'(z') \), tel que :
+\[
+z' = \frac{1 - i}{2} z + \frac{-3 + i}{2}
+\]
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item[a/] Trouver l’affixe \( b \) du point \( B \) invariant par \( f \). \hfill \textbf{(0,5pt)}
+        
+        \item[b/] Établir la relation \( b - z' = i(z - z') \) ; en déduire la nature du triangle \( BMM' \). \hfill \textbf{(0,5pt + 0,5pt)}
+    \end{enumerate}
+
+    \item Pour tout \( n \in \mathbb{N} \), le point \( A_{n+1} \) est défini par la relation \( A_{n+1} = f(A_n) \) et on pose \( u_n = A_n A_{n+1} \).
+    \begin{enumerate}
+        \item[a)] Calculer les affixes des points \( A_3, A_4, A_5 \) et \( A_6 \). \hfill \textbf{(0,25pt + 0,25pt + 0,25pt + 0,25pt)}
+        
+        \item[b)] Placer les points \( A_3, A_4, A_5, A_6 \) et \( A_6 \) dans le repère \( (O ; \vec{u}, \vec{v}) \). \hfill \textbf{(01pt)}
+        
+        \item[c)] Démontrer que la suite \( (u_n) \) est géométrique. \hfill \textbf{(0,5pt)}
+    \end{enumerate}
+    
+    \item Soit \( (v_n) \) la suite définie sur \( \mathbb{N} \) par :
+    \[
+    v_n = u_0 + u_1 + u_2 + \dots + u_n = \sum_{k=0}^{n} u_k.
+    \]
+    \begin{enumerate}
+        \item[a)] Exprimer \( v_n \) en fonction de \( n \). \hfill \textbf{(0,5pt)}
+        
+        \item[b)] La suite \( (v_n) \) est-elle convergente ? \hfill \textbf{(0,5pt)}
+    \end{enumerate}
+    
+    \item 
+    \begin{enumerate}
+        \item[a/] Calculer en fonction de \( n \) le rayon \( r_n \) du cercle circonscrit au triangle \( B A_n A_{n+1} \). \hfill \textbf{(0,5pt)}
+        
+        \item[b/] Déterminer le plus petit entier naturel \( n_0 \) tel que \( r_n < 10^{-2} \). \hfill \textbf{(0,5pt)}
+    \end{enumerate}
+\end{enumerate}
+
+
+\section*{\underline{PROBLEME} \hfill (10pt)}
+
+\subsection*{PARTIE A}
+
+Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) et définie par \( h(x) = 1 + e^{2x - 4} \) et \( K = \left[1 ; \frac{5}{4} \right] \).
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item[a)] Calculer \( h'(x) \) et préciser le sens de variation de \( h \). \hfill \textbf{(0,25pt + 0,25pt)}
+        
+        \item[b)] Montrer que \( h(K) \subset K \). \hfill \textbf{(0,5pt)}
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item[a)] Montrer que l'équation \( h(x) = x \) admet une solution unique \( \lambda \) dans \( K \). \hfill \textbf{(0,5pt)}
+        
+        \item[b)] Montrer que \( \forall x \in K, \ 0 \leq h'(x) \leq \frac{1}{2} \). (On pourra utiliser les variations de \( h \)). \hfill \textbf{(0,25pt)}
+        
+        \item[c)] En déduire que \( |h(x) - \lambda| \leq \frac{1}{2} |x - \lambda| \). \hfill \textbf{(0,25pt)}
+    \end{enumerate}
+    
+    \item On considère la suite \( (W_n) \) définie sur \( \mathbb{N} \) par :
+    \[
+    \left\{
+    \begin{aligned}
+        W_0 &= 1 \\
+        W_{n+1} &= h(W_n)
+    \end{aligned}
+    \right.
+    \]
+    \begin{enumerate}
+        \item[a)] Démontrer par récurrence que pour tout entier naturel \( n \), \( W_n \in K \). \hfill \textbf{(0,5pt)}
+        
+        \item[b)] Démontrer que \( |W_{n+1} - \lambda| \leq \frac{1}{2} |W_n - \lambda| \) et \( |W_n - \lambda| \leq \left( \frac{1}{2} \right)^n \). \( \forall n \in \mathbb{N} \). \hfill \textbf{(0,5pt + 0,25pt)}
+        
+        \item[c)] En déduire que la suite \( (W_n) \) converge vers un réel à préciser. \hfill \textbf{(0,25pt)}
+    \end{enumerate}
+\end{enumerate}
+\subsection*{PARTIE B}
+
+Soit \( f \) la fonction définie par :
+\[
+f(x) = 
+\begin{cases}
+\ln\left|\dfrac{x - 1}{x + 1}\right| & \text{si } x \in [0 ; +\infty[ \\
+x-\dfrac{e^x - 1}{e^x + 1} & \text{si } x \in ]-\infty ; 0[
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item Déterminer le domaine de définition \( \text{D}_f \) de \( f \). \hfill \textbf{(0,5pt)}
+    
+    \item Étudier la continuité de \( f \) en 0. \hfill \textbf{(0,5pt)}
+    
+    \item 
+    \begin{enumerate}
+        \item[a)] Montrer que \( \forall x \in ]0 ; 1[ \), \( |x - 1| = 1 - x \) et 
+        \(\dfrac{f(x)}{x} = \dfrac{\ln(1 - x)}{x} - \dfrac{\ln(1 + x)}{x}.\) 
+        \hfill \textbf{(0,5pt)}
+        
+        \item[b)] Étudier la dérivabilité de \( f \) en 0. \hfill \textbf{(0,5pt)}
+        
+        \item[c)] En déduire les tangentes à la courbe représentative de \( f \) au point d’abscisse 0. \hfill \textbf{(0,5pt)}
+    \end{enumerate}
+    
+    \item Montrer que \( \forall x \in ]-\infty ; 0[ \), \( f(x) = x + 1 - \dfrac{2e^x}{e^x + 1} \). \hfill \textbf{(0,25pt)}
+    
+    \item Calculer les limites de \( f \) aux bornes des intervalles de son ensemble de définition. \hfill \textbf{(0,5pt)}
+    
+    \item En déduire les équations des asymptotes à la courbe \( \mathcal{C}_f \) de \( f \). \hfill \textbf{(0,5pt)}
+    
+    \item Calculer \( f'(x) \) pour tout \( x \in \mathbb{R} \setminus \{0;1\} \). \hfill \textbf{(0,5pt)}
+    
+    \item Étudier les variations de \( f \). \hfill \textbf{(0,5pt)}
+    
+    \item Tracer la courbe \( \mathcal{C}_f \). (Unité : 2 cm) \hfill \textbf{(0,5pt)}
+\end{enumerate}
+
+\subsection*{PARTIE C}
+
+Soit \( g \) la restriction de la fonction \( f \) à l’intervalle \( I = ]1 ; +\infty[ \).
+
+\begin{enumerate}
+    \item Montrer que la fonction \( g \) réalise une bijection de l’intervalle \( I \) sur un intervalle \( J \) à préciser. Soit \( g^{-1} \) sa bijection réciproque. \hfill \textbf{(0,5pt)}
+    
+    \item Montrer que : \( \forall x \in J, \ g^{-1}(x) = 1 - \dfrac{2e^x}{e^x - 1} \). \hfill \textbf{(0,25pt)}
+    
+    \item Tracer la courbe \( \mathcal{C}_{g^{-1}} \) dans le repère précédent. \hfill \textbf{(0,5pt)}
+\end{enumerate}
+
+
+\end{document}

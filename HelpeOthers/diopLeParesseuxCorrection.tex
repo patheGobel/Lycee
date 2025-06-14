@@ -1,0 +1,252 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{xcolor} % Required for \textcolor
+
+\begin{document}
+\section*{\underline{PROBLEME} \hfill (10pt)}
+
+\subsection*{PARTIE A}
+
+Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 1 + e^{2x - 4} \) et \( K = \left[ 1 ; \frac{5}{4} \right] \).
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item[a)] Calcul de \( h'(x) \) :
+        \(
+        h(x) = 1 + e^{2x - 4} \Rightarrow h'(x) =  \left(1 + e^{2x - 4} \right)' = 2e^{2x - 4}
+        \)
+        
+        Comme \( e^{2x - 4} > 0 \) pour tout \( x \in \mathbb{R} \), on a :
+        \(
+        h'(x) > 0 \quad \text{pour tout } x \in \mathbb{R}
+        \)
+        Donc, la fonction \( h \) est **strictement croissante** sur \( \mathbb{R} \). \hfill \textbf{(0,25pt + 0,25pt)}
+
+        \item[b)] Montrons que \( h(K) \subset K \) :
+
+        Comme \( h \) est croissante et \( K = \left[1 ; \frac{5}{4}\right] \), on a :
+        \[
+        h(K) = \left[ h(1) ; h\left(\frac{5}{4}\right) \right]
+        \]
+
+        Calculons :
+        \[
+        h(1) = 1 + e^{2(1) - 4} = 1 + e^{-2} \approx 1 + 0{,}1353 = 1{,}1353
+        \]
+        \[
+        h\left(\frac{5}{4}\right) = 1 + e^{2 \cdot \frac{5}{4} - 4} = 1 + e^{-1{,}5} \approx 1 + 0{,}2231 = 1{,}2231
+        \]
+
+        Donc :
+        \[
+        h(K) = \left[1{,}1353 ; 1{,}2231\right] \subset \left[1 ; \frac{5}{4}\right]
+        \]
+
+        Ainsi, \( h(K) \subset K \). \hfill \textbf{(0,5pt)}
+    \end{enumerate}
+        \item 
+    \begin{enumerate}
+        \item[a)] Resoudre \( h(x) = x \)  revient à resoudre \( h(x) - x = 0 \)
+        
+        On définit la fonction \( \phi(x) = h(x) - x = 1 + e^{2x - 4} - x \).
+        
+        \textcolor{red}{\textbf{Existance}}
+        
+        \( \phi \) est continue sur \( K = \left[1 ; \frac{5}{4} \right] \).\\
+        Calculons :
+        \[
+        \phi(1) = 1 + e^{-2} - 1 = e^{-2} > 0 \quad ; \quad \phi\left( \frac{5}{4} \right) = 1 + e^{-1.5} - \frac{5}{4} \approx 1.2231 - 1.25 < 0
+        \]
+
+        Donc, \( \phi(1) > 0 \) et \( \phi\left( \frac{5}{4} \right) < 0 \), par le théorème des valeurs intermédiaires, il existe un \( \lambda \in \left] 1 ; \frac{5}{4} \right[ \) tel que \( \phi(\lambda) = 0 \), soit \( h(\lambda) = \lambda \).\\
+
+        \textcolor{red}{\textbf{Unicité}}
+
+        \[
+\phi'(x) = h'(x) - 1 = 2e^{2x - 4} - 1
+\]
+
+Supposons que \(\phi'(x)<0\)
+
+\(
+\begin{aligned}
+\phi'(x) < 0 &\Longleftrightarrow 2e^{2x - 4} - 1 < 0 \\
+&\Longleftrightarrow e^{2x - 4} < \frac{1}{2} \\
+&\Longleftrightarrow 2x - 4 < \ln\left(\frac{1}{2}\right) \\
+&\Longleftrightarrow 2x < 4 - \ln(2) \\
+&\Longleftrightarrow x < 2 - \frac{\ln(2)}{2}\\
+&\Longleftrightarrow x < 1,7
+\end{aligned}
+\)
+
+Donc si \( x\in ]-\infty ;1,7[ \) alors \(\phi'(x) < 0\)
+
+Comme \( K = \left[1 ; \frac{5}{4} \right] \subset ]-\infty ;1,7[ \) donc \( \forall x \in K\, , \phi'(x) < 0\)
+
+Donc \( \phi'(x) < 0 \) sur \( K \), donc \( \phi \) est strictement décroissante sur \( K \).\\
+
+Or, une fonction continue et strictement monotone sur un intervalle admet **au plus une** racine. Comme on a déjà montré l’existence d’un \( \lambda \), on en déduit que :
+
+\[
+\text{L’équation } h(x) = x \text{ admet une \textbf{unique solution} } \lambda \in K.
+\] \hfill \textbf{(0,5pt)}
+
+        \item[b)] On a : \( h'(x) = 2e^{2x - 4} \)
+
+Encadrons \( x \in K = \left[1 ; \frac{5}{4} \right] \) :
+
+\begin{equation*}
+\begin{aligned}
+x \in K &\implies 1 \leq x \leq \frac{5}{4} \\
+       &\implies 2 \leq 2x \leq \frac{5}{2} \\
+       &\implies -2 \leq 2x - 4 \leq -\frac{3}{2} \\
+       &\implies e^{-2} \leq e^{2x - 4} \leq e^{-1.5} \\
+       &\implies 2e^{-2} \leq 2e^{2x - 4} \leq 2e^{-1.5} \\
+       &\implies 0 \leq 2e^{-2} \leq 2e^{2x - 4} \leq 2e^{-1.5} \leq \frac{1}{2} \\
+       &\implies 0 \leq 2e^{2x - 4} \leq \frac{1}{2}
+\end{aligned}
+\end{equation*}
+
+Donc : \( \forall x \in K, \quad 0 < h'(x) < \frac{1}{2} \) \hfill \textbf{(0,25pt)}
+        \item[c)] Soit \( x \in K \), et \( \lambda \in K \) l’unique solution de \( h(\lambda) = \lambda \).
+
+        D’après l’inégalité des accroissements finis (ou le théorème de la moyenne) appliquée à \( h \) sur \( K \), il existe \( c \in [x ; \lambda] \subset K \) tel que :
+        \[
+        h(x) - h(\lambda) = h(x) - \lambda = h'(c)(x - \lambda)
+        \]
+        Donc :
+        \[
+        |h(x) - \lambda| = |h'(c)| \times |x - \lambda| \leq \frac{1}{2} |x - \lambda|
+        \]
+        \hfill \textbf{(0,25pt)}
+    \end{enumerate}
+    
+    \item[3.a)] Montrons par récurrence que \( \forall n \in \mathbb{N},\ W_n \in K \).
+
+\textcolor{red}{\textbf{Initialisation :}}\\
+On a \( W_0 = 1 \in K = \left[1 ; \frac{5}{4} \right] \). L’assertion est vraie au rang \( n = 0 \).
+
+\textcolor{red}{\textbf{Hérédité :}}\\
+Supposons que pour un entier \( n \in \mathbb{N} \), on ait \( W_n \in K \).\\
+Alors par définition :
+\[
+W_{n+1} = h(W_n)
+\]
+Or à la question 1.b), on a démontré que \( h(K) \subset K \).\\
+Donc comme \( W_n \in K \), on a \( W_{n+1} \in h(K) \subset K \).\\
+
+\textcolor{red}{\textbf{Conclusion :}}\\
+Par le principe de récurrence, on a :
+\[
+\forall n \in \mathbb{N},\quad W_n \in K
+\]
+\hfill \textbf{(0,5pt)}
+
+\item[b)] On veut montrer que :
+\[
+|W_{n+1} - \lambda| \leq \frac{1}{2}|W_n - \lambda| \quad \text{et} \quad |W_n - \lambda| \leq \left( \frac{1}{2} \right)^n, \quad \forall n \in \mathbb{N}
+\]
+
+\textcolor{red}{\textbf{1) Inégalité de récurrence :}}\\
+On sait que \( W_{n+1} = h(W_n) \) et que \( \lambda \) est l’unique solution de \( h(\lambda) = \lambda \).\\
+D’après la question 2.c), on a pour tout \( x \in K \) :
+\[
+|h(x) - \lambda| \leq \frac{1}{2} |x - \lambda|
+\]
+Or, à la question 3.a), on a montré que \( \forall n, \ W_n \in K \). Donc :
+\[
+|W_{n+1} - \lambda| = |h(W_n) - \lambda| \leq \frac{1}{2} |W_n - \lambda|
+\]
+
+\textcolor{red}{\textbf{2) Majoration par \( \left( \frac{1}{2} \right)^n \) par récurrence :}}\\
+
+\item[3.b)] On a \( W_{n+1} = h(W_n) \) et \( h(\lambda) = \lambda \).\\
+D’après la question 2.c), pour tout \( x \in K \), on a :
+\[
+|h(x) - \lambda| \leq \frac{1}{2} |x - \lambda|
+\]
+Or, à la question 3.a), on a montré que \( W_n \in K \) pour tout \( n \in \mathbb{N} \), donc on peut appliquer cette inégalité à chaque itération :
+
+\begin{equation*}
+\begin{aligned}
+|W_{1} - \lambda| &\leq \frac{1}{2} |W_0 - \lambda| \\
+|W_{2} - \lambda| &\leq \frac{1}{2} |W_1 - \lambda| \\
+|W_{3} - \lambda| &\leq \frac{1}{2} |W_2 - \lambda| \\
+&\ \vdots \\
+|W_k - \lambda| &\leq \frac{1}{2} |W_{k-1} - \lambda|
+\end{aligned}
+\end{equation*}
+
+En multipliant ces inégalités **membre à membre**, on obtient :
+
+\begin{equation*}
+|W_k - \lambda| \leq \left( \frac{1}{2} \right)^k |W_0 - \lambda|
+\end{equation*}
+
+\[
+\forall k \in \mathbb{N},\quad |W_k - \lambda| \leq \left( \frac{1}{2} \right)^k
+\]
+
+\hfill \textbf{(0,5pt + 0,25pt)}
+\item[c)] D’après la question précédente, on a :
+\[
+|W_n - \lambda| \leq \left( \frac{1}{2} \right)^n
+\]
+
+Or \( \left( \frac{1}{2} \right)^n \to 0 \) quand \( n \to +\infty \), donc :
+\[
+|W_n - \lambda| \to 0
+\quad \text{ce qui équivaut à} \quad
+W_n \to \lambda
+\quad \text{quand } n \to +\infty
+\]
+
+Ainsi, la suite \( (W_n) \) **converge vers le réel \( \lambda \)**, qui est l’unique solution de l’équation \( h(x) = x \) dans l’intervalle \( K \). \hfill \textbf{(0,25pt)}
+
+\end{enumerate}
+
+\subsection*{PARTIE B}
+
+Soit \( f \) la fonction définie par :
+\[
+f(x) =
+\begin{cases}
+\ln\left( \left| \dfrac{x - 1}{x + 1} \right| \right) & \text{si } x \in [0 ; +\infty[ \\
+\displaystyle \frac{e^x - 1}{e^x + 1} & \text{si } x \in ]-\infty ; 0[
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item Déterminons le domaine de définition \( D_f \) de \( f \).\\
+
+    \textcolor{red}{\textbf{Sur } \( [0 ; +\infty[ \)} : on considère l’expression
+    \[
+    f(x) = \ln\left( \left| \frac{x - 1}{x + 1} \right| \right)
+    \]
+    Cette expression est définie si :
+    \begin{itemize}
+        \item \( x + 1 \neq 0 \Rightarrow x \neq -1 \) (toujours vrai car \( x \geq 0 \))
+        \item \( \left| \frac{x - 1}{x + 1} \right| > 0 \Rightarrow \frac{x - 1}{x + 1} \neq 0 \Rightarrow x \neq 1 \)
+    \end{itemize}
+    Donc sur \( [0 ; +\infty[ \), la fonction est définie sauf en \( x = 1 \).\\
+
+    \textcolor{red}{\textbf{Sur } \( ]-\infty ; 0[ \)} : on considère
+    \[
+    f(x) = \frac{e^x - 1}{e^x + 1}
+    \]
+    Cette expression est définie pour tout \( x \in \mathbb{R} \), car le dénominateur \( e^x + 1 > 0 \) pour tout \( x \).\\
+
+    Donc la fonction \( f \) est définie sur :
+    \[
+    D_f = ]-\infty ; 1[ \cup ]1 ; +\infty[
+    \]
+    \hfill \textbf{(0,5pt)}
+\end{enumerate}
+\end{document}
