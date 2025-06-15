@@ -248,5 +248,90 @@ f(x) =
     D_f = ]-\infty ; 1[ \cup ]1 ; +\infty[
     \]
     \hfill \textbf{(0,5pt)}
+    
+    \item[2.] Étudions la continuité de \( f \) en 0.\\
+
+La fonction \( f \) est définie par morceaux :
+
+\[
+f(x) =
+\begin{cases}
+\ln\left( \left| \frac{x - 1}{x + 1} \right| \right) & \text{si } x \in [0 ; +\infty[ \\
+\frac{e^x - 1}{e^x + 1} & \text{si } x \in ]-\infty ; 0[
+\end{cases}
+\]
+
+On cherche à savoir si \( \displaystyle \lim_{x \to 0^-} f(x) = \lim_{x \to 0^+} f(x) = f(0) \).
+
+\textcolor{red}{\textbf{Limite à gauche (vers 0\(^-\)) :}}\\
+Pour \( x < 0 \),
+\[
+f(x) = \frac{e^x - 1}{e^x + 1} \to \frac{1 - 1}{1 + 1} = 0 \quad \text{quand } x \to 0^-
+\]
+
+\textcolor{red}{\textbf{Limite à droite (vers 0\(^+\)) :}}\\
+Pour \( x > 0 \),
+\[
+f(x) = \ln\left( \left| \frac{x - 1}{x + 1} \right| \right)
+\to \ln\left( \left| \frac{-1}{1} \right| \right) = \ln(1) = 0 \quad \text{quand } x \to 0^+
+\]
+
+\textcolor{red}{\textbf{Conclusion :}}\\
+La limite de \( f(x) \) en 0 existe et vaut 0.\\
+De plus, \( f(0) = \ln\left( \left| \frac{0 - 1}{0 + 1} \right| \right) = \ln(1) = 0 \)
+
+Donc : \( \lim_{x \to 0} f(x) = f(0)
+\Rightarrow f \text{ est continue en } 0 \) \hfill \textbf{(0,5pt)}
+
+\item 
+\begin{enumerate}
+    \item[a)] Soit \( x \in ]0 ; 1[ \).\\
+
+    On a : \( x < 1 \), donc \( x - 1 < 0 \), donc : \( |x - 1| = -(x - 1) = 1 - x \)
+
+    De plus, dans ce cas \( x > 0 \), donc \( f(x) = \ln\left( \left| \frac{x - 1}{x + 1} \right| \right) \).\\
+    On remplace \( |x - 1| \) par \( 1 - x \), et on obtient : \( f(x) = \ln\left( \frac{1 - x}{x + 1} \right) \)
+
+    Or, on sait que : \( \ln\left( \frac{1 - x}{1 + x} \right) = \ln(1 - x) - \ln(1 + x) \)
+
+    Donc : \(     f(x) = \ln(1 - x) - \ln(1 + x) \Rightarrow \frac{f(x)}{x} = \frac{\ln(1 - x)}{x} - \frac{\ln(1 + x)}{x} \) \hfill \textbf{(0,5pt)}
+    
+    \item[b)] Étudions la dérivabilité de \( f \) en 0.
+
+On cherche la limite du taux d’accroissement :\(\lim_{x \to 0} \frac{f(x) - f(0)}{x}
+\quad \text{avec } f(0) = 0 \ \text{(voir question 2)}\)
+
+Il s'agit donc d'étudier : \( \lim\limits_{x \to 0} \frac{f(x)}{x} \) 
+
+\textcolor{red}{\textbf{À gauche (} \( x \to 0^- \) \textbf{) :}}\\
+
+Pour \( x < 0 \), on a \( f(x) = \dfrac{e^x - 1}{e^x + 1} \), donc : \( \frac{f(x)}{x} = \frac{1}{x} \cdot \frac{e^x - 1}{e^x + 1} \)
+
+On utilise la limite usuelle : \( \lim\limits_{x \to 0} \frac{e^x - 1}{x} = 1
+\quad \text{et} \quad \lim\limits_{x \to 0} e^x = 1
+\Rightarrow \lim\limits_{x \to 0^-} \frac{f(x)}{x} = \frac{1}{1 + 1} = \frac{1}{2} \)
+
+\textcolor{red}{\textbf{À droite (} \( x \to 0^+ \) \textbf{) :}}\\
+
+Pour \( x > 0 \), d’après la question 3.a : \( \frac{f(x)}{x} = \frac{\ln(1 - x)}{x} - \frac{\ln(1 + x)}{x} \)
+
+On utilise les limites usuelles : \( \lim_{x \to 0^+} \frac{\ln(1 - x)}{x} = -1
+\quad \text{et} \quad
+\lim\limits_{x \to 0^+} \frac{\ln(1 + x)}{x} = 1 \)
+
+Donc : \( \lim\limits_{x \to 0^+} \frac{f(x)}{x} = -1 - 1 = -2 \)
+
+\textcolor{red}{\textbf{Conclusion :}}\\
+\[
+\lim_{x \to 0^-} \frac{f(x)}{x} = \frac{1}{2}, \quad
+\lim_{x \to 0^+} \frac{f(x)}{x} = -2
+\Rightarrow \text{les limites sont différentes}
+\]
+
+Donc la fonction \( f \) **n’est pas dérivable** en 0. \hfill \textbf{(0,5pt)}
+
 \end{enumerate}
+
+\end{enumerate}
+
 \end{document}
