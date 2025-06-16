@@ -1,0 +1,168 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof : M. BA}}
+\cfoot{\bf \thepage / \pageref{LastPage}}
+
+\newcommand{\exo}[1]{%
+        \textbf{\underline{Exercice #1}}
+}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025} \\ \hline
+                \textbf{Matière : Mathématiques} & \textbf{Niveau : T S2} & \textbf{Date : 27/05/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                  \textbf{{\Large\sffamily Correction Td : Équations différentielles}}
+                \end{center}}} \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}\\
+\vspace{3cm}
+
+\exo{7} \textbf{BAC 2009}
+
+\begin{enumerate}
+    
+    \item Soit la fonction \( k \) définie par :\\ \( k(x) = (x + 2)e^{-x} \)
+    \begin{enumerate}
+        \item Étudier les variations de \( k \).
+        \item Déterminer l’équation de la tangente \( (T) \) à la courbe \( (C_k) \) de \( k \) au point d’abscisse 0.
+        \item Démontrer que le point \( I(0;2) \) est un point d’inflexion de la courbe \( (C_k) \).
+        \item Tracer \( (C_k) \) et \( (T) \) dans le même repère orthonormé \( (0,\vec{i},\vec{j}) \).
+    \end{enumerate}
+\end{enumerate}
+
+\exo{7} \textbf{BAC 2009}
+
+\begin{enumerate}
+    \item Résolvons l’équation différentielle
+    
+    \( (E) :\quad y'' + 2y' + y = 0 \)
+    
+    \( (EC) :\quad r^{2} + 2r + r = 0 \)
+    
+    \( \Delta = 0 \) donc \( r_{0} =-1 \)
+    
+    Donc la solution de l'équation diff est de la forme \( y_{H}(x) = (Ax+B)e^{-x} \)
+    
+    \item Soit \( (E') \) l’équation différentielle\\ \( y'' + 2y' + y = x + 3 \).\\
+    Déterminons les réels \( a \) et \( b \) tels que la fonction \( h(x) = ax + b \) soit solution de \( (E') \).
+    
+    \( h \) est solution de \( (E') \) ssi  \( h'' + 2h' + h = x + 3 \)
+    
+		\( 
+		    \begin{aligned}
+    			 h'' + 2h' + h = x + 3 & \implies (ax + b)'' + 2 (ax + b)' + (ax + b) = x + 3\\
+    			 											& \implies 2a  + ax + b = x + 3\\
+    			 											& \implies \begin{cases}a=1\\ 2a+b=3 \end{cases}\\
+    			 											& \implies \begin{cases}a=1\\ b=1 \end{cases}
+    		\end{aligned}
+		\)
+		
+		Donc \( y_{p}(x) = h(x) = x + 1 \)
+    \begin{enumerate}
+        \item Montrons que \( g \) solution de \((E')\) ssi \( g - h \) est solution de \((E)\)
+
+        \textcolor{red}{\textasteriskcentered{} Supposons que \( g \) est solution de \((E') \), montrons que \( g - h \) est solution de \((E) \)}
+
+\(        
+\begin{aligned}
+            g \text{ solution de } (E') &\Rightarrow g'' + 2g' + g = x + 3 \quad(1)\\
+             \textbf{Or }h \text{ est solution de } (E')&\Rightarrow h'' + 2h' + h = x + 3 \quad(2)\\
+(1) - (2)       &\Rightarrow g''-h''+2g'-2h'+h-g=x + 3-x - 3\\
+                &\Rightarrow (g-h)''+2(g-h)'+h-g=0\\
+\end{aligned}
+\)
+
+        \(\text{donc } g - h \text{ est solution de } (E)\)
+
+        \(\text{D'où } g \text{ solution de } (E') \Rightarrow g - h \text{ solution de } (E)\)
+
+        \textcolor{red}{\textasteriskcentered{} Supposons que \( g - h \) est solution de \((E)\) \( \Rightarrow g \) solution de \((E')\)}
+
+Montrons que \( g \) est solution de \((E') \)
+
+\(        
+\begin{aligned}
+            g - h \text{ solution de } (E) &\Rightarrow (g - h)'' + 2(g - h)' + g - h = 0 \quad(1)\\
+             \textbf{Or } h  \text{ solution de } (E') &\Rightarrow h'' + 2h' + h = x + 3 \quad(2)\\
+(1) - (2)       &\Rightarrow (g - h)'' + h'' + 2(g - h)' + 2h' + g - h + h = x + 3\\
+                &\Rightarrow g'' - h'' + h'' + 2g' - 2h' + 2h' + g - h + h = x + 3\\
+                &\Rightarrow g'' + 2g' + g = x + 3
+\end{aligned}
+\)
+
+\item Résolvons \( (E') \)
+
+\( (E'): y'' + 2y' + y = x + 3 \)
+
+D'après 1) \( y_{H}(x) = (Ax+B)e^{-x} \) et 2) \( y_{p}(x)=h(x) = x+1 \)
+
+Donc la solution de \( (E'): y_{H}(x)+y_{p}(x) = (Ax+B)e^{-x} + x+1\)
+
+     \end{enumerate}
+\end{enumerate}
+
+\end{document}
