@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.17)  17 JUN 2025 07:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.17)  17 JUN 2025 07:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,96 +966,96 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 93
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-20.
+37.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+
+ []
+
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
 
  []
 
 [8]
-<diopLeParresseux.png, id=119, 362.55853pt x 166.65607pt>
+<diopLeParresseux.png, id=122, 362.55853pt x 166.65607pt>
 File: diopLeParresseux.png Graphic file (type png)
 <use diopLeParresseux.png>
-Package pdftex.def Info: diopLeParresseux.png  used on input line 709.
+Package pdftex.def Info: diopLeParresseux.png  used on input line 726.
 (pdftex.def)             Requested size: 432.48355pt x 198.81142pt.
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 768--769
+Underfull \hbox (badness 10000) in paragraph at lines 785--786
 
  []
 
 [10 <build/diopLeParresseux.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Underfull \hbox (badness 10000) in paragraph at lines 787--788
 
  []
 
-<diopLeParresseuxReciproque.png, id=137, 447.03093pt x 205.48521pt>
+<diopLeParresseuxReciproque.png, id=140, 447.03093pt x 205.48521pt>
 File: diopLeParresseuxReciproque.png Graphic file (type png)
 <use diopLeParresseuxReciproque.png>
-Package pdftex.def Info: diopLeParresseuxReciproque.png  used on input line 784
+Package pdftex.def Info: diopLeParresseuxReciproque.png  used on input line 801
 .
 (pdftex.def)             Requested size: 432.48355pt x 198.80934pt.
 
@@ -1067,9 +1067,9 @@ ed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30599 strings out of 480104
- 608849 string characters out of 5892285
- 948367 words of memory out of 5000000
+ 30602 strings out of 480104
+ 608873 string characters out of 5892285
+ 948371 words of memory out of 5000000
  47987 multiletter control sequences out of 15000+600000
  511771 words of font info for 87 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
@@ -1090,11 +1090,11 @@ live/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/diopLeParesseuxCorrection.pdf (11 pages, 774998 bytes).
+Output written on build/diopLeParesseuxCorrection.pdf (11 pages, 778112 bytes).
 
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
