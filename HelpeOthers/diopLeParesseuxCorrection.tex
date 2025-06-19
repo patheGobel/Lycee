@@ -94,23 +94,6 @@ middle color = tcbcolback!80!black]
 \end{tikzpicture}
 \vspace{3cm}
 
-\section*{Exercice 2 \hfill 06 points}
-
-Dans le plan complexe rapporté à un repère orthonormé \( (O ; \vec{u}, \vec{v}) \) d’unité graphique \( 1\,\text{cm} \), on considère les points \( A_0, A_1, A_2 \) d’affixe respective \( z_0 = 5 - 4i \), \( z_1 = -1 - 4i \), \( z_2 = -4 - i \).
-
-Soit \( f \) la fonction qui, à tout point \( M(z) \), associe le point \( M'(z') \), tel que :
-\[
-z' = \frac{1 - i}{2} z + \frac{-3 + i}{2}
-\]
-
-\begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item Trouver l’affixe \( b \) du point \( B \) invariant par \( f \). \hfill \textbf{(0,5pt)}
-    \end{enumerate}
-
-\end{enumerate}
-
 \section*{\underline{PROBLEME} \hfill (10pt)}
 
 \subsection*{PARTIE A}
@@ -120,7 +103,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
 \begin{enumerate}
     \item
           \begin{enumerate}
-              \item[a)] Calcul de \( h'(x) \) :
+              \item Calcul de \( h'(x) \) :
                   \(
                   h(x) = 1 + e^{2x - 4} \Rightarrow h'(x) =  \left(1 + e^{2x - 4} \right)' = 2e^{2x - 4}
                   \)
@@ -131,7 +114,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
                   \)
                   Donc, la fonction \( h \) est **strictement croissante** sur \( \mathbb{R} \). \hfill \textbf{(0,25pt + 0,25pt)}
 
-              \item[b)] Montrons que \( h(K) \subset K \) :
+              \item Montrons que \( h(K) \subset K \) :
 
                   Comme \( h \) est croissante et \( K = \left[1 ; \frac{5}{4}\right] \), on a :
                   \[
@@ -155,7 +138,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
           \end{enumerate}
     \item
           \begin{enumerate}
-              \item[a)] Resoudre \( h(x) = x \)  revient à resoudre \( h(x) - x = 0 \)
+              \item Resoudre \( h(x) = x \)  revient à resoudre \( h(x) - x = 0 \)
 
                   On définit la fonction \( \phi(x) = h(x) - x = 1 + e^{2x - 4} - x \).
 
@@ -200,7 +183,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
                       \text{L’équation } h(x) = x \text{ admet une \textbf{unique solution} } \lambda \in K.
                   \] \hfill \textbf{(0,5pt)}
 
-              \item[b)] On a : \( h'(x) = 2e^{2x - 4} \)
+              \item On a : \( h'(x) = 2e^{2x - 4} \)
 
                   Encadrons \( x \in K = \left[1 ; \frac{5}{4} \right] \) :
 
@@ -217,7 +200,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
                   \end{equation*}
 
                   Donc : \( \forall x \in K, \quad 0 < h'(x) < \frac{1}{2} \) \hfill \textbf{(0,25pt)}
-              \item[c)] Soit \( x \in K \), et \( \lambda \in K \) l’unique solution de \( h(\lambda) = \lambda \).
+              \item Soit \( x \in K \), et \( \lambda \in K \) l’unique solution de \( h(\lambda) = \lambda \).
 
                   D’après l’inégalité des accroissements finis (ou le théorème de la moyenne) appliquée à \( h \) sur \( K \), il existe \( c \in [x ; \lambda] \subset K \) tel que :
                   \[
@@ -230,7 +213,8 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
                   \hfill \textbf{(0,25pt)}
           \end{enumerate}
 
-    \item[3.a)] Montrons par récurrence que \( \forall n \in \mathbb{N},\ W_n \in K \).
+    \item \begin{enumerate}
+        \item Montrons par récurrence que \( \forall n \in \mathbb{N},\ W_n \in K \).
 
         \textcolor{red}{\textbf{Initialisation :}}\\
         On a \( W_0 = 1 \in K = \left[1 ; \frac{5}{4} \right] \). L’assertion est vraie au rang \( n = 0 \).
@@ -250,8 +234,8 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
             \forall n \in \mathbb{N},\quad W_n \in K
         \]
         \hfill \textbf{(0,5pt)}
-
-    \item[b)] On veut montrer que :
+        
+        \item  On veut montrer que :
         \[
             |W_{n+1} - \lambda| \leq \frac{1}{2}|W_n - \lambda| \quad \text{et} \quad |W_n - \lambda| \leq \left( \frac{1}{2} \right)^n, \quad \forall n \in \mathbb{N}
         \]
@@ -269,7 +253,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
 
         \textcolor{red}{\textbf{2) Majoration par \( \left( \frac{1}{2} \right)^n \) par récurrence :}}\\
 
-    \item[3.b)] On a \( W_{n+1} = h(W_n) \) et \( h(\lambda) = \lambda \).\\
+        On a \( W_{n+1} = h(W_n) \) et \( h(\lambda) = \lambda \).\\
         D’après la question 2.c), pour tout \( x \in K \), on a :
         \[
             |h(x) - \lambda| \leq \frac{1}{2} |x - \lambda|
@@ -297,7 +281,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
         \]
 
         \hfill \textbf{(0,5pt + 0,25pt)}
-    \item[c)] D’après la question précédente, on a :
+    \item D’après la question précédente, on a :
         \[
             |W_n - \lambda| \leq \left( \frac{1}{2} \right)^n
         \]
@@ -311,6 +295,7 @@ Soit \( h \) la fonction dérivable sur \( \mathbb{R} \) définie par \( h(x) = 
         \]
 
         Ainsi, la suite \( (W_n) \) **converge vers le réel \( \lambda \)**, qui est l’unique solution de l’équation \( h(x) = x \) dans l’intervalle \( K \). \hfill \textbf{(0,25pt)}
+    \end{enumerate}
 
 \end{enumerate}
 
@@ -351,7 +336,7 @@ Soit \( f \) la fonction définie par :
           \]
           \hfill \textbf{(0,5pt)}
 
-    \item[2.] Étudions la continuité de \( f \) en 0.\\
+    \item Étudions la continuité de \( f \) en 0.\\
 
         La fonction \( f \) est définie par morceaux :
 
@@ -409,7 +394,7 @@ Soit \( f \) la fonction définie par :
                 \mathbf{Donc :  \lim_{x \to 0^-} f(x) = \lim_{x \to 0^+} f(x) = f(0) \Rightarrow f \text{ est continue en } 0 }
             \]
         \end{resultbox}
-    \item
+    \item 
           \begin{enumerate}
               \item Soit \( x \in ]0 ; 1[ \).\\
 
@@ -473,7 +458,8 @@ Soit \( f \) la fonction définie par :
 
                     Donc la fonction \( f \) **n’est pas dérivable** en 0. \hfill \textbf{(0,5pt)}
 
-              \item 
+              \item Les tangentes en $0$:
+              
                     \textcolor{red}{\textbf{À gauche de 0 :}}\\
                     La pente de la demi-tangente est \( \frac{1}{2} \), donc l'équation de la tangente gauche est :
                     \[
@@ -608,11 +594,19 @@ On a également :
 
 Donc la droite \( y = 0 \) est une \textbf{asymptote horizontale} à droite de la courbe \( \mathscr{C}_f \).
 
+\textit{Il y a une éventuelle branche parabolique } Comme \( \lim\limits_{x\to -\infty} f(x)= +\infty \)
+
+\( \lim\limits_{x\to -\infty} \frac{f(x)}{x} = \lim\limits_{x\to -\infty} \frac{x-\frac{e^x-1}{e^x +1}}{x}=\lim\limits_{x\to -\infty} 1-\frac{e^x-1}{(e^x +1)x} = 1\)
+
+\( \lim\limits_{x\to -\infty} \frac{f(x)}{x} - x= \lim\limits_{x\to -\infty} x-\frac{e^x-1}{e^x +1}-x=\lim\limits_{x\to -\infty} -\frac{e^x-1}{e^x +1} = 1\)
+
+\(y=x+1\) est \(AO\) en \(-\infty\)
+
 \begin{resultbox}
 \[
 \boxed{
 \text{Asymptotes de } \mathscr{C}_f :
-\quad x = 1 \quad \text{et} \quad y = 0
+\quad x = 1 \quad \text{et} \quad y = 0 \quad \text{et} \quad y=x+1 \text{ est AO en }  -\infty
 }
 \]
 \end{resultbox}
@@ -638,8 +632,8 @@ f(x) = x - \frac{e^x - 1}{e^x + 1} \text{ou encore} f(x) = x+1 - \frac{2e^x}{e^x
 \]
 
 \[
-f'(x)=1 - \frac{2e^x (e^x + 1) - (e^x - 1)(e^x)}{(e^x + 1)^2}
-=1- \frac{e^x(e^x + 1 - e^x + 1)}{(e^x + 1)^2}
+f'(x)=1 - \frac{2e^x (e^x + 1) - (e^x )(2e^x)}{(e^x + 1)^2}
+=1- \frac{2e^x(e^x + 1 - e^x )}{(e^x + 1)^2}
 =1- \frac{2e^x}{(e^x + 1)^2}
 \]
 
@@ -802,4 +796,323 @@ Soit \( g \) la restriction de la fonction \( f \) à l’intervalle \( I = ]1 ;
         \end{figure}
     \end{center}
         \href{https://www.geogebra.org/classic/efgm6ucx}{Clique ici pour voir la figure sur géogébra}
+
+\section*{Exercice 2 \hfill 06 points}
+
+Dans le plan complexe rapporté à un repère orthonormé \( (O ; \vec{u}, \vec{v}) \) d’unité graphique \( 1\,\text{cm} \), on considère les points \( A_0, A_1, A_2 \) d’affixe respective \( z_0 = 5 - 4i \), \( z_1 = -1 - 4i \), \( z_2 = -4 - i \).
+
+Soit \( f \) la fonction qui, à tout point \( M(z) \), associe le point \( M'(z') \), tel que :
+\[
+z' = \frac{1 - i}{2} z + \frac{-3 + i}{2}
+\]
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Trouvons l’affixe \( b \) du point \( B \) invariant par \( f \). \hfill \textbf{(0,5pt)}\\
+
+        Soit \( b \in \mathbb{C} \) tel que \( f(b) = b \).\\
+        On résout donc :
+
+        \(
+        \begin{aligned}
+            b = \frac{1 - i}{2} b + \frac{-3 + i}{2} &\implies b - \frac{1 - i}{2} b = \frac{-3 + i}{2}\\
+                                                     &\implies b \left(1 - \frac{1 - i}{2} \right) = \frac{-3 + i}{2}\\
+                                                     &\implies b\left(\frac{2 - (1 - i)}{2}\right) = \frac{1 + i}{2}\\
+                                                     &\implies \frac{1 + i}{2}b = \frac{-3 + i}{2}\\
+                                                     &\implies b= \frac{-3 + i}{1 + i}\\
+                                                     &\implies b = \frac{(-3 + i)(1 - i)}{(1 + i)(1 - i)}\\
+                                                     &\implies b=\frac{-3(1 - i) + i(1 - i)}{1^2 + 1^2}\\
+                                                     &\implies b = \frac{-3 + 3i + i - i^2}{2}\\
+                                                     &\implies b = \frac{-3 + 4i + 1}{2}\\
+                                                     &\implies b = \frac{-2 + 4i}{2}\\
+                                                     &\implies b=-1 + 2i
+        \end{aligned}
+        \)
+
+        \begin{resultbox}
+        \[
+        \boxed{b = -1 + 2i}
+        \]
+        \end{resultbox}
+                \item Établir la relation \( b - z' = i(z - z') \)  \hfill \textbf{(0,5pt)}
+                
+        On a: \(         z' = \frac{1 - i}{2}z + \frac{-3 + i}{2}, \quad \text{et} \quad b = -1 + 2i \)
+
+        Calculons \( b - z' \) :
+
+        \(
+        \begin{aligned}
+            b - z' &= \left(-1 + 2i\right) - \left[\frac{1 - i}{2}z + \frac{-3 + i}{2}\right]\\
+                  &= -1 + 2i - \frac{1 - i}{2}z - \frac{-3 + i}{2}\\
+                  &= -1 + 2i + \frac{3 - i}{2} - \frac{1 - i}{2}z\\
+                  &= \frac{1}{2} + \frac{3i}{2} - \frac{1 - i}{2}z\\
+                  &= \frac{1+3i}{2} - \frac{1 - i}{2}z\\
+        \end{aligned}
+        \)
+
+        Calculons maintenant \( i(z - z') \) :
+
+        \(
+        \begin{aligned}
+            i(z - z') &= i\left[z - \left( \frac{1 - i}{2}z + \frac{-3 + i}{2} \right) \right]\\
+                      &= i\left[z - \frac{1 - i}{2}z - \frac{-3 + i}{2} \right]\\
+                      &=i\left[\left(1 - \frac{1 - i}{2} \right)z + \frac{3 - i}{2} \right]\\
+                      &=i\left[ \frac{1 + i}{2}z + \frac{3 - i}{2} \right]\\
+                      &=i \cdot \frac{1 + i}{2}z + i \cdot \frac{3 - i}{2}\\
+                      &= \frac{i(1 + i)}{2}z + \frac{i(3 - i)}{2}\\
+                      &= \frac{-1 + i}{2}z + \frac{1 + 3i}{2}\\
+                      &= \frac{1 + 3i}{2} - \frac{1 - i}{2}z
+        \end{aligned}
+        \)
+        
+        Donc : \boxed{b - z' = i(z - z')}
+
+        \textbf{Autre raisonnment concis et astucieux}
+
+        \(
+\begin{aligned}
+    b - z' &= \left(-1 + 2i\right) - \left[\frac{1 - i}{2}z + \frac{-3 + i}{2}\right]\\
+           &= i\left[ i + 2 - \frac{-i - 1}{2}z - \frac{3i + 1}{2} \right] \\
+           &= i\left[ \left(i + 2 - \frac{3i + 1}{2} \right) - \frac{-i - 1}{2}z \right] \\
+           &= i\left[ \frac{2i + 4 - 3i - 1}{2} + \frac{1 + i}{2}z \right] \\
+           &= i\left[ \frac{-i + 3}{2} + \frac{1 + i}{2}z \right] \\
+           &= i\left( \frac{1 + i}{2}z + \frac{3 - i}{2} \right)\\
+           &\textbf{ or } \underline{z - z' = z-\left[\frac{1 - i}{2}z + \frac{-3 + i}{2}\right] = z+\frac{-1 + i}{2}z + \frac{3 - i}{2} = \frac{1 + i}{2}z + \frac{3 - i}{2}}\\
+           &= i(z - z')
+\end{aligned}
+\)
+
+        
+        \vspace{1em}
+        \textbf{Interprétation géométrique :}
+
+        \[
+        b - z' = i(z - z')\implies \overrightarrow{BM'}= i.\overrightarrow{MM'}
+        \]
+
+        Multiplier un vecteur complexe par \( i \), c’est effectuer une rotation d’angle \( \frac{\pi}{2} \) dans le sens direct.
+
+        Donc le triangle \( BMM' \) est **rectangle en \( M' \)** (et orienté dans le sens direct). \hfill \textbf{(0,5pt)}
+        
+        \begin{resultbox}
+        \[
+        \boxed{\text{Le triangle } BMM' \text{ est rectangle en } M'}
+        \]
+        \end{resultbox}
+    \end{enumerate}
+    \item Pour tout \( n \in \mathbb{N} \), le point \( A_{n+1} \) est défini par la relation \( A_{n+1} = f(A_n) \) et on pose \( u_n = A_n A_{n+1} \).
+    \begin{enumerate}
+        \item Calculer les affixes des points \( A_3, A_4, A_5 \) et \( A_6 \). \hfill \textbf{(0,25pt + 0,25pt + 0,25pt + 0,25pt)}\\
+
+        On a : \( f(z) = \frac{1 - i}{2}z + \frac{-3 + i}{2} \) donc \( f(A_n) = \frac{1 - i}{2}A_n + \frac{-3 + i}{2} \)
+
+        \( z_{n+1} = \frac{1 - i}{2}z_n + \frac{-3 + i}{2} \)
+
+        D'où \( A_{n+1} = \frac{1 - i}{2}A_n + \frac{-3 + i}{2} \)
+
+        On connaît : \(z_0 = 5 - 4i,\quad z_1 = -1 - 4i,\quad z_2 = -4 - i\)
+
+        Calculs successifs : 
+        
+\(
+\begin{aligned}
+z_3 = f(z_2) &= \frac{1 - i}{2}(-4 - i) + \frac{-3 + i}{2} \\
+             &= \frac{(1 - i)(-4 - i)}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-4 + 4i - i + i^2}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-5 + 3i}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-8 + 4i}{2} \\
+             &= -4 + 2i
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+z_4 = f(z_3) &= \frac{1 - i}{2}(-4 + 2i) + \frac{-3 + i}{2} \\
+             &= \frac{(1 - i)(-4 + 2i)}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-4 + 4i + 2i - 2i^2}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-4 + 6i + 2}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-2 + 6i}{2} + \frac{-3 + i}{2} \\
+             &= \frac{-5 + 7i}{2}
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+z_5 = f(z_4) &= \frac{1 - i}{2} \left( \frac{-5 + 7i}{2} \right) + \frac{-3 + i}{2} \\
+             &= \frac{(1 - i)(-5 + 7i)}{4} + \frac{-3 + i}{2} \\
+             &= \frac{-5 + 7i + 5i - 7i^2}{4} + \frac{-3 + i}{2} \\
+             &= \frac{-5 + 12i + 7}{4} + \frac{-3 + i}{2} \\
+             &= \frac{2 + 12i}{4} + \frac{-6 + 2i}{4} \\
+             &= \frac{-4 + 14i}{4} \\
+             &= \frac{-2 + 7i}{2}
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+z_6 &= f(z_5) = \frac{1 - i}{2} \left( \frac{-2 + 7i}{2} \right) + \frac{-3 + i}{2} \\
+    &= \frac{(1 - i)(-2 + 7i)}{4} + \frac{-3 + i}{2} \\
+    &= \frac{-2 + 7i + 2i - 7i^2}{4} + \frac{-3 + i}{2} \\
+    &= \frac{-2 + 9i + 7}{4} + \frac{-3 + i}{2} \quad \text{(car } i^2 = -1) \\
+    &= \frac{5 + 9i}{4} + \frac{-6 + 2i}{4} \\
+    &= \frac{-1 + 11i}{4}
+\end{aligned}
+\)
+
+ \begin{resultbox}
+\[
+\boxed{
+\begin{aligned}
+z_3 &= -4 + 2i \\
+z_4 &= \dfrac{-5 + 7i}{2} \\
+z_5 &= \dfrac{-2 + 7i}{2} \\
+z_6 &= \dfrac{-1 + 11i}{4}
+\end{aligned}
+}
+\]
+\end{resultbox}
+\item Representation des points\\
+
+\begin{center}
+        \begin{figure}[H]% Forcer l'image à cet endroit
+         \centering
+         \includegraphics[width=0.8\textwidth]{diopLeParresseuxComplexe.png}
+        \end{figure}
+    \end{center}
+        \href{https://www.geogebra.org/classic/unkauraq}{Voir les points sur Géo}
+
+\item \textbf{Démontrons que la suite \( (u_n) \) n’est pas géométrique.} \hfill \textbf{(0,5pt)}
+
+On rappelle que \( u_n = A_nA_{n+1} = |z_{n+1} - z_n| \). Calculons les premiers termes :
+
+On a : \( z_{n+1} = \frac{1 - i}{2}z_n + \frac{-3 + i}{2} \) donc \( z_{n+2} = \frac{1 - i}{2}z_{n+1} + \frac{-3 + i}{2} \)
+
+\(
+\begin{aligned}
+    \frac{u_{n+1}}{u_n}&=\frac{|z_{n+2} - z_{n+1}|}{|z_{n+1} - z_n|}\\
+                       &=\frac{|z_{n+2} - z_{n+1}|}{|z_{n+1} - z_n|}\\
+                       &=\frac{|\frac{1 - i}{2}z_{n+1} + \frac{-3 + i}{2} - \left( \frac{1 - i}{2}z_n + \frac{-3 + i}{2} \right)|}{|z_{n+1} - z_n|}\\
+                       &=\frac{|\frac{1 - i}{2}z_{n+1} + \frac{-3 + i}{2} - \frac{1 - i}{2}z_n - \frac{-3 + i}{2}|}{|z_{n+1} - z_n|}\\
+                       &=\frac{|\frac{1 - i}{2}z_{n+1} - \frac{1 - i}{2}z_n|}{|z_{n+1} - z_n|}\\
+                       &=\left|\frac{1 - i}{2}\right|\frac{\left|z_{n+1} - z_n\right|}{|z_{n+1} - z_n|}\\
+                       &=\left|\frac{1 - i}{2}\right|\\
+                       &=\frac{\sqrt{2}}{2}\\
+\end{aligned}
+\)
+
+\(
+\begin{aligned}
+u_0 &= |z_1 - z_0| \\
+    &= |-1 - 4i - (5 - 4i)| \\
+    &= |-1 - 5| \\
+    &= |-6| = 6
+\end{aligned}
+\)
+
+\(
+\boxed{u_0 = 6}
+\)
+
+
+\begin{resultbox}
+\[
+\boxed{
+\text{La suite } (u_n) \text{ est géométrique  de raison } \frac{\sqrt{2}}{2}
+}
+\]
+\end{resultbox}
+
+\end{enumerate}
+\item Soit \( (v_n) \) la suite définie sur \( \mathbb{N} \) par :
+
+\begin{enumerate}
+\item Exprimons \( v_n \) en fonction de \( n \). \hfill \textbf{(0,5pt)}
+
+    \( v_n = u_0 + u_1 + u_2 + \dots + u_n = \sum_{k=0}^{n} u_k. \)
+
+\( 
+\begin{aligned}
+    v_n &= u_0 + u_1 + u_2 + \dots + u_n \\
+        &= u_p \times \frac{1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n - p + 1}}{1 - q} \\
+        &= u_0 \times \frac{1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}}{1 - \left(\dfrac{\sqrt{2}}{2}\right)} \\
+        &= 6 \times \frac{1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}}{1 - \left(\dfrac{\sqrt{2}}{2}\right)}\\
+        &= 6 \times \frac{1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}}{\dfrac{2 - \sqrt{2}}{2}} \\
+        &= 6 \times \frac{2}{2 - \sqrt{2}} \left(1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}\right) \\
+        &= \frac{12}{2 - \sqrt{2}} \left(1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}\right)\\
+        &=\frac{12(2 + \sqrt{2})}{(2 - \sqrt{2})(2 + \sqrt{2})}\left(1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}\right)\\
+        &=\frac{12(2 + \sqrt{2})}{4 - 2}\left(1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}\right)\\
+        &=\frac{12(2 + \sqrt{2})}{2}\left(1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}\right)\\
+        &=6(2 + \sqrt{2})\left(1 - \left(\dfrac{\sqrt{2}}{2}\right)^{n + 1}\right)
+\end{aligned}
+\)
+
+\begin{resultbox}
+\[
+\boxed{
+v_n = 6(2 + \sqrt{2})\left(1 - \left( \frac{\sqrt{2}}{2} \right)^{n+1} \right)
+}
+\]
+\end{resultbox}
+
+\item La Convergente de \( (v_n) \) \hfill \textbf{(0,5pt)}\\
+
+On a :
+\(
+v_n = 6(2 + \sqrt{2})\left(1 - \left( \frac{\sqrt{2}}{2} \right)^{n+1} \right)
+\)
+
+\(
+\begin{aligned}
+    \lim\limits_{x\to +\infty} v_n &= \lim\limits_{x\to +\infty} 6(2 + \sqrt{2})\left(1 - \left( \frac{\sqrt{2}}{2} \right)^{n+1} \right)\\
+    &=\lim\limits_{x\to +\infty} 6(2 + \sqrt{2})\left(1 - 0 \right)\\
+    &=\lim\limits_{x\to +\infty} 6(2 + \sqrt{2})
+\end{aligned}
+\)
+
+\begin{resultbox}
+\[
+\boxed{
+(v_n) \text{ est convergente et } \lim\limits_{n \to +\infty} v_n = 6(2 + \sqrt{2})
+}
+\]
+\end{resultbox}
+
+\end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item Calculons en fonction de \( n \) le rayon \( r_n \) du cercle circonscrit au triangle \( B A_n A_{n+1} \). \hfill \textbf{(0,5pt)}
+
+        On a : 
+        \(
+        \begin{cases}
+            z' = \frac{1 - i}{2}z + \frac{-3 + i}{2}\\
+            A_{n+1}= \frac{1 - i}{2}A_n + \frac{-3 + i}{2}\\
+            (b-z')=i(z-z')
+        \end{cases}
+        \) 
+
+        En considérant la question \textbf{1.b} où BMM'est un triangle rectangle en M'.
+
+        Par analogie
+        
+        \( (b-z')=i(z-z') \implies \overrightarrow{BA_{n+1}} = i \cdot \overrightarrow{A_n A_{n+1}}\) donc
+        \( B A_n A_{n+1} \) est un trinagle rectangle en  \( A_{n+1} \)
+        
+Or, dans un triangle rectangle, le **rayon du cercle circonscrit** est égal à la moitié de l’hypoténuse.
+
+Ici, l’hypoténuse est le segment \( [B A_n] \), donc :  \(r_n = \dfrac{1}{2} \times |B A_n|\)
+
+Calculons \( |B A_n| \). On sait que \( A_n \) est défini par récurrence :
+\[
+z_{n} = A_n
+\quad \text{et} \quad z_B = b = -1 + 2i
+\quad \Rightarrow \quad |B A_n| = |z_n - b|
+\]
+
+    \end{enumerate}
+
+\end{enumerate}
+
 \end{document}
