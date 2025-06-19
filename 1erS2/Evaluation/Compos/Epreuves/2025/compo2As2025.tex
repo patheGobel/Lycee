@@ -1,0 +1,165 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{float}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                                                     \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{$^{er}$S2} & \textbf{Date: 16/06/2025} & \textbf{Durée : 4 heures} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Composition n$ ^{\circ} $ 2 Du 2$ ^\text{\bf nd} $ Semestre}}
+                                                              \end{center}}}                                                                                                                               \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Exercice 1 :} 5 pts }
+
+Soient \( A \) et \( B \) deux points du plan tels que \( AB = 8\, \text{cm} \).
+
+\begin{enumerate}
+    \item Construire le barycentre \( G \) des points pondérés \( (A; 1) \) et \( (B; 3) \). \hfill \textbf{0{,}1 pt}
+    \item Calculer les distances \( GA \) et \( GB \). \hfill \textbf{0{,}5 pt + 0{,}5 pt}
+    \item Démontrer que pour tout point \( M \) du plan, 
+    \[
+    MA^2 + 3MB^2 = 4MG^2 + 48
+    \]
+    \hfill \textbf{0{,}1 pt}
+    \item Démontrer et construire l'ensemble des points \( M \) du plan tels que :
+    \[
+    MA^2 + 3MB^2 = 84
+    \]
+    \hfill \textbf{0{,}1 pt}
+    \item Déterminer et construire l'ensemble des points \( M \) tels que :
+    \[
+    \overrightarrow{MA} \cdot \overrightarrow{MB} = -12
+    \]
+    \hfill \textbf{0{,}1 pt}
+\end{enumerate}
+
+\section*{\underline{Exercice 2 :} 5 pts }
+
+On considère la fonction \( f \) définie par 
+\[
+f(x) = \frac{x^2 + ax + b}{x - 1}
+\]
+
+\begin{enumerate}
+    \item Déterminer les réels \( a \) et \( b \) tels que la courbe \( (C_f) \) passe par le point \( A(0,1) \) et admette en ce point une tangente horizontale. \hfill \textbf{0{,}5 pt + 0{,}75 pt}
+    
+    On suppose \( a = 1 \) et \( b = -1 \dots \)
+    
+    \item Déterminer les limites aux bornes de \( \mathcal{D}_f \). Préciser les asymptotes éventuelles. \hfill \textbf{0{,}5 pt + 0{,}5 pt + 0{,}5 pt}
+    
+    \item Déterminer les réels \( \alpha \), \( \beta \), \( \gamma \) tels que :
+    \[
+    f(x) = \alpha x + \beta + \frac{\gamma}{x - 1}
+    \]
+    En déduire que la droite \( (D) : y = x + 2 \) est asymptote oblique à la courbe. \hfill \textbf{0{,}75 pt + 0{,}5 pt}
+    
+    \item Dresser le tableau de variations de \( f \) puis tracer la courbe. \hfill \textbf{0{,}1 pt + 0{,}5 pt}
+\end{enumerate}
+
+\section*{Problème : 10 pts}
+
+Soit \( f \) la fonction définie par :
+\[
+f(x) = 
+\begin{cases}
+\dfrac{-x^2 + 5x - 5}{x - 1} & \text{si } x \leq 0 \\
+\dfrac{3x - 5}{x^2 - 1} & \text{si } x > 0
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item Montrer que \( D_f = \mathbb{R} \setminus \{1\} \). \hfill \textbf{1{,}25 pt}
+    
+    \item Calculer les limites aux bornes de \( D_f \). \hfill \textbf{0{,}1 pt}
+    
+    \item En déduire les asymptotes de \( (C_f) \). \hfill \textbf{0{,}5 pt}
+    
+    \item Montrer que la droite d’équation \( y = -x + 4 \) est asymptote oblique à \( (C_f) \) en \( -\infty \). \hfill \textbf{0{,}5 pt}
+    
+    \item Étudier la continuité de \( f \) en \( 0 \). \hfill \textbf{0{,}75 pt}
+    
+    \item Étudier la dérivabilité de \( f \) en \( 0 \) puis interpréter graphiquement les résultats. \hfill \textbf{0{,}1 pt + 0{,}5 pt}
+    
+    \item Calculer \( f'(x) \) pour \( x < 0 \) et pour \( x > 0 \). \hfill \textbf{0{,}5 pt + 0{,}5 pt}
+    
+    \item Étudier le signe de \( f'(x) \) pour \( x < 0 \) puis pour \( x > 0 \). \hfill \textbf{0{,}5 pt + 0{,}5 pt}
+    
+    \item Dresser le tableau de variation de \( f \). \hfill \textbf{1{,}5 pt}
+    
+    \item Construire \( (C_f) \). \hfill \textbf{0{,}1 pt}
+\end{enumerate}
+
+\end{document}
