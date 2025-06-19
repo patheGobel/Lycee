@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.17)  19 JUN 2025 08:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.2.17)  19 JUN 2025 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1040,41 +1040,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 560--561
 <diopLeParresseux.png, id=137, 362.55853pt x 166.65607pt>
 File: diopLeParresseux.png Graphic file (type png)
 <use diopLeParresseux.png>
-Package pdftex.def Info: diopLeParresseux.png  used on input line 720.
+Package pdftex.def Info: diopLeParresseux.png  used on input line 719.
 (pdftex.def)             Requested size: 432.48355pt x 198.81142pt.
  [10 <build/diopLeParresseux.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 779--780
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 781--782
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
 
  []
 
 <diopLeParresseuxReciproque.png, id=149, 447.03093pt x 205.48521pt>
 File: diopLeParresseuxReciproque.png Graphic file (type png)
 <use diopLeParresseuxReciproque.png>
-Package pdftex.def Info: diopLeParresseuxReciproque.png  used on input line 795
+Package pdftex.def Info: diopLeParresseuxReciproque.png  used on input line 794
 .
 (pdftex.def)             Requested size: 432.48355pt x 198.80934pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 812--813
+Underfull \hbox (badness 10000) in paragraph at lines 811--812
 
  []
 
 [11 <build/diopLeParresseuxReciproque.png>] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 906--907
+Underfull \hbox (badness 10000) in paragraph at lines 905--906
 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 975--976
+Underfull \hbox (badness 10000) in paragraph at lines 974--975
 
  []
 
 
-LaTeX Warning: File `diopLeParresseuxComplexe.png' not found on input line 980.
+LaTeX Warning: File `diopLeParresseuxComplexe.png' not found on input line 979.
 
 
 
@@ -1085,17 +1085,17 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.980 ...\textwidth]{diopLeParresseuxComplexe.png}
+l.979 ...\textwidth]{diopLeParresseuxComplexe.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 98
-0.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 97
+9.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
 
  []
 
@@ -1109,7 +1109,7 @@ ed.
 Here is how much of TeX's memory you used:
  30715 strings out of 480104
  610871 string characters out of 5892285
- 945510 words of memory out of 5000000
+ 945511 words of memory out of 5000000
  48052 multiletter control sequences out of 15000+600000
  515240 words of font info for 91 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
