@@ -144,7 +144,7 @@ Soient \( A \) et \( B \) deux points du plan tels que \( AB = 8\, \text{cm} \).
     \)
         \begin{resultbox}
             \[
-                \mathbf{AG =6 \text{ et } BG =2}
+                \mathbf{GA =6 \text{ et } GB =2}
             \]
 		\end{resultbox}
     
@@ -158,20 +158,72 @@ Soient \( A \) et \( B \) deux points du plan tels que \( AB = 8\, \text{cm} \).
     \begin{aligned}
     MA^2 + 3MB^2 &= \overrightarrow{MA}^2 + 3\overrightarrow{MB}^2\\
                  &= (\overrightarrow{MG}+\overrightarrow{GA})^2 + 3(\overrightarrow{MG}+\overrightarrow{GB})^2\\
-                 &= \overrightarrow{MG}^2+2\overrightarrow{MG}\overrightarrow{GA}+\overrightarrow{GA}^2+ 3(\overrightarrow{MG}+\overrightarrow{GB})^2\\
+                 &= \overrightarrow{MG}^2+2\overrightarrow{MG}.\overrightarrow{GA}+\overrightarrow{GA}^2+ 3(\overrightarrow{MG}^2+2\overrightarrow{MG}.\overrightarrow{GB}+\overrightarrow{GB}^2)\\
+                 &= \overrightarrow{MG}^2+2\overrightarrow{MG}.\overrightarrow{GA}+\overrightarrow{GA}^2+ 3\overrightarrow{MG}^2+6\overrightarrow{MG}.\overrightarrow{GB}+3\overrightarrow{GB}^2\\
+                 &= 4\overrightarrow{MG}^2+2\overrightarrow{MG}.\overrightarrow{GA}+6\overrightarrow{MG}.\overrightarrow{GB}+3\overrightarrow{GB}^2+\overrightarrow{GA}^2\\
+                 &= 4\overrightarrow{MG}^2+2\overrightarrow{MG}(\overrightarrow{GA}+3\overrightarrow{GB})+3\overrightarrow{GB}^2+\overrightarrow{GA}^2\\
+                  &= 4\overrightarrow{MG}^2+2\overrightarrow{MG}(\overrightarrow{O})+3\overrightarrow{GB}^2+\overrightarrow{GA}^2\\
+                  &= 4\overrightarrow{MG}^2+3\overrightarrow{GB}^2+\overrightarrow{GA}^2\\
+                  &= 4\overrightarrow{MG}^2+3(2)^2+6^2\\
+                  &= 4\overrightarrow{MG}^2+12+36\\
+                  &= 4MG+48\\
     \end{aligned}
     \)
+
+		        \begin{resultbox}
+            \[
+                \mathbf{MA^2 + 3MB^2=4MG^2+48\quad\textbf{ CQFD}}
+            \]
+					\end{resultbox}    
     
-    \item Démontrer et construire l'ensemble des points \( M \) du plan tels que :
+    \item Démontrons et construisons l'ensemble des points \( M \) du plan tels que :
     \[
     MA^2 + 3MB^2 = 84
     \]
     \hfill \textbf{0{,}1 pt}
-    \item Déterminer et construire l'ensemble des points \( M \) tels que :
+
+	D'après la relation précédente on a \( MA^2 + 3MB^2=4MG^2+48 \)
+
+		    \(
+    \begin{aligned}
+    		4MG^2+48 &= 84\\
+        4MG^2 &= 84-48\\  
+         4MG^2 &=36\\
+         MG^2 &=9\\
+         MG &=3\\
+    \end{aligned}
+    \)    
+    
+    Donc, l'ensemble des points \( M \) tels que \( MA^2 + 3MB^2 = 84 \) est le cercle de centre \( I \) et de rayon \( 3 \) :   
+    		    \begin{resultbox}
+            \[
+                \mathbf{\mathscr{C}(I,\;3) }
+            \]
+					\end{resultbox} 
+    
+    \item Déterminons et construison l'ensemble des points \( M \) tels que :
     \[
-    \vec{MA} \cdot \vec{MB} = -12
+    \overleftarrow{MA}\cdot\overleftarrow{MB} = -12
     \]
     \hfill \textbf{0{,}1 pt}
+
+		Soit \(I\) milieu de \(AB\)  
+		
+		\(		
+		\begin{aligned}
+			\overrightarrow{MA} \cdot \overrightarrow{MB} = -12 &\implies \overrightarrow{MI}^{2}-\frac{\overrightarrow{AB}^{2}}{4} = -12\\
+			&\implies \overrightarrow{MI}^{2}-\frac{8^{2}}{4} = -12\\
+			&\implies \overrightarrow{MI}^{2}-16 = -12\\
+			&\implies \overrightarrow{MI}^{2} = 4\\
+		\end{aligned}
+		\)  
+
+Donc, l'ensemble des points \( M \) tels que \( \overrightarrow{MA} \cdot \overrightarrow{MB} = -12 \) est le cercle de centre \( I \) et de rayon \( 2 \) :   
+    		    \begin{resultbox}
+            \[
+                \mathbf{\mathscr{C}(I,\;2) }
+            \]
+					\end{resultbox}  
 \end{enumerate}
 
 \end{document}
