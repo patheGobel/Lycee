@@ -1,7 +1,6 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
 \usepackage{enumitem}
-\usepackage{float}
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
 \node[circle,draw=gray, fill=red!55,
@@ -15,9 +14,11 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 %%%::::::by chnini ameur :::::::%%%
 \everymath{\displaystyle}
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 \usepackage{array,multirow}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
 \tcbuselibrary{skins,hooks}
 \usetikzlibrary{patterns}
 %%%::::::by chnini ameur :::::::%%%
@@ -47,9 +48,10 @@ middle color = tcbcolback!80!black]
 \usepackage{fancyhdr}
 \usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 % Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
 \AddToShipoutPicture{
     \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.5}{\fontsize{5cm}{5cm}\selectfont PGB}}}
     }
 }
 \usepackage{lastpage}
@@ -80,18 +82,18 @@ middle color = tcbcolback!80!black]
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
 \begin{tikzpicture}[overlay,remember picture]
-    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
-                \hline
-                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                                                     \\ \hline
-                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{$^{er}$S2} & \textbf{Date: 16/06/2025} & \textbf{Durée : 4 heures} \\ \hline
-                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
-                                                                  \textbf{{\Large\sffamily Composition n$ ^{\circ} $ 2 Du 2$ ^\text{\bf nd} $ Semestre}}
-                                                              \end{center}}}                                                                                                                               \\ \hline
-            \end{tabular}}\endgroup};
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 1}\textbf{$^{er}$}S2 &\textbf{Date: 16/06/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction de la composition Du 2$ ^\text{\bf nd} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
 
-\section*{\underline{Exercice 1 :} 5 pts }
+\section*{\underline{Correction Exercice 1 :} 4 pts }
 
 Soient \( A \) et \( B \) deux points du plan tels que \( AB = 8\, \text{cm} \).
 
@@ -226,4 +228,388 @@ Donc, l'ensemble des points \( M \) tels que \( \overrightarrow{MA} \cdot \overr
 					\end{resultbox}  
 \end{enumerate}
 
+\section*{\underline{Exercice 2 :} 5 pts}
+
+On considère la fonction \( f \) définie par :
+\[
+f(x) = \frac{x^2 + ax + b}{x - 1}
+\]
+
+\begin{enumerate}
+    \item Déterminons les réels \( a \) et \( b \) tels que la courbe \( (C_f) \) passe par le point \( A(0,1) \) et admette en ce point une tangente horizontale. \hfill \textbf{0{,}5 pt + 0{,}75 pt}
+
+    \begin{itemize}
+        \item \( (C_f) \) passe par \( A(0,1) \) signifie que \( f(0) = 1 \).\\
+
+        On calcule :
+        \[
+        f(0) = \frac{0^2 + a \cdot 0 + b}{0 - 1} = \frac{b}{-1} = -b
+        \]
+        Donc, \( -b = 1 \Rightarrow \boxed{b = -1} \).
+
+        \item \( (C_f) \) admet une tangente horizontale en \( A(0,1) \) signifie que \( f'(0) = 0 \).\\
+
+        On dérive \( f \) par le quotient :
+        \[
+        f(x) = \frac{u(x)}{v(x)} \quad \text{avec} \quad u(x) = x^2 + ax + b,\quad v(x) = x - 1
+        \]
+        \[
+        f'(x) = \frac{u'(x) \cdot v(x) - u(x) \cdot v'(x)}{(x - 1)^2}
+        \]
+        \[
+        u'(x) = 2x + a, \quad v'(x) = 1
+        \]
+        \[
+        f'(x) = \frac{(2x + a)(x - 1) - (x^2 + ax + b)}{(x - 1)^2}
+        \]
+
+        Calculons \( f'(0) \) :
+
+        \[
+        f'(0) = \frac{(0 + a)(-1) - (0 + 0 + b)}{1} = \frac{-a - b}{1} = -a - b
+        \]
+
+        On veut \( f'(0) = 0 \), donc :
+        \[
+        -a - b = 0 \Rightarrow -a + 1 = 0 \Rightarrow \boxed{a = 1}
+        \]
+    \end{itemize}
+
+    Ainsi, les réels recherchés sont \( \boxed{a = 1} \) et \( \boxed{b = -1} \).
+
+    
+    On suppose \( a = 1 \) et \( b = -1 \dots \)
+    
+    \item Déterminons les limites aux bornes de \( \mathcal{D}_f \). Précisons les asymptotes éventuelles. \hfill \textbf{0{,}5 pt + 0{,}5 pt + 0{,}5 pt}
+
+La fonction devient, avec \( a = 1 \) et \( b = -1 \) :
+\[
+f(x) = \frac{x^2 + x - 1}{x - 1}
+\]
+
+\textbf{Domaine de définition} :
+
+    \begin{resultbox}
+    \[
+    \mathbf{\mathcal{D}_f = \mathbb{R} \setminus \{1\}}
+    \]
+		\end{resultbox}
+
+\textbf{Limites aux bornes du domaine} :
+
+\begin{itemize}
+    \item Limite en \( -\infty \) :
+
+    \[
+    \lim_{x \to -\infty} \frac{x^2 + x - 1}{x - 1} = \lim_{x \to -\infty} \frac{x^2(1 + \frac{1}{x} - \frac{1}{x^2})}{x(1 - \frac{1}{x})}
+    = \lim_{x \to -\infty} \frac{x(1 + \frac{1}{x} - \frac{1}{x^2})}{1 - \frac{1}{x}} = -\infty
+    \]
+
+    Donc :
+    \[
+    \lim_{x \to -\infty} f(x) = -\infty
+    \]
+
+    \item Limite en \( +\infty \) :
+
+    \[
+    \lim_{x \to +\infty} \frac{x^2 + x - 1}{x - 1} = +\infty
+    \]
+
+    \item Limite en \( 1^- \) :
+
+    \[
+    \lim_{x \to 1^-} \frac{x^2 + x - 1}{x - 1} = \frac{1 + 1 - 1}{0^-} = \frac{1}{0^-} = -\infty
+    \]
+
+    \item Limite en \( 1^+ \) :
+
+    \[
+    \lim_{x \to 1^+} \frac{x^2 + x - 1}{x - 1} = \frac{1 + 1 - 1}{0^+} = \frac{1}{0^+} = +\infty
+    \]
+\end{itemize}
+
+\textbf{Asymptotes} :
+\begin{itemize}
+    \item En \( x = 1 \), la fonction tend vers \( \pm\infty \), donc la droite \( x = 1 \) est une \textbf{asymptote verticale}.
+\end{itemize}
+
+    
+\item Déterminer les réels \( \alpha \), \( \beta \), \( \gamma \) tels que :
+\[
+f(x) = \alpha x + \beta + \frac{\gamma}{x - 1}
+\]
+En déduire que la droite \( (D) : y = x + 2 \) est asymptote oblique à la courbe. \hfill \textbf{0{,}75 pt + 0{,}5 pt}
+
+On part de :
+\[
+f(x) = \frac{x^2 + x - 1}{x - 1}
+\]
+
+On effectue la division euclidienne du numérateur par le dénominateur.
+
+\textbf{Division de \( x^2 + x - 1 \) par \( x - 1 \) :}
+
+\[
+\frac{x^2 + x - 1}{x - 1} = x + 2 + \frac{1}{x - 1}
+\]
+
+Donc :
+\[
+\boxed{f(x) = x + 2 + \frac{1}{x - 1}} \quad \text{avec } \alpha = 1,\; \beta = 2,\; \gamma = 1
+\]
+
+\textbf{Conclusion sur l’asymptote oblique :}
+
+Lorsque \( x \to \pm\infty \), \( \frac{1}{x - 1} \to 0 \), donc : $y = x + 2$
+
+Par conséquent, la droite \( (D) : y = x + 2 \) est une \textbf{asymptote oblique} à la courbe représentative de \( f \).
+
+    
+    % À inclure dans le préambule si ce n'est pas encore fait :
+% \usepackage{tkz-tab}
+
+\item Dresser le tableau de variations de \( f \) puis tracer la courbe. \hfill \textbf{0{,}1 pt + 0{,}5 pt}
+
+On a vu précédemment que :
+\[
+f(x) = x + 2 + \frac{1}{x - 1}
+\]
+
+On dérive :
+
+\[
+f'(x) = \left(x + 2 + \frac{1}{x - 1}\right)' = 1 - \frac{1}{(x - 1)^2}
+\]
+
+Étudions le signe de \( f'(x) \) :
+
+\[
+f'(x) = \frac{(x - 1)^2 - 1}{(x - 1)^2} = \frac{x^2 - 2x}{(x - 1)^2} = \frac{x(x - 2)}{(x - 1)^2}
+\]
+
+\textbf{Tableau de signes de \( f'(x) \) :}
+
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5,espcl=2]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $0$, $1$, $2$, $+\infty$}
+  \tkzTabLine{ , - , z , + , d , - , z , + }
+  \tkzTabVar{-/ $-\infty$ , +/ $f(0) = 1$ , -D+/$-\infty$/$+\infty$ , -/ $f(2) = 5$ , +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Remarques :}
+- En \( x = 1 \), la fonction n'est pas définie (asymptote verticale).
+
+- En \( x = 0 \), \( f(0) = 1 \)
+
+- En \( x = 2 \), \( f(2) = \frac{4 + 2 - 1}{1} = 5 \)
+
+\medskip
+
+\textbf{Courbe représentative :}
+
+Tracer la courbe en tenant compte :
+
+- de l’asymptote verticale \( x = 1 \),
+
+- de l’asymptote oblique \( y = x + 2 \),
+
+- des points remarquables : \( A(0,1) \), \( B(2,5) \).
+
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{Compo1erS2.png}
+\caption{Représentation graphique de la courbe}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/rduxvtyf}{Clique ici pour voir la courbe sur géogébra}\\
+\end{center}
+
+\end{enumerate}
+
+\section*{Problème : 10 pts}
+
+Soit \( f \) la fonction définie par :
+\[
+f(x) = 
+\begin{cases}
+\dfrac{-x^2 + 5x - 5}{x - 1} & \text{si } x \leq 0 \\
+\dfrac{3x - 5}{x^2 - 1} & \text{si } x > 0
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item Montrons que \( D_f = \mathbb{R} \setminus \{1\} \). \hfill \textbf{1{,}25 pt}
+    \[\textbf{Posons }
+f(x) = 
+\begin{cases}
+f_{1}(x)=\dfrac{-x^2 + 5x - 5}{x - 1} & \text{si } x \leq 0 \\
+f_{2}(x)=\dfrac{3x - 5}{x^2 - 1} & \text{si } x > 0
+\end{cases}
+\]
+
+\( 
+\begin{aligned}
+f_{1} \exists &\text{ ssi }  x - 1 \neq 0 \text{ et } x \leq 0\\
+							&\text{ ssi }  x \neq 1 \text{ et } x \leq 0\\
+							&\text{ ssi }  x \neq 1 \text{ et } x \in ]-\infty ; 0]\\
+							&\text{ ssi }  1  \notin ]-\infty ; 0]\\
+\end{aligned}
+\)
+
+Donc \( D_{f_{1}} = ]-\infty ; 0] \)
+
+\( 
+\begin{aligned}
+f_{2} \exists &\text{ ssi }  x^{2} - 1 \neq 0 \text{ et } x \geq 0\\
+							&\text{ ssi }  x \neq -1 \text{ et } x \neq 1 \text{ et } ]0 ;+\infty[\\
+							&\text{ ssi }  -1  \notin ]0 ;+\infty[ \text{ et } 1  \in ]0 ;+\infty[\\
+							&\text{ ssi }  1  \in ]0 ;+\infty[\\
+\end{aligned}
+\)
+
+Donc \( D_{f_{2}} = ]0 ; 1[ \cup ]1;+\infty[ \)
+
+\(
+\begin{aligned}
+D_f &= D_{f_1} \cup D_{f_2} \\
+    &= (]-\infty ; 0]) \cup (]0 ; 1[ \cup ]1 ; +\infty[) \\
+    &= ]-\infty ; 0] \cup ]0 ; 1[ \cup ]1 ; +\infty[ \\
+    &= ]-\infty ; 1[ \cup ]1 ; +\infty[ \\
+    &=\mathbb{R}\setminus\{1\}
+\end{aligned}
+\)
+
+    \begin{resultbox}
+    \[
+    \mathbf{\mathcal{D}_f = \mathbb{R} \setminus \{1\}}
+    \]
+		\end{resultbox}
+
+\textcolor{red}{\textbf{Autre Méthode}}		
+
+    \textbf{Étude du domaine de définition de \( f_1 \) :}
+
+    L'expression \( f_1(x) = \dfrac{-x^2 + 5x - 5}{x - 1} \) est définie si \( x - 1 \neq 0 \), soit \( x \neq 1 \).\\
+    Or, \( f_1 \) est définie uniquement sur \( x \leq 0 \), donc comme \( 1 \notin ]-\infty ; 0] \), on a :
+    \[
+    D_{f_1} = ]-\infty ; 0]
+    \]
+
+    \textbf{Étude du domaine de définition de \( f_2 \) :}
+
+    L'expression \( f_2(x) = \dfrac{3x - 5}{x^2 - 1} \) est définie si \( x^2 - 1 \neq 0 \), soit \( x \neq \pm 1 \).\\
+    Comme \( f_2 \) est définie pour \( x > 0 \), il faut exclure \( x = 1 \), mais \( x = -1 \) ne fait pas partie de l'intervalle.\\
+    Donc :
+    \[
+    D_{f_2} = ]0 ; 1[ \cup ]1 ; +\infty[
+    \]
+
+    \textbf{Conclusion :}
+    \[
+    D_f = D_{f_1} \cup D_{f_2} = ]-\infty ; 0] \cup \left( ]0 ; 1[ \cup ]1 ; +\infty[ \right) = \mathbb{R} \setminus \{1\}
+    \]
+
+    \[
+    \boxed{D_f = \mathbb{R} \setminus \{1\}}
+    \]
+		
+		
+    \item Calculons les limites aux bornes de \( D_f \). \hfill \textbf{0{,}1 pt}
+
+		\textbf{\underline{En $-\infty$}:} 
+
+		\(
+		\begin{aligned}
+				\lim_{x\to -\infty}f_{1}(x)&=\lim_{x\to -\infty}\frac{-x^{2}+5x-5}{x-1}\\
+																	 &=\lim_{x\to -\infty}\frac{-x^{2}}{x}\\
+																	 &=\lim_{x\to -\infty}-x\\
+																	 &=+\infty
+		\end{aligned}
+		\)		
+
+    \begin{resultbox}
+    \[
+    \mathbf{\lim_{x\to -\infty}f(x) = +\infty}
+    \]
+		\end{resultbox}		
+		
+		\textbf{\underline{En $+\infty$}:} 
+
+		\(
+		\begin{aligned}
+				\lim_{x\to +\infty} f_{2}(x)&=\lim_{x\to +\infty}\frac{3x-5}{x^{2}-1}\\
+																		&=\lim_{x\to +\infty}\frac{3x}{x^{2}}\\
+																		&=\lim_{x\to +\infty}\frac{3}{x}\\
+																		&=0
+		\end{aligned}
+		\)		
+
+    \begin{resultbox}
+    \[
+    \mathbf{\lim_{x\to +\infty}f(x) = 0}
+    \]
+		\end{resultbox}	
+
+		\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5,espcl=2]
+    {$x$/1, $f'(x)$/1}
+    {$-\infty$, $-1$, $1$, $+\infty$}
+  \tkzTabLine{ , + , z , - , z , + }
+\end{tikzpicture}
+\end{center}		
+		
+		\textbf{\underline{En $1^{-}$}:}
+
+		\(
+		\begin{aligned}
+				\lim_{x\to 1^{-}} f_{2}(x)&=\lim_{x\to 1^{-}}\dfrac{3x-5}{x^{2}-1}\\
+																	&=\lim_{x\to 1^{-}}\dfrac{-2}{0^{-}}\\
+																	&=+\infty
+		\end{aligned}
+		\)		
+
+    \begin{resultbox}
+    \[
+    \mathbf{\lim_{x\to 1^{-}}f(x) = +\infty}
+    \]
+		\end{resultbox}		
+		
+		\textbf{\underline{En $1^{+}$}:}   
+
+		\(
+		\begin{aligned}
+					\lim_{x\to 1^{+}} f_{2}(x)&=\lim_{x\to 1^{+}}\dfrac{3x-5}{x^{2}-1}\\
+																		&=\lim_{x\to 1^{+}}\dfrac{-2}{0^{+}}\\
+																		&=-\infty
+		\end{aligned}
+		\)    
+    
+    \begin{resultbox}
+    \[
+    \mathbf{\lim_{x\to 1^{+}}f(x) = -\infty}
+    \]
+		\end{resultbox}    
+    
+    %\item En déduire les asymptotes de \( (C_f) \). \hfill \textbf{0{,}5 pt}
+    
+    %\item Montrer que la droite d’équation \( y = -x + 4 \) est asymptote oblique à \( (C_f) \) en \( -\infty \). \hfill \textbf{0{,}5 pt}
+    
+    %\item Étudier la continuité de \( f \) en \( 0 \). \hfill \textbf{0{,}75 pt}
+    
+    %\item Étudier la dérivabilité de \( f \) en \( 0 \) puis interpréter graphiquement les résultats. \hfill \textbf{0{,}1 pt + 0{,}5 pt}
+    
+    %\item Calculer \( f'(x) \) pour \( x < 0 \) et pour \( x > 0 \). \hfill \textbf{0{,}5 pt + 0{,}5 pt}
+    
+    %\item Étudier le signe de \( f'(x) \) pour \( x < 0 \) puis pour \( x > 0 \). \hfill \textbf{0{,}5 pt + 0{,}5 pt}
+    
+    %\item Dresser le tableau de variation de \( f \). \hfill \textbf{1{,}5 pt}
+    
+    %\item Construire \( (C_f) \). \hfill \textbf{0{,}1 pt}
+\end{enumerate}
 \end{document}
