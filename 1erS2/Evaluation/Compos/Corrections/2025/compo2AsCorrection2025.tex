@@ -94,7 +94,7 @@ middle color = tcbcolback!80!black]
 \end{tikzpicture}
 \vspace{3cm}
 
-\section*{\underline{Correction Exercice 1 :} 4 pts }
+\section*{\underline{Correction Exercice 1 :} 5 pts }
 
 Soient \( A \) et \( B \) deux points du plan tels que \( AB = 8\, \text{cm} \).
 
@@ -229,7 +229,7 @@ Donc, l'ensemble des points \( M \) tels que \( \overrightarrow{MA} \cdot \overr
 					\end{resultbox}  
 \end{enumerate}
 
-\section*{\underline{Exercice 2 :} 5 pts}
+\section*{\underline{Correction Exercice 2 :} 5 pts }
 
 On considère la fonction \( f \) définie par :
 \[
@@ -250,16 +250,7 @@ f(x) = \frac{x^2 + ax + b}{x - 1}
 
         \item \( (C_f) \) admet une tangente horizontale en \( A(0,1) \) signifie que \( f'(0) = 0 \).\\
 
-        On dérive \( f \) par le quotient :
-        \[
-        f(x) = \frac{u(x)}{v(x)} \quad \text{avec} \quad u(x) = x^2 + ax + b,\quad v(x) = x - 1
-        \]
-        \[
-        f'(x) = \frac{u'(x) \cdot v(x) - u(x) \cdot v'(x)}{(x - 1)^2}
-        \]
-        \[
-        u'(x) = 2x + a, \quad v'(x) = 1
-        \]
+        On dérive \( f \):
         \[
         f'(x) = \frac{(2x + a)(x - 1) - (x^2 + ax + b)}{(x - 1)^2}
         \]
@@ -301,33 +292,85 @@ f(x) = \frac{x^2 + x - 1}{x - 1}
 \begin{itemize}
     \item Limite en \( -\infty \) :
 
-    \[
-    \lim_{x \to -\infty} \frac{x^2 + x - 1}{x - 1} = \lim_{x \to -\infty} \frac{x^2(1 + \frac{1}{x} - \frac{1}{x^2})}{x(1 - \frac{1}{x})}
-    = \lim_{x \to -\infty} \frac{x(1 + \frac{1}{x} - \frac{1}{x^2})}{1 - \frac{1}{x}} = -\infty
-    \]
+\(
+\begin{aligned}
+    \lim_{x \to -\infty} \frac{x^2 + x - 1}{x - 1} &= \lim_{x \to -\infty} \frac{x^2}{x}\\
+    &= \lim_{x \to -\infty} x = -\infty
+\end{aligned}
+\)
 
     Donc :
-    \[
-    \lim_{x \to -\infty} f(x) = -\infty
-    \]
+    
+					\begin{resultbox}
+            \[
+                \mathbf{\lim_{x \to -\infty} f(x) = -\infty }
+            \]
+					\end{resultbox} 
 
     \item Limite en \( +\infty \) :
 
-    \[
-    \lim_{x \to +\infty} \frac{x^2 + x - 1}{x - 1} = +\infty
-    \]
+    \(
+			\begin{aligned}
+    	\lim_{x \to +\infty} \frac{x^2 + x - 1}{x - 1} &= \lim_{x \to +\infty} \frac{x^2}{x}\\
+    	&= \lim_{x \to +\infty} x = +\infty
+			\end{aligned}
+		\)
+
+		    Donc :
+    
+					\begin{resultbox}
+            \[
+                \mathbf{\lim_{x \to +\infty} f(x) = +\infty }
+            \]
+					\end{resultbox}
+
+\textbf{En} $1^-$ et $1^+$
+
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5,espcl=2]
+    {$x$/1, $x-1$/1}
+    {$-\infty$, $1$, $+\infty$}
+  \tkzTabLine{ , - , z , + }
+\end{tikzpicture}
+\end{center}
 
     \item Limite en \( 1^- \) :
 
-    \[
-    \lim_{x \to 1^-} \frac{x^2 + x - 1}{x - 1} = \frac{1 + 1 - 1}{0^-} = \frac{1}{0^-} = -\infty
-    \]
+    \(
+			\begin{aligned}
+				\lim_{x \to 1^-} \frac{x^2 + x - 1}{x - 1} &= \frac{1 + 1 - 1}{0^-}\\ 
+																									 &= \frac{1}{0^-}\\ 
+																									 &= -\infty
+			\end{aligned}
+		\)
+
+    Donc :
+    
+					\begin{resultbox}
+            \[
+                \mathbf{\lim_{x \to 1^-} f(x) = -\infty }
+            \]
+					\end{resultbox}
 
     \item Limite en \( 1^+ \) :
 
-    \[
-    \lim_{x \to 1^+} \frac{x^2 + x - 1}{x - 1} = \frac{1 + 1 - 1}{0^+} = \frac{1}{0^+} = +\infty
-    \]
+    \(
+			\begin{aligned}
+				\lim_{x \to 1^+} \frac{x^2 + x - 1}{x - 1} &= \frac{1 + 1 - 1}{0^+}\\ 
+																									 &= \frac{1}{0^+}\\ 
+																									 &= +\infty
+			\end{aligned}
+		\)
+
+    Donc :
+    
+					\begin{resultbox}
+            \[
+                \mathbf{\lim_{x \to 1^-} f(x) = -\infty }
+            \]
+					\end{resultbox}
+    
 \end{itemize}
 
 \textbf{Asymptotes} :
@@ -362,7 +405,7 @@ Donc :
 
 \textbf{Conclusion sur l’asymptote oblique :}
 
-Lorsque \( x \to \pm\infty \), \( \frac{1}{x - 1} \to 0 \), donc : $y = x + 2$
+\( \lim_{x \to \pm\infty}\frac{1}{x - 1}=0 \) donc : $y = x + 2$
 
 Par conséquent, la droite \( (D) : y = x + 2 \) est une \textbf{asymptote oblique} à la courbe représentative de \( f \).
 
@@ -397,22 +440,23 @@ f'(x) = \frac{(x - 1)^2 - 1}{(x - 1)^2} = \frac{x^2 - 2x}{(x - 1)^2} = \frac{x(x
     {$x$/1, $f'(x)$/1, $f$/2}
     {$-\infty$, $0$, $1$, $2$, $+\infty$}
   \tkzTabLine{ , - , z , + , d , - , z , + }
-  \tkzTabVar{-/ $-\infty$ , +/ $f(0) = 1$ , -D+/$-\infty$/$+\infty$ , -/ $f(2) = 5$ , +/ $+\infty$}
+  \tkzTabVar{-/ $-\infty$ , +/ $1$ , -D+/$-\infty$/$+\infty$ , -/ $5$ , +/ $+\infty$}
 \end{tikzpicture}
 \end{center}
 
 \textbf{Remarques :}
+
 - En \( x = 1 \), la fonction n'est pas définie (asymptote verticale).
 
 - En \( x = 0 \), \( f(0) = 1 \)
 
-- En \( x = 2 \), \( f(2) = \frac{4 + 2 - 1}{1} = 5 \)
+- En \( x = 2 \), \( f(2) = 5 \)
 
 \medskip
 
 \textbf{Courbe représentative :}
 
-Tracer la courbe en tenant compte :
+Traçons la courbe en tenant compte :
 
 - de l’asymptote verticale \( x = 1 \),
 
@@ -432,7 +476,7 @@ Tracer la courbe en tenant compte :
 
 \end{enumerate}
 
-\section*{Problème : 10 pts}
+\section*{Correction du Problème : 10 pts}
 
 Soit \( f \) la fonction définie par :
 \[
