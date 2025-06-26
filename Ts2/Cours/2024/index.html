@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <title>📘 Cours TS2</title>
     <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
             background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* vertical */
+            align-items: center;
+            /* horizontal */
+            text-align: center;
+            padding: 20px;
         }
 
         h1 {
@@ -18,6 +31,7 @@
         ul {
             list-style: none;
             padding: 0;
+            margin-top: 20px;
         }
 
         li {
@@ -28,23 +42,29 @@
             text-decoration: none;
             color: #007acc;
             font-weight: bold;
+            font-size: 18px;
         }
 
         a:hover {
             text-decoration: underline;
         }
+
+        p {
+            margin-top: 30px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>📘 Cours TS2 - Année 2024</h1>
-    <ul>
-        <li><a href="build/EquationDifferentielle2024.pdf" target="_blank">Équation Différentielle (2024)</a></li>
-        <li><a href="build/Integrale2024.pdf" target="_blank">Intégrale (2024)</a></li>
-        <li><a href="build/proba2024.pdf" target="_blank">Probabilités (2024)</a></li>
-    </ul>
-
-    <p><a href="../index.html">⬅️ Retour à TS2</a></p>
+    <div>
+        <h1>📘 Cours TS2 - Année 2024</h1>
+        <ul>
+            <li><a href="build/EquationDifferentielle2024.pdf" target="_blank">Équation Différentielle (2024)</a></li>
+            <li><a href="build/Integrale2024.pdf" target="_blank">Intégrale (2024)</a></li>
+            <li><a href="build/proba2024.pdf" target="_blank">Probabilités (2024)</a></li>
+        </ul>
+        <p><a href="../index.html">⬅️ Retour à TS2</a></p>
+    </div>
 </body>
 
 </html>
