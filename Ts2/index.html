@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <title>Contenus - Ts2</title>
     <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
             background: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* vertical */
+            align-items: center;
+            /* horizontal */
+            text-align: center;
+            padding: 20px;
         }
 
         h1 {
@@ -18,6 +31,7 @@
         ul {
             list-style-type: none;
             padding: 0;
+            margin-top: 20px;
         }
 
         li {
@@ -28,24 +42,29 @@
             text-decoration: none;
             color: #007acc;
             font-weight: bold;
+            font-size: 18px;
         }
 
         a:hover {
             text-decoration: underline;
         }
+
+        p {
+            margin-top: 30px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Contenus de la classe Ts2</h1>
-    <ul>
-        <li><a href="Cours/">📘 Cours</a></li>
-        <!--         <li><a href="Td/">📚 Travaux Dirigés</a></li>
-        <li><a href="Evaluation/">📝 Évaluations</a></li> -->
-    </ul>
-    <p><a href="../index.html">⬅️ Retour à l'accueil</a></p>
-
-
+    <div>
+        <h1>Contenus de la classe Ts2</h1>
+        <ul>
+            <li><a href="Cours/">📘 Cours</a></li>
+            <!-- <li><a href="Td/">📚 Travaux Dirigés</a></li>
+      <li><a href="Evaluation/">📝 Évaluations</a></li> -->
+        </ul>
+        <p><a href="../index.html">⬅️ Retour à l'accueil</a></p>
+    </div>
 </body>
 
 </html>
