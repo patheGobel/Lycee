@@ -158,6 +158,7 @@ $
 													 &\alpha = 0,5
 \end{aligned}
 $
+\hfill \textbf{(01 point)}
 \item Calculons la probabilité qu’un athlète se rende au même stade pendant les deux jours.
 
 $A_1$ :  «\text{ l'athlète choisit le stade A le $1^{er}$jour} »
@@ -180,6 +181,34 @@ P((A_1\cap A_2) \cup (B_1\cap B_2)) &= P(A_1\cap A_2) + P(B_1\cap B_2)\\
 \end{aligned}
 $
 
+
+\begin{center}
+$\boxed{P((A_1\cap A_2) \cup (B_1\cap B_2))=0,2}$\hfill \textbf{(0,75 point)}
+\end{center}
+
+		\item Au deuxième jour, on aperçoit un athlète sortant du stade \( B \). La probabilité qu’il se soit entraîné au même stade la veille
+
+Se traduit par : entrer dans \( B \) deux jours successifs, c’est-à-dire : \( B_1 \textit{ sachant } B_2 \)
+
+\(
+\begin{aligned}
+P_{B_2}(B_1) &= \dfrac{P(B_1 \cap B_2)}{P(B_2)} \\
+            &= \dfrac{P(B_1) \times P_{B_1}(B_2)}{P(A_1) \times P_{A_1}(B_2) + P(B_1) \times P_{B_1}(B_2)} \\
+            &= \dfrac{0,5 \times 0,2}{0,5 \times 0,8 + 0,5 \times 0,2} \\
+            &= \dfrac{0,1}{0,4 + 0,1} \\
+            &= \dfrac{0,1}{0,5} \\
+            &= 0,2
+\end{aligned}
+\)
+
+\begin{center}
+\(\boxed{P_{B_2}(B_1) = 0,2}\) \hfill \textbf{(0,75 point)}
+\end{center}
+
+
+
 \end{enumerate}
+
+\subsection*{Partie II :  (02,25 points)}
 
 \end{document}
