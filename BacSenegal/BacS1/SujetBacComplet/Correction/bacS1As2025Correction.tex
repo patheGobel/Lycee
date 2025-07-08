@@ -75,16 +75,16 @@ middle color = tcbcolback!80!black]
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
 \begin{tikzpicture}[overlay,remember picture]
-\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
-\hline
-\multicolumn{3}{|c|} {\parbox[c]{10cm}{\begin{center}
-\textbf{{\Large\sffamily BAC 2025 }}
-\end{center}}} \\ \hline
-\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S1}  \\ \hline
-\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
-\textbf{{\Large\sffamily Correction }}
-\end{center}}} \\ \hline
-\end{tabular}}\endgroup};
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|} {\parbox[c]{10cm}{\begin{center}
+                                                                   \textbf{{\Large\sffamily BAC 2025 }}
+                                                               \end{center}}} \\ \hline
+                \textbf{Matière: Mathématiques} & \textbf{Niveau : T}\textbf{S1}                      \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Correction }}
+                                                              \end{center}}}  \\ \hline
+            \end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
 \section*{\underline{Exercice 1 :($04.75$ pts)}}
@@ -100,117 +100,202 @@ Construisons un arbre pondère correspondant à cette épreuve.
 
 \begin{tikzpicture}[grow=right, sloped] % Arbre qui se développe vers la droite, étiquettes inclinées
 
-% Nœud racine (départ de l'univers)
-\node[bag] {\textcolor{darkred}{}} 
+    % Nœud racine (départ de l'univers)
+    \node[bag] {\textcolor{darkred}{}}
     child {
-        % Première branche : événement B
-        node[bag] {\textcolor{darkred}{$B_1$}} 
+            % Première branche : événement B
+            node[bag] {\textcolor{darkred}{$B_1$}}
             child {
-                % Sous-branche de B : issue V
-                node[end] {\textcolor{darkred}{$A_2$}} 
-                edge from parent
-                node[above] {\textcolor{black}{$0,8$}} % Probabilité conditionnelle : P(V|B)
-            }
+                    % Sous-branche de B : issue V
+                    node[end] {\textcolor{darkred}{$A_2$}}
+                    edge from parent
+                    node[above] {\textcolor{black}{$0,8$}} % Probabilité conditionnelle : P(V|B)
+                }
             child {
-                % Sous-branche de B : issue R
-                node[end] {\textcolor{darkred}{$B_2$}} 
-                edge from parent
-                node[above] {\textcolor{black}{$0,2$}} % Probabilité à compléter
-            }
-        edge from parent
-        node[above] {\textcolor{black}{$1-\alpha$}} % Probabilité de B : P(B)
-    }
+                    % Sous-branche de B : issue R
+                    node[end] {\textcolor{darkred}{$B_2$}}
+                    edge from parent
+                    node[above] {\textcolor{black}{$0,2$}} % Probabilité à compléter
+                }
+            edge from parent
+            node[above] {\textcolor{black}{$1-\alpha$}} % Probabilité de B : P(B)
+        }
     child {
-        % Deuxième branche : événement A
-        node[bag] {\textcolor{darkred}{$A_1$}} 
+            % Deuxième branche : événement A
+            node[bag] {\textcolor{darkred}{$A_1$}}
             child {
-                % Sous-branche de A : issue V
-                node[end] {\textcolor{darkred}{$B_2$}} 
-                edge from parent
-                node[above] {\textcolor{black}{$0,8$}} % Probabilité à compléter
-            }
+                    % Sous-branche de A : issue V
+                    node[end] {\textcolor{darkred}{$B_2$}}
+                    edge from parent
+                    node[above] {\textcolor{black}{$0,8$}} % Probabilité à compléter
+                }
             child {
-                % Sous-branche de A : issue R
-                node[end] {\textcolor{darkred}{$A_2$}} 
-                edge from parent
-                node[above] {\textcolor{black}{$0,2$}} % Probabilité conditionnelle : P(R|A)
-            }
-        edge from parent
-        node[above] {\textcolor{black}{$\alpha$}} % Probabilité de A : P(A), à compléter
-    };
+                    % Sous-branche de A : issue R
+                    node[end] {\textcolor{darkred}{$A_2$}}
+                    edge from parent
+                    node[above] {\textcolor{black}{$0,2$}} % Probabilité conditionnelle : P(R|A)
+                }
+            edge from parent
+            node[above] {\textcolor{black}{$\alpha$}} % Probabilité de A : P(A), à compléter
+        };
 \end{tikzpicture}
 
 \begin{enumerate}
-\item Déterminons la valeur de $\alpha$
+    \item Déterminons la valeur de $\alpha$
 
-$
-\begin{aligned}
-P(A_2) &= P(A_1) \times P_{A_1}(A_2) + P(B_1) \times P_{B_1}(A_2)\\
-			 &= \alpha \times 0,2 + (1-\alpha) \times 0,8\\
-			 &= 0,2\alpha + 0,8-0,8\alpha\\
-			 &= -0,6\alpha + 0,8\\
-\end{aligned}
-$
+          $
+              \begin{aligned}
+                  P(A_2) & = P(A_1) \times P_{A_1}(A_2) + P(B_1) \times P_{B_1}(A_2) \\
+                         & = \alpha \times 0,2 + (1-\alpha) \times 0,8               \\
+                         & = 0,2\alpha + 0,8-0,8\alpha                               \\
+                         & = -0,6\alpha + 0,8                                        \\
+              \end{aligned}
+          $
 
-$
-\begin{aligned}
-\textbf{Si } P(A_1)=P(A_2) &\implies \alpha = -0,6\alpha + 0,8\\
-													 &\implies 1,6\alpha = 0,8\\
-													 &\alpha = \frac{0,8}{1,6}\\
-													 &\alpha = 0,5
-\end{aligned}
-$
-\hfill \textbf{(01 point)}
-\item Calculons la probabilité qu’un athlète se rende au même stade pendant les deux jours.
+          $
+              \begin{aligned}
+                  \textbf{Si } P(A_1)=P(A_2) & \implies \alpha = -0,6\alpha + 0,8 \\
+                                             & \implies 1,6\alpha = 0,8           \\
+                                             & \alpha = \frac{0,8}{1,6}           \\
+                                             & \alpha = 0,5
+              \end{aligned}
+          $
+          \hfill \textbf{(01 point)}
+    \item Calculons la probabilité qu’un athlète se rende au même stade pendant les deux jours.
 
-$A_1$ :  «\text{ l'athlète choisit le stade A le $1^{er}$jour} »
+          $A_1$ :  «\text{ l'athlète choisit le stade A le $1^{er}$jour} »
 
-$B_1$ :  «\text{ l'athlète choisit le stade B le $1^{er}$jour} »
+          $B_1$ :  «\text{ l'athlète choisit le stade B le $1^{er}$jour} »
 
-$A_2$ :  «\text{ l'athlète choisit le stade A le $2^{er}$jour} »
+          $A_2$ :  «\text{ l'athlète choisit le stade A le $2^{er}$jour} »
 
-$B_2$ :  «\text{ l'athlète choisit le stade B le $2^{er}$jour} »
+          $B_2$ :  «\text{ l'athlète choisit le stade B le $2^{er}$jour} »
 
-Un athlète se rende au même stade pendant les deux jours se traduit par: $A_1\cap A_2$ ou $B_1\cap B_2$
+          Un athlète se rende au même stade pendant les deux jours se traduit par: $A_1\cap A_2$ ou $B_1\cap B_2$
 
-$
-\begin{aligned}
-P((A_1\cap A_2) \cup (B_1\cap B_2)) &= P(A_1\cap A_2) + P(B_1\cap B_2)\\
-																	  &=P(A_1) \times P_{A_1}(A_2) + P(B_1) \times P_{B_1}(B_2)\\
-																	  &=0,5 \times 0,2 + 0,5 \times 0,2\\
-																	  &=0,1 + 0,1\\
-																	  &=0,2\\
-\end{aligned}
-$
+          $
+              \begin{aligned}
+                  P((A_1\cap A_2) \cup (B_1\cap B_2)) & = P(A_1\cap A_2) + P(B_1\cap B_2)                        \\
+                                                      & =P(A_1) \times P_{A_1}(A_2) + P(B_1) \times P_{B_1}(B_2) \\
+                                                      & =0,5 \times 0,2 + 0,5 \times 0,2                         \\
+                                                      & =0,1 + 0,1                                               \\
+                                                      & =0,2                                                     \\
+              \end{aligned}
+          $
 
 
-\begin{center}
-$\boxed{P((A_1\cap A_2) \cup (B_1\cap B_2))=0,2}$\hfill \textbf{(0,75 point)}
-\end{center}
+          \begin{center}
+              $\boxed{P((A_1\cap A_2) \cup (B_1\cap B_2))=0,2}$\hfill \textbf{(0,75 point)}
+          \end{center}
 
-		\item Au deuxième jour, on aperçoit un athlète sortant du stade \( B \). La probabilité qu’il se soit entraîné au même stade la veille
+    \item Au deuxième jour, on aperçoit un athlète sortant du stade \( B \). La probabilité qu’il se soit entraîné au même stade la veille
 
-Se traduit par : entrer dans \( B \) deux jours successifs, c’est-à-dire : \( B_1 \textit{ sachant } B_2 \)
+          Se traduit par : entrer dans \( B \) deux jours successifs, c’est-à-dire : \( B_1 \textit{ sachant } B_2 \)
 
-\(
-\begin{aligned}
-P_{B_2}(B_1) &= \dfrac{P(B_1 \cap B_2)}{P(B_2)} \\
-            &= \dfrac{P(B_1) \times P_{B_1}(B_2)}{P(A_1) \times P_{A_1}(B_2) + P(B_1) \times P_{B_1}(B_2)} \\
-            &= \dfrac{0,5 \times 0,2}{0,5 \times 0,8 + 0,5 \times 0,2} \\
-            &= \dfrac{0,1}{0,4 + 0,1} \\
-            &= \dfrac{0,1}{0,5} \\
-            &= 0,2
-\end{aligned}
-\)
+          \(
+          \begin{aligned}
+              P_{B_2}(B_1) & = \dfrac{P(B_1 \cap B_2)}{P(B_2)}                                                             \\
+                           & = \dfrac{P(B_1) \times P_{B_1}(B_2)}{P(A_1) \times P_{A_1}(B_2) + P(B_1) \times P_{B_1}(B_2)} \\
+                           & = \dfrac{0,5 \times 0,2}{0,5 \times 0,8 + 0,5 \times 0,2}                                     \\
+                           & = \dfrac{0,1}{0,4 + 0,1}                                                                      \\
+                           & = \dfrac{0,1}{0,5}                                                                            \\
+                           & = 0,2
+          \end{aligned}
+          \)
 
-\begin{center}
-\(\boxed{P_{B_2}(B_1) = 0,2}\) \hfill \textbf{(0,75 point)}
-\end{center}
+          \begin{center}
+              \(\boxed{P_{B_2}(B_1) = 0,2}\) \hfill \textbf{(0,75 point)}
+          \end{center}
 
 
 
 \end{enumerate}
 
 \subsection*{Partie II :  (02,25 points)}
+
+\begin{enumerate}
+    \item La probabilité qu’il y ait deux athlètes heureux
+
+          Il ne peut pas y avoir deux athlètes heureux car il ya au moins 3 athlètes  donc l'un des stades sera occupé par au moins deux athlètes
+
+          \begin{center}
+              \fbox{\textcolor{red}{La probabilité qu'il y ait deux athlètes heureux est nulle}} \hfill \textbf{(0,5 point)}
+          \end{center}
+
+    \item Un athlète est heureux s’il est seul dans un stade. On note la probabilité que cela arrive parmi \( n \) athlètes :
+
+          \noindent
+          Pour un athlète donné, l’épreuve qui consiste à choisir un stade est une \textbf{épreuve de Bernoulli} dont la probabilité du succès (le stade \( A \)) est \( 0,5 \).\\
+          Cette épreuve étant effectuée \( n \) fois de suite (par les \( n \) athlètes) et de manière indépendante, on a un \textbf{schéma de Bernoulli}.
+
+          \vspace{0.2cm}
+          \noindent
+          On a deux cas :
+          \begin{itemize}
+              \item[\textbullet] Un athlète se présente dans le stade \( A \) et \( n - 1 \) athlètes dans le stade \( B \) : 1 succès ;
+              \item[\textbullet] Un athlète se présente dans le stade \( B \) et \( n - 1 \) athlètes dans le stade \( A \) : \( n - 1 \) succès.
+          \end{itemize}
+
+          \vspace{0.2cm}
+          \noindent
+          La probabilité qu’il y ait un athlète heureux parmi ces \( n \) athlètes est :
+
+          \[
+              p_n = C_n^1 (0{,}5)^1 (1 - 0{,}5)^{n - 1} + C_n^1 (0{,}5)^{n - 1}(1 - 0{,}5)^1 = 2n \cdot (0{,}5)^n = \frac{n}{2^{n - 1}}
+          \]
+
+          \vspace{0.2cm}
+          \[
+              \boxed{p_n = \dfrac{n}{2^{n - 1}}} \quad \textbf{(0,75 pt)}
+          \]
+
+
+          \textcolor{red}{\textbf{Autre Approche}}
+
+          \vspace{0.4cm}
+          \noindent
+
+          \textbf{Remarque : si on voulait le voir comme une variable aléatoire}
+
+          \vspace{0.2cm}
+          On peut modéliser le choix de chaque athlète comme une variable aléatoire de Bernoulli :
+          \begin{itemize}
+              \item On note \( X \) le nombre d’athlètes qui choisissent le stade \( A \),
+              \item Chaque athlète a une probabilité \( \frac{1}{2} \) de choisir \( A \) ou \( B \),
+              \item Donc \( X \sim \mathcal{B}(n, \frac{1}{2}) \), c’est-à-dire une loi binomiale.
+          \end{itemize}
+
+          Un athlète est \textbf{heureux} s’il est \textbf{seul} dans un stade, ce qui correspond à :
+          \[
+              \text{un seul athlète dans } A \quad \text{ou} \quad \text{un seul athlète dans } B
+          \]
+          Autrement dit :
+          \[
+              p_n = \mathbb{P}(X = 1) + \mathbb{P}(X = n - 1)
+          \]
+          Avec la loi binomiale :
+          \[
+              \mathbb{P}(X = k) = \binom{n}{k} \left( \frac{1}{2} \right)^k \left( \frac{1}{2} \right)^{n - k} = \binom{n}{k} \left( \frac{1}{2} \right)^n
+          \]
+          Donc :
+          \[
+              p_n = \left[ \binom{n}{1} + \binom{n}{n - 1} \right] \cdot \left( \frac{1}{2} \right)^n = 2n \cdot \left( \frac{1}{2} \right)^n = \frac{2n}{2^n}
+          \]
+
+          Et comme :
+          \[
+              2^n = 2 \cdot 2^{n - 1} \Rightarrow \frac{2n}{2^n} = \frac{n}{2^{n - 1}}
+          \]
+          Mais dans l'exercice, la bonne forme demandée est :
+          \[
+              \boxed{p_n = \frac{2n}{2^{n - 1}}}
+          \]
+          et on ne la simplifie pas.
+
+
+          \begin{center}
+              \fbox{\( p_n = \dfrac{2n}{2^{n-1}} \)} \hfill \textbf{(0,75 point)}
+          \end{center}
+\end{enumerate}
 
 \end{document}
