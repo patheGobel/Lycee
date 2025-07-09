@@ -289,32 +289,99 @@ Et comme :
 2^n = 2 \cdot 2^{n - 1} \Rightarrow \frac{2n}{2^n} = \frac{n}{2^{n - 1}}
 \]
     
-    \begin{center}
-    \fbox{\( p_n = \dfrac{2n}{2^{n-1}} \)} \hfill \textbf{(0,75 point)}
-    \end{center}
+\[
+\boxed{ p_n = \dfrac{n}{2^{n-1}} } \hfill \textbf{(0,75 point)}
+\]
+
 \item Étudions la variation de la suite \( (p_n)_{n \geq 3} \). \hfill \textbf{(0,5 point)}
 
-		\( p_n = \dfrac{2n}{2^{n-1}} \)
+		\( p_n = \dfrac{n}{2^{n-1}} \)
 		
 		On a 
 		
 		\(
 		\begin{aligned}
-		p_{n+1} - p_n &= \dfrac{2(n+1)}{2^{n}} - \dfrac{2n}{2^{n-1}}\\
-									&= \dfrac{2n+2}{2^{n}} - \dfrac{2n}{2^{n-1}}\\
-									&= \dfrac{n+1}{2^{n-1}} - \dfrac{2n}{2^{n-1}}\\
-									&= \dfrac{-n+1}{2^{n-1}}\\
+		p_{n+1} - p_n &= \dfrac{(n+1)}{2^{n}} - \dfrac{n}{2^{n-1}}\\
+									&= \dfrac{n+1}{2^{n}} - \dfrac{n}{2^{n-1}}\\
+									&= \dfrac{n+1}{2^{n}} - \dfrac{2n}{2^{n}}\\
+									&= \dfrac{-n+1}{2^{n}}\\
 		\end{aligned}
 		\)
 
-Donc $p_{n+1} - p_n = \dfrac{-n+1}{2^{n-1}}$
+Donc $p_{n+1} - p_n = \dfrac{-n+1}{2^{n}}$
 
-Comme $n \geq 3$ alors $-n+1 < 0$ donc $\dfrac{-n+1}{2^{n-1} } < 0$ d'où $\forall n \geq 3$, $p_n <0$
+Comme $n \geq 3$ alors $-n+1 < 0$ donc $\dfrac{-n+1}{2^{n} } < 0$ d'où $\forall n \geq 3$, $p_n <0$
 
 Ainsi la suite $(p_n)$ est décroissante
 
-\end{enumerate}
+La convergence de la suite 
 
+\(
+\begin{aligned} 
+p_n = \dfrac{n}{2^{n-1}} &\implies p_n = \dfrac{2n}{2^{n}}\\
+												 &\implies p_n = \dfrac{2n}{e^{\ln(2^{n})}}\\
+												 &\implies p_n = \dfrac{2n}{e^{n\ln(2)}}\\
+												 &\implies p_n = \dfrac{2}{\ln(2)}\times\dfrac{n\ln(2)}{e^{n\ln(2)}}\\
+\end{aligned}
+\)
+
+Donc \( p_n = \dfrac{2}{\ln(2)}\times\dfrac{n\ln(2)}{e^{n\ln(2)}} \)
+
+ \(
+ \begin{aligned} 
+  \lim\limits_{n \to +\infty} p_n &= \lim\limits_{n \to +\infty} \dfrac{2}{\ln(2)}\times\dfrac{n\ln(2)}{e^{n\ln(2)}} \\
+  																&=\dfrac{2}{\ln(2)}\times  \lim\limits_{n \to +\infty} \dfrac{n\ln(2)}{e^{n\ln(2)}}\\
+  																&=\dfrac{2}{\ln(2)}\times  0\\
+  																&=0
+  \end{aligned}
+ \)
+ 
+ D'où \( \lim\limits_{n \to +\infty} p_n =0 \) donc la suite \( (p_n)_{n \geq 3} \) converge vers \( 0 \)
+
+        \item Calculons \( p_{10} \)
+        
+        \( p_n = \dfrac{n}{2^{n-1}} \)
+        
+        \(
+        \begin{aligned} 
+        	p_{10} &= \dfrac{10}{2^{10-1}}\\
+        				 &= \dfrac{10}{2^{9}}\\
+        				 &= \dfrac{5}{2^{8}}\\
+        \end{aligned}
+        \)
+
+				\[ \boxed{p_{10} = \dfrac{5}{2^{8}} \approx 0,019}  \] \hfill \textbf{ (0,25 point) }    
+        
+        Déterminons la plus grande valeur de \( n \) pour laquelle la probabilité d’avoir un athlète heureux est supérieur à \( 0,005 \). \hfill \textbf{ (0,25 point) }
+
+La suite $(p_{n})$ étant strictement décroissante, on va chercher la plus grande valeur de $n$ supérieur à 10
+telles que $p_{n}$ reste supérieur à $0,005$      
+
+    \vspace{0.2cm}
+\noindent
+
+\( p_n = \dfrac{n}{2^{n-1}} \)
+
+Calculs :
+
+\(
+\begin{aligned}
+p_{11} &= \dfrac{11}{2^{10}} \approx 0,01 > 0,005\\
+p_{12} &= \dfrac{12}{2^{11}} \approx 0,0059 > 0,005\\
+p_{13} &= \dfrac{13}{2^{12}} \approx 0,0031 < 0,005\\
+\end{aligned}
+\)
+
+\vspace{0.2cm}
+\noindent
+\textbf{Conclusion :} La plus grande valeur de \( n \) pour laquelle la probabilité d’avoir un athlète heureux soit supérieur à $0,005$
+est $12$.
+
+\[
+\boxed{n = 12}
+\]    
+\end{enumerate}
+ 
 \end{enumerate}
 
 \end{document}
