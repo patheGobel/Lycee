@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+
+% Définition de la commande C_n^k
+\newcommand{\Cnk}[2]{C_{#1}^{#2}}
+
+\begin{document}
+
+\section*{Exercice 3 (6 points)}
+
+Une urne contient 12 boules : 3 rouges, 4 vertes et 5 blanches.  
+On tire 3 boules simultanément.
+
+Nombre total de tirages possibles :
+\[
+\Cnk{12}{3} = 220
+\]
+
+\subsection*{A. Les 3 boules sont blanches}
+
+\[
+\Cnk{5}{3} = 10 \Rightarrow P(A) = \frac{10}{220} = \boxed{\frac{1}{22}}
+\]
+
+\subsection*{B. Les 3 boules ont la même couleur}
+
+\[
+\Cnk{5}{3} + \Cnk{4}{3} + \Cnk{3}{3} = 10 + 4 + 1 = 15
+\Rightarrow P(B) = \frac{15}{220} = \boxed{\frac{3}{44}}
+\]
+
+\subsection*{C. 2 vertes et 1 rouge}
+
+\[
+\Cnk{4}{2} \cdot \Cnk{3}{1} = 6 \cdot 3 = 18
+\Rightarrow P(C) = \frac{18}{220} = \boxed{\frac{9}{110}}
+\]
+
+\subsection*{D. Aucune boule blanche}
+
+On tire 3 boules parmi 7 (rouges et vertes) :
+\[
+\Cnk{7}{3} = 35 \Rightarrow P(D) = \frac{35}{220} = \boxed{\frac{7}{44}}
+\]
+
+\subsection*{E. Au moins une boule blanche}
+
+\[
+P(E) = 1 - P(D) = 1 - \frac{7}{44} = \boxed{\frac{37}{44}}
+\]
+
+\end{document}

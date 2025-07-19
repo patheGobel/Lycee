@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage[top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+    \textbf{UNIVERSITÉ CHEIKH ANTA DIOP DE DAKAR} \\
+    \textbf{OFFICE DU BACCALAURÉAT} \\
+    Email : \texttt{office@ucad.edu.sn} \\
+    Site web : \texttt{officedubac.sn} \\
+    \vspace{0.3cm}
+    \textbf{\LARGE MATHÉMATIQUES} \\
+    Séries : S1–S1A–S3 \hfill Coef. 8 \\
+    \textbf{Épreuve du 1\textsuperscript{er} groupe} \\
+    Durée : 4 heures
+\end{center}
+
+\vspace{0.2cm}
+\noindent
+\textbf{Les calculatrices électroniques non imprimantes avec entrée unique par clavier sont autorisées. Les calculatrices permettant d’afficher des formulaires ou des tracés de courbe sont interdites. Leur utilisation sera considérée comme une fraude (Cf. Circulaire n° 5990/OB/DIR. du 12 08 1998).}
+
+\vspace{0.5cm}
+\noindent
+\section*{Exercice 1 :  (04,75 points)}
+
+\vspace{0.2cm}
+\noindent
+Pour préparer les tests de sélection aux Jeux Olympiques de la Jeunesse de Dakar 2026, les athlètes disposent de deux stades \( A \) et \( B \) pour les entraînements.
+
+\vspace{0.3cm}
+\noindent
+\subsection*{Partie I :  (02,5 points)}
+
+\vspace{0.2cm}
+\noindent
+Un athlète doit s’entraîner deux jours consécutifs.
+
+\begin{itemize}
+    \item Le premier jour, la probabilité qu’il choisisse le stade \( A \) est égale à \( \alpha \).
+    \item Le second jour, on admet que la probabilité qu’il choisisse un stade différent de celui fréquenté la veille est \( 0{,}8 \).
+\end{itemize}
+
+\noindent
+Pour \( j \in \{1,2\} \), on note les événements suivants :
+\[
+A_j : \text{« l’athlète choisit le stade } A \text{ le } j^\text{ième} \text{ jour »}, \quad
+B_j : \text{« l’athlète choisit le stade } B \text{ le } j^\text{ième} \text{ jour »}.
+\]
+
+\begin{enumerate}
+    \item Déterminer la valeur de \( \alpha \) pour que les événements \( A_1 \) et \( A_2 \) aient la même probabilité. \hfill (01 point)
+
+    \noindent \textit{Dans toute la suite de l’exercice, on prendra \( \alpha = 0{,}5 \).}
+
+    \item Calculer la probabilité qu’un athlète se rende au même stade pendant les deux jours. \hfill (0,75 point)
+
+    \item Au deuxième jour, on aperçoit un athlète sortant du stade \( B \). Quelle est la probabilité qu’il se soit entraîné au même stade la veille ? \hfill (0,75 point)
+\end{enumerate}
+
+\vspace{0.4cm}
+\noindent
+\subsection*{Partie II :  (02,25 points)}
+
+\vspace{0.2cm}
+\noindent
+Au premier jour, on a \( n \) athlètes (\( n \geq 3 \)) qui doivent s’entraîner. Chacun d’entre eux choisit, au hasard et indépendamment des choix des autres, l’un des deux stades où il doit s’entraîner.
+
+\noindent
+On suppose que les deux stades ne contiennent aucun athlète au départ.
+
+\noindent
+On dit qu’un athlète est heureux s’il se trouve seul dans un stade où s’entraîner.
+
+\begin{enumerate}
+    \item Quelle est la probabilité qu’il y ait deux athlètes heureux ? \hfill (0,5 point)
+
+    \item Soit \( p_n \) la probabilité qu’il y ait un athlète heureux parmi ces \( n \) athlètes.
+    \begin{enumerate}
+        \item[a)] Montrer que pour tout naturel (\( n \geq 3 \)), que : \( p_n = \frac{2n}{2^{n-1}} \). \hfill (0,75 point)
+        \item[b)] Étudier la variation et la convergence de la suite \( (p_n)_{n \geq 3} \). \hfill (0,5 point)
+        \item[c)] Calculer \( p_{10} \) puis déterminer la plus grande valeur de \( n \) pour laquelle la probabilité d’avoir un athlète heureux est supérieur à \( 0,005 \). \hfill (0,5 point)
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2 :  (04,25 points)}
+
+Soient \( (\Delta_1) \) et \( (\Delta_2) \) deux droites distinctes de l’espace.
+
+\noindent
+On note \( R_1 \) et \( R_2 \) les demi-tours d’axes respectifs \( (\Delta_1) \) et \( (\Delta_2) \).
+
+\medskip
+Le but de cet exercice est de déterminer une condition nécessaire et suffisante portant sur \( (\Delta_1) \) et \( (\Delta_2) \) pour que : \( R_1 \circ R_2 = R_2 \circ R_1. \)
+
+\begin{enumerate}
+\item \textbf{On suppose que \( (\Delta_1) \) et \( (\Delta_2) \) sont perpendiculaires en un point noté \( O \).}
+
+On adoptera les notations suivantes :
+\begin{itemize}
+    \item Le plan contenant \( (\Delta_1) \) et \( (\Delta_2) \) est noté \( (P) \).
+    \item La droite perpendiculaire en \( O \) au plan \( (P) \) est notée \( (\Delta) \).
+    \item Le plan contenant \( (\Delta) \) et \( (\Delta_1) \) est noté \( (P_1) \).
+    \item Le plan contenant \( (\Delta) \) et \( (\Delta_2) \) est noté \( (P_2) \).
+    \item Les réflexions par rapport aux plans \( (P), (P_1), (P_2) \) sont respectivement notées \( S_P, S_{P_1}, S_{P_2} \).
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+    \item Faire une figure en faisant apparaître clairement le point \( O \), les plans \( (P), (P_1), (P_2) \) ainsi que les droites \( (\Delta), (\Delta_1), (\Delta_2) \). \hfill (0,75 point)
+
+    \item Déterminer \( S_P \circ S_{P_1} \) et \( S_{P_2} \circ S_P \). \hfill (0,5 + 0,5 = 1 point)
+
+    \item En déduire que \( R_2 \circ R_1 \) est un demi-tour dont on précisera l’axe. \hfill (0,5 point)
+
+    \item Prouver alors que \( R_1 \circ R_2 = R_2 \circ R_1 \). \hfill (0,5 point)
+\end{enumerate}
+
+\item \textbf{ Réciproquement, on suppose que \( R_1 \circ R_2 = R_2 \circ R_1 \).}
+
+Soit \( A \) un point de \( (\Delta_1) \) qui n’appartient pas à \( (\Delta_2) \), et \( B \) l’image de \( A \) par \( R_2 \).
+
+\begin{enumerate}[label=\alph*)]
+    \item Montrer que la droite \( (AB) \) et la droite \( (\Delta_2) \) sont perpendiculaires. \hfill (0,5 point)
+
+    \item En utilisant la relation \( R_1 \circ R_2 = R_2 \circ R_1 \), prouver que \( B = R_1(B) \). \hfill (0,5 point)
+
+    \item En déduire que \( (\Delta_1) \) et \( (\Delta_2) \) sont perpendiculaires. \hfill (0,25 point)
+\end{enumerate}
+
+\item En utilisant ce qui précède, énoncer une condition nécessaire et suffisante portant sur \( (\Delta_1) \) et \( (\Delta_2) \) pour que : \( R_1 \circ R_2 = R_2 \circ R_1. \)\hfill (0,25 point)
+\end{enumerate}
+
+
+
+\section*{Problème :(11 points)}
+
+On considère le plan complexe \( \mathbb{P} \) rapporté à un repère orthonormé direct \( (O; \vec{u}, \vec{v}) \).
+
+\subsection*{Partie A (02 points)}
+\begin{enumerate}
+    \item Soit \( (a, b) \in \mathbb{R}^* \times \mathbb{R} \) et \( F_{a,b} \) l'application de \( \mathbb{P} \) dans \( \mathbb{P} \) qui au point \( M \) d'affixe \( z \) fait correspondre le point \( M' \) d'affixe \( z' \) telle que : \( z' = a \overline{z} + ib  \) où \( \overline{z} \) est le conjugué de \( z \).
+
+    \begin{enumerate}
+        \item[a)] Exprimer les coordonnées \( x' \) et \( y' \) de \( M' \) en fonction des coordonnées \( x \) et \( y \) de \( M \). \hfill (0,25 point)
+
+        \item[b)] Déterminer, suivant les valeurs de \( a \) et \( b \), l'ensemble des points invariants par \( F_{a,b} \). \hfill (0,5 point)
+    \end{enumerate}
+
+\item On suppose \( |a| \ne 1 \). \\
+Montrer que \( F_{a,b} = S_{\Delta} \circ h \), où \( S_{\Delta} \) est la symétrie orthogonale d'axe la droite \( (\Delta) \) d'équation \( y = \frac{b}{a + 1} \) et \( h \) l'homothétie de centre le point \( \Omega \) d'affixe \( \frac{ib}{1 + a} \) et de rapport \( a \). \hfill (0,75 point)
+
+\item Soit \( (c, d) \in \mathbb{R}^* \times \mathbb{R} \), et \( G_{c,d} \) l'application de \( \mathbb{P} \) dans \( \mathbb{P} \) qui, au point \( N \) d'affixe \( z \), fait correspondre le point \( N' \) d'affixe \( z' \) tel que : \( z' = cz + id. \)
+
+Déterminer, suivant les valeurs de \( c \) et \( d \), la nature et les éléments géométriques caractéristiques de \( G_{c,d} \). \hfill (0,5 point)
+
+\end{enumerate}
+
+\subsection*{Partie B (03,25 points)}
+
+\begin{enumerate}
+    \item Dans cette question on suppose que \( |a| \ne 1 \).
+    
+    On définit la suite de points \( (M_n)_{n \geq 1} \) par :
+    \(
+    \begin{cases}
+    	M_1 \text{ est le point d'affixe } u_1 = a + ib\\
+    	\forall n \geq 1,\ M_{n+1} = F_{a,b}(M_n)
+    \end{cases}
+    \)
+
+    \begin{enumerate}
+        \item[a)] Déterminer l'affixe \( u_2 \) du point \( M_2 \). \hfill (0,25 point)
+
+        \item[b)] Montrer que pour tout entier naturel \( n \) non nul, \( M_n \) a pour affixe :
+        \[
+        u_n = a^n + ib \left( \frac{1 - (-a)^n}{1 + a} \right)
+        \]
+        \hfill (0,75 point)
+
+        \item[c)] Soit \( (D_1) \) la droite passant par les points \( \Omega\left( \dfrac{ib}{1+a} \right) \) et \( M_1 \), et soit \( (D_2) \) son image par \( F_{a,b} \).
+        \begin{enumerate}
+            \item[i.] Déterminer une équation cartésienne de la droite \( (D_2) \). \hfill (0,25 point)
+
+            \item[ii.] Montrer que \( (D_1) \) est aussi l'image de \( (D_2) \) par \( F_{a,b} \). \hfill (0,25 point)
+
+            \item[iii.] Montrer que, pour tout entier naturel \( n \) non nul, le point \( M_{2n} \) appartient à \( (D_2) \) et le point \( M_{2n+1} \) appartient à \( (D_1) \). \hfill (0,5 point)
+        \end{enumerate}
+    \end{enumerate}
+
+    \item Dans cette question on suppose que \( |c| \ne 1 \).
+    
+    On définit la suite de points \( (N_n)_{n \geq 1} \) par :
+    \(
+    \begin{cases}
+    	N_1 \text{ est le point d'affixe } v_1 = c + id\\
+    	\quad \forall n \geq 1,\ N_{n+1} = G_{c,d}(N_n)
+    \end{cases}
+    \)
+
+    \begin{enumerate}
+        \item[a)] Déterminer l'affixe \( v_2 \) du point \( N_2 \). \hfill (0,25 point)
+
+        \item[b)] Montrer que pour tout entier naturel \( n \) non nul, le point \( N_n \) a pour affixe :
+        \(
+        v_n = c^n + id \left( \frac{c^n - 1}{c - 1} \right)
+        \)
+        \hfill (0,5 point)
+
+        \item[c)] Montrer que tous les points \( N_n \) (\( n \in \mathbb{N}^* \)) appartiennent à la droite \( (\Delta) \) passant par \( B \) et \( N_1 \), où \( B \) est le point d'affixe :
+        \(
+        \frac{id}{1 - c}
+        \)
+        \hfill (0,5 point)
+        \subsection*{Partie C (03,25 points)}
+
+On considère la famille de courbes \( \mathcal{F} = \{ C_n, n \geq 1 \} \) définie de la manière suivante :
+
+\begin{itemize}
+    \item La courbe \( C_1 \) est la courbe représentative dans le plan muni du repère orthonormé \( (O ; \vec{u}, \vec{v}) \) de la fonction \( \Phi_1 \) définie par : \( \Phi_1(x) = x e^{\frac{1}{x}} - 2 \).
+
+    \item Pour tout entier naturel \( n \geq 1 \), \( C_{n+1} = G_{2,1}(C_n) \) où \( G_{2,1} \) est l’application de \( \mathbb{P} \) dans \( \mathbb{P} \) définie dans la question 3. de la partie A avec \( c = 2 \) et \( d = 1 \).
+\end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item[a)] Étudier les variations de \( \Phi_1 \), puis établir le tableau de variations de \( \Phi_1 \). \hfill (0,75 point)
+        \item[b)] Montrer que la droite d'équation \( y = x - 1 \) est asymptote à \( C_1 \) en \( +\infty \) et en \( -\infty \). \hfill (0,25 point)
+        \item[c)] Tracer soigneusement la courbe \( C_1 \). \hfill (0,5 point)
+    \end{enumerate}
+
+    \item Pour tout \( n \in \mathbb{N}^* \), on désigne par \( \Phi_n \) la fonction numérique à variable réelle dont la courbe représentative dans le plan muni du repère orthonormé \( (O ; \vec{u}, \vec{v}) \) est \( C_n \).
+    \begin{enumerate}
+        \item[a)] Montrer que \( \forall n \in \mathbb{N}^* \) et \( \forall x \in \mathbb{R}^* \), \( \Phi_n(x) = x e^{\left(\frac{2^{n-1}}{x}\right)} - 2^{n-1} - 1 \). \hfill (0,75 point)
+        \item[b)] Montrer que pour tout entier naturel \( n \) non nul, la droite d'équation \( y = x - 1 \) est asymptote à la courbe \( C_n \). \hfill (0,5 point)
+        \item[c)] 
+        \begin{enumerate}
+            \item[i.] Montrer que pour tout entier naturel \( n \) non nul, il existe un unique point \( S_n \) où la tangente à la courbe \( C_n \) est parallèle à l'axe des abscisses. \hfill (0,25 point)
+            \item[ii.] Montrer que pour tout entier naturel \( n \) non nul, les points \( S_n, S_{n+1} \) et \( B(0, -1) \) sont alignés. \hfill (0,25 point)
+        \end{enumerate}
+    \end{enumerate}    
+\end{enumerate}
+
+\subsection*{Partie D (02,5 points)}
+
+Pour tout entier naturel non nul, on considère la fonction numérique à variable réelle \( h_n \) définie par :
+\[
+    h_n(x) = x - 1 + 4^{n-1}\left(\frac{e - 2}{x}\right)
+\]
+
+On note \( \mathcal{H}_n \) la courbe représentative de \( h_n \) dans le plan muni du repère orthonormé \( (O ; \vec{i}, \vec{j}) \).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item[a)] Étudier les variations de \( h_1 \) puis dresser son tableau de variations. \hfill (0,5 point)
+        \item[b)] Tracer \( \mathcal{H}_1 \). \hfill (0,5 point)
+        \item[c)] Calculer, en unité de volume, le volume du solide obtenu par révolution autour de l’axe des abscisses, de la partie de \( \mathcal{H}_1 \) comprise entre les droites d’équations respectives \( x = 1 \) et \( x = 2 \). \hfill (0,5 point)
+    \end{enumerate}
+
+    \item Montrer que pour tout entier naturel \( n \) non nul, \( \mathcal{H}_{n+1} \) est l’image de \( \mathcal{H}_n \) par \( G_{2,1} \). \hfill (0,5 point)
+
+    \item Pour tout entier naturel \( n \) non nul, on note \( \mathcal{A}_n \) l’aire du domaine plan délimité par les courbes d’équations respectives dans le repère \( (O ; \vec{i}, \vec{j}) \) : \( y = h_n(x) \), \( y = x - 1 \), \( x = 2^{n-1} \) et \( x = 2^n \).
+    
+    Montrer que \( (\mathcal{A}_n)_{n \geq 1} \) est une suite géométrique dont on donnera la raison et le premier terme. \hfill (0,5 point)
+\end{enumerate}
+
+\end{document}

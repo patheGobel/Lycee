@@ -1,0 +1,244 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\usetikzlibrary{trees} % Bibliothèque pour les arbres
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|} {\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily BAC 2025 }}
+\end{center}}} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{L}  \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction }}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+% Définition de la commande C_n^k
+\newcommand{\Cnk}[2]{C_{#1}^{#2}}
+\vspace{3cm}
+\section*{\underline{Exercice 1 :($06$ pts)}}
+\begin{enumerate}
+\item Déterminons $a$ et $b$
+\[
+\bar{x} = \frac{1 + 2 + 3 + 4 + 4 + a}{6} = 3{,}25 
+\Rightarrow \frac{14 + a}{6} = 3{,}25 
+\Rightarrow 14 + a = 19{,}5 
+\Rightarrow a = 5{,}5
+\] \textbf{0,5 pt }
+
+\[
+\bar{y} = \frac{7 + 5 + 5 + 4 + 3 + b}{6} = 4{,}45 
+\Rightarrow \frac{24 + b}{6} = 4{,}45 
+\Rightarrow 24 + b = 26{,}7 
+\Rightarrow b = 2{,}7
+\]\textbf{0,5 pt }
+
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+&  &  &  &  &  &  & \textbf{Totale} \\
+\hline
+x_i & 1 & 2 & 3 & 4 & 4 & 5{,}5 & \textbf{19{,}5} \\
+\hline
+y_i & 7 & 5 & 5 & 4 & 3 & 2{,}7 & \textbf{26{,}7} \\
+\hline
+x_i - \bar{x} & -2{,}25 & -1{,}25 & -0{,}25 & 0{,}75 & 0{,}75 & 2{,}25 & \textbf{0} \\
+\hline
+y_i - \bar{y} & 2{,}55 & 0{,}55 & 0{,}55 & -0{,}45 & -1{,}45 & -1{,}75 & \textbf{0} \\
+\hline
+(x_i - \bar{x})(y_i - \bar{y}) & -5{,}7375 & -0{,}6875 & -0{,}1375 & -0{,}3375 & -1{,}0875 & -3{,}9375 & \textbf{-11{,}925} \\
+\hline
+(x_i - \bar{x})^2 & 5{,}0625 & 1{,}5625 & 0{,}0625 & 0{,}5625 & 0{,}5625 & 5{,}0625 & \textbf{12{,}875} \\
+\hline
+(y_i - \bar{y})^2 & 6{,}5025 & 0{,}3025 & 0{,}3025 & 0{,}2025 & 2{,}1025 & 3{,}0625 & \textbf{12{,}475} \\
+\hline
+\end{array}
+\]
+\begin{enumerate}
+    \item Calcul du coefficient \( r \)
+\item Comme \( |r| \approx 0{,}92 > 0{,}8 \), il y a une bonne corrélation négative.
+\end{enumerate}
+
+\item Déterminons l'équation de la droite de régression de \( Y \) en \( X \) :
+
+\[
+\text{Cov}(X,Y) = \frac{-11{,}925}{6} \approx -1{,}9875
+\quad \text{et} \quad 
+\text{Var}(X) = \frac{12{,}875}{6} \approx 2{,}1458
+\]\textbf{0,5 + 0,5 pt }
+
+\[
+a = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \frac{-1{,}9875}{2{,}1458} \approx -0{,}926
+\quad ; \quad 
+b = \bar{y} - a \bar{x} = 4{,}45 - (-0{,}926 \times 3{,}25) \approx 7{,}46
+\]
+
+\[
+\boxed{y = -0{,}926x + 7{,}46}
+\]
+\end{enumerate}
+
+\section*{\underline{Exercice 2 :($08$ pts)}}
+
+Moussa commence à travailler en janvier 2011 avec un salaire mensuel de \( 450\,000 \) FCFA.  
+Chaque 1\textsuperscript{er} janvier, son salaire augmente de 2\%.  
+Il commence à épargner quand son salaire atteint \( 600\,000 \) FCFA.
+
+\subsection*{1. Modélisation}
+
+Le salaire de Moussa suit une suite géométrique :
+
+\[
+S_n = 450\,000 \cdot (1{,}02)^n
+\]
+
+où \( n \) représente le nombre d'années après 2011.
+
+\subsection*{2. Vérification en 2021}
+
+En 2021, on a \( n = 10 \) (car 2021 - 2011 = 10)
+
+\[
+S_{10} = 450\,000 \cdot (1{,}02)^{10} \approx 450\,000 \cdot 1{,}219 = 548\,550
+\]
+
+\[
+548\,550 < 600\,000 \Rightarrow \text{Moussa ne peut pas commencer à épargner en 2021.}
+\]
+
+\subsection*{3. Détermination de l'année de début d'épargne}
+
+On cherche \( n \) tel que :
+
+\[
+450\,000 \cdot (1{,}02)^n \geq 600\,000
+\Rightarrow (1{,}02)^n \geq \frac{600\,000}{450\,000} = \frac{4}{3}
+\]
+
+\[
+n \geq \frac{\ln \left(\frac{4}{3}\right)}{\ln(1{,}02)} \approx \frac{0{,}2877}{0{,}0198} \approx 14{,}53
+\]
+
+Donc la première année entière où il atteint ce seuil est :
+
+\[
+2011 + 15 = \boxed{2026}
+\]
+
+\section*{\underline{Exercice 3 :($06$ pts)}}
+
+Une urne contient 12 boules : 3 rouges, 4 vertes et 5 blanches.  
+On tire 3 boules simultanément.
+
+Nombre total de tirages possibles :
+\[
+\Cnk{12}{3} = 220
+\]
+
+\subsection*{A. Les 3 boules sont blanches}
+
+\[
+\Cnk{5}{3} = 10 \Rightarrow P(A) = \frac{10}{220} = \boxed{\frac{1}{22}}
+\]
+
+\subsection*{B. Les 3 boules ont la même couleur}
+
+\[
+\Cnk{5}{3} + \Cnk{4}{3} + \Cnk{3}{3} = 10 + 4 + 1 = 15
+\Rightarrow P(B) = \frac{15}{220} = \boxed{\frac{3}{44}}
+\]
+
+\subsection*{C. 2 vertes et 1 rouge}
+
+\[
+\Cnk{4}{2} \cdot \Cnk{3}{1} = 6 \cdot 3 = 18
+\Rightarrow P(C) = \frac{18}{220} = \boxed{\frac{9}{110}}
+\]
+
+\subsection*{D. Aucune boule blanche}
+
+On tire 3 boules parmi 7 (rouges et vertes) :
+\[
+\Cnk{7}{3} = 35 \Rightarrow P(D) = \frac{35}{220} = \boxed{\frac{7}{44}}
+\]
+
+\subsection*{E. Au moins une boule blanche}
+
+\[
+P(E) = 1 - P(D) = 1 - \frac{7}{44} = \boxed{\frac{37}{44}}
+\]
+
+\end{document}
