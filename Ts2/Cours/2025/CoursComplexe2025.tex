@@ -1,11 +1,60 @@
-\documentclass[12pt]{article}
-\usepackage{stmaryrd}
-\usepackage{graphicx}
-\usepackage[utf8]{inputenc}
-
-\usepackage[french]{babel}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
 \usepackage[T1]{fontenc}
-\usepackage{hyperref}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
 \usepackage{verbatim}
 
 \usepackage{color,soul}
@@ -15,17 +64,8 @@
 \usepackage{amssymb}
 \usepackage{systeme}
 \usepackage{tkz-tab}
-\author{Destiné à la TerminaleS2\\Au Lycée de Dindéferlo}
-\title{\textbf{Nombres Complexes}}
-\date{\today}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
-
-\usepackage[a4paper,left=20mm,right=20mm,top=15mm,bottom=15mm]{geometry}
-\usepackage{mathtools}
-\usepackage{systeme}
-\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
-\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 \newcounter{exemple} % Compteur pour les questions
 
 % Définir la commande pour afficher une question numérotée
@@ -55,9 +95,12 @@
 }
 %--------------------------------------
 % Commande pour ajouter du texte en arrière-plan
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+%\usepackage{tkz-tab}
 \AddToShipoutPicture{
     \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.9}{\fontsize{10cm}{10cm}\selectfont Pathé Gobel BA}}}
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
     }
 }
 %This command takes a colour as an optional argument; the default colour is black.
@@ -65,10 +108,14 @@
 \newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
-\DecimalMathComma
 \begin{document}
-\maketitle
-\newpage
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{Nombres Complexes}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TS2}\\[-0.1cm]
+    \textbf{Année scolaire : 2024 -- 2025}
+\end{center}
+
 \section*{Introduction aux Nombres Complexes}
 
 Les nombres complexes, que nous allons explorer dans ce cours, ont une origine intrigante liée à la résolution des équations polynomiales. Au cours de l'histoire des mathématiques, des énigmes telles que la résolution de l'équation cubique $x^3 + ax^2 + bx + c = 0$ ont captivé l'attention des mathématiciens.
@@ -864,40 +911,40 @@ L'ensemble des points $M$ tel que  $|Z'|=1$ est la médiatrice $[AB]$\\
     Les droites $(AB)$ et $(AC)$ sont orthogonales si et seulement si $(b - a)(\overline{c} - \overline{a})$ est imaginaire pur.
 
     \item \textbf{Condition de cocyclicité} :  
-    $A(a)$, $B(b)$, $C(c)$ et $D(d)$ sont alignés ou cocycliques si et seulement si :
-    \[
-    \frac{(d - a)(\overline{c} - \overline{b})}{(c - a)(\overline{d} - \overline{b})} \text{ est réel.}
-    \]
-ou \[
-\angle (\overrightarrow{CA}, \overrightarrow{CB}) = \angle (\overrightarrow{DA}, \overrightarrow{DB}) \mod \pi.
-\]
-ou
-\[
-\frac{\frac{c - b}{c - a}}{\frac{d - b}{d - a}} \text{ est réel.}
-\]
+   % $A(a)$, $B(b)$, $C(c)$ et $D(d)$ sont alignés ou cocycliques si et seulement si :
+    %\[
+    %\frac{(d - a)(\overline{c} - \overline{b})}{(c - a)(\overline{d} - \overline{b})} \text{ est réel.}
+    %\]
+%ou \[
+%\angle (\overrightarrow{CA}, \overrightarrow{CB}) = \angle (\overrightarrow{DA}, \overrightarrow{DB}) \mod \pi.
+%\]
+%ou
+%\[
+%\frac{\frac{c - b}{c - a}}{\frac{d - b}{d - a}} \text{ est réel.}
+%\]
 
 % Cercle
-\draw[thick] (0,0) circle(3);
+%\draw[thick] (0,0) circle(3);
 
 % Points A, B, C, D
-\node[below left] at (-2.5,-1.5) {$A$};
-\node[below right] at (2.5,-1.5) {$B$};
-\node[above] at (0,2.7) {$C$};
-\node[right] at (2.5,1.5) {$D$};
+%\node[below left] at (-2.5,-1.5) {$A$};
+%\node[below right] at (2.5,-1.5) {$B$};
+%\node[above] at (0,2.7) {$C$};
+%\node[right] at (2.5,1.5) {$D$};
 
 % Sommets du cercle
-\coordinate (A) at (-2.5,-1.5);
-\coordinate (B) at (2.5,-1.5);
-\coordinate (C) at (0,2.7);
-\coordinate (D) at (2.5,1.5);
+%\coordinate (A) at (-2.5,-1.5);
+%\coordinate (B) at (2.5,-1.5);
+%\coordinate (C) at (0,2.7);
+%\coordinate (D) at (2.5,1.5);
 
 % Arcs et segments
-\draw[thick] (A) -- (C) -- (B);
-\draw[thick] (C) -- (D);
-\draw[thick] (A) -- (B);
-\draw[thick] (B) -- (D);
+%\draw[thick] (A) -- (C) -- (B);
+%\draw[thick] (C) -- (D);
+%\draw[thick] (A) -- (B);
+%\draw[thick] (B) -- (D);
 
-\end{tikzpicture}
+%\end{tikzpicture}
 
     \item \textbf{Triangle équilatéral} :  
     Les points $A(a)$, $B(b)$ et $C(c)$ forment un triangle équilatéral direct si, et seulement si :  

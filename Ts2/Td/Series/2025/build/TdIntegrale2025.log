@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  7 JUN 2025 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  19 JUL 2025 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -957,7 +957,7 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count356
 \l__pdf_internal_box=\box131
 )
-No file TdIntegrale2025.aux.
+(build/TdIntegrale2025.aux)
 \openout1 = `TdIntegrale2025.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
@@ -978,6 +978,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
 LaTeX Font Info:    ... okay on input line 81.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
 LaTeX Font Info:    ... okay on input line 81.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count357
@@ -1035,10 +1036,12 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 81.
+(build/TdIntegrale2025.out) (build/TdIntegrale2025.out)
 \@outlinefile=\write4
 \openout4 = `TdIntegrale2025.out'.
 
 \c@lstlisting=\count363
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks47
@@ -1108,9 +1111,6 @@ Overfull \hbox (16.96144pt too wide) in paragraph at lines 150--152
 []\T1/lmr/m/n/12 En dé-duire la valeur de : $[][] [] \OML/lmm/m/it/12 dx:$ 
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 196.
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}
 
@@ -1134,54 +1134,28 @@ OT1/lmr/m/n/12 = [][] [](\OML/lmm/m/it/12 x \OT1/lmr/m/n/12 + []) \OML/lmm/m/it
 /12 dx:
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 292.
-
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{equation.0.1}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.292     Ã‰
-            tudier les variations de \( f \) sur \([0; 2]\).]
+            tudier les variations de \( f \) sur \([0; 2]\).] [3] [4]
 
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 388.
-
-[3]
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 401.
-
-[4] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/TdIntegrale2025.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `TdIntegrale2025.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `TdIntegrale2025.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package lastpage Warning: Rerun to get the references right on input line 401.
-
+Package rerunfilecheck Info: File `TdIntegrale2025.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30113 strings out of 474222
- 603205 string characters out of 5748732
+ 30121 strings out of 474222
+ 603419 string characters out of 5748732
  2012975 words of memory out of 5000000
- 51695 multiletter control sequences out of 15000+600000
+ 51697 multiletter control sequences out of 15000+600000
  597595 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,14n,107p,433b,975s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1196,10 +1170,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/TdIntegrale2025.pdf (4 pages, 245029 bytes).
+Output written on build/TdIntegrale2025.pdf (4 pages, 245012 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 237 compressed objects within 3 object streams
+ 308 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
  128 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
