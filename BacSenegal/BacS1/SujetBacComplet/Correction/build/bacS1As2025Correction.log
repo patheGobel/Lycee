@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  18 JUL 2025 23:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  21 JUL 2025 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -988,8 +988,8 @@ Package rerunfilecheck Info: File `bacS1As2025Correction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29909 strings out of 474222
- 600307 string characters out of 5748732
+ 29910 strings out of 474222
+ 600314 string characters out of 5748732
  1950975 words of memory out of 5000000
  51608 multiletter control sequences out of 15000+600000
  599319 words of font info for 92 fonts, out of 8000000 for 9000
@@ -1010,10 +1010,10 @@ msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/zapfding/uzdr.pfb>
-Output written on build/bacS1As2025Correction.pdf (5 pages, 166211 bytes).
+Output written on build/bacS1As2025Correction.pdf (5 pages, 166352 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
