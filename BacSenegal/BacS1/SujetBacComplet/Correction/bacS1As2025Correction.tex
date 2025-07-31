@@ -435,6 +435,35 @@ C’est donc le demi-tour d’axe  $ \Delta_2 $ c’est à dire $ R_2 $ \hfill \
 		C’est donc le \textbf{demi-tour d’axe} $\Delta$.
 		Finalement, $R_1 \circ R_2 = R_2 \circ R_1$.
 \end{enumerate}
+\item Réciproquement, on suppose que $R_1 \circ R_2 = R_2 \circ R_1$.
+		
+		Soit $A$ un point de $(\Delta_1)$ qui n’appartient pas à $(\Delta_2)$ et $B$ l’image de $A$ par $R_2$.
+		\begin{enumerate}
+			\item Montrer que la droite $(AB)$ et la droite $(\Delta_2)$ sont perpendiculaires.
+			
+			Soit $(Q)$ le plan passant par $A$ et orthogonal à $(\Delta_2)$ et soit $I$ le point d’intersection de $(Q)$ et $(\Delta_2)$. Dire que le 				point $B$ est l’image du point $A$ par $R_2$ signifie que $B$ est l’image du point $A$ par la restriction de $R_2$ à $(Q)$ qui est la symétrie centrale de centre $I$. On a $(AB) \subset (Q)$, donc $(\Delta_2)$ est orthogonal à $(AB)$. De plus, $A$, $I$ et $B$ sont alignés. Donc $I \in (\Delta_2) \cap (AB)$. Ainsi, la droite $(AB)$ et la droite $\Delta_2$ sont perpendiculaires en $I$.
+			
+			\item En utilisant la relation $R_1 \circ R_2 = R_2 \circ R_1$, prouver que $B = R_1(B)$.
+			
+					\[ R_1(B) = R_1(R_2(A)) = R_2(R_1(A)) = R_2(A) = B. \]
+					
+			\item En déduire que $(\Delta_1)$ et $(\Delta_2)$ sont perpendiculaires.
+			
+			On a :
+			
+			$R_1(B) = B$ ; donc $B \in (\Delta_1)$.
+			
+			$A \in \Delta_1$.
+			
+			$A \neq B$ car si $A = B$, on aurait $R_2(A) = A$ ; ce qui signifierait que $A \in (\Delta_2)$.
+			
+			On en déduit que $(AB) = (\Delta_1)$. D’après 2.a), la droite $(AB)$ et la droite $(\Delta_2)$ sont perpendiculaires. On en déduit que $(\Delta_1)$ et $(\Delta_2)$ sont perpendiculaires.
+		\end{enumerate}
+\item En utilisant ce qui précède, énoncer une condition nécessaire et suffisante portant sur $(\Delta_1)$ et $(\Delta_2)$ pour que $R_1 \circ R_2 = R_2 \circ R_1$.
+
+Soient $(\Delta_1)$ et $(\Delta_2)$ deux droites distinctes de l’espace, $R_1$ et $R_2$ les demi-tours d’axes respectifs $(\Delta_1)$ et $(\Delta_2)$.
+
+\[ R_1 \circ R_2 = R_2 \circ R_1 \iff (\Delta_1) \perp (\Delta_2). \]
 \end{enumerate}
 
 \end{document}
