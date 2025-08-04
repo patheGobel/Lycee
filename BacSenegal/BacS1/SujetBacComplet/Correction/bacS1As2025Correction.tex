@@ -467,6 +467,11 @@ Soient $(\Delta_1)$ et $(\Delta_2)$ deux droites distinctes de l’espace, $R_1$
 \end{enumerate}
 
 \section*{\underline{Problème :(11 pts)}}
+
+On considère le plan complexe $\mathbb{P}$ rapporté à un repère orthonormé direct $(O ; \vec{u}, \vec{v})$.
+
+	\section*{\underline{PARTIE A (2 points)}}
+
 \begin{enumerate}
 \item Soit $(a, b) \in \mathbb{R}^* \times \mathbb{R}$ et $F_{a,b}$ l’application de $\mathbb{P}$ dans $\mathbb{P}$ qui au point $M$ d’affixe $z$ fait correspondre le point $M'$ d’affixe $z'$ telle que : $z' = a \overline{z} + ib$ où $\overline{z}$ est le conjugué de $z$.
 \begin{enumerate}
@@ -537,10 +542,45 @@ y' = -a y + b
 Finalement, $S_\Delta \circ h$ a pour écriture complexe $z' = x' + i y' = a x - a i y + i b = a(x - i y) + i b = a \overline{z} + i b$. Donc $S_\Delta \circ h = F_{a,b}$.
 $F_{a,b}$ est la composée de la symétrie orthogonale par rapport à la droite $\Delta$ d’équation $y = \frac{b}{a + 1}$ et de l’homothétie $h$ de centre $\Omega$ d’affixe $Z_\Omega = \frac{i b}{1 + a}$ et de rapport $a$.
 \item Soit $(c, d) \in \mathbb{R}^* \times \mathbb{R}$ et $G_{c,d}$ l’application de $\mathbb{P}$ dans $\mathbb{P}$ qui, au point $N$ d’affixe $z$, fait correspondre le point $N'$ d’affixe $z'$ tel que : $z' = c z + i d$.
+
 Déterminer, suivant les valeurs de $c$ et $d$, la nature et les éléments géométriques caractéristiques de $G_{c,d}$.
 
      Si $c = 1$, $G_{c,d}$ est la translation de vecteur $\vec{v}$ d’affixe $i d$.
+     
      Si $c \neq 1$, $G_{c,d}$ est l’homothétie de centre $\Pi$ d’affixe $\frac{i d}{1 - c}$ et de rapport $c$.
 
 \end{enumerate}
+		\section*{\underline{PARTIE B (2 points)}}
+		\begin{enumerate}
+		\item Dans cette , on suppose que $|a| \neq 1$.
+		
+			On définit la suite de points $(M_n)_{n \geq 1}$ par :
+			
+			\[
+				\begin{cases} 
+					M_1 \text{ est le point d’affixe } u_1 = a + i b \\
+					\forall n \geq 1, M_{n+1} = F_{a,b}(M_n)
+			\end{cases} \]
+			\begin{enumerate}
+			\item Déterminons l’affixe $u_2$ du point $M_2$.
+			
+				\[ M_2 = F_{a,b}(M_1) \Leftrightarrow u_2 = a \overline{u_1} + i b \]
+				\[ \Leftrightarrow u_2 = a^2 + i b(1 - a) \]
+				\item Montrer que pour tout entier naturel $n$ non nul, $M_n$ a pour affixe :
+				\[ u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right). \]
+				On va faire une démonstration par récurrence.
+				
+				La formule est vraie pour $n = 1$. En effet, $u_1 = a + i b = a^1 + i b \left( \frac{1 - (-a)^1}{1 + a} \right)$.
+				
+     Supposons que la formule est vraie à l’ordre $n$, c’est-à-dire que $M_n$ a pour affixe :
+     
+      $u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right)$ et montrons que $M_{n+1}$ a pour affixe : $u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right)$.
+    \[ M_{n+1} = F_{a,b}(M_n) \Leftrightarrow u_{n+1} = a \overline{u_n} + i b \]
+    \[ \Leftrightarrow u_{n+1} = a \left( a^n - i b \left( \frac{1 - (-a)^n}{1 + a} \right) \right) + i b \]
+    \[ \Leftrightarrow u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right) \]
+
+Conclusion : $M_n$ a pour affixe $u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right)$.
+			\end{enumerate}
+		\end{enumerate}
+		
 \end{document}
