@@ -575,9 +575,15 @@ Déterminer, suivant les valeurs de $c$ et $d$, la nature et les éléments géo
      Supposons que la formule est vraie à l’ordre $n$, c’est-à-dire que $M_n$ a pour affixe :
      
       $u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right)$ et montrons que $M_{n+1}$ a pour affixe : $u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right)$.
-    \[ M_{n+1} = F_{a,b}(M_n) \Leftrightarrow u_{n+1} = a \overline{u_n} + i b \]
-    \[ \Leftrightarrow u_{n+1} = a \left( a^n - i b \left( \frac{1 - (-a)^n}{1 + a} \right) \right) + i b \]
-    \[ \Leftrightarrow u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right) \]
+
+\(
+\begin{aligned}
+M_{n+1} = F_{a,b}(M_n) &\Leftrightarrow u_{n+1} = a \overline{u_n} + i b\\
+					   &\Leftrightarrow u_{n+1} = a \left( a^n - i b \left( \frac{1 - (-a)^n}{1 + a} \right) \right) + i b\\
+					   &\Leftrightarrow u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right)
+\end{aligned}
+\)      
+      
 
 Conclusion : $M_n$ a pour affixe $u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right)$.
 			\end{enumerate}
