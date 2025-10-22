@@ -1,0 +1,136 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des r\'ef\'erences color\'ees si n\'ecessaire
+\usepackage{eso-pic} % Pour ajouter des \'el\'ements en arri\`ere-plan
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{tcolorbox} % Pour encadrer avec fond color\'e
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% D\'efinition de l'encadr\'e adaptatif avec fond jaune
+\newtcolorbox{resultbox}{
+    colback=red!30, % Fond rouge clair
+    colframe=black, % Bordure noire fine
+    sharp corners, % Coins nets
+    boxrule=0.5pt, % Contour l\'eger
+    boxsep=2pt, % Espacement interne
+    left=5pt, right=5pt, top=2pt, bottom=2pt, % Marges internes
+}
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.4}{\fontsize{8cm}{13cm}\selectfont PGB}}}
+    }
+}
+\begin{document}
+
+\hrule % Barre horizontale
+% En-t\^ete
+\begin{center}
+    {\Large \textbf{Correction du Test 2}}
+\end{center}
+\hrule
+
+\[
+    A(x) = 7x^2 - 4x - 3
+\]
+
+\begin{enumerate}
+\item \textbf{Calcul du discriminant} 
+ 
+Le discriminant \(\Delta\) est donné par :
+
+\[
+\begin{aligned}
+ \Delta &= b^2 - 4ac \\
+        &= (-4)^2 - 4 \times 7 \times (-3) \\
+        &= 16 + 84 \\
+        &= 100
+\end{aligned}
+\]
+
+Ainsi, le discriminant est : 
+
+\begin{resultbox}
+    \[
+    \mathbf{\Delta = 100}
+    \]
+\end{resultbox}
+    
+    \item \textbf{Forme canonique :} \newline
+    La forme canonique d'un trinome est :
+    
+$
+\begin{aligned}
+    A(x)&= a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{b^{2}-4ac}{4a^{2}}\right]\\
+				&= 7 \left[ \left( x + \frac{-4}{2 \times 7} \right)^2 - \frac{(-4)^2 - 4 \times 7 \times (-3)}{4 \times 7^2} \right] \\
+         &= 7 \left[ \left( x - \frac{2}{7} \right)^2 - \frac{16 + 84}{4 \times 49} \right] \\
+         &= 7 \left[ \left( x - \frac{2}{7} \right)^2 - \frac{100}{196} \right] \\
+         &= 7 \left[ \left( x - \frac{2}{7} \right)^2 - \frac{25}{49} \right]
+\end{aligned}
+$
+
+Ainsi, la forme canonique est :
+
+\begin{resultbox}
+    \[
+    \mathbf{A(x) = 7 \left[\left( x - \frac{2}{7} \right)^2 - \frac{25}{49}\right]}
+    \]
+\end{resultbox}
+    
+\item \textbf{Factorisation du trinôme}  
+
+Comme \(\Delta > 0\), le trinôme admet deux racines réelles distinctes \( x_1 \) et \( x_2 \) :
+
+Les racines sont donc données par :
+
+\[
+\begin{aligned}
+        x_1 &= \frac{-b - \sqrt{\Delta}}{2a} \\
+            &= \frac{-(-4) - \sqrt{100}}{2 \times 7} \\
+            &= \frac{4 - 10}{14} \\
+            &= \frac{-6}{14} \\
+            &= -\frac{3}{7}
+\end{aligned}
+\]
+
+\begin{resultbox}
+    \[
+    \mathbf{x_1 = -\frac{3}{7}}
+    \]
+\end{resultbox}
+
+\[
+\begin{aligned}
+        x_2 &= \frac{-b + \sqrt{\Delta}}{2a} \\
+            &= \frac{-(-4) + \sqrt{100}}{2 \times 7} \\
+            &= \frac{4 + 10}{14} \\
+            &= \frac{14}{14} \\
+            &= 1
+\end{aligned}
+\]
+
+\begin{resultbox}
+    \[
+    \mathbf{x_2 = 1}
+    \]
+\end{resultbox}
+
+La factorisation est donc :
+
+\begin{resultbox}
+    \[
+    \mathbf{A(x) = 7 \left( x - 1 \right) \left( x + \frac{3}{7} \right)}
+    \]
+\end{resultbox}
+\end{enumerate}
+
+\end{document}
