@@ -1,0 +1,24 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    branches: [ main ] # Déclencher l'action à chaque push sur la branche main
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # Exemple : Compiler un fichier appelé 'CoursDomicile/chapitre_1.tex'
+      - name: Compile LaTeX document (Exemple)
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: CoursDomicile/chapitre_1.tex # Changez ceci pour le fichier racine de votre cours
+          
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cours-Domicile-PDF
+          path: CoursDomicile/chapitre_1.pdf # Le PDF généré
