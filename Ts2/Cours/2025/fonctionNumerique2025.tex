@@ -1,519 +1,1380 @@
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{enumitem}
-\newcommand\circitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\newcommand\boxitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
-\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-%%%::::::by chnini ameur :::::::%%%
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-%%%::::::by chnini ameur :::::::%%%
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-% varwidth boxed title*=-3cm,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
-%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
 
-\usepackage{fancyhdr}
-\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
-% Commande pour ajouter du texte en arrière-plan
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{multirow}
+\geometry{a4paper, margin=1in}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{tkz-tab}
+\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage{enumitem}
+%---------------------------------------
+% Définir un compteur pour les exemples
+\newcounter{exemple}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
+}
+%---------------------------------------
+\newcounter{solution}
+
+% Définir la commande \solutione pour afficher un solution numéroté
+\newcommand{\solution}{%
+  \refstepcounter{solution}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
+}
+%---------------------------------------
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Définir un compteur pour les exercices d'application
+\newcounter{exerciceapp}
+
+% Définir la commande pour afficher un exercice d'application numéroté
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les exercices d'application
+\newcounter{correction}
+
+% Définir la commande pour afficher un correction exercice d'application numéroté
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les remarque d'application
+\newcounter{remarque}
+
+%----------------------------------------
+\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
+% Définir la commande pour afficher un remarque numéroté
+\newcommand{\remarque}{%
+  \refstepcounter{remarque}%
+  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
+}
+% Commande pour ajouter du texte en arrière-plan
 \AddToShipoutPicture{
     \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.9}{\fontsize{5cm}{5cm}\selectfont Pathé Gobel BA}}}
     }
 }
-\usepackage{lastpage}
-\fancyhf{}
-\pagestyle{fancy}
-\renewcommand{\footrulewidth}{1pt}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footruleskip}{10pt}
-\fancyfoot[R]{
-\color{blue}\ding{45}\ \textbf{2025}
-}
-\fancyfoot[L]{
-\color{blue}\ding{45}\ \textbf{Prof:M. BA}
-}
-\cfoot{\bf
-\thepage /
-\pageref{LastPage}}
+
 \begin{document}
-\renewcommand{\arraystretch}{1.5}
-\renewcommand{\arrayrulewidth}{1.2pt}
-\begin{tikzpicture}[overlay,remember picture]
-    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
-                \hline
-                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                              \\ \hline
-                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 21/02/2025} & \textbf{} \\ \hline
-                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
-                                                                  \textbf{{\Large\sffamily Td Ln Expo}}
-                                                              \end{center}}}                                                                                                        \\ \hline
-            \end{tabular}}\endgroup};
-\end{tikzpicture}
-\vspace{3cm}
+\maketitle
+\section*{\underline{\textbf{\textcolor{red}{A. LIMITES-CONTINUITÉ}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{I.Limites}}}}
 
-\section*{\fbox{\textbf{Exercice 4}}}
+\renewcommand{\labelenumi}{\theenumi)}
+\begin{enumerate}[label=\arabic*)]
+    \item \textbf{\textcolor{blue}{\underline{Quelques limites usuelles}}}
+    
+\[\forall n\in\mathbb{N}^{*} \lim_{x \to +\infty} x^{n}=+\infty  \text{ , } \lim_{x \to +\infty} \frac{1}{x^{n}}=0^{+}  \]
 
-\subsection*{\underline{\textbf{Partie A}}}
-
-Soit \( g(x) = 2x \ln(-x) + x + 1 \).
-
-\begin{enumerate}
-    \item Déterminer l’ensemble de définition \( D_g \) de \( g \).
-    \item Calculer les limites aux bornes de \( D_g \).
-    \item Étudier les variations de \( g \).
-    \item Calculer \( g(-1) \) puis en déduire le signe de \( g(x) \).
-\end{enumerate}
-
-\subsection*{\underline{\textbf{Partie B}}}
-
-On considère la fonction \( f \) définie par :
-
-\[
-    f(x) =
-    \begin{cases}
-        x^2 \ln(-x) + x + 1 & \text{si } x < 0 \\
-        x \ln(x)^2 + x + 1  & \text{si } x > 0 \\
-        1                   & \text{si } x = 0
-    \end{cases}
+\[ \forall n\in\mathbb{N}^{*}
+ \lim_{x \to -\infty} x^{n} =
+ \begin{cases} 
+ +\infty \text{ si \(n\) est pair}\\
+ -\infty \text{ si \(n\) est pair}
+ \end{cases}
+\text{ , }
+\lim_{x \to -\infty} \frac{1}{x^{n}}=
+ \begin{cases} 
+ 0^{+} \text{ si \(n\) est pair}\\
+ 0^{-} \text{ si \(n\) est pair}
+ \end{cases}
 \]
 
-On note \( (C_f) \) sa courbe représentative dans un repère orthonormé.
+\[ \lim_{x \to +\infty} \sqrt{x}=+\infty \text{ , } \lim_{x \to +\infty} \frac{1}{\sqrt{x}}=0^{+}  \]
 
-\begin{enumerate}
-    \item Justifier que \( f \) est définie sur \( \mathbb{R} \).
-    \item Étudier la continuité et la dérivabilité de \( f \) en 0. Interprétez graphiquement les résultats.
-    \item Donner le domaine de dérivabilité de \( f \) puis montrer que
-          \[
-              f'(x) =
-              \begin{cases}
-                  g(x)          & \text{si } x < 0 \\
-                  (1 + \ln x)^2 & \text{si } x > 0
-              \end{cases}
-          \]
-    \item Calculer les limites de \( f \) aux bornes de son domaine de définition.
-    \item Étudier les branches infinies de \( (C_f) \).
-    \item Dresser le tableau de variations de \( f \).
-    \item Montrer que dans \( ]-\infty; -1[ \), l’équation \( f(x) = 1 \)
+\[ \lim_{x \to a^{+}} \frac{1}{x-a}=+\infty \text{ , } \lim_{x \to a^{-}} \frac{1}{x-a}=-\infty  \]
 
-          admet une unique solution \( \alpha \) puis vérifier que \(-1,8 < \alpha < -1,7\).
-    \item Construire \( (C_f) \) (unité 2 cm) (on précisera la tangente au point d’abscisse \( e^{-1} \) et on placera le point d’abscisse 1).
-\end{enumerate}
+		\textbf{Autre Notation}
+\[( x\rightarrow a^{+} ) \Leftrightarrow ( x\rightarrow a_{>} ) \text{ , } ( x\rightarrow a^{-} ) \Leftrightarrow ( x\rightarrow a_{<} ) \]
+\[ \lim_{x \to a^{+}} f(x)=+\infty \text{ se note aussi } \lim_{x \to a_{>}} f(x)=+\infty  \]	
 
-\subsection*{\underline{\textbf{Partie C}}}
+\[ \lim_{x \to a^{-}} f(x)=-\infty \text{ se note aussi } \lim_{x \to a_{<}} f(x)=-\infty  \]	
+    
+    \item	\textbf{\textcolor{blue}{\underline{Quelques théorèmes sur les limites}}}
+\begin{enumerate}[label=\alph*)]
+       \item \textcolor{green}{\underline{Théorème de comparaison}}
+       
+Soient \( f \) et \( g \) trois fonctions définies sur un intervalle \( I \) au voisianage \( \alpha \), \( \alpha \) étant un réel, \( +\infty \) ou \( -\infty \).
 
-Soit \( h \) la restriction de \( f \) à \( I =]0; +\infty[ \).
+\[ \text{Si pour tout \( x\in  I \): }
+  \begin{cases}
+    f(x)\geq g(x)\\
+    \lim_{x \to \alpha}g(x)=+\infty 
+  \end{cases}
+\text{ alors }  \lim_{x \to \alpha}f(x)=+\infty 
+\]
 
-    \begin{enumerate}
-        \item Montrer que \( h \) admet une bijection réciproque \( h^{-1} \) définie sur un intervalle \( J \) à préciser.
-        \item Étudier la dérivabilité de \( h^{-1} \) sur \( J \).
-        \item
-              \begin{enumerate}
-                  \item Calculer \( h(1) \).
-                  \item Calculer \( (h^{-1})'(2) \).
-              \end{enumerate}
-        \item Construire la courbe de \( h^{-1} \).
-    \end{enumerate}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{comp1.png}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
 
-    \section*{\fbox{\textbf{Exercice 5}}}
+\[ \text{Si pour tout \( x\in  I \): }
+  \begin{cases}
+    f(x)\leq g(x)\\
+    \lim_{x \to \alpha}g(x)=-\infty 
+  \end{cases}
+\text{ alors }  \lim_{x \to \alpha}f(x)=-\infty 
+\]
 
-    \subsection*{\underline{\textbf{Partie A}}}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{comp2.png}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
 
-    Soit \( g \) la fonction définie sur \( ]0; +\infty[ \) par
-    \( g(x) = -x + 1 - 2 \ln x \)
+       	\textbf{\underline{\exemple:}}
+       	\[ \text{Soit \( f(x)=-x+\sin x \) Calculer }\lim_{x \to +\infty} f(x) \]
+       	
+       	\newpage
+       	\textbf{\underline{\solution:}}
+       	\[ \text{Pour tout \(x\), \( \sin x\leq 1 \implies -x + \sin x \leq 1 - x \implies f(x)\leq 1 - x \).} \]
+       	\[	\text{Posons \( g(x)=1-x \) donc \( f(x)\leq g(x) \).} \]
+       	\[ \text{Or,} \lim_{x \to +\infty}g(x)=-\infty, \text{donc} \lim_{x \to +\infty}f(x)=-\infty\]       	
+       	
+       	 \textbf{\underline{\exemple:}}
+       	\[ \text{Soit \( g(x)=\frac{\sqrt{1+x^{2}}}{x^{2}} \). Calculer }\lim_{x \to 0} g(x) \]
+       	 \textbf{\underline{\solution:}}
+       	 \[ \text{Posons \( f(x)=\frac{1}{x^{2}} \). Comme, pour tout \(x\neq 0\), on a, \( 1\leq \sqrt{1+x^{2}} \)., on a, pour tout }, x\neq 0 \]
+       	\[ f(x)\geq g(x) \text{ Or,} \lim_{x \to 0}g(x)=+\infty, \text{donc} \lim_{x \to 0}f(x)=+\infty\]
+       	
+       	\item \textcolor{green}{\underline{Théorème d’encadrement ou théorème des gendarmes}}
+       	
+Soient \( f \), \( g \) et \( h \) trois fonctions définies sur un intervalle \( I \) au voisianage \( \alpha \), \( \alpha \) étant un réel, \( +\infty \) ou \( -\infty \).
 
-    \begin{enumerate}
-        \item Étudier les variations de \( g \) puis dresser son tableau de variations.
-        \item Calculer \( g(1) \). En déduire le signe de \( g(x) \) sur \( ]0; +\infty[ \).
-    \end{enumerate}
-
-    \subsection*{\underline{\textbf{Partie B}}}
-
-    Soit \( f \) la fonction définie par \( f(x) = \frac{x + \ln x}{x^2} \)
-    et \( (C) \) sa courbe représentative dans un repère \( (O, \vec{i}, \vec{j}) \).
-
-    \begin{enumerate}
-        \item Déterminer le domaine de définition de \( f \).
-        \item
-              \begin{enumerate}
-                  \item Calculer \( \lim\limits_{x \to 0^+} f(x) \). Interpréter graphiquement le résultat.
-                  \item Calculer \( \lim\limits_{x \to +\infty} f(x) \). Interpréter graphiquement le résultat.
-              \end{enumerate}
-        \item
-              \begin{enumerate}
-                  \item Montrer que pour tout \( x \in ]0; +\infty[ \), \( f'(x) = \frac{g(x)}{x^2} \)
-                  \item Dresser le tableau de variations de \( f \).
-                  \item Montrer que l’équation \( f(x) = 0 \) admet dans \( ]0; +\infty[ \) une unique solution \( \beta \) et que  \( \beta \in ]0,56; 0,57[. \)
-              \end{enumerate}
-        \item Construire \( (C) \).
-    \end{enumerate}
-    \subsection*{\underline{\textbf{Partie C}}}
-    Soit \( h \) la fonction définie sur \( ]0; +\infty[ \) par \( h(x) = \frac{1}{x} \) et \( (\Gamma) \) sa courbe.
-
-    \begin{enumerate}
-        \item Étudier les positions relatives de \( (C) \) et \( (\Gamma) \).
-        \item Construire dans le même repère \( (\Gamma) \).
-        \item Soit \( I_{\lambda} \) l’aire en unité d’aires de la partie du plan délimitée par les courbes \( (C) \), \( (\Gamma) \) et les droites d’équations \( x = 1 \) et \( x = \lambda \) où \( \lambda \) est un nombre réel strictement supérieur à 1.
-              \begin{enumerate}
-                  \item Montrer que \( I_{\lambda} = 1 - \frac{1}{\lambda} (1 + \ln \lambda). \)
-                  \item Déterminer \( \lim\limits_{\lambda \to +\infty} I_{\lambda}. \)
-              \end{enumerate}
-    \end{enumerate}
-
-    \section*{\fbox{\textbf{Exercice 6}}}
-    Soit \( f(x) = \frac{\ln x}{1 + x^2} \)
-
-    \subsection*{\underline{\textbf{Partie A}}}
-
-    Soit \( g(x) = 1 + x^2 - 2x^2 \ln x. \)
-
-    \begin{enumerate}
-        \item Déterminer \( D_g \) et montrer que si \( 0 < x < 1 \) alors \( g(x) \geq 1 \).
-        \item Montrer que \( g \) est strictement décroissante sur \( [1; +\infty[ \).
-        \item Calculer \( g(1) \) et \( g(2) \). Montrer qu’il existe un unique réel \( \alpha \) strictement positif tel que \( g(\alpha) = 0 \). Donner un encadrement de \( \alpha \) à \( 10^{-1} \) près.
-        \item Donner le signe de \( g(x) \) sur \( ]0; +\infty[ \).
-    \end{enumerate}
-
-    \subsection*{\underline{\textbf{Partie B}}}
-
-    \begin{enumerate}
-        \item
-              \begin{enumerate}
-                  \item Calculer \( f'(x) \) et étudier les variations de \( f \).
-                  \item Montrer que \( f(\alpha) = \frac{1}{2\alpha^2} \).
-                  \item Calculer \( \lim\limits_{x \to 0^+} f(x) \) et \( \lim\limits_{x \to +\infty} f(x) \).
-              \end{enumerate}
-        \item Donner une équation de la tangente \( (T) \) à \( (C_f) \) au point d’abscisse \( 1 \).
-        \item Donner le tableau de variations de \( f \) puis tracer \( (C_f) \).
-    \end{enumerate}
-
-    \section*{\fbox{\textbf{Exercice 7}}}
-
-    \subsection*{\underline{\textbf{Partie A}}}
-
-    On considère dans \( ]0; +\infty[ \) la fonction \( g \) donnée par :  \( g(x) = x \ln(x) - 1. \)
-
-    \begin{enumerate}
-        \item Dresser le tableau des variations de \( g \).
-        \item
-              \begin{enumerate}
-                  \item Montrer que l’équation \( g(x) = 0 \) admet une solution unique \( \alpha \) sur \( ]0; +\infty[ \).
-                  \item Montrer que \( 1,76 < \alpha < 1,77 \).
-                  \item En déduire le signe de \( g(x) \) suivant les valeurs de \( x \).
-              \end{enumerate}
-    \end{enumerate}
-
-    \subsection*{\underline{\textbf{Partie B}}}
-
-    On considère la fonction \( f \) de \( \mathbb{R} \) vers \( \mathbb{R} \) définie par :
-    \( f(x) = \frac{1 + x}{1 + \ln(x)}. \)
-
-    \begin{enumerate}
-        \item Justifie que \( D_f = ]0; +\infty[ \setminus \left\{ \frac{1}{e} \right\} \).
-        \item Calcule les limites de \( f \) aux bornes de \( D_f \).
-        \item Étudie les branches infinies à \( (C_f) \).
-        \item
-              \begin{enumerate}
-                  \item Démontre que \( \forall x \in D_f \), \(  f'(x) = \frac{g(x)}{x (1 + \ln(x))^2}. \)
-                  \item Donne le signe de \( f'(x) \) suivant les valeurs de \( x \).
-                  \item En déduire le sens de variation de \( f \) et dresser son tableau de variation.
-              \end{enumerate}
-        \item Démontre que \( f(\alpha) = \alpha \).
-        \item Trace la courbe \( (C_f) \) et son asymptote. (On prendra \( \alpha = 1,76 \))
-    \end{enumerate}
-
-    \section*{\fbox{\textbf{Exercice 8}}}
-
-    \subsection*{\underline{\textbf{Partie A}}}
-
-    Soit  \( g(x) = 2x - (x+1) \ln(x+1). \)
-
-    \begin{enumerate}
-        \item Déterminer le domaine de définition \( D_g \) de \( g \).
-        \item Calculer les limites aux bornes de \( D_g \).
-        \item Dresser le tableau de variations de \( g \).
-        \item Montrer que l’équation \( g(x) = 0 \) admet deux solutions \( 0 \) et \( \alpha \) avec
-              \(     \alpha \in ]3,9; 4[. \)
-        \item Donner le signe de \( g(x) \) suivant les valeurs de \( x \).
-    \end{enumerate}
-
-    \subsection*{\underline{\textbf{Partie B}}}
-
-    Soit \( f \) la fonction définie par :
-    \( f(x) =
-    \begin{cases}
-        x + \ln(1 + x^2)          & \text{si } x \leq 0 \\
-        \frac{\ln(x+1)}{\sqrt{x}} & \text{si } x > 0
-    \end{cases} \)
-
-    \begin{enumerate}
-        \item Déterminer le domaine de définition \( D_f \) de \( f \).
-        \item Calculer les limites aux bornes de \( D_f \).
-        \item Étudier les branches infinies de \( (C_f) \).
-        \item Étudier la continuité puis la dérivabilité de \( f \) en 0. Interpréter graphiquement les résultats.
-        \item Montrer que \(     f(\alpha) = \frac{2\sqrt{\alpha}}{\alpha + 1}, \)
-              puis encadrer \( f(\alpha) \).
-        \item Montrer que \( f \) est dérivable sur \( ]-\infty; 0[ \) et  \(     f'(x) = \frac{(x+1)^2}{x^2 + 1}. \)
-
-        \item Montrer que \( f \) est dérivable sur \( ]0; +\infty[ \) et montrer que pour tout \( x > 0 \),  \( f'(x) = \frac{g(x)}{2x(x+1)\sqrt{x}}. \)
-
-        \item Étudier les variations de \( f \).
-        \item Dresser le tableau de variations de \( f \).
-        \item Calculer \( f(-2) \).
-        \item Tracer \( (C_f) \).
-    \end{enumerate}
-
-    \subsection*{\underline{\textbf{Partie C}}}
-
-    Soit \( h \) la restriction de \( f \) sur \( ]-\infty; 0] \).
-
-\begin{enumerate}
-    \item Montrer que \( h \) réalise une bijection de \( ]-\infty; 0] \) vers un intervalle \( J \) à préciser.
-    \item Étudier la dérivabilité de \( h^{-1} \).
-    \item Déterminer \( (h^{-1})'(\ln 5 - 2) \).
-    \item Tracer \( (C_{h^{-1}}) \).
-\end{enumerate}
-\section*{\fbox{\textbf{Exercice 9}}}
-
-\subsection*{\underline{\textbf{Partie A}}}
-
-On considère la fonction :
-
-\(
-\begin{aligned}
-    u : [0; +\infty[ \quad & \longrightarrow \quad \mathbb{R}                                          \\
-    x \quad                & \longmapsto \quad \ln \left| \frac{x+1}{x-1} \right| - \frac{2x}{x^2 - 1}
-\end{aligned}
-\)
-
-\begin{enumerate}
-    \item Déterminer l’ensemble de définition de \( u \), calculer \( u(0) \) et \( \lim\limits_{x \to +\infty} u(x) \).
-    \item Étudier les variations de \( u \), dresser son tableau de variations. (il n’est pas nécessaire de calculer la limite de \( u \) en 1).
-    \item Déduire des résultats précédents que :
-          \begin{enumerate}
-              \item \( \forall x \in [0;1[ \), \( u(x) \geq 0 \).
-              \item \( \forall x \in ]1; +\infty[ \), \( u(x) < 0 \).
-          \end{enumerate}
-\end{enumerate}
-
-\subsection*{\underline{\textbf{Partie B}}}
-
-Soit \( g \) la fonction définie par :
-
-\(
-\begin{aligned}
-    g : [0; +\infty[ \quad & \longrightarrow \quad \mathbb{R}                           \\
-    x \quad                & \longmapsto \quad x \ln \left| \frac{x+1}{x-1} \right| - 1
-\end{aligned}
-\)
-
-\begin{enumerate}
-    \item Déterminer \( D_g \) le domaine de définition de \( g \), puis étudier la limite de \( g \) en 1.
-    \item
-          \begin{enumerate}
-              \item Vérifier que \( \frac{x+1}{x-1} = 1 + \frac{2}{x-1}. \)
-
-              \item Montrer que \( \lim\limits_{x \to +\infty} \frac{x-1}{2} \ln \left( 1 + \frac{2}{x-1} \right) = 1. \)
-              \item En déduire que \(         \lim\limits_{x \to +\infty} g(x) = 1. \)
-                    Interpréter graphiquement ce résultat.
-              \item Dresser le tableau de variations de \( g \).
-              \item Montrer qu’il existe un réel unique \( \alpha \in ]0;1[ \) tel que \( g(\alpha) = 0 \). Donner un encadrement de d’ordre 1 de \( \alpha \).
-          \end{enumerate}
-    \item Tracer la courbe \( (C_g) \) de \( g \) dans le plan rapporté à un repère orthonormé (unité : \( 2cm \)).
-\end{enumerate}
-
-\subsection*{\underline{\textbf{Partie C}}}
-
-Soit la fonction définie par : \( f(x) = (x^2 - 1) \ln \left( \sqrt{\frac{x+1}{1-x}} \right) \)
-
-\begin{enumerate}
-    \item Montrer que \( f \) est dérivable sur \( [0;1[ \) et que  \(     f'(x) = g(x) \quad \text{pour tout } x \in [0;1[. \)
-    \item Déterminer l’aire du domaine plan limité par la courbe \( (C_g) \) ; l’axe des abscisses ; l’axe des ordonnées et la droite d’équation \( x = \alpha \).
-\end{enumerate}
-\section*{\fbox{\textbf{Exercice 10}}}
-
-\subsection*{\underline{\textbf{Partie A}}}
-
-Soit la fonction \( g \) définie par  \( g(x) = \frac{1}{x} - 2 - \ln x. \)
-
-\begin{enumerate}
-    \item Étudier les variations de \( g \).
-    \item Montrer que l’équation \( g(x) = 0 \) admet une unique solution \( \alpha \in ]0; +\infty[ \). Vérifier que
-          \[
-              0,6 < \alpha < 0,7.
-          \]
-    \item En déduire le signe de \( g(x) \).
-\end{enumerate}
-
-\subsection*{\underline{\textbf{Partie B}}}
-
-Soit \( f \) la fonction définie par :
-\(
-f(x) =
+\[
+\text{ Si \( \forall x\in I \) }
 \begin{cases}
-    (1 - x)(1 + \ln x) & \text{si } x \geq 1 \\
-    (1 - x) \ln(1 - x) & \text{si } x < 1
+  \quad g(x) \leq f(x)\leq h(x) \\
+  \lim_{x \to \alpha}g(x)=\lim_{x \to \alpha}h(x)=\ell,
 \end{cases}
+\text{ alors } \lim_{x \to \alpha}f(x)=\ell 
+ \]      	
+       	\textbf{\underline{\exerciceapp}}
+\[\text{ Calculer } \lim_{ x\to +\infty} \frac{x-\sin x}{x^{2}} \]   	
+       	\textbf{\underline{\correction}}
+       	
+\item \textcolor{green}{\underline{Limite et composition de fonctions}}
+
+Soit \( \alpha \), \( \beta \) et \( \gamma \) des réels ou \( \pm\infty \) On considère deux fonctions \( u \) et \( v \) telles que
+	
+\[
+\text{ Si }
+\begin{cases}
+  \lim_{x \to \alpha}u(x)=\beta \\
+  \lim_{x \to \beta}v(x)=\gamma
+\end{cases} 
+\text{ alors } \lim_{x \to \alpha}v(u(x))=\gamma 
+ \]
+       	\textbf{\underline{\exerciceapp}}	
+\[\text{Calculer }\lim_{x \to +\infty}\sqrt{\frac{9}{x}+7} \]
+
+				\textbf{\underline{\correction}}
+				
+On commence par la fonction la plus à l'intérieur :
+
+\[\text{Posons } u(x)=\frac{9}{x}+7 \text{ et } v(x)=\sqrt{\frac{9}{x}+7} \]
+				
+				
+       	\item \textcolor{green}{\underline{Théorème du changement de variable}}
+       	\[ \lim_{x \to x_{0}}f(x)=\lim_{t \to 0}f(x_{0}+t) \]
+      	\[ \lim_{x \to +\infty}f(x)=\lim_{X \to 0^{+}}f \left( \frac{1}{X} \right)  \]
+       	\[ \lim_{x \to -\infty}f(x)=\lim_{X \to 0^{-}}f \left( \frac{1}{X} \right)  \]
+       	\textbf{Preuve[Exercice]}    	
+			       	
+\end{enumerate}
+\item \textcolor{blue}{\underline{Limites de fonctions trigonométriques}}      
+       	\begin{itemize}
+       	\item \[ \lim_{x \to 0} \frac{\sin x}{x}=1 \]
+       	\item \[ \lim_{x \to 0} \frac{\tan x}{x}=1 \]
+       	\item \[ \lim_{x \to 0} \frac{1-\cos x}{x^{2}}=\frac{1}{2} \]
+       	\item \[ \lim_{x \to 0} \frac{\cos x -1 }{x}=0 \]
+       	\end{itemize}
+
+      	\textbf{\underline{\exerciceapp}}
+
+				 \[ \lim_{x \to +\infty}x\sin \frac{1}{x} \] 
+				 \[ \lim_{x \to +\infty}x\tan \frac{3}{x} \] 
+				 \[ \lim_{x \to +\infty}x^{2}\left( 1 - \cos \frac{2}{x} \right) \] 	
+
+				\textbf{\underline{\correction}} 
+
+\item \textbf{\textcolor{blue}{\underline{Interprétations géométriques des limites}}}
+
+Les limites peuvent être interprétées géométriquement de plusieurs manières en fonction du contexte. Voici quelques exemples typiques :
+
+\begin{enumerate}[label=\alph*)]
+   \item \textcolor{green}{\underline{\textbf{Asymptote horizontale (AH)[Parllèle à \((ox)\)]}}}:
+    
+\[
+\text{ Une fonction }  f  \text{ a une asymptote horizontale en } y = \ell \text{ lorsque} \lim_{x \to +\infty} f(x) = \ell \text{ ou } \lim_{x \to +\infty} f(x) = \ell
+\]
+\[
+\text{ Si } \lim_{x \to +\infty} f(x) = \ell \text{ On dit que: \( y = \ell \) est une AH à \( (C_{f}) \) en }+\infty
+\]
+    
+\[
+\text{ Si } \lim_{x \to -\infty} f(x) = \ell\text{ on dit que: \( y = \ell \) est une AH à \( (C_{f}) \) en }-\infty
+\]
+    
+    Cela signifie que la courbe de la fonction se rapproche de la droite \( y = \ell \) à mesure que \( x \to +\infty \) ou \( x \to -\infty \).
+    
+\textbf{\underline{\exemple:}}
+
+Déterminer l'AH de \( f \)
+\[
+    f(x) = \frac{2x^2}{x^2 + 1}
+\] 
+\textbf{\underline{\solution:}}
+\[
+\lim_{x \to +\infty} f(x) = 2, \quad \lim_{x \to -\infty} f(x) = 2.
+\]
+    La courbe de la fonction se rapproche de la droite \( y = 2 \) à mesure que \( x \to +\infty \) ou \( x \to -\infty \).
+    \item \textcolor{green}{\underline{\textbf{Asymptote verticale (AV)[Parallèle à \((oy)\)]}}} :
+    
+    Soit \( x = a \in \mathbb{R} \) 
+    \[
+    \text{si }\lim_{x \to a} f(x) = \pm\infty \text{ alors \(x = a\) est une AV à \(C_{f}\)}
+    \]
+    Cela signifie que la courbe de la fonction tend vers l'infini lorsque \( x \) approche \( a \) par la droite (ou la gauche).
+
+\textbf{\underline{\exemple:}}
+
+Déterminer de l'AV de \( f \) tel que
+\( f(x) = \frac{1}{x} \)
+
+\textbf{\underline{\solution:}}
+\[
+\lim_{x \to 0^{+}} f(x) = +\infty \quad \text{et} \quad \lim_{x \to 0^{-}} f(x) = -\infty,
+\]
+ce qui signifie que la fonction a une asymptote verticale en \( x = 0 \).
+    \item \textcolor{green}{\underline{\textbf{Asymptote oblique (AO)}}} :
+\[ \text{Si } \lim_{x \to +\infty} (f(x)-(ax+b)) = 0 \text{ alors \(y = ax+b\) est une AO à \((C_{f})\) en \( +\infty \)} \]
+
+\[ \text{Si } \lim_{x \to -\infty} (f(x)-(ax+b)) = 0 \text{ alors \(y = ax+b\) est une AO à \((C_{f})\) en \( -\infty \)} \]
+Cette méthode est utilisée pour montrer que \(y=ax+b\) est est une AO
+
+\textbf{\underline{\exemple:}}
+
+Soit \( f(x) = \frac{x^2 + 2x + 1}{x} \) une fonction et \( (C_{f}) \) sa courbe représentative.
+
+Montrer que \( y = x + 2 \) est AO à \( (C_{f}) \) en \( \pm\infty \)
+
+\textbf{\underline{\solution:}}
+
+\( y = x + 2 \) est AO à \( (C_{f}) \) en \( \pm\infty \) si
+\(\lim_{x \to +\infty}\left[ f(x)-y\right] =0 \)
+
+En effet
+    \[
+    f(x) = \frac{x^2 + 2x + 1}{x}, \quad \lim_{x \to +\infty} \left( f(x) - (x + 2) \right) = 0.
+    \]
+    La courbe de la fonction se rapproche de la droite \( y = x + 2 \) pour \( x \to +\infty \).
+\item \textcolor{green}{\underline{\textbf{Propriété 1[Autre façon de montrer que \( y = ax + b \) est une AO]}}}
+
+Soit \( f \) une fonction, \( a, b \) un réel et \( (C_{f}) \) sa courbe représentative .
+\[
+\text{Si }\lim_{x \to +\infty}f(x)=\pm\infty 
+\text{ et }
+\lim_{x \to +\infty}\frac{f(x)}{x}=a
+\text{ et }
+\lim_{x \to +\infty}\left( f(x)-ax\right) =b
+\]
+
+\[
+\text{ alors }
+y = ax + b \text{ est une AO à } (C_{f})\quad en\quad +\infty.
+\]
+\textbf{\underline{NB:}}
+
+Cette propriété reste valable lorsque \( x\rightarrow -\infty\)
+
+On aura \( y = ax + b \) est une AO à \( (C_{f}) \) en \(-\infty\)
+
+\textbf{\underline{\exerciceapp}}
+
+\begin{enumerate}[label=\arabic*)]
+
+\item Soit \( f(x)=\frac{2x}{\sqrt{x+1}} \)
+Déterminer \(Df\) et  montrer que \(x=-1\) est une AV à \( (C_{f}) \).
+
+\item Soit \( g(x)=\sqrt{4x^{2}+1}+2x \)
+
+	\begin{enumerate}[label=\alph*)]
+		\item Montrer que \(y = 0\) est une AH à \( (C_{g}) \) en \(-\infty\) 
+		\item Montrer que \(y = 4x\) est une AO à \( (C_{g}) \) en \(+\infty\) 
+	\end{enumerate}
+
+\end{enumerate}
+\textbf{\underline{\correction}}
+
+\item \textcolor{green}{\underline{Branche parabolique de direction (oy)}}
+\[
+ \text{Si } \lim_{x \to +\infty} f(x) = \pm\infty \text{ et } \lim_{x \to +\infty} \frac{f(x)}{x} = \pm\infty 
+ \]
+ 
+\[
+\text{ alors \((C_{f})\) admet une branche parabolique de direction  \( (oy) \) en \( +\infty \)} 
+ \]
+		\textbf{\underline{\remarque}}		
+
+Cette propriété reste valable lorsque 	\(x \rightarrow -\infty\)	
+		
+\item \textcolor{green}{\underline{Branche parabolique de direction (ox)}}
+\[
+ \text{Si } \lim_{x \to +\infty} f(x) = \pm\infty \text{ et } \lim_{x \to +\infty} \frac{f(x)}{x} = 0 
+ \]
+ 
+\[
+\text{ alors \((C_{f})\) admet une branche parabolique de direction  \( (ox) \) en \( +\infty \)} 
+ \]
+		\textbf{\underline{\remarque}}	
+				
+Cette propriété reste valable lorsque 	\(x \rightarrow -\infty\)	
+
+\item \textcolor{green}{\underline{Branche parabolique de direction \(y = ax\) (a réel)}}
+\[
+ \text{Si } \lim_{x \to +\infty} f(x) = \pm\infty \text{ et } \lim_{x \to +\infty} \frac{f(x)}{x} = a \text{ et } \lim_{x \to +\infty} (f(x)-ax) = \pm\infty
+ \]
+ 
+\[
+\text{ alors \((C_{f})\) admet une branche parabolique de direction  \(y=ax\) en \( +\infty \)} 
+\]
+		\textbf{\underline{\remarque}}	
+				
+Cette propriété reste valable lorsque 	\(x \rightarrow -\infty\)	
+	
+\textbf{\underline{\exerciceapp}}
+
+Étudier les branches infinies des courbes représentatives des fonctions suivantes :
+\begin{enumerate}[label=\alph*)]
+\item \( f(x)=\frac{2x^{3}-1}{x-1} \)
+
+\item \( g(x)=\sqrt{x^{2}+1}-x \)
+
+\item \( h(x)=x\sqrt{\frac{x+1}{x-1}}\)
+\end{enumerate}
+\textbf{\underline{\correction}}
+
+\end{enumerate}
+		
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{II.Continuité}}}}
+
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{\textcolor{blue}{\underline{Définition}}}
+
+Soit f une fonction definie en \( x_{0} \) on dit que f est continue en \( x_{0} \) si
+\( \lim_{x \to x_{0}} f(x)=f(x_{0}) \).
+
+\begin{center}
+\underline{\textbf{\textcolor{red}{Revoir}}}
+\end{center}
+\item \textbf{\textcolor{blue}{\underline{Prolongement par continuité}}} 
+
+\(\left[ 		
+\textbf{\textcolor{red}{\underline{Continuité sur un intervalle}}}
+\right] \) 
+
+\(\left[
+\textbf{\textcolor{red}{\underline{Continuité de fonctions usuelles}}}
+\right] \)
+
+\(\left[
+\textbf{\textcolor{red}{\underline{Opérations sur les fonctions continues}}}
+\right] \)
+\item \textbf{\textcolor{blue}{\underline{Compositions de deux fonctions continues}}}
+
+Si \( f \) est continue en \(x_{0}\) et \( g \) continue en \( f(x_{0}) \) alors \( gof \) est continue en \(x_{0}\) donc la composition de deux fonctions continues est une fonction continue.
+
+		\textbf{\underline{\exerciceapp}}
+
+		\begin{enumerate}[label=\alph*)]
+			\item Soit 	\( f(x)=\sqrt{|2x^{5}|} \)		
+
+		  	Etudier la continuité de 	\( f \) sur \( \mathbb{R} \)
+		  
+		 	\item Soit \( f(x)=x\sqrt{1-x} \)
+		 
+		 		Etudier la continuité de f sur son domaine de définition.
+		\end{enumerate}	
+
+		\textbf{\underline{\correction}}
+		
+\textbf{a) Continuité de \( f(x) = \sqrt{|2x^5|} \) sur \( \mathbb{R} \)}
+
+\textbf{Domaine de définition} : \\
+La fonction \( f(x) = \sqrt{|2x^5|} \) est définie pour tous les \( x \in \mathbb{R} \), car l’expression \( |2x^5| \) est toujours positive ou nulle, et la racine carrée d’un nombre positif ou nul est bien définie. Donc, \( f(x) \) est définie sur \( \mathbb{R} \).
+
+\textbf{Étude de la continuité} : \\
+La fonction \( f(x) \) est composée des fonctions suivantes :
+
+- \( g(x) = 2x^5 \), une fonction polynomiale, qui est continue partout sur \( \mathbb{R} \).
+
+- \( h(x) = |x| \), la fonction valeur absolue, qui est continue partout.
+
+- \( k(x) = \sqrt{x} \), la racine carrée, qui est continue pour \( x \geq 0 \).
+
+Ainsi, \( f(x) \) est continue sur \( \mathbb{R} \), car c’est la composition de fonctions continues sur leur domaine respectif.
+
+\textbf{Conclusion} : La fonction \( f(x) = \sqrt{|2x^5|} \) est continue sur \( \mathbb{R} \).
+
+\textbf{b) Continuité de \( f(x) = x\sqrt{1 - x} \)}
+
+\textbf{Domaine de définition} : \\
+La fonction \( f(x) = x\sqrt{1 - x} \) impose que \( 1 - x \geq 0 \), c'est-à-dire \( x \leq 1 \). Ainsi, la fonction est définie pour \( x < 1 \), sans autres contraintes. Le domaine de définition de \( f(x) \) est donc \( ]-\infty, 1[ \).
+
+\textbf{Étude de la continuité} : \\
+- La fonction \( g(x) = x \) est continue partout sur \( \mathbb{R} \). \\
+- La fonction \( h(x) = \sqrt{1 - x} \) est continue pour \( x < 1 \), car la racine carrée est définie pour les valeurs positives ou nulles. \\
+Ainsi, \( f(x) = x\sqrt{1 - x} \) est continue sur \( ]-\infty, 1[ \).
+
+\textbf{Point de discontinuité possible en \( x = 1 \)} : \\
+Lorsque \( x \) tend vers 1, la fonction \( \sqrt{1 - x} \) tend vers 0. À \( x = 1 \), la racine carrée devient \( \sqrt{1 - 1} = 0 \), donc \( f(1) = 1 \times 0 = 0 \). Cependant, la fonction n'est pas définie en \( x = 1 \), ce qui entraîne une discontinuité en \( x = 1 \).
+
+\textbf{Conclusion} : La fonction \( f(x) = x\sqrt{1 - x} \) est continue sur \( ]-\infty, 1[ \) et présente une discontinuité en \( x = 1 \).
+
+\item \textbf{\textcolor{blue}{\underline{Image d’un intervalle par une fonction continue et stritement monotone}}}
+\begin{itemize}
+\item L’image d’un intervalle par une fonction continue est un intervalle.
+\[
+\text{C’est à dire}
+\begin{cases}
+\text{\( f \) est continue sur \( I \)}\\
+\text{\( I \) est un intervalle}
+\end{cases}
+\text{alors \( f(I) \) est un intervalle}
+\]
+
+\item Lorsqu’une fonction \( f \) est continue et strictement monotone sur \( K \), \( f(K) \) est un intervalle de même nature que \( K \) et ses bornes sont les limites de \( f \) aux bornes de \( K \).
+
+Le tableau ci-dessous précise \( f(K) \) suivant la nature de \( K \) et du sens de variation de \( f \).
+\end{itemize}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\( K \) & \( f(K) \) & \( f(K) \)\\
+\hline
+				& \( f \) stictement croissante & \( f \) strictement décroissante\\
+\hline
+[a;b]		& \( [f(a);f(b)] \) & \( [f(b);f(a)] \)       \\
+\hline
+[a;b[	& \( [f(a);\lim\limits_{x\to b^{-}}f(x)[ \) &	\( ]\lim\limits_{x\to b^{-}}f(x);f(a)] \)	\\
+\hline
+]a;b[		& \( ]\lim\limits_{x\to b^{+}}f(x);\lim\limits_{x\to b^{-}}f(x)[ \) &	\( ]\lim\limits_{x\to b^{-}}f(x);\lim_{x\to b^{+}}f(x)[ \)	\\
+\hline
+\( [a;+\infty[ \)	& \( [f(a);\lim\limits_{x\to +\infty}f(x)[ \) &\( ]\lim\limits_{x\to +\infty}f(x);f(a)] \)		\\
+\hline
+\( \mathbb{R} \)& \( ]\lim\limits_{x\to -\infty}f(x);\lim\limits_{x\to +\infty}f(x)[ \)&\( ]\lim\limits_{x\to +\infty}f(x);\lim\limits_{x\to -\infty}f(x)[ \)\\
+\hline
+\end{tabular}
+
+			\textbf{\underline{\exerciceapp}}
+			
+				Soit \( f(x)=\frac{2x+1}{x-1} \)
+				
+				Déterminer l’image par \( f \) des intervalles \( [-2;0] \) et \( ]1;+\infty[ \)
+				
+			\textbf{\underline{\correction}}
+
+Soit \( f(x) = \frac{2x + 1}{x - 1} \). \\
+
+-\textbf{\underline{\( D_f \):}}
+
+\[
+D_f = \mathbb{R} \setminus \{1\}
+\]
+
+-\textbf{\underline{Continuité de \( f \):}}
+
+La fonction \( f(x) = \frac{2x + 1}{x - 1} \) est une fonction rationnelle donc continue sur \( D_f = \mathbb{R} \setminus \{1\} \).
+
+-\textbf{\underline{Monotonie de \( f \):}}
+
+Calculons la dérivée de \( f \) :
+\(
+f'(x) =\frac{-3}{(x - 1)^2}
 \)
 
-\begin{enumerate}
-    \item Déterminer l’ensemble de définition \( D_f \) de \( f \).
-    \item Étudier la continuité de \( f \) en 1.
-    \item Étudier la dérivabilité de \( f \) en 1.
-    \item Déterminer les limites de \( f \) aux bornes de \( D_f \).
-    \item Étudier les branches infinies de \( f \).
-    \item Dresser le tableau de variations de \( f \).
-    \item Tracer \( C_f \) dans un repère orthonormé, unité : \( 2cm \).
-    \item Soit \( h \) la restriction de \( f \) sur \( [1; +\infty[ \).
-          \begin{enumerate}
-              \item Montrer que \( h \) admet une bijection réciproque \( h^{-1} \) dont on précisera l’ensemble de définition et les variations.
-              \item Résoudre  \(  h^{-1}(x) = e \)
+Pour tout \( x \in D_f \) \( f'(x) < 0 \).
+  
+Cela signifie que la fonction \( f \) est strictement décroissante sur chaque intervalle de son domaine de définition, à savoir \( ]-\infty; 1[ \) et \( ]1; +\infty[ \).
 
-                    puis calculer  \(  (h^{-1})'(2 - 2e). \)
+-\(
+f([-2; 0]) =[f(0); f(-2)]= [-1; 1]
+\)
 
-              \item Tracer la courbe de \( h^{-1} \) dans le même repère.
-          \end{enumerate}
+-\(
+f(]1; +\infty[) = ]\lim_{x \to +\infty}f(x) ; \lim_{x \to 1^{+}}f(x)[ = ]2; +\infty[
+\)			
+			
+\item \textbf{\textcolor{blue}{\underline{Théorème des valeurs intermédaires}}}
+
+Si la fonction \( f \) est \textcolor{red}{ continue }  sur \( [a ; b] \) et si le réel \( m \) est compris entre \( f(a) \) et \( f(b) \), alors l'équation \( f(x) = m \) admet \textcolor{red}{ au moins } une solution dans \( [a ; b] \).
+
+Autrement dit, il existe \textcolor{red}{ au moins } un réel \textcolor{red}{ c } entre \textcolor{red}{ \( a \) } et \textcolor{red}{ \( b \) } tel que \textcolor{red}{ \( f(c) = m \) }
+
+\textbf{\textcolor{blue}{\underline{Illustration graphique}}}
+
+[Image]
+
+\textbf{\underline{\exemple:}}
+
+Soit la fonction \( f(x)=\frac{1}{2}x^{3}+x-5 \)
+
+Montrer que l'équation \( f(x) = 5 \) admet une solution sur \( [-2 ; 4] \).
+
+\textbf{\underline{\solution:}}
+
+\(f( [-2 ; 4] ) = [ f(-2) ; f(4)] = [-11 ; 31] \).
+
+D'après le théorème précédent, comme  \(5\in [-11 ; 31] \) donc l'équation \( f(x) = 5 \) a une solution dans \( [-2 ; 4] \).
+
+\textbf{\textcolor{blue}{\underline{NB}}}
+
+\begin{itemize}
+\item Si \(  m = 0 \) il suffit  de montrer que \( \lim_{x \to a} f(x) \times \lim_{x \to b} f(x) <0 \)
+\item Il faut toujours commencer par montrer que \( f \) est solution.
+\end{itemize}
+
+\textbf{\underline{\exerciceapp}}
+
+\( f(x) = x^{5} -x +7 \)
+
+Montrer que l’équation \( f(x) = 0 \) admet au moins une solution dans \( [-2 ; -1] \).
+
+\textbf{\underline{\correction}}
+
+\item \textbf{\textcolor{blue}{\underline{Théorème d’existence et d’unicité d’une solution}}}
+
+Si la fonction \( f \) est \textcolor{red}{ continue } et \textcolor{red}{ strictement monotone } (croissante ou bien décroissante) sur \( [a ; b] \). Pour tout réel \( m \) compris entre \( f(a) \) et \( f(b) \), alors l'équation \( f(x) = m \) admet une \textcolor{red}{unique solution }\(\alpha\in [a ; b] \).
+
+\textbf{\textcolor{blue}{\underline{Ilustration graphique}}}
+
+[Image]
+
+\textbf{\textcolor{blue}{\underline{Cas particulier}}}
+
+Si la fonction \( f \) réalise une bijection(continue et strictement monotone) de \( [a ; b] \) de plus si \( f(a) \times f(b) < 0 \) alors l'équation \( f(x) =0 \) admet une unique solution \( \alpha \) sur l'intervalle 
+\( [a ; b] \).
+
+\textbf{\textcolor{blue}{\underline{Ilustration graphique}}}
+
+[Image]
+
+			\textbf{\underline{\exemple:}}
+			
+			Soit \( f(x)=x^{3} + x + 1 \)
+
+			Montrer que l’équation \( f(x) = 0 \) admet une unique solution sur \( [-0,8 ; -0,6] \).			
+			
+			\textbf{\underline{\solution:}}
+\item \textbf{\textcolor{blue}{\underline{Encadrement de la racine \( \alpha \) à \( \epsilon \) près}}}
+
+      \textbf{\textcolor{blue}{\underline{Méthode de dichotomie(Approche par exemple)}}}
+      
+      Si \( f \) fonction \textcolor{red}{contenu} \textcolor{red}{strictement} sur un intervalle \( [a;b] \), telle que \( f(a)\geq 0 \) et \( f(b) \leq 0\); alors il existe au moins un réel \( \alpha \) dans  l'intervalle \( [a;b] \) tel que \( f(\alpha) = 0 \).
+
+L'idée est alors de trouver le signe de \( f \) au \textcolor{red}{ milieu } de \( [a;b] \), et de distinguer les deux cas
+\begin{itemize}
+\item Si \( f\left( \frac{a+b}{2}\right) \leq 0  \), alors \( \alpha \) est dans l'intervalle 
+\( \left[\frac{a+b}{2} ; b \right] \)
+\item Sinon \( f\left( \frac{a+b}{2}\right) > 0  \), alors \( \alpha \) est dans l'intervalle 
+\( \left[a ; \frac{a+b}{2} \right] \)
+\end{itemize}
+Dans les deux cas, on a trouvé un intervalle de longueur moité dans lequel est située une racine \( \alpha \) de l'équation \( f(x)=0 \).
+
+On recommence alors avec cet intervalle, et ainsi de suite,jusqu'à ce qu'on trouve une approximation qui nous convienne.
+
+\textbf{\underline{\exerciceapp}}
+Soit la fonction \(f(x)=x^{3}-7x \)
+\begin{enumerate}[label=\alph*)]
+\item Montrer que l'équation \( f(x)=0 \) admet une unique solution \( \alpha \) sur l'intervalle \( [2;4] \).
+\item Donner un encadrement de \( \alpha \) à 0.1 près
 \end{enumerate}
-\section*{\fbox{\textbf{Exercice 12}}}
 
-On considère la fonction définie sur \( \mathbb{R} \) par  \( f(x) = x \left(1 + e^{2-x} \right). \)
+\textbf{\underline{\correction}}
 
-On note \( (C_f) \) sa courbe représentative dans un repère orthonormé \( (O; \vec{i}, \vec{j}) \), unité \( 2cm \).
+			\textbf{\textcolor{blue}{\underline{Méthode de balayage(Approche par exemple)[Exercice]}}}			
 
-\begin{enumerate}
-    \item Soit \( h \) la fonction définie sur \( \mathbb{R} \) par  \( h(x) = 1 + (1 - x)e^{2-x} \)
-          \begin{enumerate}
-              \item Étudier les variations de \( h \) (on ne déterminera pas les limites aux bornes de \( D_h \)).
-              \item En déduire le signe de \( h(x) \) sur \( \mathbb{R} \).
-          \end{enumerate}
-    \item
-          \begin{enumerate}
-              \item Étudier les limites de \( f \) en \( +\infty \) et en \( -\infty \).
-              \item Préciser la nature de la branche infinie de \( f \) en \( -\infty \).
-              \item Calculer  \( \lim\limits_{x \to +\infty} \left[ f(x) - x \right], \) puis interpréter le résultat obtenu.
-              \item Préciser la position de \( (C_f) \) par rapport à la droite d’équation \( (\Delta) : y = x \).
-          \end{enumerate}
-    \item
-          \begin{enumerate}
-              \item Dresser le tableau de variations de \( f \).
-              \item Montrer que \( f \) admet une bijection réciproque notée \( f^{-1} \) définie sur \( \mathbb{R} \).
-              \item \( f^{-1} \) est-elle dérivable en 4 ?
-              \item Étudier la position \( (C_f) \) par rapport à sa tangente au point d’abscisse 2.
-              \item Construire \( (C_f) \) (on tracera la tangente à \( (C_f) \) au point d’abscisse 2).
-              \item Construire \( (C_{f^{-1}}) \) dans le repère précédent.
-          \end{enumerate}
-\end{enumerate}
+			%\textbf{\underline{Exercice d'application}}
+			
+			%\textbf{\underline{Solution}}
+\item \textbf{\textcolor{blue}{\underline{Théorème d’existence d’une bijection et de sa réciproque}}}
 
-\section*{\fbox{\textbf{Exercice 13}}}
+Si \( f \) est continue et strictement monotone sur un intervalle \( I \), alors \( f \) est une bijection de \( I \) vers \( J = f(I) \). Dans ce cas, \( f \) admet une fonction réciproque \( f^{-1} \) qui est également continue et strictement monotone sur l'intervalle \( J \), avec les propriétés suivantes :
+\begin{itemize}
+    \item La fonction réciproque \( f^{-1} \) est telle que \( f(f^{-1}(y)) = y \) pour tout \( y \in J \) et \( f^{-1}(f(x)) = x \) pour tout \( x \in I \).
+    \item La monotonie de \( f^{-1} \) est de même sens que celle de \( f \) .
+\end{itemize}
 
-Soit \( f \) la fonction définie par
-\( f(x) =
-\begin{cases}
-    (2x - 1) e^{\frac{1}{x}}, & \text{si } x < 0    \\
-    x \ln(x+1),               & \text{si } x \geq 0
-\end{cases} \)
+			\textbf{\underline{\exemple:}}
 
-\subsection*{\underline{\textbf{Partie A}}}
+Considérons la fonction \( f : \mathbb{R} \to \mathbb{R} \) définie par :
+\[
+f(x) = 2x + 3
+\]
 
 \begin{enumerate}
-    \item Déterminer le domaine de définition \( D_f \) de \( f \).
-    \item Calculer les limites de \( f \) aux bornes de \( D_f \).
-    \item Montrer que la droite \( (D) \) d’équation \( y = 2x + 1 \) est asymptote à \( (C_f) \) en \( -\infty \).
-    \item Étudier la branche infinie de \( (C_f) \) en \( +\infty \). La continuité et la dérivabilité de \( f \) en 0. Interpréter graphiquement ce résultat.
+    \item La fonction \( f \) est-elle continue sur \(\mathbb{R}\) ?
+    \item La fonction \( f \) est-elle strictement monotone sur \(\mathbb{R}\) ?
+    \item La fonction \( f \) est-elle une bijection de \(\mathbb{R}\) vers \(\mathbb{R}\) ?
+    \item Déterminer l'expression explicite la fonction réciproque \( f^{-1} \) de la fonction \( f \) ?
+    \item La fonction réciproque \( f^{-1} \) est-elle continue et strictement monotone ?
 \end{enumerate}
 
-\subsection*{\underline{\textbf{Partie B}}}
+\textbf{\underline{\solution:}}
+\begin{enumerate}
+    \item Oui, la fonction \( f(x) = 2x + 3 \) est continue sur \(\mathbb{R}\) car elle est une fonction affine (polynomiale de degré 1).
+    \item Oui, la fonction \( f \) est strictement croissante sur \(\mathbb{R}\), car sa dérivée est \( f'(x) = 2 > 0 \), ce qui signifie que la pente est positive.
+    \item Oui, comme \( f \) est continue et strictement croissante, elle est bijective de \(\mathbb{R}\) vers \(\mathbb{R}\).
+    \item Pour trouver la fonction réciproque \( f^{-1} \), nous résolvons l'équation \( y = 2x + 3 \) pour \( x \) :
+    \[
+    y = 2x + 3 \implies x = \frac{y - 3}{2}
+    \]
+    Donc, la fonction réciproque est \( f^{-1}(y) = \frac{y - 3}{2} \).
+    \item Oui, la fonction réciproque \( f^{-1}(y) = \frac{y - 3}{2} \) est également continue et strictement croissante sur \(\mathbb{R}\) car elle est une fonction affine avec une pente positive.
+    \item Calculer \( f^{-1}(5) \)
+\end{enumerate}
+
+NB: Il n'est pas toujours possible de déterminer l'expression explicite de \( f^{-1} \)
+
+\item \textbf{\textcolor{blue}{\underline{Calcul de \( f^{-1}(y_{0}) \) sans connaître l'expression de \( f^{-1} \) }}}
+
+Pour calculer \( f^{-1}(y_{0}) \), on résout \( f(x)=y_{0} \).
+
+			\textbf{\underline{\exemple:}}
+			
+			Soit \( f(x) =\sqrt{x^{2}+3x+x-1} \). On admet que f est une bijection de \( [0 ; +\infty[ \) vers \( [-1 ; +\infty[ \)
+
+Calculer \( f^{-1}(2) \) 			
+			
+			\textbf{\underline{\solution:}}	
+
+
+\end{enumerate}
+\section*{\underline{\textbf{\textcolor{red}{B.Dérivabilité}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{I.Dérivation}}}}
+\subsection*{\underline{\textbf{\textcolor{blue}{1.Notion de nombre dérivé}}}}
+
+Soit \( f \) une fonction définie sur un intervalle \( I \) contenant \( x_{0} \)
+
+\( f \) est dérivable en \( x_{0} \) ou \( f \) admet un nombre dérivé en \( x_{0} \) si et seulment si \[\lim_{x \to x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell \text{ avec } (\ell \in\mathbb{R})\] \( \ell \) est appelé le nombre dérivé de \( f \) en \( x_{0} \) et est noté \( f'(x_{0}) \).
+
+On a alors :\[\lim_{x \to x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'(x_{0})\]
+
+			\textbf{\underline{\exemple:}}
+			
+Soit \( f(x)=\frac{x}{2x+1} \)	Etudier la dérivabilité de \( f \) en \( -1 \).		
+			
+			\textbf{\underline{\solution:}}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{2.Dérivabilté à gauche-Dérivabilité à droite}}}}
+
+Soit f une fonction définie sur un intervalle I contenant $x_{0}$ et $\ell$ un réel.\\
+$f$ est dérivable à gauche de $x_{0}$ si\[\lim_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell\]
+$f$ est dérivable à droite de $x_{0}$ si\[\lim_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell\]
+$f$ est dérivable en $x_{0}$ si\[\lim_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell\]
+
+NB: On note \( f'_{g}(x) \) la dérivé à gauche et \( f'_{d}(x) \) la dérivé à droite
+
+			\textbf{\underline{\exemple:}}
+
+\( f(x) = x|x-1| \) \( f \) est-elle dérivable en \( 1 \) ?
+
+			\textbf{\underline{\solution:}}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{3.Interprétation géométrique du nombre dérivé}}}}
+\begin{itemize}
+		\item[•] Si \( f \) est dérivable en \( x_{0} \) alors \( f'(x_{0}) \) existe et \( C_{f} \) admet une tangente au point d’abscisse \( x_{0} \) d'équation : \( y=f'(x_{0})(x-x_{0}) + f(x_{0}) \)
+\end{itemize}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{6cm}|}
+\hline
+\textbf{Limite} & \textbf{Dérivabilité en \( x_0 \)} & \textbf{Interprétation géométrique : \( (C_f) \) admet} \\
+\hline
+\[\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = a \ (a \neq 0)\] & \multirow{2}{*}{\(f\) est dérivable en \(x_0\)} & Une tangente au point \( A \left(x_0; f(x_0)\right) \) de coefficient directeur \(a\) \\
+\cline{1-1} \cline{3-3}
+\[\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = 0 \] &  & Une tangente horizontale au point \( A \left(x_0; f(x_0)\right) \) \\
+\hline
+\[\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} = a \ (a \neq 0) \] & \(f\) est dérivable à droite en \(x_0\) & Une demi-tangente à droite au point \( A \left(x_0; f(x_0)\right) \) de coefficient directeur \(a\) \\
+\cline{1-1} \cline{3-3} 
+\[\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} = 0 \] &  & Une demi-tangente horizontale à droite au point \( A \left(x_0; f(x_0)\right) \) \\
+\hline
+\[\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} = -\infty \] & \(f\) n'est pas dérivable à droite en \(x_0\) & Une demi-tangente verticale à droite au point \( A \left(x_0; f(x_0)\right) \) dirigée vers le bas \\
+\cline{1-1} \cline{3-3}
+\[\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} = +\infty \] &  & Une demi-tangente verticale à droite au point \( A \left(x_0; f(x_0)\right) \) dirigée vers le haut \\
+\hline
+\[\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = a \ (a \neq 0) \] & \(f\) est dérivable à gauche en \(x_0\) & Une demi-tangente à gauche au point \( A \left(x_0; f(x_0)\right) \) de coefficient directeur \(a\) \\
+\cline{1-1} \cline{3-3}
+\[\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = 0 \] &  & Une demi-tangente horizontale à gauche au point \( A \left(x_0; f(x_0)\right) \) \\
+\hline
+\[\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = -\infty \] & \(f\) n'est pas dérivable à gauche en \(x_0\) & Une demi-tangente verticale à gauche au point \( A \left(x_0; f(x_0)\right) \) dirigée vers le haut \\
+\cline{1-1} \cline{3-3}
+\[\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = +\infty \] &  & Une demi-tangente verticale à gauche au point \( A \left(x_0; f(x_0)\right) \) dirigée vers le bas \\
+\hline
+\end{tabular}
+\end{table}
+\subsection*{\underline{\textbf{\textcolor{blue}{4.Dérivabilité sur un intervalle }}}}
+\( f \) est dérivable sur \( ]a ; b[ \) si et seulement si \( f \) est dérivable en tout point
+de \( ]a ; b[ \).
+
+\textbf{Propriété}:
+\begin{itemize}
+\item Toute fonction polynôme est dérivable sur \( \mathbb{R} \) .
+\item Toute fonction rationnelle est dérivable sur son ensemble de définition .
+\item \(|f|\) est dérivable sur \( I \) si et selement si \( f \) est dérivable sur \( I \) et \( f(x)  \neq 0 \forall x \in  I \)
+\item \(\sqrt{f}\) est dérivable sur \( I \) si et selement si \( f \) est dérivable sur \( I \) et \( f(x) >0 \forall x \in I \)
+\end{itemize}
+\subsection*{\underline{\textbf{\textcolor{blue}{5.Dérivée d’une fonction composée}}}}
+
+Soit \( f \) une fonction définie sur un intervalle \( I \) et \( g \) une fonction définie sur un intervalle \( K \) contenant \( f(I) \).
+
+\begin{itemize}
+\item Si \( f \) est dérivable en un élément \( x_{0} \) de \( I \) et g dérivable en \( f \) alors 
+
+\( g\circ f \) est dérivable en et on a : \( (g\circ f)'(x_{0}) = g' \circ f(x_{0}) \times  f'(x_{0}) \) 
+
+\item Si \( f \) est dérivable sur \( I \) et \( g \) dérivable sur \( K \) alors \( g\circ f \) est
+
+dérivable sur \( I \) et on a : \( (g\circ f)' = g' \circ f \times  f' \)
+
+\end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{6.Dérivée de la fonction réciproque }}}}
+
+Soit \( f \) une fonction dérivable et bijective de \( I \to J \)  et \( f^{-1} \) la bijection réciproque donc\\ \( f^{-1'}(y)=\frac{1}{f'(x)} \text{avec } f'(x)\neq 0\)
+
+En effet: 
+\[
+\begin{array}{c c c c}
+f : I \to J & & f^{-1} : J \to I \\
+f : x \mapsto y = f(x) & & y \mapsto x = f^{-1}(y)
+\end{array}
+\]
+
+On a 
+\begin{align*}
+ f^{-1}\circ f(x)=x &\implies (f^{-1}\circ f(x))'=x'\\
+ 											&\implies (f^{-1})'(f(x))\times f'(x)=1 \\
+ 											&\implies (f^{-1})'(y)\times f'(x)=1\\
+											&\implies (f^{-1})'(y) = \frac{1}{f'(x)}
+\end{align*}
+
+
+\textbf{Propriété}:
+
+\( (f^{-1})'(y_{0})=\frac{1}{f'(x_{0})}=\frac{1}{f'(f^{-1}(y_{0}))} \text{avec } f'(x)\neq 0\)
+
+\subsection*{\underline{\textbf{\textcolor{blue}{7.Inégalité des accroissements finis (IAF) }}}}
+
+Soit \( f \) une fonction dérivable sur un intervalle \( I \) et \( M\in\mathbb{R}^{*}_{+} \) tel que 
+\( |f'(x)| \leq M \).
+
+Alors pour tout \( a \) et \(  b \in I\), on a : \( | f(b)-f(a)  | \leq M(b-a)    \)
+
+
+\textbf{\exemple}
+
+Démontrer que pour tout réels \( a \) et \(  b \) \( | \cos b - \cos a  \leq | b - a |\)
+
+\textbf{\solution}
+
+%\subsubsection*{\textbf{\textcolor{red}{7.2 Interprétation Géométrique}}}
+%L'IAF fournit une interprétation géométrique de la variation d'une fonction. En effet, elle stipule que la pente moyenne entre deux points \((a, f(a))\) et \((b, f(b))\) est égale à la pente de la tangente à la courbe de la fonction en un point intermédiaire \(c\). Cela permet de mesurer la régularité et les variations d'une fonction sur un intervalle donné.
+
+%\subsubsection*{\textbf{\textcolor{red}{7.3 Conséquences et Applications}}}
+%L'inégalité des accroissements finis est particulièrement utile dans divers domaines :
+%\begin{itemize}
+%    \item \textbf{Calcul des bornes} : Elle permet de majorer la variation d'une fonction, ce qui est essentiel pour les études de continuité et de convergence.
+%    \item \textbf{Résolution d'inéquations} : L'IAF est souvent utilisée pour démontrer l'unicité des solutions d'équations différentielles.
+%    \item \textbf{Approximation locale} : En analyse numérique, l'IAF est une base pour les méthodes de dérivées bornées et pour estimer l'erreur de certaines approximations.
+%\end{itemize}
+
+%\subsubsection*{\textbf{\textcolor{red}{7.5 Remarques et Limitations}}}
+%Il est important de noter que l'IAF nécessite que la fonction soit continue sur \([a, b]\) et dérivable sur \( ]a, b[ \). Si ces conditions ne sont pas respectées, l'inégalité peut ne pas s'appliquer. De plus, le choix de l'intervalle peut influencer le résultat obtenu, notamment en ce qui concerne la borne maximale sur la dérivée.
+
+\subsection*{\underline{\textbf{\textcolor{red}{C.Primitives}}}}
+\subsection*{\underline{\textbf{\textcolor{blue}{1.Définition}}}}
+Soit \( F \) une fonction dérivable sur un intervalle \( I \) et soit \( f \) une fonction définie et continue sur \( I \).
+ 
+On dit que \( F \) est une primitive de \( f \) sur \( I \) si pour tout \( x \) élément de \( I \)
+
+On a : \( F'(x)=f(x) \)
+
+\( F \) est une primitive de \( f \) sur \( I \) si \( f \) est la dérivée de \( F \) sur \( I \).
+
+\subsection*{\underline{\textbf{\textcolor{blue}{2.Théorème (admis)}}}}
+
+Toute fonction continue sur un intervalle \( I \) admet une primitive sur \( I \).
+
+\textbf{Remarque : }
+
+Si \( f \) admet une primitive sur \( I \) alors elle en admet une infinité.
+
+\subsection*{\underline{\textbf{\textcolor{blue}{3.Théorème }}}}
+
+Deux primitives d'une même fonction sur un même intervalle diffèrent d'une constante.
+ 
+Donc si \( F \) et \( G \) sont des primitives de \( f \) sur \( I \) alors il existe une constante réelle \( k \) telle que pour tout \( x \) élément de \( I \) \( F(x)=G(x)+k \)
+ 
+Pour la preuve voir la variation des fonctions avec l'utilisation des dérivées.
+ 
+On en déduit que : 
+ 
+Chacune des primitives de \( f \) sur \( I \) est déterminée par sa valeur en un point de \( I \).
+
+\textbf{Remarque :  }
+
+Toute primitive de \( f \) sur \( I \) est dérivable sur \( I \).
+ 
+Il serait utile de connaitre les résultats figurant sur le tableau suivant : 
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{\( I = \) intervalle de} & \textbf{Remarques ou} & \textbf{Fonction \( f \)} & \textbf{Primitive \( F \) où \( k \) est une} \\
+        \textbf{définition de \( f \)} & \textbf{restrictions} & & \textbf{constante réelle} \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto 0 \) & \( x \mapsto k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & \( a \in \mathbb{R} \) & \( x \mapsto a \) & \( x \mapsto ax + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & \( n \) entier naturel & \( x \mapsto x^n \) & \( x \mapsto \frac{x^{n+1}}{n+1} + k \) \\
+        \hline
+        \( I \subset \mathbb{R}^* \) & \( n \) entier relatif, \( n \neq -1 \) & \( x \mapsto x^n \) & \( x \mapsto \frac{x^{n+1}}{n+1} + k \) \\
+        \hline
+        \( I \subset \mathbb{R}^+ \) & \( n \) réel \( n \neq -1 \) & \( x \mapsto x^n \) & \( x \mapsto \frac{x^{n+1}}{n+1} + k \) \\
+        \hline
+        \( I \subset \mathbb{R}^* \) & & \( x \mapsto \frac{1}{x^n} \) & \( x \mapsto -\frac{1}{(n-1)x^{n-1}} + k \) \\
+        \hline
+        \( I \subset \mathbb{R}^+ \) & & \( x \mapsto \frac{1}{\sqrt{x}} \) & \( x \mapsto 2\sqrt{x} + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto \sin x \) & \( x \mapsto -\cos x + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto \cos x \) & \( x \mapsto \sin x + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto \sin(ax+b) \) & \( x \mapsto -\frac{1}{a} \cos(ax+b) + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto \cos(ax+b) \) & \( x \mapsto \frac{1}{a} \sin(ax+b) + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \setminus \left\{ \frac{\pi}{2} + k\pi \right\} \) & & \( x \mapsto \frac{1}{\cos^2 x} \) & \( x \mapsto \tan x + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto 1 + \tan^2 x \) & \( x \mapsto \tan x + k \) \\
+        \hline
+        \( I \subset \mathbb{R}^+ \) & \( x \) positif & \( x \mapsto \sqrt{x} \) & \( x \mapsto \frac{2}{3} x^{3/2} + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & & \( x \mapsto (ax+b)^n \) & \( x \mapsto \frac{1}{a} \frac{(ax+b)^{n+1}}{n+1} + k \) \\
+        \hline
+        \( I \subset \mathbb{R} \) & Avec les mêmes & & \\
+        & contraintes sur \( n \) et sur \( (ax+b) \) & & \\
+        \hline
+    \end{tabular}
+    \caption{Tableau des primitives}
+\end{table}
+
+Lorsque $U$ désigne une fonction dérivable sur $I$, positive et non nulle dans certains cas, on a :
+
+\[
+\frac{U'}{U^2} \text{ a pour primitives } -\frac{1}{U} + k
+\]
+
+\[
+U' \times U^n \text{ a pour primitives } \frac{U^{n+1}}{n+1} + k
+\]
+
+\[
+U' \times \sqrt{U} \text{ a pour primitives } \frac{2}{3} U \sqrt{U} + k
+\]
+
+\[
+\frac{U'}{\sqrt{U}} \text{ a pour primitives } 2 \sqrt{U} + k
+\]
+
+\[
+\frac{U'}{U^n} \text{ peut être ramenée à la forme } U' \times U^{-n}
+\]
+			\textbf{\underline{\exerciceapp}}
+			
+1.Déterminer toutes les primitives des fonctions suivantes, sur un intervalle bien choisi : 
+$$\begin{array}{lll}
+\displaystyle f_1(x)=5x^3-3x+7&\displaystyle f_2(x)=2\cos(x)-3\sin(x)&\displaystyle f_3(x)=\\
+\displaystyle f_4(x)=\frac{5}{\sqrt x}+\frac{4}{x^4}+\frac{2}{x^2}+\frac{2}{x^3}&\displaystyle f_5(x)=\frac{x+5}{x^2}&\displaystyle f_6(x)=\frac{x^2}{5}+\frac 1{6}\\
+\displaystyle f_3(x)=\sin(2x) & \displaystyle f_4(x)=\cos\left(3x+\frac\pi 3\right) & \displaystyle f_5(x)=(2x+1)^2\\
+\displaystyle f_6(x)=\frac{3}{\sqrt{5x+1}} & \displaystyle f(x)=\frac{x}{1+x^2} &\displaystyle m(x)=3x\sqrt{1+x^2}\\
+\end{array}$$
+2.Reconnaissance de formes
+$$\begin{array}{lll}
+\mathbf 1.\ f(x)=(3x-1)(3x^2-2x+3)^3,\ I=\mathbb R&\quad&\mathbf 2.\ f(x)=\frac{1-x^2}{(x^3-3x+2)^3},\ I=]-\infty,-2[\\
+\mathbf 3.\ f(x)=\frac{(x-1)}{\sqrt{x(x-2)}},\ I=]-\infty,0[&&\mathbf 4.\ f(x)=\frac{-2x}{(1+x^{2})^{2}},\ I=]1,+\infty[.
+\end{array}$$
+
+			\textbf{\underline{\correction}}
+\section*{\underline{\textbf{\textcolor{red}{D.ÉTUDES DE FONCTIONS}}}}
+\subsection*{\underline{\textbf{\textcolor{blue}{1. Courbe de la fonction réciproque}}}}
+
+Soit $f$ une bijection de $I$ vers $J$ et $f^{-1}$ sa bijection réciproque.  
+La courbe de $f \ (C_f)$ et la courbe de $f^{-1} \ (C_{f^{-1}})$ sont symétriques par rapport à la première bissectrice  
+\[
+(\Delta) \text{ d'équation } y = x.
+\]
+\subsection*{\underline{\textbf{\textcolor{blue}{2. Fonction paire}}}}
+
+Soit $f$ une fonction et $D_f$ son ensemble de définition. La fonction $f$ est dite paire lorsque, pour tout $x$ appartenant à $D_f$, on a :
+\[
+-x \in D_f \text{ et } f(-x) = f(x).
+\]
+
+\textbf{NB} La courbe d'une fonction paire est symétrique par rapport à l'axe des ordonnées.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = center,
+            xlabel = $x$,
+            ylabel = {$f(x)$},
+            domain=-3:3,
+            samples=100,
+            width=10cm,
+            height=8cm,
+            grid=both,
+            grid style={dashed, gray!30},
+            xtick={-3,-2,-1,1,2,3},
+            ytick={-2,0,2,4,6},
+            ymin=-3,
+            ymax=6,
+            xmin=-3,
+            xmax=3,
+        ]
+            % Function plot
+            \addplot[color=blue, thick] {x^2 - 2};
+            \addlegendentry{$f(x) = x^2 - 2$}
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{3. Fonction impaire}}}}
+
+Soit $f$ une fonction et $D_f$ son ensemble de définition. $f$ est dite impaire lorsque, pour tout $x$ appartenant à $D_f$, on a :
+\[
+-x \in D_f \text{ et } f(-x) = -f(x).
+\]
+
+\textbf{NB}: La courbe d'une fonction impaire est symétrique par rapport à l’origine.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = center,
+            xlabel = $x$,
+            ylabel = {$f(x)$},
+            domain=-3:3,
+            samples=100,
+            width=10cm,
+            height=8cm,
+            grid=both,
+            grid style={dashed, gray!30},
+            xtick={-3,-2,-1,1,2,3},
+            ytick={-8,-4,4,8},
+            ymin=-10,
+            ymax=10,
+            xmin=-3,
+            xmax=3,
+        ]
+            % Function plot
+            \addplot[color=blue, thick] {x^3};
+            \addlegendentry{$f(x) = x^3$}
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{4. Axe de symétrie}}}}
+La droite d'équation cartésienne \( x=a \) est un axe de symétrie de la courbe \( C_{f} \) si les deux conditions suivantes sont réalisées :
+
+\begin{itemize}
+\item[•] \( (\forall x \in D_{f}) ; ( 2a-x ) \in D_{f} \)
+\item[•] \( (\forall x \in D_{f}) ; f( 2a-x )=f(x) \)
+\end{itemize}
+
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.5\textwidth]{axeSymetrie.png}
+\caption{centreSymetrie}
+\label{fig:monimage}
+\end{figure}
+
+\textbf{\textcolor{blue}{Cas particulier}} Si \( a=0 \) ; \( f \) est une fonction paire
+
+\textbf{\underline{\exemple}}
+
+\( f(x)=2x^{2}-2x+1 \) Montrer que \( x=\frac{1}{2} \) est axe de symétrie pour la courbe \( C_{f} \).
+
+\textbf{\underline{\solution}}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{5. Centre de symétrie}}}} 
+Le point \( I(a ; b) \) est un centre de symétrie de la courbe \( C_{f} \) si les deux conditions suivantes sont réalisées  :
+\begin{itemize}
+\item[•] \( (\forall x \in D_{f}) ; ( 2a-x ) \in D_{f} \)
+\item[•] \( (\forall x \in D_{f}) ; f( 2a-x )+f(x) = 2b \)
+\end{itemize}
+
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.5\textwidth]{centreSymetrie.png}
+\caption{centreSymetrie}
+\label{fig:monimage}
+\end{figure}
+
+\textbf{\textcolor{blue}{Cas particulier}} Si \( a=b=0 \) ; \( f \) est une fonction impaire
+
+\textbf{\underline{\exemple}}
+
+\( f(x)=\frac{3x+1}{2x-6} \) Montrer que \( I(3 ; \frac{3}{2}) \) est centre de symétrie pour la courbe \( C_{f} \).
+
+\textbf{\underline{\solution}}
+
+\subsection*{\underline{\textbf{\textcolor{blue}{6. Périodicité}}}}
+
+Soit $f$ une fonction et $D_f$ son ensemble de définition. Soit $T$ un nombre réel strictement positif. On dit que 
+
+$T$ est une période de $f$ lorsque, pour tout $x$ appartenant à $D_f$, on a :
+
+\begin{itemize}
+    \item $x + T \in D_f$ \hfill (1)
+    \item $f(x + T) = f(x)$ \hfill (2)
+\end{itemize}
+
+Le plus petit réel $T$ strictement positif qui vérifie (1) et (2) est appelé la période de $f$.
+
+\textbf{\exemple}
+
+Considérons la fonction $f : \mathbb{R} \rightarrow \mathbb{R}$ définie par $f(x) = \sin(x)$ pour tout $x \in \mathbb{R}$.
+
+La fonction sinus est périodique de période $T = 2\pi$. En effet, pour tout $x \in \mathbb{R}$, on a :
+
+\begin{itemize}
+    \item $x + 2\pi \in \mathbb{R}$ (ce qui vérifie la condition (1)),
+    \item $f(x + 2\pi) = \sin(x + 2\pi) = \sin(x) = f(x)$ (ce qui vérifie la condition (2)).
+\end{itemize}
+
+Ainsi, $2\pi$ est la période de $f(x) = \sin(x)$.
+
+\subsection*{\underline{\textbf{\textcolor{blue}{7. Position relative d’une courbe et de son asymptote \( (\Delta): y = ax + b \)}}}}
+
+Soient $f$ une fonction et $(C_f)$ sa courbe représentative. $(\Delta) : y = ax + b$.
+
+Posons $g(x) = f(x) - (ax + b)$.
+
+\begin{itemize}
+    \item Si $g(x) > 0 \ \forall x \in K$, alors $(C_f)$ est au-dessus de $(\Delta)$ sur $K$.
+    \item Si $g(x) < 0 \ \forall x \in K$, alors $(C_f)$ est au-dessous (ou en dessous) de $(\Delta)$ sur $K$.
+    \item Si $g(x) = 0 \ \forall x \in K$, alors $(C_f)$ et $(\Delta)$ se coupent sur $K$.
+\end{itemize}
+
+\textbf{\exemple}
+
+Considérons la fonction \( f(x) = 2x + \frac{1}{x} \) et son asymptote oblique \( (\Delta) : y = 2x \).
+
+Calculons \( g(x) = f(x) - (2x) = 2x + \frac{1}{x} - 2x = \frac{1}{x} \).
+
+\begin{itemize}
+    \item Pour \( x > 0 \), \( g(x) = \frac{1}{x} > 0 \), donc \( (C_f) \) est au-dessus de \( (\Delta) \) pour \( x > 0 \).
+    \item Pour \( x < 0 \), \( g(x) = \frac{1}{x} < 0 \), donc \( (C_f) \) est en dessous de \( (\Delta) \) pour \( x < 0 \).
+    \item \( g(x) \) ne s'annule jamais (sauf à l'infini), donc \( (C_f) \) et \( (\Delta) \) ne se coupent pas.
+\end{itemize}
+
+Ainsi, la courbe de \( f(x) = 2x + \frac{1}{x} \) est au-dessus de l'asymptote \( y = 2x \) pour \( x > 0 \) et en dessous pour \( x < 0 \), sans intersection entre \( (C_f) \) et \( (\Delta) \).
+
+\subsection*{\underline{\textbf{\textcolor{blue}{8. Position relative d’une courbe et de sa tangente au point \( M_{0} \)  d'abscisse \( x_{0} \)}}}}
+
+Soit $f$ une fonction deux fois dérivable sur un intervalle $K$ et $x_0$ un élément de $K$. 
+
+On désigne par $(C_f)$ sa courbe représentative et par $(T)$ la tangente à $(C_f)$ au point $M_0$ d’abscisse $x_0$.
+
+$(T)$ a pour équation : $y = f(x_0) + f'(x_0)(x - x_0)$.
+
+\begin{itemize}
+    \item Si $f'' > 0 \ \forall x \in K$, alors $(C_f)$ est au-dessus de $(T)$ sur $K$. On dit que $f$ est convexe sur $K$.
+    \item Si $f'' < 0 \ \forall x \in K$, alors $(C_f)$ est au-dessous (ou en dessous) de $(T)$ sur $K$. On dit que $f$ est concave sur $K$.
+    \item Si $f''$ s'annule et change de signe en $x_0$, alors la droite $(T)$ traverse la courbe $(C_f)$ en $M_0$. On dit que $M_0$ est un point d’inflexion de $(C_f)$.
+\end{itemize}
+
+\textbf{\exemple}
+
+Considérons la fonction \( f(x) = x^3 - 3x^2 + 2x \) et étudions sa tangente au point \( M_0 \) d'abscisse \( x_0 = 1 \).
+
+1. \textbf{Calculons \( f(x_0) \), \( f'(x_0) \) et \( f''(x_0) \) :}
+   \[
+   f(x) = x^3 - 3x^2 + 2x
+   \]
+   \[
+   f'(x) = 3x^2 - 6x + 2
+   \]
+   \[
+   f''(x) = 6x - 6
+   \]
+
+   En prenant \( x_0 = 1 \) :
+   \[
+   f(1) = 1^3 - 3 \times 1^2 + 2 \times 1 = 0
+   \]
+   \[
+   f'(1) = 3 \times 1^2 - 6 \times 1 + 2 = -1
+   \]
+   \[
+   f''(1) = 6 \times 1 - 6 = 0
+   \]
+
+2. \textbf{Équation de la tangente \( (T) \) en \( M_0 \) :}
+
+   L'équation de la tangente au point \( M_0(1, 0) \) est donnée par :
+   \[
+   y = f(x_0) + f'(x_0)(x - x_0) = 0 + (-1)(x - 1) = -x + 1
+   \]
+
+3. \textbf{Analyse de la concavité :}
+
+   Pour \( f(x) = x^3 - 3x^2 + 2x \), on a \( f''(x) = 6x - 6 \), qui s'annule en \( x = 1 \). En étudiant le signe de \( f''(x) \) de part et d'autre de \( x = 1 \) :
+   
+   - Pour \( x < 1 \), \( f''(x) < 0 \), donc \( f \) est concave.
+   
+   - Pour \( x > 1 \), \( f''(x) > 0 \), donc \( f \) est convexe.
+
+   Ainsi, \( f''(x) \) change de signe en \( x_0 = 1 \), ce qui signifie que \( M_0 \) est un point d'inflexion de la courbe \( (C_f) \). La tangente \( (T) \) traverse la courbe en ce point.
+\section*{PROBLÈME}
+
+Soit $f$ la fonction définie par :
+\[
+f(x) =
+\begin{cases} 
+2x\sqrt{1 - x^2} & \text{si } x > 0 \\ 
+-x + \sqrt{x^2 - 2x} & \text{si } x \leq 0 
+\end{cases}
+\]
 
 \begin{enumerate}
-    \item Montrer que \( f \) est deux fois dérivable sur \( ]0; +\infty[ \).
-    \item Calculer \( f'(x) \) et \( f''(x) \) sur \( ]0; +\infty[ \).
-    \item Étudier les variations de \( f'(x) \) puis en déduire le signe de \( f'(x) \) sur \( ]0; +\infty[ \).
-    \item Calculer \( f'(x) \) pour tout \( x < 0 \). En déduire le signe de \( f'(x) \).
-    \item Dresser le tableau de variations de \( f \).
+    \item Déterminer $D_f$, les limites aux bornes et préciser les asymptotes et branches infinies éventuelles.
+    \item Étudier la dérivabilité de $f$ en 0 et 1; interpréter géométriquement les résultats obtenus.
+    \item Calculer $f'(x)$ là où $f$ est définie, puis dresser le tableau de variation de $f$.
+    \item Tracer la courbe de $f$.
+    \item Soit $h$ la restriction de $f$ à l’intervalle $]-\infty ; 0]$.
+    \begin{enumerate}
+        \item Montrer que $h$ admet une bijection réciproque $h^{-1}$ dont on précisera l’ensemble de définition, l’ensemble de dérivabilité et le tableau de variation.
+        \item Sans utiliser l’expression de $h^{-1}(x)$, calculer $(h^{-1})'(2)$.
+        \item Déterminer explicitement $h^{-1}$.
+        \item Tracer la courbe de $h^{-1}$ dans le même repère que celle de $f$.
+    \end{enumerate}
 \end{enumerate}
-
-\subsection*{\underline{\textbf{Partie C}}}
-
-Soit \( g \) la restriction de \( f \) sur \( I = ]-\infty; 0[ \).
-
-\begin{enumerate}
-    \item Montrer que \( g \) réalise une bijection de \( I \) vers un intervalle \( J \) à préciser.
-    \item Soit \( g^{-1} \) la bijection réciproque de \( g \). Calculer \( g(-1) \) puis \( (g^{-1})'\left(-\frac{3}{e}\right) \).
-    \item Construire \( (C_f) \) et \( (C_g) \) dans un même repère.
-\end{enumerate}
-
-
-\section*{\fbox{\textbf{Exercice 14}}}
-
+\section*{CORRECTION}
 Soit \( f \) la fonction définie par :
-
-\( f(x) =
-\begin{cases}
-    e^{-x} (1 + \ln x) - e^{-1},  & \text{si } x \geq 1 \\
-    (1 - x) e^{-\frac{1}{1 - x}}, & \text{si } x < 1
-\end{cases} \)
+\[
+f(x) =
+\begin{cases} 
+2x\sqrt{1 - x^2} & \text{si } x > 0, \\ 
+-x + \sqrt{x^2 - 2x} & \text{si } x \leq 0.
+\end{cases}
+\]
 
 \begin{enumerate}
-    \item Vérifier que \( f \) est définie sur \( \mathbb{R} \) puis calculer les limites de \( f \) aux bornes de \( D_f \).
-    \item Étudier la continuité de \( f \) en 1.
-    \item
-          \begin{enumerate}
-              \item Montrer que pour tout \( x \in ]1;+\infty[ \),
-                    \( \frac{f(x) - f(1)}{x - 1} = e^{-x} \left( \frac{1 - e^{x-1}}{x - 1} + \frac{\ln x}{x - 1} \right). \)
-              \item Étudier la dérivabilité de \( f \) en 1. Interpréter graphiquement le résultat.
-          \end{enumerate}
-    \item Soit la fonction \( g \) définie par : \( g(x) = - \ln x + \frac{1}{x} - 1 \)
-          \begin{enumerate}
-              \item Dresser le tableau de variations de \( g \).
-              \item Calculer \( g(1) \) et préciser le signe de \( g(x) \).
-              \item Calculer la dérivée de \( f \) sur chaque intervalle où elle est dérivable.
-              \item Étudier le signe de \( f'(x) \) et donner le tableau de variations de \( f \).
-          \end{enumerate}
-    \item
-          \begin{enumerate}
-              \item Donner la nature de la branche infinie de \( f \) en \( +\infty \).
-              \item Montrer que la droite \( (D) : y = -x \) est une asymptote oblique à \( (C_f) \) en \( -\infty \).
-              \item Étudier la position de \( (C_f) \) par rapport à \( (D) \) sur \( ]-\infty;1[ \).
-          \end{enumerate}
-    \item Construire \( (C_f) \).
-    \item Soit \( h \) la restriction de \( f \) sur \( ]-\infty;1[ \).
-          \begin{enumerate}
-              \item Montrer que \( h \) réalise une bijection de \( ]-\infty;1[ \) vers un intervalle \( J \) à préciser.
-              \item Calculer \( h(0) \).
-                    \( h^{-1} \) est-elle dérivable en \( e^{-1} \) ? Si oui, calculer  \( (h^{-1})'(e^{-1}). \)
-              \item Tracer \( (C_{h^{-1}}) \) dans le même repère.
-          \end{enumerate}
+    \item \textbf{Détermination de l'ensemble de définition \( D_f \)} \\
+    \textbf{Première partie :} \( f(x) = 2x\sqrt{1 - x^2} \) pour \( x > 0 \). \\
+    - L'expression \( \sqrt{1 - x^2} \) est définie si \( 1 - x^2 \geq 0 \), soit \( -1 \leq x \leq 1 \). \\
+    - Comme \( x > 0 \), on obtient \( 0 < x \leq 1 \). \\
+
+    \textbf{Deuxième partie :} \( f(x) = -x + \sqrt{x^2 - 2x} \) pour \( x \leq 0 \). \\
+    - L'expression \( \sqrt{x^2 - 2x} \) est définie si \( x^2 - 2x \geq 0 \), soit \( x(x - 2) \geq 0 \). \\
+    - Résolvons cette inéquation :
+    \[
+    x(x - 2) \geq 0 \iff
+    \begin{cases} 
+    x \leq 0 \quad \text{ou} \quad x \geq 2.
+    \end{cases}
+    \]
+    - Comme cette partie est définie pour \( x \leq 0 \), on conserve uniquement \( x \leq 0 \). \\
+
+    \textbf{Ensemble de définition :} \\
+    - La première partie est définie sur \( 0 < x \leq 1 \). \\
+    - La deuxième partie est définie sur \( x \leq 0 \). \\
+    - En réunissant ces deux domaines, on obtient :
+    \[
+    D_f = ]-\infty, 1].
+    \]
+    
+   \textbf{Limites aux bornes de \( D_f \)} \\
+
+    \textbf{Quand \( x \to -\infty \) :} \\
+    Pour \( x \to -\infty \), \( f(x) = -x + \sqrt{x^2 - 2x} \). \\
+    Simplifions :
+    \[
+    \sqrt{x^2 - 2x} = |x| \sqrt{1 - \frac{2}{x}} \quad \text{(avec \( |x| = -x \) pour \( x < 0 \))}.
+    \]
+    Ainsi, \( f(x) = -x + (-x)\sqrt{1 - \frac{2}{x}} \). \\
+    Quand \( x \to -\infty \), \( \sqrt{1 - \frac{2}{x}} \to 1 \), donc :
+    \[
+    f(x) \sim -x - x = -2x \to +\infty.
+    \]
+
+    \textbf{Quand \( x \to 0^- \) :} \\
+    Pour \( x \leq 0 \), \( f(x) = -x + \sqrt{x^2 - 2x} \). \\
+    Quand \( x \to 0^- \), \( x^2 - 2x \to 0 \), donc \( \sqrt{x^2 - 2x} \to 0 \). \\
+    Par conséquent :
+    \[
+    f(x) \to -x \to 0.
+    \]
+
+    \textbf{Quand \( x \to 0^+ \) :} \\
+    Pour \( x > 0 \), \( f(x) = 2x\sqrt{1 - x^2} \). \\
+    Quand \( x \to 0^+ \), \( \sqrt{1 - x^2} \to \sqrt{1} = 1 \), donc :
+    \[
+    f(x) \to 2x \to 0.
+    \]
+
+    \textbf{Quand \( x \to 1^- \) :} \\
+    Pour \( x > 0 \), \( f(x) = 2x\sqrt{1 - x^2} \). \\
+    Quand \( x \to 1^- \), \( 1 - x^2 \to 0^+ \), donc \( \sqrt{1 - x^2} \to 0^+ \). \\
+    Par conséquent :
+    \[
+    f(x) = 2x\sqrt{1 - x^2} \to 0.
+    \]
+   
+    \textbf{Asymptotes et branches infinies éventuelles} \\
+
+    \textbf{Pour \( x \to -\infty \) :} \\
+    On a montré que \( f(x) \sim -2x \). \\
+    Ainsi, \( f(x) \) admet une \textbf{branche infinie oblique} d'équation asymptotique :
+    \[
+    y = -2x \quad \text{pour } x \to -\infty.
+    \]
+    
+    \item \textbf{Étude de la dérivabilité de \( f \) en \( 0 \) et \( 1 \) :} \\
+
+    \textbf{En \( x = 0 \) :}
+    \begin{itemize}
+        \item \textbf{Continuité :} \\
+        - À gauche (\( x \to 0^- \)), \( f(x) = -x + \sqrt{x^2 - 2x} \to 0 \). \\
+        - À droite (\( x \to 0^+ \)), \( f(x) = 2x\sqrt{1 - x^2} \to 0 \). \\
+        - Comme \( f(0) = 0 \), \( f \) est continue en \( x = 0 \).
+
+        \item \textbf{Dérivabilité :} \\
+        - À gauche, la dérivée \( f'(x) = -1 + \frac{2x - 2}{2\sqrt{x^2 - 2x}} \) diverge vers \(-\infty\). \\
+        - À droite, \( f'(x) = 2\sqrt{1 - x^2} - \frac{2x^2}{\sqrt{1 - x^2}} \to 2 \). \\
+        - Les dérivées à gauche et à droite ne sont pas égales, donc \( f \) n'est pas dérivable en \( x = 0 \).
+    \end{itemize}
+
+    \textbf{En \( x = 1 \) :}
+    \begin{itemize}
+        \item \textbf{Continuité :} \\
+        - Pour \( x \to 1^- \), \( f(x) = 2x\sqrt{1 - x^2} \to 0 \). \\
+        - \( f(1) \) n'est pas défini, donc \( f \) n'est pas continue en \( x = 1 \). \\
+        - Par conséquent, \( f \) n'est pas dérivable en \( x = 1 \).
+    \end{itemize}
+
+    \textbf{Interprétation géométrique :}
+    \begin{itemize}
+        \item En \( x = 0 \), \( f \) est continue mais présente une cassure (coussin), donc pas de tangente unique.
+        \item En \( x = 1 \), \( f \) n'est pas définie, donc il n'y a pas de continuité ni de tangente.
+    \end{itemize}
+
+    \item \textbf{Calcul de \( f'(x) \) et tableau de variation :} \\
+
+    \textbf{Calcul de \( f'(x) \) pour \( x > 0 \) :}
+    \[
+    f'(x) = \frac{2(1 - 2x^2)}{\sqrt{1 - x^2}}.
+    \]
+
+    \textbf{Calcul de \( f'(x) \) pour \( x \leq 0 \) :}
+    \[
+    f'(x) = -1 + \frac{x - 1}{\sqrt{x^2 - 2x}}.
+    \]
+
+    \textbf{Tableau de variation :}
+    \[
+    \begin{array}{|c|c|c|c|}
+    \hline
+    x & -\infty & 0 & 1 \\
+    \hline
+    f'(x) & +\infty & 0 & - \\
+    \hline
+    f(x) & \text{Croissante} & \text{Dérivabilité et continuité} & \text{Décroissante} \\
+    \hline
+    \end{array}
+    \]
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = middle,
+    xlabel = \( x \),
+    ylabel = \( f(x) \),
+    domain = -2:1,
+    samples = 500,
+    width = 10cm,
+    height = 6cm,
+    enlarge x limits = 0.1,
+    enlarge y limits = 0.1,
+    grid = major,
+    legend style = {at = {(0.5,-0.1)}, anchor = north}
+]
+
+% Tracer la courbe pour x <= 0
+\addplot[blue, thick] {-x + sqrt(x^2 - 2*x)};
+\addlegendentry{Pour \( x \leq 0 \)};
+
+% Tracer la courbe pour x > 0
+\addplot[red, thick] {2*x*sqrt(1 - x^2)};
+\addlegendentry{Pour \( x > 0 \)};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Courbe de \( f(x) \)}
+\end{figure}
+
 \end{enumerate}
 
 \end{document}

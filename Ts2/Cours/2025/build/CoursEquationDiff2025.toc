@@ -1,0 +1,9 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}\textcolor {red}{\underline {Activité} : Oscillateur harmonique}}{2}{}%
+\contentsline {subsection}{\numberline {1.1}\textcolor {red}{Correction de l'activité}}{2}{}%
+\contentsline {section}{\numberline {2}\textcolor {red}{\underline {Définitions et exemples}}}{3}{}%
+\contentsline {section}{\numberline {3}\textcolor {red}{\underline {Résolution}}}{3}{}%
+\contentsline {subsection}{\numberline {3.1}EDL sans second membre}{3}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}EDL d’ordre 1 sans second membre}{3}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}EDL d’ordre 2 sans second membre}{3}{}%
+\contentsline {subsection}{\numberline {3.2}EDL avec second membre}{4}{}%
