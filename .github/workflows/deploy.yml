@@ -1,0 +1,35 @@
+name: Build and Deploy LaTeX PDFs
+
+on:
+  push:
+    branches:
+      - main  # À chaque push sur la branche principale
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Récupère le contenu du dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Installe LaTeX complet
+      - name: Install LaTeX
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+      # 3️⃣ Compile tous les fichiers .tex en PDF
+      - name: Compile LaTeX files
+        run: |
+          mkdir -p output
+          for file in $(find . -name "*.tex"); do
+            echo "Compilation de $file..."
+            pdflatex -interaction=nonstopmode -output-directory=output "$file" || true
+          done
+
+      # 4️⃣ Déploie les PDF sur la branche gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
