@@ -1,0 +1,34 @@
+name: Generate PDF index
+
+on:
+  push:
+    branches:
+      - gh-pages  # Ce workflow s’exécute quand les PDF sont déployés
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Generate index.html
+        run: |
+          echo "<!DOCTYPE html>" > index.html
+          echo "<html lang='fr'><head><meta charset='UTF-8'><title>Cours du Lycée</title></head><body>" >> index.html
+          echo "<h1>📘 Cours disponibles</h1><ul>" >> index.html
+          for f in $(find . -type f -name "*.pdf" | sort); do
+            name=$(basename "$f")
+            echo "<li><a href='$name'>$name</a></li>" >> index.html
+          done
+          echo "</ul><hr><p style='font-size:12px'>Site généré automatiquement par GitHub Actions</p></body></html>" >> index.html
+
+      - name: Commit and push updated index
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add index.html
+          git commit -m "Mise à jour automatique de l’index PDF" || echo "Aucun changement"
+          git push origin gh-pages
