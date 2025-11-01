@@ -424,6 +424,7 @@ C'est donc le demi-tour d’axe  $ \Delta_2 $ c’est à dire $ R_2 $ \hfill \te
 		\item En déduire que \( R_{2} \circ R_{1} \) est un demi-tour dont on précisera l’axe.
 		
 		 	\( R_{2} \circ R_{1} = ( S_{p_{2}} \circ S_{p}) \circ (S_{p} \circ S_{p_{1}}) = S_{p_{2}} \circ S_{p_{1}}\)
+<<<<<<< HEAD
 		 	
 		 	Or, \( S_{p_{2}} \circ S_{p_{1}} \) est la rotation d'axe \( (P_{1})\cap (P_{2}) = \Delta \) 
 		 	
@@ -444,7 +445,175 @@ C'est donc le demi-tour d’axe  $ \Delta_2 $ c’est à dire $ R_2 $ \hfill \te
 		 C’est donc le demi-tour d’axe $\Delta$\hfill \textbf{(0,5 point)}
 		 
 		 Finalement, \( R_{1} \circ R_{2} = R_{2} \circ R_{1} \)
+=======
+		\item Prouver alors que $R_1 \circ R_2 = R_2 \circ R_1$.
+		
+		On peut aussi écrire : $R_1 = S_{P_1} \circ S_P$. On a alors :
+		
+		\[ R_1 \circ R_2 = (S_{P_1} \circ S_P) \circ (S_P \circ S_{P_2}) = S_{P_1} \circ S_{P_2}. \]
+		
+		Or, $S_{P_1} \circ S_{P_2}$ est aussi la rotation d’axe $(P_1) \cap (P_2) = \Delta$ et d’angle $2 \times \frac{\pi}{2} = \pi$. 
+		
+		C’est donc le \textbf{demi-tour d’axe} $\Delta$.
+		Finalement, $R_1 \circ R_2 = R_2 \circ R_1$.
+>>>>>>> 8ae8c265040af47da3590922e151b3652b11ac1c
 \end{enumerate}
+\item Réciproquement, on suppose que $R_1 \circ R_2 = R_2 \circ R_1$.
+		
+		Soit $A$ un point de $(\Delta_1)$ qui n’appartient pas à $(\Delta_2)$ et $B$ l’image de $A$ par $R_2$.
+		\begin{enumerate}
+			\item Montrer que la droite $(AB)$ et la droite $(\Delta_2)$ sont perpendiculaires.
+			
+			Soit $(Q)$ le plan passant par $A$ et orthogonal à $(\Delta_2)$ et soit $I$ le point d’intersection de $(Q)$ et $(\Delta_2)$. Dire que le 				point $B$ est l’image du point $A$ par $R_2$ signifie que $B$ est l’image du point $A$ par la restriction de $R_2$ à $(Q)$ qui est la symétrie centrale de centre $I$. On a $(AB) \subset (Q)$, donc $(\Delta_2)$ est orthogonal à $(AB)$. De plus, $A$, $I$ et $B$ sont alignés. Donc $I \in (\Delta_2) \cap (AB)$. Ainsi, la droite $(AB)$ et la droite $\Delta_2$ sont perpendiculaires en $I$.
+			
+			\item En utilisant la relation $R_1 \circ R_2 = R_2 \circ R_1$, prouver que $B = R_1(B)$.
+			
+					\[ R_1(B) = R_1(R_2(A)) = R_2(R_1(A)) = R_2(A) = B. \]
+					
+			\item En déduire que $(\Delta_1)$ et $(\Delta_2)$ sont perpendiculaires.
+			
+			On a :
+			
+			$R_1(B) = B$ ; donc $B \in (\Delta_1)$.
+			
+			$A \in \Delta_1$.
+			
+			$A \neq B$ car si $A = B$, on aurait $R_2(A) = A$ ; ce qui signifierait que $A \in (\Delta_2)$.
+			
+			On en déduit que $(AB) = (\Delta_1)$. D’après 2.a), la droite $(AB)$ et la droite $(\Delta_2)$ sont perpendiculaires. On en déduit que $(\Delta_1)$ et $(\Delta_2)$ sont perpendiculaires.
+		\end{enumerate}
+\item En utilisant ce qui précède, énoncer une condition nécessaire et suffisante portant sur $(\Delta_1)$ et $(\Delta_2)$ pour que $R_1 \circ R_2 = R_2 \circ R_1$.
+
+Soient $(\Delta_1)$ et $(\Delta_2)$ deux droites distinctes de l’espace, $R_1$ et $R_2$ les demi-tours d’axes respectifs $(\Delta_1)$ et $(\Delta_2)$.
+
+\[ R_1 \circ R_2 = R_2 \circ R_1 \iff (\Delta_1) \perp (\Delta_2). \]
 \end{enumerate}
 
+\section*{\underline{Problème :(11 pts)}}
+
+On considère le plan complexe $\mathbb{P}$ rapporté à un repère orthonormé direct $(O ; \vec{u}, \vec{v})$.
+
+	\section*{\underline{PARTIE A (2 points)}}
+
+\begin{enumerate}
+\item Soit $(a, b) \in \mathbb{R}^* \times \mathbb{R}$ et $F_{a,b}$ l’application de $\mathbb{P}$ dans $\mathbb{P}$ qui au point $M$ d’affixe $z$ fait correspondre le point $M'$ d’affixe $z'$ telle que : $z' = a \overline{z} + ib$ où $\overline{z}$ est le conjugué de $z$.
+\begin{enumerate}
+\item Exprimons les coordonnées $x'$ et $y'$ de $M'$ en fonction des coordonnées $x$ et $y$ de $M$.
+\[
+\begin{cases}
+x' = a x \\
+y' = b - a y
+\end{cases}
+\]
+\item Déterminer, suivant les valeurs de $a$ et $b$, l’ensemble des points invariants par $F_{a,b}$.
+\[ F_{a,b}(M) = M \Leftrightarrow 
+\begin{cases} 
+x = a x \\ 
+y = b - a y 
+\end{cases}
+\Leftrightarrow 
+\begin{cases} 
+x(a - 1) = 0 \\ 
+y(1 + a) = b 
+\end{cases} \]
+
+     Si $a = 1$ alors $y = \frac{1}{2} b$ et $x$ peut prendre n’importe quelle valeur réelle. L’ensemble des points invariants est la droite d’équation $y = \frac{1}{2} b$.
+     
+     Si $a \neq 1$ alors $x = 0$.
+    
+         Si $a = -1$ et $b \neq 0$, l’ensemble des points invariants est vide.
+         
+         Si $a = -1$ et $b = 0$, $y$ peut prendre n’importe quelle valeur réelle. L’ensemble des points invariants est la droite $(D)$ d’équation $x = 0$.
+         
+         Si $a \neq -1$, alors $y = \frac{b}{1 + a}$. L’ensemble des points invariants est $\Omega \left( \frac{ib}{1 + a} \right)$.
+\end{enumerate}
+\item On suppose $|a| \neq 1$. Montrer que $F_{a,b} = S_\Delta \circ h$, où $S_\Delta$ est la symétrie orthogonale d’axe la droite $(\Delta)$ d’équation $y = \frac{b}{a + 1}$ et $h$ l’homothétie de centre le point $\Omega$ d’affixe $\frac{ib}{1 + a}$ et de rapport $a$.
+
+Déterminons les expressions analytiques de $S_\Delta$ et de $h$.
+
+Soit $M(x, y)$ et $M'(x', y')$.
+
+Expression analytique de $S_\Delta$ :
+\[ S_\Delta(M) = M' \Leftrightarrow
+\begin{cases} 
+MM' \text{ est orthogonal à } \vec{u} \\ 
+\text{Le milieu } I \text{ de } [MM'] \text{ appartient à } \Delta 
+\end{cases} \]
+\[
+\begin{cases}
+x' = x \\ 
+y' = -y + \frac{2b}{1 + a}
+\end{cases} \]
+Expression analytique de $h$:
+\[ h(M) = M' \Leftrightarrow \overline{\Omega M'} = a \overline{\Omega M} \]
+\[
+\begin{cases} 
+x' = a x \\ 
+y' = a y + \frac{b}{1 + a}(1 - a)
+\end{cases} \]
+La composée $S_\Delta \circ h$ a pour expression analytique :
+\[
+\begin{cases} 
+x' = a x \\ 
+y' = -\left(a y + \frac{b}{1 + a}(1 - a)\right) + \frac{2b}{1 + a}
+\end{cases} \]
+\[ S_\Delta \circ h : 
+\begin{cases} 
+x' = a x \\ 
+y' = -a y + b
+\end{cases} \]
+Finalement, $S_\Delta \circ h$ a pour écriture complexe $z' = x' + i y' = a x - a i y + i b = a(x - i y) + i b = a \overline{z} + i b$. Donc $S_\Delta \circ h = F_{a,b}$.
+$F_{a,b}$ est la composée de la symétrie orthogonale par rapport à la droite $\Delta$ d’équation $y = \frac{b}{a + 1}$ et de l’homothétie $h$ de centre $\Omega$ d’affixe $Z_\Omega = \frac{i b}{1 + a}$ et de rapport $a$.
+\item Soit $(c, d) \in \mathbb{R}^* \times \mathbb{R}$ et $G_{c,d}$ l’application de $\mathbb{P}$ dans $\mathbb{P}$ qui, au point $N$ d’affixe $z$, fait correspondre le point $N'$ d’affixe $z'$ tel que : $z' = c z + i d$.
+
+Déterminer, suivant les valeurs de $c$ et $d$, la nature et les éléments géométriques caractéristiques de $G_{c,d}$.
+
+     Si $c = 1$, $G_{c,d}$ est la translation de vecteur $\vec{v}$ d’affixe $i d$.
+     
+     Si $c \neq 1$, $G_{c,d}$ est l’homothétie de centre $\Pi$ d’affixe $\frac{i d}{1 - c}$ et de rapport $c$.
+
+\end{enumerate}
+		\section*{\underline{PARTIE B (2 points)}}
+		\begin{enumerate}
+		\item Dans cette , on suppose que $|a| \neq 1$.
+		
+			On définit la suite de points $(M_n)_{n \geq 1}$ par :
+			
+			\[
+				\begin{cases} 
+					M_1 \text{ est le point d’affixe } u_1 = a + i b \\
+					\forall n \geq 1, M_{n+1} = F_{a,b}(M_n)
+			\end{cases} \]
+			\begin{enumerate}
+			\item Déterminons l’affixe $u_2$ du point $M_2$.
+			
+				\(
+				\begin{aligned}
+				M_2 = F_{a,b}(M_1) &\Leftrightarrow u_2 = a \overline{u_1} + i b \\
+									&\Leftrightarrow u_2 = a^2 + i b(1 - a) 
+				\end{aligned}
+				\) 
+				\item Montrer que pour tout entier naturel $n$ non nul, $M_n$ a pour affixe :
+				\[ u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right). \]
+				On va faire une démonstration par récurrence.
+				
+				La formule est vraie pour $n = 1$. En effet, $u_1 = a + i b = a^1 + i b \left( \frac{1 - (-a)^1}{1 + a} \right)$.
+				
+     Supposons que la formule est vraie à l’ordre $n$, c’est-à-dire que $M_n$ a pour affixe :
+     
+      $u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right)$ et montrons que $M_{n+1}$ a pour affixe : $u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right)$.
+
+\(
+\begin{aligned}
+M_{n+1} = F_{a,b}(M_n) &\Leftrightarrow u_{n+1} = a \overline{u_n} + i b\\
+					   &\Leftrightarrow u_{n+1} = a \left( a^n - i b \left( \frac{1 - (-a)^n}{1 + a} \right) \right) + i b\\
+					   &\Leftrightarrow u_{n+1} = a^{n+1} + i b \left( \frac{1 - (-a)^{n+1}}{1 + a} \right)
+\end{aligned}
+\)      
+      
+
+Conclusion : $M_n$ a pour affixe $\boxed{u_n = a^n + i b \left( \frac{1 - (-a)^n}{1 + a} \right)}$.
+			\end{enumerate}
+		\end{enumerate}
+		
 \end{document}
