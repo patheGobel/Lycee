@@ -8,38 +8,57 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
 
-      - name: Generate modern index.html
+      - name: Generate modern index.html with icons
         run: |
-          echo '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cours du Lycée Diattacounda</title><style>' > index.html
+          echo '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cours du Lycée Dindéfelo</title><style>' > index.html
           cat <<'EOF' >> index.html
-          body {font-family: Poppins, sans-serif; background:#f8fafc; color:#1e293b; margin:0;}
-          header{background:linear-gradient(135deg,#0a3d62,#3c6382);color:white;text-align:center;padding:2rem 1rem;}
+          body {font-family: "Poppins","Segoe UI",Roboto,sans-serif;background-color:#f8fafc;color:#1e293b;margin:0;padding:0;}
+          header{background:linear-gradient(135deg,#0a3d62,#3c6382);color:white;text-align:center;padding:2rem 1rem;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+          header h1{margin:0;font-size:2rem;}
+          header p{margin-top:0.5rem;font-size:1rem;opacity:0.9;}
           main{max-width:900px;margin:2rem auto;background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-          h2{color:#0a3d62;border-bottom:2px solid #0a3d62;padding-bottom:0.4rem;}
-          a{text-decoration:none;color:#1e40af;font-weight:500;}a:hover{color:#0a3d62;text-decoration:underline;}
+          section{margin-bottom:2rem;}
+          h2{display:flex;align-items:center;gap:0.5rem;color:#0a3d62;border-bottom:2px solid #0a3d62;padding-bottom:0.4rem;margin-bottom:1rem;font-size:1.4rem;}
+          ul{list-style:none;padding-left:0;}
+          li{margin:0.6rem 0;font-size:1rem;}
+          a{text-decoration:none;color:#1e40af;font-weight:500;transition:color 0.2s;}
+          a:hover{color:#0a3d62;text-decoration:underline;}
           footer{text-align:center;padding:1rem;color:#64748b;font-size:0.9rem;}
+          input#search{width:100%;padding:0.5rem;border-radius:8px;border:1px solid #ccc;margin-bottom:1.5rem;}
           EOF
-          echo '</style></head><body><header><h1>📘 Cours du Lycée Diattacounda</h1><p>Ressources PDF — Prof. Pathé Gobel</p></header><main>' >> index.html
+          echo '</style></head><body><header><h1>📘 Cours du Lycée Dindéfelo</h1><p>Ressources PDF — Professeur Pathé Gobel</p></header><main>' >> index.html
+
+          echo '<input type="text" id="search" placeholder="Rechercher un cours..."><script>const s=document.getElementById("search");s.addEventListener("input",()=>{document.querySelectorAll("li").forEach(li=>{li.style.display=li.textContent.toLowerCase().includes(s.value.toLowerCase())?"":"none";});});</script>' >> index.html
+
           for dir in $(find . -type d | grep -vE '^.$|^.git'); do
-            [ "$(ls $dir/*.pdf 2>/dev/null)" ] && echo "<section><h2>${dir#./}</h2><ul>" >> index.html
+            icon=""
+            case "${dir#./}" in
+              TS2) icon="🧠" ;;
+              2ndS) icon="📘" ;;
+              1erL) icon="✍️" ;;
+              *) icon="📂" ;;
+            esac
+            [ "$(ls $dir/*.pdf 2>/dev/null)" ] && echo "<section><h2>$icon ${dir#./}</h2><ul>" >> index.html
             for f in $(ls "$dir"/*.pdf 2>/dev/null); do
               name=$(basename "$f")
               echo "<li><a href='$f'>$name</a></li>" >> index.html
             done
             [ "$(ls $dir/*.pdf 2>/dev/null)" ] && echo "</ul></section>" >> index.html
           done
-          echo "</main><footer>© 2025 Lycée Diattacounda — Généré automatiquement via GitHub Actions</footer></body></html>" >> index.html
+
+          echo "</main><footer>© 2025 Lycée Dindéfelo — Généré automatiquement via GitHub Actions</footer></body></html>" >> index.html
 
       - name: Commit and push index
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add index.html
-          git commit -m "Mise à jour automatique de la page d'accueil HTML" || echo "Aucun changement"
+          git commit -m "Mise à jour automatique de la page d'accueil avec icônes et recherche" || echo "Aucun changement"
           git push origin gh-pages
