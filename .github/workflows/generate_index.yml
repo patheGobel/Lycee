@@ -1,9 +1,9 @@
-name: Generate PDF index
+name: Generate Stylish PDF Index
 
 on:
   push:
     branches:
-      - gh-pages  # Ce workflow s’exécute quand les PDF sont déployés
+      - gh-pages
 
 jobs:
   build:
@@ -14,21 +14,32 @@ jobs:
         with:
           ref: gh-pages
 
-      - name: Generate index.html
+      - name: Generate modern index.html
         run: |
-          echo "<!DOCTYPE html>" > index.html
-          echo "<html lang='fr'><head><meta charset='UTF-8'><title>Cours du Lycée</title></head><body>" >> index.html
-          echo "<h1>📘 Cours disponibles</h1><ul>" >> index.html
-          for f in $(find . -type f -name "*.pdf" | sort); do
-            name=$(basename "$f")
-            echo "<li><a href='$name'>$name</a></li>" >> index.html
+          echo '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cours du Lycée Diattacounda</title><style>' > index.html
+          cat <<'EOF' >> index.html
+          body {font-family: Poppins, sans-serif; background:#f8fafc; color:#1e293b; margin:0;}
+          header{background:linear-gradient(135deg,#0a3d62,#3c6382);color:white;text-align:center;padding:2rem 1rem;}
+          main{max-width:900px;margin:2rem auto;background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+          h2{color:#0a3d62;border-bottom:2px solid #0a3d62;padding-bottom:0.4rem;}
+          a{text-decoration:none;color:#1e40af;font-weight:500;}a:hover{color:#0a3d62;text-decoration:underline;}
+          footer{text-align:center;padding:1rem;color:#64748b;font-size:0.9rem;}
+          EOF
+          echo '</style></head><body><header><h1>📘 Cours du Lycée Diattacounda</h1><p>Ressources PDF — Prof. Pathé Gobel</p></header><main>' >> index.html
+          for dir in $(find . -type d | grep -vE '^.$|^.git'); do
+            [ "$(ls $dir/*.pdf 2>/dev/null)" ] && echo "<section><h2>${dir#./}</h2><ul>" >> index.html
+            for f in $(ls "$dir"/*.pdf 2>/dev/null); do
+              name=$(basename "$f")
+              echo "<li><a href='$f'>$name</a></li>" >> index.html
+            done
+            [ "$(ls $dir/*.pdf 2>/dev/null)" ] && echo "</ul></section>" >> index.html
           done
-          echo "</ul><hr><p style='font-size:12px'>Site généré automatiquement par GitHub Actions</p></body></html>" >> index.html
+          echo "</main><footer>© 2025 Lycée Diattacounda — Généré automatiquement via GitHub Actions</footer></body></html>" >> index.html
 
-      - name: Commit and push updated index
+      - name: Commit and push index
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add index.html
-          git commit -m "Mise à jour automatique de l’index PDF" || echo "Aucun changement"
+          git commit -m "Mise à jour automatique de la page d'accueil HTML" || echo "Aucun changement"
           git push origin gh-pages
