@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Cours et Ressources</title>
+    <title>📚 Mon Catalogue de Cours et TD</title>
     <style>
         body {
             font-family: sans-serif;
@@ -12,46 +12,51 @@
             padding: 20px;
             max-width: 900px;
             margin: auto;
+            background-color: #f4f4f9;
         }
 
         h1 {
             color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            text-align: center;
         }
 
-        .section {
-            margin-bottom: 30px;
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 5px;
-        }
-
-        .section h2 {
+        h2 {
             color: #3498db;
-            margin-top: 0;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
         }
 
-        ul {
+        .cours-list {
             list-style: none;
             padding: 0;
         }
 
-        ul li {
-            background: #f9f9f9;
-            margin-bottom: 8px;
-            padding: 10px;
-            border-radius: 3px;
+        .cours-list li {
+            background: #ffffff;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
         }
 
-        ul li a {
+        .cours-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .cours-list li a {
             text-decoration: none;
-            color: #2c3e50;
+            color: #2980b9;
             font-weight: bold;
             display: block;
+            font-size: 1.1em;
         }
 
-        ul li a:hover {
+        .cours-list li a:hover {
             color: #e74c3c;
         }
     </style>
@@ -59,31 +64,27 @@
 
 <body>
     <h1>📚 Catalogue de Mes Cours et Ressources</h1>
-    <p>Bienvenue sur mon espace de partage. Vous trouverez ici les documents de cours, les exercices corrigés et les
-        évaluations compilés directement depuis mes sources LaTeX sur GitHub.</p>
+    <p style="text-align: center; font-style: italic;">
+        Bienvenue sur mon espace de partage. Tous les documents sont des PDF compilés directement depuis mes sources
+        LaTeX.
+    </p>
 
-    <div class="section">
-        <h2>Accès par Niveaux</h2>
-        <ul>
-            <li><a href="pdf/1erS2.pdf">Première S2 (Lycée) - Accéder au Répertoire</a></li>
-            <li><a href="pdf/2ndL.pdf">Seconde L - Accéder au Répertoire</a></li>
-            <li><a href="pdf/2ndS.pdf">Seconde S - Accéder au Répertoire</a></li>
-            <li><a href="pdf/BacSenegal.pdf">Préparation Bac Sénégal</a></li>
-        </ul>
-    </div>
+    <h2>🔗 Accès Rapide par Niveaux</h2>
+    <ul class="cours-list">
+        <li><a href="pdf/Ts2_Cours_complet.pdf" target="_blank">Terminales S2 - Cours et Fiches de Synthèse</a></li>
+        <li><a href="pdf/1erS2_TD_principal.pdf" target="_blank">Première S2 - Recueil d'Exercices Corrigés</a></li>
+        <li><a href="pdf/2ndL_Evaluations.pdf" target="_blank">Seconde L - Archivage des Évaluations</a></li>
+        <li><a href="pdf/BacSenegal_Sujets.pdf" target="_blank">Préparation Bac Sénégal - Sujets et Corrigés</a></li>
 
-    <div class="section">
-        <h2>Ressources Spécifiques</h2>
-        <p>Liens directs vers des documents importants (ajustez ces liens avec les noms de vos PDF générés).</p>
-        <ul>
-            <li><a href="pdf/CoursDomicile.pdf">Cours à Domicile - Notes et Programme</a></li>
-            <li><a href="pdf/ExerciceDeSynthese.pdf">Recueil d'Exercices de Synthèse</a></li>
-            <li><a href="pdf/Dessin.pdf">Ressources en Dessin Technique/Scientifique</a></li>
-        </ul>
-    </div>
+    </ul>
 
-    <p style="text-align: center; font-size: 0.8em; margin-top: 50px;">
-        Hébergé par GitHub Pages | Dernière compilation : {{ DATE_COMPILATION }}
+    <h2>💡 Autres Ressources</h2>
+    <ul class="cours-list">
+        <li><a href="pdf/Dessin_Scientifique.pdf" target="_blank">Notes de Dessin et Schémas Scientifiques</a></li>
+    </ul>
+
+    <p style="text-align: center; font-size: 0.8em; margin-top: 50px; color: #7f8c8d;">
+        Hébergé par GitHub Pages | Mise à jour automatique via GitHub Actions.
     </p>
 
 </body>

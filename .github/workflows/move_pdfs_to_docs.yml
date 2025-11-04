@@ -1,0 +1,47 @@
+name: Deploy Existing PDFs to Docs
+
+# Le workflow s'exécute après chaque 'push' sur la branche 'main' et manuellement
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  move_and_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Étape 1 : Récupérer le code de votre dépôt (y compris les PDF dans les dossiers 'build')
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Étape 2 : Créer le dossier de destination pour les PDF et le fichier .nojekyll
+      - name: Setup docs directory
+        run: |
+          # Crée le dossier pdf qui sera la destination finale
+          mkdir -p docs/pdf
+          # Fichier pour désactiver Jekyll
+          touch docs/.nojekyll
+
+      # Étape 3 : Trouver les PDF dans les dossiers 'build' et les déplacer vers docs/pdf
+      - name: Locate and Move Final PDFs
+        run: |
+          echo "Démarrage du déplacement des PDF..."
+          
+          # Recherche de tous les fichiers *.pdf qui sont dans un dossier nommé 'build' et les déplace.
+          # La commande 'mv' est exécutée pour chaque fichier PDF trouvé.
+          find . -type f -path "*/build/*.pdf" -exec mv {} docs/pdf/ \;
+          
+          # Vérification des fichiers déplacés
+          echo "Contenu de docs/pdf/ après déplacement :"
+          ls docs/pdf/
+
+      # Étape 4 : Déployer le site via GitHub Pages
+      # Cette action prend le contenu de ./docs et le publie sur votre URL GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: success() # S'assure que le déploiement ne se fait que si le déplacement a réussi
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs # Spécifie que le contenu à publier se trouve dans le dossier 'docs'
