@@ -33,6 +33,10 @@
     </header>
 
     <div class="container">
+        <button class="back-button" id="backButton">
+            <i class="fa-solid fa-arrow-left"></i> Retour aux classes
+        </button>
+
         <div class="filters">
             <div class="filter-group">
                 <button class="filter-btn active" data-filter="all">Tout</button>
@@ -44,79 +48,162 @@
 
         <!-- Section Lycée -->
         <h2><i class="fa-solid fa-school"></i> Lycée</h2>
-        <div class="classes">
+        <div class="classes" id="classesContainer">
+            <!-- Terminale S2 -->
             <div class="class-card" data-class="lycee" data-level="terminale">
                 <h3><i class="fa-solid fa-graduation-cap"></i> Terminale S2</h3>
                 <span class="new-badge">Nouveau</span>
                 <div class="folders">
-                    <a href="docs/pdf/TS2/Cours/" class="folder" data-type="cours">
+                    <div class="folder" data-class="TerS2" data-type="cours">
                         <div class="folder-info">
                             <i class="fa-solid fa-book"></i> Cours
                         </div>
                         <div class="file-count">12</div>
-                    </a>
-                    <a href="docs/pdf/TS2/TD/" class="folder" data-type="td">
+                    </div>
+                    <div class="folder" data-class="TerS2" data-type="td">
                         <div class="folder-info">
                             <i class="fa-solid fa-pencil"></i> TD
                         </div>
                         <div class="file-count">8</div>
-                    </a>
-                    <a href="docs/pdf/TS2/Evaluation/" class="folder" data-type="evaluation">
+                    </div>
+                    <div class="folder" data-class="TerS2" data-type="evaluation">
                         <div class="folder-info">
                             <i class="fa-solid fa-clipboard-check"></i> Évaluation
                         </div>
                         <div class="file-count">5</div>
+                    </div>
+                </div>
+
+                <!-- Liste des PDF pour Terminale S2 -->
+                <div class="pdf-list" id="TerS2-cours">
+                    <h4><i class="fa-solid fa-book"></i> Cours - Terminale S2</h4>
+                    <a href="Lycée/TerS2/Cours/Mathématiques.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Mathématiques</span>
+                        </div>
+                        <span class="pdf-size">2.4 MB</span>
+                    </a>
+                    <a href="Lycée/TerS2/Cours/Physique.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Physique</span>
+                        </div>
+                        <span class="pdf-size">1.8 MB</span>
+                    </a>
+                    <a href="Lycée/TerS2/Cours/SVT.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">SVT</span>
+                        </div>
+                        <span class="pdf-size">3.1 MB</span>
+                    </a>
+                </div>
+
+                <div class="pdf-list" id="TerS2-td">
+                    <h4><i class="fa-solid fa-pencil"></i> TD - Terminale S2</h4>
+                    <a href="Lycée/TerS2/TD/Exercices_Mathématiques.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Exercices Mathématiques</span>
+                        </div>
+                        <span class="pdf-size">1.2 MB</span>
+                    </a>
+                    <a href="Lycée/TerS2/TD/Problèmes_Physique.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Problèmes Physique</span>
+                        </div>
+                        <span class="pdf-size">0.9 MB</span>
+                    </a>
+                </div>
+
+                <div class="pdf-list" id="TerS2-evaluation">
+                    <h4><i class="fa-solid fa-clipboard-check"></i> Évaluations - Terminale S2</h4>
+                    <a href="Lycée/TerS2/Evaluation/DS1.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Devoir Surveillé N°1</span>
+                        </div>
+                        <span class="pdf-size">1.5 MB</span>
+                    </a>
+                    <a href="Lycée/TerS2/Evaluation/Bac_Blanc.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Bac Blanc 2024</span>
+                        </div>
+                        <span class="pdf-size">2.8 MB</span>
                     </a>
                 </div>
             </div>
 
+            <!-- Seconde S -->
             <div class="class-card" data-class="lycee" data-level="seconde">
                 <h3><i class="fa-solid fa-flask"></i> Seconde S</h3>
                 <div class="folders">
-                    <a href="docs/pdf/2ndS/Cours/" class="folder" data-type="cours">
+                    <div class="folder" data-class="2ndS" data-type="cours">
                         <div class="folder-info">
                             <i class="fa-solid fa-book"></i> Cours
                         </div>
                         <div class="file-count">10</div>
-                    </a>
-                    <a href="docs/pdf/2ndS/TD/" class="folder" data-type="td">
+                    </div>
+                    <div class="folder" data-class="2ndS" data-type="td">
                         <div class="folder-info">
                             <i class="fa-solid fa-pencil"></i> TD
                         </div>
                         <div class="file-count">6</div>
-                    </a>
-                    <a href="docs/pdf/2ndS/Evaluation/" class="folder" data-type="evaluation">
+                    </div>
+                    <div class="folder" data-class="2ndS" data-type="evaluation">
                         <div class="folder-info">
                             <i class="fa-solid fa-clipboard-check"></i> Évaluation
                         </div>
                         <div class="file-count">4</div>
+                    </div>
+                </div>
+
+                <!-- Liste des PDF pour Seconde S -->
+                <div class="pdf-list" id="2ndS-cours">
+                    <h4><i class="fa-solid fa-book"></i> Cours - Seconde S</h4>
+                    <a href="Lycée/2ndS/Cours/Mathématiques.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Mathématiques</span>
+                        </div>
+                        <span class="pdf-size">2.1 MB</span>
+                    </a>
+                    <a href="Lycée/2ndS/Cours/Physique-Chimie.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Physique-Chimie</span>
+                        </div>
+                        <span class="pdf-size">2.3 MB</span>
+                    </a>
+                </div>
+
+                <div class="pdf-list" id="2ndS-td">
+                    <h4><i class="fa-solid fa-pencil"></i> TD - Seconde S</h4>
+                    <a href="Lycée/2ndS/TD/Exercices_Mathématiques.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Exercices Mathématiques</span>
+                        </div>
+                        <span class="pdf-size">1.1 MB</span>
+                    </a>
+                </div>
+
+                <div class="pdf-list" id="2ndS-evaluation">
+                    <h4><i class="fa-solid fa-clipboard-check"></i> Évaluations - Seconde S</h4>
+                    <a href="Lycée/2ndS/Evaluation/Contrôle_1.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Contrôle N°1</span>
+                        </div>
+                        <span class="pdf-size">1.3 MB</span>
                     </a>
                 </div>
             </div>
 
-            <div class="class-card" data-class="lycee" data-level="premiere">
-                <h3><i class="fa-solid fa-feather"></i> Première L</h3>
-                <div class="folders">
-                    <a href="docs/pdf/1erL/Cours/" class="folder" data-type="cours">
-                        <div class="folder-info">
-                            <i class="fa-solid fa-book"></i> Cours
-                        </div>
-                        <div class="file-count">9</div>
-                    </a>
-                    <a href="docs/pdf/1erL/TD/" class="folder" data-type="td">
-                        <div class="folder-info">
-                            <i class="fa-solid fa-pencil"></i> TD
-                        </div>
-                        <div class="file-count">7</div>
-                    </a>
-                    <a href="docs/pdf/1erL/Evaluation/" class="folder" data-type="evaluation">
-                        <div class="folder-info">
-                            <i class="fa-solid fa-clipboard-check"></i> Évaluation
-                        </div>
-                        <div class="file-count">3</div>
-                    </a>
-                </div>
-            </div>
+            <!-- Continuez avec la même structure pour les autres classes -->
         </div>
 
         <!-- Section CEM -->
@@ -126,23 +213,42 @@
                 <h3><i class="fa-solid fa-user-graduate"></i> 4ème</h3>
                 <span class="new-badge">Nouveau</span>
                 <div class="folders">
-                    <a href="docs/pdf/4EME/Cours/" class="folder" data-type="cours">
+                    <div class="folder" data-class="4EME" data-type="cours">
                         <div class="folder-info">
                             <i class="fa-solid fa-book"></i> Cours
                         </div>
                         <div class="file-count">15</div>
-                    </a>
-                    <a href="docs/pdf/4EME/TD/" class="folder" data-type="td">
+                    </div>
+                    <div class="folder" data-class="4EME" data-type="td">
                         <div class="folder-info">
                             <i class="fa-solid fa-pencil"></i> TD
                         </div>
                         <div class="file-count">9</div>
-                    </a>
-                    <a href="docs/pdf/4EME/Evaluation/" class="folder" data-type="evaluation">
+                    </div>
+                    <div class="folder" data-class="4EME" data-type="evaluation">
                         <div class="folder-info">
                             <i class="fa-solid fa-clipboard-check"></i> Évaluation
                         </div>
                         <div class="file-count">6</div>
+                    </div>
+                </div>
+
+                <!-- Liste des PDF pour 4ème -->
+                <div class="pdf-list" id="4EME-cours">
+                    <h4><i class="fa-solid fa-book"></i> Cours - 4ème</h4>
+                    <a href="Collège/4EME/Cours/Mathématiques.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Mathématiques</span>
+                        </div>
+                        <span class="pdf-size">1.8 MB</span>
+                    </a>
+                    <a href="Collège/4EME/Cours/Français.pdf" class="pdf-item" target="_blank">
+                        <div class="pdf-info">
+                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                            <span class="pdf-name">Français</span>
+                        </div>
+                        <span class="pdf-size">2.2 MB</span>
                     </a>
                 </div>
             </div>

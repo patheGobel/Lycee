@@ -198,6 +198,7 @@ h2 {
     color: var(--primary-dark);
     text-decoration: none;
     transition: background 0.2s;
+    cursor: pointer;
 }
 
 .folder:hover {
@@ -220,6 +221,82 @@ h2 {
     align-items: center;
     justify-content: center;
     font-size: 0.7rem;
+}
+
+/* Styles pour la liste des PDF */
+.pdf-list {
+    display: none;
+    margin-top: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.pdf-list.active {
+    display: block;
+}
+
+.pdf-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--dark);
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.pdf-item:hover {
+    background: var(--light);
+    transform: translateX(5px);
+}
+
+.pdf-item:last-child {
+    margin-bottom: 0;
+}
+
+.pdf-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.pdf-icon {
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+.pdf-name {
+    font-weight: 500;
+}
+
+.pdf-size {
+    color: var(--gray);
+    font-size: 0.8rem;
+    background: #f1f3f4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+}
+
+.back-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-button.show {
+    display: flex;
 }
 
 footer {

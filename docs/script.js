@@ -1,8 +1,50 @@
-// Filtrage des ressources
 document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const folders = document.querySelectorAll('.folder');
     const searchInput = document.getElementById('searchInput');
+    const backButton = document.getElementById('backButton');
+    const classesContainer = document.getElementById('classesContainer');
+    const pdfLists = document.querySelectorAll('.pdf-list');
+
+    // Gestion du clic sur les dossiers
+    folders.forEach(folder => {
+        folder.addEventListener('click', function () {
+            const classType = this.getAttribute('data-class');
+            const folderType = this.getAttribute('data-type');
+            const pdfListId = `${classType}-${folderType}`;
+            const pdfList = document.getElementById(pdfListId);
+
+            if (pdfList) {
+                // Masquer toutes les listes PDF
+                pdfLists.forEach(list => {
+                    list.classList.remove('active');
+                });
+
+                // Afficher la liste PDF demandée
+                pdfList.classList.add('active');
+
+                // Afficher le bouton retour
+                backButton.classList.add('show');
+
+                // Faire défiler jusqu'à la liste
+                pdfList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Gestion du bouton retour
+    backButton.addEventListener('click', function () {
+        // Masquer toutes les listes PDF
+        pdfLists.forEach(list => {
+            list.classList.remove('active');
+        });
+
+        // Masquer le bouton retour
+        this.classList.remove('show');
+
+        // Revenir en haut des classes
+        classesContainer.scrollIntoView({ behavior: 'smooth' });
+    });
 
     // Filtrage par type
     filterButtons.forEach(button => {
