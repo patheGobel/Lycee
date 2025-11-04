@@ -1,6 +1,5 @@
 name: Deploy Existing PDFs to Docs
 
-# Le workflow s'exécute après chaque 'push' sur la branche 'main' et manuellement
 on:
   push:
     branches:
@@ -12,36 +11,41 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Étape 1 : Récupérer le code de votre dépôt (y compris les PDF dans les dossiers 'build')
+      # Étape 1 : Récupérer le code du dépôt
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Étape 2 : Créer le dossier de destination pour les PDF et le fichier .nojekyll
+      # Étape 2 : Préparer le dossier docs/
       - name: Setup docs directory
         run: |
-          # Crée le dossier pdf qui sera la destination finale
+          echo "Préparation du dossier docs/pdf..."
           mkdir -p docs/pdf
-          # Fichier pour désactiver Jekyll
           touch docs/.nojekyll
 
-      # Étape 3 : Trouver les PDF dans les dossiers 'build' et les déplacer vers docs/pdf
+      # Étape 3 : Rechercher et déplacer les fichiers PDF
       - name: Locate and Move Final PDFs
         run: |
-          echo "Démarrage du déplacement des PDF..."
+          echo "Recherche et déplacement des fichiers PDF..."
           
-          # Recherche de tous les fichiers *.pdf qui sont dans un dossier nommé 'build' et les déplace.
-          # La commande 'mv' est exécutée pour chaque fichier PDF trouvé.
-          find . -type f -path "*/build/*.pdf" -exec mv {} docs/pdf/ \;
+          # Recherche récursive des fichiers PDF dans tous les dossiers nommés 'build'
+          find . -type f -path "*/build/*.pdf" -print -exec mv {} docs/pdf/ \;
           
-          # Vérification des fichiers déplacés
-          echo "Contenu de docs/pdf/ après déplacement :"
-          ls docs/pdf/
+          echo "Liste des fichiers déplacés :"
+          ls -l docs/pdf/
 
-      # Étape 4 : Déployer le site via GitHub Pages
-      # Cette action prend le contenu de ./docs et le publie sur votre URL GitHub Pages
+      # Étape 4 : Vérifier qu’il y a bien des fichiers à déployer
+      - name: Verify PDFs presence
+        run: |
+          if [ -z "$(ls -A docs/pdf)" ]; then
+            echo "Aucun fichier PDF trouvé à déployer. Annulation."
+            exit 1
+          fi
+
+      # Étape 5 : Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: success() # S'assure que le déploiement ne se fait que si le déplacement a réussi
+        if: success()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # Spécifie que le contenu à publier se trouve dans le dossier 'docs'
+          publish_dir: ./docs
+          commit_message: "🚀 Deploy updated PDFs to GitHub Pages"
