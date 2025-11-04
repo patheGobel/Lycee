@@ -4,89 +4,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📚 Mon Catalogue de Cours et TD</title>
+    <title>Lycée de Dindéfelo — Ressources pédagogiques</title>
+
+    <!-- Import de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: #f4f4f9;
+        :root {
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --secondary: #00c4ff;
+            --light: #f6f9fc;
+            --dark: #222;
+            --white: #fff;
+            --gray: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
         }
 
-        h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 15px;
-            text-align: center;
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1.5rem 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .header-text p {
+            margin: 0.2rem 0 0;
+            opacity: 0.9;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 400px;
+            margin: 1rem 0 0;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
         }
 
         h2 {
-            color: #3498db;
-            margin-top: 30px;
-            border-left: 5px solid #3498db;
+            color: var(--primary);
+            border-left: 5px solid var(--primary);
             padding-left: 10px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .cours-list {
-            list-style: none;
-            padding: 0;
+        .classes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        .cours-list li {
-            background: #ffffff;
-            margin-bottom: 12px;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
+        .class-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            position: relative;
         }
 
-        .cours-list li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        .class-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
-        .cours-list li a {
+        .class-card h3 {
+            margin: 0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--success);
+            color: var(--white);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+        }
+
+        .folders {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .folder {
+            background: #e9f2ff;
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--primary-dark);
             text-decoration: none;
-            color: #2980b9;
-            font-weight: bold;
-            display: block;
-            font-size: 1.1em;
+            transition: background 0.2s;
         }
 
-        .cours-list li a:hover {
-            color: #e74c3c;
+        .folder:hover {
+            background: #d5e7ff;
+        }
+
+        .folder-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .file-count {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--primary);
+            color: var(--white);
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-container {
+                max-width: 100%;
+            }
+
+            .classes {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>📚 Catalogue de Mes Cours et Ressources</h1>
-    <p style="text-align: center; font-style: italic;">
-        Bienvenue sur mon espace de partage. Tous les documents sont des PDF compilés directement depuis mes sources
-        LaTeX.
-    </p>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Lycée de Dindéfelo</h1>
+                    <p>Accès aux cours, TD et évaluations</p>
+                </div>
+            </div>
 
-    <h2>🔗 Accès Rapide par Niveaux</h2>
-    <ul class="cours-list">
-        <li><a href="pdf/CalculIntegrale.pdf" target="_blank">Terminales S2 - Calcul Integrale</a></li>
-        <li><a href="pdf/1erS2_TD_principal.pdf" target="_blank">Première S2 - Recueil d'Exercices Corrigés</a></li>
-        <li><a href="pdf/2ndL_Evaluations.pdf" target="_blank">Seconde L - Archivage des Évaluations</a></li>
-        <li><a href="pdf/BacSenegal_Sujets.pdf" target="_blank">Préparation Bac Sénégal - Sujets et Corrigés</a></li>
+            <div class="search-container">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Rechercher une ressource...">
+            </div>
+        </div>
+    </header>
 
-    </ul>
+    <div class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="cours">Cours</button>
+                <button class="filter-btn" data-filter="td">TD</button>
+                <button class="filter-btn" data-filter="evaluation">Évaluations</button>
+            </div>
+        </div>
 
-    <h2>💡 Autres Ressources</h2>
-    <ul class="cours-list">
-        <li><a href="pdf/Dessin_Scientifique.pdf" target="_blank">Notes de Dessin et Schémas Scientifiques</a></li>
-    </ul>
+        <!-- Section Lycée -->
+        <h2><i class="fa-solid fa-school"></i> Lycée</h2>
+        <div class="classes">
+            <div class="class-card" data-class="lycee" data-level="terminale">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Terminale S2</h3>
+                <span class="new-badge">Nouveau</span>
+                <div class="folders">
+                    <a href="docs/pdf/TS2/Cours/" class="folder" data-type="cours">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-book"></i> Cours
+                        </div>
+                        <div class="file-count">12</div>
+                    </a>
+                    <a href="docs/pdf/TS2/TD/" class="folder" data-type="td">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-pencil"></i> TD
+                        </div>
+                        <div class="file-count">8</div>
+                    </a>
+                    <a href="docs/pdf/TS2/Evaluation/" class="folder" data-type="evaluation">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-clipboard-check"></i> Évaluation
+                        </div>
+                        <div class="file-count">5</div>
+                    </a>
+                </div>
+            </div>
 
-    <p style="text-align: center; font-size: 0.8em; margin-top: 50px; color: #7f8c8d;">
-        Hébergé par GitHub Pages | Mise à jour automatique via GitHub Actions.
-    </p>
+            <div class="class-card" data-class="lycee" data-level="seconde">
+                <h3><i class="fa-solid fa-flask"></i> Seconde S</h3>
+                <div class="folders">
+                    <a href="docs/pdf/2ndS/Cours/" class="folder" data-type="cours">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-book"></i> Cours
+                        </div>
+                        <div class="file-count">10</div>
+                    </a>
+                    <a href="docs/pdf/2ndS/TD/" class="folder" data-type="td">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-pencil"></i> TD
+                        </div>
+                        <div class="file-count">6</div>
+                    </a>
+                    <a href="docs/pdf/2ndS/Evaluation/" class="folder" data-type="evaluation">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-clipboard-check"></i> Évaluation
+                        </div>
+                        <div class="file-count">4</div>
+                    </a>
+                </div>
+            </div>
 
+            <div class="class-card" data-class="lycee" data-level="premiere">
+                <h3><i class="fa-solid fa-feather"></i> Première L</h3>
+                <div class="folders">
+                    <a href="docs/pdf/1erL/Cours/" class="folder" data-type="cours">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-book"></i> Cours
+                        </div>
+                        <div class="file-count">9</div>
+                    </a>
+                    <a href="docs/pdf/1erL/TD/" class="folder" data-type="td">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-pencil"></i> TD
+                        </div>
+                        <div class="file-count">7</div>
+                    </a>
+                    <a href="docs/pdf/1erL/Evaluation/" class="folder" data-type="evaluation">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-clipboard-check"></i> Évaluation
+                        </div>
+                        <div class="file-count">3</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section CEM -->
+        <h2><i class="fa-solid fa-building-columns"></i> CEM</h2>
+        <div class="classes">
+            <div class="class-card" data-class="cem" data-level="quatrieme">
+                <h3><i class="fa-solid fa-user-graduate"></i> 4ème</h3>
+                <span class="new-badge">Nouveau</span>
+                <div class="folders">
+                    <a href="docs/pdf/4EME/Cours/" class="folder" data-type="cours">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-book"></i> Cours
+                        </div>
+                        <div class="file-count">15</div>
+                    </a>
+                    <a href="docs/pdf/4EME/TD/" class="folder" data-type="td">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-pencil"></i> TD
+                        </div>
+                        <div class="file-count">9</div>
+                    </a>
+                    <a href="docs/pdf/4EME/Evaluation/" class="folder" data-type="evaluation">
+                        <div class="folder-info">
+                            <i class="fa-solid fa-clipboard-check"></i> Évaluation
+                        </div>
+                        <div class="file-count">6</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Lycée de Dindéfelo — Ressources pédagogiques
+    </footer>
+
+    <script>
+        // Filtrage des ressources
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const folders = document.querySelectorAll('.folder');
+            const searchInput = document.getElementById('searchInput');
+
+            // Filtrage par type
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Retirer la classe active de tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    folders.forEach(folder => {
+                        if (filter === 'all') {
+                            folder.parentElement.parentElement.style.display = 'block';
+                            folder.style.display = 'flex';
+                        } else {
+                            const folderType = folder.getAttribute('data-type');
+                            if (folderType === filter) {
+                                folder.style.display = 'flex';
+                                folder.parentElement.parentElement.style.display = 'block';
+                            } else {
+                                folder.style.display = 'none';
+
+                                // Masquer la carte si aucun dossier n'est visible
+                                const card = folder.parentElement.parentElement;
+                                const visibleFolders = card.querySelectorAll('.folder[style="display: flex;"]');
+                                if (visibleFolders.length === 0) {
+                                    card.style.display = 'none';
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Recherche
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+
+                document.querySelectorAll('.class-card').forEach(card => {
+                    const className = card.querySelector('h3').textContent.toLowerCase();
+                    const folders = card.querySelectorAll('.folder');
+                    let hasMatch = false;
+
+                    // Vérifier si le nom de la classe correspond
+                    if (className.includes(searchTerm)) {
+                        hasMatch = true;
+                    }
+
+                    // Vérifier si un dossier correspond
+                    folders.forEach(folder => {
+                        const folderName = folder.textContent.toLowerCase();
+                        if (folderName.includes(searchTerm)) {
+                            hasMatch = true;
+                            folder.style.backgroundColor = '#fff3cd'; // Mise en évidence
+                        } else {
+                            folder.style.backgroundColor = '';
+                        }
+                    });
+
+                    // Afficher ou masquer la carte en fonction des résultats
+                    card.style.display = hasMatch ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
