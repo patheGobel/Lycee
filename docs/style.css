@@ -239,7 +239,6 @@ h2 {
 .pdf-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0.8rem;
     margin-bottom: 0.5rem;
     background: white;
@@ -272,14 +271,6 @@ h2 {
 
 .pdf-name {
     font-weight: 500;
-}
-
-.pdf-size {
-    color: var(--gray);
-    font-size: 0.8rem;
-    background: #f1f3f4;
-    padding: 0.2rem 0.5rem;
-    border-radius: 12px;
 }
 
 .back-button {
