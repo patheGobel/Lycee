@@ -1,49 +1,8 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{enumitem}
-\newcommand\circitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\newcommand\boxitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
-\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-%%%::::::by chnini ameur :::::::%%%
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-%%%::::::by chnini ameur :::::::%%%
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-% varwidth boxed title*=-3cm,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
-%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
 
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
@@ -332,8 +291,9 @@ Déterminer de l'AV de \( f \) tel que
 ce qui signifie que la fonction a une asymptote verticale en \( x = 0 \).
     \item \textcolor{green}{\underline{\textbf{Asymptote oblique (AO)}}} :
 \[ \text{Si } \lim_{x \to +\infty} (f(x)-(ax+b)) = 0 \text{ alors \(y = ax+b\) est une AO à \((C_{f})\) en \( +\infty \)} \]
-
+\[  \]
 \[ \text{Si } \lim_{x \to -\infty} (f(x)-(ax+b)) = 0 \text{ alors \(y = ax+b\) est une AO à \((C_{f})\) en \( -\infty \)} \]
+\[  \]
 Cette méthode est utilisée pour montrer que \(y=ax+b\) est est une AO
 
 \textbf{\underline{\exemple:}}
@@ -468,7 +428,7 @@ Soit f une fonction definie en \( x_{0} \) on dit que f est continue en \( x_{0}
 \right] \)
 \item \textbf{\textcolor{blue}{\underline{Compositions de deux fonctions continues}}}
 
-Si \( f \) est continue en \(x_{0}\) et \( g \) continue en \( f(x_{0}) \) alors \( gof \) est continue en \(x_{0}\) donc la composition de deux fonctions continues est une fonction continue.
+Si \( f \) est continue en \(x_{0}\) et \( g \) est continue en \( f(x_{0}) \) alors \( gof \) est continue en \(x_{0}\) donc la composition de deux fonctions continues est une fonction continue.
 
 		\textbf{\underline{\exerciceapp}}
 
@@ -491,11 +451,8 @@ La fonction \( f(x) = \sqrt{|2x^5|} \) est définie pour tous les \( x \in \math
 
 \textbf{Étude de la continuité} : \\
 La fonction \( f(x) \) est composée des fonctions suivantes :
-
 - \( g(x) = 2x^5 \), une fonction polynomiale, qui est continue partout sur \( \mathbb{R} \).
-
 - \( h(x) = |x| \), la fonction valeur absolue, qui est continue partout.
-
 - \( k(x) = \sqrt{x} \), la racine carrée, qui est continue pour \( x \geq 0 \).
 
 Ainsi, \( f(x) \) est continue sur \( \mathbb{R} \), car c’est la composition de fonctions continues sur leur domaine respectif.
@@ -531,7 +488,7 @@ Lorsque \( x \) tend vers 1, la fonction \( \sqrt{1 - x} \) tend vers 0. À \( x
 
 \item Lorsqu’une fonction \( f \) est continue et strictement monotone sur \( K \), \( f(K) \) est un intervalle de même nature que \( K \) et ses bornes sont les limites de \( f \) aux bornes de \( K \).
 
-Le tableau ci-dessous précise \( f(K) \) suivant la nature de \( K \) et du sens de variation de \( f \).
+Le tableau ci-dessous précise \( f(K) \) suivant la nature de \( K \) et le sens de variation de \( f \).
 \end{itemize}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -541,13 +498,13 @@ Le tableau ci-dessous précise \( f(K) \) suivant la nature de \( K \) et du sen
 \hline
 [a;b]		& \( [f(a);f(b)] \) & \( [f(b);f(a)] \)       \\
 \hline
-[a;b[	& \( [f(a);\lim\limits_{x\to b^{-}}f(x)[ \) &	\( ]\lim\limits_{x\to b^{-}}f(x);f(a)] \)	\\
+[a;b[	& \( [f(a);\lim_{x\to b^{-}}f(x)[ \) &	\( [\lim_{x\to b^{-}}f(x);f(a)[ \)	\\
 \hline
-]a;b[		& \( ]\lim\limits_{x\to b^{+}}f(x);\lim\limits_{x\to b^{-}}f(x)[ \) &	\( ]\lim\limits_{x\to b^{-}}f(x);\lim_{x\to b^{+}}f(x)[ \)	\\
+]a;b[		& \( ]\lim_{x\to b^{+}}f(x);\lim_{x\to b^{-}}f(x)[ \) &	\( ]\lim_{x\to b^{-}}f(x);\lim_{x\to b^{+}}f(x)[ \)	\\
 \hline
-\( [a;+\infty[ \)	& \( [f(a);\lim\limits_{x\to +\infty}f(x)[ \) &\( ]\lim\limits_{x\to +\infty}f(x);f(a)] \)		\\
+\( [a;+\infty[ \)	& \( [f(a);\lim_{x\to +\infty}f(x)[ \) &\( [\lim_{x\to +\infty}f(x);f(a)[ \)		\\
 \hline
-\( \mathbb{R} \)& \( ]\lim\limits_{x\to -\infty}f(x);\lim\limits_{x\to +\infty}f(x)[ \)&\( ]\lim\limits_{x\to +\infty}f(x);\lim\limits_{x\to -\infty}f(x)[ \)\\
+\( \mathbb{R} \)& \( ]\lim_{x\to -\infty}f(x);\lim_{x\to +\infty}f(x)[ \)&\( ]\lim_{x\to +\infty}f(x);\lim_{x\to -\infty}f(x)[ \)\\
 \hline
 \end{tabular}
 
@@ -592,7 +549,7 @@ f(]1; +\infty[) = ]\lim_{x \to +\infty}f(x) ; \lim_{x \to 1^{+}}f(x)[ = ]2; +\in
 			
 \item \textbf{\textcolor{blue}{\underline{Théorème des valeurs intermédaires}}}
 
-Si la fonction \( f \) est \textcolor{red}{ continue }  sur \( [a ; b] \) et si le réel \( m \) est compris entre \( f(a) \) et \( f(b) \), alors l'équation \( f(x) = m \) admet \textcolor{red}{ au moins } une solution dans \( [a ; b] \).
+Si la fonction \( f \) est \textcolor{red}{ continue }  sur \( [a ; b] \) et si le réel \( m \) est compris entre \( f(a) \) et \( f(b) \), alors l'équation \( f(x) = m \) admet \textcolor{red}{ au moins } une seule solution dans \( [a ; b] \).
 
 Autrement dit, il existe \textcolor{red}{ au moins } un réel \textcolor{red}{ c } entre \textcolor{red}{ \( a \) } et \textcolor{red}{ \( b \) } tel que \textcolor{red}{ \( f(c) = m \) }
 
@@ -602,34 +559,32 @@ Autrement dit, il existe \textcolor{red}{ au moins } un réel \textcolor{red}{ c
 
 \textbf{\underline{\exemple:}}
 
-Soit la fonction \( f(x)=\frac{1}{2}x^{3}+x-5 \)
-
-Montrer que l'équation \( f(x) = 5 \) admet une solution sur \( [-2 ; 4] \).
+Soit la fonction \( f(x)=\frac{1}{2}x^{3}+x-5 \) continue sur \( [-2 ; 4] \).
 
 \textbf{\underline{\solution:}}
 
-\(f( [-2 ; 4] ) = [ f(-2) ; f(4)] = [-11 ; 31] \).
+\(f( [-2 ; 4] ) = [\lim_{x \to -2} f(x) ; \lim_{x \to 4} f(x)] = [-11 ; 31] \).
 
 D'après le théorème précédent, comme  \(5\in [-11 ; 31] \) donc l'équation \( f(x) = 5 \) a une solution dans \( [-2 ; 4] \).
 
 \textbf{\textcolor{blue}{\underline{NB}}}
 
 \begin{itemize}
-\item Si \(  m = 0 \) il suffit  de montrer que \( \lim_{x \to a} f(x) \times \lim_{x \to b} f(x) <0 \)
-\item Il faut toujours commencer par montrer que \( f \) est solution.
+\item Si \(  m = 0 \) il suffit montrer que \( \lim_{x \to a} f(x) \times \lim_{x \to b} f(x) <0 \)
+\item Il faut toujours commencer par montrer que \( f \) est continue.
 \end{itemize}
 
 \textbf{\underline{\exerciceapp}}
 
-\( f(x) = x^{5} -x +7 \)
+\( f(x) = 2x^{5} + x^{2} + x + 8 \)
 
-Montrer que l’équation \( f(x) = 0 \) admet au moins une solution dans \( [-2 ; -1] \).
+Montrer que l’équation \( f(x) = 0 \) admet au moins une solution dans \( [1 ; 2] \).
 
 \textbf{\underline{\correction}}
 
 \item \textbf{\textcolor{blue}{\underline{Théorème d’existence et d’unicité d’une solution}}}
 
-Si la fonction \( f \) est \textcolor{red}{ continue } et \textcolor{red}{ strictement monotone } (croissante ou bien décroissante) sur \( [a ; b] \). Pour tout réel \( m \) compris entre \( f(a) \) et \( f(b) \), alors l'équation \( f(x) = m \) admet une \textcolor{red}{unique solution }\(\alpha\in [a ; b] \).
+Si la fonction \( f \) est \textcolor{red}{ continue } et \textcolor{red}{ strictement monotone } (croissante ou bien décroissante) sur \( [a ; b] \). Pour tout réel \( m \) compris entre \( f(a) \) et \( f(b) \), alors l'équation \( f(x) = m \) admet une \textcolor{red}{unique continue } dans \(\alpha\in [a ; b] \).
 
 \textbf{\textcolor{blue}{\underline{Ilustration graphique}}}
 
@@ -655,7 +610,7 @@ Si la fonction \( f \) réalise une bijection(continue et strictement monotone) 
 
       \textbf{\textcolor{blue}{\underline{Méthode de dichotomie(Approche par exemple)}}}
       
-      Si \( f \) fonction \textcolor{red}{contenu} \textcolor{red}{strictement} sur un intervalle \( [a;b] \), telle que \( f(a)\geq 0 \) et \( f(b) \leq 0\); alors il existe au moins un réel \( \alpha \) dans  l'intervalle \( [a;b] \) tel que \( f(\alpha) = 0 \).
+      Si \( f \) fonction \textcolor{red}{strictement contenu} sur un intervalle \( [a;b] \), telle que \( f(a)\geq 0 \) et \( f(b) \leq 0\); alors il existe au moins un réel \( \alpha \) dans  l'intervalle \( [a;b] \) tel que \( f(\alpha) = 0 \).
 
 L'idée est alors de trouver le signe de \( f \) au \textcolor{red}{ milieu } de \( [a;b] \), et de distinguer les deux cas
 \begin{itemize}
@@ -701,7 +656,7 @@ f(x) = 2x + 3
     \item La fonction \( f \) est-elle continue sur \(\mathbb{R}\) ?
     \item La fonction \( f \) est-elle strictement monotone sur \(\mathbb{R}\) ?
     \item La fonction \( f \) est-elle une bijection de \(\mathbb{R}\) vers \(\mathbb{R}\) ?
-    \item Déterminer l'expression explicite de la fonction réciproque \( f^{-1} \) de la fonction \( f \) ?
+    \item Déterminer l'expression explicite la fonction réciproque \( f^{-1} \) de la fonction \( f \) ?
     \item La fonction réciproque \( f^{-1} \) est-elle continue et strictement monotone ?
 \end{enumerate}
 
@@ -775,7 +730,7 @@ NB: On note \( f'_{g}(x) \) la dérivé à gauche et \( f'_{d}(x) \) la dérivé
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{6cm}|}
 \hline
-\textbf{Limite} & \textbf{Dérivabilité en \( x_0 \)} & \textbf{Interprétation géométrique : \( (C_f) \) admet} \\
+\textbf{La limite} & \textbf{Dérivabilité en \( x_0 \)} & \textbf{Interprétation géométrique : \( (C_f) \) admet} \\
 \hline
 \[\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = a \ (a \neq 0)\] & \multirow{2}{*}{\(f\) est dérivable en \(x_0\)} & Une tangente au point \( A \left(x_0; f(x_0)\right) \) de coefficient directeur \(a\) \\
 \cline{1-1} \cline{3-3}
@@ -801,7 +756,7 @@ NB: On note \( f'_{g}(x) \) la dérivé à gauche et \( f'_{d}(x) \) la dérivé
 \end{table}
 \subsection*{\underline{\textbf{\textcolor{blue}{4.Dérivabilité sur un intervalle }}}}
 \( f \) est dérivable sur \( ]a ; b[ \) si et seulement si \( f \) est dérivable en tout point
-de \( ]a ; b[ \).
+de \( ]a ; b[ \) .
 
 \textbf{Propriété}:
 \begin{itemize}

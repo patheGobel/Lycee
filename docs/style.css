@@ -313,3 +313,25 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Styles pour les sous-dossiers */
+.subfolder {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.subfolder h5 {
+    margin: 0 0 0.8rem 0;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.subfolder .pdf-item {
+    margin-left: 0.5rem;
+}
