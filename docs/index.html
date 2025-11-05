@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lycée de Dindéfelo — Ressources pédagogiques</title>
-    <!-- Lien vers le fichier CSS -->
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css" />
     <!-- Import de Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -23,11 +21,6 @@
                     <h1>Lycée de Dindéfelo</h1>
                     <p>Accès aux cours, TD et évaluations</p>
                 </div>
-            </div>
-
-            <div class="search-container">
-                <i class="fa-solid fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Rechercher une ressource...">
             </div>
         </div>
     </header>
@@ -58,19 +51,37 @@
                         <div class="folder-info">
                             <i class="fa-solid fa-book"></i> Cours
                         </div>
-                        <div class="file-count">12</div>
+                        <div class="file-count">3</div>
                     </div>
                     <div class="folder" data-class="TerS2" data-type="td">
                         <div class="folder-info">
                             <i class="fa-solid fa-pencil"></i> TD
                         </div>
-                        <div class="file-count">8</div>
+                        <div class="file-count">2</div>
                     </div>
-                    <div class="folder" data-class="TerS2" data-type="evaluation">
+
+                    <!-- Dossier Évaluation avec menu déroulant -->
+                    <div class="folder folder-evaluation" data-class="TerS2" data-type="evaluation">
                         <div class="folder-info">
                             <i class="fa-solid fa-clipboard-check"></i> Évaluation
                         </div>
-                        <div class="file-count">5</div>
+                        <div class="file-count">24</div>
+
+                        <!-- Menu déroulant -->
+                        <div class="evaluation-dropdown">
+                            <div class="sub-folder" data-subfolder="test">
+                                <i class="fa-solid fa-vial"></i>
+                                <span>Test</span>
+                            </div>
+                            <div class="sub-folder" data-subfolder="devoir">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>Devoir</span>
+                            </div>
+                            <div class="sub-folder" data-subfolder="compo">
+                                <i class="fa-solid fa-file-alt"></i>
+                                <span>Compo</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -99,16 +110,16 @@
 
                 <div class="pdf-list" id="TerS2-td">
                     <h4><i class="fa-solid fa-pencil"></i> TD - Terminale S2</h4>
-                    <a href="Lycee/Ts2/Cours/2025/build" class="pdf-item" target="_blank">
+                    <a href="Lycee/Ts2/TD/td1.pdf" class="pdf-item" target="_blank">
                         <div class="pdf-info">
                             <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                            <span class="pdf-name">Exercices Mathématiques</span>
+                            <span class="pdf-name">TD Mathématiques 1</span>
                         </div>
                     </a>
-                    <a href="Lycee/Ts2/Cours/2025/build" class="pdf-item" target="_blank">
+                    <a href="Lycee/Ts2/TD/td2.pdf" class="pdf-item" target="_blank">
                         <div class="pdf-info">
                             <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                            <span class="pdf-name">Problèmes Physique</span>
+                            <span class="pdf-name">TD Physique 1</span>
                         </div>
                     </a>
                 </div>
@@ -117,89 +128,64 @@
                     <h4><i class="fa-solid fa-clipboard-check"></i> Évaluations - Terminale S2</h4>
 
                     <!-- Sous-dossier Test -->
-                    <div class="subfolder">
+                    <div class="subfolder" data-subfolder="test">
                         <h5><i class="fa-solid fa-vial"></i> Test</h5>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test1.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 1</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test2.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 2</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test3.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 3</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test4.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 4</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test5.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 5</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test6.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 6</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test7.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 7</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test8.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 8</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test9.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 9</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test10.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 10</span>
-                            </div>
-                        </a>
-                        <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test11.pdf" class="pdf-item"
-                            target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test 11</span>
-                            </div>
-                        </a>
+
+                        <!-- Sous-sous-dossier Epreuves -->
+                        <div class="sub-subfolder">
+                            <h6><i class="fa-solid fa-file-lines"></i> Epreuves</h6>
+                            <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test1.pdf" class="pdf-item"
+                                target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Test 1</span>
+                                </div>
+                            </a>
+                            <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test2.pdf" class="pdf-item"
+                                target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Test 2</span>
+                                </div>
+                            </a>
+                            <a href="Lycee/Ts2/Evaluation/Tests/Epreuves/2025/build/test3.pdf" class="pdf-item"
+                                target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Test 3</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Sous-sous-dossier Corrections -->
+                        <div class="sub-subfolder">
+                            <h6><i class="fa-solid fa-check-double"></i> Corrections</h6>
+                            <a href="Lycee/Ts2/Evaluation/Tests/Corrections/2025/build/correction_test1.pdf"
+                                class="pdf-item" target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Correction Test 1</span>
+                                </div>
+                            </a>
+                            <a href="Lycee/Ts2/Evaluation/Tests/Corrections/2025/build/correction_test2.pdf"
+                                class="pdf-item" target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Correction Test 2</span>
+                                </div>
+                            </a>
+                            <a href="Lycee/Ts2/Evaluation/Tests/Corrections/2025/build/correction_test3.pdf"
+                                class="pdf-item" target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Correction Test 3</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Sous-dossier Devoir -->
-                    <div class="subfolder">
+                    <div class="subfolder" data-subfolder="devoir">
                         <h5><i class="fa-solid fa-book-open"></i> Devoir</h5>
                         <a href="Lycee/Ts2/Evaluation/Devoir/devoir_maison1.pdf" class="pdf-item" target="_blank">
                             <div class="pdf-info">
@@ -216,7 +202,7 @@
                     </div>
 
                     <!-- Sous-dossier Compo -->
-                    <div class="subfolder">
+                    <div class="subfolder" data-subfolder="compo">
                         <h5><i class="fa-solid fa-file-alt"></i> Compo</h5>
                         <a href="Lycee/Ts2/Evaluation/Compo/composition1.pdf" class="pdf-item" target="_blank">
                             <div class="pdf-info">
@@ -242,32 +228,50 @@
                         <div class="folder-info">
                             <i class="fa-solid fa-book"></i> Cours
                         </div>
-                        <div class="file-count">10</div>
+                        <div class="file-count">2</div>
                     </div>
                     <div class="folder" data-class="2ndS" data-type="td">
                         <div class="folder-info">
                             <i class="fa-solid fa-pencil"></i> TD
                         </div>
-                        <div class="file-count">6</div>
+                        <div class="file-count">1</div>
                     </div>
-                    <div class="folder" data-class="2ndS" data-type="evaluation">
+
+                    <!-- Dossier Évaluation avec menu déroulant -->
+                    <div class="folder folder-evaluation" data-class="2ndS" data-type="evaluation">
                         <div class="folder-info">
                             <i class="fa-solid fa-clipboard-check"></i> Évaluation
                         </div>
-                        <div class="file-count">4</div>
+                        <div class="file-count">3</div>
+
+                        <!-- Menu déroulant -->
+                        <div class="evaluation-dropdown">
+                            <div class="sub-folder" data-subfolder="test">
+                                <i class="fa-solid fa-vial"></i>
+                                <span>Test</span>
+                            </div>
+                            <div class="sub-folder" data-subfolder="devoir">
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>Devoir</span>
+                            </div>
+                            <div class="sub-folder" data-subfolder="compo">
+                                <i class="fa-solid fa-file-alt"></i>
+                                <span>Compo</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Liste des PDF pour Seconde S -->
                 <div class="pdf-list" id="2ndS-cours">
                     <h4><i class="fa-solid fa-book"></i> Cours - Seconde S</h4>
-                    <a href="Lycée/2ndS/Cours/Mathématiques.pdf" class="pdf-item" target="_blank">
+                    <a href="Lycee/2ndS/Cours/Mathématiques.pdf" class="pdf-item" target="_blank">
                         <div class="pdf-info">
                             <i class="fa-solid fa-file-pdf pdf-icon"></i>
                             <span class="pdf-name">Mathématiques</span>
                         </div>
                     </a>
-                    <a href="Lycée/2ndS/Cours/Physique-Chimie.pdf" class="pdf-item" target="_blank">
+                    <a href="Lycee/2ndS/Cours/Physique-Chimie.pdf" class="pdf-item" target="_blank">
                         <div class="pdf-info">
                             <i class="fa-solid fa-file-pdf pdf-icon"></i>
                             <span class="pdf-name">Physique-Chimie</span>
@@ -277,7 +281,7 @@
 
                 <div class="pdf-list" id="2ndS-td">
                     <h4><i class="fa-solid fa-pencil"></i> TD - Seconde S</h4>
-                    <a href="Lycée/2ndS/TD/Exercices_Mathématiques.pdf" class="pdf-item" target="_blank">
+                    <a href="Lycee/2ndS/TD/Exercices_Mathématiques.pdf" class="pdf-item" target="_blank">
                         <div class="pdf-info">
                             <i class="fa-solid fa-file-pdf pdf-icon"></i>
                             <span class="pdf-name">Exercices Mathématiques</span>
@@ -289,20 +293,38 @@
                     <h4><i class="fa-solid fa-clipboard-check"></i> Évaluations - Seconde S</h4>
 
                     <!-- Sous-dossier Test -->
-                    <div class="subfolder">
+                    <div class="subfolder" data-subfolder="test">
                         <h5><i class="fa-solid fa-vial"></i> Test</h5>
-                        <a href="Lycée/2ndS/Evaluation/Test/test_maths.pdf" class="pdf-item" target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test Mathématiques</span>
-                            </div>
-                        </a>
+
+                        <!-- Sous-sous-dossier Epreuves -->
+                        <div class="sub-subfolder">
+                            <h6><i class="fa-solid fa-file-lines"></i> Epreuves</h6>
+                            <a href="Lycee/2ndS/Evaluation/Tests/Epreuves/test_maths.pdf" class="pdf-item"
+                                target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Test Mathématiques</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Sous-sous-dossier Corrections -->
+                        <div class="sub-subfolder">
+                            <h6><i class="fa-solid fa-check-double"></i> Corrections</h6>
+                            <a href="Lycee/2ndS/Evaluation/Tests/Corrections/correction_test_maths.pdf" class="pdf-item"
+                                target="_blank">
+                                <div class="pdf-info">
+                                    <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                                    <span class="pdf-name">Correction Test Mathématiques</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Sous-dossier Devoir -->
-                    <div class="subfolder">
+                    <div class="subfolder" data-subfolder="devoir">
                         <h5><i class="fa-solid fa-book-open"></i> Devoir</h5>
-                        <a href="Lycée/2ndS/Evaluation/Devoir/devoir_physique.pdf" class="pdf-item" target="_blank">
+                        <a href="Lycee/2ndS/Evaluation/Devoir/devoir_physique.pdf" class="pdf-item" target="_blank">
                             <div class="pdf-info">
                                 <i class="fa-solid fa-file-pdf pdf-icon"></i>
                                 <span class="pdf-name">Devoir Physique</span>
@@ -311,97 +333,12 @@
                     </div>
 
                     <!-- Sous-dossier Compo -->
-                    <div class="subfolder">
+                    <div class="subfolder" data-subfolder="compo">
                         <h5><i class="fa-solid fa-file-alt"></i> Compo</h5>
-                        <a href="Lycée/2ndS/Evaluation/Compo/composition1.pdf" class="pdf-item" target="_blank">
+                        <a href="Lycee/2ndS/Evaluation/Compo/composition1.pdf" class="pdf-item" target="_blank">
                             <div class="pdf-info">
                                 <i class="fa-solid fa-file-pdf pdf-icon"></i>
                                 <span class="pdf-name">Composition 1er Trimestre</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Continuez avec la même structure pour les autres classes -->
-        </div>
-
-        <!-- Section CEM -->
-        <h2><i class="fa-solid fa-building-columns"></i> CEM</h2>
-        <div class="classes">
-            <div class="class-card" data-class="cem" data-level="quatrieme">
-                <h3><i class="fa-solid fa-user-graduate"></i> 4ème</h3>
-                <span class="new-badge">Nouveau</span>
-                <div class="folders">
-                    <div class="folder" data-class="4EME" data-type="cours">
-                        <div class="folder-info">
-                            <i class="fa-solid fa-book"></i> Cours
-                        </div>
-                        <div class="file-count">15</div>
-                    </div>
-                    <div class="folder" data-class="4EME" data-type="td">
-                        <div class="folder-info">
-                            <i class="fa-solid fa-pencil"></i> TD
-                        </div>
-                        <div class="file-count">9</div>
-                    </div>
-                    <div class="folder" data-class="4EME" data-type="evaluation">
-                        <div class="folder-info">
-                            <i class="fa-solid fa-clipboard-check"></i> Évaluation
-                        </div>
-                        <div class="file-count">6</div>
-                    </div>
-                </div>
-
-                <!-- Liste des PDF pour 4ème -->
-                <div class="pdf-list" id="4EME-cours">
-                    <h4><i class="fa-solid fa-book"></i> Cours - 4ème</h4>
-                    <a href="Collège/4EME/Cours/Mathématiques.pdf" class="pdf-item" target="_blank">
-                        <div class="pdf-info">
-                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                            <span class="pdf-name">Mathématiques</span>
-                        </div>
-                    </a>
-                    <a href="Collège/4EME/Cours/Français.pdf" class="pdf-item" target="_blank">
-                        <div class="pdf-info">
-                            <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                            <span class="pdf-name">Français</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="pdf-list" id="4EME-evaluation">
-                    <h4><i class="fa-solid fa-clipboard-check"></i> Évaluations - 4ème</h4>
-
-                    <!-- Sous-dossier Test -->
-                    <div class="subfolder">
-                        <h5><i class="fa-solid fa-vial"></i> Test</h5>
-                        <a href="Collège/4EME/Evaluation/Test/test_maths.pdf" class="pdf-item" target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Test Mathématiques</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Sous-dossier Devoir -->
-                    <div class="subfolder">
-                        <h5><i class="fa-solid fa-book-open"></i> Devoir</h5>
-                        <a href="Collège/4EME/Evaluation/Devoir/devoir_francais.pdf" class="pdf-item" target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Devoir Français</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Sous-dossier Compo -->
-                    <div class="subfolder">
-                        <h5><i class="fa-solid fa-file-alt"></i> Compo</h5>
-                        <a href="Collège/4EME/Evaluation/Compo/composition.pdf" class="pdf-item" target="_blank">
-                            <div class="pdf-info">
-                                <i class="fa-solid fa-file-pdf pdf-icon"></i>
-                                <span class="pdf-name">Composition</span>
                             </div>
                         </a>
                     </div>
@@ -413,7 +350,6 @@
     <footer>
         © 2025 Lycée de Dindéfelo — Ressources pédagogiques
     </footer>
-    <!-- Lien vers ton fichier JS -->
     <script src="script.js"></script>
 </body>
 

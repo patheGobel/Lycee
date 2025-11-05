@@ -68,29 +68,6 @@ header {
     opacity: 0.9;
 }
 
-.search-container {
-    flex: 1;
-    max-width: 400px;
-    margin: 1rem 0 0;
-    position: relative;
-}
-
-.search-container input {
-    width: 100%;
-    padding: 0.8rem 1rem 0.8rem 2.5rem;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.search-container i {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--gray);
-}
-
 .container {
     max-width: 1000px;
     margin: 2rem auto;
@@ -153,7 +130,6 @@ h2 {
     padding: 1.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
     position: relative;
 }
 
@@ -199,6 +175,7 @@ h2 {
     text-decoration: none;
     transition: background 0.2s;
     cursor: pointer;
+    position: relative;
 }
 
 .folder:hover {
@@ -223,7 +200,47 @@ h2 {
     font-size: 0.7rem;
 }
 
-/* Styles pour la liste des PDF */
+/* Menu déroulant pour Évaluation */
+.evaluation-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.folder-evaluation:hover .evaluation-dropdown {
+    display: flex;
+}
+
+.sub-folder {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    color: var(--dark);
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.sub-folder:hover {
+    background: #e9f2ff;
+}
+
+.sub-folder i {
+    width: 16px;
+    text-align: center;
+}
+
 .pdf-list {
     display: none;
     margin-top: 1rem;
@@ -290,30 +307,6 @@ h2 {
     display: flex;
 }
 
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: var(--primary);
-    color: var(--white);
-    margin-top: 3rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .search-container {
-        max-width: 100%;
-    }
-
-    .classes {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Styles pour les sous-dossiers */
 .subfolder {
     margin-bottom: 1.5rem;
@@ -332,6 +325,55 @@ footer {
     font-size: 1rem;
 }
 
-.subfolder .pdf-item {
-    margin-left: 0.5rem;
+/* Styles pour les sous-sous-dossiers */
+.sub-subfolder {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.sub-subfolder h6 {
+    margin: 0 0 0.6rem 0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sub-subfolder .pdf-item {
+    margin-left: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary);
+    color: var(--white);
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .classes {
+        grid-template-columns: 1fr;
+    }
+
+    .evaluation-dropdown {
+        position: fixed;
+        top: auto;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
 }
