@@ -1,0 +1,262 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{enumitem}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.9}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+
+\newcounter{exercice}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exercice}{%
+  \refstepcounter{exercice}% Incrémenter le compteur
+  \textbf{\textcolor{black}{Exercice \theexercice  }} \ignorespaces
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2025-2026}\\
+Date : 06/11/2025\\
+Classe : 1er L\\
+Professeur : M. BA
+\end{minipage}
+
+\vspace{0.5cm}
+
+\begin{center}
+\textbf{SYSTEMES D’EQUATIONS ET D’INEQUATIONS}
+\end{center}
+
+\section*{Exercice 1}
+
+\textbf{A/} Rappeler les règles d'opérations autorisées sur les lignes \(L_i\) d’un système linéaire, dans la méthode du pivot de Gauss, pour obtenir un système équivalent.
+
+\vspace{0.3cm}
+
+\textbf{B/} Pour chacune des questions suivantes, une seule des réponses proposées est exacte.
+
+\begin{enumerate}
+  \item Le système 
+  \[
+  \begin{cases}
+  2x + y - 5z = 0 \\
+  -10y + 2z = 20 \\
+  4z = 0
+  \end{cases}
+  \]
+  a pour ensemble solution :
+  \begin{align*}
+  a)~S = \{(0,0,0)\} \qquad 
+  b)~\varnothing \qquad 
+  c)~S = \{(1,-2,0)\}
+  \end{align*}
+
+  \item Le système 
+  \[
+  \begin{cases}
+  x + y + z = 15 \\
+  -x - y + 2z = 0 \\
+  2x + y - z = 8
+  \end{cases}
+  \]
+  a pour ensemble solution :
+  \begin{align*}
+  a)~\{(9,1,5)\} \qquad 
+  b)~\{(7,4,4)\} \qquad 
+  c)~\{(3,7,5)\} \qquad 
+  d)~\{(4,7,4)\}
+  \end{align*}
+
+  \item Le demi-plan d’inéquation \(2x - 5y + 9 < 0\) contient le point :
+  \begin{align*}
+  a)~(0,0) \qquad 
+  b)~(-3,1) \qquad 
+  c)~(-2,-1)
+  \end{align*}
+
+  \item Le système 
+  \[
+  \begin{cases}
+  5x - 7y = -22 \\
+  x + 2y < -1
+  \end{cases}
+  \]
+  définit un ensemble qui contient le point :
+  \begin{align*}
+  a)~(1,1) \qquad 
+  b)~(-3,1) \qquad 
+  c)~(2,-5)
+  \end{align*}
+\end{enumerate}
+
+\section*{Exercice 2}
+Résoudre dans $\mathbb{R}^3$ les systèmes suivants, par la méthode du \emph{pivot de Gauss}.
+
+\begin{enumerate}
+  \item
+  \[
+  \begin{cases}
+  2x + y - 5z = 0\\[4pt]
+  3x - y + 2z = -12\\[4pt]
+  2x - 4y - 10z = 10
+  \end{cases}
+  \]
+
+  \item
+  \[
+  \begin{cases}
+  6x - 2y - 4z = 0\\[4pt]
+  x + y - z = 1\\[4pt]
+  5x - 5y + z = 1
+  \end{cases}
+  \]
+
+  \item
+  \[
+  \begin{cases}
+  3a + 2b - 5c = -8\\[4pt]
+  -a + 4b + c = 6\\[4pt]
+  2a - b + 3c = 5
+  \end{cases}
+  \]
+
+  \item (système à quatre inconnues $x,y,z,t$)
+  \[
+  \begin{cases}
+  3x - 2y - 5z + t = -5\\[4pt]
+  2x + 3y - 3z + 2t = -6\\[4pt]
+  5x - 2y + 2z - 3t = -4\\[4pt]
+  2x - 4y + z - t = 2
+  \end{cases}
+  \]
+\end{enumerate}
+
+\vspace{0.6cm}
+\section*{Exercice 3}
+À l'aide de graphiques différents, résoudre chacun des systèmes d'inéquations :
+
+\begin{enumerate}
+  \item
+  \[
+  \begin{cases}
+  3x + y < 2\\[4pt]
+  2x - 3y > 1
+  \end{cases}
+  \]
+
+  \item
+  \[
+  \begin{cases}
+  x + y - 2 \le 0\\[4pt]
+  x \ge 0\\[4pt]
+  y < 3
+  \end{cases}
+  \]
+
+  \item
+  \[
+  \begin{cases}
+  4x - 5y + 6 > 0\\[4pt]
+  5x + y - 7 < 0\\[4pt]
+  x + 6y + 16 > 0
+  \end{cases}
+  \]
+\end{enumerate}
+
+\section*{Exercice 4}
+Dans un marché, trois enfants achètent les mêmes variétés de fruits, le 1er achète une orange, deux mandarines et une banane et paye 65 F; le 2ème achète deux oranges, une mandarine et trois bananes et paye 125 F et le 3ème achète trois oranges, une mandarine et une banane et paye 95 F. \\
+Quel est le prix unitaire de chaque variété de fruit ?
+
+\vspace{0.5cm}
+
+\section*{Exercice 5}
+Paul possède trois (03) sacs dont un (01) de maïs, un (01) d’igname et un (01) de riz. Les trois (03) sacs pèsent ensemble 120kg. La somme des poids du sac de maïs et du sac de riz est le double de celui du sac d’igname. S’il on ajoute 75kg au sac du riz, son poids sera le double de la somme des poids du sac du maïs et du sac d’igname. On désigne par le poids du sac de maïs, y celui du sac d’igname, et z celui du sac de riz
+
+\begin{enumerate}
+    \item Déterminer le système (S) que vérifient x, y et z
+    \item En déduire le poids de chaque sac.
+\end{enumerate}
+\section*{Exercice 6}
+\textbf{1) Résoudre dans $\mathbb{R}^3$ le système suivant, par la méthode du pivot de Gauss.}
+
+\[
+\text{a)} 
+\begin{cases}
+x + y + z = -1 \\
+x - y + z = 2 \\
+4x + 2y + z = -4
+\end{cases}
+\]
+
+\textbf{2) Soit le polynôme $P(x) = x^3 + a x^2 + b x + c$ où $a$, $b$, $c$ sont trois nombres réels.}
+
+Déterminer $a$, $b$, $c$ sachant que $P(1) = 0$, $P(-1) = 1$ et $P(2) = 4$.\\[0.3cm]
+\textbf{3)} Factoriser $P(x)$.
+
+\section*{Exercice 7}
+
+Une entreprise fabrique deux types de produits, $A$ et $B$.
+
+\begin{itemize}
+    \item Chaque unité de produit $A$ nécessite 2 heures de travail en machine et 3 unités de matière première.
+    \item Chaque unité de produit $B$ nécessite 4 heures de travail en machine et 2 unités de matière première.
+\end{itemize}
+
+L’entreprise dispose de :
+\begin{itemize}
+    \item 60 heures de travail en machine.
+    \item 40 unités de matière première.
+\end{itemize}
+
+Les bénéfices pour chaque unité de produit $A$ et $B$ sont respectivement de 10 et 15.\\
+Soit $x$ le nombre d’unités de $A$ et $y$ le nombre d’unités de $B$.
+
+\begin{enumerate}
+    \item Écrire l’expression du bénéfice à maximiser en fonction de $x$ et $y$.
+    \item Écrire l’inéquation qui traduit les contraintes sur le nombre d’heures de machine.
+    \item Écrire l’inéquation qui traduit les contraintes sur la quantité de matière première.
+    \item Écrire le système des contraintes de l’entreprise.
+    \item Déterminer combien d’unités de chaque produit doivent être fabriquées pour maximiser le bénéfice.
+\end{enumerate}
+\end{document}
