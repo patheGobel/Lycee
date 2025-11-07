@@ -18,27 +18,30 @@
 \newcounter{correction} % Compteur pour les questions
 
 % Définir la commande pour afficher une question numérotée
-
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection  :}} \ignorespaces
+}
 % Commande pour ajouter du texte en arrière-plan
 \AddToShipoutPicture{
     \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{10cm}{10cm}\selectfont PGB}}}
     }
 }
 \begin{document}
-\hrule % Barre horizontale
+
 % En-tête
 \begin{center}
-    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
-        Lycée Dindéfélo & \quad\quad\quad Test 1 & 11 Mars 2025 \\
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}}\\[0.2cm] % 3 colonnes avec largeurs fixées
+        Lycée Dindéfélo & Test 1 & 07 Novembre 2025 \\[0.2cm]
     \end{tabular}
     \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
     \hrule % Barre horizontale
 \end{center}
 \begin{center}
-    \textbf{\Large Trinôme du second degré} \\[0.2cm]
+    \textbf{\Large Calcul Dans $\mathbb{R}$} \\[0.2cm]
     \textbf{\large Professeur : M. BA} \\[0.2cm]
-    \textbf{Classe : 2ndL} \\[0.2cm]
+    \textbf{Classe : 2nd S} \\[0.2cm]
     \textbf{\small Durée : 10 minutes} \\[0.2cm]
     \textbf{\small Note :\quad\quad /5}
 \end{center}
@@ -46,12 +49,85 @@
 % Nom de l'élève
 \textbf{\small Nom de l'élève :} \underline{\hspace{8cm}} \\[0.5cm]
 
-\( A(x) = 2x^2 - 4x - 30 \)
+% Introduction aux questions
+%Complétez les exercices suivants en utilisant le cours et vos connaissances sur les asymptotes. \\[0.3cm]
 
-\begin{enumerate}
-    \item Calculer le discriminant \(\Delta\)
-    \item Donner la forme canonique
-    \item Factoriser le trinôme (si possible)
-\end{enumerate}
+\question \textbf{(2 points)}
+Complèter les identités suivantes
+\[
+(a+t)^{3} = \underline{\hspace{7cm}}, \hspace{2cm} (a-t)^{3} = \underline{\hspace{7cm}}
+\]
+\[
+a^{3}+t^{3} = \underline{\hspace{7cm}}, \hspace{2cm} a^{3}-t^{3} = \underline{\hspace{7cm}}
+\]
+
+\question \textbf{(3 points)}
+Factoriser les expressions suivantes
+\[
+ a^2xy + aby^2 + b^2xy + abx^2  = \underline{\hspace{14cm}}
+\]
+\[
+  \hspace{4.2cm} = \underline{\hspace{14cm}}
+\]
+\[
+  \hspace{4.2cm} = \underline{\hspace{14cm}}
+\]
+\[
+  \hspace{4.2cm} = \underline{\hspace{14cm}}
+\]
+\[
+  \hspace{4.2cm} = \underline{\hspace{14cm}}
+\]
+\[
+  \hspace{4.2cm} = \underline{\hspace{14cm}}
+\]
+\[
+  \hspace{4.2cm} = \underline{\hspace{14cm}}
+\]
+\[
+ 3a^2 + 3b^2 - 12c^2 - 6ab  = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{3.42cm} = \underline{\hspace{14cm}}
+\]
+\[
+  y^2 - x^2 + 2x - 1 = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{2.5cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{2.5cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{2.5cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{2.5cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{2.5cm} = \underline{\hspace{14cm}}
+\]
+\[
+ \hspace{2.5cm} = \underline{\hspace{14cm}}
+\]
 
 \end{document}

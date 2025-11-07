@@ -356,6 +356,36 @@ footer {
     margin-top: 3rem;
 }
 
+/* Styles pour les dossiers d'année */
+.year-folder {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f0f8ff;
+    border-radius: 8px;
+    border-left: 4px solid #17a2b8;
+}
+
+.year-folder h6 {
+    margin: 0 0 0.8rem 0;
+    color: #17a2b8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Styles pour les sous-sous-dossiers (niveau 7) */
+.sub-subfolder h7 {
+    margin: 0 0 0.6rem 0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .header-content {

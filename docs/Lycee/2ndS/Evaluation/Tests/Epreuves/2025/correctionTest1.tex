@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection (1 point) :}} \ignorespaces
+}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}}\\[0.2cm]
+        Lycée Dindéfélo & Test 1 — Correction & 07 Novembre 2025 \\[0.2cm]
+    \end{tabular}
+    \\[-0.01cm]
+    \hrule
+\end{center}
+
+\begin{center}
+    \textbf{\Large Calcul Dans $\mathbb{R}$ — Correction} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : 2nd S} \\[0.2cm]
+    \textbf{\small Durée : 10 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /5}
+\end{center}
+
+\vspace{0.3cm}
+
+%==================== QUESTION 1 ====================
+\question
+Compléter les identités suivantes :
+
+\[
+(a+t)^{3} = a^{3}+3a^{2}t+3at^{2}+t^{3}, \hspace{2cm} (a-t)^{3} = a^{3}-3a^{2}t+3at^{2}-t^{3}
+\]
+\[
+a^{3}+t^{3} = (a+t)(a^{2}-at+t^{2}), \hspace{2cm} a^{3}-t^{3} = (a-t)(a^{2}+at+t^{2})
+\]
+
+\vspace{0.5cm}
+
+%==================== QUESTION 2 ====================
+\question
+Factoriser les expressions suivantes :
+
+\[
+a^2xy + aby^2 + b^2xy + abx^2 = (ax+by)(ay+bx)
+\]
+
+\[
+3a^2 + 3b^2 - 12c^2 - 6ab = 3\bigl((a-b)^2 - (2c)^2\bigr) = 3(a-b-2c)(a-b+2c)
+\]
+
+\[
+y^2 - x^2 + 2x - 1 = y^2 - (x^2 - 2x + 1) = y^2 - (x-1)^2 = (y - (x-1))(y + (x-1)) = (y-x+1)(y+x-1)
+\]
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Barème indicatif (sur 5 points)}
+\end{center}
+
+\begin{itemize}
+  \item Identités remarquables : 2 pts (0,5 pt chacune)
+  \item Factorisation de $a^2xy + aby^2 + b^2xy + abx^2$ : 1,5 pt
+  \item Factorisation de $3a^2 + 3b^2 - 12c^2 - 6ab$ : 1 pt
+  \item Factorisation de $y^2 - x^2 + 2x - 1$ : 0,5 pt
+\end{itemize}
+
+\end{document}
