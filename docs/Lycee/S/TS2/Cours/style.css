@@ -1,0 +1,212 @@
+:root {
+    --primary: #3a86ff;
+    --secondary: #8338ec;
+    --accent: #ff006e;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #38b000;
+    --border-radius: 12px;
+    --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--secondary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    /* centre horizontalement les cartes */
+    gap: 2rem;
+    /* espace entre les cartes */
+    flex-wrap: wrap;
+    /* pour que ça passe en ligne ou s’empile sur mobile */
+    margin-bottom: 3rem;
+}
+
+
+.card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-toggle {
+    width: 100%;
+    border: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    padding: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    transition: var(--transition);
+}
+
+.dropdown-toggle:hover {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.dropdown-toggle::after {
+    content: "▼";
+    font-size: .8rem;
+    transition: var(--transition);
+}
+
+.dropdown-toggle.active::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background: #f9f9f9;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+.dropdown-content.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 1.1rem 1.5rem;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+    background: #eef2ff;
+    color: var(--primary);
+    padding-left: 2rem;
+}
+
+.dropdown-content a::before {
+    content: "•";
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+#btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 1.1rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    border: 0;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    width: 200px;
+}
+
+#btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+#btn:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 992px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .dropdown-toggle {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.4s;
+}
