@@ -24,6 +24,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tkz-tab}
+\usepackage[table]{xcolor}
 \author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
 \title{\textbf{Rappels et compléments sur les fonctions numériques}}
 \date{\today}
@@ -914,27 +915,34 @@ Il serait utile de connaitre les résultats figurant sur le tableau suivant :
     \caption{Tableau des primitives}
 \end{table}
 
-Lorsque $U$ désigne une fonction dérivable sur $I$, positive et non nulle dans certains cas, on a :
-
+\begin{tabular}{|m{6cm}|m{8cm}|}
+\hline
+\centering \textbf{Primitive de } \(u' u^n\) &
 \[
-\frac{U'}{U^2} \text{ a pour primitives } -\frac{1}{U} + k
+\frac{u^{n+1}}{n+1}
 \]
+\\ \hline
 
+\centering \textbf{Primitive de } \(\dfrac{u'}{u^n}\quad n\neq 1\) &
 \[
-U' \times U^n \text{ a pour primitives } \frac{U^{n+1}}{n+1} + k
+-\frac{1}{(n-1)u^{\,n-1}}
 \]
+\\ \hline
 
+\centering \textbf{Primitive de } \(\dfrac{u'}{\sqrt{u}}\) &
 \[
-U' \times \sqrt{U} \text{ a pour primitives } \frac{2}{3} U \sqrt{U} + k
+2\sqrt{u}
 \]
+\\ \hline
 
+\centering \textbf{Primitive de } \(f(ax+b)\) &
 \[
-\frac{U'}{\sqrt{U}} \text{ a pour primitives } 2 \sqrt{U} + k
+\frac{1}{a} F(ax+b)
 \]
+\\ \hline
 
-\[
-\frac{U'}{U^n} \text{ peut être ramenée à la forme } U' \times U^{-n}
-\]
+\end{tabular}
+
 			\textbf{\underline{\exerciceapp}}
 			
 1.Déterminer toutes les primitives des fonctions suivantes, sur un intervalle bien choisi : 

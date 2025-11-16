@@ -1,0 +1,224 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{tkz-tab}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage{makecell}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.9}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+\newcounter{exercice}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exercice}{%
+  \refstepcounter{exercice}% Incrémenter le compteur
+  \textbf{\textcolor{black}{Exercice \theexercice  }} \ignorespaces
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2025-2026}\\
+Date : 12/11/2025\\
+Classe : 4M2\\
+Professeur : M. BA
+\end{minipage}
+
+\vspace{0.5cm}
+
+\begin{center}
+\textbf{Nombres Rationnels}
+\end{center}
+
+\exercice « Opérations sur les nombres décimaux »
+
+\textbf{1. Calculer les additions suivantes.}
+
+\[ A = (+7,5) + (+13,5) \quad;\quad B = (-13,5) + (-10)\quad;\quad C = (-13) + (+20) \quad;\quad D = (+103,5) + (+10)\]
+
+\[
+E = (-103,5) + (+13,5) \quad;\quad F = -7,5 + 1,5
+\]
+
+\textbf{2. Calculer les soustractions suivantes.}
+
+\[ A = (+7,5) - (-13,5) \quad;\quad B = (-6,5) - (+13,5)\quad;\quad C = (-7,5) - (+1,3) \quad;\quad D = (-8,5) - (-4,10)\]
+
+\exercice : « Somme algébrique »
+
+\textbf{Calculer chacune des expressions suivantes.}
+\[ A = -16 + 1,5 - 18,1 - 0,9 + 5,5 \quad;\quad B = +60 - 40,5 - 18,5 + 0,5 - 30 \]
+\[
+C = 28,5 - 16,5 + 12,9 - 0,90 - 13,5 - 7,5\quad;\quad D = (-84) + (+75) + (-5) + (+18)\quad;\quad 
+\]
+
+\exercice : « Somme algébrique »
+
+\textbf{1. Calculer chacune des expressions suivantes en utilisant la règle de la suppression des parenthèses.}
+\[ A = (-13) + (-4) - (-7) - (+2) + (+8) \quad;\quad B = (+3,5) - (+13) + (+12) - (-7,5) \]
+\[
+C = (+14) - (+13) - (+6) - (-8) - (+18)\quad;\quad D = -(-84) - (+75) - (-5) + (+18)
+\]
+
+\exercice : « Somme algébrique »
+
+\textbf{1. Calculer chacune des expressions suivantes de deux manières différentes.}
+
+\[ A = (-7,5) - (-17,5) + (-14) - (+2) \quad;\quad B = (-10,5) - (+10,15) + (+0,15) - (+9,5) \]
+\[
+C = (+140) - (-14,5) - (+4,5) + (+7) - (+18) \quad;\quad D = -(-4) - (+75) - (-5) + (+18) 
+\]
+
+\exercice :
+
+\textbf{1. Compléter les pointillés par : } \( \in \) \text{ ou } \( \notin \)
+\[ \dfrac{21}{3}\; \ldots\; \mathbb{N} \quad;\quad \dfrac{41}{3}\; \ldots\; \mathbb{N} \quad;\quad \dfrac{21}{11}\; \ldots\; \mathbb{D}\quad ;\quad \dfrac{40}{12}\; \ldots\; \mathbb{Q}\quad ;\quad \dfrac{125}{375}\; \ldots\; \mathbb{Q}^+ \]
+\[
+\dfrac{365}{73}\; \ldots\; \mathbb{Z} \quad ;\quad \dfrac{121}{11}\; \ldots\; \mathbb{Q}\quad ;\quad \dfrac{42}{6}\; \ldots\; \mathbb{I D} \quad ;\quad -15,5\; \ldots\; \mathbb{Q}\quad ;\quad \dfrac{41}{3}\; \ldots\; \mathbb{N}\quad ;\quad \dfrac{45}{6}\; \ldots\; \mathbb{N}
+\]
+
+\textbf{2. Compléter les pointillés par : } \( \subset \) \text{ ou } \( \not\subset \)
+
+\[
+\mathbb{N}\; \ldots\; \mathbb{Q}
+\quad ;\quad 
+\mathbb{Z}\; \ldots\; \mathbb{N}
+\quad ;\quad 
+\mathbb{D}\; \ldots\; \mathbb{Q}
+\quad ;\quad 
+\mathbb{I D}\; \ldots\; \mathbb{Q}
+\quad ;\quad 
+\mathbb{Q}\; \ldots\; \mathbb{I D}
+\]
+
+\exercice : \textbf{Le PGCD et le PPCM}
+
+\[
+1.\quad \text{Calculer } \; \text{PGCD}(504; 492) \; \text{et} \; \text{PGCD}(888; 777)
+\]
+
+\[
+\text{Puis simplifier la fraction :} \quad 
+A = \dfrac{504}{492} 
+\quad ; \quad 
+B = \dfrac{888}{777}
+\]
+
+\exercice : Écrire un nombre rationnel sous plusieurs formes.
+
+1) \textit{On peut remplacer :}\\
+\( \text{ a) }\dfrac{6}{4} \text{ par } \dfrac{3}{2} \text{ b) } \dfrac{3}{5} \text{ par } \dfrac{12}{20} \text{ c) } \dfrac{25}{45} \text{ par } \dfrac{5}{9} \textbf{ Pourquoi ?}\)
+
+\medskip
+
+2) \textit{On peut remplacer :}\\
+\( \text{ a) }\dfrac{1}{4} \text{ par } \dfrac{8}{32} \text{ b) } \dfrac{2}{5} \text{ par } \dfrac{4}{10} \text{ c) } \dfrac{5}{4} \text{ par } \dfrac{35}{28} \textbf{ Pourquoi ?}\) 
+
+\noindent\textbf{3) Simplifie l'écriture des nombres rationnels suivants :}
+
+\[
+\dfrac{56}{720} \; ; \quad 
+\dfrac{-45}{75} \; ; \quad 
+\dfrac{42}{-1050} \; ; \quad 
+\dfrac{-126}{270} \; ; \quad 
+\dfrac{-378}{440}
+\]
+
+\exercice : Addition et soustraction des nombres rationnels.
+
+
+\textbf{1. Calculer les sommes suivantes puis simplifier :}
+
+\[ \text{A}= \dfrac{3}{4} + \dfrac{5}{-3} \quad;\quad \text{B}= 7 + \dfrac{-3}{2} \quad;\quad \text{C}= \left(-\dfrac{2}{13}\right) + \left(-\dfrac{7}{13}\right) \quad;\quad \text{D} = \dfrac{-6}{7} + \dfrac{5}{7}\]
+
+\[ \text{E}= \dfrac{-3}{4} + \dfrac{5}{12} \quad;\quad \text{F}= \dfrac{-2}{7} + \dfrac{-3}{14} \quad;\quad \text{G}= \left(-\dfrac{2}{3}\right) + \left(-\dfrac{7}{27}\right) \quad;\quad \text{H} = \dfrac{3}{4} + \dfrac{-23}{20} \]
+
+\textbf{2. Calculer les différences suivantes puis simplifier :}
+
+\[
+1.)\quad \dfrac{12}{11} - \dfrac{25}{11} \quad
+2.)\quad  \dfrac{42}{37} - \dfrac{19}{37}\quad
+3.)\quad  \dfrac{10}{3} - \dfrac{-9}{8} \quad
+4.)\quad  \dfrac{-17}{10} - \dfrac{8}{5} \quad
+5.)\quad  \dfrac{14}{25} - 1.
+\]
+
+\exercice : Produits et quotients.  
+
+\textbf{1) Calcule les produits suivants :}
+
+\[
+a)\quad \dfrac{9}{5} \times \dfrac{4}{5}
+\quad b)\quad -\dfrac{3}{7} \times \dfrac{2}{7}
+\quad c)\quad \dfrac{10}{13} \times \dfrac{-12}{5}
+\quad d)\quad \dfrac{-1}{8} \times \dfrac{-16}{3}
+\quad e)\quad -6 \times \dfrac{8}{5}
+\]
+
+\textbf{2) Calcule les quotients :}
+
+\[
+a)\quad \dfrac{\dfrac{6}{13}}{\dfrac{3}{5}}
+\quad b)\quad \dfrac{\dfrac{-1}{7}}{\dfrac{-1}{3}}
+\quad c)\quad \dfrac{\dfrac{-3}{22}}{\dfrac{15}{22}}
+\quad d)\quad \dfrac{\dfrac{12}{11}}{9}
+\quad e)\quad \dfrac{\dfrac{-14}{7}}{\dfrac{7}{2}}
+\]
+
+\exercice : Calculer
+
+\[
+A = \left( \dfrac{5}{2} + \dfrac{3}{4} \right)
+\times \left( \dfrac{-3}{10} + \dfrac{4}{25} \right) \quad;\quad B = \left( \dfrac{1}{9} - \dfrac{5}{6} \right)
+\div \left( -3 - \dfrac{3}{8} \right)
+\times \left( \dfrac{1}{9} - \dfrac{5}{6} \right)
+\]
+
+\[
+C = \dfrac{\dfrac{3}{5}-2}{1+\dfrac{4}{3}} \quad;\quad D = \dfrac{\dfrac{3}{5}-\dfrac{2}{3}}{\dfrac{1}{4}+\dfrac{2}{3}} \quad;\quad E = \left(3-\dfrac{9}{4}\right)\times\dfrac{4}{5} \quad;\quad F = \left[\dfrac{2}{5}-\left(\dfrac{3}{2}-2+\dfrac{1}{5}\right)\right]\div \left( \dfrac{1}{2} - \dfrac{1}{5} \right)\]
+
+\exercice :
+\begin{enumerate}
+\item Compare par la méthode de ton choix les rationnels : \( \dfrac{5}{6} \text{ et } \dfrac{7}{9} \)
+
+\item Déduis-en une comparaison de : \( \dfrac{5}{6} - \dfrac{3}{2}  \text{ et } \dfrac{7}{9} - \dfrac{3}{2}  \)
+\end{enumerate}
+
+\end{document}

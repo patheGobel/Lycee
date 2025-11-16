@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  4 NOV 2025 22:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  14 NOV 2025 07:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,6 +864,11 @@ File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@tkz@cnt@pair=\count341
 \c@tkz@cnt@impair=\count342
 \c@tkz@cnt@aw=\count343
+) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks59
+\minrowclearance=\skip59
+\rownum=\count344
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.geometric.code.tex
@@ -884,22 +889,22 @@ Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip59
+\labelindent=\skip60
 \enit@outerparindent=\dimen311
-\enit@toks=\toks59
+\enit@toks=\toks60
 \enit@inbox=\box69
-\enit@count@id=\count344
-\enitdp@description=\count345
+\enit@count@id=\count345
+\enitdp@description=\count346
 )
-\c@exemple=\count346
-\c@solution=\count347
-\c@exerciceapp=\count348
-\c@correction=\count349
-\c@remarque=\count350
+\c@exemple=\count347
+\c@solution=\count348
+\c@exerciceapp=\count349
+\c@correction=\count350
+\c@remarque=\count351
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count351
+\l__color_backend_stack_int=\count352
 \l__pdf_internal_box=\box70
 )
 (build/fonctionNumerique2025.aux
@@ -915,37 +920,37 @@ LaTeX Warning: Label `fig:monimage' multiply defined.
 )
 \openout1 = `fonctionNumerique2025.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count352
+\scratchcounter=\count353
 \scratchdimen=\dimen312
 \scratchbox=\box71
-\nofMPsegments=\count353
-\nofMParguments=\count354
-\everyMPshowfont=\toks60
-\MPscratchCnt=\count355
+\nofMPsegments=\count354
+\nofMParguments=\count355
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count356
 \MPscratchDim=\dimen313
-\MPnumerator=\count356
-\makeMPintoPDFobject=\count357
-\everyMPtoPDFconversion=\toks61
+\MPnumerator=\count357
+\makeMPintoPDFobject=\count358
+\everyMPtoPDFconversion=\toks62
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -955,15 +960,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 96.
+LaTeX Info: Redefining \degres on input line 97.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 96.
+(french.ldf)             reported on input line 97.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 96.
-LaTeX Info: Redefining \up on input line 96.
-Package hyperref Info: Link coloring OFF on input line 96.
+(french.ldf)             reported on input line 97.
+LaTeX Info: Redefining \up on input line 97.
+Package hyperref Info: Link coloring OFF on input line 97.
 
 (build/fonctionNumerique2025.out) (build/fonctionNumerique2025.out)
 \@outlinefile=\write4
@@ -1008,21 +1013,21 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
-8.
+9.
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 98
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 99
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1031,12 +1036,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <comp1.png, id=7, 516.93124pt x 300.12125pt>
 File: comp1.png Graphic file (type png)
 <use comp1.png>
-Package pdftex.def Info: comp1.png  used on input line 147.
+Package pdftex.def Info: comp1.png  used on input line 148.
 (pdftex.def)             Requested size: 362.37569pt x 210.39484pt.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <142.26378> not available
-(Font)              size <35.83> substituted on input line 151.
+(Font)              size <35.83> substituted on input line 152.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
 c/dvips/cm-super/cm-super-t1.enc}
@@ -1045,34 +1050,34 @@ c/dvips/cm-super/cm-super-t1.enc}
 <comp2.png, id=36, 518.93875pt x 298.11375pt>
 File: comp2.png Graphic file (type png)
 <use comp2.png>
-Package pdftex.def Info: comp2.png  used on input line 162.
+Package pdftex.def Info: comp2.png  used on input line 163.
 (pdftex.def)             Requested size: 362.37569pt x 208.18237pt.
  [2 <build/comp1.png> <build/comp2.png>]
 [3]
-Overfull \hbox (2.01047pt too wide) in paragraph at lines 245--246
+Overfull \hbox (2.01047pt too wide) in paragraph at lines 246--247
 []\T1/cmr/m/n/10 Les li-mites peuvent être in-ter-pré-tées géo-mé-tri-que-ment 
 de plu-sieurs ma-nières en fonc-tion du contexte.
  []
 
 
-Overfull \hbox (14.75833pt too wide) detected at line 252
+Overfull \hbox (14.75833pt too wide) detected at line 253
 []\OML/cmm/m/it/10 f[]y \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 `[] [] f\OT1/cmr/m/n
 /10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 `[] [] f\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 `
  []
 
 [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
+Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
  []
 
 [7] [8] [9]
-Overfull \hbox (5.60269pt too wide) in paragraph at lines 735--735
+Overfull \hbox (5.60269pt too wide) in paragraph at lines 736--736
  []|[]| 
  []
 
 [10{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [11] [12]
-Overfull \hbox (13.62321pt too wide) in paragraph at lines 875--914
+Overfull \hbox (13.62315pt too wide) in paragraph at lines 876--915
  [][] 
  []
 
@@ -1080,40 +1085,40 @@ Overfull \hbox (13.62321pt too wide) in paragraph at lines 875--914
 <axeSymetrie.png, id=208, 321.2pt x 296.10625pt>
 File: axeSymetrie.png Graphic file (type png)
 <use axeSymetrie.png>
-Package pdftex.def Info: axeSymetrie.png  used on input line 1042.
+Package pdftex.def Info: axeSymetrie.png  used on input line 1050.
 (pdftex.def)             Requested size: 226.48395pt x 208.7956pt.
 <centreSymetrie.png, id=210, 333.245pt x 254.9525pt>
 File: centreSymetrie.png Graphic file (type png)
 <use centreSymetrie.png>
-Package pdftex.def Info: centreSymetrie.png  used on input line 1064.
+Package pdftex.def Info: centreSymetrie.png  used on input line 1072.
 (pdftex.def)             Requested size: 226.48395pt x 173.27591pt.
  [15 <build/axeSymetrie.png>] [16 <build/centreSymetrie.png>] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1220--1224
+Underfull \hbox (badness 10000) in paragraph at lines 1228--1232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1233--1235
+Underfull \hbox (badness 10000) in paragraph at lines 1241--1243
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1244--1245
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1253
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1281--1282
+Underfull \hbox (badness 10000) in paragraph at lines 1289--1290
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1290--1291
+Underfull \hbox (badness 10000) in paragraph at lines 1298--1299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1319--1320
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1328
 
  []
 
@@ -1807,10 +1812,10 @@ Package rerunfilecheck Info: File `fonctionNumerique2025.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36279 strings out of 474222
- 827775 string characters out of 5748732
- 1949975 words of memory out of 5000000
- 57764 multiletter control sequences out of 15000+600000
+ 36369 strings out of 474222
+ 829084 string characters out of 5748732
+ 1948975 words of memory out of 5000000
+ 57850 multiletter control sequences out of 15000+600000
  582053 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,107p,742b,2417s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1834,7 +1839,7 @@ fb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pf
 b></usr/share/texmf/fonts/type1/public/cm-super/sfrm3583.pfb>
-Output written on build/fonctionNumerique2025.pdf (20 pages, 397089 bytes).
+Output written on build/fonctionNumerique2025.pdf (20 pages, 396780 bytes).
 PDF statistics:
  406 PDF objects out of 1000 (max. 8388607)
  325 compressed objects within 4 object streams
