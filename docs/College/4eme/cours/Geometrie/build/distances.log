@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  16 NOV 2025 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  17 NOV 2025 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1138,23 +1138,27 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 129.
+(Font)              <14.4> on input line 127.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 129.
+(Font)              <7> on input line 127.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 151.
+(Font)              <8> on input line 128.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 151.
+(Font)              <6> on input line 128.
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Overfull \hbox (152.35228pt too wide) in paragraph at lines 150--150
+[][]$[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-(build/distances.aux)
+] (build/distances.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1163,20 +1167,19 @@ Package rerunfilecheck Info: File `distances.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31054 strings out of 474222
- 620934 string characters out of 5748732
- 1934975 words of memory out of 5000000
- 52723 multiletter control sequences out of 15000+600000
+ 31051 strings out of 474222
+ 620854 string characters out of 5748732
+ 1937975 words of memory out of 5000000
+ 52720 multiletter control sequences out of 15000+600000
  610652 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,11n,107p,411b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on build/distances.pdf (1 page, 74531 bytes).
+pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
+Output written on build/distances.pdf (1 page, 72687 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 87 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
