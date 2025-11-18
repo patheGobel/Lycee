@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloade
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**nombresRationnel.tex
-(./nombresRationnel.tex
+**systeme.tex
+(./systeme.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -971,17 +971,71 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 \xs_countb=\count359
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/systeme/systeme.tex
-\SYS_systemecode=\toks53
-\SYS_systempreamble=\toks54
-\SYSeqnum=\count360
-)
-Package: systeme 2020/05/03 v0.34 Mise en forme de systemes d'equations (CT)
-)
-\c@exemple=\count361
-\c@exerciceapp=\count362
-\c@correction=\count363
+) (./systeme.tex
+
+! LaTeX Error: Two \documentclass or \documentstyle commands.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \documentclass[12pt,a4paper]{
+                                 article}
+The document may only declare one class.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
+
+! LaTeX Error: Command \circitem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...mum size=1.2em,inner sep=0] (char) {#1};}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxitem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ...mum size=1.2em,inner sep=0] (char) {#1};}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \exa already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.47 },interior style={top color=yellow!5}}
+                                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\c@exemple=\count360
+\c@exerciceapp=\count361
+\c@correction=\count362
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.geometric.code.tex
@@ -995,18 +1049,13 @@ File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 zlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
-1.
- (/usr/share/texmf/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count364
+\l__color_backend_stack_int=\count363
 \l__pdf_internal_box=\box131
 )
-(build/nombresRationnel.aux)
-\openout1 = `nombresRationnel.aux'.
+(build/systeme.aux)
+\openout1 = `systeme.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
 LaTeX Font Info:    ... okay on input line 111.
@@ -1029,21 +1078,29 @@ LaTeX Font Info:    ... okay on input line 111.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count365
+\scratchcounter=\count364
 \scratchdimen=\dimen307
 \scratchbox=\box132
-\nofMPsegments=\count366
-\nofMParguments=\count367
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count368
+\nofMPsegments=\count365
+\nofMParguments=\count366
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count367
 \MPscratchDim=\dimen308
-\MPnumerator=\count369
-\makeMPintoPDFobject=\count370
-\everyMPtoPDFconversion=\toks56
+\MPnumerator=\count368
+\makeMPintoPDFobject=\count369
+\everyMPtoPDFconversion=\toks54
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -1084,11 +1141,11 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 111.
-(build/nombresRationnel.out) (build/nombresRationnel.out)
+(build/systeme.out) (build/systeme.out)
 \@outlinefile=\write4
-\openout4 = `nombresRationnel.out'.
+\openout4 = `systeme.out'.
 
-\c@lstlisting=\count371
+\c@lstlisting=\count370
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 14.
 
@@ -1154,26 +1211,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--168
 c/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-(build/nombresRationnel.aux)
+
+! LaTeX hooks Error: Missing \PopDefaultHookLabel.
+(hooks)              The label 'systeme' was pushed but never popped.
+(hooks)              Something is wrong.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.169 \end{document}
+                    
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+
+(build/systeme.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `nombresRationnel.out' has not changed.
+Package rerunfilecheck Info: File `systeme.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
+ ) ) )
+(\end occurred when \ifx on line 66 was incomplete) 
 Here is how much of TeX's memory you used:
- 31054 strings out of 474222
- 621067 string characters out of 5748732
+ 30952 strings out of 474222
+ 619684 string characters out of 5748732
  1935975 words of memory out of 5000000
- 52723 multiletter control sequences out of 15000+600000
+ 52616 multiletter control sequences out of 15000+600000
  610652 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,107p,418b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on build/nombresRationnel.pdf (1 page, 74522 bytes).
+ 102i,11n,107p,409b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type
+1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmsy10.pfb>
+Output written on build/systeme.pdf (1 page, 74523 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
