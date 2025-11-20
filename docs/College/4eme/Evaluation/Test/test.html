@@ -2,34 +2,42 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MatheuxCodeur - TS2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatheuxCodeur - La passion des mathématiques</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Test</h1>
-    <div class="container">
-        <div class="card-container">
-            <div class="card">
-                <button class="dropdown-toggle" type="button">2024-2025</button>
-                <div class="dropdown-content">
-                    <a href="/docs/College/4eme/Evaluation/Test/2024-2025/build/test01.pdf">Test1</a>
-                </div>
-            </div>
+
+    <header>
+        <div class="container">
+            <h1>Tests</h1>
         </div>
-        <div class="card-container">
-            <div class="card">
-                <button class="dropdown-toggle" type="button">2025-2026</button>
-                <div class="dropdown-content">
-                    <a href="/docs/College/4eme/Evaluation/Test/2025-2026/build/test01.pdf">Test1</a>
-                    <a href="/docs/College/4eme/Evaluation/Test/2025-2026/build/test02.pdf">Test2</a>
-                </div>
-            </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="Epreuves/test.html">Epreuves</a>
+                </li>
+                <li>
+                    <a href="Corrections/">Corrections</a>
+                </li>
+            </ul>
+
+            <!-- 🔽 Ton bouton expérimental -->
+            <button id="btn">Retour</button>
         </div>
-        <button id="btn" onclick="window.history.back()">Retour</button>
-    </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MathsCodeur. Tous droits réservés.</p>
+        </div>
+    </footer>
+
     <!-- On charge le fichier JS -->
     <script src="script.js"></script>
 </body>

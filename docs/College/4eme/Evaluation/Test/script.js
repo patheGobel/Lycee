@@ -1,33 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const allToggles = document.querySelectorAll('.dropdown-toggle');
-    const allContents = document.querySelectorAll('.dropdown-content');
+// Script pour le bouton expérimental
+document.getElementById('btn').addEventListener('click', function () {
+    // Animation simple
+    this.textContent = 'Bravo !';
+    this.style.background = 'linear-gradient(135deg, var(--math-purple), var(--math-red))';
 
-    allToggles.forEach(toggle => {
-        toggle.addEventListener('click', function () {
-            const targetContent = this.nextElementSibling;
-            const isCurrentlyActive = this.classList.contains('active');
-
-            // Ferme tous les autres menus et désactive leurs boutons
-            allContents.forEach(content => {
-                if (content !== targetContent) {
-                    content.classList.remove('show');
-                }
-            });
-
-            allToggles.forEach(otherToggle => {
-                if (otherToggle !== this) {
-                    otherToggle.classList.remove('active');
-                }
-            });
-
-            // Ouvre ou ferme le menu cliqué
-            if (isCurrentlyActive) {
-                this.classList.remove('active');
-                targetContent.classList.remove('show');
-            } else {
-                this.classList.add('active');
-                targetContent.classList.add('show');
-            }
-        });
-    });
+    // Réinitialiser après 1.5 secondes
+    setTimeout(() => {
+        this.textContent = 'Appuie sur moi';
+        this.style.background = 'linear-gradient(135deg, var(--math-blue), var(--math-purple))';
+    }, 1500);
+});
+//Script pour le bouton de retour
+document.getElementById('btn').addEventListener('click', function () {
+    window.history.back();
 });
