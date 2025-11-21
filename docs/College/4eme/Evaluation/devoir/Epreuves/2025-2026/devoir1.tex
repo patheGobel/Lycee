@@ -1,5 +1,5 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,times,pifont}
 \usepackage{enumitem}
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
@@ -17,6 +17,9 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage{array,multirow}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
+\usepackage{mathrsfs} % pour \mathscr
+\usepackage{calligra}
+\newcommand{\Dcalligra}{\text{\calligra D}}
 \tcbuselibrary{skins,hooks}
 \usetikzlibrary{patterns}
 %%%::::::by chnini ameur :::::::%%%
@@ -82,8 +85,21 @@ middle color = tcbcolback!80!black]
 \vspace{3cm}
 
 \section*{\underline{Exercice 1 :} 11 points }
-appartient appartient pas
+\begin{enumerate}
+\item Compléter par $ \in $ ou $ \notin $. \textbf{14 $ \times $ 0,5 pts}\\
+\( 21\; \ldots\; \mathbb{N} \quad;-5\; \ldots\; \mathbb{N} \quad;\quad \dfrac{7}{5}\; \ldots\; \mathbb{Z}\quad ;\quad -8\; \ldots\; \mathbb{Z}\quad ;\quad 8,5\; \ldots\; \Dcalligra\quad ;\quad \dfrac{7}{3}\; \ldots\; \Dcalligra\quad ;-6,8\; \ldots\; \Dcalligra \)
 
+\( 2,1\; \ldots\; \mathbb{D} \quad;\quad -5,7\; \ldots\; \mathbb{D} \quad;\quad \dfrac{7}{5}\; \ldots\; \mathbb{D}\quad ;\quad -\dfrac{5}{7}\; \ldots\; \mathbb{D}\quad ;\quad -14,5\; \ldots\; \mathbb{Q}\quad ;\quad -\dfrac{5}{7}\; \ldots\; \mathbb{Q} \)
+
+\( \pi\; \ldots\; \mathbb{Q} \)
+\item Répondre par vrai ou faux \textbf{8 $ \times $ 0,5 pts}\\
+\begin{enumerate}
+\item L'inverse de $7$ est $7$ et l'inverse de $-\dfrac{5}{7}$ est $\dfrac{7}{5}$
+\item Si $a \leq b$ alors $a +c \leq b+c$ ; Si $c < 0 $ alors $a \times c < b \times c$
+\item  $ \left(\dfrac{a}{b} \right)^{n} \times \left(\dfrac{a}{b} \right)^{m} = \left(\dfrac{a}{b} \right)^{mn} $ et $\left[ \left(\dfrac{a}{b} \right)^{n}\right]^{m} = \left[ \left(\dfrac{a}{b} \right)\right]^{m+n} $
+\item $\dfrac{7}{5} < \dfrac{4}{5}$ et $\dfrac{1}{5} < \dfrac{4}{3}$
+\end{enumerate}
+\end{enumerate}
 \section*{\underline{Exercice 2 :} 7 points (Calcul Littéral et Fractions)}
 
 \[
