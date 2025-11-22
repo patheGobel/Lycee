@@ -58,7 +58,7 @@ middle color = tcbcolback!80!black]
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footruleskip}{10pt}
 \fancyfoot[R]{
-\color{blue}\ding{45}\ \textbf{2024}
+\color{blue}\ding{45}\ \textbf{2025}
 }
 \fancyfoot[L]{
 \color{blue}\ding{45}\ \textbf{Prof:M. BA}
@@ -73,7 +73,7 @@ middle color = tcbcolback!80!black]
 \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
 \hline
 \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
-\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S2} &\textbf{Date: 09/12/2024} & \textbf{Durée : 4 heures} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S2} &\textbf{Date: 26/11/2024} & \textbf{Durée : 4 heures} \\ \hline
 \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
 \textbf{{\Large\sffamily Devoir n$ ^{\circ} $ 1 Du 1$ ^\text{\bf er} $ Semestre}}
 \end{center}}} \\ \hline
@@ -81,11 +81,12 @@ middle color = tcbcolback!80!black]
 \end{tikzpicture}
 \vspace{3cm}
 
-\section*{\underline{Exercice 1 :} $0,5 \times 8 = 4$ points}
+\section*{\underline{Exercice 1 :} 0,5 $\times $ 10 = 5 points}
 \begin{enumerate}
-\item Énoncer le théorème des valeurs intermédiaires.
-\item Énoncer le théorème d’existence et d’unicité d’une solution.
+\item Énoncer le théorème des valeurs intermédiaires et son corollaire.
+\item Énoncer Théorème de l'inégalité des accroissements finis (TIAF).
 \item Énoncer le théorème de l’inégalité des accroissements finis (IAF).
+\item Théorème de la bijection.
 \item \(\text{Si }\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = a \ (a \neq 0) \text{ alors ... }\)
 \item \(\text{Si }\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = +\infty \text{ alors ... }\)
 \item \(\text{Si }\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = 0 \text{ alors ... }\)
@@ -93,69 +94,73 @@ middle color = tcbcolback!80!black]
 \item Si \(f\) est continue et strictement décroissante sur \( ]-\infty; b] \), alors \( f(]-\infty; b]) = ... \)
 \end{enumerate}
 
-\section*{\underline{Exercice 2 :} 4 points}
+\section*{\underline{Exercice 2 :} 5,5 points}
 
 \begin{enumerate}
-    \item Calculer les limites suivantes : \textbf{(3 × 1 pt)}
+    \item Calculer les limites suivantes : \textbf{(4 × 1 pt)}
     \[
     \lim_{x \to 0} \frac{\sqrt{1+\sin x} - 1}{\sin 2x} \; ; \quad
     \lim_{x \to 0} \frac{\cos x - 1}{x^3 + x^2} \; ; \quad
-    \lim_{x \to 1} \frac{\sqrt{x + 3} - \sqrt{5 - x}}{\sqrt{2x + 7} - \sqrt{10 - x}}.
+    \lim_{x \to 1} \frac{\sqrt{x + 3} - \sqrt{5 - x}}{\sqrt{2x + 7} - \sqrt{10 - x}}\; ; \quad
+    \lim_{x \to 0} \dfrac{\cos x - 1}{x^3 + x^2}
     \]
-    \item Donner les primitives des fonctions \(f\) et \(g\) respectivement sur \(\mathbb{R}\) et \(\mathbb{R} \setminus \{1; 2\}\). \textbf{(2 × 0,5 pt)}
+    \item Donner les primitives des fonctions \(f\) et \(g\) respectivement sur \(\mathbb{R}\) et \(\mathbb{R} \setminus \{1; 2\}\). \textbf{(3 × 0,5 pt)}
     \[
-    f(x) = (3x-1)(3x^2-2x+3)^3 \; ; \quad
-    g(x) = \frac{1-x^2}{(x^3-3x+2)^3}.
+    f(x)=2\cos(x)-3\sin(x)\; ; \quad
+    g(x) = (3x-1)(3x^2-2x+3)^3 \; ; \quad
+    h(x) = \frac{1-x^2}{(x^3-3x+2)^3}.
     \]
 \end{enumerate}
 
-\section*{\underline{Problème :} 12 points}
-
+\section*{\underline{Problème :} 9,5 points}
 \underline{\textbf{Partie A :}}
-
-Soit \( f \) la fonction définie par :
+Soit la fonction $f$ définie par :
 \[
-f(x) = x - 2 - \sqrt{x^2 - 2x}.
+f(x)=
+\begin{cases}
+\dfrac{x^2-2x}{x-1} & \text{si } x<0,\\[4mm]
+x + \sqrt{x^2+x} & \text{si } x\ge 0,
+\end{cases}
+\qquad
+\text{et } (\mathcal{C}_f) \text{ sa courbe représentative dans un repère orthonormé } (O,\vec{i},\vec{j}).
 \]
 
 \begin{enumerate}
-\item  Déterminer \( D_f \). \hspace{1cm} \textbf{(0,5 pt)}
-
-\begin{enumerate}
-    \item Calculer \( \lim_{x \to +\infty} f(x) \) et \( \lim_{x \to -\infty} f(x) \). \hspace{1cm} (0,25 pt), \textbf{(0,5 pt)}
-    \item Étudier la branche infinie de la courbe \( (C_f) \) au voisinage de \( -\infty \). \hspace{1cm} \textbf{(0,75 pt)}
-    \item Interpréter la limite de \( f \) au voisinage de \( +\infty \). \hspace{1cm} \textbf{(0,75 pt)}
+    \item Déterminer l'ensemble de définition $\mathcal{D}_f$ de $f$. \hspace{1cm} \textbf{(0,5 pt)}
+    \item Déterminer les limites aux bornes de $\mathcal{D}_f$. \hspace{1cm} \textbf{(0,5 pt)}
+    \item Étudier la continuité et la dérivabilité de $f$ en $0$. Interpréter les résultats obtenus. \hspace{1cm} \textbf{(1,5 pt)}
+    \item 
+      \begin{enumerate}
+        \item Montrer que $(\mathcal{C}_f)$ admet en $-\infty$ une asymptote oblique $\Delta_1$ dont on déterminera l’équation. \textbf{(0,5 pt)}
+        \item Étudier la position relative de $(\mathcal{C}_f)$ par rapport à $\Delta_1$ sur $(-\infty;0[$. \hspace{1cm} \textbf{(0,5 pt)}
+      \end{enumerate}
+    \item Étudier la nature de la branche infinie en $+\infty$. \hspace{1cm} \textbf{(0,5 pt)}
+    \item Préciser l'ensemble de dérivabilité de $f$ puis calculer $f'(x)$ sur chaque intervalle où $f$ est dérivable.\\ \textbf{(0,5 pt)}
+    \item Dresser le tableau de variation de $f$. \hspace{1cm} \textbf{(0,5 pt)}
+    \item Préciser les points d'intersection de $(\mathcal{C}_f)$ avec les axes du repère. \textbf{(0,25 pt)}
+    \item Construire la courbe $(\mathcal{C}_f)$. \hspace{1cm} \textbf{(1,5 pt)}
 \end{enumerate}
-
-\item Étudier la dérivabilité de la fonction \( f \) à droite de 2 et à gauche de 0, puis interpréter géométriquement les résultats obtenus. \hspace{1cm} \textbf{(2 pt)}
-
-\begin{enumerate}
-    \item Justifier la dérivabilité de la fonction sur \( ]-\infty, 0[ \cup ]2, +\infty[ \), puis\\ montrer que pour tout \( x \in ]-\infty, 0[ \cup ]2, +\infty[ \) :
-    \(
-    f'(x) = \frac{\sqrt{x^2 - 2x} - (x - 1)}{\sqrt{x^2 - 2x}}.
-    \)    \hspace{1cm} \textbf{(1,5 pt)}
-
-    
-    \item Montrer que : \( \forall x \in ]-\infty, 0], f'(x) > 0 \) et \( \forall x \in ]2, +\infty[, f'(x) < 0 \). \hspace{1cm} \textbf{(1 pt)}
-    
-    \item Dresser le tableau de variations de la fonction \( f \). \hspace{1cm} \textbf{(1,25 pt)}
-\end{enumerate}
-
-\item Tracer la courbe \( (C_f) \) dans un repère orthonormé \( (O, \vec{i}, \vec{j}) \). \hspace{1cm} \textbf{(1,25 pt)}
 
 \underline{\textbf{Partie B :}}
 
-On considère la fonction \( g \) la restriction de la fonction \( f \) sur \( [2, +\infty[ \) :
+Soit $h$ la restriction de $f$ à l’intervalle $I = [0; +\infty[$.
 
 \begin{enumerate}
-    \item Montrer que \( g \) admet une fonction réciproque \( g^{-1} \) définie sur un intervalle \( J \)\\ que l’on déterminera . \hspace{1cm} \textbf{(0,5 pt)}
-    
-    \item Calculer \( g^{-1}(2 - 2\sqrt{2}) \). (On donne : \( g(4) = (2 - 2\sqrt{2} \)). \hspace{1cm} \textbf{(0,75 pt)}
-    
-    \item Déterminer \( g^{-1}(x) \) pour tout \( x \in J \). \hspace{3cm} \textbf{(0,5 pt)}
-    
-    \item Tracer la courbe \( (C_{g^{-1}}) \) dans le même repère orthonormé \( (O, \vec{i}, \vec{j}) \). \hspace{2cm} \textbf{(0,5 pt)}
-\end{enumerate}
+
+    \item Montrer que $h$ réalise une bijection de $I$ dans un intervalle $J$ à préciser.
+    \hspace{1cm} \textbf{(0,25 pt)}
+
+    \item La bijection réciproque $h^{-1}$ est-elle dérivable sur $J$ ?
+    \hspace{1cm} \textbf{(0,25 pt)}
+
+    \item Calculer $h\!\left(\dfrac{4}{5}\right)$ puis $(h^{-1})'(2)$.
+   \hspace{1cm} \textbf{(0,5 pt)}
+
+    \item Construire $(\mathcal{C}_{h^{-1}})$ la courbe représentative de $h^{-1}$ dans le même repère.
+    \hspace{1cm} \textbf{(0,5 pt)}
+
+    \item Exprimer $h^{-1}(x)$ pour tout $x \in J$.
+    \hspace{1cm} \textbf{(0,5 pt)}
 
 \end{enumerate}
 
