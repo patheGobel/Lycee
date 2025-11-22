@@ -1,0 +1,167 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2025/2026} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 2nd}\textbf{S} &\textbf{Date: 00/11/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Devoir n$ ^{\circ} $ 1 Du 1$ ^\text{\bf ère} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Correction Exercice 1 :} 4 pts (Factoriser les expressions suivantes :) }
+\begin{enumerate}
+\item \( a^2xy + aby^2 + b^2xy + abx^2 \) \\
+    \textbf{Solution :} Regroupons les termes :
+    \[
+    (a^2xy + abx^2) + (b^2xy + aby^2) = ax(ax + by) + by(ax + by)
+    \]
+    Factorisons le facteur commun \((ax + by)\) :
+    \[
+    a^2xy + aby^2 + b^2xy + abx^2 = (ax + by)^2
+    \]
+\item \( 3a^2 + 3b^2 - 4c^2 - 6ab \)  
+**Solution :** Regroupons les termes :  
+\[
+(3a^2 - 6ab + 3b^2) - 4c^2 = 3(a^2 - 2ab + b^2) - 4c^2
+\]  
+\[
+3(a - b)^2 - (2\cdot c)^2 \quad\text{(forme différence de carrés)}
+\]  
+\[
+3(a - b)^2 - (2c)^2 = ( \sqrt{3}(a - b) - 2c )( \sqrt{3}(a - b) + 2c )
+\]  
+
+\item \( y^2 - x^2 + 2x - 1 \)  
+**Solution :** Regroupons et remarquons une forme factorisable :  
+\[
+y^2 - (x^2 - 2x + 1) = y^2 - (x - 1)^2
+\]  
+C’est une différence de carrés :  
+\[
+y^2 - (x - 1)^2 = (y - (x - 1))(y + (x - 1)) = (y - x + 1)(y + x - 1)
+\]  
+
+\item \( a^2b^2 - 1 + a^2 - b^2 \)  
+**Solution :** Regroupons et utilisons des identités remarquables :  
+\[
+(a^2b^2 - b^2) + (a^2 - 1) = b^2(a^2 - 1) + (a^2 - 1) = (a^2 - 1)(b^2 + 1)
+\]  
+Et \(a^2 - 1 = (a - 1)(a + 1)\), donc :  
+\[
+a^2b^2 - 1 + a^2 - b^2 = (a - 1)(a + 1)(b^2 + 1)
+\]  
+
+\item \( (ab - 1)^2 - (a - b)^2 \)  
+**Solution :** Différence de carrés :  
+\[
+(ab - 1 - (a - b)) (ab - 1 + (a - b)) = (ab - 1 - a + b)(ab - 1 + a - b)
+\]  
+Simplifions chaque facteur :  
+\[
+(a(b - 1) + (b - 1)) (a(b + 1) + (-b - 1 + 2b?))
+\]  
+Recalculons soigneusement :  
+\[
+ab - 1 - a + b = a(b - 1) + (b - 1) = (a + 1)(b - 1)
+\]  
+\[
+ab - 1 + a - b = a(b + 1) - (1 + b) = (a - 1)(b + 1)
+\]  
+Donc la factorisation finale :  
+\[
+(ab - 1)^2 - (a - b)^2 = (a + 1)(b - 1)(a - 1)(b + 1) = (a - 1)(a + 1)(b - 1)(b + 1)
+\]  
+
+\item \( 8 + 36ab^2 + 54a^2b + 27ab \)  
+**Solution :** Mettons en facteur le plus grand commun diviseur :  
+\[
+8 + 36ab^2 + 54a^2b + 27ab = 1\cdot8 + 9ab(4b + 6a + 3?) 
+\]  
+Recalculons correctement les coefficients :  
+\[
+36ab^2 + 54a^2b + 27ab = 9ab(4b + 6a + 3) 
+\]  
+Donc :  
+\[
+8 + 36ab^2 + 54a^2b + 27ab = 8 + 9ab(6a + 4b + 3)
+\]  
+Ici, il n’y a pas de factorisation plus simple entière possible sans utiliser les fractions.  
+
+\end{enumerate}
+\section*{\underline{Correction Exercice 2 :} pts () }
+
+
+\end{document}
