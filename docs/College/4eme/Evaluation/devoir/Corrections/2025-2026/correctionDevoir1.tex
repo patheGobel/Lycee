@@ -1,0 +1,173 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{mathrsfs} % pour \mathscr
+\usepackage{calligra}
+\newcommand{\Dcalligra}{\text{\calligra D}}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA et DIALLO}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2025/2026} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 4}\textbf{ème} &\textbf{Date: 25/11/2025} & \textbf{Durée : 2 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction Devoir n$ ^{\circ} $ 1 Du 1$ ^\text{\bf er} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Exercice 1 :} 11 points }
+\begin{enumerate}
+\item Complétons par $ \in $ ou $ \notin $. \textbf{14 $ \times $ 0,5 pts}\\
+\( 21\; \in \; \mathbb{N} \quad;-5\; \notin \; \mathbb{N} \quad;\quad \dfrac{7}{5}\; \notin \; \mathbb{Z}\quad ;\quad -8\; \in \; \mathbb{Z}\quad ;\quad 8,5\; \in \; \Dcalligra\quad ;\quad \dfrac{7}{3}\; \notin \; \Dcalligra\quad ;-6,8\; \notin \; \Dcalligra \)
+
+\( 2,1\; \in \; \mathbb{D} \quad;\quad -5,7\; \in \; \mathbb{D} \quad;\quad \dfrac{7}{5}\; \in \; \mathbb{D}\quad ;\quad -\dfrac{5}{7}\; \notin \; \mathbb{D}\quad ;\quad -14,5\; \in \; \mathbb{Q}\quad ;\quad -\dfrac{5}{7}\; \in \; \mathbb{Q} \)
+
+\( \pi\; \notin \; \mathbb{Q} \)
+\item Répondre par vrai ou faux \textbf{8 $ \times $ 0,5 pts}\\
+\begin{enumerate}
+\item L'inverse de $7$ est $7$ \textbf{Faux} et l'inverse de $-\dfrac{5}{7}$ est $\dfrac{7}{5}$ \textbf{Faux}
+\item Si $a \leq b$ alors $a +c \leq b+c$ \textbf{ Vrai} ; Si $c < 0 $ alors $a \times c < b \times c$  \textbf{ Faux}
+\item  $ \left(\dfrac{a}{b} \right)^{n} \times \left(\dfrac{a}{b} \right)^{m} = \left(\dfrac{a}{b} \right)^{mn} $ \textbf{ Vrai} et $\left[ \left(\dfrac{a}{b} \right)^{n}\right]^{m} = \left[ \left(\dfrac{a}{b} \right)\right]^{m+n} $ \textbf{Faux}
+\item $\dfrac{7}{5} < \dfrac{4}{5}$ \textbf{ Faux} et $\dfrac{1}{5} < \dfrac{4}{3}$ \textbf{ Vrai}
+\end{enumerate}
+\end{enumerate}
+\section*{\underline{Exercice 2 :} 7 points (Calcul Littéral)}
+
+\[
+\begin{aligned}
+A&=-2-6-2+5\\
+&=-8-2+5\\
+&=-10+5\\
+&=-5\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+B&=-12+11-8+12\\
+&=-2-8+12\\
+&=-10+12\\
+&=2\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+C&=-9-15+6-21\\
+&=-24+6-21\\
+&=-18-21\\
+&=-39\\
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+D&=(-2)\times(-7)-(5)\\
+&=14-(5)\\
+&=14-5\\
+&=9\\
+&\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+E&=7-(-5)\times(-9)+9\\
+&=7+5\times(-9)+9\\
+&=7-45+9\\
+&=-38+9\\
+&=-29\\
+\end{aligned}
+\quad\quad
+\begin{aligned}
+F&=2-(-11)\times(7)-15+2+(-10)\times(4)\\
+&=2+11\times(7)-15+2+(-10)\times(4)\\
+&=2+77-15+2-40\\
+&=2+77+2-15-40\\
+&=81-55\\
+&=26
+\end{aligned}
+\]
+\section*{\underline{Exercice 3 :} 2 points (Calcul Littéral et Fractions)}
+\(\begin{aligned}
+G &= -\frac{5}{7} + \frac{9}{10} - \frac{12}{5} + \frac{4}{10} \\
+  &= -\frac{5}{7} + \frac{9}{10} - \frac{24}{10} + \frac{4}{10} \\
+  &= -\frac{5}{7} + \frac{9 + 4 - 24}{10} \\
+  &= -\frac{5}{7} - \frac{11}{10} \\
+  &= -\frac{50}{70} - \frac{77}{70} \\
+  &= -\frac{127}{70}
+\end{aligned} 
+\quad\quad\quad \quad\quad\quad\quad\quad\quad \quad\quad\quad
+\begin{aligned}
+H &= -\frac{5}{3} \times \frac{9}{2} - \frac{12}{4} \times \frac{4}{9} \\
+  &= -\frac{45}{6} - 3 \times \frac{4}{9} \\
+  &= -\frac{45}{6} - \frac{12}{9} \\
+  &= -\frac{45}{6} - \frac{4}{3} \\
+  &= -\frac{45}{6} - \frac{8}{6} \\
+  &= -\frac{53}{6}
+\end{aligned}
+\)
+\end{document}
