@@ -1,0 +1,1012 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2024}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+
+% Définition de l'encadré adaptatif avec fond jaune
+\newtcolorbox{resultbox}{
+    colback=red!30, % Fond rouge clair
+    colframe=black, % Bordure noire fine
+    sharp corners, % Coins nets
+    boxrule=0.5pt, % Contour léger
+    boxsep=2pt, % Espacement interne
+    left=5pt, right=5pt, top=2pt, bottom=2pt, % Marges internes
+}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 09/12/2024} & \textbf{Durée : 4 heures} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Correction du devoir n$ ^{\circ} $ 1 Du 1$ ^\text{\bf er} $ Semestre}}
+                                                              \end{center}}}                                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{\underline{Exercice 1 :} 6 points }
+\textbf{A)} Réponses aux questions de cours
+\begin{enumerate}
+    \item Soit \( z \) un nombre complexe non nul donné.
+          \begin{itemize}
+              \item L’écriture algébrique de \( z \) est de la forme : \( z = a + ib \), avec \( a \) sa partie réelle et \( b \) sa partie imaginaire,
+              \item L’écriture exponentielle de \( z \) est de la forme : \( z = r e^{i\theta} \), avec \( r \) son module et \( \theta \) un de ses arguments,
+              \item L’écriture trigonométrique de \( z \) est de la forme : \( z = r(\cos\theta + i\sin\theta) \), avec \( r \) son module et \( \theta \) un de ses arguments.
+          \end{itemize}
+    \item Soient \( K(z_0), M(z) \) et \( M'(z') \) et soit \( r \) la rotation de centre \( K(z_0) \) qui transforme \( M(z) \) en \( M'(z') \) on a :
+          \[
+              \begin{cases}
+                  KM' = KM \\
+                  (\overrightarrow{KM}, \overrightarrow{KM'}) = \theta \quad [2\pi]
+              \end{cases} \tag{1}
+          \]
+
+          ce qui est équivalent à
+
+          \[
+              \begin{cases}
+                  |z' - z_0| = |z - z_0| \\
+                  \arg \dfrac{z' - z_0}{z - z_0} \equiv \theta \quad [2\pi]
+              \end{cases} \tag{2}
+          \]
+
+          D’où
+
+          \[
+              z' = e^{i\theta} z + z_0 (1 - e^{i\theta})
+          \]
+
+\end{enumerate}
+
+\textbf{B)} Soit \( z_0 = 1 - i\sqrt{3} \).
+
+\begin{enumerate}
+
+    \item Écriture trigonométrique de \( z_0 \).
+
+          On a \( |z_0| = \sqrt{1 + 3} = 2 \),
+
+          soit \( \theta \) un argument de \( z_0 \) alors \( \cos\theta = \frac{1}{2} \) et \( \sin\theta = -\frac{\sqrt{3}}{2} \)
+          ce qui donne \( \theta = -\frac{\pi}{3} \ [2\pi] \) d’où
+
+          \[
+              z_0 = 2 \left( \cos \frac{\pi}{3} - i \sin \frac{\pi}{3} \right)
+          \]
+
+    \item Calculons $z_0^4$
+
+          \[
+              z_0^4 = [2(\cos \frac{\pi}{3} - i \sin \frac{\pi}{3})]^4 = 16(\cos \frac{4\pi}{3} - i \sin \frac{4\pi}{3}) = 16\left(-\frac{1}{2} + i \frac{\sqrt{3}}{2} \right)
+          \]
+
+          D’où
+
+          \[
+              z_0^4 = -8 + i 8\sqrt{3}
+          \]
+
+    \item Résolvons l’équation
+
+          \[
+              z^4 = 1
+          \]
+
+          \[
+              z^4 = 1 \text{ implique } |z|^4 = 1 \text{ et } 4 \arg z = 0 [2\pi] \text{ ce qui donne}
+          \]
+
+          \[
+              |z| = 1 \text{ et } \arg z = k \frac{\pi}{2}, \quad k \in \mathbb{Z}
+          \]
+
+          d’où l’ensemble des solutions $S$ de l’équation $z^4 = 1$ est
+
+          \[
+              S = \{-1; 1; i; -i\}
+          \]
+
+    \item Déduisons-en les solutions de l’équation (E) : $z^4 = -8 + i 8\sqrt{3}$.
+
+          $z^4 = -8 + i 8\sqrt{3}$ est équivalent à
+
+          \[
+              \frac{z^4}{-8 + i 8\sqrt{3}} = 1
+          \]
+
+          ce qui est équivalent, d’après B)2), à
+
+          \[
+              \left(\frac{z}{1 - i \sqrt{3}}\right)^4 = 1
+          \]
+
+          Ce qui donne d’après B)3) les solutions suivantes :
+
+          \begin{itemize}
+              \item Sous forme algébrique :
+
+                    \[
+                        z_0 = 1 - i \sqrt{3}, \quad z_1 = -1 + i \sqrt{3}, \quad z_2 = \sqrt{3} + i, \quad z_3 = -\sqrt{3} - i
+                    \]
+              \item Sous forme trigonométrique :
+
+                    \[
+                        z_0 = 2(\cos \frac{\pi}{3} - i \sin \frac{\pi}{3}), \quad
+                        z_1 = 2(\cos \frac{2\pi}{3} + i \sin \frac{2\pi}{3}), \quad
+                        z_2 = 2(\cos \frac{\pi}{6} + i \sin \frac{\pi}{6})
+                    \]
+
+                    \[
+                        z_3 = 2(\cos \frac{7\pi}{6} + i \sin \frac{7\pi}{6})
+                    \]
+          \end{itemize}
+
+    \item Plaçons les points
+          \begin{center}
+              \begin{tikzpicture}
+                  % Axes
+                  \draw[->] (-2,0) -- (2,0) node[below] {$X$};
+                  \draw[->] (0,-2) -- (0,2) node[left] {$Y$};
+
+                  % Cercle
+                  \draw[thick] (0,0) circle(1.5);
+
+                  % Points et labels
+                  \foreach \angle/\label in {30/C, 120/B, 200/D, 300/A} {
+                          \node[fill=blue, circle, inner sep=1.5pt] at ({1.5*cos(\angle)},{1.5*sin(\angle)}) {};
+                          \node[blue] at ({1.6*cos(\angle)},{1.6*sin(\angle)}) {\label};
+                      }
+
+                  % Vecteurs
+                  \draw[->] (0,0) -- (0,1) node[left] {$v$};
+                  \draw[->] (0,0) -- (1,0) node[below] {$u$};
+              \end{tikzpicture}
+          \end{center}
+
+          \vspace{2cm}
+
+    \item
+          Soit la rotation de centre $O$ d’angle $\frac{\pi}{2}$.
+
+          D’après A)2) si $M'(z')$ est l’image de $M(z)$ par $r$ alors
+
+          \[
+              z' = z e^{i \frac{\pi}{2}}
+          \]
+
+    \item
+          Soient les points $A, B, C$ et $D$ d’affixes respectives $z_A = z_0$, $z_B = z_1$, $z_C = z_2$ et $z_D = z_3$.
+
+          Vérifions que $r(A) = C$.
+
+          \[
+              z_A e^{i \frac{\pi}{2}} = 2e^{-i \frac{\pi}{3}} e^{i \frac{\pi}{2}} = 2e^{i \frac{\pi}{6}} = z_C
+          \]
+
+          d’où $r(A) = C$.
+
+          Vérifions que $r(C) = B$.
+
+          \[
+              z_C e^{i \frac{\pi}{2}} = 2e^{i \frac{\pi}{6}} e^{i \frac{\pi}{2}} = 2e^{i \frac{4\pi}{6}} = 2e^{i \frac{2\pi}{3}} = z_B
+          \]
+
+          d’où $r(C) = B$.
+
+          Vérifions que $r(B) = D$.
+
+          \[
+              z_B e^{i \frac{\pi}{2}} = 2e^{i \frac{2\pi}{3}} e^{i \frac{\pi}{2}} = 2e^{i \frac{7\pi}{6}} = z_D
+          \]
+          d’où \( r(B) = D \).
+
+          8. \(
+          \begin{aligned}
+              r(A) = C & \implies |z_A| = |z_C|, \\
+              r(C) = B & \implies |z_C| = |z_B|, \\
+              r(B) = D & \implies |z_B| = |z_D|
+          \end{aligned}
+          \)
+
+          D’où
+          \[
+              |z_A| = |z_C| = |z_B| = |z_D| = 2
+          \]
+
+          Ce qui est équivalent à
+          \[
+              OA = OB = OC = OD = 2.
+          \]
+
+          D’où \( A, B, C \) et \( D \) sont sur le même cercle \( (C) \) de centre \( O \) et de rayon 2.
+\end{enumerate}
+\section*{\underline{Exercice 2 :} 2,25 points }
+Déterminons les limites suivantes :
+
+\(\textbf{1.} \lim\limits_{x \to +\infty} \ln\left[ \frac{x+1}{x^2 + x + 1}\right]  \quad \)
+
+\(
+\begin{aligned}
+    \lim\limits_{x \to +\infty} \ln\left[ \frac{x+1}{x^2 + x + 1}\right]:
+    \begin{cases}
+        \lim\limits_{x \to +\infty} \frac{x+1}{x^2 + x + 1}=0^+ \\
+        \lim\limits_{x \to 0^+}\ln(x)=-\infty
+    \end{cases}\text{Par composition, }\lim\limits_{x \to +\infty} \ln\left[ \frac{x+1}{x^2 + x + 1}\right]=-\infty
+\end{aligned}
+\)
+
+\begin{resultbox}
+    \[
+        \mathbf{\ln\left[ \frac{x+1}{x^2 + x + 1}\right]=-\infty}
+    \]
+\end{resultbox}
+
+\( \textbf{2.} \lim\limits_{x \to +\infty} \frac{\ln(x+2)}{\ln(x+1)} \)
+
+\(
+\begin{aligned}
+    \lim\limits_{x \to +\infty} \frac{\ln(x+2)}{\ln(x+1)} & = \lim\limits_{x \to +\infty} \frac{\ln\left[x\left( 1+ \frac{2}{x}\right) \right]}{\ln\left[x\left( 1+ \frac{1}{x}\right) \right]}                                                      \\
+                                                          & = \lim\limits_{x \to +\infty} \frac{ \ln(x) + \ln\left( 1+ \frac{2}{x}\right) }{ \ln(x) + \ln\left( 1+ \frac{1}{x}\right)}                                                               \\
+                                                          & = \lim\limits_{x \to +\infty} \frac{ \ln(x) \left[ 1+ \frac{\ln\left( 1+ \frac{2}{x}\right)}{\ln(x)} \right] }{ \ln(x) \left[ 1+ \frac{\ln\left( 1+ \frac{1}{x}\right)}{\ln(x)} \right]} \\
+                                                          & = \lim\limits_{x \to +\infty} \frac{ \left[ 1+ \frac{\ln\left( 1+ \frac{2}{x}\right)}{\ln(x)} \right] }{ \left[1+ \frac{\ln\left( 1+ \frac{1}{x}\right)}{\ln(x)} \right]}                \\
+                                                          & = 1                                                                                                                                                                                      \\
+\end{aligned}\\
+\)
+
+\begin{resultbox}
+    \[
+        \mathbf{\lim\limits_{x \to +\infty} \frac{\ln(x+2)}{\ln(x+1)}=1}
+    \]
+\end{resultbox}
+
+\( \textbf{3.} \lim\limits_{x \to 0^+} \frac{\ln x+2}{\ln x+1} \)
+
+\(
+\begin{aligned}
+    \lim\limits_{x \to 0^+} \frac{\ln x+2}{\ln x+1} & =\lim\limits_{x \to 0^+} \frac{\ln x\left(1+\frac{2}{\ln x}\right)}{\ln x\left(1+\frac{1}{\ln x}\right)} \\
+    =                                               & \lim\limits_{x \to 0^+} \frac{\left(1+\frac{2}{\ln x}\right)}{\left(1+\frac{1}{\ln x}\right)}            \\
+    =                                               & 1
+\end{aligned}
+\)
+
+\begin{resultbox}
+    \[
+        \mathbf{\lim\limits_{x \to +\infty} \lim\limits_{x \to 0^+} \frac{\ln x+2}{\ln x+1}=1}
+    \]
+\end{resultbox}
+
+\(
+\textbf{4.} \lim\limits_{x \to +\infty} \frac{\ln x}{\sqrt{x}}
+\)
+
+\(
+\begin{aligned}
+    \lim\limits_{x \to +\infty} \frac{\ln x}{\sqrt{x}} & =\lim\limits_{x \to +\infty} \frac{\ln\left[(\sqrt{x})^{2}\right] }{\sqrt{x}} \\
+                                                       & =\lim\limits_{x \to +\infty} \frac{2\ln\left[\sqrt{x}\right] }{\sqrt{x}}      \\
+                                                       & =0                                                                            \\
+\end{aligned}
+\)
+
+\begin{resultbox}
+    \[
+        \mathbf{\lim\limits_{x \to +\infty} \frac{\ln x}{\sqrt{x}}=0}
+    \]
+\end{resultbox}
+
+\section*{\underline{Problème :} 11,75 points }
+\subsection*{\underline{\textbf{Partie A}}:\textbf{ 2,75 pts}}
+
+Soit \( g(x) = 2x \ln(-x) + x + 1 \).
+
+\begin{enumerate}
+    \item Déterminons l’ensemble de définition \( D_g \) de \( g \).\hfill \textbf{(0,5 pt)}
+
+          \(g\) existe ssi \(-x>0\)
+
+          \(\begin{aligned}
+              -x>0 & \implies x<0              \\
+                   & \implies x\in ]-\infty;0[
+          \end{aligned}\)
+
+          Donc \(Dg=]-\infty;0[\)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{Dg=]-\infty;0[}\quad\quad\textbf{(0,5 pt)}
+              \]
+          \end{resultbox}
+
+    \item Calculons les limites aux bornes de \( D_g \).\hfill \textbf{(0,5 pt)}
+
+          \underline{En $-\infty$}
+
+          \( \begin{aligned}
+              \lim\limits_{x\to -\infty}g(x) & =\lim\limits_{x\to -\infty} 2x \ln(-x) + x + 1 \\
+                                             & =-\infty
+          \end{aligned} \)
+
+          \( \lim\limits_{x\to -\infty}g(x) = -\infty \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x\to -\infty}g(x) = -\infty}\quad\quad\textbf{(0,25 pt)}
+              \]
+          \end{resultbox}
+
+          \underline{En $0^{-}$}
+
+          \( \begin{aligned}
+              \lim\limits_{x\to 0^{-}}g(x) & =\lim\limits_{x\to 0^{-}} 2x \ln(-x) + x + 1     \\
+                                           & =\lim\limits_{x\to 0^{-}} -2(-x \ln(-x)) + x + 1 \\
+                                           & =1
+          \end{aligned} \)
+
+          \( \lim\limits_{x\to 0^{-}}g(x) = 1 \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x\to 0^{-}}g(x) = 1}\quad\quad\textbf{(0,25 pt)}
+              \]
+          \end{resultbox}
+    \item Étudions les variations de \( g \).\hfill \textbf{(1 pt)}
+
+          \(
+          \begin{aligned}
+              g(x) & = 2x \ln(-x) + x + 1                                  \\
+                   & = 2(x \ln(-x))' + (x + 1)'                            \\
+                   & = 2\left[(x)'\ln(-x)+x(\ln(-x))'\right] + 1           \\
+                   & = 2\left[\ln(-x)+x\left(\frac{1}{x}\right)\right] + 1 \\
+                   & = 2\left[\ln(-x)+1\right] + 1                         \\
+                   & = 2\ln(-x)+ 3
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{g'(x)=2\ln(-x)+ 3}\quad\quad\textbf{(0,5 pt)}
+              \]
+          \end{resultbox}
+
+          Etudions le signe de \(g\)
+
+          Supposons que \( 2\ln(-x)+ 3 > 0 \)
+
+          \(
+          \begin{aligned}
+              2\ln(-x)+ 3 > 0 & \implies \ln(-x)> \frac{-3}{2}                       \\
+                              & \implies \ln(-x)> \ln\left(e^{\frac{-3}{2}}\right)   \\
+                              & \implies -x> e^{\frac{-3}{2}}                        \\
+                              & \implies x< -e^{\frac{-3}{2}}                        \\
+                              & \implies x\in \left]-\infty;-e^{\frac{-3}{2}}\right[ \\
+          \end{aligned}
+          \)
+
+          \(
+          \begin{cases}
+              \forall x \in \left]-\infty;-e^{\frac{-3}{2}}\right[, g'(x)>0  \text{ donc $g$ y est croissant} \\
+                  \forall x \in \left]-e^{\frac{-3}{2}};0\right[, g'(x)<0 \text{ donc $g$ y est décroissant}
+          \end{cases}
+          \)
+
+          \begin{center}
+              \begin{tikzpicture}
+                  \tkzTabInit[espcl=6]
+                  {$x$ / 1 , $f'(x)$ / 1, $f(x)$ / 2 }
+                  {$-\infty$, $-e^{\frac{-3}{2}}$, $0$}
+                  \tkzTabLine
+                  {, +, z , -,}
+                  \tkzTabVar
+                  { -/$-\infty$ , +/$2e^{\frac{-3}{2}} + 1$, -/$1$}
+                  \tkzTabVal[draw]{1}{2}{0.3}{$-1$}{$0$}
+              \end{tikzpicture}
+          \end{center}
+
+          \(
+          \begin{aligned}
+              g(-e^{\frac{-3}{2}}) & = 2(-e^{\frac{-3}{2}}) \ln(-(-e^{\frac{-3}{2}})) + (-e^{\frac{-3}{2}}) + 1 \\
+                                   & = -2e^{\frac{-3}{2}} \ln e^{\frac{-3}{2}} - e^{\frac{-3}{2}} + 1           \\
+                                   & = -2e^{\frac{-3}{2}} \times \frac{-3}{2} - e^{\frac{-3}{2}} + 1            \\
+                                   & = 3e^{\frac{-3}{2}} - e^{\frac{-3}{2}} + 1                                 \\
+                                   & = 2e^{\frac{-3}{2}} + 1.
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{g(-e^{\frac{-3}{2}})=2e^{\frac{-3}{2}} + 1}
+              \]
+          \end{resultbox}
+
+    \item Calculons \( g(-1) \).\hfill \textbf{(0,75 pt)}
+
+          \(
+          \begin{aligned}
+              g(-1) & = 2(-1) \ln(-(-1)) + (-1) + 1 \\
+                    & = -2 \ln(1) - 1 + 1           \\
+              g(-1) & = -2 \times 0 - 1 + 1         \\
+                    & = 0.
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{g(-1)=0}
+              \]
+          \end{resultbox}
+
+          Le signe de \( g(x) \)
+
+          D'après le tableau de variation:
+
+          \(
+          \begin{cases}
+              \forall x \in \left]-\infty;-1\right[, g(x)<0 \\
+                  \forall x \in \left]-1;0\right[, g(x)>0
+          \end{cases}
+          \)
+\end{enumerate}
+
+\subsection*{\underline{\textbf{Partie B}}:\textbf{ 7 pts}}
+
+On considère la fonction \( f \) définie par :
+
+\[
+    f(x) =
+    \begin{cases}
+        x^2 \ln(-x) + x + 1 & \text{si } x < 0 \\
+        x \ln(x)^2 + x + 1  & \text{si } x > 0 \\
+        1                   & \text{si } x = 0
+    \end{cases}
+\]
+
+On note \( (C_f) \) sa courbe représentative dans un repère orthonormé.
+
+\begin{enumerate}
+    \item Justifions que \( f \) est définie sur \( \mathbb{R} \).\hfill \textbf{(0,5 pt)}
+
+          \[ \text{Posons }
+              f(x) =
+              \begin{cases}
+                  f_{1}(x)=x^2 \ln(-x) + x + 1 & \text{si } x < 0 \\
+                  f_{2}(x)=x \ln(x)^2 + x + 1  & \text{si } x > 0 \\
+                  f_{3}(x)=1                   & \text{si } x = 0
+              \end{cases}
+          \]
+
+          *\(f_{1}\) existe ssi \(-x > 0\)
+
+          \(
+          \begin{aligned}
+              -x > 0 & \implies x < 0            \\
+                     & \implies x \in]-\infty;0[
+          \end{aligned}
+          \)
+
+          \underline{\(Df_{1} = ]-\infty;0[ \)}
+
+          *\(f_{2}\) existe ssi \(x > 0\)
+
+          \(
+          \begin{aligned}
+              x > 0 & \implies x \in]-\infty;0[
+          \end{aligned}
+          \)
+
+          \underline{\(Df_{2} = \in]-\infty;0[ \)}
+
+          \underline{\(Df_{3} = \{0\} \)}
+
+          Donc
+
+          \(
+          \begin{aligned}
+              Df & =Df_{1} \cup Df_{2} \cup Df_{3}        \\
+                 & =]-\infty;0[ \cup ]-\infty;0[\cup\{0\} \\
+                 & =\mathbb{R}
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{Df=\mathbb{R}}
+              \]
+          \end{resultbox}
+
+    \item Étudions la continuité et la dérivabilité de \( f \) en 0. \hfill \textbf{(1,5 pt)}
+
+          \underline{\textbf{Continuité}}
+
+          \underline{En \( 0^- \), on a :} \( f(x) = x^2 \ln(-x) + x + 1. \)
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x \to 0^-}x^2 \ln(-x) + x + 1:
+              \begin{cases}
+                  \lim\limits_{x \to 0^-}x^2 \ln(-x)=0 \\
+                  \lim\limits_{x \to 0^-} x + 1 =1
+              \end{cases}\text{ Par somme}: \lim\limits_{x \to 0^-}x^2 \ln(-x) + x + 1 = 1
+          \end{aligned}
+          \)
+
+          Ainsi,
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x \to 0^-} f(x) = 1}
+              \]
+          \end{resultbox}
+
+          \underline{En \( 0^+ \), on a :} \( f(x) = x \ln(x)^2 + x + 1. \)
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x \to 0^+} x \ln(x)^2 + x + 1:
+              \begin{cases}
+                  \lim\limits_{x \to 0^+} (x^{\frac{1}{2}} \ln(x))^2 = 0, \\
+                  \lim\limits_{x \to 0^+} x + 1 = 1.
+              \end{cases}
+              \text{ Par somme : } \lim\limits_{x \to 0^+} f(x) = 1.
+          \end{aligned}
+          \)
+
+          Ainsi,
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x \to 0^+} f(x) = 1}
+              \]
+          \end{resultbox}
+
+          \textbf{  Conclusion }
+
+          On sait que \( f(0) = 1 \). De plus :
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0) = 1.
+                  }
+              \]
+          \end{resultbox}
+
+          Par conséquent, la fonction \( f \) est \textbf{continue en \( x = 0 \)}.
+
+          \underline{\textbf{Dérivabilité}}
+
+          \underline{En \( 0^- \), on a :} \( f(x) = x^2 \ln(-x) + x + 1. \)
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x \to 0^-}\frac{f(x)-f(0)}{x-0} & =\lim\limits_{x \to 0^-} \frac{x^2 \ln(-x) + x + 1-1}{x} \\
+                                                           & =\lim\limits_{x \to 0^-} \frac{x^2 \ln(-x) + x }{x}      \\
+                                                           & =\lim\limits_{x \to 0^-} x \ln(-x) + 1                   \\
+                                                           & =1
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x \to 0^-}\frac{f(x)-f(0)}{x-0}=1
+                  }
+              \]
+          \end{resultbox}
+
+          \underline{En \( 0^+ \), on a :} \( f(x) = x \ln(x)^2 + x + 1. \)
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x \to 0^+}\frac{f(x)-f(0)}{x-0} & =\lim\limits_{x \to 0^+} \frac{x \ln(x)^2 + x + 1-1}{x} \\
+                                                           & =\lim\limits_{x \to 0^+} \frac{x \ln(x)^2 + x }{x}      \\
+                                                           & =\lim\limits_{x \to 0^+} \ln(x)^2+1                     \\
+                                                           & =+\infty
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x \to 0^+}\frac{f(x)-f(0)}{x-0}=+\infty
+                  }
+              \]
+          \end{resultbox}
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x \to 0^-}\frac{f(x)-f(0)}{x-0} \neq \lim\limits_{x \to 0^+}\frac{f(x)-f(0)}{x-0}
+                  }
+              \]
+          \end{resultbox}
+
+          Par conséquent, la fonction \( f \) n'est pas \textbf{dérivable en \( x = 0 \)}.
+
+          Interprétons graphiquement les résultats:
+
+          \begin{itemize}
+              \item \( f \) est dérivable à gauche de \(0\)  et admet une tangeant d'équation \( y=x+1 \)
+              \item \( f \) n'est pas dérivable à droite de \(0\)  et admet une démi-tangeant orientée vers le haut.
+          \end{itemize}
+
+    \item Donnons le domaine de dérivabilité de \( f \) puis montrons que
+          \(
+          f'(x) =
+          \begin{cases}
+              g(x)          & \text{si } x < 0 \\
+              (1 + \ln x)^2 & \text{si } x > 0
+          \end{cases}
+          \)\hfill \textbf{(0,5$\times$3 pts)}
+
+          \textbf{\underline{Domaine de dérivabilité}}
+
+          \( f_{1}(x)=x^2 \ln(-x) + x + 1 \) est dérivable si \( x < 0 \) ainsi \( Df_{1}' = ]-\infty;0[\)
+
+          \( f_{2}(x)=x \ln(x)^2 + x + 1  \) est dérivable si \(  x > 0 \) ainsi \( Df_{2}' = ]0;+\infty[\)
+
+          D'après ce qui précède, \(f\) n'est pas dérivable en \(0\)  donc f est bien dérivable sur \(\mathbb{R}\setminus\{0\}\).
+
+          ainsi
+
+          \(
+          \begin{aligned}
+              Df' & =Df_{1}' \cup Df_{2}' \cup Df_{3} \\
+                  & =]-\infty;0[ \cup ]0;+\infty[     \\
+                  & =\mathbb{R}\setminus\{0\}
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{Df'=\mathbb{R}\setminus\{0\}}
+              \]
+          \end{resultbox}
+
+          \(
+          \begin{aligned}
+              f'(x) & =
+              \begin{cases}
+                  [x^2 \ln(-x) + x + 1]' & \text{si } x < 0 \\
+                  [x \ln(x)^2 + x + 1]'  & \text{si } x > 0 \\
+              \end{cases}       \\
+                    & =
+              \begin{cases}
+                  (x^2 \ln(-x))' + (x + 1)' & \text{si } x < 0 \\
+                  (x \ln(x)^2)' + (x + 1)'  & \text{si } x > 0 \\
+              \end{cases}                    \\
+                    & =
+              \begin{cases}
+                  2x \ln(-x) + x^2\times\frac{1}{x} + 1        & \text{si } x < 0 \\
+                  \ln(x)^2+2x\times\frac{1}{x}\times\ln(x) + 1 & \text{si } x > 0 \\
+              \end{cases} \\
+                    & =
+              \begin{cases}
+                  2x \ln(-x) + x + 1   & \text{si } x < 0 \\
+                  \ln(x)^2+2\ln(x) + 1 & \text{si } x > 0 \\
+              \end{cases}                         \\
+                    & =
+              \begin{cases}
+                  g(x)           & \text{si } x < 0 \\
+                  (\ln(x)+1)^{2} & \text{si } x > 0 \\
+              \end{cases}\textbf{ cqfd}
+          \end{aligned}
+          \)
+
+    \item Calculons les limites de \( f \) aux bornes de son domaine de définition.\hfill \textbf{(0,5 pt)}
+
+          \underline{En \( -\infty \), on a :} \( f(x) = x^2 \ln(-x) + x + 1 \)
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x\to -\infty} f(x) & = \lim\limits_{x\to -\infty} x^2 \ln(-x) + x + 1                          \\
+                                              & = \lim\limits_{x\to -\infty} x^{2} \left[\ln(-x) + \frac{x + 1}{x}\right] \\
+                                              & = +\infty \left[+\infty+1 \right]                                         \\
+                                              & =+\infty
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x\to -\infty} f(x) = +\infty }
+              \]
+          \end{resultbox}
+
+          \underline{En \( +\infty \), on a :} \( f(x) = x \ln(x)^2 + x + 1. \)
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x\to +\infty} f(x) & = \lim\limits_{x\to +\infty}  x \ln(x)^2 + x + 1 \\
+                                              & =+\infty
+          \end{aligned}
+          \)
+
+          \begin{resultbox}
+              \[
+                  \mathbf{\lim\limits_{x\to +\infty} f(x) = +\infty }
+              \]
+          \end{resultbox}
+
+    \item Étudions les branches infinies de \( (C_f) \).\hfill \textbf{(0,5 pt)}
+
+          Comme \( \lim\limits_{x\to -\infty} f(x) = +\infty  \) calculons \( \lim\limits_{x\to -\infty} \frac{f(x)}{x}   \)
+
+          En effet
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x\to -\infty} \frac{f(x)}{x} & = \lim\limits_{x\to -\infty} \frac{x^2 \ln(-x) + x + 1}{x} \\
+                                                        & =\lim\limits_{x\to -\infty} x\ln(-x) + \frac{x + 1}{x}     \\
+                                                        & =-\infty+1                                                 \\
+                                                        & =-\infty
+          \end{aligned}
+          \)
+
+          Donc \( \lim\limits_{x\to -\infty} \frac{f(x)}{x} =-\infty   \)
+
+          \textcolor{red}{Donc \(Cf\) admet une branche parabolique de direction \((Oy)\) au voisinage de \(-\infty\)}
+
+          Comme \( \lim\limits_{x\to +\infty} f(x) = +\infty  \) calculons \( \lim\limits_{x\to +\infty} \frac{f(x)}{x}   \)
+
+          En effet
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x\to +\infty} \frac{f(x)}{x} & = \lim\limits_{x\to +\infty} \frac{x \ln(x)^2 + x + 1}{x} \\
+                                                        & =\lim\limits_{x\to +\infty} \ln(x)^2 + \frac{x + 1}{x}    \\
+                                                        & =+\infty+1                                                \\
+                                                        & =+\infty
+          \end{aligned}
+          \)
+
+          Donc \( \lim\limits_{x\to +\infty} \frac{f(x)}{x} =+\infty   \)
+
+          \textcolor{red}{Donc \((Cf)\) admet une branche parabolique de direction \((Oy)\) au voisinage de \(+\infty\)}
+    \item Dressons le tableau de variations de \( f \).\hfill \textbf{(1 pt)}
+
+          Le signe de \( f \).  on a : \(
+          f'(x) =
+          \begin{cases}
+              g(x)          & \text{si } x < 0 \\
+              (1 + \ln x)^2 & \text{si } x > 0
+          \end{cases}
+          \)
+
+          \(
+          \begin{cases}
+              \forall x \in \left]-\infty;-1\right[, g(x)<0 \text{ donc \(f\) est y décroissante} \\
+              \forall x \in \left]-1;0\right[, g(x)>0 \text{ donc \(f\) y est croissante}         \\
+                  \forall x \in \left]0;-\infty\right[, f(x)>0
+          \end{cases}
+          \)
+
+          \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+              \tkzTabInit[espcl=1.75]{$x$/.5,$f'$/.7,$f$/1.5}{$-\infty$,$-1$,$+\infty$}
+              \tkzTabLine{,-,z,+,}
+              \tkzTabVar{+/$+\infty$,-/$0$,+/$+\infty$}
+          \end{tikzpicture}
+    \item Montrons que dans \( ]-\infty; -1[ \), l’équation \( f(x) = 1 \) admet une unique solution \( \alpha \) .\hfill \textbf{(0,75 pt)}
+
+          Posons \( h(x) = f(x) - 1 \)
+
+          Montrer que \( f(x) = 1 \) admet une unique solution revient a montrer que \( h(x) = 0 \) admet une unique solution.
+
+          \textbf{Existance}
+
+          \(
+          \begin{aligned}
+              \lim\limits_{x\to -\infty}h(x) \times \lim\limits_{x\to -1}h(x) & = \lim\limits_{x\to -\infty}f(x)-1 \times \lim\limits_{x\to -1}f(x)-1 \\
+                                                                              & =+\infty\times -1                                                     \\
+                                                                              & <0
+          \end{aligned}
+          \)
+
+          Donc l'équation \(h(x)=0\) admet une solution \(\alpha\)
+
+          \textbf{Unicité}
+
+          Comme \(h\) hérite des propriétés de \(f\) donc \(h\) est continue et strictement décroissante sur \( ]-\infty;-1[ \)
+
+          D'où l'unicté de la solution
+
+          vérifions que \(-1,8 < \alpha < -1,7\)
+
+          \(
+          \begin{aligned}
+              h(-1,8) \times h(-1,7) & = (f(-1,8)-1) \times (f(-1,7)-1)      \\
+                                     & =(1.104428794-1)\times(0.833515646-1) \\
+                                     & =(0.104428794)\times(-0.166484354)    \\
+                                     & <0
+          \end{aligned}
+          \)
+
+          Donc \(\alpha \in ]-1,8;-1,7[ \)
+
+    \item Construisons \( (C_f) \) (unité 2 cm) (on précisera la tangente au point d’abscisse \( e^{-1} \) et on placera le point d’abscisse 1).\hfill \textbf{(0,75 pt)}
+
+          \( f(x)=x \ln(x)^2 + x + 1 \)
+
+          \( f(e^{-1})=2e^{-1}+1 \)
+
+          \textbf{Équation de la tangente}
+
+          L'équation de la tangente en \( x = e^{-1} \) est donnée par :
+
+          \[
+              y = f(e^{-1}) + f'(e^{-1}) (x - e^{-1})
+          \]
+
+          Puisque \( f'(e^{-1}) = 0 \), on a :
+
+          \[
+              y = \frac{2}{e} + 1
+          \]
+
+          la tangente est une droite horizontale d'équation :
+
+          \[
+              y = \frac{2}{e} + 1
+          \]
+
+          \[f(1)=2\]
+
+          \begin{center}
+              \begin{figure}[H]% Forcer l'image à cet endroit
+                  \centering
+                  \includegraphics[width=0.8\textwidth]{devoir3.png}
+                  \caption{Courbe de (Cf)}
+                  \label{fig:monimage}
+              \end{figure}
+              \href{https://www.geogebra.org/classic/tbcc6gcm}{Clique ici pour voir la courbe sur géogébra}\\
+          \end{center}
+\end{enumerate}
+\subsection*{\underline{\textbf{Partie C}}:\textbf{ 2 pts}}
+
+Soit \( h \) la restriction de \( f \) à \( I =]0; +\infty[ \).
+
+\begin{enumerate}
+    \item Montrons que \( h \) admet une bijection réciproque \( h^{-1} \) définie sur un intervalle \( J \) que nous allons préciser.\hfill \textbf{(0,5 pt)}
+
+          La fonction \(h\) est continue et strictement croissante sur \(I = ]0, +\infty[\) et réalise une bijection de
+
+              \(I\) sur \(J = ]1, +\infty[\).
+
+          Elle admet donc une bijection réciproque \( h^{-1}: J \to I. \)
+
+    \item Étudions la dérivabilité de \( h^{-1} \) sur \( J \).\hfill \textbf{(0,25 pt)}
+
+          D'après le théorème de dérivation des fonctions réciproques, si \( h \) est dérivable et si \( h'(x) \neq 0 \) pour tout \( x \in I \), alors \( h^{-1} \) est dérivable sur \( J \) et sa dérivée est donnée par :
+          \[
+              \big( h^{-1} \big)'(y) = \frac{1}{h'(h^{-1}(y))}, \quad \forall y \in J.
+          \]
+
+          Or, nous avons montré que :\( h'(x) = (\ln(x) + 1)^2. \)
+
+          Puisque \( (\ln(x) + 1)^2 > 0 \) pour tout \( x > 0 \), on en déduit que \( h'(x) \neq 0 \) sur \( I \).
+
+          Ainsi, \( h^{-1} \) est dérivable sur \( J = ]1, +\infty[ \)
+    \item
+          \begin{enumerate}
+              \item Calculons \( h(1) \).\hfill \textbf{(0,25 point)}
+
+                    \( h(x) = x \ln(x)^2 + x + 1. \)
+
+                    \(
+                    \begin{aligned}
+                        h(1) & = 1 \ln(1)^2 + 1 + 1.    \\
+                             & = 1 \cdot 0 + 1 + 1 = 2. \\
+                             & = 2.
+                    \end{aligned}
+                    \)
+              \item Calculons \( (h^{-1})'(2) \).\hfill \textbf{(0,5 pt)}
+
+                    Nous savons que la dérivée de la fonction réciproque \( h^{-1} \) est donnée par :
+                    \[
+                        (h^{-1})'(y) = \frac{1}{h'(h^{-1}(y))}, \quad \forall y \in J.
+                    \]
+
+                    Nous avons précédemment trouvé que :
+                    \[
+                        h(1) = 2.
+                    \]
+                    Cela signifie que :
+                    \[
+                        h^{-1}(2) = 1.
+                    \]
+
+                    Calculons maintenant \( h'(1) \). La fonction \( h \) est définie par :
+                    \[
+                        h(x) = x \ln(x)^2 + x + 1.
+                    \]
+                    Sa dérivée est :
+                    \[
+                        h'(x) = (\ln(x) + 1)^2.
+                    \]
+
+                    En évaluant cette dérivée en \( x = 1 \), on a :
+                    \[
+                        h'(1) = (\ln(1) + 1)^2 = (0 + 1)^2 = 1.
+                    \]
+
+                    Ainsi : \( (h^{-1})'(2) = \frac{1}{h'(1)} = \frac{1}{1} = 1. \)
+
+                    \textbf{Conclusion}
+
+                    Nous obtenons : \( (h^{-1})'(2) = 1. \)
+          \end{enumerate}
+    \item Construisons la courbe de \( h^{-1} \).\hfill \textbf{(0,5 pt)}
+          \begin{center}
+              \begin{figure}[H]% Forcer l'image à cet endroit
+                  \centering
+                  \includegraphics[width=0.8\textwidth]{devoir3Reciproque.png}
+                  \caption{Courbe de (Cf)}
+                  \label{fig:monimage}
+              \end{figure}
+              \href{https://www.geogebra.org/classic/tbcc6gcm}{Clique ici pour voir la courbe sur géogébra}\\
+          \end{center}
+    \item Étudions la continuité et la dérivabilité de \( f \) en 0. Interprétez graphiquement les résultats.\hfill \textbf{(1,5 pt)}
+\end{enumerate}
+\end{document}
