@@ -1,0 +1,283 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{tcolorbox} % Pour encadrer avec fond coloré
+\usepackage{pgfplots}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection (1 point) :}} \ignorespaces
+}
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[50pt]{\rotatebox{80}{\textcolor[gray]{0.5}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+
+% Définition de l'encadré adaptatif avec fond jaune
+\newtcolorbox{resultbox}{
+    colback=red!30, % Fond rouge clair
+    colframe=black, % Bordure noire fine
+    sharp corners, % Coins nets
+    boxrule=0.5pt, % Contour léger
+    boxsep=2pt, % Espacement interne
+    left=5pt, right=5pt, top=2pt, bottom=2pt, % Marges internes
+}
+
+\begin{document}
+\hrule % Barre horizontale
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
+        Lycée Dindéfélo & \quad\quad Teste 11 & 07 Mars 2024 \\
+    \end{tabular}
+    \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
+    \hrule % Barre horizontale
+\end{center}
+\begin{center}
+    \textbf{\Large Nombre Complexe} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : Terminale S2} \\[0.2cm]
+    \textbf{\small Durée : 10 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /5}
+\end{center}
+
+% Nom de l'élève
+\textbf{\small Nom de l'élève :} \underline{\hspace{8cm}} \\[0.5cm]
+
+\begin{enumerate}
+\item Pour tout nombre complexe $z \neq -1 + 2i$, on pose $Z = \frac{z - 2 + 4i}{z + 1 - 2i}$.
+
+Déterminons l'ensemble des points $M$ du plan tels que :
+
+\begin{enumerate}
+        \item $|Z| = 1$\\
+        	$\begin{aligned}
+        	|Z| = 1 &\implies \mid \frac{z - 2 + 4i}{z + 1 - 2i} \mid = 1\\
+        					&\implies \frac{\mid z - 2 + 4i \mid}{\mid z + 1 - 2i \mid} = 1\\
+        					&\implies \mid z - 2 + 4i \mid = \mid z + 1 - 2i \mid\\
+        					&\implies \mid x+iy - 2 + 4i \mid = \mid x+iy + 1 - 2i \mid\\
+                            &\implies \mid x-2+i(y+4) \mid = \mid x+1 +i(y-2) \mid\\
+        					&\implies \sqrt{ (x-2)^{2} + (4+y)^{2} } = \sqrt{ (x+1)^{2} + (y - 2)^{2} }\\
+                            &\implies (x-2)^{2} + (4+y)^{2}=(x+1)^{2} + (y - 2)^{2}\\
+                            &\implies (x^2 - 4x + 4) + (16 + 8y + y^2) = (x^2 + 2x + 1) + (y^2 - 4y + 4)\\
+                            &\implies x^2 - 4x + 4 + 16 + 8y + y^2 = x^2 + 2x + 1 + y^2 - 4y + 4\\
+                            &\implies  x^2 + y^2 - 4x + 8y + 20 = x^2 + y^2 + 2x - 4y + 5\\
+                            &\implies -4x + 8y + 20 = 2x - 4y + 5\\
+                            &\implies -4x - 2x + 8y + 4y = 5 - 20\\
+                            &\implies -6x + 12y = -15\\
+                            &\implies 2x - 4y = 5
+        	\end{aligned}$
+        	
+\begin{resultbox}
+    \[
+    \mathbf{\text{L'ensemble des points $M$ tel que $|Z| = 1$ est la droite d'équation : $2x - 4y = 5$}}
+    \]
+\end{resultbox}
+
+\textcolor{red}{\textbf{Autre méthode}}
+
+$Z = \frac{z - 2 + 4i}{z + 1 - 2i}$ en posant $z_{M} =  x +iy$, $z_{A} =  2 - 4i$ et $z_{B} = - 1 + 2i$
+
+$Z = \frac{z_{M} - z_{A}}{z_{M} - z_{B}}$
+
+$
+\begin{aligned}
+|Z| = 1 &\implies \mid \frac{z_{M} - z_{A}}{z_{M} - z_{B}} \mid = 1\\
+				&\implies \frac{MA}{MB} = 1\\
+				&\implies MA=MB
+\end{aligned}
+$
+
+\begin{resultbox}
+    \[
+    \mathbf{\text{L'ensemble des points $M$ tel que $|Z| = 1$ est la Médiatrice  du segment [AB]}}
+    \]
+\end{resultbox}
+\begin{resultbox}
+    \[
+    \mathbf{E = \left\{ M(x, y) \in \mathbb{R}^2 \mid 2x - 4y = 5 \right\}}
+    \]
+\end{resultbox}
+
+\newpage
+
+        \item $Z$ soit un réel.
+        
+        
+		$$Z = \frac{x^2 + y^2 - x + 2y - 10 + i(6x + 3y)}{(x+1)^2 + (y-2)^2}$$
+
+Pour que \( Z \) soit un réel, la partie imaginaire du numérateur doit être nulle, c'est-à-dire :
+
+\[
+6x + 3y = 0
+\]
+
+\[
+2x + y = 0
+\]
+L'ensemble des points $M$ tel que $Z$ soit un réel est la droite d'équation $2x + y = 0$ privé du point $\begin{pmatrix} -1 \\ 2 \end{pmatrix}$
+
+\begin{resultbox}
+    \[
+    \mathbf{E = \left\{ (x, y) \in \mathbb{R}^2 \mid 2x + y = 0, \quad \begin{pmatrix} x \\ y \end{pmatrix} \neq \begin{pmatrix} -1 \\ 2 \end{pmatrix} \right\}}
+    \]
+\end{resultbox}
+
+\end{enumerate}
+
+\item Pour tout complexe $z \neq i$, on pose
+    \(
+    U = \frac{z + i}{z - i}.
+    \)
+    
+    Déterminons l’ensemble des points $M$ d’affixe $z$ tels que :
+    
+    \(
+    \begin{aligned}
+     U&= \frac{z + i}{z - i}\\
+     	&=\frac{x+iy + i}{x+iy - i}\\
+     	&=\frac{x+i(y + 1)}{x+i(y - 1)}\\    
+     	&=\frac{\left[ x+i(y + 1) \right]\left[ x-i(y - 1) \right]}{x^{2}+(y - 1)^{2}}\\
+     	&=\frac{x\left[ x-i(y - 1) \right]+i(y + 1)\left[ x-i(y - 1) \right]}{x^{2}+(y - 1)^{2}}\\
+     	&=\frac{x^{2} - ix(y - 1) + ix(y + 1) - i^{2}(y + 1)(y - 1)}{x^{2}+(y - 1)^{2}}\\   	
+     	&=\frac{x^{2} - ixy + ix + ixy + ix + (y + 1)(y - 1)}{x^{2}+(y - 1)^{2}}\\ 
+     	&=\frac{x^{2} - ixy + ix + ixy + ix + y^{2}-1}{x^{2}+(y - 1)^{2}}\\ 
+     	&=\frac{x^{2} +2ix + y^{2}-1}{x^{2}+(y - 1)^{2}}\\ 
+     	&=\frac{x^{2} + y^{2}-1+2ix}{x^{2}+(y - 1)^{2}}\\
+    \end{aligned}
+    \)
+\begin{resultbox}
+    \[
+    \mathbf{U=\frac{x^{2} + y^{2}-1+2ix}{x^{2}+(y - 1)^{2}}}
+    \]
+\end{resultbox}
+    \begin{enumerate}
+        \item $U \in \mathbb{R}^*_{-}$\\
+        Pour que \( U \in \mathbb{R}^*_{-} \) soit réel, il faut que \( Im(U)=0 \) et \( Re(U)<0 \) 
+        
+        \( 
+        	\begin{aligned}
+        	Im(U)=0  \text{ et }  Re(U)<0 &\implies 2x=0 \text{ et } x^{2} + y^{2}-1<0\\
+        	 															&\implies x=0 \text{ et } x^{2} + y^{2}<1\\
+        	\end{aligned}
+        \)
+
+Ainsi, l'ensemble des points \( M \) d'affixe \( z \) est donné par :
+
+
+\begin{resultbox}
+    \[
+    \mathbf{E = \left\{ z \in \mathbb{C} \mid \operatorname{Re}(z) = 0 \text{ et } |z| < 1 \right\}}
+    \]
+\end{resultbox}
+
+ou, en coordonnées cartésiennes :
+
+\begin{resultbox}
+    \[
+    \mathbf{E = \left\{ (x, y) \in \mathbb{R}^2 \mid x = 0 \text{ et } x^2 + y^2 < 1 \right\}}
+    \]
+\end{resultbox}
+Cela représente l'intersection de la droite \( x = 0 \) avec l'intérieur du disque de centre \( O(0,0) \) et de rayon \( 1 \), excluant le bord.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xlabel={$x$}, ylabel={$y$},
+        xmin=-1.2, xmax=1.2, ymin=-1.2, ymax=1.2,
+        width=8cm, height=8cm,
+        xtick=\empty, ytick=\empty,
+        samples=100
+    ]
+        % Disque (bord en pointillés)
+        \addplot [domain=0:360, dashed] ({cos(x)}, {sin(x)});
+        
+        % Segment vertical x=0 (en rouge)
+        \addplot [red, thick] coordinates {(0,-1) (0,1)};
+        
+        % Labels
+        \node at (axis cs: 1.1,0) {\small Bord du disque (exclu)};
+        \node[red] at (axis cs: 0,0.5) {\small Ensemble \(E\)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+        \item $U \in i\mathbb{R}$
+
+    Pour que \( U \) soit imaginaire pur, il faut que \( \operatorname{Re}(U) = 0 \).
+
+\begin{resultbox}
+    \[
+    \mathbf{\operatorname{Re}(U) = \frac{x^2 + y^2 - 1}{x^2 + (y - 1)^2} = 0}
+    \]
+\end{resultbox}
+
+    Ce qui donne :
+
+    \[
+    x^2 + y^2 - 1 = 0
+    \]
+
+    Ainsi, l'ensemble des points \( M \) d'affixe \( z \) est donné par :
+    \[ E' = \left\{ z \in \mathbb{C} \mid |z| = 1 \right\} \]
+
+\begin{resultbox}
+    \[
+    \mathbf{ E' = \left\{ z \in \mathbb{C} \mid |z| = 1 \right\}}
+    \]
+\end{resultbox}
+
+    ou, en coordonnées cartésiennes :
+
+    \[
+    E' = \left\{ (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1 \right\}
+    \]
+\begin{resultbox}
+    \[
+    \mathbf{ E' = \left\{ (x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1 \right\}}
+    \]
+\end{resultbox}
+    Cela représente le **cercle de centre \( O(0,0) \) et de rayon \( 1 \)**.
+
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xlabel={$x$}, ylabel={$y$},
+        xmin=-1.2, xmax=1.2, ymin=-1.2, ymax=1.2,
+        width=8cm, height=8cm,
+        xtick=\empty, ytick=\empty,
+        samples=100
+    ]
+        % Cercle (solide car il appartient à E')
+        \addplot [domain=0:360, blue, thick] ({cos(x)}, {sin(x)});
+        
+        % Labels
+        \node[blue] at (axis cs: 0.8, 0.6) {\small Ensemble \(E'\)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+
+\end{document}
