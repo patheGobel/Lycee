@@ -82,50 +82,361 @@ middle color = tcbcolback!80!black]
 \vspace{3cm}
 
 \section*{\underline{Exercice 1 :} 9 pts (Résolution de systèmes triangulaires supérieurs)}
-Donner la solution dans chaque cas
-\[
+Donnons la solution dans chaque cas
+
+\( 
 \begin{aligned}
 \begin{cases}
-2x + y + z = 12 \\
-3y - z \quad= 6 \\
-\quad\quad z = 3
-\end{cases}\quad\quad\quad\quad
+2x + y + z = 12\quad &L1 \\
+3y - z = 6\quad &L2\\
+z = 3\quad &L3
+\end{cases} 
+\end{aligned}
+\)
+
+\vspace{1cm}
+\noindent
+\[ (L3) : z = 3 \]
+
+\[
+\begin{aligned}
+(L2) :\; 3y - z = 6 
+&\implies 3y - 3 = 6\\
+&\implies 3y = 9\\
+&\implies y = \dfrac{9}{3}\\
+&\implies y = 3
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+(L1) :\; 2x + y + z = 12 
+&\implies 2x + 3 + 3 = 12\\ 
+&\implies 2x + 6 = 12\\
+&\implies 2x = 6\\
+&\implies x = \dfrac{6}{2}\\
+&\implies x = 3
+\end{aligned}
+\]
+
+\[
+\boxed{\color{red}{S =\left\lbrace (3,\,3,\,3) \right\rbrace}}
+\]
+
+\( 
+\begin{aligned}
 \begin{cases}
-2x + 3y - z = 5 \\
-4y + 2z \quad= 6 \\
-\quad\quad3z - 9 = 0
-\end{cases}\quad\quad\quad\quad
+2x + 3y - z = 5\quad  &L1\\
+4y + 2z = 6\quad  &L2\\
+3z - 9 = 0\quad  &L3
+\end{cases} 
+\end{aligned}
+\)
+
+\vspace{1cm}
+\noindent
+\[
+\begin{aligned}
+(L3) :\; 3z - 9 = 0 
+&\implies 3z = 9\\
+&\implies z = \dfrac{9}{3}\\
+&\implies z = 3
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+(L2) :\; 4y + 2z = 6 
+&\implies 4y + 2\cdot 3 = 6\\
+&\implies 4y + 6 = 6\\
+&\implies 4y = 0\\
+&\implies y = \dfrac{0}{4}\\
+&\implies y = 0
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+(L1) :\; 2x + 3y - z = 5 
+&\implies 2x + 3\cdot 0 - 3 = 5\\
+&\implies 2x - 3 = 5\\
+&\implies 2x = 8\\
+&\implies x = \dfrac{8}{2}\\
+&\implies x = 4
+\end{aligned}
+\]
+
+\[
+\boxed{\color{red}{S =\left\lbrace (4,\,0,\,3) \right\rbrace}}
+\]
+
+\(
+\begin{aligned}
 \begin{cases}
 3x + y + z = 14\\
 \quad\quad\quad z = 2\\
 2y - z \quad = 4
-
 \end{cases}
 \end{aligned}
+\)
+
+\vspace{1cm}
+\noindent
+\[ (L2) : z = 2 \]
+
+\[
+\begin{aligned}
+(L3) :\; 2y - z = 4 
+&\implies 2y - 2 = 4\\
+&\implies 2y = 6\\
+&\implies y = \dfrac{6}{2}\\
+&\implies y = 3
+\end{aligned}
 \]
+
+\[
+\begin{aligned}
+(L1) :\; 3x + y + z = 14 
+&\implies 3x + 3 + 2 = 14\\
+&\implies 3x + 5 = 14\\
+&\implies 3x = 9\\
+&\implies x = \dfrac{9}{3}\\
+&\implies x = 3
+\end{aligned}
+\]
+
+\[
+\boxed{\color{red}{S = \left\lbrace (3,\,3,\,2) \right\rbrace}}
+\]
+
 
 \section*{\underline{Exercice 2 :} 8 pts (Résolution de systèmes par le pivot de Gauss)}
 Résoudre les systèmes suivants en utilisant la méthode du pivot de Gauss
+
+\(
+\begin{aligned}
+\begin{cases}
+x + y + z = 9 &L1\\
+2x - y + z = 5 &L2\\
+x + 2y - z = 4 &L3
+\end{cases}
+\end{aligned}
+\)
+
+Considérons $L1$ comme pivot
+
+\vspace{1cm}
+\noindent
+
+\(
+\begin{aligned}
+\begin{cases}
+2\times( x + y + z = 9) &L1\\
+\quad 2x - y + z = 5 &L2\\
+\end{cases}\implies
+\underline{
+\begin{cases}
+-2x - 2y - 2z = -18 &L1\\
+\quad \quad 2x - y + z = 5 &L2
+\end{cases}}\\
+-3y-z=-13 \quad L'2
+\end{aligned}
+\)
+
+\vspace{1cm}
+\noindent
+\(
+\begin{aligned}
+\begin{cases}
+-(x + y + z = 9) &L1\\
+x + 2y - z = 4 &L3
+\end{cases}\implies
+\underline{
+\begin{cases}
+-x - y - z = -9 &L1\\
+\quad x + 2y - z = 4 &L3
+\end{cases}}\\
+y-2z=-5 \quad L'3
+\end{aligned}
+\)
+
+\vspace{1cm}
+\noindent
+\(
+\begin{aligned}
+\begin{cases}
+-3y-z=-13 \quad &L'2\\
+3(y-2z=-5) \quad &L'3
+\end{cases}\implies
+\underline{
+\begin{cases}
+-3y-z=-13 \quad &L'2\\
+\quad 3y-6z=-15 \quad &L'3
+\end{cases}}\\
+-7z=-28 \quad L''3
+\end{aligned}
+\)
+
+\vspace{1cm}
+\noindent
+
+Le système devient
+
+\(
+\begin{aligned}
+\begin{cases}
+x + y + z = 9 &L1\\
+\quad -3y-z=-13  &L'2\\
+\quad \quad -7z =-28 &L''3
+\end{cases}
+\end{aligned}
+\)
+
 \[
 \begin{aligned}
 \begin{cases}
-x + y + z = 9 \\
-2x - y + z = 5 \\
-x + 2y - z = 4
-\end{cases}\quad\quad\quad\quad
-\begin{cases}
-x + 2y + z = 10 \\
-2x - y + 3z = 13 \\
-x + y - z = 2
+x + y + z = 9 \quad &L1\\
+-3y - z = -13 \quad &L'2\\
+-7z = -28 \quad &L''3
 \end{cases}
 \end{aligned}
 \]
+
+\noindent
+\[
+\begin{aligned}
+(L'2) :\; -7z = -28
+&\implies z = \dfrac{-28}{-7}\\
+&\implies z = 4
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+(L'2) :\; -3y - z = -13 
+&\implies -3y - 4 = -13\\
+&\implies -3y = -9\\
+&\implies y = \dfrac{-9}{-3}\\
+&\implies y = 3
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+(L1) :\; x + y + z = 9 
+&\implies x + 3 + 4 = 9\\
+&\implies x + 7 = 9\\
+&\implies x = 9 - 7\\
+&\implies x = 2
+\end{aligned}
+\]
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (2,\,3,\,4) \right\rbrace}}
+\]
+
+
+\(
+\begin{aligned}
+\begin{cases}
+x + 2y + z = 10 &L1\\
+2x - y + 3z = 13 &L2\\
+x + y - z = 2 &L3
+\end{cases}
+\end{aligned}
+\)
+
+Considérons $L1$ comme pivot
+
+\vspace{0.5cm}
+\noindent
+\(
+\begin{aligned}
+\begin{cases}
+2\times(x + 2y + z = 10) &L1\\
+2x - y + 3z = 13 &L2
+\end{cases} \implies
+\underline{
+\begin{cases}
+2x + 4y + 2z = 20 &L1\\
+2x - y + 3z = 13 &L2
+\end{cases}}\\
+\end{aligned}
+\)
+
+\vspace{0.5cm}
+\noindent
+Soustrayons L2 de L1 pour éliminer x :
+
+\(
+\begin{aligned}
+(2x + 4y + 2z) - (2x - y + 3z) &= 20 - 13\\
+5y - z &= 7 \quad L'2
+\end{aligned}
+\)
+
+\vspace{0.5cm}
+\noindent
+Pour L3, soustrayons L1 de L3 pour éliminer x :
+
+\(
+\begin{aligned}
+(x + y - z) - (x + 2y + z) &= 2 - 10\\
+-y - 2z &= -8\\
+y + 2z &= 8 \quad L'3
+\end{aligned}
+\)
+
+\vspace{0.5cm}
+\noindent
+On obtient le système triangulaire :
+
+\(
+\begin{aligned}
+\begin{cases}
+5y - z = 7 &L'2\\
+y + 2z = 8 &L'3
+\end{cases}
+\end{aligned}
+\)
+
+\vspace{0.5cm}
+\noindent
+Résolvons L'3 pour y en fonction de z :
+
+\[
+L'3 : y + 2z = 8 \implies y = 8 - 2z
+\]
+
+Substituons dans L'2 :
+
+\[
+5(8 - 2z) - z = 7 \implies 40 - 10z - z = 7 \implies -11z = -33 \implies z = 3
+\]
+
+\[
+y = 8 - 2\cdot 3 = 8 - 6 = 2
+\]
+
+\[
+L1 : x + 2y + z = 10 \implies x + 2\cdot 2 + 3 = 10 \implies x + 7 = 10 \implies x = 3
+\]
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (3,\,2,\,3) \right\rbrace}}
+\]
+
+
 \section*{\underline{Exercice 3 :} 3 pts ( Union et Intersection d'Intervalles )}  
 
 \begin{enumerate}  
-\item On considère \( I = [2, 5] \) et \( J = [4, 7] \). Déterminer \( I \cup J \) et \( I \cap J \).  
+\item On considère \( I = [2, 5] \) et \( J = [4, 7] \). Déterminons \( I \cup J \) et \( I \cap J \).  
 
-\item On considère \( K = [2, 5] \) et \( L = [6, 7] \). Déterminer \( K \cap L \).  
+\( I \cup J = [2,7]\) et \( I \cap J = [4,5] \)
+
+\item On considère \( K = [2, 5] \) et \( L = [6, 7] \). Déterminons \( K \cap L \). 
+
+\( K \cap L = \emptyset \) 
 \end{enumerate}
 
 \end{document}
