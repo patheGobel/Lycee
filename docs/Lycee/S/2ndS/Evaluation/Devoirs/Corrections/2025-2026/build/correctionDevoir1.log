@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  24 NOV 2025 10:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  24 NOV 2025 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -788,10 +788,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
+
+Package amsmath Warning: Bracket group [(a + b) + c] at formula start!
+(amsmath)                It could be a misspelled positional argument.
+(amsmath)                If it belongs to the formula add a \relax in
+(amsmath)                front to hide it on input line 145.
+
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
 dist/fonts/enc/dvips/base/8r.enc}
 
-]
+] [2] [3]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/correctionDevoir1.aux)
@@ -801,11 +807,11 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 22129 strings out of 474222
- 473454 string characters out of 5748732
- 1944975 words of memory out of 5000000
- 43968 multiletter control sequences out of 15000+600000
- 576842 words of font info for 84 fonts, out of 8000000 for 9000
+ 22135 strings out of 474222
+ 473561 string characters out of 5748732
+ 1947975 words of memory out of 5000000
+ 43974 multiletter control sequences out of 15000+600000
+ 577856 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,431b,872s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
@@ -816,10 +822,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf
 fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/correctionDevoir1.pdf (1 page, 84663 bytes).
+Output written on build/correctionDevoir1.pdf (3 pages, 96619 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

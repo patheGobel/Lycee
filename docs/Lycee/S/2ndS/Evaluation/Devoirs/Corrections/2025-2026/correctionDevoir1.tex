@@ -138,7 +138,117 @@ a^2b^2 - 1 + a^2 - b^2 &=a^2b^2 - b^2+ a^2 -1\\
 \]  
 
 \end{enumerate}
-\section*{\underline{Correction Exercice 2 :} pts () }
+\section*{\underline{Exercice 2 :} 3 pts }
+\begin{enumerate}
+    \item Développons $(a + b + c)^2$.\\
+    $\begin{aligned}
+    [(a + b) + c]^2 &= (a + b)^2 + 2c(a+b)+c^2\\
+        						&= \big(a^2 + 2ab + b^2\big) + 2ac + 2bc + c^2 \\
+    								&= a^2 + b^2 + c^2 + 2ab + 2ac + 2bc.
+    \end{aligned}
+    $
+    \item Montrons que si $a + b + c = 0$ alors $a^2 + b^2 + c^2 = -2 (ab + bc + ca)$.
+\[
+\text{On suppose que } a+b+c=0.
+\]
 
+\[
+\text{ On a: }(a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc \text{ donc } (0)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc
+\]
 
+\[
+\begin{aligned}
+a^2 + b^2 + c^2 + 2ab + 2ac + 2bc =0 &\implies a^2 + b^2 + c^2 = - 2ab - 2ac - 2bc\\ 
+																		 &\implies a^2 + b^2 + c^2 = -2 (ab + bc + ca)
+\end{aligned}
+\]
+    \item On suppose $a$, $b$ et $c$ sont non nuls. \\
+    Montrons que $\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = 0 \implies (a + b + c)^2 = a^2 + b^2 + c^2$.
+   \[
+\begin{aligned}
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = 0 &\implies \frac{bc+ac+ab}{abc} = 0\\
+																						&\implies bc+ac+ab = 0
+\end{aligned}
+\] 					
+D'après la 1er question, $(a+b+c)^2 = a^2 + b^2 + c^2 + 2(ab + ac + bc)$
+
+Donc si $bc+ac+ab = 0$ alors $(a+b+c)^2 = a^2 + b^2 + c^2$
+\end{enumerate}
+\section*{\underline{Exercice 3 :} 4 pts } Soit $a, b, c$ trois réels :
+\begin{enumerate}
+    \item Développons $(a + b + c)(ab + bc + ca)$ puis $(a + b + c)^3$
+    
+\[ 
+\begin{aligned}
+(a+b+c)(ab+bc+ca)&= a(ab+bc+ca) + b(ab+bc+ca) + c(ab+bc+ca) \\[4pt]
+    						 &= a^2b + abc + a^2c + ab^2 + b^2c + abc + abc + bc^2 + ac^2 \\[4pt]
+                 &= a^2b + a^2c + ab^2 + ac^2 + b^2c + bc^2 + 3abc
+\end{aligned}
+\]
+
+\textcolor{red}{\boxed{(a+b+c)(ab+bc+ca) =a^2b + a^2c + ab^2 + ac^2 + b^2c + bc^2 + 3abc} } 
+    
+\[
+\begin{aligned}
+(a+b+c)^3 &= (a+b)^3 + 3c(a+b)^2 + 3(a+b)c^2 + c^3 \\[4pt]
+          &= (a^3 + 3a^2b + 3ab^2 + b^3) 
+           + 3c(a^2 + 2ab + b^2) 
+           + 3(a c^2 + b c^2) 
+           + c^3 \\[4pt]
+          &= a^3 + b^3 + c^3 
+           + 3a^2b + 3ab^2 
+           + 3a^2c + 6abc + 3b^2c 
+           + 3ac^2 + 3bc^2 .
+\end{aligned}
+\]
+
+\textcolor{red}{\boxed{(a+b+c)^3=a^3 + b^3 + c^3 + 3a^2b + 3ab^2 + 3a^2c + 6abc + 3b^2c + 3ac^2 + 3bc^2} } 
+
+    \item Démontrons que si $a + b + c = 0$ alors $a^3 + b^3 + c^3 = 3abc$
+    
+\(
+\underline{
+\begin{cases}
+(a+b+c)(ab+bc+ca) &= a^2b + a^2c + ab^2 + ac^2 + b^2c + bc^2 + 3abc\\
+(a+b+c)^3 &=a^3 + b^3 + c^3 + 3a^2b + 3ab^2 + 3a^2c + 6abc + 3b^2c + 3ac^2 + 3bc^2
+\end{cases}}
+\)
+
+\vspace{1cm}
+
+\(
+\underline{
+\begin{cases}
+(a+b+c)(ab+bc+ca) &= a^2b + a^2c + ab^2 + ac^2 + b^2c + bc^2 + 3abc\\
+(a+b+c)^3 &=3a^2b +3a^2c+ 3ab^2 + 3ac^2+ 3b^2c+ 6abc + 3bc^2+ a^3 + b^3 + c^3
+\end{cases}}
+\)
+
+\vspace{1cm}
+
+\(
+\underline{
+\begin{cases}
+3(a+b+c)(ab+bc+ca)= 3a^2b + 3a^2c + 3ab^2 + 3ac^2 + 3b^2c + 3bc^2 + 9abc\\
+(a+b+c)^3 =3a^2b + 3a^2c + 3ab^2 + 3ac^2 + 3b^2c + 3bc^2+ 9abc-3abc + a^3 + b^3 + c^3
+\end{cases}}\\
+3(a+b+c)(ab+bc+ca)-(a+b+c)^3 = 3abc-(a^3 + b^3 + c^3)
+\)
+
+si $a + b + c = 0$ alors $3(0)(ab+bc+ca)-(0)^3 = 3abc-(a^3 + b^3 + c^3)$
+
+donc $ 3abc-(a^3 + b^3 + c^3) =  0 $ d'où $ a^3 + b^3 + c^3 = 3abc$
+
+    \item Déduisons-en que , pour tous réel $x, y, z$ on a :
+    $$(x + y)^3 + (y + z)^3 + (z + x)^3 = 3 (x + y) (y + z) (z + x)$$
+    
+En Posons\(
+\begin{cases}
+x+y =a\\
+y + z =b\\
+z + x =c
+\end{cases}
+\text{ donc } a^3 + b^3 + c^3 = 3abc \text{ devient } (x + y)^3 + (y + z)^3 + (z + x)^3 = 3 (x + y) (y + z) (z + x)
+\) 
+\end{enumerate}
 \end{document}
