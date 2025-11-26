@@ -69,6 +69,17 @@ middle color = tcbcolback!80!black]
 \cfoot{\bf
 \thepage /
 \pageref{LastPage}}
+
+% Définition de l'encadré adaptatif avec fond jaune
+\newtcolorbox{resultbox}{
+    colback=red!30, % Fond rouge clair
+    colframe=black, % Bordure noire fine
+    sharp corners, % Coins nets
+    boxrule=0.5pt, % Contour léger
+    boxsep=2pt, % Espacement interne
+    left=5pt, right=5pt, top=2pt, bottom=2pt, % Marges internes
+}
+
 \begin{document}
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
@@ -374,7 +385,7 @@ f(x)-y &= f(x)-(x-1)\\
 \)      
     
 \begin{tikzpicture}
-   \tkzTabInit[lgt = 2.5, espcl = 3, deltacl = 0.7]{$x$ / 1 , $-\dfrac{1}{x-1}$ / 1 }{$-\infty$, $1$, $+\infty$}
+   \tkzTabInit[lgt = 2.5, espcl = 3, deltacl = 0.7]{$x$ / 1 , $-\dfrac{1}{x-1}$ / 1 }{$-\infty$, $0$, $+\infty$}
    \tkzTabLine{,+,d,h,}
 \end{tikzpicture}
         
@@ -512,10 +523,12 @@ $$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ 2\sqrt{x^2
 \end{itemize}
     
     \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
-        \tkzTabInit[espcl=1.75]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$0$,$+\infty$}
-        \tkzTabLine{,+,d,+}
-        \tkzTabVar{-/$-\infty$,-/$0$,+/$+\infty$/}
-    \end{tikzpicture}
+        \tkzTabInit[espcl=5]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$+\infty$}
+        \tkzTabLine{,+,}
+        \tkzTabVar{-/$-\infty$,+/$+\infty$/}
+        \tkzTabVal[draw]{1}{2}{0.3}{$0$}{$0$}
+    \end{tikzpicture}   
+    
     \item Précisons les points d'intersection de $(\mathcal{C}_f)$ avec les axes du repère. \textbf{(0,25 pt)}
 
 \begin{itemize}
@@ -566,7 +579,7 @@ Donc la solution est 0
 \caption{Courbe de (Cf)}
 \label{fig:monimage}
 \end{figure}
-\href{https://www.geogebra.org/classic/p6fgutg8}{Clique ici pour voir la courbe sur géogébra}
+\href{https://www.geogebra.org/classic/wkappehb}{Clique ici pour voir la courbe sur géogébra}
 \end{center}
 
 \end{enumerate}
@@ -577,20 +590,111 @@ Soit $h$ la restriction de $f$ à l’intervalle $I = [0; +\infty[$.
 
 \begin{enumerate}
 
-    \item Montrer que $h$ réalise une bijection de $I$ dans un intervalle $J$ à préciser.
+    \item Montrons que $h$ réalise une bijection de $I$ dans un intervalle $J$ que l'on  précisera.
     \hspace{1cm} \textbf{(0,25 pt)}
+    
+    Sur $I$ $h$ est continue est strictement croissante donc réalise une bijection de $I$ vers $J=[0,+\infty[$
 
     \item La bijection réciproque $h^{-1}$ est-elle dérivable sur $J$ ?
     \hspace{1cm} \textbf{(0,25 pt)}
 
-    \item Calculer $h\!\left(\dfrac{4}{5}\right)$ puis $(h^{-1})'(2)$.
+		Comme $\forall x \in I$, $h'(x)\neq 0$ donc $h^{-1}$ est dérivable sur $J$
+
+    \item Calculons $h\!\left(\dfrac{4}{5}\right)$ puis $(h^{-1})'(2)$.
    \hspace{1cm} \textbf{(0,5 pt)}
 
-    \item Construire $(\mathcal{C}_{h^{-1}})$ la courbe représentative de $h^{-1}$ dans le même repère.
+\(
+\begin{aligned}
+h\!\left(\frac{4}{5}\right)
+&= \frac{4}{5} + \sqrt{\left(\frac{4}{5}\right)^2 + \frac{4}{5}}\\
+&= \frac{4}{5} + \sqrt{\frac{16}{25} + \frac{20}{25}}\\
+&= \frac{4}{5} + \frac{6}{5}\\
+&= \frac{10}{5}\\
+&= 2
+\end{aligned}
+\)
+
+\begin{resultbox}
+    \[
+        \mathbf{h\!\left(\frac{4}{5}\right)=2}
+    \]
+\end{resultbox}
+
+On a : $(h^{-1})'(2) = \dfrac{1}{h'\left(\frac{4}{5}\right)}$ et $h'(x)=\dfrac{1}{\dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}}}$
+
+$h'(2)=\dfrac{1}{\dfrac{2\sqrt{\left(\frac{4}{5}\right)^2+\left(\frac{4}{5}\right)}+2\left(\frac{4}{5}\right)+1}{2\sqrt{\left(\frac{4}{5}\right)^2+\left(\frac{4}{5}\right)}}}$
+
+\(
+\begin{aligned}
+(h^{-1})'(2)
+&= \dfrac{1}{h'\!\left(\frac{4}{5}\right)}\\[0.2cm]
+&=\dfrac{1}{\dfrac{2\sqrt{\left(\frac{4}{5}\right)^2+\left(\frac{4}{5}\right)}+2\left(\frac{4}{5}\right)+1}{2\sqrt{\left(\frac{4}{5}\right)^2+\left(\frac{4}{5}\right)}}}\\[0.2cm]
+&=\dfrac{2\sqrt{\left(\frac{4}{5}\right)^2+\left(\frac{4}{5}\right)}}
+       {2\sqrt{\left(\frac{4}{5}\right)^2+\left(\frac{4}{5}\right)}+2\left(\frac{4}{5}\right)+1}\\[0.2cm]
+&=\dfrac{2\cdot \frac{6}{5}}{2\cdot \frac{6}{5} + \frac{8}{5} + 1}\\[0.2cm]
+&=\dfrac{\frac{12}{5}}{\frac{12}{5}+\frac{8}{5}+\frac{5}{5}}\\[0.2cm]
+&=\dfrac{\frac{12}{5}}{\frac{25}{5}}\\[0.2cm]
+&=\dfrac{12}{25}
+\end{aligned}
+\)
+
+
+\begin{resultbox}
+    \[
+        \mathbf{(h^{-1})'(2)=\frac{12}{25}}
+    \]
+\end{resultbox}
+
+    \item Construction de  $(\mathcal{C}_{h^{-1}})$ la courbe représentative de $h^{-1}$ dans le même repère.
+    \hspace{1cm} \textbf{(0,5 pt)}
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{devoir12025-2026Courbe2.png}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/wkappehb}{Clique ici pour voir la courbe sur géogébra}
+\end{center}
+    \item Exprimons $h^{-1}(x)$ pour tout $x \in J$.
     \hspace{1cm} \textbf{(0,5 pt)}
 
-    \item Exprimer $h^{-1}(x)$ pour tout $x \in J$.
-    \hspace{1cm} \textbf{(0,5 pt)}
+\[
+\text{Soit } y = h(x) = x+\sqrt{x^{2}+x}.
+\]
+
+On isole la racine :
+\[
+y-x = \sqrt{x^{2}+x}.
+\]
+
+En élevant au carré, on obtient :
+\[
+(y-x)^{2} = x^{2}+x.
+\]
+
+\[
+y^{2}-2xy+x^{2} = x^{2}+x.
+\]
+
+En simplifiant :
+\[
+y^{2}-2xy = x.
+\]
+
+On factorise par \(x\) :
+\[
+y^{2} = x(1+2y).
+\]
+
+D’où :
+
+\begin{resultbox}
+    \[
+        \mathbf{h^{-1}(x)=\dfrac{x^{2}}{1+2x}}
+    \]
+\end{resultbox}
+
 
 \end{enumerate}
 
