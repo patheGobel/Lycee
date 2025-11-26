@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  25 NOV 2025 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  26 NOV 2025 12:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,19 +966,26 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
 f-dist/fonts/enc/dvips/base/8r.enc}
 
-] [2] [3] [4]
-<courbe2Devoir1.png, id=108, 1095.0pt x 586.555pt>
-File: courbe2Devoir1.png Graphic file (type png)
-<use courbe2Devoir1.png>
-Package pdftex.def Info: courbe2Devoir1.png  used on input line 360.
-(pdftex.def)             Requested size: 432.48355pt x 231.6643pt.
- [5
+] [2] [3] [4] [5]
+Overfull \hbox (11.68285pt too wide) detected at line 433
+\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []  []
+(\OMS/cmsy/m/n/12 C[]\OT1/cmr/m/n/12 )[](\OML/cmm/m/it/12 O; []; []\OT1/cmr/m/n
+/12 )\OML/cmm/m/it/12 :
+ []
+
+[6] [7]
+<devoir1-2025-2026.png, id=121, 335.6192pt x 138.83447pt>
+File: devoir1-2025-2026.png Graphic file (type png)
+<use devoir1-2025-2026.png>
+Package pdftex.def Info: devoir1-2025-2026.png  used on input line 565.
+(pdftex.def)             Requested size: 432.48355pt x 178.91713pt.
+ [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.367 \end{document}
-                     <build/courbe2Devoir1.png>]
+l.597 \end{document}
+                     <build/devoir1-2025-2026.png>]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/Devoir1Correction.aux)
@@ -990,13 +997,13 @@ Package rerunfilecheck Info: File `Devoir1Correction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30179 strings out of 474222
- 604340 string characters out of 5748732
- 1962975 words of memory out of 5000000
- 51871 multiletter control sequences out of 15000+600000
+ 30343 strings out of 474222
+ 606819 string characters out of 5748732
+ 1963975 words of memory out of 5000000
+ 52032 multiletter control sequences out of 15000+600000
  579519 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,431b,973s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,16n,107p,431b,1064s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -1011,10 +1018,10 @@ msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/Devoir1Correction.pdf (5 pages, 433659 bytes).
+Output written on build/Devoir1Correction.pdf (8 pages, 445260 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 212 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

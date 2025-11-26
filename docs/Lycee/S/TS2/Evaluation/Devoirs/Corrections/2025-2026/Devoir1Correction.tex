@@ -211,10 +211,12 @@ Posons $x^2 + x = 0 $
 
 $x^2 + x = 0  \implies x=0 \textbf{ ou } x=-1$       
    
-       \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
         \tkzTabInit[espcl=1.75]{$x$/.5,$x^2 + x$/.7}{$-\infty$,$-1$,$0$,$+\infty$}
-        \tkzTabLine{,+,z,-,z,+,}
-    \end{tikzpicture}     
+        \tkzTabLine{, h, t, h, t, +, }
+    \end{tikzpicture}
+    
+    \underline{$Df_{2} = [0 ; +\infty[$}     
 \end{itemize}
 
 $$ \text{Donc}\quad
@@ -254,10 +256,12 @@ $$
 \end{aligned}    
 \)
 
-\textcolor{red}{{\underline{$\lim\limits_{x \to -\infty} f(x) = -\infty$}}}
+\textcolor{red}{{\underline{$\lim\limits_{x \to +\infty} f(x) = +\infty$}}}
 \end{itemize}
 
     \item Étudions la continuité et la dérivabilité de $f$ en $0$. Interprétons les résultats obtenus. \hspace{1cm} \textbf{(1,5 pt)}
+
+\underline{\textbf{Etudions la Continuité de f en 0  } } 
 
  \begin{itemize}
 \item \underline{En $0^-$}: $f(x)=f_{1}(x)$   
@@ -286,6 +290,39 @@ $$
 On a $f(0)=0$
 
 \textcolor{red}{Finalement $\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0)$ donc f est continue en $0$}
+
+\underline{\textbf{Etudions la dérivabilité de f en 0  } } 
+
+\begin{itemize}
+\item \underline{En $0^-$}: $f(x)=f_{1}(x)$ 
+
+\(
+\begin{aligned}
+ \lim\limits_{x \to 0^-} \dfrac{f(x)-f(0)}{x} &= \lim\limits_{x \to 0^-} \dfrac{\dfrac{x^2-2x}{x-1}}{x}\\
+ 															                &= \lim\limits_{x \to 0^-} \dfrac{x^2-2x}{x^2-x}\\
+ 															                &= \lim\limits_{x \to 0^-} \dfrac{x-2}{x-1}\\
+ 															                &=2
+\end{aligned}    
+\)
+
+\textcolor{red}{ $f$ est dérivable à gauche de $0$ et $y=2x$ est une démi-tangent en $0^-$ }
+
+\item \underline{En $0^+$}: $f(x)=f_{2}(x)$ 
+
+\(
+\begin{aligned}
+\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} &=\lim\limits_{x \to 0^+} \dfrac{x + \sqrt{x^2+x}}{x}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{x^2-x^2-x}{x(x + \sqrt{x^2+x})}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{-x}{x(x + \sqrt{x^2+x})}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{-1}{(x + \sqrt{x^2+x})}\\
+															               &=\dfrac{-1}{0^+}\\
+															               &=-\infty
+\end{aligned}    
+\)
+
+\textcolor{red}{ $f$ n'est pas dérivable à droite de $0$ et on a une démi-tangent orientée vers le bas en $0^+$  }
+
+\end{itemize}     
     
     \item 
       \begin{enumerate}
@@ -307,16 +344,231 @@ Comme $\lim\limits_{x \to -\infty} f(x) = -\infty$
 
 Donc  $\lim\limits_{x \to -\infty} \dfrac{f(x)}{x} = 1 $       
 
-\item Cherchons  $\lim\limits_{x \to -\infty} f(x)-x $   
+\item Cherchons  $\lim\limits_{x \to -\infty} f(x)-x $ 
+
+\(
+\begin{aligned}
+ \lim\limits_{x \to -\infty} f(x)-x &= \lim\limits_{x \to -\infty} \dfrac{x^2-2x}{x-1}-x\\
+ 																	&= \lim\limits_{x \to -\infty} \dfrac{x^2-2x-x^2+x}{x-1}\\
+ 																	&= \lim\limits_{x \to -\infty} \dfrac{-x}{x-1}\\
+ 																	&= \lim\limits_{x \to -\infty} \dfrac{-x}{x}\\
+ 																	&= -1
+\end{aligned}    
+\) 
+
+\textcolor{red}{Donc $(\Delta_1)$: $ y = x - 1$ est une asymptote oblique à $(\mathcal{C}_f)$ en $-\infty$ } 
+  
 \end{itemize}      
         
-        \item Étudier la position relative de $(\mathcal{C}_f)$ par rapport à $\Delta_1$ sur $(-\infty;0[$. \hspace{1cm} \textbf{(0,5 pt)}
+        \item Étudions la position relative de $(\mathcal{C}_f)$ par rapport à $\Delta_1$ sur $]-\infty;0[$. \hspace{1cm} \textbf{(0,5 pt)}
+        
+        Etudions le signe de $f(x)-y$ 
+
+\(
+\begin{aligned}
+f(x)-y &= f(x)-(x-1)\\
+ 			 &= \dfrac{x^2-2x}{x-1}-(x-1)\\
+ 			 &= x-1-\dfrac{1}{x-1}-x+1\\
+ 			 &= -\dfrac{1}{x-1}\\
+\end{aligned}    
+\)      
+    
+\begin{tikzpicture}
+   \tkzTabInit[lgt = 2.5, espcl = 3, deltacl = 0.7]{$x$ / 1 , $-\dfrac{1}{x-1}$ / 1 }{$-\infty$, $1$, $+\infty$}
+   \tkzTabLine{,+,d,h,}
+\end{tikzpicture}
+        
+Sur $]-\infty;0[,\, f(x)-y > 0 $ donc $(\mathcal{C}_f)$ est au-dessus de $(\Delta_1)$
+
+
       \end{enumerate}
-    \item Étudier la nature de la branche infinie en $+\infty$. \hspace{1cm} \textbf{(0,5 pt)}
-    \item Préciser l'ensemble de dérivabilité de $f$ puis calculer $f'(x)$ sur chaque intervalle où $f$ est dérivable.\\ \textbf{(0,5 pt)}
-    \item Dresser le tableau de variation de $f$. \hspace{1cm} \textbf{(0,5 pt)}
-    \item Préciser les points d'intersection de $(\mathcal{C}_f)$ avec les axes du repère. \textbf{(0,25 pt)}
-    \item Construire la courbe $(\mathcal{C}_f)$. \hspace{1cm} \textbf{(1,5 pt)}
+    \item Montrons que $(\mathcal{C}_f)$ admet en $-\infty$ une asymptote oblique $(\Delta_1)$ dont on déterminera l’équation. \textbf{(0,5 pt)}
+
+Comme $\lim\limits_{x \to +\infty} f(x) = +\infty$  
+
+\begin{itemize}
+\item Cherchons  $\lim\limits_{x \to -\infty} \dfrac{f(x)}{x} $  
+
+\(
+\begin{aligned}
+ \lim\limits_{x \to +\infty} \dfrac{f(x)}{x} &= \lim\limits_{x \to +\infty}  \dfrac{x + \sqrt{x^2+x}}{x}\\
+ 																	&= \lim\limits_{x \to +\infty} \dfrac{x\left(1 + \sqrt{1+\dfrac{1}{x}}\right)}{x}\\
+ 																	&= \lim\limits_{x \to +\infty} \left(1 + \sqrt{1+\dfrac{1}{x}}\right)\\
+ 																	&= 2
+\end{aligned}    
+\)        
+
+Donc  $\lim\limits_{x \to +\infty} \dfrac{f(x)}{x} = 2 $       
+
+\item Cherchons  $\lim\limits_{x \to +\infty} f(x)-2x $ 
+
+\(
+\begin{aligned}
+ \lim\limits_{x \to +\infty} f(x)-2x &= \lim\limits_{x \to +\infty} x + \sqrt{x^2+x}-2x\\
+ 																		 &= \lim\limits_{x \to +\infty} \sqrt{x^2+x}-x\\
+ 																		 &= \lim\limits_{x \to +\infty} \dfrac{x^2+x-x^2}{\sqrt{x^2+x}+x} \\
+ 																		 &= \lim\limits_{x \to +\infty} \dfrac{x}{\sqrt{x^2+x}+x} \\
+ 																		 &= \lim\limits_{x \to +\infty} \dfrac{x}{x\left(1 + \sqrt{1+\dfrac{1}{x}}\right)} \\
+ 																		 &= \lim\limits_{x \to +\infty} \dfrac{1}{\left(1 + \sqrt{1+\dfrac{1}{x}}\right)} \\
+ 																	   &= \dfrac{1}{2}
+\end{aligned}    
+\)   
+ 
+\end{itemize}
+  		    
+    \textcolor{red}{Donc $(\Delta_2)$: $ y = 2x+\dfrac{1}{2}$ est une asymptote oblique à $(\mathcal{C}_f)$ en $+\infty$ }
+    
+    \item Précisons l'ensemble de dérivabilité de $f$ puis calculons $f'(x)$ sur chaque intervalle où $f$ est dérivable.\\ \textbf{(0,5 pt)}   
+
+\[ Df' = \mathbb{R}^*\]    
+
+\[
+f(x)=
+\begin{cases}
+\dfrac{x^2-2x}{x-1} & \text{si } x<0,\\[4mm]
+x + \sqrt{x^2+x} & \text{si } x\ge 0,
+\end{cases}
+\qquad
+\text{et } (\mathcal{C}_f) \text{ sa courbe représentative dans un repère orthonormé } (O,\vec{i},\vec{j}).
+\]
+
+\[
+\begin{aligned}
+f'(x)=
+\begin{cases}
+\dfrac{(2x-2)(x-1)-(x^2-2x)}{(x-1)^{2}} & \text{si } x<0,\\[4mm]
+1 + \dfrac{2x+1}{2\sqrt{x^2+x}} & \text{si } x > 0,
+\end{cases}&\implies
+\begin{cases}
+\dfrac{2x^2-2x-2x+2-x^2+2x}{(x-1)^{2}} & \text{si } x<0,\\[4mm]
+\dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}} & \text{si } x > 0,
+\end{cases}\\
+&\implies
+\begin{cases}
+\dfrac{x^2-2x+2}{(x-1)^{2}} & \text{si } x<0,\\[4mm]
+\dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}} & \text{si } x > 0,
+\end{cases}
+\end{aligned}
+\]    
+    
+    \item Dressons le tableau de variation de $f$. \hspace{1cm} \textbf{(0,5 pt)}
+
+\begin{itemize}
+\item Si \( x<0\,, f(x)=\dfrac{x^2-2x+2}{(x-1)^{2}} \)  le signe dépend du numérateur 
+
+\( x^2-2x+2 = 0 \implies \Delta <0 \)
+\textcolor{red}{ Ansi, si \( x<0\,, f(x) > 0 \)  donc f est croissante sur $]-\infty; 0[$}
+\item Si $ x>0\,, f(x)= \dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}}$ le signe dépend du numérateur 
+
+Supposons que $ 2\sqrt{x^2+x}+2x+1 < 0 $
+
+$ 2\sqrt{x^2+x}+2x+1 < 0 \implies \sqrt{x^2+x} < -\dfrac{2x+1}{2}$
+
+$
+\begin{aligned}
+\sqrt{x^2+x} < -\dfrac{2x+1}{2} &\implies \begin{cases}
+																						x^2+x > 0\\
+																						-\dfrac{2x+1}{2} > 0\\ 
+																						x^2+x < \left( -\dfrac{2x+1}{2} \right)^{2} 
+																						\end{cases}\\
+											 &\implies \begin{cases}
+																						x^2+x > 0\\
+																						2x+1 < 0\\ 
+																						x^2+x < x^{2}+x+\dfrac14 
+																						\end{cases}\\
+											&\implies \begin{cases}
+																						x^2+x > 0\\
+																						2x+1 < 0\\ 
+																						0 < \dfrac14 
+																						\end{cases}\\
+\end{aligned}
+$
+
+$
+\begin{aligned}
+\begin{cases}
+x^2+x = 0\\
+2x+1 = 0 
+\end{cases}\implies
+\begin{cases}
+x=0 \textbf{ ou } x=-1\\
+x = -\dfrac{1}{2}
+\end{cases}
+\end{aligned}
+$
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=1.75]{$x$/.5,$x^2 + x$/.7,$2x + 1$/.7}{$-\infty$,$-1$,$-\dfrac{1}{2}$,$0$,$+\infty$}
+        \tkzTabLine{,h,z,h,t,h,z,+, }
+        \tkzTabLine{,h,t,h,z,h,t,+, }
+    \end{tikzpicture}
+
+$$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ 2\sqrt{x^2+x}+2x+1 < 0  $
+
+ $$ \textbf{Donc } 2\sqrt{x^2+x}+2x+1 > 0 \, \forall x\in ]0;+\infty[ $$
+
+\textcolor{red}{Ainsi  $\forall x\in ]0;+\infty[$ $f'(x) > 0 $ donc f  est croissant $0;+\infty[$}
+  
+\end{itemize}
+    
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=1.75]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$0$,$+\infty$}
+        \tkzTabLine{,+,d,+}
+        \tkzTabVar{-/$-\infty$,-/$0$,+/$+\infty$/}
+    \end{tikzpicture}
+    \item Précisons les points d'intersection de $(\mathcal{C}_f)$ avec les axes du repère. \textbf{(0,25 pt)}
+
+\begin{itemize}
+\item Pour $ x<0 $, $ f(x)= \dfrac{x^2-2x}{x-1} $
+
+\begin{itemize}
+\item Avec $(ox)$, nous ne pouvons pas calculer $f(0)$ car $ x<0 $
+
+\item Avec $(oy)$ résolvons $f(x)=0$
+
+$ 
+\begin{aligned}
+f(x)=0 &\implies \dfrac{x^2-2x}{x-1} = 0\\
+			&\implies x= 0 \text{ ou } x=2\\
+\end{aligned}
+$
+
+\end{itemize}
+
+\item Pour $ x \geq 0 $, $ f(x)= x + \sqrt{x^2+x}$
+\begin{itemize}
+\item Avec $(ox)$, $ f(0)= 0$
+
+\item Avec $(oy)$ résolvons $f(x)=0$
+\(
+\implies x+\sqrt{x^2+x}=0.
+\)
+
+\(
+\sqrt{x^2+x}=-x,
+\)
+
+En élevant au carré : \(x^2+x=x^2\Rightarrow x=0\).
+
+Donc la solution est 0
+
+
+\end{itemize}
+
+\end{itemize}
+ 
+    \item Construire la courbe $(\mathcal{C}_f)$. \hspace{1cm} \textbf{(1,5 pt)}    
+
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{devoir1-2025-2026.png}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/p6fgutg8}{Clique ici pour voir la courbe sur géogébra}
+\end{center}
+
 \end{enumerate}
 
 \underline{\textbf{Partie B :}}
@@ -341,27 +593,5 @@ Soit $h$ la restriction de $f$ à l’intervalle $I = [0; +\infty[$.
     \hspace{1cm} \textbf{(0,5 pt)}
 
 \end{enumerate}
-+++++++++++++++++++++++++
-
-\underline{\textbf{Partie A :}}
-
-\begin{center}
-
-\begin{tikzpicture}
-   \tkzTabInit[lgt = 2.5, espcl = 3, deltacl = 0.7]{$x$ / 1 , $x^2-2x$ / 1 , $x-1$ / 1 }{$-\infty$, $0$, $2$, $+\infty$}
-   \tkzTabLine{, +, d, h, d, +, }
-   \tkzTabLine{, -, t, h, t, +, }
-\end{tikzpicture}
-
-\end{center}
-\begin{center}
-\begin{figure}[H]% Forcer l'image à cet endroit
-\centering
-\includegraphics[width=0.8\textwidth]{courbe2Devoir1.png}
-\caption{Courbe de (Cf)}
-\label{fig:monimage}
-\end{figure}
-\href{https://www.geogebra.org/classic/p6fgutg8}{Clique ici pour voir la courbe sur géogébra}
-\end{center}
 
 \end{document}
