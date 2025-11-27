@@ -1,0 +1,336 @@
+\documentclass[12pt,a4paper]{article}
+
+% -----------------------------------------------------
+% PACKAGES
+% -----------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tikz}
+\usetikzlibrary{patterns,arrows,shapes.geometric,fit}
+
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{times}
+\usepackage{pifont}
+
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+\usepackage{varwidth}
+\usepackage{float}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+
+\usepackage{tkz-tab}
+\usepackage{systeme}
+\usepackage{verbatim}
+\usepackage{color,soul}
+
+% -----------------------------------------------------
+% TEXTE EN ARRIÈRE-PLAN (1 seule fois)
+% -----------------------------------------------------
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+% -----------------------------------------------------
+% COMMANDES PERSONNALISÉES
+% -----------------------------------------------------
+
+% Items
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+\everymath{\displaystyle}
+
+% EXEMPLES
+\newcounter{exemple}
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}%
+  \textbf{\textcolor{green}{Exemple \theexemple :}} \ignorespaces
+}
+
+% EXERCICES D’APPLICATION
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+\newcounter{exerciceapp}
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+
+% CORRECTIONS
+\newcounter{correction}
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+% -----------------------------------------------------
+% DOCUMENT
+% -----------------------------------------------------
+\begin{document}
+
+\begin{center}
+    \Large\textbf{\underline{Systèmes d'équations et d'inéquations}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 1erL}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\section*{Introduction aux Systèmes}
+
+\section*{\underline{\textbf{\textcolor{red}{I. Systèmes de trois équations linéaires à trois inconnues }}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Exemple}}}} 
+
+Le système 
+$
+\begin{cases}
+x + 10y - 3z = 5 \\
+2x - y + 2z = 2 \\
+-x + y + z = -3
+\end{cases}
+$
+est formé de trois équations. Chacune d'elle contient trois inconnues $x$ ; $y$ et $z$ avec des exposants tous égaux à 1. On dit qu'on a un système de trois équations linéaires à trois inconnues $x$ ; $y$ et $z$.
+
+\vspace{0.5cm}
+
+Résoudre un tel système c'est trouver tous les triplets $(x, y, z)$ de nombres réels qui vérifient les trois équations du système.
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Résolution avec la méthode du pivot de Gauss}}}} 
+\underline{\exemple}
+
+\underline{\textbf{\textcolor{red}{Résolvons le système suivant en utilisant la méthode du pivot de Gauss}}}
+
+$
+\begin{cases}
+x + 10y - 3z = 5 \\
+2x - y + 2z = 2 \\
+-x + y + z = -3
+\end{cases}
+$
+
+Pour résoudre un tel système, on commence par désigner les 3 équations respectivement par $L_1 ; L_2$ et $L_3$
+\[
+\begin{cases}
+x + 10y - 3z = 5 & (L_1) \\
+2x - y + 2z = 2 & (L_2) \\
+-x + y + z = -3 & (L_3)
+\end{cases}
+\]
+
+\textbf{1\textsuperscript{ère} étape :} On fixe l'équation ($L_1$) puis on élimine l'inconnue x dans ($L_2$) en considérant le
+\[
+\text{sous-système } -2
+\begin{cases}
+x + 10y - 3z = 5 & (L_1) \\
+2x - y + 2z = 2 & (L_2)
+\end{cases}
+\text{ d'où }
+\begin{cases}
+-2x - 20y + 6z = -10 \\
+\quad \ 2x - y + 2z = 2
+\end{cases}
+\text{ ainsi on a :}
+\]
+$-21y + 8z = -8 \quad (L_2')$
+
+\vspace{0.5cm}
+
+\textbf{2\textsuperscript{ème} étape :} On fixe l'équation ($L_1$) puis on élimine l'inconnue x dans ($L_3$) en considérant le
+\[
+\text{sous-système }
+\begin{cases}
+x + 10y - 3z = 5 & (L_1) \\
+-x + y + z = -3 & (L_3)
+\end{cases}
+\text{ d'où ainsi on a :}
+\]
+$11y - 2z = 2 \quad (L_3')$
+
+\vspace{0.5cm}
+
+Ainsi, on obtient le système équivalent suivant :
+\[
+\begin{cases}
+x + 10y - 3z = 5 & (L_1) \\
+-21y + 8z = -8 & (L_2') \\
+\quad 11y - 2z = -3 & (L_3')
+\end{cases}
+\]
+
+\noindent \textbf{3\textsuperscript{ème} étape :} On fixe $(L_2')$ puis on élimine y dans $(L_3')$ en considérant le sous-système
+\[
+\begin{cases}
+-21y + 8z = -8 & (L_2') \\
+\ \ 11y - 2z = 2 & (L_3')
+\end{cases}
+\quad \text{Ainsi on a } 46z = -46 \ (L_3'')
+\]
+
+On obtient le système équivalent suivant dit système triangulaire
+\[
+\begin{cases}
+x + 10y - 3z = 5 & (L_1) \\
+\quad -21y + 8z = -8 & (L_2') \\
+\qquad \quad \ \ 46z = -46 & (L_3'')
+\end{cases}
+\]
+
+\vspace{0.5cm}
+
+\noindent \textbf{4\textsuperscript{ème} étape :} Pour terminer la résolution, on détermine z dans $(L_3'')$, puis on remplace z par cette valeur dans $(L_2')$, on obtient la valeur de y puis on obtient celle de x, en substituant à y et z par leurs valeurs respectives dans $(L_1')$.
+
+\vspace{0.5cm}
+
+Ainsi on a : $S = \{(2; 0; -1)\}$
+
+\underline{\exemple}
+
+
+\section*{\underline{\textbf{\textcolor{red}{II. Systèmes d'inéquations linéaires à deux inconnues }}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Inéquations linéaires à deux inconnues }}}} 
+
+\underline{\exemple}
+
+$2x + y - 5 > 0$ est une inéquation linéaire à deux inconnues $x$ et $y$.
+
+\underline{\textbf{\textcolor{red}{Résolution graphique}}}
+
+
+Pour résoudre graphiquement l'inéquation $2x + y - 5 > 0$, on représente la droite (D) d'équation $2x + y - 5 = 0$ dans un repère orthonormé $(O,I,J)$.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & 0 & 1 \\
+\hline
+$y$ & 5 & 3 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+Ensuite, on choisit un point qui n'est pas sur (D) et dont ses coordonnées sont connues.
+
+Par exemple : le point $O(0; 0)$ puis on remplace dans l'inéquation $x$ et $y$ respectivement par les coordonnées de $O$.
+
+Ainsi, on a $2(0) + 0 - 5 > 0$ c'est à dire $-5 > 0$ \textbf{faux} donc les coordonnées de $O$ ne vérifie pas l'inéquation. 
+
+On barre donc le demi-plan de frontière (D) contenant $O$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Systèmes de deux inéquations à deux inconnues}}}} 
+
+\underline{\exemple}
+
+\noindent Le système
+$
+\begin{cases}
+x - 2y + 1 \geq 0 \\
+2x + y - 3 < 0
+\end{cases}
+$
+est un système de deux inéquations linéaires à deux inconnues $x$ et $y$
+
+\underline{\textbf{\textcolor{red}{Résolution graphique}}}
+
+\noindent Résolvons graphiquement le système
+$
+\begin{cases}
+x - 2y + 1 \geq 0 \\
+2x + y - 3 < 0
+\end{cases}
+$
+
+On commence par représenter graphiquement les droites $(D_1)$ d'équation $x - 2y + 1 = 0$ et $(D_2)$ d'équation $2x + y - 3 = 0$ dans un repère orthonormé $(O, I, J)$.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & -1 & 1 \\
+\hline
+$y$ & 0 & 1 \\
+\hline
+\end{tabular}
+\quad % Ajoute un espace horizontal entre les deux tableaux
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & 0 & 1 \\
+\hline
+$y$ & 3 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+Puis on choisit un point qui n'est ni sur $(D_1)$, ni sur $(D_2)$ et dont les coordonnées sont connues. Par exemple : le point $O(0; 0)$.
+
+\vspace{0.2cm}
+
+En remplaçant $x$ et $y$ par les coordonnées de $O$ dans l'inéquation 1, on a : $0 - 2(0) + 1 \geq 0$ c'est à dire $1 \geq 0$ \textbf{vrai} donc les coordonnées de $O$ vérifie l'inéquation 1. On barre donc le demi-plan de frontière $(D_1)$ ne contenant pas $O$.
+
+\vspace{0.2cm}
+
+En remplaçant $x$ et $y$ par les coordonnées de $O$, dans l'inéquation 2, on a : $2(0) + 0 - 3 < 0$ c'est à dire $-3 < 0$ \textbf{vrai} donc les coordonnées de $O$ vérifie l'inéquation 2. On barre donc le demi-plan de frontière $(D_2)$ ne contenant pas $O$.
+
+\vspace{0.2cm}
+
+NB : le 3. Sera donné comme exercice à faire
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Systèmes de trois inéquations à deux inconnues }}}}
+
+\underline{\exemple}
+
+\noindent Le système
+$
+\begin{cases}
+-x + y + 2 \geq 0 \\
+2x - y - 4 < 0 \\
+x - 2y - 1 > 0
+\end{cases}
+$
+est un système de trois inéquations à deux inconnues $x$ et $y$.
+
+\underline{\textbf{\textcolor{red}{Résolution graphique}}}
+$
+\begin{cases}
+-x + y + 2 \geq 0 \\
+2x - y - 4 < 0 \\
+x - 2y - 1 > 0
+\end{cases}
+$
+
+\end{document}
