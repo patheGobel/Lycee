@@ -323,15 +323,67 @@ On a $f(0)=0$
 \(
 \begin{aligned}
 \lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} &=\lim\limits_{x \to 0^+} \dfrac{x + \sqrt{x^2+x}}{x}\\
-															               &=\lim\limits_{x \to 0^+} \dfrac{x^2-x^2-x}{x(x + \sqrt{x^2+x})}\\
-															               &=\lim\limits_{x \to 0^+} \dfrac{-x}{x(x + \sqrt{x^2+x})}\\
-															               &=\lim\limits_{x \to 0^+} \dfrac{-1}{(x + \sqrt{x^2+x})}\\
-															               &=\dfrac{-1}{0^+}\\
-															               &=-\infty
+															               &=\lim\limits_{x \to 0^+} \dfrac{x^2-x^2-x}{x(x - \sqrt{x^2+x})}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{-x}{x(x - \sqrt{x^2+x})}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{-1}{(x - \sqrt{x^2+x})}\\
+															               &="\dfrac{-1}{0}"\\
 \end{aligned}    
 \)
 
-\textcolor{red}{ $f$ n'est pas dérivable à droite de $0$ et on a une démi-tangent orientée vers le bas en $0^+$  }
+Supposons que $ x - \sqrt{x^2+x} > 0 $
+
+$ x - \sqrt{x^2+x} > 0 \implies \sqrt{x^2+x} < x $
+
+$
+\begin{aligned}
+\sqrt{x^2+x} < x &\implies \begin{cases}
+										x^2+x > 0\\
+										x > 0\\ 
+										x^2+x < x^{2} 
+										\end{cases}\\
+									&\implies \begin{cases}
+										x^2+x > 0\\
+										x > 0\\ 
+										x < 0
+										\end{cases}\\
+\end{aligned}
+$
+
+$
+\begin{aligned}
+\begin{cases}
+x^2+x = 0\\
+x = 0 
+\end{cases}\implies
+\begin{cases}
+x=0 \textbf{ ou } x=-1\\
+x = 0
+\end{cases}
+\end{aligned}
+$
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=1.75]{$x$/.5,$x^2 + x$/.7,$x$/.7,$x$/.7}{$-\infty$,$-1$,$0$,$+\infty$}
+        \tkzTabLine{,h,z,h,z,+, }
+        \tkzTabLine{,h,t,h,z,+, }
+        \tkzTabLine{,h,t,h,z,+, }
+    \end{tikzpicture}
+
+$$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ x-\sqrt{x^2+x} > 0  $
+
+ $$ \textbf{Donc } x-\sqrt{x^2+x} <0,  \, \forall x\in ]0;+\infty[ $$
+
+\textcolor{red}{Ainsi  $\forall x\in ]0;+\infty[$ $f'(x) > 0 $ donc f  est croissant $0;+\infty[$}
+
+\(
+\begin{aligned}
+\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} &=\lim\limits_{x \to 0^+} \dfrac{-1}{(x - \sqrt{x^2+x})}\\
+															               &=\dfrac{-1}{0^-}\\
+															               &=+\infty \\
+\end{aligned}    
+\)
+
+\textcolor{red}{ $f$ n'est pas dérivable à droite de $0$ donc admet une démi-tangent orientée vers le haut en $0^+$  }
 
 \end{itemize}     
     
