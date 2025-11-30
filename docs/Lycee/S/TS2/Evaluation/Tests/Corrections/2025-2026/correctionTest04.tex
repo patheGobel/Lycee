@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection (1 point) :}} \ignorespaces
+}
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.9}{\fontsize{10cm}{10cm}\selectfont Pathé Gobel BA}}}
+    }
+}
+\begin{document}
+\hrule % Barre horizontale
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
+        Lycée Dindéfélo & Test 4 & 17 Novembre 2025 \\
+    \end{tabular}
+    \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
+    \hrule % Barre horizontale
+\end{center}
+\begin{center}
+    \textbf{\Large Limites et Continuité} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : Terminale S2} \\[0.2cm]
+    \textbf{\small Durée : 10 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /5}
+\end{center}
+
+\question \textbf{Énoncer le théorème des valeurs intermédiaires (TVI).}\\[0.3cm]
+\underline{\color{red}Soit $f$ une fonction \textbf{continue} sur un intervalle $[a, b]$.}\\[0.3cm]
+\underline{\color{red}Pour tout nombre réel $k$ compris entre $f(a)$ et $f(b)$ (c'est-à-dire $k \in [\min(f(a), f(b)), \max(f(a), f(b))]$),}\\[0.3cm]
+\underline{\color{red}l'équation $f(x) = k$ admet \textbf{au moins une} solution $x_0$ dans l'intervalle $[a, b]$.}\\
+
+\vspace{0.3cm}
+
+\question \textbf{Énoncer le théorème d’existence et d’unicité d’une solution (Corollaire du TVI).}\\[0.3cm]
+\underline{\color{red}Soit $f$ une fonction \textbf{continue} et \textbf{strictement monotone} sur un intervalle $[a, b]$.}\\[0.3cm]
+\underline{\color{red}Pour tout nombre réel $k$ compris entre $f(a)$ et $f(b)$,}\\[0.3cm]
+\underline{\color{red}l'équation $f(x) = k$ admet une \textbf{unique} solution $\alpha$ dans l'intervalle $[a, b]$.}\\
+
+\vspace{0.3cm}
+
+\question \textbf{Complétez la phrase suivante :}\\[0.3cm]
+Une fonction est dite continue sur un intervalle $I$ si elle est continue \underline{\color{red}en \textbf{tout point} de l'intervalle $I$}.\\
+
+\vspace{0.3cm}
+
+\question\\
+\[\text{Si}\lim_{x \to -\infty} h(x) =-\infty \text{ et }\lim_{x \to -\infty}\frac{h(x)}{x}= 0\text{ alors } (C_{h}) \underline{\hspace{10cm}}\]\\
+\underline{\hspace{20cm}}\\[0.3cm]
+\[\text{Si}\lim_{x \to +\infty} h(x) =+\infty \text{ et }\lim_{x \to +\infty}\frac{h(x)}{x}=\gamma \in\mathbb{R}^{*}\text{ et }\lim_{x \to +\infty}[h(x)-\gamma x]=+\infty\text{ alors } \underline{\hspace{10cm}}\]\\
+\underline{\hspace{20cm}}\\[0.3cm]
+\question\\
+Soit \( f(x) =\frac{2x+1}{x-1} \) une fonction continue décroissante sur \( \mathbb{R}\setminus\{1\} \) déterminer:\\
+\( f([-2; 0])=\underline{\hspace{15cm}} \)\\
+\( f(]1; +\infty[)=\underline{\hspace{15cm}} \)
+
+\end{document}
