@@ -523,64 +523,90 @@ f'(x)=
 \textcolor{red}{ Ansi, si \( x<0\,, f(x) > 0 \)  donc f est croissante sur $]-\infty; 0[$}
 \item Si $ x>0\,, f(x)= \dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}}$ le signe dépend du numérateur 
 
-Supposons que $ 2\sqrt{x^2+x}+2x+1 < 0 $
+%Supposons que $ 2\sqrt{x^2+x}+2x+1 < 0 $
 
-$ 2\sqrt{x^2+x}+2x+1 < 0 \implies \sqrt{x^2+x} < -\dfrac{2x+1}{2}$
+%$ 2\sqrt{x^2+x}+2x+1 < 0 \implies \sqrt{x^2+x} < -\dfrac{2x+1}{2}$
 
-$
-\begin{aligned}
-\sqrt{x^2+x} < -\dfrac{2x+1}{2} &\implies \begin{cases}
-																						x^2+x > 0\\
-																						-\dfrac{2x+1}{2} > 0\\ 
-																						x^2+x < \left( -\dfrac{2x+1}{2} \right)^{2} 
-																						\end{cases}\\
-											 &\implies \begin{cases}
-																						x^2+x > 0\\
-																						2x+1 < 0\\ 
-																						x^2+x < x^{2}+x+\dfrac14 
-																						\end{cases}\\
-											&\implies \begin{cases}
-																						x^2+x > 0\\
-																						2x+1 < 0\\ 
-																						0 < \dfrac14 
-																						\end{cases}\\
-\end{aligned}
-$
+%$
+%\begin{aligned}
+%\sqrt{x^2+x} < -\dfrac{2x+1}{2} &\implies \begin{cases}
+																						%x^2+x > 0\\
+																						%-\dfrac{2x+1}{2} > 0\\ 
+																						%x^2+x < \left( -\dfrac{2x+1}{2} \right)^{2} 
+																						%\end{cases}\\
+											 %&\implies \begin{cases}
+																						%x^2+x > 0\\
+																						%2x+1 < 0\\ 
+																						%x^2+x < x^{2}+x+\dfrac14 
+																						%\end{cases}\\
+											%&\implies \begin{cases}
+																						%x^2+x > 0\\
+																						%2x+1 < 0\\ 
+																						%0 < \dfrac14 
+																						%\end{cases}\\
+%\end{aligned}
+%$
 
-$
-\begin{aligned}
-\begin{cases}
-x^2+x = 0\\
-2x+1 = 0 
-\end{cases}\implies
-\begin{cases}
-x=0 \textbf{ ou } x=-1\\
-x = -\dfrac{1}{2}
-\end{cases}
-\end{aligned}
-$
+%$
+%\begin{aligned}
+%\begin{cases}
+%x^2+x = 0\\
+%2x+1 = 0 
+%\end{cases}\implies
+%\begin{cases}
+%x=0 \textbf{ ou } x=-1\\
+%x = -\dfrac{1}{2}
+%\end{cases}
+%\end{aligned}
+%$
 
-    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
-        \tkzTabInit[espcl=1.75]{$x$/.5,$x^2 + x$/.7,$2x + 1$/.7}{$-\infty$,$-1$,$-\dfrac{1}{2}$,$0$,$+\infty$}
-        \tkzTabLine{,h,z,h,t,h,z,+, }
-        \tkzTabLine{,h,t,h,z,h,t,+, }
-    \end{tikzpicture}
+    %\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+     %   \tkzTabInit[espcl=1.75]{$x$/.5,$x^2 + x$/.7,$2x + 1$/.7}{$-\infty$,$-1$,$-\dfrac{1}{2}$,$0$,$+\infty$}
+     %   \tkzTabLine{,h,z,h,t,h,z,+, }
+     %   \tkzTabLine{,h,t,h,z,h,t,+, }
+    %\end{tikzpicture}
 
-$$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ 2\sqrt{x^2+x}+2x+1 < 0  $
+%$$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ 2\sqrt{x^2+x}+2x+1 < 0  $
 
- $$ \textbf{Donc } 2\sqrt{x^2+x}+2x+1 > 0 \, \forall x\in ]0;+\infty[ $$
+% $$ \textbf{Donc } 2\sqrt{x^2+x}+2x+1 > 0 \, \forall x\in ]0;+\infty[ $$
+
+%\textcolor{red}{Ainsi  $\forall x\in ]0;+\infty[$ $f'(x) > 0 $ donc f  est croissant $0;+\infty[$}
+  
+$$ \textbf{Or } 2\sqrt{x^2+x}+2x+1 > 0 \, \forall x\in ]0;+\infty[ $$
 
 \textcolor{red}{Ainsi  $\forall x\in ]0;+\infty[$ $f'(x) > 0 $ donc f  est croissant $0;+\infty[$}
-  
 \end{itemize}
     
-    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
         \tkzTabInit[espcl=5]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$+\infty$}
         \tkzTabLine{,+,}
         \tkzTabVar{-/$-\infty$,+/$+\infty$/}
         \tkzTabVal[draw]{1}{2}{0.3}{$0$}{$0$}
-    \end{tikzpicture}   
+\end{tikzpicture}   
+  
+++++++++++++++++++++++++
+
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[espcl=5]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$+\infty$}
+
+    \tkzTabLine{,+,}
+
+    \tkzTabVar{-/$-\infty$,+/$+\infty$/}
+
+    % Trace deux petits traits pour non dérivabilité en 0
+    \node at (2,0.3) {}; % position du point
+    \draw[thick] (2,0.15) -- (2,0.45);
+    \draw[thick] (2,0.25) -- (2,0.35);
     
+    % Optionnel : écrire f(0)=0
+    \node at (2,-0.5) {$0$};
+\end{tikzpicture}
+
+
+
++++++++++++++++++++++++++
+
     \item Précisons les points d'intersection de $(\mathcal{C}_f)$ avec les axes du repère. \textbf{(0,25 pt)}
 
 \begin{itemize}
@@ -594,7 +620,7 @@ $$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ 2\sqrt{x^2
 $ 
 \begin{aligned}
 f(x)=0 &\implies \dfrac{x^2-2x}{x-1} = 0\\
-			&\implies x= 0 \text{ ou } x=2\\
+			&\implies x= 0 \text{ ou } x=2 \text{ Or } x<0\\
 \end{aligned}
 $
 

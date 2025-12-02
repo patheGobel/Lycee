@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  30 NOV 2025 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  1 DEC 2025 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -977,31 +977,30 @@ Overfull \hbox (11.68285pt too wide) detected at line 496
  []
 
 [7]
-<devoir1-2025-2026.png, id=120, 335.6192pt x 138.83447pt>
+<devoir1-2025-2026.png, id=121, 335.6192pt x 138.83447pt>
 File: devoir1-2025-2026.png Graphic file (type png)
 <use devoir1-2025-2026.png>
-Package pdftex.def Info: devoir1-2025-2026.png  used on input line 630.
+Package pdftex.def Info: devoir1-2025-2026.png  used on input line 656.
 (pdftex.def)             Requested size: 432.48355pt x 178.91713pt.
  [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.650     \item L
-                 a bijection réciproque $h^{-1}$ est-elle dérivable sur $J$ ?
- <build/devoir1-2025-2026.png>] [9]
-<devoir12025-2026Courbe2.png, id=141, 448.88199pt x 185.83714pt>
+l.700 
+       <build/devoir1-2025-2026.png>]
+<devoir12025-2026Courbe2.png, id=135, 448.88199pt x 185.83714pt>
 File: devoir12025-2026Courbe2.png Graphic file (type png)
 <use devoir12025-2026Courbe2.png>
-Package pdftex.def Info: devoir12025-2026Courbe2.png  used on input line 705.
+Package pdftex.def Info: devoir12025-2026Courbe2.png  used on input line 731.
 (pdftex.def)             Requested size: 432.48355pt x 179.04814pt.
- [10
+ [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.730 \]
-         <build/devoir12025-2026Courbe2.png>] [11]
+l.736 \end{center}
+                   <build/devoir12025-2026Courbe2.png>] [10]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/Devoir1Correction.aux)
@@ -1017,10 +1016,10 @@ Package rerunfilecheck Info: File `Devoir1Correction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30564 strings out of 474222
- 610482 string characters out of 5748732
+ 30464 strings out of 474222
+ 609072 string characters out of 5748732
  1962975 words of memory out of 5000000
- 52246 multiletter control sequences out of 15000+600000
+ 52147 multiletter control sequences out of 15000+600000
  580447 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,431b,1064s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1040,10 +1039,10 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/zapfding/uzdr.pfb>
-Output written on build/Devoir1Correction.pdf (11 pages, 696798 bytes).
+Output written on build/Devoir1Correction.pdf (10 pages, 694709 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
