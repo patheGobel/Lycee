@@ -1,0 +1,652 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 05/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Complexe}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\fbox{\textbf{\exo}} [Forme algébrique et calcul de $i^n$]
+\begin{enumerate}
+    \item Déterminer les formes algébriques des nombres complexes donnés. Préciser, le cas échéant, s'il est réel ou imaginaire pur.
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+    \begin{enumerate}
+        \item $z_1 = i(1 - 4i) + 3(2 - i)$
+        \item $z_2 = (3 - i)^2 + 6i$
+        \item $z_3 = \dfrac{3}{1 - i}$
+        \item $z_4 = \dfrac{1 + 2i}{2 - i}$
+        \item $z_5 = (2 + i\sqrt{3})(\sqrt{3} - i)$
+        \item $z_6 = (2 + 5i)^2$
+        \item $z_7 = \dfrac{3 - 3i}{1 + i}$
+    \end{enumerate}
+\end{multicols}
+\item Calculer $i^{2025}$, $i^{40}$, $i^{27}$, $i^{34}$
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Conjugué]
+
+\begin{enumerate}
+    \item Déterminer le conjugué des nombres complexes suivants :
+    \begin{enumerate}
+        \item $z_1 = 3i$
+        \item $z_2 = -i(1 + 4i)$
+        \item $z_3 = (3 - 5i)^3$
+        \item $z_4 = \dfrac{2i}{i + 3} - \dfrac{3}{2 + i}$
+    \end{enumerate}
+    \item Soit $z_5 = \dfrac{2 - i}{1 + i}$ et $z_6 = \dfrac{2 + i}{1 - i}$. \\
+    Montrer que $\overline{z_6} = z_5$. Que peut-on en déduire sans calcul de $z_5 + z_6$ et $z_5 - z_6$ ?
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Module et argument]
+
+Déterminer le module et un argument des nombres complexes suivants :
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+    \item $z_1 = -\sqrt{3} + i$
+    \item $z_2 = -1 + i\sqrt{3}$
+    \item $z_3 = 1 - i$
+    \item $z_4 = 1 + i$
+    \item $z_5 = -\sqrt{3} + i$
+    \item $z_6 = \dfrac{2i - 2\sqrt{3}}{4i + 4}$
+    \item $z_7 = (\sqrt{3} + i)(1 - i)^2$
+    \item $z_8 = \dfrac{(-\sqrt{3} + i)^3}{(1 + i)^2}$
+    \item $z_9 = 2 \dfrac{(\sqrt{3} + i)^2}{(-1 - i)^2}$
+    \item $z_{10} = -2i (1 + i\sqrt{3})^6$
+\end{enumerate}
+\end{multicols}
+\fbox{\textbf{\exo}} : [Forme trigonométrique]
+
+Soit les nombres complexes $z_1 = 1 + i\sqrt{3}$ et $z_2 = 1 - i$.
+
+\begin{enumerate}
+    \item Déterminer les formes trigonométrique de $z_1$, $z_2$ et $Z = \dfrac{z_1}{z_2}$.
+    \item Déterminer la forme algébrique de $Z$.
+    \item En déduire $\cos\left(\dfrac{7\pi}{12}\right)$ et $\sin\left(\dfrac{7\pi}{12}\right)$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Formes trigonométrique et exponentielle]
+
+Dans chacun des cas suivants, déterminer la forme trigonométrique et la forme exponentielle.
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+    \item $z_1 = 4$
+    \item $z_2 = -6$
+    \item $z_3 = -i$
+    \item $z_4 = -5 + 5i\sqrt{3}$
+    \item $z_5 = -1 - i$
+    \item $z_6 = \sqrt{3} - i$
+    \item $z_{10} = -2e^{i\frac{\pi}{2}}$
+    \item $z_{11} = ie^{i\frac{\pi}{3}}$
+\end{enumerate}
+\end{multicols}
+\begin{enumerate}
+\setcounter{enumi}{8} % Reprendre la numérotation à 3
+    \item $z_7 = -2 \left(\cos \dfrac{\pi}{6} + i \sin \dfrac{\pi}{6}\right)$
+    \item $z_9 = 4 \left(\cos \dfrac{\pi}{12} + i \sin \dfrac{\pi}{12}\right)$
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Forme trigonométrique]
+
+On considère les nombres complexes :
+$$z_1 = \dfrac{\sqrt{6} - i\sqrt{2}}{2}, \quad z_2 = 1 - i \quad \text{et} \quad z_3 = \dfrac{z_1}{z_2}.$$
+
+\begin{enumerate}
+    \item Donner une écriture trigonométrique des nombres complexes $z_1$, $z_2$ et $z_3$.
+    \item Écrire sous forme algébrique $z_3$.
+    \\
+    En déduire les valeurs exactes de $\cos \dfrac{\pi}{12}$ et $\sin \dfrac{\pi}{12}$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Classique !]
+
+\begin{enumerate}
+    \item Écrire $1 + i$ sous forme trigonométrique. En déduire l'expression de $(1 + i)^6$ par la formule de Moivre.
+    \item Calculer $\left(-\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right)^{2026}$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Racines carrées et Equations]
+
+\begin{enumerate}
+    \item Déterminer les racines carrées de :
+    \begin{enumerate}
+        \item $z = 3 + 4i$
+        \item $z = 8 - 6i$
+        \item $z = -5 + 12i$
+        \item $z = 7 + 24i$
+    \end{enumerate}
+    \item Résoudre dans $\mathbb{C}$ les équations suivantes :
+    \begin{enumerate}
+        \item $4z^2 - 12z + 153 = 0$
+        \item $z^2 - 4z + 5 = 0$
+        \item $z^2 + z + 1 = 0$
+        \item $iz^2 - iz - 3 - i = 0$
+        \item $iz^2 + (1 - 5i)z + 6i - 2 = 0$
+        \item $z^2 - (2 + 4i)z - 2 + 4i = 0$
+        \item $(3 + i)z^2 - (7 - i)z + 10 = 0$
+        \item $z^2 - (1 + i\sqrt{3})z - 1 + i\sqrt{3} = 0$
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Racines $n$-ièmes]
+
+\begin{enumerate}
+    \item Résoudre dans $\mathbb{C} : z^6 = 4\sqrt{2}(-1 + i)$
+    \item 
+    \begin{enumerate}
+        \item Résoudre dans $\mathbb{C} : z^3 = 1$.
+        \item Calculer $(1 + i)^3$.
+        \item En déduire les racines cubiques de $z = -2 + 2i$.
+    \end{enumerate}
+    \item Résoudre dans $\mathbb{C} : z^3 = 4\sqrt{2}(-1 + i)$
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Racines $n$-ièmes]
+
+On donne $z_0 = 1 - i\sqrt{3}$
+
+\begin{enumerate}
+    \item Donner une écriture trigonométrique de $z_0$.
+    \item Montrer que $z_0^4 = -8 + 8i\sqrt{3}$.
+    \item Résoudre dans $\mathbb{C}$ l'équation $z^4 = 1$.
+    \item En déduire les solutions de $(E) : z^4 = -8 + 8i\sqrt{3}$ sous forme algébrique et sous forme trigonométrique.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}[Linéarisation]
+
+\begin{enumerate}
+    \item Linéariser les polynômes trigonométriques suivants :
+    \begin{enumerate}
+        \item $h(x) = \cos x \sin^2 x$
+        \item $k(x) = \cos 2x \sin 3x$
+        \item $m(x) = \sin^3 x$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Linéariser $f(x) = \sin^4 x + \cos^4 x$.
+        \item Déduisez-en une primitive sur $\mathbb{R}$ de $f$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Lieux géométriques]
+
+Dans chacun des cas, déterminer géométriquement l'ensemble des points $M$ d'affixe $z$ vérifiant la relation donnée.
+
+\begin{enumerate}
+    \item $|z + 1 + 4i| = |z - 1 + i|$
+    \item $|z + 1 + 4i| = 4$
+    \item $|\overline{z} + 1 - 4i| = |z - 2i|$
+    \item $|3iz + 6| = 3|z - 1 + i|$
+    \item $\arg \dfrac{z - 2i}{z - 1 + i} = \dfrac{\pi}{2}[\pi]$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Lieux géométriques]
+
+On considère l'expression $Z = \dfrac{z + 1}{z - 2i}$ où $z \neq 2i$. Déterminer par la méthode géométrique, l'ensemble des points $M(z)$ tels que :
+
+\begin{enumerate}
+    \item $Z$ soit réel.
+    \item $Z$ soit imaginaire pur.
+    \item $\arg(Z) = \dfrac{\pi}{2}[2\pi]$.
+\end{enumerate}
+
+
+\fbox{\textbf{\exo}} [Deux méthodes pour un problème]
+
+Dans le plan complexe rapporté au repère orthonormal direct $(O; \vec{u}, \vec{v})$ on note $A$ et $B$ les points d'affixes respectives $2i$ et $1 + i$.
+
+\begin{enumerate}
+    \item Soit $z$ un nombre complexe différent de $1 + i$, écrit sous la forme $z = x + iy$, où $x$ et $y$ sont des réels. On pose
+    $$Z = \dfrac{z - 2i}{z - 1 - i}.$$
+    Montrer que :
+    
+    $ \text{Re}(Z) = \dfrac{x^2 + y^2 - x - 3y + 2}{(x - 1)^2 + (y - 1)^2} \quad \text{et} $
+    
+    $ \text{Im}(Z) = \dfrac{x - x - y + 2}{(x - 1)^2 + (y - 1)^2} \quad $ 
+    
+    $\text{avec} \; (x;y) \neq (1;1).$
+
+    \item Déterminer l'ensemble $(E)$ des points $M(z)$ tels que $Z$ soit un réel et l'ensemble $(F)$ des points $M(z)$ tels que $Z$ soit imaginaire pur.
+    \begin{enumerate}
+        \item En utilisant la forme algébrique de $Z$.
+        \item En utilisant les considérations sur les arguments.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Complexe et géométrie]
+
+Le plan ($\mathcal{P}$) est muni d'un repère orthonormé $(O; \vec{u}, \vec{v})$ d'unité graphique $1\text{ cm}$. On note $A$, $B$ et $C$ les points de ($\mathcal{P}$) d'affixes respectives $z_A = 2 + 5i$, $z_B = 5 - 4i$ et $z_C = -1 - 4i$.
+
+\begin{enumerate}
+    \item Placer les points $A$, $B$ et $C$ dans ($\mathcal{P}$).
+    \item Calculer les distances $AB$, $AC$ et $BC$, puis en déduire la nature du triangle $ABC$.
+    \item Soit $D$ le point de ($\mathcal{P}$) d'affixe $z_D = 2 - 4i$.
+    \begin{enumerate}
+        \item Placer le point $D$ dans ($\mathcal{P}$).
+        \item Calculer $\dfrac{z_A - z_D}{z_B - z_D}$. En déduire la nature du triangle $ADB$.
+    \end{enumerate}
+    \item Soit $(\mathcal{C})$ le cercle circonscrit au triangle $ADB$.
+    \\
+    Déterminer l'affixe du centre $J$ de $(\mathcal{C})$ et calculer son rayon $r$.
+    \item Soit $E$ le symétrique de $D$ par rapport à $J$.
+    \begin{enumerate}
+        \item Déterminer l'affixe de $E$ et montrer que $E$ appartient à $(\mathcal{C})$.
+        \item Préciser la nature du quadrilatère AEBD en justifiant la réponse.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Dans le plan muni d'un repère orthonormé direct $(O; \vec{u}, \vec{v})$, on considère les points $A, B$ et $C$ d'affixes respectives :
+$$z_A = -3i, \quad z_B = -2 \quad \text{et} \quad z_C = 1 + 2i.$$
+
+\begin{enumerate}
+    \item Déterminer le module et un argument du quotient $\dfrac{z_C - z_B}{z_A - z_B}$.
+    \item En déduire la nature du triangle $ABC$.
+    \item Déterminer l'affixe $z_D$ du point tel que le quadrilatère $BADC$ soit un carré.
+    \item Montrer que les points $A, B, C$ et $D$ appartiennent à un même cercle dont on précisera le centre et le rayon.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+On considère dans $\mathbb{C}$ l'équation
+$$(E) : z^3 + (-5 + 6i)z + 12 + 18i = 0.$$
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Vérifier que $(E)$ admet une solution réelle $z_0$ que l'on déterminera.
+        \item Montrer que $2i$ est une solution de $(E)$.
+        \item Achever la résolution de l'équation $(E)$.
+    \end{enumerate}
+    \item On considère dans le plan complexe muni d'un repère $(O;\vec{u},\vec{v})$ les points $A, B, M$ et $M'$ d'affixes respectives $2i, -3, z$ et $z'$ tels que $Z = \dfrac{z - 2i}{z + 3}$.
+    \begin{enumerate}
+        \item Montrer que $OM' = \dfrac{MA}{MB}$.
+        \item Déterminer l'ensemble $(\mathcal{G})$ des points $M$ du plan tels que $OM' = 1$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Calculer $\left(\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2}\right)^{2}$. En déduire dans l'ensemble
+    $\mathbb{C}$ des nombres complexes les solutions de l'équation
+    $z^2 - i = 0$.
+    \item On pose $P(z) = z^3 + z^2 - iz - i$ où $z$ est un nombre
+    complexe.
+    \begin{enumerate}
+        \item Démontrer que l'équation $P(z) = 0$ admet une solution réelle (que l'on déterminera).
+        \item Résoudre l'équation $P(z) = 0$ dans l'ensemble des nombres complexes.
+    \end{enumerate}
+    \item Le plan est muni d'un repère orthonormé $(O, \vec{u}, \vec{v})$ d'unité graphique $2\text{ cm}$.
+    On considère les points $A$, $B$ et $C$ d'affixes respectives $z_A = \dfrac{\sqrt{2}}{2}(1 + i)$, $z_B = -\dfrac{\sqrt{2}}{2}(1 + i)$ et $z_C = -1$.
+    \begin{enumerate}
+        \item Déterminer la forme exponentielle de $z_A$ et celle de $z_B$.
+        \item Placer avec précision les points $A, B$ et $C$ dans le plan complexe.
+    \end{enumerate}
+    \item Soit $D$ le symétrique du point $A$ par rapport à l'axe réel.
+    \begin{enumerate}
+        \item Donner l'affixe $z_D$ du point $D$ sous forme algébrique.
+        \item Démontrer que : $\dfrac{z_D - z_C}{z_A - z_C} = e^{-i\frac{\pi}{4}}$. En déduire la nature du triangle $ACD$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item On considère l'équation
+    $$(E) : z^3 - 13z^2 + 59z - 87 = 0, \quad \text{où } z \in \mathbb{C}.$$
+    \begin{enumerate}
+        \item Déterminer la solution réelle de $(E)$.
+        \item Résoudre dans l'ensemble des nombres complexes $\mathbb{C}$ l'équation $(E)$.
+    \end{enumerate}
+    \item On pose $a = 3$, $b = 5 - 2i$ et $c = 5 + 2i$.
+    \\
+    Le plan complexe étant muni d'un repère orthonormé direct $(O; \vec{u}, \vec{v})$, on considère les points $A, B$ et $C$ d'affixes respectives $a, b$ et $c$. Soit $M$ le point d'affixe $z$ distinct de $A$ et de $B$.
+    \begin{enumerate}
+        \item Calculer $\dfrac{b - a}{c - a}$. En déduire la nature du triangle $ABC$.
+        \item On pose $Z = \dfrac{z - 3}{z - 5 + 2i}.$
+        
+        Donner une interprétation géométrique de l'argument de $Z$.
+        
+        En déduire l'ensemble des points $M$ d'affixe $z$ tels que $Z$ soit un réel non nul.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Soit $p(z) = z^3 + 3z^2 - 3z - 5 - 20i$, $z \in \mathbb{C}$.
+    \begin{enumerate}
+        \item Démontrer que $2 + i$ est une racine de $p(z)$.
+        \item En déduire les solutions de l'équation $p(z) = 0$ dans $\mathbb{C}$.
+    \end{enumerate}
+
+    \vspace{0.5cm}
+
+    \item Dans le plan $(\mathcal{P})$ rapporté au repère orthonormé direct $(O, \vec{u}, \vec{v})$ d'unité $1 \text{cm}$, on considère les points $A$, $B$ et $C$ d'affixes respectives $z_A = 2+i$, $z_B = -1 - 2i$ et $z_C = -4 + i$.
+    \begin{enumerate}
+        \item Placer les points $A$, $B$ et $C$ puis calculer les distances $AB$ et $BC$.
+        \item Démontrer que :
+        $$ \arg\left( \frac{z_C - z_B}{z_A - z_B} \right) = \left(\vec{BA}, \vec{BC}\right) \pmod{2\pi}. $$
+        \item En déduire une mesure en radian de l'angle $\left(\vec{BA}, \vec{BC}\right)$.
+        \item Déduire de tout ce qui précède la nature du triangle $ABC$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit le complexe $a = -1 - i$ et $Z_n$ la suite définie par
+$$
+\begin{cases}
+Z_0 = 0 \text{ et } Z_1 = i \\
+Z_{n+1} = (1-a)Z_n + aZ_{n-1}, \quad \forall n \in \mathbb{N}^*
+\end{cases}
+$$
+
+\begin{enumerate}
+    \item Déterminer $Z_2$ et $Z_3$ sous forme algébrique.
+
+    \item Soit $(U_n)$ la suite définie par :
+    $$
+    U_n = Z_{n+1} - Z_n, \quad \forall n \in \mathbb{N}.
+    $$
+    \begin{enumerate}
+        \item Déterminer $U_0$.
+        \item Démontrer que $(U_n)$ est une suite géométrique de raison $-a$.
+        \item Exprimer $U_n$ en fonction de $n$ et $a$.
+    \end{enumerate}
+
+    \item Soit $S_n = U_0 + U_1 + \dots + U_{n-1}$. Exprimer $S_n$ en fonction de $Z_n$. En déduire que $Z_n = -1 + (1+i)^n$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Résoudre dans $\mathbb{C}$, les équations suivantes :
+    \begin{enumerate}
+        \item $z^2 - 2z + 5 = 0$.
+        \item $z^2 - 2(1 + \sqrt{3})z + 5 + 2\sqrt{3} = 0$.
+    \end{enumerate}
+
+    \item On considère dans le plan rapporté à un repère orthonormé $(O, \vec{u}, \vec{v})$ les points $A$, $B$, $C$ et $D$ d'affixes respectives $z_A = 1 + 2i$, $z_B = 1 + \sqrt{3} + i$, $z_C = 1 + \sqrt{3} - i$, $z_D = 1 - 2i$.
+    \begin{enumerate}
+        \item Placer $A$, $B$, $C$ et $D$.
+        \item Vérifier que $\displaystyle \frac{z_D - z_B}{z_A - z_B} = i\sqrt{3}$. En déduire la nature de $ABD$.
+        \item Montrer que les points $A$, $B$, $C$ et $D$ appartiennent à un même cercle $(\mathcal{C})$ dont on précisera le centre et le rayon.
+    \end{enumerate}
+
+    \item On considère
+    $$
+    (\mathcal{E}) : z^2 - 2(1 + 2 \cos\theta)z + 5 + 4 \cos\theta = 0 ; \quad \theta \in \mathbb{R}.
+    $$
+    \begin{enumerate}
+        \item Résoudre $(\mathcal{E})$ dans $\mathbb{C}$.
+        \item Montrer que les points images des solutions de $(\mathcal{E})$ appartiennent à $(\mathcal{C})$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit $p(z) = z^3 - (5 + i)z^2 + 6(1 + i)z - 8(1 + i)$.
+\begin{enumerate}
+    \item Montrer que l'équation $p(z) = 0$, $z \in \mathbb{C}$ admet une solution réelle que l'on déterminera.
+    \item Vérifier que $2i$ est une solution de $p(z) = 0$.
+    \item Factoriser $p(z)$ et résoudre dans $\mathbb{C}$, $p(z) = 0$.
+    \item On distinguera les solutions $z_1$, $z_2$ et $z_3$ de l'équation $p(z) = 0$ par : $|z_1| < |z_2| < |z_3|$.
+\begin{enumerate}
+        \item Placer dans le plan complexe muni d'un repère orthonormé les points $M_1$, $M_2$ et $M_3$ d'affixes respectives $z_1$, $z_2$ et $z_3$.
+        \item Montrer que le triangle $M_1 M_2 M_3$ est rectangle isocèle.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Dans l'ensemble $\mathbb{C}$ des nombres complexes, on considère l'équation
+$$
+(\mathcal{E}) : z^3 + (1 - 8i)z^2 - (23 + 4i)z - 3 + 24i = 0.
+$$
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que $(\mathcal{E})$ admet une solution imaginaire pure et la déterminer.
+        \item Montrer que $1 + 2i$ et $-2 + 3i$ sont solutions de $(\mathcal{E})$.
+        \item Donner l'ensemble des solutions de $(\mathcal{E})$.
+    \end{enumerate}
+
+    \item Dans le plan rapporté à un repère orthonormé direct $(O, \vec{u}, \vec{v})$, on considère les points $A$, $B$ et $C$ d'affixes respectives $z_A = 1 + 2i$, $z_B = 3i$ et $z_C = -2 + 3i$.
+    
+    Soit $G$ le barycentre des points $A$, $B$, et $C$ affectés des coefficients respectifs $2$, $-2$ et $1$.
+    
+    Montrer que les vecteurs $\overrightarrow{GA}$, $\overrightarrow{GB}$ et $\overrightarrow{GC}$ ont pour affixes respectives $\sqrt{2}e^{i\frac{\pi}{4}}$, $2i$ et $2\sqrt{2}e^{i\frac{3\pi}{4}}$ et que ces affixes sont, dans cet ordre, en progression géométrique. Préciser la raison.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit la suite $z_n$ définie par :
+
+$
+\begin{cases}
+z_0 = i \\
+z_{n+1} = (1+i)z_n + 2i
+\end{cases}
+$
+
+\begin{enumerate}
+    \item Calculer $z_1$ et $z_2$.
+
+    \item On considère la suite $(u_n)$ définie par : $u_n = z_n + 2$.
+    \begin{enumerate}
+        \item Montrer que : $u_n = (2 + i)(1 + i)^n$.
+        \item Exprimer $z_n$ en fonction de $n$.
+    \end{enumerate}
+
+    \item Soit $M_{n+1}$, $M_n$, $A$ et $B$ les points d'affixes respectives
+    $
+    z_{n+1}, z_n, i \text{ et } -\dfrac{1}{2} - \dfrac{1}{2}i.
+    $
+    
+    Démontrer que :
+    $
+    \dfrac{A M_{n+1}}{B M_n} = \sqrt{2} $ \text{ et que : } $(\overrightarrow{B M_n}, \overrightarrow{A M_{n+1}}) = \frac{\pi}{4} \pmod{2\pi}.
+    $
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\textbf{PARTIE A} : Pour tout complexe $z$ on note :
+$
+f(z) = z^5 + 2z^4 + 2z^3 - z^2 - 2z - 2.
+$
+
+\begin{enumerate}
+    \item Déterminer le polynôme $Q$ tel que, quel que soit $z \in \mathbb{C}$, $f(z) = (z^3 - 1)Q(z)$.
+    \item Résoudre alors dans $\mathbb{C}$ l'équation\\ $(\mathcal{E}) : f(z) = z$.
+    \item Écrire les solutions de $(\mathcal{E})$ sous forme trigonométrique puis les représenter dans le plan complexe $\mathcal{P}$ muni d'un repère orthonormé $(O; \vec{u}, \vec{v})$.
+\end{enumerate}
+
+\textbf{PARTIE B} : Considérons les points $A$, $B$, $C$ et $D$ du plan $\mathcal{P}$ tels que :
+$
+A \left(-\frac{1}{2} + i\frac{\sqrt{3}}{2}\right),$ $\quad B(-1+i), \quad C(-1-i) \quad $\text{et}$ \quad D \left(-\frac{1}{2} - i\frac{\sqrt{3}}{2}\right).
+$
+\begin{enumerate}
+    \item Quelle est la nature du quadrilatère $ABCD$?
+    \item Soit $r$ la rotation de centre le point $\Omega$ d'affixe $1$ qui transforme $A$ en $D$. Déterminer l'écriture complexe de $r$.
+    \item Quelle est la nature du triangle $\Omega AD$?
+    \item Déterminer l'affixe du centre du cercle circonscrit du triangle $\Omega AD$.
+    \item On pose $u_n = (z_A)^n, n \in \mathbb{N}^*$ où $z_A$ est l'affixe du point $A$. Déterminer la valeur minimale de $n$ pour laquelle $u_n$ est un réel.
+    \item Donner la forme algébrique de $u_{2019}$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Le plan complexe est muni d'un repère orthonormé direct $(O; \vec{u}, \vec{v})$. Soit le nombre complexe $a$ défini par :
+$
+a = \sqrt{2 - \sqrt{3}} - i\sqrt{2 + \sqrt{3}}.
+$
+
+\begin{enumerate}
+    \item Montrer que $a^2 = -2\sqrt{3} - 2i$, puis en déduire le module de $a$.
+    \item Écrire $a^2$ sous forme trigonométrique puis vérifier qu'une des mesures de l'argument de $a$ est $\displaystyle \frac{19\pi}{12}$.
+    \item En déduire les valeurs exactes de $\displaystyle \cos\left(\frac{7\pi}{12}\right)$ et $\displaystyle \sin\left(\frac{7\pi}{12}\right)$ puis de $\displaystyle \cos\left(\frac{\pi}{12}\right)$ et $\displaystyle \sin\left(\frac{\pi}{12}\right)$.
+    \item Représenter sur le même graphique les points images de $a$, $-a$ et $a^2$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Un jeune agriculteur décide de pratiquer de la culture sous serre dans son champ. A cet effet, il choisit dans son plan de représentation un repère orthonormal $(O; \vec{u}, \vec{v})$. Il place dans ce repère deux points $A$ et $B$ dont les affixes respectives $z_A$ et $z_B$ sont des racines du polynôme $P$ défini par :
+$$
+P(z) = 2z^3 - 3(1 + i)z^2 + 4iz + 1 - i, \quad \text{où } z \in \mathbb{C}.
+$$
+Son objectif est de pratiquer sa culture sous serre dans l'ensemble $(\mathcal{E})$ des points $M$ de son plan de représentation tels que $\lVert \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MO} \rVert \le 2$, qui contient un point du segment $[AB]$.
+
+\begin{enumerate}
+    \item Vérifier que $1$ et $i$ sont des racines de $P$.
+    \item Déterminer le polynôme $g$ tel que : $P(z) = (z - 1)(z - i)g(z)$.
+    \item Résoudre dans $\mathbb{C}$ l'équation $P(z) = 0$.
+    \item On pose $z_A = 1$, $z_B = i$ et $z_C = \displaystyle \frac{1}{2} + \frac{1}{2}i$.
+    \begin{enumerate}
+        \item Placer les points $A$, $B$ et $C$ d'affixes respectives $z_A$, $z_B$ et $z_C$ dans le repère orthonormé $(O; \vec{u}, \vec{v})$ en choisissant comme unité graphique $4 \text{ cm}$.
+        \item Démontrer que $C$ est le milieu de $[AB]$, puis que $C$ appartient à l'ensemble $(\mathcal{E})$.
+        \item Déterminer l'affixe $z_G$ du point $G$ barycentre du système\\ $\{(A, 1); (B, 1); (O, 2)\}$, puis placer $G$.
+    \end{enumerate}
+    \item Déterminer puis construire l'ensemble $\mathcal{E}$ des points $M$ de son plan de représentation tels que : $\lVert \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MO} \rVert \le 2$.
+    \item Le jeune agriculteur atteindra-t-il son objectif?
+\end{enumerate}
+
+\fbox{\textbf{\exo}}(POLYNÔMES COMPLEXES)
+
+Soit $P$ le polynôme défini par : $P(z) = z^3 - (11 + 2i)z^2 + 2(17 + 7i)z - 42$.
+\begin{enumerate}
+    \item Démontrer qu'il existe un nombre réel $\alpha$ solution de l'équation : $P(z) = 0$.
+    \item Déterminer le polynôme $Q$ tel que : $P(z) = (z - \alpha)Q(z)$.
+    \item Résoudre dans $\mathbb{C}$ l'équation : $P(z) = 0$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} (POLYNÔMES COMPLEXES)
+
+On pose $P(z) = z^4 - 6z^3 + 23z^2 - 34z + 26$, $\alpha$ désigne un nombre complexe quelconque.
+\begin{enumerate}
+    \item Montrer que $P(\bar{\alpha}) = \overline{P(\alpha)}$. En déduire que si $P(\alpha) = 0$ alors $P(\bar{\alpha}) = 0$.
+    \item Calculer $P(1+i)$. Indiquer deux solutions complexes de l'équation $P(z) = 0$.
+    \item Calculer $Q(z) = (z - (1+i))(z - (1-i))$.
+    \item Vérifier que le polynôme $P(z)$ est divisible par $Q(z)$.
+    \item Résoudre dans $\mathbb{C}$, $P(z) = 0$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} (POLYNÔMES COMPLEXES)
+
+On pose $P(z) = z^4 - 3z^3 + \frac{9}{2}z^2 - 3z + 1$.
+\begin{enumerate}
+    \item Montrer que si le complexe $\alpha$ est solution de l'équation $P(z) = 0$ alors $\bar{\alpha}$ et $\displaystyle \frac{1}{\alpha}$ sont aussi solutions de $P(z) = 0$.
+    \item Calculer $P(1+i)$. Indiquer trois solutions complexes de l'équation $P(z) = 0$ puis en déduire la résolution de l'équation $P(z) = 0$.
+    \item Écrire $P(z)$ sous forme d'un produit de deux polynômes du second degré, à coefficients réels.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit l'équation $(\mathcal{E}) : z^3 + (4 - 5i)z^2 + (8 - 20i)z - 40i = 0$.
+\begin{enumerate}
+    \item Démontrer que $(\mathcal{E})$ admet une solution imaginaire pure.
+    \item Résoudre $(\mathcal{E})$ dans $\mathbb{C}$.
+\end{enumerate}
+
+Soit l'équation $(\mathcal{E}') : z^4 - 5z^3 + 6z^2 - 5z + 1 = 0$.
+\begin{enumerate}
+    \item Démontrer que $0$ n'est pas solution de $(\mathcal{E}')$. En déduire que si $\alpha$ est une solution de $(\mathcal{E}')$ alors $\displaystyle \frac{1}{\alpha}$ est aussi une solution de $(\mathcal{E}')$.
+    \item Démontrer que $(\mathcal{E}')$ est équivalente à $(\mathcal{E''}) : \left(z + \frac{1}{z}\right)^2 - 5\left(z + \frac{1}{z}\right) + 4 = 0$.
+    \item En posant $Z = z + \frac{1}{z}$, résoudre $(\mathcal{E''})$.
+    \item En déduire la résolution de $(\mathcal{E}')$ dans $\mathbb{C}$.
+\end{enumerate}
+\end{multicols}
+\end{document}
