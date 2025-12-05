@@ -95,17 +95,94 @@ middle color = tcbcolback!80!black]
 \end{tikzpicture}
 \vspace{3cm}
 
-\section*{\underline{Exercice 1 :} $0,5 \times 8 = 4$ points}
+\section*{\underline{Exercice 1 :} 0,5 $\times $ 10 = 5 points}
+
 \begin{enumerate}
-\item Énoncer le théorème des valeurs intermédiaires.
-\item Énoncer le théorème d’existence et d’unicité d’une solution.
-\item Énoncer le théorème de l’inégalité des accroissements finis (IAF).
-\item \(\text{Si }\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = a \ (a \neq 0) \text{ alors ... }\)
-\item \(\text{Si }\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = +\infty \text{ alors ... }\)
-\item \(\text{Si }\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = 0 \text{ alors ... }\)
-\item \(\text{Si }\lim_{x \to +\infty} f(x) =+\infty \text{ et }\lim_{x \to +\infty}\frac{f(x)}{x}=\beta \in\mathbb{R}^{*}\text{ et }\lim_{x \to +\infty}[f(x)-\beta x]=+\infty\text{ alors ...}\)
-\item Si \(f\) est continue et strictement décroissante sur \( ]-\infty; b] \), alors \( f(]-\infty; b]) = ... \)
+
+%--------------------- 1 -------------------------
+\item \textbf{Théorème des valeurs intermédiaires (TVI).}  
+Soit \(f\) une fonction continue sur l’intervalle \([a,b]\).  
+Pour tout réel \(k\) compris entre \(f(a)\) et \(f(b)\), il existe \(c \in [a,b]\) tel que  
+\[
+f(c) = k.
+\]
+
+\textbf{Corollaire.}  
+L’image d’un intervalle par une fonction continue est un intervalle.  
+En particulier, si \(f(a)f(b) < 0\), alors \(f\) admet au moins une solution de l’équation \(f(x)=0\) dans \([a,b]\).
+
+%--------------------- 2 -------------------------
+\item \textbf{Théorème de la bijection.}  
+Si \(f\) est continue et strictement monotone sur un intervalle \(I\), alors :
+\begin{itemize}
+    \item \(f\) est bijective de \(I\) vers \(J=f(I)\),
+    \item l’application réciproque \(f^{-1} : J \to I\) est continue,
+    \item \(f^{-1}\) est strictement monotone (même sens si \(f\) est croissante, sens opposé si \(f\) est décroissante).
+\end{itemize}
+
+%--------------------- 3 -------------------------
+\item \textbf{Théorème des accroissements finis (TAF).}  
+Si \(f\) est continue sur \([a,b]\) et dérivable sur \((a,b)\), alors il existe \(c \in (a,b)\) tel que :
+\[
+f'(c) = \frac{f(b) - f(a)}{b - a}.
+\]
+
+\textbf{Inégalité des accroissements finis (IAF).}  
+Si de plus \(|f'(x)| \le M\) pour tout \(x \in (a,b)\), alors :
+\[
+|f(x) - f(y)| \le M |x - y|,\qquad \forall x,y \in [a,b].
+\]
+
+%--------------------- 4 -------------------------
+\item \textbf{(Rappel) Théorème de la bijection.}  
+Même énoncé que dans la question 2.
+
+%--------------------- 5 -------------------------
+\item \[
+\text{Si } \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = a \ (a \neq 0),
+\]
+alors \(f\) est dérivable en \(x_0\) et :
+\[
+f'(x_0) = a.
+\]
+En particulier, \(f\) est localement strictement monotone en \(x_0\) et \(x_0\) n’est pas un extremum.
+
+%--------------------- 6 -------------------------
+\item \[
+\text{Si } \lim_{x \to x_0^-} \frac{f(x)-f(x_0)}{x-x_0} = +\infty,
+\]
+alors la dérivée à gauche de \(f\) en \(x_0\) est \(+\infty\).  
+La pente est verticale du côté gauche (pas de dérivée finie).
+
+%--------------------- 7 -------------------------
+\item \[
+\text{Si } \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = 0,
+\]
+alors \(f\) est dérivable en \(x_0\) et :
+\[
+f'(x_0) = 0.
+\]
+La tangente en \(x_0\) est horizontale.
+
+%--------------------- 8 -------------------------
+\item Si
+\[
+\lim_{x \to +\infty} f(x) = +\infty, \qquad 
+\lim_{x \to +\infty} \frac{f(x)}{x} = \beta \in \mathbb{R}^*, \qquad
+\lim_{x \to +\infty} [f(x) - \beta x] = +\infty,
+\]
+alors la droite d’équation \(y = \beta x + b\) n’est \textbf{pas} une asymptote oblique pour \(f\).  
+L'écart entre \(f(x)\) et \(\beta x\) diverge vers \(+\infty\).
+
+%--------------------- 9 -------------------------
+\item Si \(f\) est continue et strictement décroissante sur \(]-\infty, b]\), alors :
+\[
+f(]-\infty, b]) = (\ell,\, f(b)],
+\]
+où \(\displaystyle \ell = \lim_{x \to -\infty} f(x)\).
+L’intervalle est ouvert à gauche car \(-\infty\) n’est pas un réel.
 \end{enumerate}
+
 
 \section*{\textcolor{green}{\underline{Exercice 2 :} 4 points}}
 
@@ -240,7 +317,7 @@ $$
     
     $$ \textcolor{red}{ \boxed{Df = \mathbb{R}} }$$
   
-    \item Déterminons les limites aux bornes de $\mathcal{D}_f$. \hspace{1cm} \textbf{(0,5 pt)}
+    \item Déterminons les limites aux bornes de $\mathcal{D}_f$. 
 
 \begin{itemize}
 \item \underline{En $-\infty$}: $f(x)=f_{1}(x)$   
@@ -254,7 +331,7 @@ $$
 \end{aligned}    
 \)
 
-\textcolor{red}{{\underline{$\lim\limits_{x \to -\infty} f(x) = -\infty$}}}
+\textcolor{red}{{\underline{$\lim\limits_{x \to -\infty} f(x) = -\infty$}}} \hspace{1cm} \textbf{(0,25 pt)}
 
 \item \underline{En $+\infty$}: $f(x)=f_{2}(x)$   
     
@@ -267,7 +344,7 @@ $$
 \end{aligned}    
 \)
 
-\textcolor{red}{{\underline{$\lim\limits_{x \to +\infty} f(x) = +\infty$}}}
+\textcolor{red}{{\underline{$\lim\limits_{x \to +\infty} f(x) = +\infty$}}} \hspace{1cm} \textbf{(0,25 pt)}
 \end{itemize}
 
     \item Étudions la continuité et la dérivabilité de $f$ en $0$. Interprétons les résultats obtenus. \hspace{1cm} \textbf{(1,5 pt)}
