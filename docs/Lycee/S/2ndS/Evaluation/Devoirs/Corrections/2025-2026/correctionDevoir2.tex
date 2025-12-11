@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{\underline{Correction de l'Exercice 4 :} (6 points) }
+
+\textbf{Résoudre dans $\mathbb{R}$ les inéquations et équations suivantes :}
+
+\begin{enumerate}
+    \item \textbf{$|2x+3| > 0$} \hfill \textbf{ (1 point)}
+    \begin{itemize}
+        \item L'inégalité $|A| > 0$ est vraie pour tout $A \in \mathbb{R}$ tel que $A \neq 0$.
+        \item Ici, $A = 2x+3$. L'inégalité est vraie si et seulement si $2x+3 \neq 0$.
+        \item $2x+3 = 0 \iff 2x = -3 \iff x = -\frac{3}{2}$.
+        \item Donc, l'inégalité est vérifiée pour tout $x \in \mathbb{R} \setminus \left\{-\frac{3}{2}\right\}$.
+        \item $\mathcal{S} = \mathbb{R} \setminus \left\{-\frac{3}{2}\right\}$ ou $\mathcal{S} = \left]-\infty; -\frac{3}{2}\right[ \cup \left]-\frac{3}{2}; +\infty\right[$.
+    \end{itemize}
+
+    \item \textbf{$|-2x+3| \geq 6$} \hfill \textbf{ (1 point)}
+    \begin{itemize}
+        \item L'inégalité $|A| \geq a$ (avec $a>0$) est équivalente à $A \geq a$ ou $A \leq -a$.
+        \item On a donc :
+        $$ -2x+3 \geq 6 \quad \text{ou} \quad -2x+3 \leq -6 $$
+        \item Résolution de la première inéquation :
+        $$ -2x \geq 6-3 \iff -2x \geq 3 \iff x \leq -\frac{3}{2} $$
+        \item Résolution de la deuxième inéquation :
+        $$ -2x \leq -6-3 \iff -2x \leq -9 \iff x \geq \frac{9}{2} $$
+        \item L'ensemble des solutions est l'union des deux intervalles : $\mathcal{S} = \left]-\infty; -\frac{3}{2}\right] \cup \left[\frac{9}{2}; +\infty\right[$.
+    \end{itemize}
+
+    \item \textbf{$|3x+5| \leq 2$} \hfill \textbf{ (1 point)}
+    \begin{itemize}
+        \item L'inégalité $|A| \leq a$ (avec $a>0$) est équivalente à $-a \leq A \leq a$.
+        \item On a donc :
+        $$ -2 \leq 3x+5 \leq 2 $$
+        \item On résout simultanément les deux inégalités :
+        $$ -2 - 5 \leq 3x \leq 2 - 5 $$
+        $$ -7 \leq 3x \leq -3 $$
+        $$ -\frac{7}{3} \leq x \leq -\frac{3}{3} $$
+        $$ -\frac{7}{3} \leq x \leq -1 $$
+        \item L'ensemble des solutions est l'intervalle : $\mathcal{S} = \left[-\frac{7}{3}; -1\right]$.
+    \end{itemize}
+
+    \item \textbf{$|3-x| = 4x-3$} \hfill \textbf{ (1 point)}
+    \begin{itemize}
+        \item L'équation $|A| = B$ exige que $B \geq 0$. On doit donc avoir $4x-3 \geq 0$, soit $4x \geq 3$, donc $x \geq \frac{3}{4}$. \textbf{(Condition de validité)}
+        \item Sous cette condition, l'équation est équivalente à $3-x = 4x-3$ ou $3-x = -(4x-3)$.
+        \item \textbf{Cas 1} : $3-x = 4x-3$
+        $$ 3+3 = 4x+x \iff 6 = 5x \iff x = \frac{6}{5} $$
+        Vérification de la condition : $\frac{6}{5} = 1,2$. $1,2 \geq 0,75$ (car $\frac{3}{4}=0,75$). La solution $x=\frac{6}{5}$ est valide.
+        \item \textbf{Cas 2} : $3-x = -4x+3$
+        $$ -x+4x = 3-3 \iff 3x = 0 \iff x = 0 $$
+        Vérification de la condition : $0 < \frac{3}{4}$. La solution $x=0$ n'est \textbf{pas} valide.
+        \item L'ensemble des solutions est : $\mathcal{S} = \left\{\frac{6}{5}\right\}$.
+    \end{itemize}
+
+    \item \textbf{$E(|x-3|) = 2$} \hfill \textbf{ (1 point)}
+    \begin{itemize}
+        \item L'équation $E(A) = n$ (où $n$ est un entier) est équivalente à $n \leq A < n+1$.
+        \item Ici $A = |x-3|$ et $n=2$. On a donc :
+        $$ 2 \leq |x-3| < 3 $$
+        \item Ceci est équivalent au système : $\left\{ \begin{array}{l} |x-3| \geq 2 \\ |x-3| < 3 \end{array} \right.$
+        \item \textbf{Résolution de $|x-3| \geq 2$} (Équivalent à $x-3 \geq 2$ ou $x-3 \leq -2$) :
+        $$ x \geq 5 \quad \text{ou} \quad x \leq 1 $$
+        $\mathcal{S}_1 = \left]-\infty; 1\right] \cup \left[5; +\infty\right[$.
+        \item \textbf{Résolution de $|x-3| < 3$} (Équivalent à $-3 < x-3 < 3$) :
+        $$ -3+3 < x < 3+3 \iff 0 < x < 6 $$
+        $\mathcal{S}_2 = \left]0; 6\right[$.
+        \item La solution est l'intersection $\mathcal{S} = \mathcal{S}_1 \cap \mathcal{S}_2$.
+        \item $\mathcal{S} = \left( \left]-\infty; 1\right] \cup \left[5; +\infty\right[ \right) \cap \left]0; 6\right[ = \left]0; 1\right] \cup \left[5; 6\right[$.
+    \end{itemize}
+
+    \item \textbf{$E(|x-2|) = -2$} \hfill \textbf{ (1 point)}
+    \begin{itemize}
+        \item L'expression $|x-2|$ est une valeur absolue, elle est donc toujours positive : $|x-2| \geq 0$.
+        \item La partie entière $E(|x-2|)$ est donc toujours supérieure ou égale à 0 : $E(|x-2|) \geq 0$.
+        \item L'équation $E(|x-2|) = -2$ est impossible puisque $-2$ est strictement négatif.
+        \item L'ensemble des solutions est l'ensemble vide : $\mathcal{S} = \emptyset$.
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
