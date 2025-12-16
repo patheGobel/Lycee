@@ -1,87 +1,125 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath, amssymb}
-\usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
 \begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2025/2026} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 2nd}\textbf{S} &\textbf{Date: 20/12/2025} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Devoir n$ ^{\circ} $ 2 Du 1$ ^\text{\bf ère} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
 
-\section*{\underline{Correction de l'Exercice 4 :} (6 points) }
-
-\textbf{Résoudre dans $\mathbb{R}$ les inéquations et équations suivantes :}
+\section*{\underline{Exercice 4 :} (8,25 points) }
 
 \begin{enumerate}
-    \item \textbf{$|2x+3| > 0$} \hfill \textbf{ (1 point)}
-    \begin{itemize}
-        \item L'inégalité $|A| > 0$ est vraie pour tout $A \in \mathbb{R}$ tel que $A \neq 0$.
-        \item Ici, $A = 2x+3$. L'inégalité est vraie si et seulement si $2x+3 \neq 0$.
-        \item $2x+3 = 0 \iff 2x = -3 \iff x = -\frac{3}{2}$.
-        \item Donc, l'inégalité est vérifiée pour tout $x \in \mathbb{R} \setminus \left\{-\frac{3}{2}\right\}$.
-        \item $\mathcal{S} = \mathbb{R} \setminus \left\{-\frac{3}{2}\right\}$ ou $\mathcal{S} = \left]-\infty; -\frac{3}{2}\right[ \cup \left]-\frac{3}{2}; +\infty\right[$.
-    \end{itemize}
+\item Complétons le tableau suivant : \textbf{(2,25 pt)}
 
-    \item \textbf{$|-2x+3| \geq 6$} \hfill \textbf{ (1 point)}
-    \begin{itemize}
-        \item L'inégalité $|A| \geq a$ (avec $a>0$) est équivalente à $A \geq a$ ou $A \leq -a$.
-        \item On a donc :
-        $$ -2x+3 \geq 6 \quad \text{ou} \quad -2x+3 \leq -6 $$
-        \item Résolution de la première inéquation :
-        $$ -2x \geq 6-3 \iff -2x \geq 3 \iff x \leq -\frac{3}{2} $$
-        \item Résolution de la deuxième inéquation :
-        $$ -2x \leq -6-3 \iff -2x \leq -9 \iff x \geq \frac{9}{2} $$
-        \item L'ensemble des solutions est l'union des deux intervalles : $\mathcal{S} = \left]-\infty; -\frac{3}{2}\right] \cup \left[\frac{9}{2}; +\infty\right[$.
-    \end{itemize}
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+\hline
+\textbf{Valeur absolue} & \textbf{Distance} & \textbf{Encadrement} & \textbf{Intervalle} \\
+\hline
+$|x - 3| \leq 1$ & $d(x , 3) \leq 1$ & $2 \leq x \leq 4$ & $x\in [2;4]$ \\
+\hline
+$|x + 4| < 2$ & $d(x , -4) < 2$ & $-6 < x < -2$ & $x\in ]-6;\,-2[$ \\
+\hline
+$|x + \tfrac{11}{4}| \leq \tfrac{9}{4}$ & $d\!\left(x,\,-\tfrac{11}{4}\right) \leq \tfrac{9}{4}$ 
+& $-5 \leq x \leq -\tfrac{1}{2}$ 
+& $x \in \left[-5; -\frac12\right]$ \\
+\hline
+\end{tabular}
+\end{center}
 
-    \item \textbf{$|3x+5| \leq 2$} \hfill \textbf{ (1 point)}
-    \begin{itemize}
-        \item L'inégalité $|A| \leq a$ (avec $a>0$) est équivalente à $-a \leq A \leq a$.
-        \item On a donc :
-        $$ -2 \leq 3x+5 \leq 2 $$
-        \item On résout simultanément les deux inégalités :
-        $$ -2 - 5 \leq 3x \leq 2 - 5 $$
-        $$ -7 \leq 3x \leq -3 $$
-        $$ -\frac{7}{3} \leq x \leq -\frac{3}{3} $$
-        $$ -\frac{7}{3} \leq x \leq -1 $$
-        \item L'ensemble des solutions est l'intervalle : $\mathcal{S} = \left[-\frac{7}{3}; -1\right]$.
-    \end{itemize}
-
-    \item \textbf{$|3-x| = 4x-3$} \hfill \textbf{ (1 point)}
-    \begin{itemize}
-        \item L'équation $|A| = B$ exige que $B \geq 0$. On doit donc avoir $4x-3 \geq 0$, soit $4x \geq 3$, donc $x \geq \frac{3}{4}$. \textbf{(Condition de validité)}
-        \item Sous cette condition, l'équation est équivalente à $3-x = 4x-3$ ou $3-x = -(4x-3)$.
-        \item \textbf{Cas 1} : $3-x = 4x-3$
-        $$ 3+3 = 4x+x \iff 6 = 5x \iff x = \frac{6}{5} $$
-        Vérification de la condition : $\frac{6}{5} = 1,2$. $1,2 \geq 0,75$ (car $\frac{3}{4}=0,75$). La solution $x=\frac{6}{5}$ est valide.
-        \item \textbf{Cas 2} : $3-x = -4x+3$
-        $$ -x+4x = 3-3 \iff 3x = 0 \iff x = 0 $$
-        Vérification de la condition : $0 < \frac{3}{4}$. La solution $x=0$ n'est \textbf{pas} valide.
-        \item L'ensemble des solutions est : $\mathcal{S} = \left\{\frac{6}{5}\right\}$.
-    \end{itemize}
-
-    \item \textbf{$E(|x-3|) = 2$} \hfill \textbf{ (1 point)}
-    \begin{itemize}
-        \item L'équation $E(A) = n$ (où $n$ est un entier) est équivalente à $n \leq A < n+1$.
-        \item Ici $A = |x-3|$ et $n=2$. On a donc :
-        $$ 2 \leq |x-3| < 3 $$
-        \item Ceci est équivalent au système : $\left\{ \begin{array}{l} |x-3| \geq 2 \\ |x-3| < 3 \end{array} \right.$
-        \item \textbf{Résolution de $|x-3| \geq 2$} (Équivalent à $x-3 \geq 2$ ou $x-3 \leq -2$) :
-        $$ x \geq 5 \quad \text{ou} \quad x \leq 1 $$
-        $\mathcal{S}_1 = \left]-\infty; 1\right] \cup \left[5; +\infty\right[$.
-        \item \textbf{Résolution de $|x-3| < 3$} (Équivalent à $-3 < x-3 < 3$) :
-        $$ -3+3 < x < 3+3 \iff 0 < x < 6 $$
-        $\mathcal{S}_2 = \left]0; 6\right[$.
-        \item La solution est l'intersection $\mathcal{S} = \mathcal{S}_1 \cap \mathcal{S}_2$.
-        \item $\mathcal{S} = \left( \left]-\infty; 1\right] \cup \left[5; +\infty\right[ \right) \cap \left]0; 6\right[ = \left]0; 1\right] \cup \left[5; 6\right[$.
-    \end{itemize}
-
-    \item \textbf{$E(|x-2|) = -2$} \hfill \textbf{ (1 point)}
-    \begin{itemize}
-        \item L'expression $|x-2|$ est une valeur absolue, elle est donc toujours positive : $|x-2| \geq 0$.
-        \item La partie entière $E(|x-2|)$ est donc toujours supérieure ou égale à 0 : $E(|x-2|) \geq 0$.
-        \item L'équation $E(|x-2|) = -2$ est impossible puisque $-2$ est strictement négatif.
-        \item L'ensemble des solutions est l'ensemble vide : $\mathcal{S} = \emptyset$.
-    \end{itemize}
+\item Résolvons dans $\mathbb{R}$
+\begin{enumerate}
+        \item $|2x+3| > 0 $ toujours vrai deonc $ S=\mathbb{R} $ \hfill \textbf{ (1 point)}
+        \item $|-2x+3| \geq 6$ \hfill \textbf{ (1 point)}
+        
+        $\begin{aligned}
+        |-2x+3| \geq 6 &\implies  -2x+3 \geq 6 \textbf{ ou } -2x+3 \leq -6\\
+        							 &\implies  -2x \geq 3 \textbf{ ou } -2x \leq -9\\
+        							 &\implies  x \leq -\dfrac{3}{2} \textbf{ ou } x \geq \dfrac{9}{2}\\
+        							 &\implies  x \in \left] -\infty ; -\dfrac{3}{2} \right]  \textbf{ ou } x \in \left] \dfrac{9}{2} ; +\infty \right]\\
+        							 &\implies  x \in \left(  \left] -\infty ; -\dfrac{3}{2} \right]  \cup \left] \dfrac{9}{2} ; +\infty \right]\right) \\
+        \end{aligned}$
+        
+        \item $|3x+5| \leq 2$ \hfill \textbf{ (1 point)}
+        \item $|3-x| = 4x-3$ \hfill \textbf{ (1 point)}
+        \item $E(|x-3|) = 2$ \hfill \textbf{ (1 point)}
+        \item $E(|x-2|) = -2$ \hfill \textbf{ (1 point)}
+\end{enumerate}
 \end{enumerate}
 
 \end{document}

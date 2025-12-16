@@ -699,28 +699,511 @@ Donc  $\lim\limits_{x \to +\infty} \dfrac{f(x)}{x} = 2 $
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item Montrer que $f$ est continue sur $D_f$. \hfill $(0,75pt)$
-        \item Étudier la dérivabilité de $f$ en $0$ puis interpréter le résultat obtenu. \hfill $(01pt)$
+        \item Montrons que $f$ est continue sur $D_f$. \hfill $(0,75pt)$
+
+\begin{itemize}
+\item \textbf{Continuité sur chaque intervalle}
+
+\begin{itemize}
+\item \textbf{ Sur $]-\infty,0]\setminus\{-1\}$}
+
+La fonction
+\(
+x\longmapsto \dfrac{x^3-2x^2}{x^2-1}
+\)est une fonction rationnelle. 
+
+Elle est donc continue sur son domaine de définition
+\(
+\mathbb{R}\setminus\{-1,1\}.
+\)
+
+En particulier, elle est continue sur $]-\infty,0]\setminus\{-1\}$.
+
+\medskip
+
+\item \textbf{ Sur $]0,+\infty[$}
+
+Pour tout $x>0$, on a $x^2+x>0$, donc la fonction
+\(
+x\longmapsto \sqrt{x^2+x}
+\)
+est bien définie et continue sur $]0,+\infty[$.
+
+Ainsi, la fonction
+\(
+x\longmapsto x+\sqrt{x^2+x}
+\)
+étant somme de fonctions continues, est continue sur $]0,+\infty[$.
+\end{itemize}
+
+\item \textbf{ Continuité en $0$}
+
+ \begin{itemize}
+\item \underline{En $0^-$}: $f(x)=f_{1}(x)$   
+    
+\(
+\begin{aligned}
+ \lim\limits_{x \to 0^-} f(x) &= \lim\limits_{x \to 0^-} \dfrac{x^3-2x^2}{x^2-1}\\
+ 															&= 0
+\end{aligned}    
+\)
+
+\textcolor{red}{{\underline{$\lim\limits_{x \to 0^-} f(x) = 0$}}}
+
+\item \underline{En $0^+$}: $f(x)=f_{2}(x)$   
+    
+\(
+\begin{aligned}
+ \lim\limits_{x \to 0^+} f(x) &= \lim\limits_{x \to 0^+} \bigl(x+\sqrt{x^2+x}\bigr)\\
+															&=0
+\end{aligned}    
+\)
+
+\textcolor{red}{{\underline{$\lim\limits_{x \to 0^+} f(x) = 0$}}}
+\end{itemize}   
+
+On a $f(0)=\dfrac{0^3-2\cdot 0^2}{0^2-1}=0$
+
+\textcolor{red}{Finalement $\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0)$ donc f est continue en $0$}
+
+\item \textbf{ Conclusion}
+
+La fonction $f$ est continue sur $]-\infty,0]\setminus\{-1\}$, sur $]0,+\infty[$ et en $0$.
+
+    \begin{resultbox}
+    \[
+    \mathbf{ \lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0)=0 \text{ donc } f \text{ est continue sur } D_f=\mathbb{R}\setminus\{-1\}. }
+    \]
+   \end{resultbox} 
+
+\end{itemize}       
+        
+        \item Étudions la dérivabilité de $f$ en $0$ puis interprétons le résultat obtenu. \hfill $(01pt)$
+
+\begin{itemize}
+\item Étudions la dérivabilité de $f$ en $0$
+\begin{itemize}
+\item \underline{En $0^-$}: $f(x)=f_{1}(x)$ 
+
+\(
+\begin{aligned}
+ \lim\limits_{x \to 0^-} \dfrac{f(x)-f(0)}{x} &= \lim\limits_{x \to 0^-} \dfrac{\dfrac{x^3-2x^2}{x^2-1}}{x}\\
+ 															                &= \lim\limits_{x \to 0^-} \dfrac{x^3-2x^2}{x^2-x}\\
+ 															                &= \lim\limits_{x \to 0^-} \dfrac{x^2-2x}{x-1}\\
+ 															                &=0
+\end{aligned}    
+\)
+
+\item \underline{En $0^+$}: $f(x)=f_{2}(x)$ 
+
+\(
+\begin{aligned}
+\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} &=\lim\limits_{x \to 0^+} \dfrac{x + \sqrt{x^2+x}}{x}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{x^2-x^2-x}{x(x - \sqrt{x^2+x})}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{-x}{x(x - \sqrt{x^2+x})}\\
+															               &=\lim\limits_{x \to 0^+} \dfrac{-1}{(x - \sqrt{x^2+x})}\\
+															               &="\dfrac{-1}{0}"\\
+\end{aligned}    
+\)
+
+Supposons que $ x - \sqrt{x^2+x} > 0 $
+
+$ x - \sqrt{x^2+x} > 0 \implies \sqrt{x^2+x} < x $
+
+$
+\begin{aligned}
+\sqrt{x^2+x} < x &\implies \begin{cases}
+										x^2+x > 0\\
+										x > 0\\ 
+										x^2+x < x^{2} 
+										\end{cases}\\
+									&\implies \begin{cases}
+										x^2+x > 0\\
+										x > 0\\ 
+										x < 0
+										\end{cases}\\
+\end{aligned}
+$
+
+$
+\begin{aligned}
+\begin{cases}
+x^2+x = 0\\
+x = 0 
+\end{cases}\implies
+\begin{cases}
+x=0 \textbf{ ou } x=-1\\
+x = 0
+\end{cases}
+\end{aligned}
+$
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=1.75]{$x$/.5,$x^2 + x$/.7,$x$/.7,$x$/.7}{$-\infty$,$-1$,$0$,$+\infty$}
+        \tkzTabLine{,h,z,h,z,+, }
+        \tkzTabLine{,h,t,h,z,+, }
+        \tkzTabLine{,h,t,h,z,+, }
+    \end{tikzpicture}
+
+$$ S = \emptyset $$ Ainsi, il n'existe pas de $ x > 0 $ pour lequel $ x-\sqrt{x^2+x} > 0  $
+
+ $$ \textbf{Donc } x-\sqrt{x^2+x} <0,  \, \forall x\in ]0;+\infty[ $$
+
+\textcolor{red}{Ainsi  $\forall x\in ]0;+\infty[$ $f'(x) > 0 $ donc f  est croissant $0;+\infty[$}
+
+\(
+\begin{aligned}
+\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} &=\lim\limits_{x \to 0^+} \dfrac{-1}{(x - \sqrt{x^2+x})}\\
+															               &=\dfrac{-1}{0^-}\\
+															               &=+\infty \\
+\end{aligned}    
+\)
+
+\textcolor{red}{ Autre Méthode }
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+On calcule la dérivée à droite en $0$ :
+\[
+f'_+(0)=\lim_{x\to 0^+}\frac{f(x)-f(0)}{x}
+=\lim_{x\to 0^+}\frac{x+\sqrt{x^2+x}}{x}.
+\]
+
+On écrit :
+\[
+\frac{x+\sqrt{x^2+x}}{x}
+=1+\frac{\sqrt{x^2+x}}{x}.
+\]
+
+Or,
+\[
+\frac{\sqrt{x^2+x}}{x}
+=\sqrt{\frac{x^2+x}{x^2}}
+=\sqrt{1+\frac{1}{x}}.
+\]
+
+Lorsque $x\to 0^+$, on a $\dfrac{1}{x}\to +\infty$, donc
+\[
+\sqrt{1+\frac{1}{x}}\to +\infty.
+\]
+
+Ainsi,
+\[
+f'_+(0)=+\infty.
+\]
+
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+    \begin{resultbox}
+    \[
+    \mathbf{ \lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} = 0 \text{ et } \lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x} = +\infty }
+    \]
+   \end{resultbox} 
+
+\end{itemize}  
+\item Interprétons le résultat obtenu.
+
+\begin{itemize}
+\item \textcolor{red}{ $f$ est dérivable à gauche de $0$ et $y=2x$ est une démi-tangent en $0^-$ } ;
+\item \textcolor{red}{ $f$ n'est pas dérivable à droite de $0$ donc admet une démi-tangent orientée vers le haut en $0^+$  }
+\end{itemize}
+Le point d’abscisse $0$ est donc un point anguleux, ce qui explique la non-dérivabilité de $f$ en $0$.
+\end{itemize}        
+
+\begin{comment} %Autre méthode
+\subsubsection*{1. Dérivée à gauche en $0$}
+
+On calcule la dérivée à gauche en $0$ :
+\[
+f'_-(0)=\lim_{x\to 0^-}\frac{f(x)-f(0)}{x-0}
+=\lim_{x\to 0^-}\frac{\dfrac{x^3-2x^2}{x^2-1}}{x}.
+\]
+
+Ainsi,
+\[
+f'_-(0)=\lim_{x\to 0^-}\frac{x^3-2x^2}{x(x^2-1)}
+=\lim_{x\to 0^-}\frac{x(x-2)}{x^2-1}.
+\]
+
+En faisant tendre $x$ vers $0$, on obtient :
+\[
+f'_-(0)=\frac{0\cdot(-2)}{-1}=0.
+\]
+
+\subsubsection*{2. Dérivée à droite en $0$}
+
+On calcule la dérivée à droite en $0$ :
+\[
+f'_+(0)=\lim_{x\to 0^+}\frac{f(x)-f(0)}{x}
+=\lim_{x\to 0^+}\frac{x+\sqrt{x^2+x}}{x}.
+\]
+
+On écrit :
+\[
+\frac{x+\sqrt{x^2+x}}{x}
+=1+\frac{\sqrt{x^2+x}}{x}.
+\]
+
+Or,
+\[
+\frac{\sqrt{x^2+x}}{x}
+=\sqrt{\frac{x^2+x}{x^2}}
+=\sqrt{1+\frac{1}{x}}.
+\]
+
+Lorsque $x\to 0^+$, on a $\dfrac{1}{x}\to +\infty$, donc
+\[
+\sqrt{1+\frac{1}{x}}\to +\infty.
+\]
+
+Ainsi,
+\[
+f'_+(0)=+\infty.
+\]
+
+\subsubsection*{3. Conclusion}
+
+La dérivée à gauche en $0$ est finie :
+\[
+f'_-(0)=0,
+\]
+tandis que la dérivée à droite est infinie :
+\[
+f'_+(0)=+\infty.
+\]
+
+Par conséquent,
+\[
+\boxed{f \text{ n’est pas dérivable en } 0.}
+\]
+
+\subsubsection*{4. Interprétation graphique}
+
+La courbe représentative de $f$ admet :
+\begin{itemize}
+\item à gauche de $0$, une tangente horizontale ;
+\item à droite de $0$, une tangente verticale.
+\end{itemize}
+
+Le point d’abscisse $0$ est donc un point anguleux, ce qui explique la non-dérivabilité de $f$ en $0$.  
+\end{comment}      
+        
     \end{enumerate}
-    \item Démontrer que : $f(\alpha) = \dfrac{3}{2}\alpha - 2 $. \hfill $(0,5pt)$
+    \item Démontrons que : $ f(x) = -2+\dfrac{3(\alpha-2)}{\alpha^2 - 1} $. \hfill $(0,5pt)$
+
+   $f(x) = \dfrac{x^3 - 2x^2}{x^2 - 1} \implies f(x) = \dfrac{\alpha^3 - 2\alpha^2}{\alpha^2 - 1} $    
+
+	Comme  $g(\alpha) = 0 $ alos $ -\alpha^3 + 3\alpha - 4 = 0$ donc $\alpha^3 = 3\alpha - 4$
+
+ Ainsi, 
+ 
+ \(
+ \begin{aligned} 
+ f(\alpha) = \dfrac{\alpha^3 - 2\alpha^2}{\alpha^2 - 1} &\implies f(\alpha) = \dfrac{\alpha^3 - 2\alpha^2}{\alpha^2 - 1}\\
+ &\implies f(\alpha) = \dfrac{3\alpha - 4 - 2\alpha^2}{\alpha^2 - 1}\\  
+ &\implies f(\alpha) = -\dfrac{2\alpha^2-3\alpha+4}{\alpha^2 - 1}\\
+ &\implies f(\alpha) = -\dfrac{2(\alpha^2-1)-3(\alpha-2)}{\alpha^2 - 1}\\   
+ &\implies f(\alpha) = \dfrac{-2(\alpha^2-1)+3(\alpha-2)}{\alpha^2 - 1}\\
+ &\implies f(\alpha) = \dfrac{-2(\alpha^2-1)}{\alpha^2 - 1}+\dfrac{3(\alpha-2)}{\alpha^2 - 1}\\
+  &\implies f(\alpha) = -2+\dfrac{3(\alpha-2)}{\alpha^2 - 1}\\
+ \end{aligned}    
+ \)      
+    
     \item 
     \begin{enumerate}
-        \item Montrer que $\forall x \in ]-\infty; -1[ \cup ]-1; 0[$, on a : 
+        \item Montrons que $\forall x \in ]-\infty; -1[ \cup ]-1; 0[$, on a : 
+        $f'(x) = \dfrac{-xg(x)}{(x^2-1)^2}$ puis étudier son signe \hfill $(0,5pt)$
+\begin{itemize}
+\item Montrons que $\forall x \in ]-\infty; -1[ \cup ]-1; 0[$, on a : 
         $f'(x) = \dfrac{-xg(x)}{(x^2-1)^2}$ \hfill $(0,5pt)$
-        \item Calculer $f'(x)$ sur $]0; +\infty[$ et étudier son signe. \hfill $(0,75pt)$
-        \item Dresser le tableau de variation de $f$ sur $D_f$. \hfill $(0,75pt)$
+On a : $ f'(x)=\dfrac{-xg(x)}{(x^2-1)^2} $
+
+La fonction $f$ est dérivable sur $]-\infty,-1[ \cup ]-1,0[$ comme quotient de fonctions dérivables,
+avec $x^2-1\neq 0$ sur ces intervalles.
+
+\(
+ \begin{aligned} 
+ f'(x) &= \dfrac{(x^3-2x^2)'(x^2-1)-(x^3-2x^2)(x^2-1)'}{(x^2-1)^2}\\
+       &= \dfrac{(3x^2-4x)(x^2-1)-(x^3-2x^2)(2x)}{(x^2-1)^2}.\\
+       &= \dfrac{3x^4-3x^2-4x^3+4x-(2x^4-4x^3)}{(x^2-1)^2}\\
+       &= \dfrac{x^4-3x^2+4x}{(x^2-1)^2}\\
+       &= \dfrac{-x(-x^3+3x-4)}{(x^2-1)^2}\\
+       &=\dfrac{-xg(x)}{(x^2-1)^2}
+ \end{aligned}    
+ \)  
+
+Ainsi,
+\(
+\forall x \in ]-\infty,-1[ \cup ]-1,0[, \quad
+f'(x)=\dfrac{-xg(x)}{(x^2-1)^2}.
+\)   
+
+\item le signe de $f'(x)$ dépend du numérateur     
+
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=1.75]{$x$/.5,$-x$/.7,$g(x)$/.7,$-xg(x)$/.7}{$-\infty$,$\alpha$,$-1$,$0$,$+\infty$}
+        \tkzTabLine{, +, t,+,d ,+, z,h, }
+        \tkzTabLine{, +, z,-,d ,-, t,h, }
+        \tkzTabLine{, +, z,-,d ,-, z,h, }
+    \end{tikzpicture}    
+
+Ansi, 
+ 
+\textcolor{red}{ si \(x\in ]-\infty,\alpha]\,, f'(x) \geq 0 \)  donc f est croissante sur $]-\infty; \alpha]$}  
+
+\textcolor{red}{ si \(x\in [\alpha,-1[ \cup]-1,0] \,, f'(x) \leq 0 \)  donc f est croissante sur $[\alpha,-1[ \cup]-1,0]$}  
+
+\end{itemize}  
+        \item Calculons $f'(x)$ sur $]0; +\infty[$ et étudions son signe. \hfill $(0,75pt)$
+
+			\begin{itemize}
+			\item Calculons $f'(x)$ sur $]0; +\infty[$
+			
+\(
+\begin{aligned}
+f'(x) &= 1 + \dfrac{2x+1}{2\sqrt{x^2+x}}\\
+      &= \dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}}\\
+      &= \dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}}\\
+\end{aligned}
+\)
+
+			\item étudions son signe
+
+\textcolor{red}{ Ansi, si \( x<0\,, f(x) > 0 \)  donc f est croissante sur $]-\infty; 0[$}
+
+ Si $ x>0\,, f'(x)= \dfrac{2\sqrt{x^2+x}+2x+1}{2\sqrt{x^2+x}}$ le signe dépend du numérateur 			
+
+$$ \textbf{Or } 2\sqrt{x^2+x}+2x+1 > 0 \, \forall x\in ]0;+\infty[ $$
+
+\textcolor{red}{Ainsi  $\forall x\in ]0;+\infty[$ $f'(x) > 0 $ donc f  est croissant $0;+\infty[$}		
+			
+			\end{itemize}			        
+        
+        \item Dressons le tableau de variation de $f$ sur $D_f$. \hfill $(0,75pt)$
+
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=3]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$\alpha$,$-1$,$0$,$+\infty$}
+        \tkzTabLine{,+,z,-,d,-,z,+,}
+        \tkzTabVar{-/$-\infty$,+/$f(\alpha)$,-D+/ $+\infty$, -/$0$,+/$+\infty$/}
+        %\tkzTabVal[draw]{1}{2}{0.3}{$0$}{$0$}
+\end{tikzpicture}          
+        
     \end{enumerate}
-    \item Construire soigneusement la courbe $(C_f)$. \hfill $(01pt)$
+    \item Construisons soigneusement la courbe $(C_f)$. \hfill $(01pt)$
 \end{enumerate}
+
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{devoir2-2025-2026.png}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/q97sf6ew}{Clique ici pour voir la courbe sur géogébra}
+\end{center}
 
 \underline{\textbf{Partie C : Bijection}}
 
 Soit $h$ la restriction de $f$ sur $I = ]0; +\infty[$.
 \begin{enumerate}
-    \item Montrer que $h$ réalise une bijection de $I$ vers un intervalle $J$ à préciser. \hfill $(0,5pt)$
-    \item Calculer $h^{-1}(1)$ et $(h^{-1})'(\sqrt{2}+1)$. \hfill $(0,5pt)$
-    \item Expliciter $h^{-1}(x)$. \hfill $(0,5pt)$
-    \item Construire $(C_{h^{-1}})$ dans le repère précédent. \hfill $(0,5pt)$
+    \item Montrons que $h$ réalise une bijection de $I$ vers un intervalle $J$ à préciser. \hfill $(0,5pt)$
+
+Sur $I$ $h$ est continue est strictement croissante donc réalise une bijection de $I$ vers $J=[0,+\infty[$
+
+		Comme $\forall x \in I$, $h'(x)\neq 0$ donc $h^{-1}$ est dérivable sur $J$    
+    
+    \item Calculons $h^{-1}(1)$ et $(h^{-1})'(\sqrt{2}+1)$. \hfill $(0,5pt)$
+
+\(
+h(x)=x+\sqrt{x^2+x}.
+\)
+
+\begin{itemize}
+
+\item  \textbf{ Calcul de $h(1)$}
+
+$h(1) = \sqrt{2}+1$ 
+
+\begin{resultbox}
+    \[
+        \mathbf{ h(1) = \sqrt{2}+1 }
+    \]
+\end{resultbox} 
+
+\item  \textbf{ Calcul de $(h^{-1})'(\sqrt{2}+1)$}
+
+\(
+(h^{-1})'(\sqrt{2}+1)=\dfrac{1}{h'(h^{-1}(\sqrt{2}+1))} \textbf{ Or } h(1) = \sqrt{2}+1 \textbf{ donc } h^{-1}(\sqrt{2}+1) = 1
+\)
+
+\(
+\begin{aligned}
+(h^{-1})'(\sqrt{2}+1)
+&= \dfrac{1}{h'\!\left(1\right)} \textbf{ comme } h'(x)=1+\dfrac{2x+1}{2\sqrt{x^2+x}}\\
+&=\dfrac{1}{1+\dfrac{2+1}{2\sqrt{1^2+1}}}\\
+&=\dfrac{1}{1+\dfrac{3}{2\sqrt{2}}}\\
+&=\dfrac{1}{ \dfrac{2\sqrt{2}+3}{2\sqrt{2}}}\\
+&=\dfrac{2\sqrt{2}}{2\sqrt{2}+3}
+\end{aligned}
+\)
+
+\begin{resultbox}
+    \[
+        \mathbf{(h^{-1})'(\sqrt{2}+1)=\dfrac{2\sqrt{2}}{2\sqrt{2}+3}}
+    \]
+\end{resultbox}  
+\end{itemize}   
+    
+    \item Explicitons $h^{-1}(x)$. \hfill $(0,5pt)$
+
+\[
+\text{Soit } y = h(x) = x+\sqrt{x^{2}+x}.
+\]
+
+On isole la racine :
+\[
+y-x = \sqrt{x^{2}+x}.
+\]
+
+En élevant au carré, on obtient :
+\[
+(y-x)^{2} = x^{2}+x.
+\]
+
+\[
+y^{2}-2xy+x^{2} = x^{2}+x.
+\]
+
+En simplifiant :
+\[
+y^{2}-2xy = x.
+\]
+
+On factorise par \(x\) :
+\[
+y^{2} = x(1+2y).
+\]
+
+D’où :
+
+\begin{resultbox}
+    \[
+        \mathbf{h^{-1}(x)=\dfrac{x^{2}}{1+2x}}
+    \]
+\end{resultbox}    
+    
+    \item Construisons $(C_{h^{-1}})$ dans le repère précédent. \hfill $(0,5pt)$ 
+
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{reciDevoir2-2025-2026}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/q97sf6ew}{Clique ici pour voir la courbe sur géogébra}
+\end{center}    
+    
 \end{enumerate}
 
 \end{document}
