@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  16 DEC 2025 10:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  16 DEC 2025 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,7 +982,7 @@ Excluding 'comment' comment. [7] [8] [9] Excluding 'comment' comment. [10]
 <devoir2-2025-2026.png, id=140, 389.24596pt x 161.01808pt>
 File: devoir2-2025-2026.png Graphic file (type png)
 <use devoir2-2025-2026.png>
-Package pdftex.def Info: devoir2-2025-2026.png  used on input line 1099.
+Package pdftex.def Info: devoir2-2025-2026.png  used on input line 1097.
 (pdftex.def)             Requested size: 432.48355pt x 178.91397pt.
 
 [11
@@ -990,20 +990,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1112 S
-        ur $I$ $h$ est continue est strictement croissante donc réalise une...
+l.1112 		C
+          omme $\forall x \in I$, $h'(x)\neq 0$ donc $h^{-1}$ est dérivable...
  <build/devoir2-2025-2026.png>] [12]
 <reciDevoir2-2025-2026.png, id=162, 192.72pt x 79.72185pt>
 File: reciDevoir2-2025-2026.png Graphic file (type png)
 <use reciDevoir2-2025-2026.png>
-Package pdftex.def Info: reciDevoir2-2025-2026.png  used on input line 1201.
+Package pdftex.def Info: reciDevoir2-2025-2026.png  used on input line 1199.
 (pdftex.def)             Requested size: 432.48355pt x 178.90414pt.
  [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1210 \end{document}
+l.1208 \end{document}
                       <build/reciDevoir2-2025-2026.png>]
 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1043,7 +1043,7 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/zapfding/uzdr.pfb>
-Output written on build/devoir2Correction.pdf (13 pages, 816558 bytes).
+Output written on build/devoir2Correction.pdf (13 pages, 816480 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  177 compressed objects within 2 object streams
