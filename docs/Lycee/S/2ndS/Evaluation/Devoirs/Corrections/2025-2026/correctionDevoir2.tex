@@ -66,6 +66,17 @@ middle color = tcbcolback!80!black]
 \cfoot{\bf
 \thepage /
 \pageref{LastPage}}
+
+% Définition de l'encadré adaptatif avec fond jaune
+\newtcolorbox{resultbox}{
+    colback=red!30, % Fond rouge clair
+    colframe=black, % Bordure noire fine
+    sharp corners, % Coins nets
+    boxrule=0.5pt, % Contour léger
+    boxsep=2pt, % Espacement interne
+    left=5pt, right=5pt, top=2pt, bottom=2pt, % Marges internes
+}
+
 \begin{document}
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
@@ -80,6 +91,200 @@ middle color = tcbcolback!80!black]
 \end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
+
+\section*{\underline{Exercice 1 :} (4,5 points) }
+
+Soient $x>0$ et $y>0$.
+
+\begin{enumerate}
+    \item Démontrons que :
+    \(
+    \frac{1}{x^2+y^2} \leq \frac{1}{2xy}.
+    \)
+
+    Comme $(x-y)^2 \geq 0$, on a :
+    \(
+    x^2 - 2xy + y^2 \geq 0
+    \quad \Longrightarrow \quad
+    x^2 + y^2 \geq 2xy.
+    \)
+    
+    Les deux membres étant strictement positifs, on peut prendre les inverses :
+    \[
+    \frac{1}{x^2+y^2} \leq \frac{1}{2xy}.
+    \]
+
+    \item
+    \begin{enumerate}
+        \item Déduisons que, pour tous $x,y \in \mathbb{R}_+^*$,
+        \[
+        \frac{x+y}{x^2+y^2} \leq \frac{1}{2}\left(\frac{1}{x}+\frac{1}{y}\right).
+        \]
+
+        En multipliant l’inégalité précédente par $x+y>0$, on obtient :
+        \[
+        \begin{aligned}
+                \frac{x+y}{x^2+y^2} &\leq \frac{x+y}{2xy}\\
+                                    &\leq \frac{1}{2}\left(\frac{x}{xy}+\frac{y}{xy}\right)\\
+                                    &\leq \frac{1}{2}\left(\frac{1}{x}+\frac{1}{y}\right)
+        \end{aligned}
+        \]
+
+        \item En utilisant des inégalités semblables, montrons que pour tous
+        $x>0$, $y>0$ et $z>0$, on a :
+        \[
+        \frac{x+y}{x^2+y^2}
+        + \frac{y+z}{y^2+z^2}
+        + \frac{z+x}{z^2+x^2}
+        \leq
+        \frac{1}{x}+\frac{1}{y}+\frac{1}{z}.
+        \]
+
+        En effet, on a successivement :
+        \[
+        \frac{x+y}{x^2+y^2} \leq \frac{1}{2}\left(\frac{1}{x}+\frac{1}{y}\right),
+        \]
+        \[
+        \frac{y+z}{y^2+z^2} \leq \frac{1}{2}\left(\frac{1}{y}+\frac{1}{z}\right),
+        \]
+        \[
+        \frac{z+x}{z^2+x^2} \leq \frac{1}{2}\left(\frac{1}{z}+\frac{1}{x}\right).
+        \]
+
+        En additionnant membre à membre, on obtient :
+        
+\(
+\begin{aligned}
+\frac{x+y}{x^2+y^2}+ \frac{y+z}{y^2+z^2}+\frac{z+x}{z^2+x^2} &\leq \frac{1}{2}\left[\left(\frac{1}{x}+\frac{1}{y}\right) + \left(\frac{1}{y}+\frac{1}{z}\right) + \left(\frac{1}{z}+\frac{1}{x}\right)\right]\\
+&\leq \frac{1}{2}\left(2\frac{1}{x}+2\frac{1}{y}+2\frac{1}{z}\right)\\
+&\leq \frac{1}{x}+\frac{1}{y}+\frac{1}{z}
+\end{aligned}
+\)
+
+    \end{enumerate}
+\end{enumerate}  
+
+\section*{\underline{Exercice 2 :}  (4,5 points) }
+
+\begin{enumerate}
+\item \textbf{Encadrement du carré  $x-y$}. \textbf{ (1 point)}
+
+Encadrer $x-y$ dans les cas suivants :
+\begin{enumerate}
+\item $-2 \leq x \leq -1$ et $2 \leq y \leq 3$.
+\item En déduire l'amplitude  de l'encadrement de $x-y$
+\end{enumerate}
+\item \textbf{Encadrement du carré  $xy$}.\textbf{ (1 point)}
+
+Encadrer $xy$ dans les cas suivants :
+
+\begin{enumerate}
+    \item $-10 \leq x \leq -7$ et $1 \leq y \leq 2$.
+    \item $-2 \leq x \leq 5$ et $2 \leq y \leq 7$.
+\end{enumerate}
+
+\item \textbf{Encadrement du carré $x^2$}. \textbf{ (1 point)}
+
+Encadrer $x^2$ dans les cas suivants :
+
+\begin{enumerate}
+    \item $-7 \leq x \leq -3$
+    \item $-2 \leq x \leq 3$
+\end{enumerate}
+
+\item \textbf{Encadrer $\frac{x}{y}$ dans les cas suivants}.\textbf{ (1,5 point)}
+
+\begin{enumerate}
+    \item $1 \leq x \leq 2$ et $3 \leq y \leq 7$
+    \item $-1 \leq x \leq -3$ et $-7 \leq y \leq 2$
+    \item $-5 \leq x \leq -3$ et $3 \leq y \leq -1$
+\end{enumerate}
+\end{enumerate}   
+
+\section*{\underline{Exercice 3 :}  (2,75 points) } 
+
+\begin{enumerate}
+%=========================================
+\item On donne :
+\[
+A=\frac{1}{1+\frac{a}{b+c}},\quad
+B=\frac{1}{1+\frac{b}{c+a}},\quad
+C=\frac{1}{1+\frac{c}{a+b}}.
+\]
+
+\textbf{Vérifions que } $A+B+C=2$.
+
+\[
+A=\frac{1}{\frac{a+b+c}{b+c}}=\frac{b+c}{a+b+c},
+\quad
+B=\frac{1}{\frac{a+b+c}{a+c}}=\frac{a+c}{a+b+c},
+\quad
+C=\frac{1}{\frac{a+b+c}{a+b}}=\frac{a+b}{a+b+c}.
+\]
+
+Ainsi :
+\[
+A+B+C
+=\frac{b+c}{a+b+c}
++\frac{a+c}{a+b+c}
++\frac{a+b}{a+b+c}.
+\]
+
+En regroupant :
+\[
+A+B+C
+=\frac{(b+c)+(a+c)+(a+b)}{a+b+c}
+=\frac{2(a+b+c)}{a+b+c}.
+\]
+
+Donc :
+\[
+A+B+C=2.
+\]
+
+\hfill \textbf{(1,5 point)}
+
+%=========================================
+\item Mettons $D$ sous la forme d’un produit de puissances de nombres premiers :
+\[
+D=\frac{(-25)^3 \times (-16)^3 \times 36^{-3}}
+{(-8)^4 \times 48^{-2} \times (-15)^2}.
+\]
+
+Décomposons chaque facteur :
+
+\[
+(-25)^3=-(5^2)^3=-5^6,\quad
+(-16)^3=-(2^4)^3=-2^{12},
+\quad
+36^{-3}=(2^2\cdot3^2)^{-3}=2^{-6}3^{-6}.
+\]
+
+\[
+(-8)^4=(2^3)^4=2^{12},\quad
+48^{-2}=(2^4\cdot3)^{-2}=2^{-8}3^{-2},\quad
+(-15)^2=(3\cdot5)^2=3^25^2.
+\]
+
+En remplaçant dans l’expression de \(D\) :
+\[
+D=\frac{(-1)\cdot(-1)\cdot 2^{12}\cdot2^{-6}\cdot3^{-6}\cdot5^6}
+{2^{12}\cdot2^{-8}\cdot3^{-2}\cdot3^2\cdot5^2}.
+\]
+
+Les signes négatifs se compensent, donc :
+\[
+D=2^{(12-6-12+8)}\cdot3^{(-6+2-2)}\cdot5^{(6-2)}.
+\]
+
+Ainsi :
+\[
+D=2^{2}\cdot3^{-6}\cdot5^{4}.
+\]
+
+\hfill \textbf{(1,25 point)}
+
+\end{enumerate}
 
 \section*{\underline{Exercice 4 :} (8,25 points) }
 
@@ -105,6 +310,13 @@ $|x + \tfrac{11}{4}| \leq \tfrac{9}{4}$ & $d\!\left(x,\,-\tfrac{11}{4}\right) \l
 \item Résolvons dans $\mathbb{R}$
 \begin{enumerate}
         \item $|2x+3| > 0 $ toujours vrai deonc $ S=\mathbb{R} $ \hfill \textbf{ (1 point)}
+
+ \begin{resultbox}
+    \[
+    \mathbf{ S=\mathbb{R} }
+    \]
+\end{resultbox}        
+        
         \item $|-2x+3| \geq 6$ \hfill \textbf{ (1 point)}
         
         $\begin{aligned}
@@ -114,11 +326,125 @@ $|x + \tfrac{11}{4}| \leq \tfrac{9}{4}$ & $d\!\left(x,\,-\tfrac{11}{4}\right) \l
         							 &\implies  x \in \left] -\infty ; -\dfrac{3}{2} \right]  \textbf{ ou } x \in \left] \dfrac{9}{2} ; +\infty \right]\\
         							 &\implies  x \in \left(  \left] -\infty ; -\dfrac{3}{2} \right]  \cup \left] \dfrac{9}{2} ; +\infty \right]\right) \\
         \end{aligned}$
+
+\begin{resultbox}
+    \[
+    \mathbf{ S= \left(  \left] -\infty ; -\dfrac{3}{2} \right]  \cup \left] \dfrac{9}{2} ; +\infty \right]\right)  }
+    \]
+\end{resultbox}        
         
         \item $|3x+5| \leq 2$ \hfill \textbf{ (1 point)}
+
+        $\begin{aligned}
+        |3x+5| \leq 2 &\implies  -2 \leq 3x+5 \leq 2\\
+        							 &\implies  -7 \leq 3x \leq -3\\
+        							 &\implies  \dfrac{-7}{3} \leq x \leq \dfrac{-3}{3}\\
+        							 &\implies  \dfrac{-7}{3} \leq x \leq -1\\
+        \end{aligned}$        
+        
+\begin{resultbox}
+    \[
+    \mathbf{ S=\left[ \dfrac{-7}{3} , -1 \right]  }
+    \]
+\end{resultbox} 
         \item $|3-x| = 4x-3$ \hfill \textbf{ (1 point)}
+
+L'équation n'a de sens que ssi $ 4x-3 \geq 0 $      
+
+        $\begin{aligned}
+        4x-3 \geq 0 &\implies  x \geq \dfrac{3}{4}\\
+        							 &\implies  x \in \left[\dfrac{3}{4}, +\infty \right[  \\
+        \end{aligned}$         
+
+$Dv=\left[\dfrac{3}{4}, +\infty \right[$        
+
+        $\begin{aligned}
+        |3-x| = 4x-3 &\implies  3-x = 4x-3 \text{ ou } 3-x = -4x+3\\
+        						 &\implies  -5x = -6 \text{ ou } 3x =0\\
+        						 &\implies  x = \dfrac{6}{5} \text{ ou } x =0\\
+        \end{aligned}$      
+
+$ 0 \notin Dv $  et $\dfrac{6}{5} \in Dv $       
+
+\begin{resultbox}
+    \[
+    \mathbf{ S= \left\lbrace \dfrac{6}{5} \right\rbrace   }
+    \]
+\end{resultbox}        
+        
         \item $E(|x-3|) = 2$ \hfill \textbf{ (1 point)}
+
+				 $\begin{aligned}
+        E(|x-3|) = 2 &\implies  E(|x-3|) \leq |x-3| < E(|x-3|)+1 \\
+                     &\implies  2 \leq |x-3| < 3 \\
+                     &\implies  
+                     \begin{cases}
+                     |x-3| \geq 2\\
+                     |x-3| < 3
+                     \end{cases}\\
+                     &\implies  
+                     \begin{cases}
+                     x-3 \geq 2 \text{ ou } x-3 \leq -2\\
+                     -3 < x-3 < 3
+                     \end{cases}\\
+                     &\implies
+                     \begin{cases}
+                     x \geq 5 \text{ ou } x \leq 1\\
+                     0 < x < 6
+                     \end{cases}\\
+                     &\implies
+                     \begin{cases}
+                     x \in ] 5,+\infty [ \text{ ou } x \in ] -\infty, 1[\\
+                     x \in  ] 0,6 [
+                     \end{cases}\\
+                      &\implies
+                     \begin{cases}
+                     x \in (] 5,+\infty [ \cup ] -\infty, 1[)\\
+                     x \in  ] 0,6 [
+                     \end{cases}
+        \end{aligned}$         
+
+         $\begin{aligned}
+         S & = (] 5,+\infty [ \cup ] -\infty, 1[) \cap ] 0,6 [\\
+           & = (] 5,+\infty [\cap ] 0,6 [) \cup (] -\infty, 1[\cap ] 0,6 [)\\
+           & = (] 5,6 [) \cup (] 0,1 [)\\
+           & = ] 0,1 [ \cup ] 5,6 [\\
+        \end{aligned}$       
+
+\begin{resultbox}
+    \[
+    \mathbf{ S= ] 0,1 [ \cup ] 5,6 [   }
+    \]
+\end{resultbox}    
+        
         \item $E(|x-2|) = -2$ \hfill \textbf{ (1 point)}
+
+				$\begin{aligned}
+        E(|x-2|) = -2 &\implies  E(|x-2|) \leq |x-2| < E(|x-2|)+1 \\
+                     &\implies  -2 \leq |x-2| < -1 \\
+                     &\implies  
+                     \begin{cases}
+                     |x-2| \geq -2\\
+                     |x-2| < -1
+                     \end{cases}\\
+                     &\implies  
+                     \begin{cases}
+                     x \in \mathbb{R }\\
+                     x \in  \emptyset
+                     \end{cases}
+        \end{aligned}$         
+        
+         $\begin{aligned}
+         S & = \mathbb{R } \cap \emptyset\\
+           & = \emptyset
+        \end{aligned}$       
+
+\begin{resultbox}
+    \[
+    \mathbf{ S= \emptyset   }
+    \]
+\end{resultbox}      
+        
 \end{enumerate}
 \end{enumerate}
 

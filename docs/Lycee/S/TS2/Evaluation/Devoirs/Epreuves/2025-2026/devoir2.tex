@@ -48,7 +48,7 @@ middle color = tcbcolback!80!black]
 % Commande pour ajouter du texte en arrière-plan
 \AddToShipoutPicture{
     \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
     }
 }
 \usepackage{lastpage}
@@ -81,38 +81,41 @@ middle color = tcbcolback!80!black]
 \end{tikzpicture}
 \vspace{3cm}
 
-\section*{\underline{Exercice 1 :} (03 points $\approx$ 36 mns)}
+\section*{\underline{Exercice 1 :} (02,5 points $\approx$ 36 mns)}
 \begin{enumerate}
     \item Déterminer une primitive $F$ de la fonction $f$ sur $I$.
     \begin{enumerate}
-        \item $f(x) = (6x - 3)(4x^2 - 4x + 2)^3 \quad ; I = \mathbb{R}$ \hfill $(0,5pt)$
-        \item $f(x) = \dfrac{\sin x}{\sqrt{3 + \cos x}} \quad ; I = \mathbb{R}$ \hfill $(0,5pt)$
-        \item $f(x) = 2\cos 3x - 3\sin 2x \quad ; I = \mathbb{R}$ \hfill $(0,5pt)$
-        \item $f(x) = \dfrac{3x}{\sqrt{x^2 - 1}} + \sin x \sin 2x \quad ; I = ]-\infty; -1[$ \hfill $(0,5pt)$
+        \item $f(x) = (6x - 3)(4x^2 - 4x + 2)^3 \quad ; I = \mathbb{R}$ \hfill \textbf{(0,5pt)}
+        \item $f(x) = \dfrac{\sin x}{\sqrt{3 + \cos x}} \quad ; I = \mathbb{R}$ \hfill \textbf{(0,5pt)}
+        \item $f(x) = 2\cos 3x - 3\sin 2x \quad ; I = \mathbb{R}$ \hfill \textbf{(0,5pt)}
+        \item $f(x) = \dfrac{3x}{\sqrt{x^2 - 1}} + \sin x \sin 2x \quad ; I = ]-\infty; -1[$ \hfill \textbf{(0,5pt)}
     \end{enumerate}
+    \item Résoudre dans \( \mathbb{C} \) l’équation \( z^2 - (1 + i)z + i = 0 \).\hfill \textbf{(0,5pt)}
+\begin{comment}%Annuler
     \item Soit $k$ la fonction définie sur $\mathbb{R} \setminus \{-2\}$ par : $k(x) = \dfrac{3x - 2}{(x+2)^3}$.
     \begin{enumerate}
         \item Déterminer les $a$ et $b$ tels que $\forall x \in \mathbb{R} \setminus \{-2\}$, $k(x) = \dfrac{a}{(x+2)^2} + \dfrac{b}{(x+2)^3}$. \hfill $(0,5pt)$
         \item En déduire la primitive $K$ de $k$ qui prend la valeur 2 en -3. \hfill $(0,5pt)$
     \end{enumerate}
+\end{comment}
 \end{enumerate}
 
-\section*{\underline{Exercice 2 :} (05 points $\approx$ 60 mns)}
+\section*{\underline{Exercice 2 :} (04,75 points $\approx$ 60 mns)}
 \begin{enumerate}
     \item 
     \begin{enumerate}
-        \item Écrivez le complexe $z = -1 + i\sqrt{3}$ sous forme trigonométrique puis sous forme exponentielle.\hfill $(1pt)$
-        \item Donner le module et un argument de $z = (1 - \sqrt{2})e^{i\frac{\pi}{4}}$.\hfill $(1pt)$
+        \item Écrivez le complexe $z = -1 + i\sqrt{3}$ sous forme trigonométrique puis sous forme exponentielle.\hfill \textbf{(0,75pt)}
+        \item Donner le module et un argument de $z = (1 - \sqrt{2})e^{i\frac{\pi}{4}}$.\hfill \textbf{(1pt)}
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item Donner le module et un argument de $z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2}$ et $z_2 = 1 - i$. \hfill $(1pt)$
-        \item Déduis en le module et un argument de chacun des complexes $u = \dfrac{z_1}{z_2}$ et $u^5$. \hfill $(1pt)$
-        \item Déduis en les valeurs exactes de $\cos\left(\frac{\pi}{12}\right)$ et $\sin\left(\frac{\pi}{12}\right)$.\hfill $(1pt)$
+        \item Donner le module et un argument de $z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2}$ et $z_2 = 1 - i$. \hfill \textbf{(1pt)}
+        \item Déduis en le module et un argument de chacun des complexes $u = \dfrac{z_1}{z_2}$ et $u^5$. \hfill \textbf{(1pt)}
+        \item Déduis en les valeurs exactes de $\cos\left(\frac{\pi}{12}\right)$ et $\sin\left(\frac{\pi}{12}\right)$.\hfill \textbf{(1pt)}
     \end{enumerate}
 \end{enumerate}
 
-\section*{\underline{Problème :} ( 12 points $\approx$ 144 mns)}
+\section*{\underline{Problème :} ( 12,75 points $\approx$ 144 mns)}
 On note $(C_f)$ la courbe représentative de la fonction $f$ dans un repère orthonormé direct $(O;\vec{i},\vec{j})$ d'unité $1cm$ avec
 $$
 f(x) =
@@ -122,59 +125,62 @@ x + \sqrt{x^2 + x} & \text{; si } x > 0
 \end{cases}
 $$
 
-\underline{\textbf{Partie A : Étude d'une fonction auxiliaire :}}
+\underline{\textbf{Partie A : Étude d'une fonction auxiliaire :}} \textcolor{red}{\textbf{(2pts)}}
 
 Soit $g$ la fonction numérique définie par : $g(x) = -x^3 + 3x - 4$.
 
 \begin{enumerate}
-    \item Étudier les variations de $g$ puis dresser son tableau de variations. \hfill $(0,75pt)$
+    \item Étudier les variations de $g$ puis dresser son tableau de variations. \hfill \textbf{(0,75pt)}
     \item 
     \begin{enumerate}
-        \item Montrer que l'équation $g(x)=0$ admet une unique solution $\alpha \in \mathbb{R}$. \hfill $(0,5pt)$
-        \item Donner un encadrement de $\alpha$ à $10^{-1}$. \hfill $(0,5pt)$
+        \item Montrer que l'équation $g(x)=0$ admet une unique solution $\alpha \in \mathbb{R}$. \hfill \textbf{(0,5pt)}
+        \item Donner un encadrement de $\alpha$ à $10^{-1}$. \hfill \textbf{(0,5pt)}
     \end{enumerate}
-    \item En déduire le signe de $g(x)$ sur $]-\infty; 0]$. \hfill $(0,25pt)$
+    \item En déduire le signe de $g(x)$ sur $]-\infty; 0]$. \hfill \textbf{(0,25pt)}
 \end{enumerate}
 
 \hrule
 \vskip 0.5cm
 
 % --- Partie B ---
-\underline{\textbf{Partie B : Étude de la fonction $f$}}
+\underline{\textbf{Partie B : Étude de la fonction $f$}} \textcolor{red}{\textbf{(9pts)}}
 \begin{enumerate}
-    \item Déterminer l'ensemble de définition $D_f$ de $f$. \hfill $(0,5pt)$
+    \item Déterminer l'ensemble de définition $D_f$ de $f$. \hfill \textbf{(0,5pt)}
     \item 
     \begin{enumerate}
-        \item Calculer les limites de $f$ aux bornes de $D_f$ et en déduire l'existence d'une asymptote dont on précisera. \hfill $(01pt)$
+        \item Calculer les limites de $f$ aux bornes de $D_f$ \hfill \textbf{(1pt)}
+        
+        et en déduire l'existence d'une asymptote dont on précisera.\hfill \textbf{(0,25pt)} 
         \item Pour $x \leq 0$, déterminer les réels $a, b, c$ et $d$ tels que : 
-        $f(x)=ax+b+\dfrac{cx+d}{x^2-1}$
-        et en déduire la nature de la branche infinie en $-\infty$. \hfill $(0,75pt)$
-        \item Donner la nature de l'asymptote en $+\infty$. \hfill $(0,5pt)$
+        $f(x)=ax+b+\dfrac{cx+d}{x^2-1}$ \hfill \textbf{(0,5pt)}
+        
+        et en déduire la nature de l'asymptote $-\infty$. \hfill \textbf{(0,25pt)}
+        \item Donner la nature de l'asymptote en $+\infty$. \hfill \textbf{(0,5pt)}
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item Montrer que $f$ est continue sur $D_f$. \hfill $(0,75pt)$
-        \item Étudier la dérivabilité de $f$ en $0$ puis interpréter le résultat obtenu. \hfill $(01pt)$
+        \item Montrer que $f$ est continue sur $D_f$.\hfill \textbf{(0,75pt)}
+        \item Étudier la dérivabilité de $f$ en $0$ puis interpréter le résultat obtenu. \hfill \textbf{(1,5pt)}
     \end{enumerate}
-    \item Démontrer que : $ f(\alpha) = -2+\dfrac{3(\alpha-2)}{\alpha^2 - 1} $. \hfill $(0,5pt)$
+    \item Démontrer que : $ f(\alpha) = -2+\dfrac{3(\alpha-2)}{\alpha^2 - 1} $. \hfill \textbf{(0,5pt)}
     \item 
     \begin{enumerate}
         \item Montrer que $\forall x \in ]-\infty; -1[ \cup ]-1; 0[$, on a : 
-        $f'(x) = \dfrac{-xg(x)}{(x^2-1)^2}$  puis étudier son signe.\hfill $(1pt)$
-        \item Calculer $f'(x)$ sur $]0; +\infty[$ et étudier son signe. \hfill $(0,75pt)$
-        \item Dresser le tableau de variation de $f$ sur $D_f$. \hfill $(0,75pt)$
+        $f'(x) = \dfrac{-xg(x)}{(x^2-1)^2}$  puis étudier son signe. \hfill \textbf{(1pt)}
+        \item Calculer $f'(x)$ sur $]0; +\infty[$ et étudier son signe. \hfill \textbf{(0,75pt)}
+        \item Dresser le tableau de variation de $f$ sur $D_f$. \hfill \textbf{(0,75pt)}
     \end{enumerate}
-    \item Construire soigneusement la courbe $(C_f)$. \hfill $(01pt)$
+    \item Construire soigneusement la courbe $(C_f)$. \hfill \textbf{(0,75pt)}
 \end{enumerate}
 
-\underline{\textbf{Partie C : Bijection}}
+\underline{\textbf{Partie C : Bijection}} \textcolor{red}{\textbf{(1,75pts)}}
 
 Soit $h$ la restriction de $f$ sur $I = ]0; +\infty[$.
 \begin{enumerate}
-    \item Montrer que $h$ réalise une bijection de $I$ vers un intervalle $J$ à préciser. \hfill $(0,5pt)$
-    \item Calculer $h(1)$ et $(h^{-1})'(\sqrt{2}+1)$. \hfill $(0,5pt)$
-    \item Expliciter $h^{-1}(x)$. \hfill $(0,5pt)$
-    \item Construire $(C_{h^{-1}})$ dans le repère précédent. \hfill $(0,5pt)$
+    \item Montrer que $h$ réalise une bijection de $I$ vers un intervalle $J$ à préciser. \hfill \textbf{(0,25pt)}
+    \item Calculer $h(1)$ et $(h^{-1})'(\sqrt{2}+1)$. \hfill \textbf{(0,5pt)}
+    \item Expliciter $h^{-1}(x)$. \hfill \textbf{(0,5pt)}
+    \item Construire $(C_{h^{-1}})$ dans le repère précédent. \hfill \textbf{(0,5pt)}
 \end{enumerate}
 
 \end{document}
