@@ -199,6 +199,8 @@ $
 \end{resultbox}         
         
     \end{enumerate}
+
+\begin{comment}
     \item Soit $k$ la fonction définie sur $\mathbb{R} \setminus \{-2\}$ par : $k(x) = \dfrac{3x - 2}{(x+2)^3}$.
     \begin{enumerate}
         \item Déterminons les $a$ et $b$ tels que $\forall x \in \mathbb{R} \setminus \{-2\}$, $k(x) = \dfrac{a}{(x+2)^2} + \dfrac{b}{(x+2)^3}$. \textbf{(0,5pt)}
@@ -254,6 +256,196 @@ $
     \mathbf{K(x) = -\dfrac{1}{(x+2)} + \dfrac{4}{(x+2)^2} + c }
     \]
 \end{resultbox}         
+        
+    \end{enumerate}
+\end{comment}
+
+\item Résoulvons dans \( \mathbb{C} \) l’équation \( z^2 - (1 + i)z + i = 0 \).\hfill \textbf{(0,5pt)}
+
+\( \Delta = -2i \)
+
+
+ { \textbf{Posons} \( \Delta = \delta^2 \) } avec \(  \delta = x + yi \) et \( x, y \in \mathbb{R} \)
+ 
+\(
+ \delta^2 = \Delta \implies  x^2 - y^2 + 2xyi = -2i.
+\)
+et $| \Delta | = 2$
+
+Cela donne le système suivant :
+
+\begin{align*}
+\begin{cases}
+x^2 + y^2 = | \Delta |, \\
+x^2 - y^2 = 0, \\
+2xy = -2.
+\end{cases} &\implies 
+\begin{cases}
+x^2 + y^2 = 2, \\
+x^2 - y^2 = 0, \\
+xy = -.
+\end{cases}\\&\implies 
+\begin{cases}
+2x^2  = 2, \\
+2y^2 = 2, \\
+2xy = -1.
+\end{cases}\\&\implies 
+\begin{cases}
+x^2  = 1, \\
+y^2 = 1, \\
+xy = -1.
+\end{cases}\\&\implies 
+\begin{cases}
+x  = 1, x  = -1 , \\
+y = 1, y = -1 \\
+xy = -1.
+\end{cases}
+\end{align*}
+
+  Si \( x = 1 \), alors \( y = -1 \).
+    
+  Si \( x = -1 \), alors \( y = 1 \).
+
+\(
+\delta_1 = 1 - i \quad \text{et} \quad \delta_2 = -1 + i.
+\)
+ 
+Les solutions de l’équation quadratique sont données par :
+\[
+z = \frac{-b \pm \sqrt{\Delta}}{2a}.
+\]
+
+- Pour \( \delta_1 = 1 - i \) :
+  \[
+  z_1 = \frac{-(-1 - i) + (1 - i)}{2} = \frac{1 + i + 1 - i}{2} = \frac{2}{2} = 1.
+  \]
+
+- Pour \( \delta_2 = -1 + i \) :
+  \[
+  z_2 = \frac{-(-1 - i) - (-1 + i)}{2} = \frac{1 + i - (-1 + i)}{2} = \frac{1 + i + 1 - i}{2} = \frac{2i}{2} = i.
+  \]
+
+\textbf{Résultat final :}  
+Les solutions de \( z^2 - (1 + i)z + i = 0 \) sont :
+\[
+z_1 = 1 \quad \text{et} \quad z_2 = i.
+\]
+
+\begin{resultbox}
+    \[
+    \mathbf{ S = \{ 1,i \} }
+    \]
+\end{resultbox}
+
+\end{enumerate}
+
+\section*{\underline{Exercice 2 :} (04,75 points $\approx$ 60 mns)}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Écrivons le complexe $z = -1 + i\sqrt{3}$ sous forme trigonométrique puis sous forme exponentielle.\hfill \textbf{(0,75pt)}
+
+$z = -1 + i\sqrt{3}\implies z = 2\left( -\dfrac{1}{2} + \dfrac{\sqrt{3}}{2} i \right) $
+
+\begin{itemize}
+\item Forme trigonométrique
+
+$z = 2\left[ \cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right) \right]$
+
+\item Forme exponentielle
+
+$z = 2\left[ \cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right) \right]$
+\end{itemize}        
+        
+        \item Donnons le module et un argument de $z = (1 - \sqrt{2})e^{i\frac{\pi}{4}}$.\hfill \textbf{(1pt)}
+
+
+
+\begin{itemize}
+\item Module
+
+$|z| = (1 - \sqrt{2})$
+
+\item Argument
+
+$\arg(z) = \frac{\pi}{4}$
+
+\end{itemize}        
+        
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Donnons le module et un argument de $z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2}$ et $z_2 = 1 - i$. \hfill \textbf{(1pt)}
+
+
+\begin{align*}
+z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2} &\implies z_1 = \sqrt{2} \left( \dfrac{\sqrt{3}}{2}-\dfrac{1}{2}i \right)\\
+                                    &\implies z_1 = \sqrt{2} \left[ \cos\left( -\frac{\pi}{6} \right) + i \sin\left( -\frac{\pi}{6} \right) \right]
+\end{align*}
+
+
+\begin{itemize}
+\item Module
+
+ $|z_1|= \sqrt{2}$
+
+\item Argument
+
+ $\arg(z) = -\frac{\pi}{6}$
+
+\end{itemize}        
+        
+        \item Déduisons le module et un argument de chacun des complexes $u = \dfrac{z_1}{z_2}$ et $u^5$. \hfill \textbf{(1pt)}
+
+\begin{itemize}
+
+\item pour $u$
+
+\begin{itemize}
+\item Module
+
+ $u=\dfrac{|z_1|}{|z_2|}= 1$
+
+\item Argument
+
+ $\arg(z) = -\frac{\pi}{6}$
+\end{itemize}
+
+\item pour $u^5$
+
+\begin{itemize}
+\item Module
+
+ $|u^5|= 1$
+
+\item Argument
+
+ $\arg(z) = -\frac{5\pi}{6}$
+\end{itemize}
+
+\end{itemize}        
+        
+        \item Déduis en les valeurs exactes de $\cos\left(\frac{\pi}{12}\right)$ et $\sin\left(\frac{\pi}{12}\right)$.\hfill \textbf{(1pt)}
+
+On a :
+\(
+u=e^{i\frac{\pi}{12}}=\cos\left(\frac{\pi}{12}\right)
++i\sin\left(\frac{\pi}{12}\right).
+\)
+
+Or :
+\(
+u=\frac{z_1}{z_2}
+=\frac{\frac{\sqrt{6}-i\sqrt{2}}{2}}{1-i}.
+\)
+
+Après simplification, on obtient :
+\[
+\cos\left(\frac{\pi}{12}\right)=\frac{\sqrt{6}+\sqrt{2}}{4}
+\]
+\[
+\sin\left(\frac{\pi}{12}\right)=\frac{\sqrt{6}-\sqrt{2}}{4}.
+\]        
         
     \end{enumerate}
 \end{enumerate}

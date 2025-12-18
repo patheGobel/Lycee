@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  17 DEC 2025 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  18 DEC 2025 09:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,43 +967,42 @@ File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
 f-dist/fonts/enc/dvips/base/8r.enc}
 
-] [2] [3]
-Overfull \hbox (1.4645pt too wide) in paragraph at lines 340--341
+] Excluding 'comment' comment. [2]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+51.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [3] [4]
+Overfull \hbox (1.4645pt too wide) in paragraph at lines 532--533
 [][] 
  []
 
-[4]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
-26.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5] [6]
-Excluding 'comment' comment. [7] [8] [9] Excluding 'comment' comment. [10]
-<devoir2-2025-2026.png, id=140, 389.24596pt x 161.01808pt>
+[5] [6] [7] Excluding 'comment' comment. [8] [9] [10]
+Excluding 'comment' comment. [11]
+<devoir2-2025-2026.png, id=152, 389.24596pt x 161.01808pt>
 File: devoir2-2025-2026.png Graphic file (type png)
 <use devoir2-2025-2026.png>
-Package pdftex.def Info: devoir2-2025-2026.png  used on input line 1098.
+Package pdftex.def Info: devoir2-2025-2026.png  used on input line 1290.
 (pdftex.def)             Requested size: 432.48355pt x 178.91397pt.
-
-[11
+ [12] [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1113 		C
-          omme $\forall x \in I$, $h'(x)\neq 0$ donc $h^{-1}$ est dérivable...
- <build/devoir2-2025-2026.png>] [12]
-<reciDevoir2-2025-2026.png, id=162, 192.72pt x 79.72185pt>
+l.1353 \]
+          <build/devoir2-2025-2026.png>]
+<reciDevoir2-2025-2026.png, id=175, 192.72pt x 79.72185pt>
 File: reciDevoir2-2025-2026.png Graphic file (type png)
 <use reciDevoir2-2025-2026.png>
-Package pdftex.def Info: reciDevoir2-2025-2026.png  used on input line 1200.
+Package pdftex.def Info: reciDevoir2-2025-2026.png  used on input line 1392.
 (pdftex.def)             Requested size: 432.48355pt x 178.90414pt.
- [13
+ [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1209 \end{document}
+l.1401 \end{document}
                       <build/reciDevoir2-2025-2026.png>]
 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1020,10 +1019,10 @@ Package rerunfilecheck Info: File `devoir2Correction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30661 strings out of 474222
- 611932 string characters out of 5748732
- 1971975 words of memory out of 5000000
- 52334 multiletter control sequences out of 15000+600000
+ 30669 strings out of 474222
+ 612024 string characters out of 5748732
+ 1974975 words of memory out of 5000000
+ 52335 multiletter control sequences out of 15000+600000
  583279 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,431b,1266s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1031,22 +1030,23 @@ Here is how much of TeX's memory you used:
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/zapfding/uzdr.pfb>
-Output written on build/devoir2Correction.pdf (13 pages, 815867 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapf
+ding/uzdr.pfb>
+Output written on build/devoir2Correction.pdf (14 pages, 832246 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
