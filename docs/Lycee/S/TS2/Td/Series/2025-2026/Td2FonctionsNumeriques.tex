@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+\usepackage{lmodern} % Pour une police plus nette
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{color, soul}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
+%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
+%\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
+\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+
+% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
+\AddToShipoutPicture{
+    \AtPageCenter{%
+        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.9}{\fontsize{2cm}{2cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\raggedright
+\textbf{Ministère de l'Éducation Nationale}\\
+Inspection Académique de Kédougou\\
+Lycée Dindéfelo\\
+Cellule de Mathématiques
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\raggedleft
+\textbf{Année scolaire 2025-2026}\\
+Date : 24/10/2025\\
+Classe : Terminale S2\\
+Professeur : M. BA
+\end{minipage}
+
+\vspace{1cm}
+\section*{Exercice 1}
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[
+    espcl=2.2,
+    lgt=1.5
+]{$x$/1,$f'(x)$/1,$f$/2}
+{$-\infty$,$-2$,$0$,$1$,$2$,$+\infty$}
+
+\tkzTabLine{,+,z,-,d,+,d,-,d,+}
+
+\tkzTabVar{
+-/$1$,
++/$\frac{4}{3}$,
+-/$0$,
++D+/$+\infty$,
+-/$0$,
++/$+\infty$
+}
+\end{tikzpicture}
+\end{center}
+
+\medskip
+
+\textbf{Informations :}
+
+\begin{itemize}
+\item \textbf{Branches infinies :}
+\begin{itemize}
+\item Asymptote verticale : $x = 1$ en $+\infty$
+\item Asymptote horizontale : $y = 1$ en $-\infty$
+\item Asymptote oblique : $y = x - \dfrac{1}{2}$ en $+\infty$
+\end{itemize}
+
+\item \textbf{Demi-tangentes :}
+\begin{itemize}
+\item En $0^-$ on a une demi-tangente d’équation $y = 0$ (demi-tangente horizontale)
+\item En $0^+$ on a une demi-tangente d’équation $y = \sqrt{2x}$
+\item En $2$ on a une demi-tangente verticale dirigée vers le haut d’équation $x = 2$
+\end{itemize}
+\end{itemize}
+
+\medskip
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[
+    espcl=2.3,
+    lgt=1.5
+]{$x$/1,$f'(x)$/1,$f$/2}
+{$-\infty$,$\alpha$,$1$,$3$,$+\infty$}
+
+\tkzTabLine{,+,,+,d,-,z,+}
+
+\tkzTabVar{
+-/$-\infty$,
++/$0$,
++D+/$+\infty$,
+-/$6$,
++/$+\infty$
+}
+\end{tikzpicture}
+\end{center}
+
+\medskip
+
+\textbf{Informations :}
+
+\begin{itemize}
+\item \textbf{Branches infinies :}
+\begin{itemize}
+\item Asymptote verticale : $x = 1$ en $+\infty$
+\item Asymptote oblique : $y = x + 2$ en $+\infty$
+\end{itemize}
+
+\item \textbf{Points d’intersection avec les axes du repère :}
+\begin{itemize}
+\item Avec l’axe $(Ox)$ le point $A(\alpha,0)$. Prendre $\alpha = -2,5$
+\item Avec l’axe $(Oy)$ le point $B(0,6)$
+\end{itemize}
+
+\item Construire $(C_{f^{-1}})$ sur $I = ]1,3[$
+\end{itemize}
+
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[
+    espcl=2.3,
+    lgt=1.5
+]{$x$/1,$f'(x)$/1,$f$/2}
+{$-\infty$,$0$,$1$,$\alpha$,$+\infty$}
+
+\tkzTabLine{,+,d,-,d,-,+}
+
+\tkzTabVar{
+-/$-4$,
++/$-3$,
+-D+/$+\infty$,
+-/$3\alpha$,
++/$+\infty$
+}
+\end{tikzpicture}
+\end{center}
+
+\textbf{On donne $\alpha$ = 1,3}
+
+\medskip
+
+\textbf{Informations :}
+
+\begin{itemize}
+\item \textbf{Branches infinies :}
+\begin{itemize}
+\item Asymptote verticale : $x = 1$ en $+\infty$ et en $-\infty$
+\item Asymptote horizontale : $y = -4$ en $-\infty$
+\item Asymptote oblique : $y = 2x$ en $+\infty$
+\end{itemize}
+
+\item \textbf{Demi-tangentes :}
+\begin{itemize}
+\item En $0^-$ on a une demi-tangente verticale dirigée vers le bas d’équation $x = 0$
+\item En $0^+$ on a une demi-tangente horizontale d’équation $y = -3$
+\end{itemize}
+
+\item Construire $(C_{f^{-1}})$ sur $I = ]\alpha,+\infty[$
+\end{itemize}
+
+
+\end{document}
