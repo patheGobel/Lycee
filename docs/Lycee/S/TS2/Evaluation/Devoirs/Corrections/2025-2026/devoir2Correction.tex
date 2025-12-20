@@ -351,10 +351,20 @@ $z = -1 + i\sqrt{3}\implies z = 2\left( -\dfrac{1}{2} + \dfrac{\sqrt{3}}{2} i \r
 \item Forme trigonométrique
 
 $z = 2\left[ \cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right) \right]$
+\begin{resultbox}
+    \[
+    \mathbf{ z = 2\left[ \cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right) \right] }
+    \]
+\end{resultbox}
 
 \item Forme exponentielle
 
-$z = 2\left[ \cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\right) \right]$
+$z = 2\emph{e}^{i\dfrac{2\pi}{3}}$
+\begin{resultbox}
+    \[
+    \mathbf{ z = 2\emph{e}^{i\dfrac{2\pi}{3}} }
+    \]
+\end{resultbox}
 \end{itemize}        
         
         \item Donnons le module et un argument de $z = (1 - \sqrt{2})e^{i\frac{\pi}{4}}$.\hfill \textbf{(1pt)}
@@ -363,12 +373,23 @@ $z = 2\left[ \cos \left(\dfrac{2\pi}{3}\right) + i\sin \left(\dfrac{2\pi}{3}\rig
 
 \begin{itemize}
 \item Module
-
 $|z| = (1 - \sqrt{2})$
+\begin{resultbox}
+    \[
+    \mathbf{ |z| = (1 - \sqrt{2}) }
+    \]
+\end{resultbox}
+
 
 \item Argument
 
-$\arg(z) = \frac{\pi}{4}$
+$\arg(z) = \frac{\pi}{4}[2\pi]$
+
+\begin{resultbox}
+    \[
+    \mathbf{ \arg(z) = \frac{\pi}{4}[2\pi] }
+    \]
+\end{resultbox}
 
 \end{itemize}        
         
@@ -385,15 +406,49 @@ z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2} &\implies z_1 = \sqrt{2} \left( \dfrac{\sqrt
 
 
 \begin{itemize}
+\item pour $z_1$
+\begin{itemize}
 \item Module
 
  $|z_1|= \sqrt{2}$
+\begin{resultbox}
+    \[
+    \mathbf{ |z_1|= \sqrt{2} }
+    \]
+\end{resultbox}
 
 \item Argument
 
- $\arg(z) = -\frac{\pi}{6}$
+ $\arg(z_1) = -\frac{\pi}{6}[2\pi]$
+\begin{resultbox}
+    \[
+    \mathbf{ \arg(z_1) = -\frac{\pi}{6}[2\pi] }
+    \]
+\end{resultbox}
 
-\end{itemize}        
+\end{itemize} 
+\item pour $z_2$
+\begin{itemize}
+\item Module
+
+ $|z_2|= \sqrt{2}$
+\begin{resultbox}
+    \[
+    \mathbf{ |z_2|= \sqrt{2} }
+    \]
+\end{resultbox}
+
+\item Argument
+
+ $\arg(z_2) = -\frac{\pi}{4}[2\pi]$
+\begin{resultbox}
+    \[
+    \mathbf{ \arg(z_2) = -\frac{\pi}{4}[2\pi] }
+    \]
+\end{resultbox}
+
+\end{itemize}
+\end{itemize}       
         
         \item Déduisons le module et un argument de chacun des complexes $u = \dfrac{z_1}{z_2}$ et $u^5$. \hfill \textbf{(1pt)}
 
@@ -404,11 +459,33 @@ z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2} &\implies z_1 = \sqrt{2} \left( \dfrac{\sqrt
 \begin{itemize}
 \item Module
 
- $u=\dfrac{|z_1|}{|z_2|}= 1$
+ $|u|=\dfrac{|z_1|}{|z_2|}= 1$
+
+\begin{resultbox}
+    \[
+    \mathbf{ |u|= 1 }
+    \]
+\end{resultbox}
 
 \item Argument
 
- $\arg(z) = -\frac{\pi}{6}$
+$
+\begin{aligned}
+\arg(u) = \arg\left( \dfrac{z_1}{z_2} \right)  &\implies \arg(u) =\arg(z_1)-\arg(z_2) \\
+                                               &\implies \arg(u) =-\frac{\pi}{6}-\left( -\frac{\pi}{4} \right) [2\pi]\\
+                                               &\implies \arg(u) =-\frac{\pi}{6}+\frac{\pi}{4} [2\pi]\\
+                                               &\implies \arg(u) =\frac{\pi}{12} [2\pi]\\
+\end{aligned}
+$
+
+ $\arg(u) =\frac{\pi}{12} [2\pi]$
+
+ \begin{resultbox}
+    \[
+    \mathbf{ \arg(u) =\frac{\pi}{12} [2\pi] }
+    \]
+\end{resultbox}
+ 
 \end{itemize}
 
 \item pour $u^5$
@@ -420,7 +497,18 @@ z_1 = \dfrac{\sqrt{6}-i\sqrt{2}}{2} &\implies z_1 = \sqrt{2} \left( \dfrac{\sqrt
 
 \item Argument
 
- $\arg(z) = -\frac{5\pi}{6}$
+$
+\begin{aligned}
+\arg(u^{5}) = 5\arg(u)   &\implies 5\arg(u) =\frac{5\pi}{12} [2\pi]\\
+\end{aligned}
+$
+
+ \begin{resultbox}
+    \[
+    \mathbf{ \arg(u^{5}) =\frac{5\pi}{12} [2\pi] }
+    \]
+\end{resultbox}
+
 \end{itemize}
 
 \end{itemize}        
@@ -434,19 +522,21 @@ u=e^{i\frac{\pi}{12}}=\cos\left(\frac{\pi}{12}\right)
 \)
 
 Or :
-\(
+\[
+\begin{aligned}
 u=\frac{z_1}{z_2}
-=\frac{\frac{\sqrt{6}-i\sqrt{2}}{2}}{1-i}.
-\)
-
-Après simplification, on obtient :
-\[
-\cos\left(\frac{\pi}{12}\right)=\frac{\sqrt{6}+\sqrt{2}}{4}
-\]
-\[
-\sin\left(\frac{\pi}{12}\right)=\frac{\sqrt{6}-\sqrt{2}}{4}.
-\]        
-        
+&= \frac{\dfrac{\sqrt{6}-i\sqrt{2}}{2}}{1-i} \\[4pt]
+&= \frac{\sqrt{6}-i\sqrt{2}}{2(1-i)} \\[4pt]
+&= \frac{\sqrt{6}-i\sqrt{2}}{2(1-i)} \cdot \frac{1+i}{1+i} \\[4pt]
+&= \frac{(\sqrt{6}-i\sqrt{2})(1+i)}{2(1+1)} \\[4pt]
+&= \frac{\sqrt{6}+\sqrt{2} + i(\sqrt{6}-\sqrt{2})}{4}
+\end{aligned}
+\]      
+     \begin{resultbox}
+    \[
+    \mathbf{ \cos\left(\frac{\pi}{12}\right)=\frac{\sqrt{6}+\sqrt{2}}{4} \textbf{ et } \sin\left(\frac{\pi}{12}\right)=\frac{\sqrt{6}-\sqrt{2}}{4}}
+    \]
+\end{resultbox}    
     \end{enumerate}
 \end{enumerate}
 
