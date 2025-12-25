@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{booktabs} % Pour de beaux tableaux
+
+\begin{document}
+
+\section*{Résumé des formules clés pour les primitives}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{2} % Donne de l'espace aux fractions
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Forme de la fonction $f(x)$} & \textbf{Primitive $F(x)$ (à une constante près)} \\ \hline
+$x^n \quad (n \neq -1)$ & $\dfrac{x^{n+1}}{n+1}$ \\ \hline
+$u'(x) \cdot u(x)^n \quad (n \neq -1)$ & $\dfrac{u(x)^{n+1}}{n+1}$ \\ \hline
+$\dfrac{u'(x)}{u(x)^n} \quad (n \geq 2)$ & $-\dfrac{1}{(n-1)u(x)^{n-1}}$ \\ \hline
+$\dfrac{u'(x)}{\sqrt{u(x)}}$ & $2\sqrt{u(x)}$ \\ \hline
+$u'(x) \cdot \cos(u(x))$ & $\sin(u(x))$ \\ \hline
+$u'(x) \cdot \sin(u(x))$ & $-\cos(u(x))$ \\ \hline
+$1 + \tan^2(x) = \dfrac{1}{\cos^2(x)}$ & $\tan(x)$ \\ \hline
+$\dfrac{u'(x)}{u(x)}$ & $\ln|u(x)|$ \\ \hline
+\end{tabular}
+\end{table}
+
+\end{document}

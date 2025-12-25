@@ -1,0 +1,224 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 25/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Primitives}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\fbox{\textbf{\exo}} 
+\begin{enumerate}
+    \item Fonctions polynomiales et puissances simples ($x^n$)\\ \textit{Formule : $\int x^n dx = \frac{x^{n+1}}{n+1}$}
+\begin{enumerate}
+    \item $f(x) = x^3 - 2x + 1$
+    \item $f(x) = (x-1)(x-2)$ %\textit{(à développer)}
+    \item $f(x) = 4x^4 - 2x^2 + 5x$
+    \item $f(x) = x + \dfrac{1}{x^2}$
+    \item $f(x) = (x+1)^3$
+    \item $f(x) = x + \dfrac{1}{\sqrt{x}}$
+    \item $f(x) = \dfrac{2}{x^2} - \dfrac{3}{x^3}$
+    \item $f(x) = \dfrac{x^4+x^2+1}{x^2}$ %\textit{(à simplifier en $x^2 + 1 + \frac{1}{x^2}$)}
+\end{enumerate}
+\item Forme $u'u^n$\textit{Formule : $\int u'u^n = \frac{u^{n+1}}{n+1}$}
+\begin{enumerate}
+    \item $f(x) = (2x-1)(x^2-x)^2$
+    \item $f(x) = 2x(x^2-1)^5$
+    \item $f(x) = (6x-3)(4x^2-4x+2)^3$
+    \item $f(x) = \sin^2 x \cos x$
+    \item $f(x) = \sin x \cos^3 x$ %\textit{(forme $-u'u^3$)}
+
+    % Nouveaux items : Niveau Intermédiaire
+    \item $f(x) = (3x^2 + 2)(x^3 + 2x - 5)^4$
+    \item $f(x) = \frac{1}{x^2} \left(1 - \frac{1}{x}\right)^3$
+    \item $f(x) = e^x (e^x + 1)^2$
+    \item $f(x) = \frac{(\ln x)^4}{x}$
+    \item $f(x) = \frac{1}{\cos^2 x} (\tan x + 1)^2$
+    
+    % Nouveaux items : Avec ajustement de coefficient (le "k")
+    \item $f(x) = (x + 1)(x^2 + 2x - 3)^5$ % \textit{($u'$ à multiplier par 2)}
+    \item $f(x) = x^2(x^3 + 1)^2$ % \textit{($u'$ à multiplier par 3)}
+    \item $f(x) = \sin x \cos^4 x$ %\hfill \textit{(Attention au signe)}
+    \item $f(x) = 2(e^{2x} + 1)(e^{2x} + 2x)^3$
+    \item $f(x) = \frac{1}{\sqrt{x}}(\sqrt{x}+3)^5$ %\hfill \textit{($u'$ à multiplier par 1/2)}
+\end{enumerate}
+
+\item Forme $\dfrac{u'}{u^n}$ ($n \geq 2$)\\ %\textit{Formule : $\int \frac{u'}{u^n} = -\frac{1}{(n-1)u^{n-1}}$}
+
+\begin{enumerate}
+    \item $f(x) = \dfrac{1}{(x+1)^3}$
+    \item $f(x) = \dfrac{2x+1}{(x^2+x+1)^2}$
+    \item $f(x) = \dfrac{2x}{(x^2+1)^2}$
+    \item $f(x) = \dfrac{4x+3}{(2x^2+3x+1)^3}$
+    \item $f(x) = \dfrac{1-x}{(x^2-2x+3)^2}$ %\textit{(forme $-\frac{1}{2}\frac{u'}{u^2}$)}
+    \item $f(x) = \dfrac{\cos x}{\sin^2 x}$
+\end{enumerate}
+
+\item Forme $\dfrac{u'}{\sqrt{u}}$\\ \textit{Formule : $\int \frac{u'}{\sqrt{u}} = 2\sqrt{u}$}
+\begin{enumerate}
+    \item $f(x) = \dfrac{1}{\sqrt{x+1}}$
+    \item $f(x) = \dfrac{3x}{\sqrt{x^2+1}}$
+    \item $f(x) = \dfrac{x}{\sqrt{x^2-1}}$
+    \item $f(x) = \dfrac{2x+3}{\sqrt{x^2+3x+2}}$
+\end{enumerate}
+
+\item Fonctions Trigonométriques\\ \textit{Formes : $\sin(ax+b)$, $u'\cos(u)$, linéarisation ou dérivées de $\tan(x)$}
+\begin{enumerate}
+    \item $f(x) = 3\sin\dfrac{\pi x}{2}$
+    \item $f(x) = \sin 3x + \cos(2x+3)$
+    \item $f(x) = \sin 2x - 2\cos 2x$
+    \item $f(x) = x \cos x^2$ %\textit{(forme $\frac{1}{2}u'\cos u$)}
+    \item $f(x) = \dfrac{\cos \sqrt{x}}{\sqrt{x}}$ %\textit{(forme $2u'\cos u$)}
+    \item $f(x) = \dfrac{1}{x^2} \sin \dfrac{1}{x}$ %\textit{(forme $-u'\sin u$)}
+    \item $f(x) = \dfrac{\tan x}{\cos^2 x}$ %\textit{(forme $u'u$ avec $u=\tan x$)}
+    \item $f(x) = \tan^2 x$ %\textit{(à écrire $(1+\tan^2 x) - 1$)}
+    \item $f(x) = \tan x + \tan^3 x$ %\textit{(forme $\tan x(1+\tan^2 x)$)}
+    \item $f(x) = 1 + \dfrac{1}{\tan^2 x}$
+    \item $f(x) = \sin^2 x$ %\textit{(linéarisation)}
+    \item $f(x) = \cos^3 x$ %\textit{(linéarisation)}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{enumerate}
+\item \textit{Dans chacun des cas suivants, déterminer une primitive $F$ de $f$ sur $I$ après avoir effectuée la transformation d'écriture indiquée.}
+
+\begin{enumerate}
+    \item $f(x) = \dfrac{x^2 - 2x}{(x - 1)^2} \quad I = ]1 ; +\infty[ \quad \text{Indication : Mettre } f(x) \text{ sous la forme } a + \dfrac{b}{(x - 1)^2}$
+    
+    \item $f(x) = \dfrac{3x^2 + 12x - 1}{(x + 2)^2}, \quad I = ]-2 ; +\infty[ \quad \text{Indication : Mettre } f(x) \text{ sous la forme } a + \dfrac{b}{(x + 2)^2}$
+    
+    \item $f(x) = \dfrac{2x^3 + 13x^2 + 24x + 2}{(x + 3)^2}, \quad I = ]-3 ; +\infty[$ \\
+    \textit{Indication : Mettre $f(x)$ sous la forme $ax + b + \dfrac{c}{(x + 3)^2}$}
+    
+    \item $f(x) = \dfrac{x(x^2 + 3)}{(x^2 - 1)^3}, \quad I = ]-1 ; 1[ \quad \text{Indication : Mettre } f(x) \text{ sous la forme } \dfrac{a}{(x - 1)^3} + \dfrac{b}{(x + 1)^3}$
+\end{enumerate}
+
+\begin{comment}
+
+ \item  \textit{Déterminer une primitive $F$ de la fonction $f$ définie sur $K$.}
+\begin{enumerate}
+
+
+    \item $f(x) = \dfrac{\ln x}{x} \quad K = ]0 ; +\infty[$
+    
+    \item $f(x) = \dfrac{1}{x \ln x} \quad K = ]0 ; +\infty[$
+    
+    \item $f(x) = |x| + |x - 1|, \quad K = \mathbb{R}$
+    
+    \item $f(x) = \dfrac{2x - 1}{x^2 (x - 1)^2} \quad K = ]0 ; 1[$ \\
+    \textit{Indication : Mettre $f(x)$ sous la forme $\dfrac{a}{x^2} + \dfrac{b}{(x - 1)^2}$}
+    
+    \item $f(x) = \dfrac{2x + 1}{x^2 - 2x + 1} \quad K = ]1 ; +\infty[$ \\
+    \textit{Indication : Mettre $f(x)$ sous la forme $\dfrac{a}{x - 1} + \dfrac{b}{(x - 1)^2}$}
+    
+    \item $f(x) = \dfrac{2x^3 + x^2 - 2x + 1}{x^2 - 1} \quad K = ]1 ; +\infty[$ \\
+    \textit{Indication : Mettre $f(x)$ sous la forme $ax + b + \dfrac{c}{x + 1} + \dfrac{d}{x - 1}$}
+
+\end{enumerate}
+
+\end{comment}
+
+\end{enumerate}
+
+\end{document}
+
+
+
+\begin{comment}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+    \begin{enumerate}
+        \item 
+    \end{enumerate}
+\end{multicols}
+\end{comment}
