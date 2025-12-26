@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 25/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Correction Td Primitives}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\fbox{\textbf{\exo}} 
+
+\begin{enumerate}
+\item Corrigé de l'exercice : Transformation d'écriture et primitives
+
+\begin{enumerate}
+    % --- QUESTION 1 ---
+    \item $f(x) = \dfrac{x^2 - 2x}{(x - 1)^2}$ sur $I = ]1 ; +\infty[$
+    \begin{itemize}
+        \item \textbf{Transformation :} On remarque que $x^2 - 2x = (x^2 - 2x + 1) - 1 = (x-1)^2 - 1$. \\
+        D'où $f(x) = \dfrac{(x-1)^2 - 1}{(x-1)^2} = \mathbf{1 - \dfrac{1}{(x-1)^2}}$.
+        \item \textbf{Primitive :} $F(x) = x - \left( -\dfrac{1}{x-1} \right) = \mathbf{x + \dfrac{1}{x-1}}$.
+    \end{itemize}
+
+    % --- QUESTION 2 ---
+    \item $f(x) = \dfrac{3x^2 + 12x - 1}{(x + 2)^2}$ sur $I = ]-2 ; +\infty[$
+    \begin{itemize}
+        \item \textbf{Transformation :} On développe le dénominateur : $(x+2)^2 = x^2+4x+4$. \\
+        On cherche $a$ tel que $a(x^2+4x+4)$ approche le numérateur. Avec $a=3$ : \\
+        $3(x+2)^2 = 3x^2+12x+12$. \\
+        Alors $3x^2+12x-1 = 3(x+2)^2 - 13$. \\
+        D'où $f(x) = \dfrac{3(x+2)^2 - 13}{(x+2)^2} = \mathbf{3 - \dfrac{13}{(x + 2)^2}}$.
+        \item \textbf{Primitive :} $F(x) = 3x - 13 \left( -\dfrac{1}{x+2} \right) = \mathbf{3x + \dfrac{13}{x+2}}$.
+    \end{itemize}
+
+    % --- QUESTION 3 ---
+    \item $f(x) = \dfrac{2x^3 + 13x^2 + 24x + 2}{(x + 3)^2}$ sur $I = ]-3 ; +\infty[$
+    \begin{itemize}
+        \item \textbf{Transformation :} Effectuons la division euclidienne de $2x^3 + 13x^2 + 24x + 2$ par $x^2+6x+9$ :
+        \[
+        \renewcommand{\arraystretch}{1.3}
+        \begin{array}{r|l}
+          2x^3 + 13x^2 + 24x + 2 & x^2 + 6x + 9 \\ \cline{2-2}
+         -(2x^3 + 12x^2 + 18x) & \mathbf{2x + 1} \\ \cline{1-1}
+          x^2 + 6x + 2 & \\
+         -(x^2 + 6x + 9) & \\ \cline{1-1}
+          \mathbf{-7} & 
+        \end{array}
+        \]
+        On en déduit : $f(x) = \mathbf{2x + 1 - \dfrac{7}{(x+3)^2}}$.
+        \item \textbf{Primitive :} $F(x) = \mathbf{x^2 + x + \dfrac{7}{x+3}}$.
+    \end{itemize}
+
+    % --- QUESTION 4 ---
+    \item $f(x) = \dfrac{x(x^2 + 3)}{(x^2 - 1)^3}$ sur $I = ]-1 ; 1[$
+    \begin{itemize}
+        \item \textbf{Transformation :} Par identification ou décomposition, on montre que : \\
+        $f(x) = \mathbf{\dfrac{1}{2(x - 1)^3} + \dfrac{1}{2(x + 1)^3}}$. \\
+        \textit{(Vérification : $\frac{1}{2} \frac{(x+1)^3 + (x-1)^3}{(x^2-1)^3} = \frac{1}{2} \frac{2x^3+6x}{(x^2-1)^3} = \frac{x^3+3x}{(x^2-1)^3}$)}
+        \item \textbf{Primitive :} En utilisant la forme $\frac{u'}{u^3}$ dont la primitive est $-\frac{1}{2u^2}$ : \\
+        $F(x) = \dfrac{1}{2} \left( -\dfrac{1}{2(x-1)^2} \right) + \dfrac{1}{2} \left( -\dfrac{1}{2(x+1)^2} \right) = \mathbf{-\dfrac{1}{4(x-1)^2} - \dfrac{1}{4(x+1)^2}}$.
+    \end{itemize}
+\end{enumerate}
+\end{enumerate}
+\end{document}
