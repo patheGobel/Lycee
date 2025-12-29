@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{probleme}
+\renewcommand{\theprobleme}{\arabic{probleme}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{probleme}\textbf{Problème \theprobleme} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Limites ln}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+
+\vspace{3cm}
+\fbox{\textbf{\exo}}
+
+\underline{\textbf{Partie A}}
+Soit $g$ la fonction numérique définie sur $]0; +\infty[$ par $g(x) = x(1 + \ln x)^2 - 1$.
+\begin{enumerate}
+    \item On admettra que $g$ est dérivable sur $]0; +\infty[$.
+    \begin{enumerate}
+        \item Calculer $g'(x)$ pour tout $x \in ]0; +\infty[$.
+        \item Vérifier que pour tout $x \in ]0; +\infty[$, $g'(x) = (1 + \ln x)(3 + \ln x)$.
+        \item Étudier le signe de $g'(x)$ suivant les valeurs de $x$ et en déduire le sens de variation de $g$.
+    \end{enumerate}
+    \item Dresser le tableau de variation de $g$. (On ne calculera pas les limites en $0$ et $+\infty$).
+    \item 
+    \begin{enumerate}
+        \item Calculer $g(1)$.
+        \item En déduire que pour tout $x \in ]0; 1[$, $g(x) < 0$ et pour tout $x \in ]1; +\infty[$, $g(x) > 0$.
+    \end{enumerate}
+\end{enumerate}
+
+\underline{\textbf{Partie B}}
+Soit $f$ la fonction définie par :
+\[
+\begin{cases} 
+f(x) = x + \frac{1}{1 + \ln x} - 1 & \text{si } x \in ]0; \frac{1}{e}[ \cup ]\frac{1}{e}; +\infty[ \\
+f(0) = -1
+\end{cases}
+\]
+$(C)$ est la représentation graphique dans le repère orthonormé $(O, I, J)$ (unités : 2cm).
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que $f$ est continue en 0.
+        \item Étudier la dérivabilité de $f$ en 0.
+        \item En déduire la tangente à $(C)$ au point $A(0; -1)$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer $\lim\limits_{x \to \frac{1}{e}^-} f(x)$, $\lim\limits_{x \to \frac{1}{e}^+} f(x)$ et $\lim\limits_{x \to +\infty} f(x)$.
+        \item Montrer que la droite $(\Delta)$ d'équation $y = x - 1$ est une asymptote à $(C)$.
+        \item Étudier les positions relatives de $(C)$ et $(\Delta)$.
+        \item Préciser l'autre asymptote à la courbe $(C)$ de $f$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que pour tout $x \in ]0; +\infty[ \setminus \{\frac{1}{e}\}$, $f'(x) = \frac{g(x)}{x(1 + \ln x)^2}$.
+        \item En déduire le sens de variation de $f$.
+        \item Dresser son tableau de variation.
+    \end{enumerate}
+\end{enumerate}
+
+\underline{\textbf{Partie C}}
+\begin{enumerate}
+    \item Calculer la dérivée de la fonction $h$ définie sur $]\frac{1}{e}; +\infty[$ par $h(x) = \ln(1 + \ln x)$.
+    \item 
+    \begin{enumerate}
+        \item En déduire les primitives sur $]\frac{1}{e}; +\infty[$ de la fonction $k : x \mapsto \frac{f(x)}{x}$.
+        \item Déterminer la primitive de $k$ qui prend la valeur $-1$ en 1.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Le plan est muni d'un repère orthonormé $(O, I, J)$ d'unité graphique 2cm.
+
+\underline{\textbf{Partie A : Étude d'une fonction auxiliaire}}
+
+Soit $g$ la fonction définie sur l'intervalle $]0; +\infty[$ par $g(x) = x^2 - 1 + \ln x$.
+\begin{enumerate}
+    \item Calculer $g'(x)$ pour tout réel $x$ appartenant à l'intervalle $]0; +\infty[$. \\
+    En déduire le sens de variation de la fonction $g$ sur l'intervalle $]0; +\infty[$.
+    \item Calculer $g(1)$ et en déduire l'étude du signe de $g(x)$ pour $x$ appartenant à $]0; +\infty[$.
+\end{enumerate}
+
+\underline{\textbf{Partie B : Détermination de l'expression de la fonction $f$}}
+
+On admet qu'il existe deux constantes réelles $a$ et $b$ telles que, pour tout nombre réel $x$ appartenant à $]0; +\infty[$, $f(x) = ax + b - \frac{\ln x}{x}$.
+\begin{enumerate}
+    \item On désigne par $f'$ la fonction dérivée de la fonction $f$. \\
+    Calculer $f'(x)$ pour tout réel $x$ appartenant à l'intervalle $]0; +\infty[$.
+    \item Sachant que la courbe $(C)$ passe par le point de coordonnées $(1; 0)$ et qu'elle admet en ce point une tangente horizontale, déterminer les nombres $a$ et $b$.
+\end{enumerate}
+
+\underline{\textbf{Partie C : Étude de la fonction $f$}}
+
+On admet désormais que, pour tout nombre réel $x$ appartenant à l'intervalle $]0; +\infty[$, $f(x) = x - 1 - \frac{\ln x}{x}$.
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Déterminer la limite de la fonction $f$ en $0$ et donner une interprétation graphique de cette limite.
+        \item Déterminer la limite de la fonction $f$ en $+\infty$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Vérifier que, pour tout réel $x$ appartenant à l'intervalle $]0; +\infty[$, $f'(x) = \frac{g(x)}{x^2}$.
+        \item Établir le tableau de variation de la fonction $f$ sur l'intervalle $]0; +\infty[$.
+        \item En déduire le signe de $f(x)$ pour $x$ appartenant à l'intervalle $]0; +\infty[$.
+    \end{enumerate}
+    \item On considère la droite $(D)$ d'équation $y = x - 1$.
+    \begin{enumerate}
+        \item Justifier que la droite $(D)$ est asymptote à la courbe $(C)$.
+        \item Étudier les positions relatives de la courbe $(C)$ et de la droite $(D)$.
+        \item Tracer la droite $(D)$ et la courbe $(C)$ dans le plan $P$ muni du repère $(O; \vec{i}, \vec{j})$.
+    \end{enumerate}
+\end{enumerate}
+
+\underline{\textbf{Partie D : Calcul d'aire}}
+
+On note $A$ la mesure, exprimée en $cm^2$, de l'aire de la partie du plan $P$ comprise entre la courbe $C$, l'axe des abscisses, et les droites d'équations $x = 1$ et $x = e$.
+\begin{enumerate}
+    \item On considère la fonction $H$ définie sur l'intervalle $]0; +\infty[$ par $H(x) = (\ln x)^2$. \\
+    On désigne par $H'$ la fonction dérivée de la fonction $H$.
+    \begin{enumerate}
+        \item Calculer $H'(x)$ pour tout réel $x$ appartenant à l'intervalle $]0; +\infty[$.
+        \item En déduire une primitive de la fonction $f$ sur l'intervalle $]0; +\infty[$.
+    \end{enumerate}
+    \item Calculer $A$ et donner sa valeur arrondie au $mm^2$ près.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\underline{\textbf{Partie A}}
+On considère $g$ la fonction numérique de la variable réelle $x$ définie par :
+\[ g(x) = 1 + x(2\ln|x| + 1) \]
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Justifier que $g$ est définie sur $]-\infty; 0[ \cup ]0; +\infty[$.
+        \item Déterminer les limites de $g$ aux bornes de son ensemble de définition.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Étudier le sens de variation de $g$.
+        \item Dresser le tableau de variation de $g$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer l'image de $-1$ par $g$.
+        \item Déterminer l'image $J$ par $g$ de l'intervalle $I$ tel que : $I = ]-\infty; -e^{-\frac{3}{2}}]$.
+        \item Démontrer que la restriction $h$ de $g$ sur l'intervalle $I$ est une bijection de $I$ sur $J$.
+        \item En déduire l'ensemble des solutions de l'équation : $x \in \mathbb{R}, g(x) = 0$.
+    \end{enumerate}
+    \item Déduire de tout ce qui précède que : \\
+    $\forall x \in ]-\infty; -1[, g(x) < 0$ et $\forall x \in ]-1; 0[ \cup ]0; +\infty[, g(x) > 0$.
+\end{enumerate}
+
+\underline{\textbf{Partie B}}
+On considère $f$ la fonction numérique de la fonction de la variable réelle $x$ définie par :
+\[
+\begin{cases}
+f(x) = x(x\ln|x| + 1) & \text{si } x \neq 0 \\
+f(0) = 0
+\end{cases}
+\]
+et $(C)$ sa courbe représentative dans le plan muni du repère orthonormé $(O; \vec{i}, \vec{j})$. (Unité : 5cm)
+
+\begin{enumerate}
+    \item Démontrer que $f$ est continue en 0.
+    \item 
+    \begin{enumerate}
+        \item Donner l'ensemble de définition de $f'$ et déterminer les limites de $f$ aux bornes de son ensemble de définition.
+        \item Étudier la dérivabilité de $f$ en 0.
+        \item Déterminer la fonction dérivée $f'$ et déterminer le tableau de variation de $f$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Écrire une équation de la tangente $(D)$ à la courbe $(C)$ au point $O$.
+        \item Démontrer que $(D)$ coupe $(C)$ en deux points $E$ et $F$ et calculer leurs coordonnées.
+        \item Étudier la position de $(C)$ par rapport à $(D)$.
+    \end{enumerate}
+    \item Démontrer que $(C)$ coupe l'axe $(OI)$ en un point $K$ d'abscisse $\beta$ tel que $-1,8 < \beta < -1,7$.
+    \item Construire $(C)$.
+\end{enumerate}
+
+\underline{\textbf{Partie C}}
+\begin{enumerate}
+    \item Soit $\alpha$ un réel appartenant à $]0; 1[$. \\
+    À l'aide d'une intégration par parties, calculer $\int_{\alpha}^{1} x^2 \ln(x) \, dx$.
+    \item 
+    \begin{enumerate}
+        \item Calculer l'aire $A(\alpha)$ de la partie du plan limitée par $(C)$, la droite $(D)$ et les droites d'équation $x = 1$ et $x = \alpha$.
+        \item Calculer $\lim\limits_{\alpha \to 0} A(\alpha)$.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+    On prendra : $\ln(2) \approx 0,7$ ; $\ln(3) \approx 1,1$ ; $\ln(5) \approx 1,6$ ; $\ln(17) \approx 2,9$ ; $e \approx 2,7$ ; $\sqrt{e} \approx 1,6$.
+\end{center}
+\end{document}
