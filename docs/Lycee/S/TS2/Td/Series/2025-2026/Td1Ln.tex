@@ -1,0 +1,238 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Limites ln}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\fbox{\textbf{\exo}} Déterminer les limites suivantes :
+\begin{enumerate}
+\item $\lim_{x \to +\infty} \ln(x+2)$
+\item $ \lim_{x \to 0} (\ln x)^2 $
+\item $ \lim_{x \to 0} \frac{1}{\ln x} $
+\item $ \lim_{x \to +\infty} \ln(x^2 + x + 1) $ 
+\item $ \lim_{x \to -\infty} \ln(x^2 + x + 1) $
+
+
+
+\item $ \lim\limits_{x \to +\infty} \ln\left[ \frac{x+1}{x^2 + x + 1}\right]$
+\item $ \lim\limits_{x \to 1^+} \ln\left[ \frac{x+2}{x-1}\right]  $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(x+2)}{\ln(x+1)} $
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x+2}{\ln x+1} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{\sqrt{x}} $
+
+
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{x^2} $
+\item $ \lim\limits_{x \to +\infty} (\ln x - \sqrt{x}) $
+\item $ \lim\limits_{x \to 0^+} x^2 \ln x $
+\item $ \lim\limits_{x \to 0^+} \sqrt{x} \ln x $
+\item $ \lim\limits_{x \to +\infty} (\ln x - 2x) $
+
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(x^2 + 1)}{\ln(x+1)} $ 
+\item $ \lim\limits_{x \to 0} \frac{\ln(1 + 2x)}{x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1 + x^2)}{x} $
+\item $ \lim\limits_{x \to -\infty} \frac{\ln(1 + e^x)}{e^x} $
+\item $ \lim\limits_{x \to 0} e^x \ln x $
+
+ 
+\item $ \lim\limits_{x \to -\infty} \frac{\ln(1 + e^x)}{x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(1 + e^x)}{x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1 + x^2)}{3x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(e^x - 1)}{x} $
+\item $ \lim\limits_{x \to 0^+} \frac{2\ln^2 x}{x} $
+
+
+
+\item $\lim\limits_{x \to 0} \frac{2x + 1}{x} \ln x $
+\item $ \lim\limits_{x \to +\infty} \frac{2x + 1}{x} \ln x  $
+\item $ \lim\limits_{x \to 0} \frac{\ln x - 1}{2x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x - 1}{2x} $
+\item $ \lim\limits_{x \to 2^+} \ln(2 - x)$
+
+
+\item $ \lim\limits_{x \to +\infty} \ln(x^2 - 2x) $
+\item $ \lim\limits_{x \to -\infty} \ln(x^2 + 4x) $
+\item $ \lim\limits_{x \to 0} \ln\left(\frac{2x - 1}{x - 2}\right) $
+\item $ \lim\limits_{x \to 0^+} \ln\left(\frac{1 + x}{x}\right) $
+
+
+
+\item $ \lim\limits_{x \to +\infty} \ln\left(\frac{1 - x}{-x - 1}\right) $
+\item $ \lim\limits_{x \to -\infty} \ln\left(\frac{x^3 + x}{-2x^2 - 1}\right) $
+\item $ \lim\limits_{x \to 0^+} \ln|x^2 + x| $
+\item $ \lim\limits_{x \to 0^-} \ln|x^2 + x| $
+
+
+
+\item $ \lim\limits_{x \to 1} \ln|x^2 - 1| $
+\item $ \lim\limits_{x \to +\infty} \ln|x^2 - 1| $
+\item $ \lim\limits_{x \to +\infty} \frac{2x - 1}{x \ln x - x} $
+\item $ \lim\limits_{x \to 0^+} \frac{2x - 1}{x \ln x + x} $
+\item $ \lim\limits_{x \to +\infty} \frac{-1}{x^2 \ln x} $
+
+\item $ \lim\limits_{x \to 0^+} \frac{2\ln x - 3}{3\ln x + 1} $
+\item $ \lim\limits_{x \to +\infty} \frac{2\ln x - 3}{3\ln x + 1} $
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x - 3x}{2\ln x + x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x - 3x}{2\ln x + x} $
+\item $ \lim\limits_{x \to 0^+} \frac{-1}{x^2 \ln x} $
+
+
+\item $ \lim\limits_{x \to +\infty} x - \ln x $
+\item $ \lim\limits_{x \to +\infty} \frac{1 - \ln x}{x} $ 
+\item $ \lim\limits_{x \to 0^+} \frac{1 - \ln x}{x} $
+\item $ \lim\limits_{x \to +\infty} x \ln x - x $ 
+\item $ \lim\limits_{x \to 0} x \ln x - \ln x $
+
+\item $ \lim\limits_{x \to 0^+} x^n \ln^2 x $
+\item $ \lim\limits_{x \to 0^+} x (\ln x - 1) $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(x^2)}{x} $
+\item $ \lim\limits_{x \to +\infty} \frac{(x - 1) \ln x}{x} $
+\item $ \lim\limits_{x \to 0^+} \frac{(x - 1) \ln x}{x} $
+
+\item $ \lim\limits_{x \to +\infty} x \ln\left(\frac{x+1}{x-1}\right) $ 
+\item $ \lim\limits_{x \to +\infty} x \ln\left(\frac{2x+1}{2x+3}\right) $ 
+\item $ \lim\limits_{x \to -\infty} \frac{\ln(x^2)}{x} $
+\item $ \lim\limits_{x \to 0^+} \left(\ln x + \frac{1}{\ln x}\right) $
+
+
+\item $ \lim\limits_{x \to +\infty} \frac{x^2}{x-1} - \ln(x) $ 
+\item $ \lim\limits_{x \to +\infty} \frac{-1}{x^2 \ln x} $ 
+\item $ \lim\limits_{x \to 0^+} x \ln^2 x $ 
+\item $ \lim\limits_{x \to 0^+} \sqrt{x} \ln\left(\frac{x+1}{x}\right) $ 
+\item $ \lim\limits_{x \to 0^+} x^3 \ln x $
+
+
+\item $ \lim\limits_{x \to 0} \frac{\ln x - \ln 2}{x-2} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(a+x) - \ln a}{x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln x - 2}{\ln x + 1} $ 
+\item $ \lim\limits_{x \to 0^+} \tan x \ln x $ 
+\item $ \lim\limits_{x \to \frac{\pi}{4}} \frac{\ln(\tan x)}{\sin x - \cos x} $
+
+\item $ \lim\limits_{x \to 0^+} \frac{\ln(\cos x)}{x^2} $
+\item $ \lim\limits_{x \to +\infty} \frac{x \ln x}{x+1} $ 
+\item $ \lim\limits_{x \to +\infty} x \ln\left(1 + \frac{1}{x}\right) $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(1+x)}{1+x^2} $
+\item $ \lim\limits_{x \to +\infty} \frac{x \ln x}{x+1} $
+
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x}{1 - \ln x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{1 - \ln x} $ 
+\item $ \lim\limits_{x \to 0^+} \frac{1}{x^2}\ln\left(\frac{1 - x^2}{\cos x}\right) $
+\item $ \lim\limits_{x \to 1} -x + \ln\left|\frac{x}{x-1}\right| $
+
+\item $ \lim\limits_{x \to 1} -x + \ln\left|\frac{x}{x-1}\right| $ 
+\item $ \lim\limits_{x \to -\infty} -x + \ln\left|\frac{x}{x-1}\right| $
+\item $ \lim\limits_{x \to +\infty} -x + \ln\left|\frac{x}{x-1}\right| $
+\item $ \lim\limits_{x \to +\infty} x \ln\left|\frac{x+1}{x-1}\right| $
+
+\item $ \lim\limits_{x \to -\infty} \frac{\ln\sqrt{x^2 - 1}}{x^2 - 1} $
+\item $ \lim\limits_{x \to 1} \frac{\ln(x^2 - 2x + 2)}{(x-1)^2} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1+\sqrt{x})}{1-\sqrt{x+1}} $ 
+\item $ \lim\limits_{x \to +\infty} \left(\ln x + \frac{1}{\ln x}\right) $
+
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x}{1+x^2} $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{1+x^2} $
+\item $ \lim\limits_{x \to +\infty} \frac{x^3}{\ln x} $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(1+\ln x)}{x} $
+\item $ \lim\limits_{x \to +\infty} x \ln x - \ln x $
+ 
+
+\item $ \lim\limits_{x \to +\infty} \sqrt{x} \ln(x) $ 
+\item $ \lim\limits_{x \to 0} \frac{x}{\ln(1+\sin x)} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1+2x)}{\tan x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{x-1} $
+\item $ \lim\limits_{x \to 1} \frac{\ln x}{x-1} $
+
+\end{enumerate}
+
+\end{multicols}
+
+\end{document}
