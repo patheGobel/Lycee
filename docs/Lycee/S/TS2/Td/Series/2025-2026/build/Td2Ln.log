@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  29 DEC 2025 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  30 DEC 2025 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1105,8 +1105,13 @@ enc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [2] [3]
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [2] [3] [4] [5] [6]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+31.
 
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [7] [8{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [9] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/Td2Ln.aux)
  ***********
@@ -1117,13 +1122,13 @@ Package rerunfilecheck Info: File `Td2Ln.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30063 strings out of 474222
- 602635 string characters out of 5748732
+ 30265 strings out of 474222
+ 604903 string characters out of 5748732
  1970975 words of memory out of 5000000
- 51690 multiletter control sequences out of 15000+600000
- 593333 words of font info for 66 fonts, out of 8000000 for 9000
+ 51725 multiletter control sequences out of 15000+600000
+ 593708 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,423b,878s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,423b,880s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/pu
@@ -1135,10 +1140,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding
 /uzdr.pfb>
-Output written on build/Td2Ln.pdf (3 pages, 206612 bytes).
+Output written on build/Td2Ln.pdf (9 pages, 241628 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 78 named destinations out of 1000 (max. 500000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 240 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

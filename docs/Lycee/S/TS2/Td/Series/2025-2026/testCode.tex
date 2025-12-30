@@ -1,74 +1,19 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb}
 
 \begin{document}
 
-\begin{center}
-    \fbox{\textbf{PROBLÈMES}}
-\end{center}
-
-\section*{PROBLÈME 1}
-
-\subsection*{Partie A}
-Soit $g$ la fonction numérique définie sur $]0; +\infty[$ par $g(x) = x(1 + \ln x)^2 - 1$.
-\begin{enumerate}
-    \item On admettra que $g$ est dérivable sur $]0; +\infty[$.
-    \begin{enumerate}
-        \item Calculer $g'(x)$ pour tout $x \in ]0; +\infty[$.
-        \item Vérifier que pour tout $x \in ]0; +\infty[$, $g'(x) = (1 + \ln x)(3 + \ln x)$.
-        \item Étudier le signe de $g'(x)$ suivant les valeurs de $x$ et en déduire le sens de variation de $g$.
-    \end{enumerate}
-    \item Dresser le tableau de variation de $g$. (On ne calculera pas les limites en $0$ et $+\infty$).
-    \item 
-    \begin{enumerate}
-        \item Calculer $g(1)$.
-        \item En déduire que pour tout $x \in ]0; 1[$, $g(x) < 0$ et pour tout $x \in ]1; +\infty[$, $g(x) > 0$.
-    \end{enumerate}
-\end{enumerate}
-
-\subsection*{Partie B}
-Soit $f$ la fonction définie par :
 \[
-\begin{cases} 
-f(x) = x + \frac{1}{1 + \ln x} - 1 & \text{si } x \in ]0; \frac{1}{e}[ \cup ]\frac{1}{e}; +\infty[ \\
-f(0) = -1
-\end{cases}
+u_{n+1} = \frac{1}{2} \left( u_n + \frac{a}{u_n} \right)
 \]
-$(C)$ est la représentation graphique dans le repère orthonormé $(O, I, J)$ (unités : 2cm).
-\begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item Montrer que $f$ est continue en 0.
-        \item Étudier la dérivabilité de $f$ en 0.
-        \item En déduire la tangente à $(C)$ au point $A(0; -1)$.
-    \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \item Calculer $\lim\limits_{x \to \frac{1}{e}^-} f(x)$, $\lim\limits_{x \to \frac{1}{e}^+} f(x)$ et $\lim\limits_{x \to +\infty} f(x)$.
-        \item Montrer que la droite $(\Delta)$ d'équation $y = x - 1$ est une asymptote à $(C)$.
-        \item Étudier les positions relatives de $(C)$ et $(\Delta)$.
-        \item Préciser l'autre asymptote à la courbe $(C)$ de $f$.
-    \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \item Montrer que pour tout $x \in ]0; +\infty[ \setminus \{\frac{1}{e}\}$, $f'(x) = \frac{g(x)}{x(1 + \ln x)^2}$.
-        \item En déduire le sens de variation de $f$.
-        \item Dresser son tableau de variation.
-    \end{enumerate}
-\end{enumerate}
 
-\subsection*{Partie C}
-\begin{enumerate}
-    \item Calculer la dérivée de la fonction $h$ définie sur $]\frac{1}{e}; +\infty[$ par $h(x) = \ln(1 + \ln x)$.
-    \item 
-    \begin{enumerate}
-        \item En déduire les primitives sur $]\frac{1}{e}; +\infty[$ de la fonction $k : x \mapsto \frac{f(x)}{x}$.
-        \item Déterminer la primitive de $k$ qui prend la valeur $-1$ en 1.
-    \end{enumerate}
-\end{enumerate}
+\[
+b = 10^{\log_{10}(b)}
+\]
+
+\[
+a^n \approx 10^p
+\]
 
 \end{document}
