@@ -641,20 +641,288 @@ Soit $h$ la restriction de $f$ à $]1; +\infty[$.
     \item Construire $(\Gamma)$ dans le même repère que $(C)$.
 \end{enumerate}
 
-\begin{comment}
+\begin{center}
+    \fbox{\textbf{\exo}}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+Soit $g$ la fonction définie sur $[0; +\infty[$ par : 
+$\begin{cases} \forall x > 0, g(x) = 1 - x\ln x \\ g(0) = 1 \end{cases}$
+
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Etudier la continuité de $g$ en 0.
+        \item Etudier la dérivabilité de $g$ en 0. Interpréter graphiquement le résultat.
+    \end{enumerate}
+    \item Calculer la limite de $g$ en $+\infty$.
+    \item Etudier les variations de $g$ et dresser son tableau de variations.
+    \item \begin{enumerate}
+        \item Montrer que l'équation $g(x)=0$ admet une unique solution $\alpha \in ]e^{-1}; +\infty[$.
+        \item Justifier que : $1,7 < \alpha < 1,8$.
+    \end{enumerate}
+    \item Démontrer que : 
+    $\begin{cases} \forall x \in [0; \alpha[, g(x) > 0 \\ \forall x \in [\alpha; +\infty[, g(x) < 0 \end{cases}$
+\end{enumerate}
+
+\vspace{0.8cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+Soit $f$ la fonction définie sur $]0; +\infty[$ par : $f(x) = e^{3-x}\ln x$ \\
+$(C_f)$ désigne sa représentation graphique dans le plan est muni d'un repère orthonormé $(O; I; J)$ Unité graphique : 2cm
+
+\begin{enumerate}
+    \item Calculer la limite de $f$ en 0. Interpréter graphiquement le résultat.
+    \item \begin{enumerate}
+        \item Vérifier que : $\forall x \in ]0; +\infty[ : f(x) = \left(\dfrac{\ln x}{x}\right) \left(\dfrac{x}{e^x}\right) e^3$
+        \item En déduire la limite de $f$ en $+\infty$. Interpréter graphiquement le résultat.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Montrer que : $\forall x \in ]0; +\infty[, f'(x) = \dfrac{e^{3-x}}{x} g(x)$.
+        \item En déduire le sens de variations de $f$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Montrer que : $f(\alpha) = \dfrac{e^3}{\alpha e^{\alpha}}$.
+        \item En déduire un encadrement de $f(\alpha)$.
+        \item Dresser le tableau de variations de $f$.
+    \end{enumerate}
+     \item Construire $(C_f)$.
+     \item Soit $h$ la restriction de $f$ à l'intervalle $]0; \alpha[$.
+     \begin{enumerate}
+            \item Montrer que $h$ admet une bijection réciproque $h^{-1}$ dont on précisera l'ensemble de départ, l'arrivée d'arrivée.
+            \item Dresser le tableau de variation de $h^{-1}$.
+            \item Calculer $(h^{-1})'(0)$.
+      \end{enumerate}
+\end{enumerate}
 
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+On considère l'équation différentielle (1) : $y' - 2y = xe^x$
+\begin{enumerate}
+    \item Résoudre l'équation différentielle (2) : $y' - 2y = 0$
+    \item Soient $a$ et $b$ deux réels et soit $u$ la fonction définie sur $\mathbb{R}$ par $u(x) = (ax + b)e^x$.
+    \begin{enumerate}
+        \item Déterminer $a$ et $b$ pour que $u$ soit solution de l'équation (1).
+        \item Montrer que $v$ est une solution de l'équation (1) si et seulement si $u+v$ est une solution de l'équation (2).
+        \item En déduire l'ensemble des solutions de l'équation (1).
+    \end{enumerate}
+    \item Déterminer la solution $f$ de l'équation (1) qui s'annule en 0.
+\end{enumerate}
+
+\vspace{0.8cm}
+
+\noindent \underline{\textbf{Partie B : Etude d'une fonction auxiliaire}} \\
+Soit $g$ la fonction définie sur $\mathbb{R}$ par : $g(x) = 2e^x - x - 2$
+\begin{enumerate}
+    \item Déterminer les limites de $g$ en $-\infty$ et $+\infty$.
+    \item Étudier le sens de variation de $g$, puis dresser son tableau de variation.
+    \item \begin{enumerate}
+        \item Montrer que l'équation $g(x)=0$ admet exactement deux solutions réelles : 0 et $\alpha$ telle que $-1,6 < \alpha < -1,5$.
+        \item Déterminer le signe de $g(x)$ suivant les valeurs de $x$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie C : Etude de la fonction principale $f$}} \\
+Soit $f$ la fonction définie sur $\mathbb{R}$ par : $f(x) = e^{2x} - (x + 1)e^x$ \\
+On désigne par $(C)$ la courbe représentative de $f$ dans un repère orthonormé $(O; I; J)$. (Unité : 4cm)
+\begin{enumerate}
+    \item Déterminer les limites de $f$ en $-\infty$ et $+\infty$.
+    \item \begin{enumerate}
+        \item Montrer que $\forall x \in \mathbb{R}, f'(x) = e^x g(x)$.
+        \item En déduire les variations de $f$ et dresser le tableau de variation de $f$.
+    \end{enumerate}
+    \item Montrer que $f(\alpha) = -\dfrac{\alpha^2 + 2\alpha}{4}$. En déduire un encadrement de $f(\alpha)$ à $10^{-2}$ près.
+    \item Tracer $(C)$.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+      \noindent \underline{\textbf{Partie D : Calcul d'aire}} \\
+Soit $m$ un réel négatif.
+\begin{enumerate}
+    \item Interpréter graphiquement l'intégrale $I = \int_{m}^{0} f(x) \, dx$
+    \begin{enumerate}
+        \item Calculer $\int_{m}^{0} xe^x \, dx$ à l'aide d'une intégration par parties.
+        \item En déduire la valeur de $I$.
+    \end{enumerate}
+    \item Calculer la limite de $I$ lorsque $m$ tend vers $-\infty$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent L'objet de ce problème est la fonction définie par : 
+$\begin{cases} f(x) = x(x - (\ln x)^2) \text{ si } x \neq 0 \\ f(0) = 0 \end{cases}$ \\
+On désigne par $(C)$ la courbe représentative de $f$ dans le plan muni d'un repère orthonormé $(O; I, J)$. Unité graphique 5cm.
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+On considère la fonction $h$ dérivable sur $]0; +\infty[$ et définie par $h(x) = 2 - \dfrac{2}{x} - 2\dfrac{\ln x}{x}$.
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Calculer $h'(x)$ et étudier les variations de $h$.
+        \item En déduire que $\forall x \in ]0; +\infty[, h(x) \ge 0$.
+    \end{enumerate}
+    \item On considère la fonction $g$ dérivable sur $]0; +\infty[$ et définie par $g(x) = 2x - 2\ln(x) - (\ln x)^2$.
+    \begin{enumerate}
+        \item Calculer $\lim\limits_{x \to 0^+} g(x)$ et montrer que $\lim\limits_{x \to +\infty} g(x) = +\infty$.
+        \item Calculer $g'(x)$ et montrer que $g'(x) = h(x)$.
+        \item Étudier les variations de $g$.
+        \item Montrer que l'équation $g(x) = 0$ admet une solution unique $\alpha$ et vérifier que $0,1 < \alpha < 0,2$.
+        \item Démontrer que $\begin{cases} \forall x \in ]0; \alpha[, g(x) < 0 \\ \forall x \in ]\alpha; +\infty[, g(x) > 0 \end{cases}$
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie B}}
+\begin{enumerate}
+    \item Déterminer l'ensemble de définition de $f$.
+    \item Montrer que $f$ est continue en 0.
+    \item \begin{enumerate}
+        \item Étudier la dérivabilité de $f$ en 0.
+        \item Interpréter graphiquement ce résultat.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Calculer $\lim\limits_{x \to +\infty} f(x)$ et $\lim\limits_{x \to +\infty} \dfrac{f(x)}{x}$.
+        \item Interpréter graphiquement les résultats.
+        \item Démontrer que $f(\alpha) = \alpha(-\alpha + 2\ln(\alpha))$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item On suppose que $f$ est dérivable sur $]0; +\infty[$.
+        \item On suppose que $f$ est dérivable sur $]0; +\infty[$. Calculer $f'(x)$ et montrer que $\forall x \in ]0; +\infty[, f'(x) = g(x)$.
+        \item Étudier les variations de $f$ et dresser son tableau de variation.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie C}}
+\begin{enumerate}
+    \item Déterminer une équation de la tangente $(T)$ à $(C)$ au point d'abscisse 1.
+    \item Soit la fonction $k(x) = f(x) - (2x - 1)$.
+    \begin{enumerate}
+        \item Vérifier que $k'(x) = g(x) - 2$ et que $k''(x) = h(x)$.
+        \item En déduire le sens de variation de $k'$. Calculer $k'(1)$ puis donner le signe de $k'$.
+        \item Dresser le tableau de variation de $k$ puis donner le signe de $k$. (On ne calculera pas de limites).
+        \item En déduire la position relative de $(C)$ et de la droite $(T)$.
+    \end{enumerate}
+    \item Tracer $(C)$ et $(T)$. On prendra $\alpha = 0,1$.
+    \item Soit la fonction $q$, restriction de $f$ à l'intervalle $[\alpha; +\infty[$.
+    \begin{enumerate}
+        \item Montrer que $q$ admet une bijection réciproque notée $q^{-1}$ dont on précisera les ensembles de départ et d'arrivée.
+        \item Dresser le tableau de variation de $q^{-1}$.
+        \item Calculer $q(1)$, $q^{-1}(1)$ et $(q^{-1})'(1)$.
+        \item Construire la courbe de $q^{-1}$ dans le même repère que $(C)$.
+    \end{enumerate}
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A : Etude d'une fonction auxiliaire.}} \\
+Soit $g$ la fonction définie sur $\mathbb{R}$ par $g(x) = e^x(1 - x) + 1$.
+\begin{enumerate}
+    \item Étudier le sens de variation de $g$.
+    \item Démontrer que l'équation $g(x) = 0$ admet une unique solution dans l'intervalle $[1,27; 1,28]$. On note $\alpha$ cette solution.
+    \item Déterminer le signe de $g(x)$ sur $]-\infty; 0]$. \\
+    Montrer que $g(x) > 0$ sur $[0; \alpha[$ et $g(x) < 0$ sur $]\alpha; +\infty[$.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie B :}} \\
+Étude de la fonction $f$ définie sur $\mathbb{R}$ par : $f(x) = \dfrac{x}{e^x + 1} + 2$. \\
+On désigne par $(C_f)$ la courbe représentative de $f$ dans un repère orthogonal $(O; \vec{i}, \vec{j})$ ; unités graphiques : 1cm sur l'axe des abscisses et 2cm sur l'axe des ordonnées.
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Déterminer la limite de $f$ en $-\infty$.
+        \item Démontrer que la courbe $(C_f)$ admet une asymptote oblique $(d)$ dont on déterminera l'équation.
+    \end{enumerate}
+    \item Étudier la position de $(C_f)$ par rapport à $(d)$.
+    \item \begin{enumerate}
+        \item Montrer que la fonction dérivée de $f$ a même signe que la fonction $g$ étudiée dans la \textbf{Partie A}.
+        \item Montrer qu'il existe deux entiers $p$ et $q$ tels que $f(\alpha) = p\alpha + q$.
+        \item Dresser le tableau des variations de la fonction $f$.
+    \end{enumerate}
+    \item Tracer la courbe $(C_f)$ dans le repère $(O; \vec{i}, \vec{j})$ avec ses asymptotes et sa tangente au point d'abscisse $\alpha$.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie C : Encadrement d'aire}} \\
+Pour tout entier naturel $n$, tel que $n \ge 2$, on donne $D_n$, l'ensemble des points $M(x; y)$ du plan, dont les coordonnées vérifient $2 \le x \le n$ et $2 \le y \le f(x)$, et on appelle $A_n$ son aire, exprimée en unité d'aire.
+\begin{enumerate}
+    \item Faire apparaître $D_n$ sur la figure.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\noindent On considère la fonction $f$ définie par $f(x) = e^{1-x} + \ln |x|$ et $(C)$ sa courbe représentative dans le plan muni du repère orthonormé $(O ; I ; J)$ d'unité 2cm.
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} (Etude d'une fonction auxiliaire) \\
+Soit $g$ la fonction numérique définie par : $g(x) = x e^{1-x}$
+\begin{enumerate}
+    \item Calculer $\lim\limits_{x \to -\infty} g(x)$ et $\lim\limits_{x \to +\infty} g(x)$.
+    \item Démontrer que $\forall x \in \mathbb{R}, g'(x) = (1-x)e^{1-x}$.
+    \item Déterminer les variations de $g$ puis dresser son tableau de variation.
+    \item Démontrer que : $\forall x \in \mathbb{R}, g(x) \le 1$.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie B}} (Etude de la fonction $f$) \\
+Soit $f(x) = e^{1-x} + \ln |x|$
+\begin{enumerate}
+    \item Déterminer $D_f$ l'ensemble de définition de $f$.
+    \item Calculer la limite de $f$ en 0. \\
+    En déduire une interprétation graphique du résultat.
+    \item a) Calculer la limite de $f$ en $-\infty$ et en $+\infty$. \\
+    b) Calculer la limite de $\dfrac{f(x)}{x}$ en $-\infty$ et en $+\infty$. \\
+    Interpréter graphiquement les résultats.
+    \item a) Démontrer que $\forall x \in \mathbb{R}^*, f'(x) = \dfrac{1-g(x)}{x}$. \\
+    b) En déduire le signe de $f'(x)$ suivant les valeurs de $x$.
+    \item Déterminer les variations de $f$ puis dresser son tableau de variation.
+    \item a) Démontrer que l'équation $f(x) = 0$ admet deux solutions $\alpha$ et $\beta$ tels que $0,08 < \alpha < 0,09$ et $-0,06 < \beta < -0,05$. \\
+    b) Donner une valeur approchée de $\alpha$ à $10^{-3}$ près. \\
+    c) Construire $(C)$ avec précision.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie C}}
+\begin{enumerate}
+    \item Soit $(U_n)_{n \ge 1}$ la suite définie par $U_n = \int_{n}^{n+1} e^{-x} dx$ et $S_n = U_1 + U_2 + \dots + U_n$
+    \begin{enumerate}
+        \item Démontrer que $(U_n)_{n \ge 1}$ est une suite géométrique dont on précisera la raison et le premier terme.
+        \item Exprimer $U_n$ puis $S_n$ en fonction de $n$.
+    \end{enumerate}
+    \item a) Démontrer que la suite $(S_n)_{n \ge 1}$ est croissante. \\
+    b) Démontrer que $(S_n)_{n \ge 1}$ est majorée par $\dfrac{1}{e}$. \\
+    c) Les suites $(U_n)_{n \ge 1}$ et $(S_n)_{n \ge 1}$ sont-elles convergentes ? Justifier votre réponse.
+    \item Soit $(V_n)_{n \ge 1}$ la suite définie par $V_n = \int_{1}^{n+1} \ln |x| dx$
+\end{enumerate}
+
+\begin{comment}
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
