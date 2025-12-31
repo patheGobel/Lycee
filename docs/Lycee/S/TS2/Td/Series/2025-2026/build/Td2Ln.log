@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  31 DEC 2025 12:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  31 DEC 2025 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1112,25 +1112,66 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [7] [8{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [9] [10] [11] [12] [1
-3] [14]
+3]
+Underfull \hbox (badness 10000) in paragraph at lines 916--917
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 957--958
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
+
+ []
+
+[15] [16] [17]
+Overfull \hbox (13.16125pt too wide) in paragraph at lines 1223--1224
+[]\T1/lmr/m/n/12 Étudier les po-si-tions rel-a-tives de $\OT1/lmr/m/n/12 (\OML/
+lmm/m/it/12 C\OT1/lmr/m/n/12 )$ \T1/lmr/m/n/12 et $\OT1/lmr/m/n/12 (\OML/lmm/m/
+it/12 D\OT1/lmr/m/n/12 )$\T1/lmr/m/n/12 . (On pré-cis-era les co-or-don-nées de
+s points d'intersection
+ []
+
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1315--1316
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1346--1347
+
+ []
+
+[20] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/Td2Ln.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Td2Ln.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30383 strings out of 474222
- 605857 string characters out of 5748732
+ 30559 strings out of 474222
+ 607280 string characters out of 5748732
  1970975 words of memory out of 5000000
  51725 multiletter control sequences out of 15000+600000
  593708 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,423b,880s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,423b,882s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/pu
@@ -1142,10 +1183,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding
 /uzdr.pfb>
-Output written on build/Td2Ln.pdf (14 pages, 268526 bytes).
+Output written on build/Td2Ln.pdf (20 pages, 300130 bytes).
 PDF statistics:
- 629 PDF objects out of 1000 (max. 8388607)
- 550 compressed objects within 6 object streams
- 358 named destinations out of 1000 (max. 500000)
+ 867 PDF objects out of 1000 (max. 8388607)
+ 780 compressed objects within 8 object streams
+ 534 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
