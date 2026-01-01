@@ -1356,119 +1356,749 @@ On désigne par $A(t)$ l'aire de partie du plan délimitée par $(C)$, $(\Delta)
     \end{enumerate}
 \end{enumerate}
 
-\begin{comment}
+\begin{center}
+    \fbox{\textbf{\exo}}
+\end{center}
+
+\vspace{0.3cm}
+
+\noindent L'objet de ce problème est l'étude de la fonction $f$ dérivable sur $]0; +\infty[$ et définie par $f(x) = 2x - 3 + \dfrac{\ln x}{x}$. \\
+On note $(C)$ la courbe représentative de $f$ dans le plan muni du repère orthonormé $(O, I, J)$. Unité graphique est 2 cm.
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+Soit $g$ la fonction dérivable sur $]0; +\infty[$ et définie par $g(x) = 2x^2 + 1 - \ln x$.
+\begin{enumerate}
+    \item Étudier les variations de $g$ puis dresser son tableau de variation. (On ne demandera pas de calculer les limites).
+    \item Justifier que $\forall x \in ]0; +\infty[, g(x) > 0$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer la limite de $f$ en $+\infty$.
+        \item Déterminer la limite à droite en 0 de $f$ puis interpréter graphiquement le résultat.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Démontrer que la droite $(D)$ d'équation $y = 2x - 3$ est une asymptote à $(C)$ en $+\infty$.
+        \item Préciser la position de $(C)$ par rapport par $(D)$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Démontrer que pour tout nombre strictement positif $x$, $f'(x) = \dfrac{g(x)}{x^2}$.
+        \item Étudier les variations de $f$ puis dresser son tableau de variation.
+        \item Démontrer qu'une équation de la tangente $(T)$ à $(C)$ au point d'abscisse 1 est $y = 3x - 4$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Démontrer que l'équation $f(x) = 0$ admet une solution unique $\alpha$.
+        \item Justifier que : $1,3 < \alpha < 1,4$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C}} \\
+On pose $\varphi(x) = f(x) - (3x - 4)$ et $h(x) = -x^2 + 1 - \ln x$.
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Déterminer le sens de variation de $h$ sur $]0; +\infty[$.
+        \item Calculer $h(1)$ puis justifier que : $\forall x \in ]0; 1[, h(x) > 0$ ; $\forall x \in ]1; +\infty[, h(x) < 0$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Démontrer que $\forall x \in ]0; +\infty[, \varphi'(x) = \dfrac{h(x)}{x^2}$.
+        \item Étudier les variations de $\varphi$ puis en déduire le signe de $\varphi(x)$ suivant les valeurs de $x$.
+        \item Déterminer la position de $(C)$ par rapport à la tangente $(T)$.
+    \end{enumerate}
+    \item Tracer la courbe $(C)$, la droite $(D)$ et la tangente $(T)$. On prendra $\alpha = 1,35$.
+\end{enumerate}
 
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+Soit $g$ la fonction définie sur $]-\infty; 2[$ par : $g(x) = 2 - (2 - x)\ln(2 - x)$.
+\begin{enumerate}
+    \item Calculer les limites de $g$ en $2$ et en $-\infty$.
+    \item Calculer $g'(x)$ et étudier le sens de variation de $g$.
+    \item Dresser le tableau de variation de la fonction $g$.
+    \item Démontrer que l'équation $g(x) = 0$ admet une solution unique $\alpha$ dans l'intervalle $]-\infty; 2[$ et vérifier que $-0,4 < \alpha < -0,3$.
+    \item Déduire des questions précédentes que pour tout $x < \alpha, g(x) < 0$ et pour tout $x > \alpha, g(x) > 0$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+On considère la fonction $f$ définie sur $]-\infty; 2[$ par : $f(x) = x(1 - \ln(2 - x))$. \\
+On appelle $(C)$ sa courbe représentative dans le plan rapporté à un repère orthonormé $(O, I, J)$. Unité graphique 2 cm.
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer les limites de $f$ en $2$ et en $-\infty$ ; interpréter graphiquement si possible les résultats obtenus.
+        \item Calculer $\lim\limits_{x \to -\infty} \dfrac{f(x)}{x}$ puis interpréter graphiquement le résultat obtenu.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Démontrer que pour tout $x < 2, f'(x) = \dfrac{g(x)}{2 - x}$.
+        \item En utilisant les résultats de la partie A, déterminer les variations de $f$ puis dresser son tableau de variation.
+    \end{enumerate}
+    \item Justifier que $f(\alpha) = \dfrac{\alpha^2}{2 - \alpha}$.
+    \item Calculer $f(0)$ et $f(2 - e)$.
+    \item Tracer dans le repère $(O, I, J)$ la courbe $(C)$. (On prendra $\alpha \simeq -0,35$).
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C}} \\
+Soit $h$ la restriction de $f$ à l'intervalle $[0; 2[$.
+\begin{enumerate}
+    \item Justifier que $h$ réalise une bijection de $[0; 2[$ sur un intervalle $L$ à préciser.
+    \item Etablir le tableau de variation de $h^{-1}$, bijection réciproque de $h$.
+    \item Représenter dans le même repère $(C_{h^{-1}})$ la courbe de la bijection réciproque de $h$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+La fonction $f$ est définie sur $]0; +\infty[$ par $f(x) = x - 2 + \dfrac{1}{2} \ln x$.
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer les limites de $f$ aux bornes de l'ensemble de définition.
+        \item Calculer $f'(x)$ et étudier le sens de variation de $f$. (On ne demande pas de représentation graphique).
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que l'équation $f(x) = 0$ admet dans $]0; +\infty[$ une solution unique $\alpha$. Donner une valeur approchée de $\alpha$ à $10^{-2}$ près.
+        \item Etudier le signe de $f(x)$ lorsque $x$ décrit $]0; +\infty[$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+La fonction $g$ est définie sur $[0; +\infty[$ par 
+\[ \begin{cases} g(0) = 0 \\ g(x) = -\dfrac{7}{8}x^2 + x - \dfrac{1}{4}x^2 \ln x, \text{ pour tout réel } x > 0 \end{cases} \]
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Etudier la continuité et la dérivabilité de $g$ en $0$.
+        \item Déterminer la limite de $g$ en $+\infty$.
+    \end{enumerate}
+    \item Soit $g'$ la dérivée de la fonction $g$. \\
+    Pour tout réel $x > 0$ calculer $g'(x)$, puis vérifier que $g'(x) = xf\left( \frac{1}{x}\right) $.
+    \item 
+    \begin{enumerate}
+        \item En déduire que : si $x \in \left[ 0; \frac{1}{\alpha} \right[$, alors $g'(x) > 0$ et si $x \in \left] \frac{1}{\alpha}; +\infty \right[$, alors $g'(x) < 0$.
+        \item Dresser le tableau de variation de la fonction $g$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Donner les équations des tangentes à la courbe $(\Gamma)$ représentative de $g$ aux points d'abscisses 0 et 1.
+        \item Tracer $(\Gamma)$ et ses tangentes.
+    \end{enumerate}
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+Soit la fonction $g$ dérivable sur $]0; +\infty[$ et définie par : $g(x) = 1 + x \ln x$ ;
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Justifier que : $\forall x \in ]0; +\infty[, g'(x) = 1 + \ln x$.
+        \item Etudier les variations de $g$ puis dresser son tableau de variation. (On ne calculera pas les limites de $g$).
+    \end{enumerate}
+    \item En déduire que : $\forall x \in ]0; +\infty[, g(x) > 0$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+Soit $f$ la fonction définie sur $[0; +\infty[$ par : 
+$\begin{cases} f(0) = 0 \\ \forall x \in ]0; +\infty[, f(x) = \dfrac{x}{1 + x \ln x} \end{cases}$ \\
+On note $(C)$ la courbe représentative de $f$ dans le plan muni d'un repère orthonormé $(O, I, J)$. (Unité : 4cm)
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Etudier la continuité de $f$ en 0.
+        \item Etudier la dérivabilité de $f$ en 0.
+        \item Démontrer qu'une équation de la tangente $(T)$ à la courbe $(C)$ au point 0 est : $y = x$.
+        \item Démontrer que : \\
+        $(C)$ est au-dessus de $(T)$ sur $]0; 1[$. \\
+        $(C)$ est au-dessous de $(T)$ sur $]1; +\infty[$.
+    \end{enumerate}
+    \item Démontrer que la droite $(OI)$ est asymptote à $(C)$ en $+\infty$.
+    \item 
+    \begin{enumerate}
+        \item On suppose que $f$ est dérivable sur $]0; +\infty[$. \\
+        Démontrer que : $\forall x \in ]0; +\infty[, f'(x) = \dfrac{1 - x}{(1 + x \ln x)^2}$
+        \item En déduire les variations de $f$ et dresser son tableau de variation.
+    \end{enumerate}
+    \item Construire la droite $(T)$ et la courbe $(C)$ dans le plan muni d'un repère $(O, I, J)$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C}}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Justifier que : $\forall x \in ]0; +\infty[, f(x) \le 1$.
+        \item Démontrer que : $\forall x \in [1; e], 1 - \dfrac{1}{1+x} \le f(x)$.
+    \end{enumerate}
+    \item Soit $A$ l'aire en cm$^2$ de la partie du plan limitée par $(C)$, $(OI)$ et les droites d'équations $x = 1$ et $x = e$. \\
+    Démontrer que : $16(e - 1) + 16 \ln\left( \dfrac{2}{1+e}\right)  \le A \le 16(e - 1)$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent Dans ce problème, le plan est muni d'un repère $(O, I, J)$ ; Unité : $1$ cm. Les fonctions sont supposées dérivables sur leur ensemble de définition.
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie A :}} \\
+On considère la fonction $g$ définie de $\mathbb{R}$ vers $\mathbb{R}$ par : $g(x) = -x + \ln(x + \sqrt{1 + x^2})$, et $(C_g)$ sa représentation graphique.
+\begin{enumerate}
+    \item Démontrer l'ensemble de définition de $g$ est $\mathbb{R}$.
+    \item 
+    \begin{enumerate}
+        \item Démontrer que pour tout nombre réel $x$, $g'(x) = -1 + \dfrac{1}{\sqrt{1 + x^2}}$.
+        \item Etudier les variations de $g$.
+    \end{enumerate}
+    \item Calculer $g(0)$ et en déduire le signe de $g(x)$ suivant les valeurs de $x$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B :}} \\
+On considère la fonction $f$ définie de $\mathbb{R}$ vers $\mathbb{R}$ par : $f(x) = \ln(x + \sqrt{1 + x^2})$ et $(C_f)$ sa représentation graphique.
+\begin{enumerate}
+    \item Calculer la limite de $f$ en $+\infty$.
+    \item Démontrer que $f$ est impaire.
+    \item En déduire la limite de $f$ en $-\infty$.
+    \item En déduire la limite de $\dfrac{f(x)}{x}$ en $+\infty$ et en donner une interprétation graphique.
+    \item Pour tout nombre réel $x$, calculer $f'(x)$ et dresser le tableau de variation de $f$.
+    \item Déterminer une équation de la tangente $(T)$ à $(C_f)$ au point d'abscisse $0$.
+    \item Déterminer les positions relatives de $(C_f)$ et $(T)$.
+    \item Tracer $(C_f)$ et $(T)$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C :}}
+\begin{enumerate}
+    \item Démontrer que $f$ est une bijection de $\mathbb{R}$ vers $\mathbb{R}$.
+    \item Soit $f^{-1}$ la bijection réciproque de $f$. Exprimer $f^{-1}(x)$, pour tout nombre réel $x$.
+    \item Construire dans le repère $(O, I, J)$, en utilisant une couleur différente de celle utilisée pour $(C_f)$, la représentation graphique $(C')$ de $f^{-1}$ en indiquant la méthode de construction.
+    \item En utilisant une intégration par parties, calculer l'aire de la partie du plan délimitée par l'axe des abscisses, $(C_f)$ et les droites d'équations $x = 0$ et $x = 1$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+On considère la fonction numérique $g$ définie par : \\
+$g(x) = 2(x - 2) \ln(2 - x) + x - 2$ si $x \in ]-\infty; 2[$ et $g(2) = 0$.
+\begin{enumerate}
+    \item Etudier la continuité de $g$ en 2.
+    \item 
+    \begin{enumerate}
+        \item Déterminer les limites de $g$ aux bornes de l'ensemble de définition.
+        \item Etudier le sens de variation de $g$.
+        \item Dresser le tableau de variation de $g$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Calculer $g\left( 2 - \frac{1}{\sqrt{e}}\right) $.
+        \item En déduire que : \\
+        $\forall x \in \left] -\infty; 2 - \frac{1}{\sqrt{e}}\right[  , g(x) < 0$ et $\forall x \in \left] 2 - \frac{1}{\sqrt{e}}; 2\right[  , g(x) > 0$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+On considère la fonction numérique $f$ définie par :
+\[ \begin{cases} \forall x \in ]-\infty; 2[, f(x) = (x - 2)^2 \ln(2 - x) - 4 \\ \forall x \in [2; +\infty[, f(x) = (x^2 - 4x)e^{x-2} \end{cases} \]
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que $f$ est dérivable à gauche en 2.
+        \item Vérifier que $x^2 - 4x = (x - 2)^2 - 4$.
+        \item Montrer que $\lim\limits_{x \to 2} \dfrac{e^{x-2} - 1}{x - 2} = 1$.
+        \item En déduire que $f$ est dérivable à droite en 2.
+        \item $f$ est-elle dérivable en 2 ?
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que : $\forall x \in ]-\infty; 2[, f'(x) = g(x)$ et $\forall x \in ]2; +\infty[, f'(x) = (x^2 - 2x - 4)e^{x-2}$.
+        \item Etudier le sens de variation de $f$.
+        \item Calculer les limites de $f$ aux bornes de son ensemble de définition.
+        \item Dresser le tableau de variation de $f$.
+    \end{enumerate}
+    \item On désigne par $(C)$ la représentation graphique de $f$ dans un repère orthonormé $(O, I, J)$. Et soit $h$ la restriction de $f$ à l'intervalle $]-\infty; 1[$.
+    \begin{enumerate}
+        \item Montrer que $h$ réalise une bijection de $]-\infty; 1[$ vers un intervalle $K$ à préciser.
+        \item Soit $h^{-1}$ la réciproque de $h$. \\
+        $h^{-1}$ est-elle dérivable en $-4$ ? Si oui, calculer alors $(h^{-1})'(-4)$.
+        \item Déterminer une équation de la tangente $(T)$ à $(C_{h^{-1}})$ au point d'abscisse $-4$.
+        \item Construire les courbes $(C)$, $(C_{h^{-1}})$ et la droite $(T)$ dans le même repère.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C :}} \\
+Soit le nombre réel $a$ tel que : $2 - \frac{1}{\sqrt{e}} < a < 2$.
+\begin{enumerate}
+    \item Calculer l'aire $A(a) = \int_{2-\frac{1}{\sqrt{e}}}^{a} f(x) dx$ et déduire $\lim\limits_{a \to 2} A(a)$.
+    \item Montrer que la fonction $F(x) = (x^2 - 6x + 6)e^{x-2}$ est une primitive de $f$ sur $]2; +\infty[$.
+    \item Calculer l'aire en cm$^2$ du domaine limité par les droites d'équations $x = 2$, $x = 4$, l'axe $(OI)$ et la courbe $(C)$.
+    \item En déduire l'aire en cm$^2$ du domaine limité par les droites d'équations $x = 4$, $x = 2 - \frac{1}{\sqrt{e}}$, l'axe $(OI)$ et la courbe $(C)$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+On considère la fonction $f$ définie sur $[0; +\infty[$ dont la représentation graphique $(C)$ est donnée sur la feuille annexe. \\
+On admet que $f$ est définie sur $]0; +\infty[$ par $\begin{cases} \forall x > 0, f(x) = 2x(a(\ln x)^2 + b\ln x + c) \\ \quad\quad\quad\quad f(0) = 0 \end{cases}$
+
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Calculer en fonction de $a, b$ et $c$, la dérivée de la fonction $f$.
+        \item Déterminer, à l'aide du graphique, les valeurs de : $f'\left( \frac{1}{e}\right) $, $f'\left( \sqrt{e}\right) $ et $f(e)$.
+        \item En déduire que : $\forall x \in ]0; +\infty[, f(x) = 2x(2(\ln x)^2 - 3\ln x + 2)$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Justifier que : $\lim\limits_{x \to 0} x(\ln x)^2 = 0$ et en déduire que $f$ est continue en 0.
+        \item Etudier la dérivabilité de $f$ en 0 puis interpréter graphiquement le résultat.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Calculer la limite de $f$ en $+\infty$.
+        \item Démontrer que : $\forall x \in ]0; +\infty[, f'(x) = 2(1 + \ln x)(-1 + 2\ln x)$.
+        \item Etudier le signe de $f'(x)$ et en déduire le sens de variation de $f$.
+        \item Dresser le tableau de variation de $f$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+Soit $g$ la fonction définie sur $]0; +\infty[$ par $g(x) = \dfrac{1}{e^{2x}-1}$. \\
+On note $(C_g)$ sa courbe dans le plan muni d'un repère orthonormé $(O, I, J)$. Unité graphique : 2cm.
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Calculer les limites de $g$ en 0 et en $+\infty$.
+        \item Démontrer que : $\forall x \in ]0; +\infty[, e^{2x} - 1 > 0$.
+        \item Calculer $g'(x)$.
+        \item Etudier le sens de variations de $g$ et dresser son tableau de variations.
+    \end{enumerate}
+    \item Soit $h$ la fonction définie sur $]0; +\infty[$ par : $h(x) = f(x) - g(x)$. \\
+    On admet que $h$ est continue et strictement croissante sur $]0; +\infty[$.
+    \begin{enumerate}
+        \item Démontrer que l'équation $f(x) = g(x)$ admet une unique solution $\alpha \in [0,1; 0,3]$.
+        \item Etudier le signe de $h(x)$ et déduire la position relative de $(C_f)$ et $(C_g)$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Construire $(C_g)$ sur la feuille annexe.
+    \end{enumerate}
+\end{enumerate}
+\begin{enumerate}
+    \setcounter{enumi}{3} % Reprend à la question 4
+    \item \begin{enumerate}
+        \item Démontrer que : $\forall x \in ]0; +\infty[, g(x) = \dfrac{e^{2x}}{e^{2x}-1} - 1$.
+        \item En déduire une primitive $G$ de $g$ sur $]0; +\infty[$.
+        \item Calculer l'aire $A$, en cm$^2$, de la partie du plan délimitée par $(C_g)$, l'axe $(OI)$ et les droites d'équations $x = \ln 2$ et $x = 1$. (Annexe à réaliser)
+        \begin{figure}[h] % [h] pour "here" (ici)
+    \centering
+    \includegraphics[width=0.8\textwidth]{tdln2.png} 
+    \caption{Représentation graphique de la fonction $f$ (Annexe)}
+    \label{fig:graphique_f}
+\end{figure}
+    \end{enumerate}
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A : Résolution d'une équation différentielle.}} \\
+Soit l'équation différentielle $(E') : f' + f = \left(\frac{e-1}{2}\right)x^2 + (e-2)x - 1$.
+\begin{enumerate}
+    \item Résoudre sur $\mathbb{R}$ l'équation différentielle $(E) : f' + f = 0$.
+    \item Déterminer un polynôme $P$ du second degré solution de l'équation différentielle $(E')$.
+    \item Montrer qu'une fonction numérique $f$ est une solution de l'équation différentielle $(E')$ si et seulement si la fonction numérique $f - P$ est solution de l'équation différentielle $(E)$.
+    \item Démontrer que les solutions de l'équation différentielle $(E')$ sont les fonctions $f_k$ définies sur $\mathbb{R}$ par : $f_k(x) = ke^{-x} + \left(\frac{e-1}{2}\right)x^2 - x ; k \in \mathbb{R}$.
+    \item Trouver la solution $f$ de l'équation différentielle $(E')$ telle que $f(0) = 1$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B : Etude d'une fonction auxiliaire $g$ et de la fonction $f$.}} \\
+Soit la fonction $f$ définie sur $\mathbb{R}$ par : $f(x) = e^{-x} + \left(\frac{e-1}{2}\right)x^2 - x$. \\
+On note $(C_f)$ sa représentation graphique dans le plan muni d'un repère orthogonal $(O, I, J)$ où $OI=2$ cm et $OJ = 4$ cm. \\
+Soit la fonction $g$ définie sur $\mathbb{R}$ par : $g(x) = -e^{-x} + (e-1)x - 1$.
+\begin{enumerate}
+    \item Calculer les limites de $g$ en $-\infty$ et en $+\infty$.
+    \item \begin{enumerate}
+        \item Etudier le sens de variation de $g$.
+        \item Dresser le tableau de variation de $g$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Montrer que l'équation $g(x) = 0$ admet une solution unique $\alpha \in \mathbb{R}$.
+        \item Vérifier que $0,8 < \alpha < 0,9$ puis déduire la valeur approchée de $\alpha$ à $10^{-1}$ près.
+    \end{enumerate}
+    \item Montrer que $\forall x \in ]-\infty; \alpha[, g(x) < 0$ et $\forall x \in ]\alpha; +\infty[, g(x) > 0$.
+    \item \begin{enumerate}
+        \item Calculer les limites de $f$ en $-\infty$ et en $+\infty$.
+        \item Interpréter graphiquement les résultats obtenus.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Calculer la limite de $\dfrac{f(x)}{x}$ en $-\infty$ et en $+\infty$.
+        \item Interpréter graphiquement les résultats obtenus.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que : $\forall x \in \mathbb{R}, f'(x) = g(x)$.
+        \item En déduire le sens de variation de $f$.
+        \item Dresser le tableau de variation de $f$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Déterminer les coordonnées du point B d'intersection de la courbe $(C_f)$ avec l'axe (OJ) puis donner une équation de la tangente $(T)$ à la courbe $(C_f)$ au point d'ordonnée 1.
+        \item Tracer la courbe $(C_f)$ ainsi que la tangente $(T)$.
+        \item Calculer à $10^{-2}$ près l'aire $A$ de la partie du plan délimitée par la courbe $(C_f)$, l'axe des abscisses $(OI)$ et les droites d'équations $x = 0$ et $x = 1$.
+    \end{enumerate}
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent Le plan est muni d'un repère orthonormé $(O, I, J)$ avec $OI = 2$cm.
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+Soit $h$ la fonction dérivable et définie sur $\mathbb{R}$ par $h(x) = -\dfrac{2x^2}{(x^2+1)^2} + \ln(x^2 + 1)$.
+\begin{enumerate}
+    \item Calculer les limites de $h$ en $-\infty$ et $+\infty$.
+    \item Montrer que $\forall x \in \mathbb{R}, h'(x) = \dfrac{-2x(1-x^2)}{(x^2+1)^3}$.
+    \item Etudier le sens de variation $h$ et dresser son tableau de variation.
+    \item \begin{enumerate}
+        \item Justifier que sur $]0; +\infty[$ l'équation $h(x) = 0$ admet une unique solution $\alpha$.
+        \item Montrer que $1,98 < \alpha < 1,99$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Etudier la parité de $h$.\\ 
+        \item En déduire que $-\alpha$ est une racine de $h$.
+        \[ \begin{cases} \forall x \in ]-\infty; -\alpha[ \cup ]\alpha; +\infty[, h(x) > 0. \\ \forall x \in ]-\alpha; 0[ \cup ]0; \alpha[, h(x) < 0. \\ \forall x \in \{-\alpha; 0; \alpha\}, h(x) = 0. \end{cases} \]
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+Soit $g$ la fonction numérique définie sur $\mathbb{R}$ par 
+$\begin{cases} g(x) = \dfrac{\ln(x^2+1)}{3x} \text{ si } x \neq 0 \\ g(0) = 0 \end{cases}$ et $(C_g)$ est sa courbe représentative dans $(O, I, J)$.
+\begin{enumerate}
+    \item Montrer que $g$ est impaire.
+    \item \begin{enumerate}
+        \item Calculer la limite à droite de $g$ en 0. (On pourra poser $X=x^2$)
+        \item En déduire la limite à gauche de $g$ en 0 et que $g$ est continue en 0.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Montrer que $g$ est dérivable en 0 et que $g'(0) = \frac{1}{3}$.
+        \item Donner une équation de la tangente $(T)$ à $(C_g)$ au point d'abscisse 0.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Montrer que $\forall x \in \mathbb{R}^*, g'(x) = \dfrac{2\ln|x|}{3x} + \dfrac{1}{3x}\ln\left( 1 + \dfrac{1}{x^2}\right) $.
+        \item En déduire les limites en $-\infty$ et en $+\infty$ de $g$.
+        \item Interpréter graphiquement ces limites.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Justifier que $\forall x \in \mathbb{R}^*, g'(x) = \dfrac{-h(x)}{3x^2}$.
+        \item Déterminer le sens de variation de $g$ et dresser son tableau de variation.
+        \item Justifier que $g(\alpha) = \dfrac{2\alpha}{3(\alpha^2+1)}$ puis en déduire $g(-\alpha)$ en fonction de $\alpha$.
+        \item Déterminer $g([-1; 2])$
+    \end{enumerate}
+    \item Construire $(T)$ et $(C_g)$. On prendra $\alpha = 1,98$.
+    \item \begin{enumerate}
+        \item Montrer que $\forall x \in [1; +\infty[, \dfrac{2\ln x}{x} \le \dfrac{\ln(x^2+1)}{x} \le \dfrac{2\ln x}{x} + \dfrac{\ln 2}{x}$.
+        \item En déduire que : $\dfrac{2}{3e} \le g(e) \le \dfrac{2+\ln 2}{3e}$.
+    \end{enumerate}
+    \item Soit $f$ la restriction de $g$ à l'intervalle $K = ]-\alpha; 0[$.
+    \begin{enumerate}
+        \item Justifier que $f$ réalise une bijection de $K$ sur un intervalle $L$ à préciser.
+        \item Calculer $f(-1)$ puis justifier que la réciproque $f^{-1}$ de $f$ est dérivable en $\ln(\sqrt[3]{2})$.
+    \end{enumerate}
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent Le plan est muni d'un repère orthonormé $(O, I, J)$. Unité graphique : 4cm
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie A : Etude d'une fonction auxiliaire g}} \\
+On considère la fonction $g$ définie sur $\mathbb{R} \setminus \{-1; 0\}$ par : 
+\[ g(x) = \ln \left| 1 + \frac{1}{x} \right| - \frac{1}{x + 1} \]
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Montrer que : 
+        $\begin{cases} \text{si } x \in ]-\infty; -1[ \cup ]0; +\infty[, g(x) = \ln \left( 1 + \frac{1}{x} \right) - \frac{1}{x+1} \\ \text{si } x \in ]-1; 0[, g(x) = \ln \left( -1 - \frac{1}{x} \right) - \frac{1}{x+1} \end{cases}$
+        \item Déterminer les limites de $g$ en $-\infty, +\infty$ et en 0. (On admettra que la limite de $g$ en $-1$ à gauche est égale à $+\infty$ et la limite de $g$ en $-1$ à droite est égale à $-\infty$)
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que $\forall x \in D_g, g'(x) = -\frac{1}{x(x+1)^2}$.
+        \item Etudier le sens de variation de $g$ et dresser son tableau de variation.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que l'équation $g(x) = 0$ admet une unique solution $\alpha$ appartenant à l'intervalle $\left]  -\frac{1}{2}; -\frac{1}{8}\right[   $.
+        \item Déduire des questions précédentes que : 
+        $\begin{cases} \text{si } x \in ]-\infty; -1[ \cup ]\alpha; 0[ \cup ]0; +\infty[, g(x) \ge 0 \\ \text{si } x \in ]-1; \alpha[, g(x) < 0 \end{cases}$
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B : Etude de la fonction principale f.}} \\
+On considère la fonction $f$ définie sur $]-\infty; -1[ \cup ]-1; +\infty[$ par 
+\[ \begin{cases} f(x) = x \ln \left| 1 + \frac{1}{x} \right| \text{ si } x \neq 0 \\ f(0) = 0 \end{cases} \]
+Et on note $(C)$ sa courbe représentative dans le repère $(O, I, J)$
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Ecrire $f$ sans le symbole de la valeur absolue.
+        \item Déterminer les limites de $f$ en $-\infty, +\infty$ et $-1$. (On pourra poser $X = \frac{1}{x}$)
+        \item Préciser les asymptotes de $(C)$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que $f$ est continue en 0.
+        \item Etudier la dérivabilité de $f$ en 0. Interpréter graphiquement le résultat.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Vérifier que $\forall x \in D_g \setminus \{0\}, f'(x) = g(x)$.
+        \item Démontrer que $f(\alpha) = \frac{\alpha}{\alpha + 1}$, $\alpha$ étant le réel défini dans la partie A - 3)
+        \item Etudier le sens de variation de $f$ ; puis donner le tableau de variation de $f$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Déterminer les coordonnées des points d'intersection de $(C)$ avec la droite $(OI)$.
+        \item Donner une équation de la tangente $(T)$ à $(C)$ au point d'abscisse $-\frac{1}{2}$.
+    \end{enumerate}
+    \item Construire avec soins $(T)$, $(C)$ et ses asymptotes. On prendra $\alpha = -0,25$ et $f(\alpha) = -0,4$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+On considère la fonction définie sur $]0; +\infty[$ par $g(x) = x - 3 + \ln x$.
+\begin{enumerate}
+    \item Calculer les limites aux bornes de l'ensemble de définition de $g$.
+    \item \begin{enumerate}
+        \item On admet que $g$ est dérivable sur $]0; +\infty[$, calculer $g'(x)$.
+        \item Étudier le sens de variation de $g$ et dresser son tableau de variation.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que l'équation $g(x) = 0$ admet une unique solution $\alpha$ telle que $2,20 < \alpha < 2,21$.
+        \item Démontrer que $\forall x \in ]0; \alpha[, g(x) < 0$ et $\forall x \in ]\alpha; +\infty[, g(x) > 0$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+Soit la fonction $f$ définie sur $]0; +\infty[$ par $f(x) = \dfrac{2-2x}{x} + \dfrac{x-1}{x}\ln x$ de courbe $(C)$ dans un repère orthonormé $(O, I, J)$. (Unité : 2 cm)
+\begin{enumerate}
+    \item Calculer la limite de $f$ en 0. Interpréter graphiquement le résultat.
+    \item Calculer $\lim\limits_{x \to +\infty} f(x)$ et $\lim\limits_{x \to +\infty} \dfrac{f(x)}{x}$. Interpréter graphiquement le résultat.
+    \item On admet que $f$ est dérivable sur $]0; +\infty[$.
+    \begin{enumerate}
+        \item Calculer $f'(x)$ et vérifier que $f'(x) = \dfrac{g(x)}{x^2}$ pour tout $x$ de $]0; +\infty[$.
+        \item En déduire le sens de variation de $f$ et dresser son tableau de variation.
+    \end{enumerate}
+    \item En remarquant que $\forall x \in ]0; +\infty[, f(x) = \left(1 - \dfrac{1}{x}\right)(-2 + \ln x)$, déterminer les coordonnées des points d'intersection de $(C)$ avec l'axe des abscisses.
+    \item Écrire l'équation de la tangente $(T)$ à $(C)$ au point d'abscisse 1.
+    \item Démontrer que $f(\alpha) = -\dfrac{(\alpha-1)^2}{\alpha}$.
+    \item Étudier le signe de $f(x)$ suivant les valeurs de $x$.
+    \item Construire $(C)$ avec ses asymptotes et $(T)$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C}} \\
+Soit $F$ la primitive de $f$ sur $]0; +\infty[$ qui s'annule pour $x = 1$. \\
+On appelle $(\Gamma)$ la courbe représentative de $F$ relativement au repère $(O, I, J)$.
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Sans calculer $F(x)$, étudier les variations de $F$ sur $]0; +\infty[$.
+        \item Que peut-on dire des tangentes à $(\Gamma)$ en ses points d'abscisses 1 et $e^2$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item $x$ étant un réel strictement positif, calculer l'intégrale $\int_{1}^{x} \ln t \, dt$ (On pourra utiliser une intégration par parties).
+        \item Démontrer que, pour tout $x$ strictement positif $f(x) = \ln x - \dfrac{\ln x}{x} + \dfrac{2}{x} - 2$.
+        \item En déduire l'expression de $F(x)$ en fonction de $x$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Sachant que $\lim\limits_{x \to 0} (x \ln x) = 0$ déterminer la limite de $F$ en 0.
+        \item Démontrer que, pour tout $x$ strictement supérieur à 1\\
+        $F(x) = x \ln x \left( 1 - \dfrac{1}{2} \dfrac{\ln x}{x} + \dfrac{2}{x} - \dfrac{3}{\ln x} \right) + 3$. En déduire la limite de $F$ en $+\infty$.
+        \item Dresser le tableau de variation de $F$.
+        \item Tracer $(\Gamma)$ sur le même graphique que $(C)$.
+    \end{enumerate}
+    \item Calculer en $cm^2$, l'aire du domaine limité par la courbe $(C)$, l'axe des abscisses et les droites d'équations respectives $x = 1$ et $x = e^2$.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+On considère la fonction numérique $g$ définie par : $g(x) = 4e^{-x} - (1 + e^{-x})^2$.
+\begin{enumerate}
+    \item Etudier les variations de $g$. (On ne calculera pas de limites aux bornes de son ensemble de définition).
+    \item En déduire le signe de $g(x)$ suivant les valeurs de $x$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+On considère la fonction numérique $f$ définie par : $f(x) = \dfrac{e^x}{1+e^x} - \dfrac{1}{4}x - \dfrac{1}{2}$.
+\begin{enumerate}
+    \item Calculer les limites de $f$ aux bornes de son ensemble de définition.
+    \item On admet que $f$ est dérivable et continue sur $\mathbb{R}$.
+    \begin{enumerate}
+        \item Montrer que : $\forall x \in \mathbb{R}, f'(x) = \dfrac{g(x)}{4(1+e^{-x})^2}$.
+        \item Etudier le sens de variation de $f$.
+        \item Dresser le tableau de variation de $f$.
+        \item Calculer $f(0)$ puis étudier le signe de $f(x)$ suivant les valeurs de $x$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie C}} \\
+On considère la fonction numérique $h$ définie par : $h(x) = \dfrac{e^x}{1+e^x}$ et $(C_h)$ sa courbe représentative dans un repère orthonormé $(O, I, J)$. (Unité graphique : 4cm)
+\begin{enumerate}
+    \item Calculer les limites de $h$ aux bornes de son ensemble de définition, puis interpréter graphiquement les résultats.
+    \item Montrer que le point $S\left( 0; \frac{1}{2}\right) $ est centre de symétrie de la courbe $(C_h)$.
+    \item Etudier le sens de variation de $h$ et dresser son tableau de variation.
+    \item Donner une équation de la tangente $(T)$ à la courbe $(C_h)$ au point $S$.
+    \item Etudier les positions relatives de la courbe $(C_h)$ par rapport à la tangente $(T)$.
+    \item Justifier que $h$ réalise une bijection de $\mathbb{R}$ vers un intervalle $K$ à préciser. \\
+    Soit $h^{-1}$ la bijection réciproque de $h$.
+    \begin{enumerate}
+        \item Justifier que $h^{-1}$ est dérivable en $\frac{1}{2}$ et calculer $(h^{-1})'\left( \frac{1}{2}\right) $.
+        \item Dresser le tableau de variation de $h^{-1}$.
+        \item Justifier que la courbe $(C_{h^{-1}})$ admet des asymptotes dont on précisera la nature et les équations.
+        \item Déterminer l'expression explicite de $h^{-1}$.
+    \end{enumerate}
+    \item Construire les courbes $(C_h)$ et $(C_{h^{-1}})$ et leurs asymptotes respectives dans le même repère.
+\end{enumerate}
+
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
+
+\vspace{0.3cm}
+
+\noindent \underline{\textbf{Partie A}} \\
+$a, b$ et $c$ sont des nombres réels. Soit la fonction $h$ définie sur $\mathbb{R}$ par $h(x) = (ax + b)e^{-x} + c$ dont le tableau de variation se présente comme suit :
 \begin{center}
-    \fbox{\textbf{\exo}}
+\begin{tikzpicture}
+    % espcl=2 définit l'espace entre les colonnes
+    \tkzTabInit[espcl=4]{$x$ / .9 , $h'(x)$ / .9, $h$ / 3}{$-\infty$, $2$, $+\infty$}
+    
+    % Ligne de la dérivée : s'annule en 2
+    \tkzTabLine{, +, z, -, }
+    
+    % Ligne de la fonction : valeurs aux bornes et extremum
+    \tkzTabVar{-/ $-\infty$, +/ $2+e^{-2}$, -/ $2$}
+    
+    % Placement des valeurs intermédiaires sur les flèches
+    % \tkzTabVal{Début}{Fin}{Position(0 à 1)}{Valeur_X}{Valeur_Y}
+    \tkzTabVal{1}{2}{0.3}{0}{$1$} % Place le 1 à environ 1/3 de la montée
+    \tkzTabVal{1}{2}{0.7}{1}{$2$} % Place le 2 à environ 2/3 de la montée
+\end{tikzpicture}
 \end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
-\begin{center}
-    \fbox{\textbf{\exo}}
-\end{center}
+
+\begin{enumerate}
+    \item On note $h'$ la dérivée de $h$. Calculer $h'(x)$ en fonction de $a$ et $b$.
+    \item En utilisant les données numériques du tableau de variation de $h$ :
+    \begin{enumerate}
+        \item Déterminer les limites de $h$ en $-\infty$ et en $+\infty$.
+        \item Démontrer que $a = 1$, $b = -1$ et $c = 2$. \\
+        Ainsi donc dans la suite du problème $h(x) = (x - 1)e^{-x} + 2$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que l'équation $h(x) = 0$ admet une unique solution $\alpha$ dans $]-1; 0[$.
+        \item En déduire le signe de $h(x)$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\noindent \underline{\textbf{Partie B}} \\
+On note $(C_f)$ la courbe représentative de la fonction $f$ par $f(x) = 2x - 1 - xe^{-x}$. \\
+(Unité : 2 cm)
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Calculer la limite de $f$ en $+\infty$.
+        \item Démontrer que la droite $(D)$ d'équation $y = 2x - 1$ est asymptote à $(C_f)$ en $+\infty$.
+        \item Préciser les positions de $(C_f)$ par rapport à $(D)$.
+    \end{enumerate}
+    \item Calculer les limites en $-\infty$ de $f(x)$ et de $\dfrac{f(x)}{x}$. En donner une interprétation graphique.
+    \item \begin{enumerate}
+        \item Démontrer que $f'(x) = h(x)$.
+        \item Donner le sens de variation de $f$ puis dresser le tableau de variation de $f$.
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item Démontrer que $f(\alpha) = 2\alpha + 1 + \dfrac{2\alpha}{\alpha - 1}$.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{comment}
 \begin{center}
     \fbox{\textbf{\exo}}
 \end{center}
