@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  2 JAN 2026 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  2 JAN 2026 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1221,7 +1221,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 2786--2788
 
  []
 
-[45] [46] 
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 2905--2907
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 2943--2945
+
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 2970--2972
+
+ []
+
+[48] [49] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/Td2Ln.aux)
  ***********
@@ -1236,8 +1251,8 @@ Package rerunfilecheck Info: File `Td2Ln.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31736 strings out of 474222
- 621279 string characters out of 5748732
+ 31809 strings out of 474222
+ 621936 string characters out of 5748732
  1970975 words of memory out of 5000000
  52256 multiletter control sequences out of 15000+600000
  593708 words of font info for 67 fonts, out of 8000000 for 9000
@@ -1254,10 +1269,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding
 /uzdr.pfb>
-Output written on build/Td2Ln.pdf (46 pages, 854600 bytes).
+Output written on build/Td2Ln.pdf (49 pages, 867780 bytes).
 PDF statistics:
- 1764 PDF objects out of 2073 (max. 8388607)
- 1640 compressed objects within 17 object streams
- 1180 named destinations out of 1200 (max. 500000)
+ 1865 PDF objects out of 2073 (max. 8388607)
+ 1737 compressed objects within 18 object streams
+ 1253 named destinations out of 1440 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
