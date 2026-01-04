@@ -1,0 +1,292 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Calcul vectoriel}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\textbf{\underline{Echauffement :}}
+
+$ABC$ est un triangle ; $I$ milieu de $[AB]$, $\overrightarrow{CJ} = \frac{1}{4} \overrightarrow{AC}$ et $\overrightarrow{CK} = \frac{1}{6} \overrightarrow{CB}$.
+
+\begin{enumerate}
+    \item Faire la figure.
+    \item Montrer que $I$, $J$ et $K$ sont alignés.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $ABCD$ un parallélogramme.
+
+\begin{enumerate}
+    \item Construire les points $H$, $K$ et $E$ définis par\\
+    $\overrightarrow{AH} = \frac{3}{4} \overrightarrow{AB}$ ; $\overrightarrow{AK} = -\frac{3}{4} \overrightarrow{AD}$ ; $\overrightarrow{BE} = \frac{1}{8} \overrightarrow{BD}$.
+    
+    \item Démontrer que $(KH)$ est parallèle à $(AC)$ puis, montrer que $E \in (KH)$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Dans la figure ci-dessous $ABCD$ est un parallélogramme de centre $I$, $B$ est le milieu du segment $[AE]$, $G$ est le centre de gravité du triangle $ACE$ et $\overrightarrow{BF} = 2\overrightarrow{BA} + \overrightarrow{AD}$.
+
+\begin{center}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{vec1.png}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\end{center}
+
+\begin{enumerate}
+    \item Déterminer les relations reliant $\overrightarrow{AE}$ et $\overrightarrow{CD}$, $\overrightarrow{CG}$ et $\overrightarrow{CB}$ puis $\overrightarrow{EI}$ et $\overrightarrow{EG}$.
+    
+    \item Calculer $\overrightarrow{IE} + \overrightarrow{IF}$, puis montrer que $E$, $G$, $I$ et $F$ sont alignés.
+\end{enumerate}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\fbox{\textbf{\exo}}
+$ABC$ est un triangle quelconque.
+
+\begin{enumerate}
+    \item Construire $M$ et $N$ tels que :\\
+    $ \overrightarrow{AM} = -\frac{2}{3} \overrightarrow{AB} \quad \text{et} \quad \overrightarrow{AN} = -\frac{2}{3} \overrightarrow{AC} $
+    
+    \item Démontrer que les droites $(MN)$ et $(BC)$ sont parallèles.
+    
+    \item Soit $S$ et $T$ les milieux respectifs de $[BC]$ et $[MN]$. Démontrer que $A, S$ et $T$ sont alignés.
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle tel que : $AB = 3,5\text{cm}$ ; $AC = 4\text{cm}$ et $BC = 4,5\text{cm}$.
+
+\begin{enumerate}
+    \item Faire une figure.
+    \item Placer les points $E, F$ et $I$ définis par :
+    \[ \overrightarrow{BE} = \frac{1}{3} \overrightarrow{BC} \quad ; \quad \overrightarrow{BF} = \frac{2}{3} \overrightarrow{BC} \quad \text{et } I \text{ milieu de } [AC]. \]
+    
+    \item Démontrer que : $\overrightarrow{IF} = \frac{1}{3} \overrightarrow{AB} + \frac{1}{6} \overrightarrow{AC}$\\ et $\overrightarrow{AE} = \frac{2}{3} \overrightarrow{AB} + \frac{1}{3} \overrightarrow{AC}$.
+    
+    \item \begin{enumerate}
+        \item Exprimer $\overrightarrow{IF}$ en fonction de $\overrightarrow{AE}$.
+        \item Que peut-on en déduire pour les vecteurs $\overrightarrow{IF}$ et $\overrightarrow{AE}$.
+    \end{enumerate}
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABCD$ un parallélogramme.
+
+\begin{enumerate}
+    \item Placer les points $M$, $N$, $P$ et $Q$ tels que : \\
+    $2\overrightarrow{AM} = 3\overrightarrow{AB}$ ; $2\overrightarrow{BN} = 3\overrightarrow{BC}$ ; \\
+    $2\overrightarrow{CP} = 3\overrightarrow{CD}$ et $2\overrightarrow{DQ} = 3\overrightarrow{DA}$.
+    
+    \item Exprimer $\overrightarrow{BM}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{DP}$ en fonction $\overrightarrow{DC}$.
+    
+    \item \begin{enumerate}
+        \item Exprimer $\overrightarrow{MN}$ et $\overrightarrow{QP}$ en fonction de $\overrightarrow{AB}$ et de $\overrightarrow{AC}$
+        \item En déduire la nature du quadrilatère $MNPQ$
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\noindent Soit $ABCD$ un parallélogramme quelconque.
+
+\begin{enumerate}
+    \item Construire les points $I$ ; $J$ ; $K$ et $L$\\ définis par : $I$ et $J$ milieux respectifs de $[AB]$ et $[AD]$ ; $4\overrightarrow{CK} + \overrightarrow{CA} = \vec{0}$ et $6\overrightarrow{CL} - \overrightarrow{CB} = \vec{0}$.
+    
+    \item Démontrer que les droites $(BD)$ et $(IJ)$ sont parallèles.
+    
+    \item L'objectif est de montrer que les points $I$ ; $K$ et $L$ sont alignés.
+    \begin{enumerate}
+        \item Exprimer le vecteur $\overrightarrow{KI}$ en fonction des vecteurs $\overrightarrow{BA}$ et $\overrightarrow{BC}$.
+        \item Exprimer le vecteur $\overrightarrow{KL}$ en fonction des vecteurs $\overrightarrow{BA}$ et $\overrightarrow{BC}$.
+        \item Conclure.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle quelconque, $I$ milieu de $[BC]$.
+
+\begin{enumerate}
+    \item Construire les points $D$ et $E$ définis par :
+    \[ \overrightarrow{CD} = \frac{1}{2} \overrightarrow{AB} \quad \text{et} \quad \overrightarrow{BE} = \frac{1}{2} \overrightarrow{AC} \]
+    
+    \item Soit $J$ le milieu du segment $[DE]$.
+    \begin{enumerate}
+        \item Démontrer que $\overrightarrow{BE} + \overrightarrow{CD} = \overrightarrow{AI}$
+        \item Démontrer que $\overrightarrow{BE} + \overrightarrow{CD} = 2 \overrightarrow{IJ}$
+        \item Que peut-on en déduire pour les points $A$, $I$ et $J$ ?
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1cm}
+
+\fbox{\textbf{\exo}}
+
+Soit $ABC$ un triangle quelconque, $A'$ milieu de $[BC]$ et $B'$ milieu de $[AC]$ ; $O$ le centre du cercle circonscrit au triangle $ABC$ et $G$ son centre de gravité.
+
+\begin{enumerate}
+    \item Placer le point $H$ tel que :
+    \[ \overrightarrow{OH} = \overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} \]
+    
+    \item Montrer que : $\overrightarrow{AH} = 2 \overrightarrow{OA'}$ et $\overrightarrow{BH} = 2 \overrightarrow{OB'}$. \\
+    Que représente $H$ pour le triangle $ABC$ ?
+    
+    \item Quelle est la nature du quadrilatère $AHA'O$ ?
+    
+    \item Démontrer que $G \in (OH)$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle quelconque, $I$ milieu de $[BC]$.
+\begin{enumerate}
+    \item Construire les points $D$ et $E$ définis par :
+    \[ \overrightarrow{CD} = \frac{1}{2} \overrightarrow{AB} \quad \text{et} \quad \overrightarrow{BE} = \frac{1}{2} \overrightarrow{AC} \]
+    \item Soit $J$ le milieu du segment $[DE]$.
+    \begin{enumerate}
+        \item Démontrer que $\overrightarrow{BE} + \overrightarrow{CD} = \overrightarrow{AI}$
+        \item Démontrer que $\overrightarrow{BE} + \overrightarrow{CD} = 2 \overrightarrow{IJ}$
+        \item Que peut-on en déduire pour les points $A$, $I$ et $J$ ?
+    \end{enumerate}
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle quelconque, $A'$ milieu de $[BC]$ et $B'$ milieu de $[AC]$ ; $O$ le centre du cercle circonscrit au triangle $ABC$ et $G$ son centre de gravité.
+\begin{enumerate}
+    \item Placer le point $H$ tel que :
+    \[ \overrightarrow{OH} = \overrightarrow{OA} + \overrightarrow{OB} + \overrightarrow{OC} \]
+    \item Montrer que : $\overrightarrow{AH} = 2\overrightarrow{OA'}$ et $\overrightarrow{BH} = 2\overrightarrow{OB'}$. \\
+    Que représente $H$ pour le triangle $ABC$ ?
+    \item Quelle est la nature du quadrilatère $AHA'O$ ?
+    \item Démontrer que $G \in (OH)$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Étant donné $ABC$ est un triangle quelconque ; $E$ et $F$ les points tels que :
+\[ \overrightarrow{AE} = \frac{3}{2}\overrightarrow{AB} - \frac{1}{3}\overrightarrow{AC} \quad \text{et} \quad \overrightarrow{AF} = -\frac{5}{2}\overrightarrow{AB} + \frac{5}{9}\overrightarrow{AC} \]
+\begin{enumerate}
+    \item Faire la figure
+    \item Montrer que $A$, $E$ et $F$ sont alignés
+    \item Soit $G$ et $H$ les points tels que :
+    $\overrightarrow{CG} = \frac{5}{6}\overrightarrow{AB}$ et $\overrightarrow{AH} = \frac{5}{4}\overrightarrow{AB} - \frac{3}{2}\overrightarrow{AC}$.
+    \begin{enumerate}
+        \item Exprimer $\overrightarrow{BG}$ et $\overrightarrow{BH}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AC}$.
+        \item En déduire que $B$, $G$ et $H$ sont alignés.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+$ABC$ un triangle. Soit $M$ et $N$ deux points définis par :
+\[ \overrightarrow{AM} = \frac{1}{2}\overrightarrow{AB} - \overrightarrow{AC} \quad ; \quad \overrightarrow{AN} = -\overrightarrow{AB} + \frac{1}{2}\overrightarrow{AC} \]
+\begin{enumerate}
+    \item Placer les points $M$ et $N$ sur une figure.
+    \item Montrer que les droites $(BC)$ et $(MN)$ sont parallèles.
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle, $M$ et $N$ les points définis par :
+$\overrightarrow{AM} = \frac{1}{2}\overrightarrow{AB} + (1-k)\overrightarrow{AC}$ et \\
+$\overrightarrow{AN} = (1-k)\overrightarrow{AB} + \frac{1}{2}\overrightarrow{AC}$ avec $k \in \mathbb{R}$
+\begin{enumerate}
+    \item Faire une figure pour $k = 2$
+    \item Montrer que pour tout réel $k$ les vecteurs $\overrightarrow{MN}$ et $\overrightarrow{BC}$ sont colinéaires
+    \item Déterminer les valeurs de $k$ pour lesquelles
+    \begin{enumerate}
+        \item $M = N$
+        \item $\overrightarrow{MN} = -\frac{1}{2}\overrightarrow{BC}$
+        \item $2\overrightarrow{MN} - 3\overrightarrow{BC} = \vec{0}$
+        \item $BCNM$ est un parallélogramme
+        \item $BCMN$ est un parallélogramme
+        \item $BC = MN$
+    \end{enumerate}
+\end{enumerate}
+
+\end{multicols}
+
+\end{document}

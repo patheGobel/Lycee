@@ -1,0 +1,302 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Calcul vectoriel}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\fbox{\textbf{\exo}}
+Déterminer deux nombres réels $a$ et $b$ tels que $C$ soit le barycentre du système $\{(A, a); (B, b)\}$ dans des cas suivants :
+
+\begin{enumerate}
+    \item $3\overrightarrow{AB} - 2\overrightarrow{CA} = \overrightarrow{CB}$
+    \item $\overrightarrow{BA} = \frac{3}{8}\overrightarrow{BC}$
+    \item $\overrightarrow{AB} = \frac{1}{4}\overrightarrow{CA}$
+    \item $\overrightarrow{AB} = \frac{5}{6}\overrightarrow{BC}$
+    \item $2\overrightarrow{AB} + 2\overrightarrow{CB} = \overrightarrow{CA}$
+\end{enumerate}
+
+\vspace{1cm}
+
+% --- EXERCICE 13 ---
+\fbox{\textbf{\exo}}
+
+$A$ et $B$ sont deux points distants de $4$ cm.
+
+\begin{enumerate}
+    \item Ecrire comme barycentre des points $A$ et $B$ :
+    \begin{enumerate}
+        \item Le symétrique $I$ de $A$ par rapport à $B$.
+        \item Le symétrique $E$ du milieu $K$ de $[AB]$ par rapport à $A$.
+    \end{enumerate}
+    \item Déterminer et construire l'ensemble des points $M$ du plan tels que :
+    \[ \left\| 3\overrightarrow{MA} - \overrightarrow{MB} \right\| = 6 \]
+\end{enumerate}
+
+\vspace{1cm}
+
+% --- EXERCICE 14 ---
+\fbox{\textbf{\exo}}
+
+Soit $ABC$ un triangle tel que $AB = 4$ et $BC = 5$. On note
+\[ I = bar\{(A, 3), (B, -2)\} \]
+\[ J = bar\{(B, -2), (C, 5)\} \]
+
+\begin{enumerate}
+    \item Construire $I$ et $J$.
+    \item Soit $G$ tel que : $3\overrightarrow{GA} - 2\overrightarrow{GB} + 5\overrightarrow{GC} = \overrightarrow{0}$. \\
+    Montrer que $G = bar\{(I, 1), (C, 5)\}$.
+    \item Déterminer et construire l'ensemble des points $M$ du plan tels que :
+    \begin{enumerate}
+        \item $\left\| 3\overrightarrow{MA} - 2\overrightarrow{MB} \right\| = \left\| -2\overrightarrow{MB} + 3\overrightarrow{MC} \right\|$.
+        \item $\left\| 18\overrightarrow{MA} - 12\overrightarrow{MB} \right\| = \left\| \overrightarrow{MI} + 5\overrightarrow{MC} \right\|$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle tel que : $AB = 10$ ; $AC = 12$ et $BC = 8$ et placer le barycentre $G$ du système $\{(A, 1), (B, 2), (C, 1)\}$.
+\begin{enumerate}
+    \item Faire la figure que l'on complétera au fur et à mesure.
+    \item Déterminer et construire l'ensemble $(E_1)$ des points $M$ du plan tels que : $\left\| \overrightarrow{MA} + 2\overrightarrow{MB} + \overrightarrow{MC} \right\| = AC$.
+    \item Soit $(E)$ l'ensemble $(E_2)$ des points $M$ du plan tels que :\\ $\left\| \overrightarrow{MA} + 2\overrightarrow{MB} + \overrightarrow{MC} \right\| = \left\| \overrightarrow{BA} + \overrightarrow{BC} \right\|$.
+    \begin{enumerate}
+        \item Montrer que $B \in (E)$.
+        \item Déterminer et représenter l'ensemble $(E_2)$.
+    \end{enumerate}
+    \item Déterminer et construire l'ensemble des points $M$ du plan tels que : $\overrightarrow{MA} + 2\overrightarrow{MB} + \overrightarrow{MC}$ soit colinéaire à $\overrightarrow{AB}$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}} % Combiné d'après les captures
+\begin{enumerate}
+    \item Construire le barycentre $G$ de $(A, 3)$ et $(B, 3)$ ; $E$ de $(B, 3)$ et $(C, 1)$ ; $F$ de $(A, 3)$ et $(C, 1)$.
+    \item Soit $I$ le barycentre de $(A, 3), (B, 3)$ et $(C, 1)$. Démontrer que :
+    \begin{itemize}
+        \item Les points $A, I$ et $E$ sont alignés.
+        \item Les points $B, I$ et $F$ sont alignés.
+        \item Les points $C, I$ et $G$ sont alignés.
+    \end{itemize}
+    \item Que peut-on en déduire pour les droites $(AE), (BF)$ et $(CG)$ ?
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit $ABC$ un triangle. On considère :
+\begin{itemize}
+    \item Le barycentre $I$ de $(A, 2)$ et $(C, 1)$.
+    \item Le barycentre $J$ de $(A, 1)$ et $(B, 2)$.
+    \item Le barycentre $K$ de $(C, 1)$ et $(B, -4)$.
+\end{itemize}
+\begin{enumerate}
+    \item Démontrer que $B$ est le barycentre de $(K, 3)$ et $(C, 1)$.
+    \item En déduire le barycentre de $(A, 2), (K, 3)$ et $(C, 1)$.
+    \item Montrer que $J$ est le milieu de $[IK]$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle.
+\begin{enumerate}
+    \item Construire les points $P$, $Q$ et $R$ tels que :
+    $\overrightarrow{CP} = \frac{3}{8}\overrightarrow{CA}$ ; $\overrightarrow{AQ} = \frac{1}{4}\overrightarrow{AB}$ et $\overrightarrow{BR} = \frac{5}{6}\overrightarrow{BC}$
+    \item Démontrer que les droites $(AR)$, $(BP)$ et $(CQ)$ sont concourantes.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+$ABC$ est un triangle équilatéral et $ABDC$ est un parallélogramme. Construire le point $G$ vérifiant :
+$3\overrightarrow{GA} - \overrightarrow{AB} + 2\overrightarrow{AC} = \vec{0}$
+
+\begin{enumerate}
+    \item Montrer que $G$ est le barycentre du système $\{(A, 2), (B, -1), (C, 2)\}$.
+    \item Soit $I$ milieu de $[AC]$. Démontrer que $G$ est barycentre de $B$ et $I$ affectés de coefficients que l'on déterminera. En déduire que $G$ appartient à la médiatrice de $[AC]$.
+    \item En désignant par $H$ l'isobarycentre de $G$ et $D$. Déterminer puis construire l'ensemble $(\Gamma)$ des points $M$ tels que :
+    \[ \|2\overrightarrow{MA} - \overrightarrow{MB} + 2\overrightarrow{MC} + 3\overrightarrow{MD}\| = 6AB \]
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $RTS$ un triangle quelconque.
+\begin{enumerate}
+    \item Construire les points $A$ ; $B$ ; $C$ et $D$ définis par : $D$ est le milieu de $[RS]$ ; $B$ celui de $[RT]$ ; $A$ le symétrique de $D$ par rapport à $R$ et $\overrightarrow{CT} = \frac{1}{4}\overrightarrow{ST}$.
+    \item Déterminer les réels $a$ ; $b$ ; $s$ et $t$ tels que :
+    \begin{itemize}
+        \item[] $R = bar\{(A, a); (S, s)\}$ ;
+        \item[] $C = bar\{(T, t); (S, b)\}$
+    \end{itemize}
+    \item Démontrer que : $B = bar\{(T, 3); (A, 2); (S, 1)\}$
+    \item En déduire que les points $A$ ; $B$ et $C$ sont alignés.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle. $\forall m \in \mathbb{R}$ considérons le point\\ $G_m = bar\{(A, m); (B, 2m); (C, 1)\}$
+\begin{enumerate}
+    \item Pour quelles valeurs de $m$ le point $G_m$ existe-t-il ?
+    \item Soit $D$ barycentre de $(A, 1)$ $(B, 2)$.
+    \item Démontrer que $G_m \in (CD)$.
+    \item Pour quelles valeurs de $m$, $G_m$ est un point de $[CD]$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit $ABC$ un triangle isocèle en $A$. $O, I$ et $J$ les milieux respectifs des côtés $[AB]$, $[AC]$ et $[BC]$.
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que pour tout $M$ du plan on a : \\
+        $\overrightarrow{MA} + \overrightarrow{MB} + \overrightarrow{MC} = \overrightarrow{MO} + \overrightarrow{MI} + \overrightarrow{MJ}$.
+        \item En déduire que les triangles $ABC$ et $OIJ$ ont même centre de gravité.
+    \end{enumerate}
+    \item Montrer que $B$ est le barycentre $\{(J; 1), (O; 1), (I; -1)\}$.
+    \item On donne $H = bar\{(J; 3), (C; -1)\}$. \\
+    Montrer que les droites $(OH)$ et $(AJ)$ sont parallèles.
+    \item Soit $K = bar\{(A; 2), (B; 1), (C; 1)\}$.
+    \begin{enumerate}
+        \item Construire $K$ puis montrer que est le milieu $[AJ]$.
+        \item Montrer que $OAIJ$ est un losange.
+    \end{enumerate}
+    \item On considère l'ensemble $(E)$ des points $M$ du plan tels que :
+    \[ \left\| 2\overrightarrow{AM} + \overrightarrow{BM} + \overrightarrow{CM} + 4\overrightarrow{KI} \right\| = 2\left\| \overrightarrow{MA} + \overrightarrow{MB} \right\|. \]
+    \begin{enumerate}
+        \item Vérifier que $A \in (E)$.
+        \item Montrer que $(E)$ est la médiatrice du segment $[IO]$.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1cm}
+
+\fbox{\textbf{\exo}}
+
+Dans le plan, on considère le triangle $ABC$ isocèle en $A$ de hauteur $AH$ tel que $AH = BC = 4$ cm.
+
+\begin{enumerate}
+    \item En justifiant la construction, placer le point $G$ barycentre de $\{(A, 2) ; (B, 1), (C, 1)\}$.
+    \item On désigne par $M$ un point quelconque du plan.
+    \begin{enumerate}
+        \item[a-] Montrer que $\vec{V} = 2\overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC}$ est vecteur constant et $\|\vec{V}\| = 8$.
+    \end{enumerate}
+    \item Déterminer et construire l'ensemble $\mathbf{F}$ des points $M$ du plan tels que :
+    \[ \left\| 2\overrightarrow{MA} + \overrightarrow{MB} + \overrightarrow{MC} \right\| = \|\vec{V}\| \]
+    \item On considère le système $\{(A, 2) ; (B, n) ; (C, n)\}$ où $n$ est un entier naturel fixé.
+    \begin{enumerate}
+        \item Montrer que $G_n$ le barycentre de ce système existe pour tout $n$.
+        \item Construire les points $G_0, G_1$ et $G_2$.
+        \item Montrer que $G_n$ appartient au segment $[AH]$.
+    \end{enumerate}
+    \item Soit $\mathbf{E}_n$ l'ensemble des points $M$ du plan tels que :
+    \[ \left\| 2\overrightarrow{MA} + n\overrightarrow{MB} + n\overrightarrow{MC} \right\| = n\|\vec{V}\|. \]
+    Montrer que $\mathbf{E}_n$ est un cercle qui passe par $A$. \\
+    Construire $\mathbf{E}_n$.
+\end{enumerate}
+\fbox{\textbf{\exo}}
+% --- APPROFONDISSEMENT ---
+\textbf{\underline{Approfondissement :}}
+
+Soit $ABCD$ est un parallélogramme, on construit les points $P, Q$ et $R$ définis par : $\overrightarrow{AP} = \frac{2}{3}\overrightarrow{AB}$, $\overrightarrow{AR} = \frac{3}{4}\overrightarrow{AD}$ et $Q$ est tel que $PARQ$ est un parallélogramme.
+\begin{enumerate}
+    \item Faire une figure soignée.
+    \item Trouver les réels $x_1$ et $x_2$ tels que $P$ soit le barycentre de $\{(A, x_1); (B, x_2)\}$.
+    \item Trouver les réels $y_1$ et $y_2$ tels que $R$ soit le barycentre de $\{(A, y_1); (D, y_2)\}$.
+    \item Montrer que $(BR)$ et $(DP)$ sont sécantes en $I$ barycentre de $ABD$ dont on précisera.
+    \item Prouver que $Q = \{(A, -5); (B, 8); (D, 9)\}$.
+    \item Montrer que les points $I, Q$ et $C$ sont alignés.
+    \item Préciser la position du point $Q$ sur la droite $(IC)$.
+    \item Démontrer que $(BR), (CQ)$ et $(DP)$ sont concourantes.
+\end{enumerate}
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\end{multicols}
+
+\end{document}
