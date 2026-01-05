@@ -190,7 +190,27 @@ middle color = tcbcolback!80!black]
     \item $f(x) = \sin^2 x$ %\textit{(linéarisation)}
     \item $f(x) = \cos^3 x$ %\textit{(linéarisation)}
 \end{enumerate}
+\item Forme $\dfrac{u'}{u}$ \textit{Formule : $\int \dfrac{u'}{u} = \ln|u|$}
 
+\begin{enumerate}
+    % Niveau 1 : Reconnaissance immédiate
+    \item $f(x) = \dfrac{1}{x+3}$ sur $]-3 ; +\infty[$
+    \item $f(x) = \dfrac{2x}{x^2+1}$ sur $\mathbb{R}$
+    \item $f(x) = \dfrac{3x^2+2}{x^3+2x+1}$ sur $]0 ; +\infty[$
+    \item $f(x) = \dfrac{e^x}{e^x+1}$ sur $\mathbb{R}$
+    \item $f(x) = \dfrac{\cos x}{\sin x}$ sur $]0 ; \pi[$
+    
+    % Niveau 2 : Ajustement de constante (le facteur k)
+    \item $f(x) = \dfrac{1}{2x+5}$ sur $]-2,5 ; +\infty[$ %\hfill \textit{(Manque le facteur 2)}
+    \item $f(x) = \dfrac{x}{x^2+4}$ sur $\mathbb{R}$ %\hfill \textit{(Manque le facteur 2)}
+    \item $f(x) = \dfrac{x^2}{x^3-1}$ sur $]1 ; +\infty[$ %\hfill \textit{(Manque le facteur 3)}
+    \item $f(x) = \dfrac{\sin x}{\cos x}$ sur $]-\pi/2 ; \pi/2[$ %\hfill \textit{(Attention au signe)}
+    
+    % Niveau 3 : Formes "cachées"
+    \item $f(x) = \dfrac{1}{x \ln x}$ sur $]1 ; +\infty[$ %\hfill \textit{(Indice : $\frac{1/x}{\ln x}$)}
+    \item $f(x) = \dfrac{e^{2x}}{e^{2x}+3}$ sur $\mathbb{R}$
+    \item $f(x) = \dfrac{1}{\cos^2 x \tan x}$ sur $]0 ; \pi/2[$
+\end{enumerate}
 \end{enumerate}
 
 \end{multicols}
@@ -211,6 +231,43 @@ middle color = tcbcolback!80!black]
 
 \end{enumerate}
 
+\fbox{\textbf{\exo}} \textbf{Transformations et Logarithmes}
+
+\begin{enumerate}
+\item \textit{Dans chacun des cas suivants, déterminer une primitive $F$ de $f$ sur $I$ après avoir effectué la transformation d'écriture indiquée.}
+
+\begin{enumerate}
+    \item $f(x) = \dfrac{x+3}{x+1} \quad I = ]-1 ; +\infty[ \quad \text{Indication : Mettre } f(x) \text{ sous la forme } a + \dfrac{b}{x+1}$
+    
+    \item $f(x) = \dfrac{2x-5}{x-3}, \quad I = ]3 ; +\infty[ \quad \text{Indication : Mettre } f(x) \text{ sous la forme } a + \dfrac{b}{x-3}$
+    
+    \item $f(x) = \dfrac{x^2+x-4}{x+2}, \quad I = ]-2 ; +\infty[$ \\
+    \textit{Indication : Mettre $f(x)$ sous la forme $ax + b + \dfrac{c}{x+2}$}
+    
+    \item $f(x) = \dfrac{2}{x^2-1}, \quad I = ]1 ; +\infty[ \quad \text{Indication : Mettre } f(x) \text{ sous la forme } \dfrac{a}{x-1} + \dfrac{b}{x+1}$
+\end{enumerate}
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}} \textbf{ Primitives et Conditions Initiales}
+
+\begin{enumerate}
+\item Dans chacun des cas suivants, déterminer la primitive $F$ de la fonction $f$ qui vérifie la condition initiale donnée sur l'intervalle $I$.
+
+\begin{enumerate}
+    \item $f(x) = \dfrac{x-2}{x-3}$ sur $I = ]3 ; +\infty[$ avec $F(4) = 0$. \\
+    \textit{Indication : Mettre d'abord $f(x)$ sous la forme $a + \dfrac{b}{x-3}$.}
+
+    \item $f(x) = \dfrac{2x+5}{x+1}$ sur $I = ]-1 ; +\infty[$ avec $F(0) = 2$. \\
+    \textit{Indication : Mettre d'abord $f(x)$ sous la forme $a + \dfrac{b}{x+1}$.}
+
+    \item $f(x) = \dfrac{x^2+3x+5}{x+2}$ sur $I = ]-2 ; +\infty[$ avec $F(-1) = 1$. \\
+    \textit{Indication : Mettre d'abord $f(x)$ sous la forme $ax + b + \dfrac{c}{x+2}$.}
+
+    \item $f(x) = \dfrac{e^x}{e^x+2}$ sur $\mathbb{R}$ avec $F(0) = \ln(3)$.
+\end{enumerate}
+
+\end{enumerate}
 \end{document}
 
 
