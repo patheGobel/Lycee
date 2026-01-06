@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  6 JAN 2026 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  6 JAN 2026 19:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1104,36 +1104,31 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 <vec1.png, id=44, 376.40625pt x 299.1175pt>
 File: vec1.png Graphic file (type png)
 <use vec1.png>
-Package pdftex.def Info: vec1.png  used on input line 119.
+Package pdftex.def Info: vec1.png  used on input line 169.
 (pdftex.def)             Requested size: 256.0748pt x 203.50674pt.
-
-Overfull \hbox (30.6564pt too wide) detected at line 143
-[] \OT1/lmr/m/n/12 = [][] ;  [] = [][] []\OML/lmm/m/it/12 I[]\OT1/lmr/m/n/12 [\
-OML/lmm/m/it/12 AC\OT1/lmr/m/n/12 ]\OML/lmm/m/it/12 :
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc} <build/v
-ec1.png>] [2]
-<vec2.png, id=133, 401.5pt x 237.88875pt>
+dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [2 <bui
+ld/vec1.png>]
+<vec2.png, id=129, 401.5pt x 237.88875pt>
 File: vec2.png Graphic file (type png)
 <use vec2.png>
-Package pdftex.def Info: vec2.png  used on input line 282.
+Package pdftex.def Info: vec2.png  used on input line 333.
 (pdftex.def)             Requested size: 284.52756pt x 168.59364pt.
 
-Overfull \hbox (19.22636pt too wide) in paragraph at lines 282--283
+Overfull \hbox (19.22636pt too wide) in paragraph at lines 333--334
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 []\T1/lmr/m/n/12 Un groupe con-cur-rent pas con-va-incu de
  []
 
-[3 <build/vec2.png>] 
+[3 <build/vec2.png>] [4]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/calculVectoriel.aux)
  ***********
@@ -1144,13 +1139,13 @@ Package rerunfilecheck Info: File `calculVectoriel.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30093 strings out of 474222
- 603193 string characters out of 5748732
- 2014975 words of memory out of 5000000
- 51704 multiletter control sequences out of 15000+600000
+ 30130 strings out of 474222
+ 603538 string characters out of 5748732
+ 2028975 words of memory out of 5000000
+ 51707 multiletter control sequences out of 15000+600000
  593333 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,14n,107p,575b,979s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,14n,107p,575b,973s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
@@ -1158,10 +1153,10 @@ lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/zapfding/uzdr.pfb>
-Output written on build/calculVectoriel.pdf (3 pages, 176324 bytes).
+Output written on build/calculVectoriel.pdf (4 pages, 184010 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 129 named destinations out of 1000 (max. 500000)
  171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
