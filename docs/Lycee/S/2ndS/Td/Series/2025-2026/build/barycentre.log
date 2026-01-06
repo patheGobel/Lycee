@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  4 JAN 2026 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  6 JAN 2026 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1101,13 +1101,13 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 9
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 \T1/lmr/m/n/12 des points $\OML/lmm/m/it/12 M$ \T1/lmr/m/n/12 du plan tels que 
 :
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-63.
+57.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/
@@ -1117,17 +1117,24 @@ enc/dvips/lm/lm-ec.enc}
 dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
 lm-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 []\T1/lmr/m/n/12 Montrer que $\OML/lmm/m/it/12 B$ \T1/lmr/m/n/12 est le barycen
 -tre
  []
 
 
-Overfull \hbox (10.91528pt too wide) detected at line 245
+Overfull \hbox (10.91528pt too wide) detected at line 289
 [] \OT1/lmr/m/n/12 = 2 [] \OML/lmm/m/it/12 :
  []
 
-[2] [3] 
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 401--402
+[]\T1/lmr/m/n/12 Soit $\OML/lmm/m/it/12 G$ \T1/lmr/m/n/12 le barycen-tre du sys
+-tème
+ []
+
+[4] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/barycentre.aux)
  ***********
@@ -1138,13 +1145,13 @@ Package rerunfilecheck Info: File `barycentre.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30112 strings out of 474222
- 603820 string characters out of 5748732
- 2003975 words of memory out of 5000000
- 51724 multiletter control sequences out of 15000+600000
- 596556 words of font info for 68 fonts, out of 8000000 for 9000
+ 30165 strings out of 474222
+ 604224 string characters out of 5748732
+ 2004975 words of memory out of 5000000
+ 51726 multiletter control sequences out of 15000+600000
+ 602536 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,428b,978s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,15n,107p,428b,976s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
@@ -1153,10 +1160,10 @@ blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
 mssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/barycentre.pdf (3 pages, 182379 bytes).
+Output written on build/barycentre.pdf (4 pages, 194814 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
- 87 named destinations out of 1000 (max. 500000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 136 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

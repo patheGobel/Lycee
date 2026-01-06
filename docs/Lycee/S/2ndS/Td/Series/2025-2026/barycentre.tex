@@ -85,9 +85,9 @@ middle color = tcbcolback!80!black]
     \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
                 \hline
                 \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
-                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 2nd}\textbf{S} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
                 \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
-                                                                  \textbf{{\Large\sffamily Td Calcul vectoriel}}
+                                                                  \textbf{{\Large\sffamily Td Barycentre}}
                                                               \end{center}}}                                                                                                        \\ \hline
             \end{tabular}}\endgroup};
 \end{tikzpicture}
@@ -105,9 +105,6 @@ Déterminer deux nombres réels $a$ et $b$ tels que $C$ soit le barycentre du sy
     \item $2\overrightarrow{AB} + 2\overrightarrow{CB} = \overrightarrow{CA}$
 \end{enumerate}
 
-\vspace{1cm}
-
-% --- EXERCICE 13 ---
 \fbox{\textbf{\exo}}
 
 $A$ et $B$ sont deux points distants de $4$ cm.
@@ -122,9 +119,6 @@ $A$ et $B$ sont deux points distants de $4$ cm.
     \[ \left\| 3\overrightarrow{MA} - \overrightarrow{MB} \right\| = 6 \]
 \end{enumerate}
 
-\vspace{1cm}
-
-% --- EXERCICE 14 ---
 \fbox{\textbf{\exo}}
 
 Soit $ABC$ un triangle tel que $AB = 4$ et $BC = 5$. On note
@@ -157,7 +151,7 @@ Soit $ABC$ un triangle tel que : $AB = 10$ ; $AC = 12$ et $BC = 8$ et placer le 
 
 \fbox{\textbf{\exo}} % Combiné d'après les captures
 \begin{enumerate}
-    \item Construire le barycentre $G$ de $(A, 3)$ et $(B, 3)$ ; $E$ de $(B, 3)$ et $(C, 1)$ ; $F$ de $(A, 3)$ et $(C, 1)$.
+    \item Construire le barycentre \\$G$ de $(A, 3)$ et $(B, 3)$\\ $E$ de $(B, 3)$ et $(C, 1)$ \\ $F$ de $(A, 3)$ et $(C, 1)$.
     \item Soit $I$ le barycentre de $(A, 3), (B, 3)$ et $(C, 1)$. Démontrer que :
     \begin{itemize}
         \item Les points $A, I$ et $E$ sont alignés.
@@ -180,7 +174,57 @@ Soit $ABC$ un triangle. On considère :
     \item En déduire le barycentre de $(A, 2), (K, 3)$ et $(C, 1)$.
     \item Montrer que $J$ est le milieu de $[IK]$.
 \end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle tel que $AB=6$ cm, $AC=4$ cm et $BC=3$ cm. $G$ le barycentre des points pondérés $(A; 2),(B; 3)$ et $(C; 5)$, $I$ barycentre des points pondérés $(A; 2)$ et $(B; 3)$, $J$ barycentre des points pondérés $(A; 2)$ et $(C; 5)$ et $H$ le milieu du segment $[AC]$.
 
+\begin{enumerate}
+    \item Construire les points $I, J$ et $H$.
+    \item Montrer que $G = \text{bar} \{(I, 1); (C, 1)\}$.
+    \item Montrer que les points $B, J$ et $G$ sont alignés.
+    \item Déterminer et construire les ensembles suivants :
+    \begin{enumerate}
+        \item $(\Delta)$ : l’ensemble des points $M$ du plan vérifiant
+        
+         $\|2\overrightarrow{MA} + 3\overrightarrow{MB} + 5\overrightarrow{MC}\| = 5\|\overrightarrow{MA} + \overrightarrow{MC}\|$
+        \item $(\Gamma)$ : l’ensemble des points $M$ du plan vérifiant
+        
+         $\|2\overrightarrow{MA} + 3\overrightarrow{MB}\| = \|5\overrightarrow{MA} - 5\overrightarrow{MB}\|$.
+    \end{enumerate}
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle tel que
+
+ $AB = 4\text{cm}$, $AC = 2\text{cm}$, $BC = 3\text{cm}$ ; $J$ le barycentre du système $B; 1$, $C; 2$ et $H$ le point tel que $\overrightarrow{AH} = 2\overrightarrow{AB}$.
+
+\begin{enumerate}
+    \item Construire le triangle $ABC$ et placer les points $J$ et $H$.
+    \item Justifier que le système $\{(B, 1), (C, 2)\}$ admet un barycentre que l'on notera $G$.
+    \item Exprimer $\overrightarrow{AG}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AC}$.
+    \item Ecrire $H$ comme barycentre des points $A$ et $B$ affectés de coefficients que l'on précisera.
+    \item Montrer que les droites $(AJ)$ et $(CH)$ se coupent en $G$.
+    \item Déterminer et construire l'ensemble des points $M$ du plan tels que :
+    \begin{enumerate}
+        \item $\|-\overrightarrow{MA} + 2\overrightarrow{MB} + 4\overrightarrow{MC}\| = 10$
+        \item $-\overrightarrow{MA} + 2\overrightarrow{MB} + 4\overrightarrow{MC}$ est colinéaire à $\overrightarrow{AC}$.
+    \end{enumerate}
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABC$ un triangle tel que $AB=6$ cm, $AC=4$ cm et $BC=3$ cm. $G$ le barycentre des points pondérés $(A; 2),(B; 3)$ et $(C; 5)$, $I$ barycentre des points pondérés $(A; 2)$ et $(B; 3)$, $J$ barycentre des points pondérés $(A; 2)$ et $(C; 5)$ et $H$ le milieu du segment $[AC]$.
+
+\begin{enumerate}
+    \item Construire les points $I, J$ et $H$.
+    \item Montrer que $G = \text{bar} \{(I, 5); (C, 5)\}$.
+    \item Montrer que les points $B, J$ et $G$ sont alignés.
+    \item Déterminer et construire les ensembles suivants :
+    \begin{enumerate}
+        \item $(\Delta)$ : l'ensemble des points $M$ du plan vérifiant
+        
+         $\|2\overrightarrow{MA} + 3\overrightarrow{MB} + 5\overrightarrow{MC}\| = 5\|\overrightarrow{MA} + \overrightarrow{MC}\|$
+        \item $(\Gamma)$ : l'ensemble des points $M$ du plan vérifiant
+        
+         $\|2\overrightarrow{MA} + 3\overrightarrow{MB}\| = \|5\overrightarrow{MA} - 5\overrightarrow{MB}\|$.
+    \end{enumerate}
+\end{enumerate}
 \fbox{\textbf{\exo}}
 Soit $ABC$ un triangle.
 \begin{enumerate}
@@ -276,7 +320,6 @@ Dans le plan, on considère le triangle $ABC$ isocèle en $A$ de hauteur $AH$ te
 \end{enumerate}
 \fbox{\textbf{\exo}}
 % --- APPROFONDISSEMENT ---
-\textbf{\underline{Approfondissement :}}
 
 Soit $ABCD$ est un parallélogramme, on construit les points $P, Q$ et $R$ définis par : $\overrightarrow{AP} = \frac{2}{3}\overrightarrow{AB}$, $\overrightarrow{AR} = \frac{3}{4}\overrightarrow{AD}$ et $Q$ est tel que $PARQ$ est un parallélogramme.
 \begin{enumerate}
@@ -290,12 +333,83 @@ Soit $ABCD$ est un parallélogramme, on construit les points $P, Q$ et $R$ défi
     \item Démontrer que $(BR), (CQ)$ et $(DP)$ sont concourantes.
 \end{enumerate}
 \fbox{\textbf{\exo}}
+\begin{enumerate}
+    \item Construire un triangle $ABC$ tels que :
+    
+     $AC = 12$, $AB = 10$ et $BC = 8$ et placer le barycentre $G$ du système de points pondérés $\{(A; 1), (B; 2), (C; 1)\}$.
+    
+    \item Déterminer et représenter l'ensemble des points $M$ tels que :
+     
+    $\|\overrightarrow{MA} + 2\overrightarrow{MB} + \overrightarrow{MC}\| = AC$.
+    
+    \item Soit $\mathcal{E}$ l'ensemble des points $N$ tels que :
+     
+    $\|\overrightarrow{NA} + 2\overrightarrow{NB} + \overrightarrow{NC}\| = \|\overrightarrow{BA} + \overrightarrow{BC}\|$.
+    \begin{enumerate}
+        \item Montrer que $B$ appartient à $\mathcal{E}$.
+        \item Déterminer et représenter l'ensemble $\mathcal{E}$.
+    \end{enumerate}
+    
+    \item Déterminer et représenter l'ensemble des points $P$ du plan tels que :
+    
+    $\|\overrightarrow{PA} + 2\overrightarrow{PB} + \overrightarrow{PC}\| = \|3\overrightarrow{PA} + \overrightarrow{PC}\|$.
+\end{enumerate}
+\fbox{\textbf{\exo}}
+
+Soit $A, B$ et $C$ trois points du plan, $a, b$ et $c$ trois réels tels que : $a + b + c \neq 0$. Soit $G$ le barycentre de $(A, a), (B, b)$ et $(C, c)$.
+
+\begin{enumerate}
+    \item Démontrer que le système 
+    
+    $\{(A, 2a + 1), (B, 2b - 2), (C, 2c + 1)\}$ admet un barycentre que l'on notera $K$.
+    \item Déterminer une relation vectorielle qui définit $K$.
+    \item En déduire que : 
+    
+    $a\overrightarrow{KA} + b\overrightarrow{KB} + c\overrightarrow{KC} = \frac{\overrightarrow{AB} + \overrightarrow{AC}}{2}$.
+    \item En déduire que $G$ et $K$ sont confondus si $B$ est le milieu de $[AC]$.
+    \item En supposant que les points $A, B$ et $C$ ne soient pas alignés. Soit $E$ le point vérifiant que $ABCE$ soit un parallélogramme.
+    \begin{enumerate}
+        \item Montrer que : $\overrightarrow{GK} = \frac{\overrightarrow{BE}}{2(a + b + c)}$ en utilisant la question 2).
+        \item Construire $G$ et $K$ pour $a = c = \frac{1}{2}$ et $b = 2$.
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $A, B$ et $C$ trois points non alignés, $\alpha, \beta$ et $\gamma$ trois réels vérifiant la condition d'existence des barycentres suivants : \\
+$G = \text{bar}\{(A; \alpha), (B; \beta), (C; \gamma)\}$ \\
+$G_1 = \text{bar}\{(A; -\alpha), (B; \beta), (C; \gamma)\}$ \\
+$G_2 = \text{bar}\{(A; \alpha), (B; -\beta), (C; \gamma)\}$ \\
+$G_3 = \text{bar}\{(A; \alpha), (B; \beta), (C; -\gamma)\}$ \\
+Démontrer que les droites $(AG_1)$, $(BG_2)$ et $(CG_3)$ sont concourantes en $G$.
 
 \fbox{\textbf{\exo}}
 
-\fbox{\textbf{\exo}}
+\noindent Soit $ABC$ un triangle quelconque.
 
-\fbox{\textbf{\exo}}
+\begin{enumerate}
+    \item \begin{enumerate}
+    \item Placer les points $I$ et $J$ tels que :
+    \[ \overrightarrow{AI} = \frac{1}{3} \overrightarrow{AB} \quad \text{et} \quad \overrightarrow{BJ} = \frac{3}{4} \overrightarrow{BC}. \]
+    \item Ecrire le point $I$ comme barycentre de $A$ et $B$ et $J$ comme barycentre de $B$ et $C$ en précisant les coefficients des systèmes.
+    \end{enumerate}
+    \item
+\begin{enumerate}
+    \item Placer sur la figure le point 
+    
+    $K = \text{bar} \{(A; -2), (B; -3)\}$.
+    
+    \item Soit $G$ le barycentre du système $\{(A; -2), (B; -1), (C; -3)\}$. Montrer que les droites $(AJ)$, $(CI)$ et $(BK)$ sont concourantes en $G$.
+\end{enumerate}
+
+    \item Déterminer et représenter l'ensemble des points $M$ du plan tels que :
+    \begin{enumerate}
+        \item $(\mathcal{C}) : 2\overrightarrow{MA} + \overrightarrow{MB}$ soit colinéaire à $\overrightarrow{BC}$.
+        \item $(\mathcal{F}) : \| 2\overrightarrow{MA} + 3\overrightarrow{MC} \| = 5MA$.
+        \item $(\mathcal{G}) : \overrightarrow{MB} + 3\overrightarrow{MC}$ soit orthogonal à $\overrightarrow{AB}$.
+        \item $(\mathcal{H}) : \| 2\overrightarrow{MA} + \overrightarrow{MB} + 3\overrightarrow{MC} \| = 6AB$.
+        \item $(\mathcal{L}) : 6 \le \| 2\overrightarrow{MA} + \overrightarrow{MB} + 3\overrightarrow{MC} \| \le 6\sqrt{2}$.
+    \end{enumerate}
+\end{enumerate}
 
 \end{multicols}
 
