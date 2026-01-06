@@ -85,7 +85,7 @@ middle color = tcbcolback!80!black]
     \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
                 \hline
                 \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
-                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 2}\textbf{ndS} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
                 \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
                                                                   \textbf{{\Large\sffamily Td Calcul vectoriel}}
                                                               \end{center}}}                                                                                                        \\ \hline
@@ -93,6 +93,8 @@ middle color = tcbcolback!80!black]
 \end{tikzpicture}
 \vspace{3cm}
 
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
 \textbf{\underline{Echauffement :}}
 
 $ABC$ est un triangle ; $I$ milieu de $[AB]$, $\overrightarrow{CJ} = \frac{1}{4} \overrightarrow{AC}$ et $\overrightarrow{CK} = \frac{1}{6} \overrightarrow{CB}$.
@@ -101,7 +103,6 @@ $ABC$ est un triangle ; $I$ milieu de $[AB]$, $\overrightarrow{CJ} = \frac{1}{4}
     \item Faire la figure.
     \item Montrer que $I$, $J$ et $K$ sont alignés.
 \end{enumerate}
-
 \fbox{\textbf{\exo}}
 Soit $ABCD$ un parallélogramme.
 
@@ -111,17 +112,11 @@ Soit $ABCD$ un parallélogramme.
     
     \item Démontrer que $(KH)$ est parallèle à $(AC)$ puis, montrer que $E \in (KH)$.
 \end{enumerate}
-
 \fbox{\textbf{\exo}}
 Dans la figure ci-dessous $ABCD$ est un parallélogramme de centre $I$, $B$ est le milieu du segment $[AE]$, $G$ est le centre de gravité du triangle $ACE$ et $\overrightarrow{BF} = 2\overrightarrow{BA} + \overrightarrow{AD}$.
 
 \begin{center}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.3\textwidth]{vec1.png}
-\caption{Courbe de (Cf)}
-\label{fig:monimage}
-\end{figure}
+    \includegraphics[width=9cm]{vec1.png}
 \end{center}
 
 \begin{enumerate}
@@ -129,10 +124,6 @@ Dans la figure ci-dessous $ABCD$ est un parallélogramme de centre $I$, $B$ est 
     
     \item Calculer $\overrightarrow{IE} + \overrightarrow{IF}$, puis montrer que $E$, $G$, $I$ et $F$ sont alignés.
 \end{enumerate}
-
-\begin{multicols}{2}
-\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
-\fbox{\textbf{\exo}}
 $ABC$ est un triangle quelconque.
 
 \begin{enumerate}
@@ -286,7 +277,65 @@ $\overrightarrow{AN} = (1-k)\overrightarrow{AB} + \frac{1}{2}\overrightarrow{AC}
         \item $BC = MN$
     \end{enumerate}
 \end{enumerate}
+\fbox{\textbf{\exo}}
+\begin{center}
+    \includegraphics[width=10cm]{vec2.png}
+\end{center}
+À l'occasion d'un concours de logo organiser dans leur établissement, des élèves d'une classe de 2nde S de ISAK ont été déclarés lauréat grâce à la figure ci-dessus qu'elles ont produite. Sur cette figure, $ABCD$ est un carré, $AIB$ et $BCV$ sont des triangles équilatéraux. Selon le jury, ces jeunes filles ont remporté le premier prix grâce à l'harmonie des couleurs mais surtout grâce à l'exactitude de leur figure qui, en conformité avec les indications données, présente les points $D$, $I$ et $V$ alignés.
+
+Un groupe concurrent pas convaincu de l'alignement de ces trois points, veut en avoir le coeur net. Il sollicite ton aide.
+
+En tant qu'élève en seconde S, en t'appuyant sur tes connaissances en mathématiques, sur les vecteurs, prouve qu'au-de-la du tracé de la droite $(DV)$, les points $D$, $I$ et $V$ sont bel et bien alignés.
+
+\fbox{\textbf{\exo}}
+Soit $ABCD$ un trapèze tel que $\overrightarrow{BC} = 2\overrightarrow{AD}$, $k$ est un nombre réel et $M$ le point défini par : $\overrightarrow{AM} = k\overrightarrow{AB}$ se projette en $K$ sur $(AC)$ et en $N$ sur $(CD)$ parallèlement à $(BC)$.
+
+\begin{enumerate}
+    \item Montrer que $\overrightarrow{MK} = 2k\overrightarrow{AD}$ et $\overrightarrow{NK} = (1 - k)\overrightarrow{AD}$.
+    
+    \item Déterminer le réel $k$ pour que $k$ soit le milieu de $[MN]$.
+    
+    \item Déterminer le réel $k$ pour que $\overrightarrow{MN} = \frac{3}{2}\overrightarrow{AD}$.
+\end{enumerate}
+\fbox{\textbf{\exo}}
+Soit $ABCD$ un trapèze tel que $\overrightarrow{BC} = 2\overrightarrow{AD}$, $k$ est un nombre réel et $M$ le point défini par : $\overrightarrow{AM} = k\overrightarrow{AB}$ se projette en $K$ sur $(AC)$ et en $N$ sur $(CD)$ parallèlement à $(BC)$.
+
+\begin{enumerate}
+    \item Montrer que $\overrightarrow{MK} = 2k\overrightarrow{AD}$ et $\overrightarrow{NK} = (1 - k)\overrightarrow{AD}$.
+    
+    \item Déterminer le réel $k$ pour que $k$ soit le milieu de $[MN]$.
+    
+    \item Déterminer le réel $k$ pour que $\overrightarrow{MN} = \frac{3}{2}\overrightarrow{AD}$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit $IJK$ un triangle. On note $A$ le symétrique de $K$ par rapport à $J$, $B$ le symétrique de $I$ par rapport à $K$ et enfin $C$ le symétrique de $J$ par rapport à $I$.
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Exprimer le vecteur $\overrightarrow{AK}$ en fonction des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AI}$ puis $\overrightarrow{AI}$ en fonction de $\overrightarrow{AJ}$ et $\overrightarrow{AC}$.
+        \item Exprimer $\overrightarrow{AJ}$ en fonction de $\overrightarrow{AK}$.
+        \item En déduire des résultats précédents que :\\
+        $\overrightarrow{AK} = \dfrac{2}{7}(2\overrightarrow{AB} + \overrightarrow{AC})$.
+    \end{enumerate}
+
+    \item Soit $P$ le point défini par : $\overrightarrow{BP} = \dfrac{1}{3}\overrightarrow{BC}$. Placer $P$ et exprimer $\overrightarrow{AP}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AC}$.
+    
+    \vspace{0.5cm}
+    \noindent En déduire des questions \textbf{1.} et \textbf{2.} que les points $A, K, J$ et $P$ sont alignés.
+
+    \item Soit $Q$ le point défini par : $\overrightarrow{CQ} = \dfrac{1}{3}\overrightarrow{AC}$.
+    \begin{enumerate}
+        \item Exprimer $\overrightarrow{BQ}$ en fonction des vecteurs $\overrightarrow{BA}$ et $\overrightarrow{BC}$ puis $\overrightarrow{BK}$ en fonction de $\overrightarrow{BI}$.
+        \item Exprimer le vecteur $\overrightarrow{BK}$ en fonction des vecteurs $\overrightarrow{BA}$ et $\overrightarrow{BC}$.
+        \item En déduire des résultats précédents que :\\
+        $\overrightarrow{BK} = \dfrac{1}{7}(2\overrightarrow{BA} + 2\overrightarrow{BC})$, en déduire de même que les points $B, K, I$ et $Q$ sont alignés.
+    \end{enumerate}
+\end{enumerate}
 
 \end{multicols}
+
 
 \end{document}
