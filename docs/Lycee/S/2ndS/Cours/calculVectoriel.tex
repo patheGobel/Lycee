@@ -1,0 +1,162 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{tikz} % Indispensable pour les dessins
+\pagestyle{empty}
+% Configuration des titres en rouge
+\usepackage{titlesec}
+\usetikzlibrary{calc}
+\titleformat{\section}{\color{red}\normalfont\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\color{red}\normalfont\large\bfseries}{}{0pt}{}
+
+\begin{document}
+
+\begin{center}
+    \color{red}
+    \framebox[0.6\textwidth]{
+        \huge \textbf{Chapitre 1 : Vecteurs}
+    }
+\end{center}
+
+\section*{I - Généralités}
+\subsection*{1- Définitions}
+
+\textit{\color{red}Définition 1 :}\\
+On appelle \textbf{plan vectoriel} l'ensemble des vecteurs du plan.
+
+\vspace{1.5em}
+
+\textit{\color{red}Définition 2 :}\\
+Soient $\vec{u}$ un vecteur du plan vectoriel et $(A, B)$ un couple de points. On dit que le couple $(A, B)$ est un \textbf{représentant} du vecteur $\vec{u}$ si et seulement si $\overrightarrow{AB} = \vec{u}$.
+
+\begin{center}
+    \begin{tikzpicture}[>=stealth, thick]
+        % Premier vecteur (u)
+        \draw[->] (0,0) -- (1.5,1.5) node[midway, right] {\color{red} $\vec{u}$};
+        
+        % Deuxième vecteur (AB) décalé vers la droite
+        % On utilise les mêmes coordonnées relatives pour qu'ils soient parallèles
+        \draw[->] (2,0) node[below left] {\color{red} $A$} -- (3.5,1.5) node[below right] {\color{red} $B$};
+    \end{tikzpicture}
+\end{center}
+\textit{\color{red}Remarque 1 :}\\
+Tout vecteur du plan a une infinité de représentants.
+\begin{center}
+    \begin{tikzpicture}[>=stealth, thick]
+        % Vecteurs parallèles
+        \draw[->] (0,1.2) node[above] {$E$} -- (2,1.2) node[right] {$F$};
+        \draw[->] (0,0.8) -- (2,0.8) node[right] {$\vec{u}$};
+        \draw[->] (0,0.4) node[left] {$A$} -- (2,0.4) node[right] {$B$};
+        \draw[->] (0,0) node[left] {$C$} -- (2,0) node[right] {$D$};
+    \end{tikzpicture}
+    \quad $\vec{u} = \overrightarrow{AB} = \overrightarrow{CD} = \overrightarrow{EF} = ...$
+\end{center}
+
+\vspace{1em}
+
+\textit{\color{red}Remarque 2 : (Caractéristiques d'un vecteur).}\\
+Un vecteur est caractérisé par un \textcolor{red}{sens}, une \textcolor{red}{direction} et une \textcolor{red}{norme} :
+
+\begin{itemize}
+    \item[$*_{1}$] La \textcolor{red}{direction} est celle de la "droite" dans laquelle est inclus le vecteur.
+    \item[$*_{2}$] Le \textcolor{red}{sens} est donné par l'orientation du segment dans lequel est inclus le vecteur ("vers la gauche" ou bien "vers la droite").
+    \item[$*_{3}$] La \textcolor{red}{norme} correspond à la longueur du segment sur lequel est inclus le vecteur.
+\end{itemize}
+
+Ainsi, on en déduit la propriété suivante :
+
+\subsection*{\underline{\color{red}Propriété :}}
+\begin{enumerate}
+    \item[i)] $\overrightarrow{AB} = \vec{0} \iff A = B \quad (\text{donc } \overrightarrow{AA} = \vec{0})$
+    \item[ii)] $\overrightarrow{AB} = -\overrightarrow{BA}$
+\end{enumerate}
+
+\section*{2- Propriétés}
+\subsection*{\underline{\color{red}Activité}}
+Soient $O$ un point du plan et $\vec{u}$ un vecteur du plan vectoriel.
+\begin{enumerate}
+    \item[i)] Construire un point $A$ tel que $\overrightarrow{OA} = \vec{u}$. ($A \neq O$)
+    \item[ii)] Construire un point $B$ tel que $\overrightarrow{OB} = \vec{u}$. ($B \neq O$)
+    \item[iii)] Que peut-on dire des points $A$ et $B$ ?
+\end{enumerate}
+
+\subsection*{\underline{\color{red}Correction}}
+\begin{enumerate}
+    \item[i)] Construisons le point $A$.
+    \begin{center}
+        \begin{tikzpicture}[>=stealth, thick]
+            \draw[->] (0,1) node[above] {$O$} -- (2,1) node[above] {$A$};
+            \node at (2,0.7) {$B$};
+            \draw[->] (0.5,0.2) -- (2.5,0.2) node[midway, below] {$\vec{u}$};
+        \end{tikzpicture}
+    \end{center}
+    \item[ii)] Construisons le point $B$ (voir la question i).
+    \item[iii)] On peut dire que les points $A$ et $B$ sont \textbf{confondus}.
+\end{enumerate}
+\subsection*{\underline{Propriété 1 : (Propriété fondamentale)}}
+Pour tout point $O$ et pour tout vecteur $\vec{u}$, il existe un et un seul (unique) point $M$ tel que $\overrightarrow{OM} = \vec{u}$.
+
+\subsubsection*{\underline{Preuve :}}
+$\overrightarrow{OM} = \vec{u}$ signifie que $M$ est l'image de $O$ par la translation du vecteur $\vec{u}$. D'où le point $M$ est l'unique point tel que $\overrightarrow{OM} = \vec{u}$.
+
+\vspace{1em}
+
+\subsection*{\underline{Propriété 2 :}}
+Soient $A, B, C$ et $D$ des points du plan. Alors les 3 énoncés suivants sont équivalents :
+\begin{enumerate}
+    \item[i)] $\overrightarrow{AB} = \overrightarrow{DC}$
+    \item[ii)] $ABDC$ est un parallélogramme.
+    \item[iii)] Les segments $[AC]$ et $[BD]$ ont le même milieu.
+\end{enumerate}
+\begin{center}
+    \includegraphics[width=3cm]{image1.png}
+\end{center}
+
+\begin{comment}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+% Points
+\coordinate (A) at (1,3);
+\coordinate (B) at (0,0);
+\coordinate (C) at (4,0);
+\coordinate (D) at (5,3);
+
+% Quadrilatère
+\draw[thick] (A) -- (D) -- (C) -- (B) -- cycle;
+
+% Diagonales
+\draw[thick] (A) -- (C);
+\draw[thick] (B) -- (D);
+
+% Point d'intersection
+\coordinate (O) at ($(A)!0.5!(C)$);
+
+% Marques sur AC
+\draw ($(A)!0.45!(C)$) ++(-0.1,0.1) -- ++(0.2,-0.2);
+\draw ($(A)!0.55!(C)$) ++(-0.1,0.1) -- ++(0.2,-0.2);
+
+% Marques sur BD
+\draw ($(B)!0.45!(D)$) ++(-0.1,-0.1) -- ++(0.2,0.2);
+\draw ($(B)!0.55!(D)$) ++(-0.1,-0.1) -- ++(0.2,0.2);
+
+% Noms des points
+\node[left] at (A) {$A$};
+\node[left] at (B) {$B$};
+\node[right] at (C) {$C$};
+\node[right] at (D) {$D$};
+
+\end{tikzpicture}
+\end{center}
+\end{comment}
+
+\end{document}
