@@ -14,6 +14,7 @@
 \pagestyle{empty}
 % Configuration des titres en rouge
 \usepackage{titlesec}
+\usepackage{verbatim} % <--- Indispensable pour \begin{comment}
 \usetikzlibrary{calc}
 \titleformat{\section}{\color{red}\normalfont\Large\bfseries}{}{0pt}{}
 \titleformat{\subsection}{\color{red}\normalfont\large\bfseries}{}{0pt}{}
@@ -158,5 +159,90 @@ Soient $A, B, C$ et $D$ des points du plan. Alors les 3 énoncés suivants sont 
 \end{tikzpicture}
 \end{center}
 \end{comment}
+\begin{comment}
+Cette section traite de la définition et des propriétés 
+élémentaires de la norme d'un vecteur.
+\end{comment}
 
+\subsection*{3- \underline{\color{red}Norme d'un vecteur}}
+
+\subsubsection*{\underline{\color{red}Définition :}}
+Soit $\vec{u}$ un vecteur du plan de représentant $(A, B)$, ($\overrightarrow{AB} = \vec{u}$).\\
+On appelle \textcolor{red}{norme} du vecteur notée $||\vec{u}||$ la distance $AB$ :
+$ ||\vec{u}|| = AB $
+
+\subsubsection*{\underline{\color{red}Propriété :}}
+Soit $\vec{u}$ un vecteur du plan vectoriel :
+\begin{enumerate}
+    \item[i)] $||\vec{u}|| = 0 \iff \vec{u} = \vec{0}$
+    \item[ii)] $||-\vec{u}|| = ||\vec{u}||$
+\end{enumerate}
+\subsubsection*{\underline{\color{red}Preuve :}}
+\begin{enumerate}
+    \item[i)] Montrons que $||\vec{u}|| = 0 \iff \vec{u} = \vec{0}$
+    \begin{itemize}
+        \item[$*_{1}$] $\vec{u} = \vec{0} \implies \vec{u} = \overrightarrow{AA}$ or $||\overrightarrow{AA}|| = 0$ d'où $||\vec{u}|| = 0$.
+        \item[$*_{2}$] $||\vec{u}|| = 0$ donc si $(A, B)$ est un représentant de $\vec{u}$ ($\overrightarrow{AB} = \vec{u}$) alors $AB = 0$. Donc $A = B \iff \overrightarrow{AB} = \vec{0}$. D'où $\vec{u} = \vec{0}$.
+    \end{itemize}
+    \item[ii)] Montrons que $||-\vec{u}|| = ||\vec{u}||$ \\
+    $(A, B)$ est un représentant du vecteur $\vec{u}$ équivaut à $(B, A)$ est un représentant du vecteur $-\vec{u}$.\\
+    Donc $||\vec{u}|| = AB$ et $||-\vec{u}|| = BA$.\\
+    Comme $AB = BA$ alors on en déduit que $||\vec{u}|| = ||-\vec{u}||$.
+\end{enumerate}
+
+\begin{comment}
+Cette section explique que l'égalité des normes n'implique 
+pas nécessairement l'égalité des vecteurs.
+\end{comment}
+
+\subsection*{\underline{\color{red}Remarque 1 :}}
+Deux vecteurs de même norme ne sont pas nécessairement égaux.
+
+\vspace{0.5em}
+
+\noindent \underline{\color{red}Par exemple :} Dans $\mathbb{R}^2$, on prend :
+$\vec{u} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$ et $\vec{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$
+
+\vspace{0.5em}
+
+\noindent On a :
+\begin{align*}
+||\vec{u}|| &= \sqrt{2^2 + 1^2} = \sqrt{5} \\
+||\vec{v}|| &= \sqrt{1^2 + 2^2} = \sqrt{5}
+\end{align*}
+
+\noindent Donc $||\vec{u}|| = ||\vec{v}||$ mais $\vec{u} \neq \vec{v}$.
+
+\begin{comment}
+Cette section présente la conclusion sur la comparaison des vecteurs 
+par leurs normes ainsi que les propriétés liées à la somme de vecteurs.
+\end{comment}
+
+\noindent \underline{Conclusion} : \\
+$\|\vec{u}\| = \|\vec{v}\| \not\implies \vec{u} = \vec{v}$
+
+\subsection*{\underline{\color{red}Remarque 2 :}}
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs.
+\begin{enumerate}
+    \item[i)] \textbf{En général}, on a : \\
+    $\|\vec{u} + \vec{v}\| \leq \|\vec{u}\| + \|\vec{v}\|$
+    
+    \item[ii)] \textbf{Par contre}, si $\vec{u}$ et $\vec{v}$ sont orthogonaux ($\vec{u} \perp \vec{v}$), alors : \\
+    $\|\vec{u} + \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2$
+\end{enumerate}
+
+\noindent Cette propriété est le \underline{théorème de Pythagore}.
+
+\noindent \underline{\color{red}Exemple :} \\
+i) $\vec{u} = \begin{pmatrix} 2 \\ -1 \end{pmatrix}$ et $\vec{v} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$ \\
+On a : \\
+$\vec{u} + \vec{v} = \begin{pmatrix} 4 \\ 0 \end{pmatrix}$ \\
+$\|\vec{u} + \vec{v}\| = \sqrt{4^2 + 0^2} = 4 \quad (*)$ \\
+$\begin{cases} 
+\|\vec{u}\| = \sqrt{2^2 + (-1)^2} = \sqrt{5} \\ 
+\|\vec{v}\| = \sqrt{2^2 + 1^2} = \sqrt{5} 
+\end{cases}$ \\
+$\|\vec{u}\| + \|\vec{v}\| = 2\sqrt{5} \quad (**)$ \\
+D'après $(*)$ et $(**)$, on a : \\
+$\|\vec{u} + \vec{v}\| < \|\vec{u}\| + \|\vec{v}\|$
 \end{document}
