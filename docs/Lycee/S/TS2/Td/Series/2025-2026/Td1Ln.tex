@@ -92,9 +92,11 @@ middle color = tcbcolback!80!black]
             \end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
+\begin{center}
+\fbox{\textbf{\exo}} Déterminer les limites suivantes :
+\end{center}
 \begin{multicols}{2}
 \setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
-\fbox{\textbf{\exo}} Déterminer les limites suivantes :
 \begin{enumerate}
 \item $\lim_{x \to +\infty} \ln(x+2)$
 \item $ \lim_{x \to 0} (\ln x)^2 $
@@ -235,4 +237,92 @@ middle color = tcbcolback!80!black]
 
 \end{multicols}
 
+\begin{center}
+\fbox{\textbf{\exo}} Déterminer les limites suivantes :
+\end{center}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+
+% --- Comportement à l'infini ---
+\item $\displaystyle \lim_{x \to +\infty} e^x$
+\item $\displaystyle \lim_{x \to -\infty} e^x$
+
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^x}{x}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^x}{x^3}$
+
+\item $\displaystyle \lim_{x \to +\infty} x e^{-x}$
+\item $\displaystyle \lim_{x \to +\infty} x^2 e^{-x}$
+
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{2x}}{e^x + 1}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{3x} + e^x}{e^{3x} - 2}$
+
+\item $\displaystyle \lim_{x \to -\infty} e^{2x}$
+\item $\displaystyle \lim_{x \to -\infty} \frac{e^x}{1 + e^x}$
+
+
+% --- Comparaisons exponentielles ---
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{x+2}}{e^x}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{2x}}{e^{x-1}}$
+
+\item $\displaystyle \lim_{x \to +\infty} \left(e^{x+1} - e^x\right)$
+\item $\displaystyle \lim_{x \to +\infty} \left(e^{2x} - e^x\right)$
+
+
+% --- Voisinage de 0 ---
+\item $\displaystyle \lim_{x \to 0} \frac{e^x - 1}{x}$
+\item $\displaystyle \lim_{x \to 0} \frac{e^{2x} - 1}{x}$
+
+\item $\displaystyle \lim_{x \to 0} \frac{e^x - e^{-x}}{x}$
+\item $\displaystyle \lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$
+
+\item $\displaystyle \lim_{x \to 0} \frac{e^{3x} - 1 - 3x}{x^2}$
+
+
+% --- Limites mixtes ---
+\item $\displaystyle \lim_{x \to +\infty} \frac{x + e^x}{e^x}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^x - x}{e^x}$
+
+\item $\displaystyle \lim_{x \to -\infty} \left(x e^x\right)$
+\item $\displaystyle \lim_{x \to -\infty} \frac{x}{e^{-x}}$
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{center}
+\fbox{\textbf{\exo}}Calculer les limites suivantes :
+\end{center}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+
+\begin{enumerate}
+\item $\displaystyle \lim_{x \to +\infty} \frac{\ln(1+e^x)}{x}$
+
+\item $\displaystyle \lim_{x \to +\infty} \ln\!\left(1 + e^{-x}\right)$
+
+\item $\displaystyle \lim_{x \to +\infty} \left(\ln(e^x + x) - x\right)$
+
+\item $\displaystyle \lim_{x \to 0^+} x \ln x$
+
+\item $\displaystyle \lim_{x \to 0} \frac{\ln(1+e^x) - \ln 2}{x}$
+
+\item $\displaystyle \lim_{x \to +\infty} \frac{\ln x}{e^x}$
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}} On considère la fonction
+\[
+f(x) = \ln(e^x + 1) - x.
+\]
+
+\begin{enumerate}
+\item Déterminer $\displaystyle \lim_{x \to +\infty} f(x)$.
+\item Déterminer $\displaystyle \lim_{x \to -\infty} f(x)$.
+\item Interpréter graphiquement ces résultats.
+\end{enumerate}
+
+\end{multicols}
 \end{document}

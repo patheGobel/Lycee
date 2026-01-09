@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{calligra} % Police manuscrite
+\usepackage[T1]{fontenc}
+\usepackage{eso-pic}  % Pour ajouter du contenu en arrière-plan
+\usepackage{xcolor}    % Pour gérer la couleur
+\title{Linéarisation}
+\author{E.DIA}
+\date{Année scolaire 2025-2026}
+% Commande pour la signature en arrière-plan
+\newcommand{\BackgroundSignature}{
+    \AddToShipoutPictureBG*{
+        \AtPageCenter{%
+            \makebox(0,0){\textcolor[gray]{0.85}{\fontsize{50}{60}\selectfont \textcalligra{PGB}}}
+        }
+    }
+}
+\begin{document}
+\maketitle % Affiche le titre, l'auteur et la date
+\BackgroundSignature
+
+On linéarise $(\cos x)^4$ en utilisant les nombres complexes.
+
+\medskip
+\textbf{Rappel (formule d’Euler) :}
+\[
+\cos x=\frac{e^{ix}+e^{-ix}}{2}
+\]
+
+\medskip
+\textbf{Écriture complexe :}
+\[
+(\cos x)^4=\left(\frac{e^{ix}+e^{-ix}}{2}\right)^4
+=\frac{1}{16}(e^{ix}+e^{-ix})^4
+\]
+
+\medskip
+\textbf{Développement :}
+\[
+(e^{ix}+e^{-ix})^4
+= e^{4ix}+4e^{2ix}+6+4e^{-2ix}+e^{-4ix}
+\]
+
+\medskip
+\textbf{Regroupement en cosinus :}
+\[
+e^{ikx}+e^{-ikx}=2\cos kx
+\]
+
+Ainsi,
+\[
+(e^{ix}+e^{-ix})^4
+= 2\cos 4x + 8\cos 2x + 6
+\]
+
+\medskip
+\textbf{Expression finale :}
+\[
+(\cos x)^4
+=\frac{1}{16}\left(2\cos 4x + 8\cos 2x + 6\right)
+\]
+
+\[
+\boxed{(\cos x)^4=\frac{3}{8}+\frac{1}{2}\cos 2x+\frac{1}{8}\cos 4x}
+\]
+
+\end{document}

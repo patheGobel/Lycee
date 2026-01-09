@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{calligra} % Police manuscrite
+\usepackage[T1]{fontenc}
+\usepackage{eso-pic}  % Pour ajouter du contenu en arrière-plan
+\usepackage{xcolor}    % Pour gérer la couleur
+\title{Linéarisation}
+\author{A.DIAO}
+\date{Année scolaire 2025-2026}
+% Commande pour la signature en arrière-plan
+\newcommand{\BackgroundSignature}{
+    \AddToShipoutPictureBG*{
+        \AtPageCenter{%
+            \makebox(0,0){\textcolor[gray]{0.8}{\fontsize{50}{60}\selectfont \textcalligra{PGB}}}
+        }
+    }
+}
+\begin{document}
+\maketitle % Affiche le titre, l'auteur et la date
+\BackgroundSignature
+
+\section*{Linéarisation de $\cos^2(x)$ par les formules d'Euler}
+
+D'après la formule d'Euler, nous avons :
+\[
+\cos(x) = \frac{e^{ix} + e^{-ix}}{2}
+\]
+
+En élevant au carré, on obtient :
+\begin{equation}
+\cos^2(x) = \left( \frac{e^{ix} + e^{-ix}}{2} \right)^2
+\end{equation}
+
+On développe le numérateur en utilisant l'identité remarquable\\ $(a+b)^2 = a^2 + 2ab + b^2$ :
+\begin{align*}
+\cos^2(x) &= \frac{(e^{ix})^2 + 2(e^{ix} \cdot e^{-ix}) + (e^{-ix})^2}{4} \\
+          &= \frac{e^{i2x} + 2e^0 + e^{-i2x}}{4} \\
+          &= \frac{e^{i2x} + e^{-i2x} + 2}{4}
+\end{align*}
+
+En isolant le terme qui correspond à la formule d'Euler pour $\cos(2x)$ :
+\begin{align*}
+\cos^2(x) &= \frac{1}{2} \left( \frac{e^{i2x} + e^{-i2x}}{2} \right) + \frac{2}{4} \\
+          &= \frac{1}{2} \cos(2x) + \frac{1}{2}
+\end{align*}
+
+Finalement, la forme linéarisée est :
+\[
+\cos^2(x) = \frac{1 + \cos(2x)}{2}
+\]
+
+\section*{Linéarisation de $\cos^3(x)$ par les formules d'Euler}
+
+On utilise la formule d'Euler pour le cosinus :
+\[
+\cos(x) = \frac{e^{ix} + e^{-ix}}{2}
+\]
+
+En élevant au cube, nous avons :
+\begin{equation*}
+\cos^3(x) = \left( \frac{e^{ix} + e^{-ix}}{2} \right)^3
+\end{equation*}
+
+On développe le numérateur à l'aide de l'identité remarquable $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$ :
+\begin{align*}
+\cos^3(x) &= \frac{(e^{ix})^3 + 3(e^{ix})^2 e^{-ix} + 3e^{ix}(e^{-ix})^2 + (e^{-ix})^3}{2^3} \\
+          &= \frac{e^{i3x} + 3e^{i2x}e^{-ix} + 3e^{ix}e^{-i2x} + e^{-i3x}}{8} \\
+          &= \frac{e^{i3x} + 3e^{ix} + 3e^{-ix} + e^{-i3x}}{8}
+\end{align*}
+
+On regroupe les termes de même fréquence pour faire apparaître les formules d'Euler :
+\begin{align*}
+\cos^3(x) &= \frac{(e^{i3x} + e^{-i3x}) + 3(e^{ix} + e^{-ix})}{8} \\
+          &= \frac{1}{4} \left( \frac{e^{i3x} + e^{-i3x}}{2} \right) + \frac{3}{4} \left( \frac{e^{ix} + e^{-ix}}{2} \right)
+\end{align*}
+
+En utilisant à nouveau la formule d'Euler $\cos(nx) = \frac{e^{inx} + e^{-inx}}{2}$, on obtient le résultat final :
+\begin{equation*}
+\cos^3(x) = \frac{1}{4} \cos(3x) + \frac{3}{4} \cos(x)
+\end{equation*}
+
+\section*{Linéarisation de $\cos^4(x)$ par les formules d'Euler}
+\begin{align*}
+\cos^4(x) &= \left( \frac{e^{ix} + e^{-ix}}{2} \right)^4 \\
+          &= \frac{1}{16} \left( e^{i4x} + 4e^{i2x} + 6 + 4e^{-i2x} + e^{-i4x} \right) \\
+          &= \frac{1}{16} \left( (e^{i4x} + e^{-i4x}) + 4(e^{i2x} + e^{-i2x}) + 6 \right) \\
+          &= \frac{1}{16} \left( 2\cos(4x) + 8\cos(2x) + 6 \right) \\
+          &= \frac{1}{8}\cos(4x) + \frac{1}{2}\cos(2x) + \frac{3}{8}
+\end{align*}
+\section*{Linéarisation de $\cos^5(x)$ par les formules d'Euler}
+\begin{align*}
+\cos^5(x) &= \left( \frac{e^{ix} + e^{-ix}}{2} \right)^5 \\
+          &= \frac{1}{32} \left( e^{i5x} + 5e^{i3x} + 10e^{ix} + 10e^{-ix} + 5e^{-i3x} + e^{-i5x} \right) \\
+          &= \frac{1}{32} \left[ (e^{i5x} + e^{-i5x}) + 5(e^{i3x} + e^{-i3x}) + 10(e^{ix} + e^{-ix}) \right] \\
+          &= \frac{1}{32} \left[ 2\cos(5x) + 10\cos(3x) + 20\cos(x) \right] \\
+          &= \frac{1}{16}\cos(5x) + \frac{5}{16}\cos(3x) + \frac{5}{8}\cos(x)
+\end{align*}
+------------------------------------------------------------------------------------------------------
+\section*{Linéarisation de $\sin^2(x)$ par les formules d'Euler}
+\begin{align*}
+\sin^2(x) &= \left( \frac{e^{ix} - e^{-ix}}{2i} \right)^2 \\
+          &= \frac{e^{i2x} - 2e^{ix}e^{-ix} + e^{-i2x}}{-4} \\
+          &= \frac{(e^{i2x} + e^{-i2x}) - 2}{-4} \\
+          &= \frac{2\cos(2x) - 2}{-4} \\
+          &= \frac{1 - \cos(2x)}{2}
+\end{align*}
+\section*{Linéarisation de $\sin^3(x)$ par les formules d'Euler}
+\begin{align*}
+\sin^3(x) &= \left( \frac{e^{ix} - e^{-ix}}{2i} \right)^3 \\
+          &= \frac{e^{i3x} - 3e^{ix} + 3e^{-ix} - e^{-i3x}}{-8i} \\
+          &= \frac{(e^{i3x} - e^{-i3x}) - 3(e^{ix} - e^{-ix})}{-8i} \\
+          &= -\frac{1}{4} \left( \frac{e^{i3x} - e^{-i3x}}{2i} \right) + \frac{3}{4} \left( \frac{e^{ix} - e^{-ix}}{2i} \right) \\
+          &= -\frac{1}{4}\sin(3x) + \frac{3}{4}\sin(x)
+\end{align*}
+\section*{Linéarisation de $\sin^4(x)$ par les formules d'Euler}
+\begin{align*}
+\sin^4(x) &= \left( \frac{e^{ix} - e^{-ix}}{2i} \right)^4 \\
+          &= \frac{1}{16} \left( e^{i4x} - 4e^{i2x} + 6 - 4e^{-i2x} + e^{-i4x} \right) \\
+          &= \frac{1}{16} \left( (e^{i4x} + e^{-i4x}) - 4(e^{i2x} + e^{-i2x}) + 6 \right) \\
+          &= \frac{1}{16} \left( 2\cos(4x) - 8\cos(2x) + 6 \right) \\
+          &= \frac{1}{8}\cos(4x) - \frac{1}{2}\cos(2x) + \frac{3}{8}
+\end{align*}
+\section*{Linéarisation de $\sin^5(x)$ par les formules d'Euler}
+\begin{align*}
+\sin^5(x) &= \left( \frac{e^{ix} - e^{-ix}}{2i} \right)^5 \\
+          &= \frac{1}{32i} \left( e^{i5x} - 5e^{i3x} + 10e^{ix} - 10e^{-ix} + 5e^{-i3x} - e^{-i5x} \right) \\
+          &= \frac{1}{32i} \left[ (e^{i5x} - e^{-i5x}) - 5(e^{i3x} - e^{-i3x}) + 10(e^{ix} - e^{-ix}) \right] \\
+          &= \frac{2i\sin(5x) - 10i\sin(3x) + 20i\sin(x)}{32i} \\
+          &= \frac{1}{16}\sin(5x) - \frac{5}{16}\sin(3x) + \frac{5}{8}\sin(x)
+\end{align*}
+--------------------------------------------------------------------------------------------
+\section*{Linéarisation de $\cos^2(x)\sin^2(x)$ par les formules d'Euler}
+\begin{align*}
+\cos^2(x)\sin^2(x) &= \left( \frac{e^{ix} + e^{-ix}}{2} \right)^2 \left( \frac{e^{ix} - e^{-ix}}{2i} \right)^2 \\
+                   &= \left( \frac{e^{i2x} - e^{-i2x}}{4i} \right)^2 \\
+                   &= \frac{e^{i4x} - 2 + e^{-i4x}}{-16} \\
+                   &= \frac{2\cos(4x) - 2}{-16} \\
+                   &= \frac{1 - \cos(4x)}{8}
+\end{align*}
+\section*{Linéarisation de $\cos^3(x)\sin^2(x)$ par les formules d'Euler}
+\begin{align*}
+\cos^3(x)\sin^2(x) &= \left( \frac{e^{ix} + e^{-ix}}{2} \right)^3 \left( \frac{e^{ix} - e^{-ix}}{2i} \right)^2 \\
+                   &= \frac{1}{-32} (e^{i3x} + 3e^{ix} + 3e^{-ix} + e^{-i3x})(e^{i2x} - 2 + e^{-i2x}) \\
+                   &= \frac{1}{-32} \left[ (e^{i5x} + e^{-i5x}) + (e^{i3x} + e^{-i3x}) - 2(e^{ix} + e^{-ix}) \right] \\
+                   &= \frac{2\cos(5x) + 2\cos(3x) - 4\cos(x)}{-32} \\
+                   &= \frac{1}{8}\cos(x) - \frac{1}{16}\cos(3x) - \frac{1}{16}\cos(5x)
+\end{align*}
+\end{document}
