@@ -23,6 +23,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
 \usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+ \usetikzlibrary{calc}
 \tcbuselibrary{skins,hooks}
 \usetikzlibrary{patterns}
 %%%::::::by chnini ameur :::::::%%%
@@ -87,7 +88,7 @@ middle color = tcbcolback!80!black]
                 \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                                                     \\ \hline
                 \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{$^{er}$S2} & \textbf{Date: ../02/2026} & \textbf{Durée : 4 heures} \\ \hline
                 \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
-                                                                  \textbf{{\Large\sffamily Composition n$ ^{\circ} $ 1 Du 1$ ^\text{\bf nd} $ Semestre}}
+                                                                  \textbf{{\Large\sffamily Composition n$ ^{\circ} $ 1 Du 1$ ^\text{\bf er} $ Semestre}}
                                                               \end{center}}}                                                                                                                               \\ \hline
             \end{tabular}}\endgroup};
 \end{tikzpicture}
@@ -117,6 +118,7 @@ Soit $ABCD$ un parallélogramme et soit $G$ le barycentre du système $\{(A,3);(
     \end{enumerate}
     \end{multicols}
 \end{enumerate}
+
 \section*{\underline{ Exercice 2 :} (4,75 pts) \small\itshape Fonctions réelles : domaines, compositions et valeurs absolues}
 \begin{enumerate}
 \item Déterminer le domaine de définition $D_f$ de la fonction $f$ définie ci-dessous \textbf{0,5pt+0,5pt+0,5pt+1pt}

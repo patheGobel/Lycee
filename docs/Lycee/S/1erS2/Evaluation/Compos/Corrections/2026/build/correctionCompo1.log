@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  12 JAN 2026 20:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  12 JAN 2026 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**compo1.tex
-(./compo1.tex
+**correctionCompo1.tex
+(./correctionCompo1.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -870,17 +870,18 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box130
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
 e.tex
 File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip61
@@ -961,8 +962,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count356
 \l__pdf_internal_box=\box131
 )
-(build/compo1.aux)
-\openout1 = `compo1.aux'.
+(build/correctionCompo1.aux)
+\openout1 = `correctionCompo1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
@@ -1040,9 +1041,9 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 82.
-(build/compo1.out) (build/compo1.out)
+(build/correctionCompo1.out) (build/correctionCompo1.out)
 \@outlinefile=\write4
-\openout4 = `compo1.out'.
+\openout4 = `correctionCompo1.out'.
 
 \c@lstlisting=\count363
 
@@ -1109,52 +1110,53 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 93.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+10.
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/
+enc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-
+re/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [2{/usr/share/texmf/fonts/enc/dvips/lm
+/lm-mathex.enc}] [3] [4] [5] [6]
+Overfull \hbox (3.33702pt too wide) in paragraph at lines 720--720
+[][]$[]$ \T1/lmr/bx/n/17.28 Équa-tions du sec-ond de-gré à paramètre 
  []
 
-[2] 
+[7] [8] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(build/compo1.aux)
+(build/correctionCompo1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `compo1.out' has not changed.
+Package rerunfilecheck Info: File `correctionCompo1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30119 strings out of 474222
- 604249 string characters out of 5748732
- 1970975 words of memory out of 5000000
- 51774 multiletter control sequences out of 15000+600000
- 623510 words of font info for 85 fonts, out of 8000000 for 9000
+ 30280 strings out of 474222
+ 607240 string characters out of 5748732
+ 1956975 words of memory out of 5000000
+ 51924 multiletter control sequences out of 15000+600000
+ 620881 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,424b,960s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,15n,107p,434b,890s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/compo1.pdf (2 pages, 190459 bytes).
+pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on build/correctionCompo1.pdf (8 pages, 209972 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 217 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
