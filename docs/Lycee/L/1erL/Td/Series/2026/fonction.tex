@@ -1,0 +1,181 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{L} & \textbf{Date: 13/01/2026} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Fonctions Numériques}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+
+\vspace{3cm}
+\fbox{\textbf{\exo}}Déterminer $D_f$ le domaine de définition des fonctions $f$ suivantes
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.1mm}
+
+\begin{enumerate}
+    \item $f(x) = 5x^2 - x + 1$
+    \item $f(x) = x + 1 - \frac{1}{x + 2}$
+    \item $f(x) = \sqrt{1 - x}$
+    \item $f(x) = \sqrt{x^2 + x - 2}$
+    \item $f(x) = \frac{5x^2 - 2x - 3}{x - 4} \hfill$
+    \item $f(x) = \frac{x^2}{x^2 - 5x + 6} \hfill$
+    \item $f(x) = \sqrt{-5x + 10}$
+    \item $f(x) = -3x^2 + 2x - 4$
+    \item $f(x) = \frac{2x + 3}{x - 1}$
+    \item $f(x) = \sqrt{3x - 2}$
+    \item $f(x) = \frac{x^2 - x + 2}{x^2 - 3x + 2}$
+   	\item $f(x) = x^3 + 2x^2 + x + 1$
+    \item $g(x) = \frac{3x + 4}{x - 3}$
+    \item $h(x) = \frac{1}{x^2 + x - 2}$
+    \item $k(x) = \sqrt{3x - 6}$
+    
+    \item $f(x) = -x^4 + 5x^3 - x^2 + x + 4$
+    \item $g(x) = \frac{x + 3}{-2x^2 - 2x + 4}$
+    \item $h(x) = \frac{1}{x^2 + 1}$
+    \item $k(x) = \frac{3x - 4}{x(x - 1)(x + 2)}$
+    
+    \item $f(x) = \sqrt{4 - x}$
+    \item $g(x) = \frac{x^2 + 1}{-x^2 + 9}$
+    \item $h(x) = \frac{x^2 + 3x + 1}{x^2 + x - 6}$
+    \item $f(x) = \sqrt{1 + \frac{1}{2}x}$
+\end{enumerate}
+\end{multicols}
+\fbox{\textbf{\exo}}
+ Etudier la parité de la fonction $f$ dans les cas suivants :
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.1mm}
+\begin{enumerate}
+    \item $f(x) = \frac{x^2 - 3x + 2}{x - 2}$
+    \item $f(x) = x^3 - 3x $
+    \item $f(x) = \frac{x^2}{x^2 - 4} $ 
+    \item $f(x) = x^3 - x$
+    \item $f(x) = \frac{3}{x} $
+    \item $f(x) = \sqrt{-x}$ 
+    \item $f(x) =-3x^4 + 1$
+\end{enumerate}
+\end{multicols}
+
+\fbox{\textbf{\exo}} : image et antécédent(s)
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm}
+\begin{enumerate}
+    \item Soit $f$ la fonction définie par $f(x) = \sqrt{x - 3}$.
+    \begin{enumerate}
+        \item Déterminer le domaine de définition de $f$.
+        \item Calculer l'image des réels suivants par $f$ : $4$ ; $12$ ; $7$.
+    \end{enumerate}
+    
+    \item Soit $f$ la fonction définie par $f(x) = x + 4$.
+    \begin{itemize}
+        \item Déterminer l'antécédent des réels : $1$ ; $3$ ; $-6$ par $f$.
+    \end{itemize}
+    
+    \item Soit $f$ la fonction par : $f(x) = x^2 - x + 1$.
+    \begin{enumerate}
+        \item Après avoir donné son $D_f$, calculer l'image de $0$ ; $3$ et de $-4$.
+        \item Déterminer s'il existe l'antécédent de : $-1$ ; $3$ et de $-3$.
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\fbox{\textbf{\exo}}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm}
+Soit $f(x) = x^2$ définie sur $[-3 ; 3]$ et $g(x) = \frac{3}{x}$ définie sur $[-5 ; 6]$
+
+\begin{enumerate}
+    \item En se servant d'un tableau de valeurs, construire la courbe de $f$.
+    \item En se servant d'un tableau de valeurs, construire la courbe de $g$.
+\end{enumerate}
+\end{multicols}
+\begin{comment}
+\begin{center}
+    \fbox{\textbf{\exo}}
+\end{center}
+\end{comment}
+\end{document}
