@@ -12,12 +12,15 @@
 \usetikzlibrary{arrows}
 \usepackage{tikz} % Indispensable pour les dessins
 \pagestyle{empty}
+\usetikzlibrary{calc}
 % Configuration des titres en rouge
 \usepackage{titlesec}
 \usepackage{verbatim} % <--- Indispensable pour \begin{comment}
+\usepackage{centernot}
 \usetikzlibrary{calc}
 \titleformat{\section}{\color{red}\normalfont\Large\bfseries}{}{0pt}{}
 \titleformat{\subsection}{\color{red}\normalfont\large\bfseries}{}{0pt}{}
+
 
 \begin{document}
 
@@ -245,4 +248,379 @@ $\begin{cases}
 $\|\vec{u}\| + \|\vec{v}\| = 2\sqrt{5} \quad (**)$ \\
 D'après $(*)$ et $(**)$, on a : \\
 $\|\vec{u} + \vec{v}\| < \|\vec{u}\| + \|\vec{v}\|$
+\begin{comment}
+Exemple ii) : Vérification du théorème de Pythagore pour deux vecteurs
+orthogonaux u et v dans R^2.
+\end{comment}
+
+\noindent ii) $\vec{u} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$ et $\vec{v} = \begin{pmatrix} -1 \\ 2 \end{pmatrix}$ \\
+On a : \\
+$x x' + y y' = 2(-1) + 1(2) = 0$ \\
+donc $\vec{u} \perp \vec{v}$ \\
+$\vec{u} + \vec{v} = \begin{pmatrix} 1 \\ 3 \end{pmatrix}$ \\
+$\|\vec{u} + \vec{v}\| = \sqrt{1^2 + 3^2} = \sqrt{10}$ \\
+Donc \\
+$\|\vec{u} + \vec{v}\|^2 = 10 \quad (1)$ \\
+$\begin{cases} 
+\|\vec{u}\| = \sqrt{5} \\ 
+\|\vec{v}\| = \sqrt{5} 
+\end{cases}$ \\
+Donc, $\|\vec{u}\|^2 + \|\vec{v}\|^2 = 10 \quad (2)$ \\
+D'après $(1)$ et $(2)$, on a : \\
+$\|\vec{u} + \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2$
+
+\section*{\underline{\uppercase{\uppercase{II - Calcul vectoriel}}}}
+
+\subsection*{1- \underline{\color{red}Relation de Chasles}}
+
+\noindent Pour tous points $A$, $B$ et $C$, on a :
+\begin{center}
+    \color{red}
+    \framebox{
+        \color{black}
+        $\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}$
+    }
+\end{center}
+\noindent Cette relation est appelée \underline{relation de Chasles}.
+
+\vspace{1.5em}
+
+\subsection*{\underline{\color{red}Application}}
+
+\noindent \textbf{i)} Soient $A$, $B$, $C$ et $M$ des points du plan tels que $\overrightarrow{AM} = \frac{1}{3} \overrightarrow{BC}$ \\
+et $\overrightarrow{BM} = \dfrac{2}{3} \overrightarrow{BC}$. Montrer que $\overrightarrow{AB} = -\dfrac{1}{3} \overrightarrow{BC}$
+
+\vspace{1em}
+
+\noindent \textbf{ii)} Simplifier l'expression de $\vec{u} = \overrightarrow{AB} + 2\overrightarrow{BC} + 3\overrightarrow{CA} + \overrightarrow{CB}$
+
+\section*{\underline{\color{red}Solution}}
+
+\noindent \textbf{i) Montrons que $\overrightarrow{AB} = -\frac{1}{3} \overrightarrow{BC}$}
+
+\vspace{1em}
+
+\noindent $\overrightarrow{AB} = \overrightarrow{AM} + \overrightarrow{MB}$ \\
+or $\overrightarrow{AM} = \frac{1}{3} \overrightarrow{BC}$ \quad et \quad $\overrightarrow{BM} = \frac{2}{3} \overrightarrow{BC} \implies \overrightarrow{MB} = -\frac{2}{3} \overrightarrow{BC}$
+
+\vspace{1em}
+
+\noindent Donc $\overrightarrow{AB} = \frac{1}{3} \overrightarrow{BC} - \frac{2}{3} \overrightarrow{BC}$
+
+\vspace{1em}
+
+\begin{center}
+    \framebox{
+        $\overrightarrow{AB} = -\frac{1}{3} \overrightarrow{BC}$
+    }
+\end{center}
+
+\vspace{2em}
+
+\noindent \textbf{ii) Simplifions l'expression :}
+
+\vspace{1em}
+
+\noindent $\vec{u} = \overrightarrow{AB} + 2\overrightarrow{BC} + 3\overrightarrow{CA} + \overrightarrow{CB}$ \\
+$\vec{u} = \underbrace{\overrightarrow{AB} + \overrightarrow{BC}}_{\overrightarrow{AC}} + \overrightarrow{BC} + \overrightarrow{CA} + \overrightarrow{CA} + \overrightarrow{CA} + \overrightarrow{CB}$ \\
+$\vec{u} = \overrightarrow{AC} + \overrightarrow{BA} + \overrightarrow{BC} + \overrightarrow{CA} + \overrightarrow{CA} + \overrightarrow{CB}$ \\
+$\vec{u} = \overrightarrow{AC} + \overrightarrow{CB} + \overrightarrow{BA} + \overrightarrow{CA} + \overrightarrow{BC} + \overrightarrow{CA}$ \\
+$\vec{u} = \overrightarrow{AB} + \overrightarrow{BA} + \overrightarrow{CA} + \overrightarrow{CA}$ \\
+$\vec{u} = \vec{0} + 2\overrightarrow{CA}$
+
+\vspace{1em}
+
+\noindent \textbf{Résultat final :} $\vec{u} = 2\overrightarrow{CA}$
+
+\noindent $\vec{u} = \overrightarrow{AA} + \overrightarrow{CA} + \overrightarrow{CA}$ \\
+$\vec{u} = \vec{0} + 2\overrightarrow{CA}$
+
+\vspace{1em}
+
+\begin{center}
+    \framebox{
+        $\vec{u} = 2\overrightarrow{CA}$
+    }
+\end{center}
+
+\section*{2- \underline{Milieu d'un segment}}
+
+\subsection*{\underline{Propriété :}}
+Soient $A$ et $B$ deux points distincts et $I$ milieu du segment $[AB]$. Alors, pour tout point $M$ du plan, on a :
+
+\begin{center}
+    \color{red}
+    \framebox{\color{black}$\overrightarrow{MA} + \overrightarrow{MB} = 2\overrightarrow{MI}$}
+    \quad \quad
+    \framebox{\color{black}$\overrightarrow{MI} = \frac{1}{2} \left( \overrightarrow{MA} + \overrightarrow{MB} \right)$}
+\end{center}
+
+\vspace{1em}
+
+\subsection*{\underline{Preuve :}}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[thick] (0,0) -- (4,0);
+        \node at (0,0) [below] {$A$};
+        \node at (0,0) {$\times$};
+        \node at (2,0) [below] {$I$};
+        \node at (2,0) {$\times$};
+        \node at (4,0) [below] {$B$};
+        \node at (4,0) {$\times$};
+    \end{tikzpicture}
+\end{center}
+
+\noindent On a : $I$ milieu de $[AB]$ alors : \\
+$\overrightarrow{AI} = \overrightarrow{IB}$ \\
+$\overrightarrow{AM} + \overrightarrow{MI} = \overrightarrow{IM} + \overrightarrow{MB}$ \\
+$-\overrightarrow{MA} + \overrightarrow{MI} = -\overrightarrow{MI} + \overrightarrow{MB}$ \\
+$\overrightarrow{MI} + \overrightarrow{MI} = \overrightarrow{MB} + \overrightarrow{MA}$ \\
+$2\overrightarrow{MI} = \overrightarrow{MB} + \overrightarrow{MA}$ \\
+D'où $\overrightarrow{MA} + \overrightarrow{MB} = 2\overrightarrow{MI}$
+
+\section*{\underline{\color{red}Application}}
+
+\noindent Les questions \textbf{1)} et \textbf{2)} sont indépendantes.
+
+\vspace{1em}
+
+\noindent \textbf{1)} $ABCD$ est un quadrilatère quelconque avec $I$ et $J$ les milieux respectifs de $[AB]$ et $[CD]$. \\
+Montrer que $\overrightarrow{AC} + \overrightarrow{BD} = 2\overrightarrow{IJ}$
+
+\vspace{2em}
+
+\noindent \textbf{2)} $ABC$ est un triangle quelconque avec $I$ milieu de $[BC]$. \\
+Prouver que pour tout point du plan on a : \\
+$2\overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} = 2\overrightarrow{IA}$
+
+\section*{\underline{\color{red}Solution}}
+
+\noindent \textbf{1) Soient $I * [AB]$ et $J * [CD]$. Montrons que $\overrightarrow{AC} + \overrightarrow{BD} = 2\overrightarrow{IJ}$}
+
+\vspace{1em}
+
+\noindent On a :
+\begin{align*}
+\overrightarrow{AC} + \overrightarrow{BD} &= \overrightarrow{AC} + (\overrightarrow{BC} + \overrightarrow{CD}) \\
+\overrightarrow{AC} + \overrightarrow{BD} &= (\overrightarrow{AC} + \overrightarrow{BC}) + \overrightarrow{CD}
+\end{align*}
+
+\noindent Or $I$ milieu de $[AB]$ donc $\overrightarrow{AC} + \overrightarrow{BC} = 2\overrightarrow{IC}$ \\
+Et $J$ milieu de $[CD]$ donc $\overrightarrow{CD} = 2\overrightarrow{CJ}$ (Note: Correction selon le raisonnement du milieu) \\
+\noindent Alors $\overrightarrow{AC} + \overrightarrow{BD} = 2\overrightarrow{IC} + 2\overrightarrow{CJ}$
+\begin{align*}
+\overrightarrow{AC} + \overrightarrow{BD} &= 2(\overrightarrow{IC} + \overrightarrow{CJ}) \\
+\overrightarrow{AC} + \overrightarrow{BD} &= 2(\overrightarrow{IJ})
+\end{align*}
+
+\noindent \textbf{D'où $\overrightarrow{AC} + \overrightarrow{BD} = 2\overrightarrow{IJ}$}
+
+\vspace{2em}
+
+\noindent \textbf{2) Montrons que $2\overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} = 2\overrightarrow{IA}$}
+
+\vspace{1em}
+
+\noindent On a : $2\overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} = 2\overrightarrow{MA} + \overrightarrow{BM} + \overrightarrow{CM}$ \\
+\noindent Or $I * [BC]$ donc $\overrightarrow{BM} + \overrightarrow{CM} = 2\overrightarrow{IM}$ \\
+\noindent Alors $2\overrightarrow{MA} - \overrightarrow{MB} - \overrightarrow{MC} = 2\overrightarrow{MA} + 2\overrightarrow{IM}$
+\begin{align*}
+&= 2(\overrightarrow{MA} + \overrightarrow{IM}) \\
+&= 2(\overrightarrow{IM} + \overrightarrow{MA}) \\
+&= 2(\overrightarrow{IA})
+\end{align*}
+
+\noindent \textbf{$= 2\overrightarrow{IA}$}
+
+
+\section*{3- \underline{La construction d'une somme de vecteurs}}
+
+\subsection*{a- \underline{À l'aide de la relation de Chasles}}
+
+\noindent Soient $\vec{u}$ et $\vec{v}$ deux vecteurs, $A$, $B$ et $C$ 3 points tels que $\vec{u} = \overrightarrow{AB}$ et $\vec{v} = \overrightarrow{BC}$. \\
+La somme des vecteurs $\vec{u}$ et $\vec{v}$ est notée $\vec{u} + \vec{v}$ et est donnée par :
+
+\begin{center}
+    \color{red}
+    \framebox{\color{black} $\vec{u} + \vec{v} = \overrightarrow{AC}$}
+\end{center}
+
+\vspace{1em}
+
+\subsection*{\underline{Exemple :}}
+\noindent Soient $\vec{u}$ et $\vec{v}$ deux vecteurs donnés. Construire le vecteur $\vec{w}$ tel que $\vec{w} = \vec{u} + \vec{v}$.
+
+\vspace{1em}
+
+\subsection*{\underline{Correction}}
+
+\begin{center}
+    \begin{tikzpicture}[>=stealth, thick, scale=1.2]
+        % Construction principale (Triangle ABC)
+        \coordinate (A) at (0,2);
+        \coordinate (B) at (1,0.8);
+        \coordinate (C) at (0.5,-0.5);
+        
+        \draw[->] (A) -- (B) node[midway, right] {$\vec{u}$};
+        \draw[->] (B) -- (C) node[midway, right] {$\vec{v}$};
+        \draw[->, blue] (A) -- (C) node[midway, left] {$\vec{w}$};
+        
+        \node[above] at (A) {$A$};
+        \node[right] at (B) {$B$};
+        \node[below] at (C) {$C$};
+
+        % Vecteurs isolés (données de l'énoncé)
+        \begin{scope}[shift={(2.5,1.5)}]
+            \draw[->] (0,0) -- (1,-1) node[midway, above right] {$\vec{v}$};
+        \end{scope}
+        
+        \begin{scope}[shift={(3.5,0)}]
+            \draw[->] (0,0) -- (0.5,-1.2) node[midway, right] {$\vec{u}$};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+\subsection*{b- \underline{À l'aide de la règle du parallélogramme}}
+
+\noindent Soient $\vec{u}$ et $\vec{v}$ deux vecteurs, $A$, $B$ et $C$ trois points non alignés et $D$ un point tels que : $\vec{u} = \overrightarrow{AB}$ et $\vec{v} = \overrightarrow{AC}$. \\
+On a : \\
+$\overrightarrow{AB} + \overrightarrow{AC} = \overrightarrow{AD}$ ssi $ABDC$ est un parallélogramme. \\
+Ainsi, la somme des vecteurs $\vec{u}$ et $\vec{v}$ notée $\vec{u} + \vec{v}$ est donnée par :
+
+\begin{center}
+    \color{red}
+    \framebox{\color{black} $\vec{u} + \vec{v} = \overrightarrow{AD}$}
+\end{center}
+
+\vspace{1em}
+
+\begin{center}
+    \begin{tikzpicture}[>=stealth, thick, scale=1.5]
+        % Points du parallélogramme
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1,0.8);
+        \coordinate (C) at (1.2,-0.5);
+        \coordinate (D) at ($(B)+(C)-(A)$); % Calcul automatique du point D
+
+        % Vecteurs de base
+        \draw[->] (A) -- (B) node[midway, above left] {$\vec{u}$};
+        \draw[->] (A) -- (C) node[midway, below left] {$\vec{v}$};
+        
+        % Somme (Diagonale)
+        \draw[->, very thick] (A) -- (D) node[midway, above] {$\vec{u} + \vec{v}$};
+
+        % Côtés en pointillés
+        \draw[dashed] (B) -- (D);
+        \draw[dashed] (C) -- (D);
+
+        % Étiquettes des points
+        \node[left] at (A) {$A$};
+        \node[above] at (B) {$B$};
+        \node[below] at (C) {$C$};
+        \node[right] at (D) {$D$};
+    \end{tikzpicture}
+\end{center}
+
+\noindent \underline{\color{red}Ex :} Soient $\vec{u}$ et $\vec{v}$ deux vecteurs donnés. Construire le vecteur $\vec{w}$ tel que $\vec{w} = \vec{u} + \vec{v}$
+
+\vspace{1.5em}
+
+\begin{center}
+    \underline{\color{red}Correction}
+\end{center}
+
+\noindent Soient $A$, $B$ et $C$ 3 points non alignés tels que : \\
+$\vec{u} = \overrightarrow{AB}$, $\vec{v} = \overrightarrow{AC}$ et $\overrightarrow{AB} + \overrightarrow{AC} = \overrightarrow{AD}$. Alors $\vec{w} = \overrightarrow{AD}$
+
+\vspace{2em}
+
+\begin{center}
+    \begin{tikzpicture}[>=stealth, thick, scale=1.3]
+        % Vecteurs de données (témoins)
+        \draw[->] (-1,2) -- (0.5,3.5) node[midway, above left] {$\vec{u}$};
+        \draw[->] (2.5,2.5) -- (3.8,1.2) node[midway, above right] {$\vec{v}$};
+
+        % Construction du parallélogramme
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1.5,1.5);
+        \coordinate (C) at (1.3,-1.3);
+        \coordinate (D) at ($(B)+(C)-(A)$);
+
+        % Vecteurs principaux
+        \draw[->] (A) -- (B) node[midway, left] {$\vec{u}$};
+        \draw[->] (A) -- (C) node[midway, left] {$\vec{v}$};
+        \draw[->, very thick] (A) -- (D) node[midway, above] {$\vec{u} + \vec{v} = \vec{w}$};
+
+        % Traits de construction (pointillés)
+        \draw[dashed] (B) -- (D);
+        \draw[dashed] (C) -- (D);
+
+        % Points
+        \node[left] at (A) {$A$};
+        \node[above] at (B) {$B$};
+        \node[below] at (C) {$C$};
+        \node[right] at (D) {$D$};
+    \end{tikzpicture}
+\end{center}
+\section*{4- \underline{Multiplication d'un vecteur par un nombre réel}}
+
+\subsection*{\underline{Activité}}
+
+\noindent Soient $I$ le milieu d'un segment $[AB]$ et $J$ celui du segment $[IB]$.
+
+\vspace{1em}
+
+\begin{enumerate}
+    \item[i)] Comparer les caractéristiques des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AI}$.
+    \item[ii)] Comparer les caractéristiques des vecteurs $\overrightarrow{IB}$ et $\overrightarrow{BA}$.
+\end{enumerate}
+
+\section*{\underline{\color{red}Correction}}
+
+\begin{center}
+    \begin{tikzpicture}[thick]
+        % Ligne du segment
+        \draw (0,0) -- (6,0);
+        
+        % Graduations et points
+        \draw (0,0.1) -- (0,-0.1) node[below] {$A$};
+        \draw (3,0.1) -- (3,-0.1) node[below] {$I$};
+        \draw (4.5,0.1) -- (4.5,-0.1) node[below] {$J$};
+        \draw (6,0.1) -- (6,-0.1) node[below] {$B$};
+    \end{tikzpicture}
+\end{center}
+
+\vspace{1em}
+
+\noindent \textbf{i) Comparons les caractéristiques des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AI}$} \\
+$\overrightarrow{AB}$ et $\overrightarrow{AI}$ ont \textbf{même direction}, \textbf{même sens} tel que $AB = 2AI$.
+
+\vspace{1.5em}
+
+\noindent \textbf{ii) Comparons les caractéristiques des vecteurs $\overrightarrow{JB}$ et $\overrightarrow{BA}$} \\
+$\overrightarrow{JB}$ et $\overrightarrow{BA}$ ont \textbf{même direction}, de \textbf{sens opposés} tel que : \\
+$BA = 4JB$.
+
+\subsection*{\underline{\color{red}Définition :}}
+
+\noindent Soient $\vec{u}$ un vecteur et $k$ un nombre réel ($k \in \mathbb{R}$). \\
+On appelle \textbf{produit du vecteur $\vec{u}$ par le réel $k$}, le vecteur noté $k\vec{u}$ qui possède les caractéristiques suivantes :
+
+\begin{itemize}
+    \item Sa \textbf{direction} est celle de $\vec{u}$ (si $\vec{u} \neq \vec{0}$ et $k \neq 0$).
+    \item Sa \textbf{norme} est $\|k\vec{u}\| = |k| \times \|\vec{u}\|$.
+    \item Son \textbf{sens} dépend du signe de $k$ :
+    \begin{itemize}
+        \item[\textcolor{red}{$\bullet$}] Si $k > 0$, alors $k\vec{u}$ et $\vec{u}$ sont de \textbf{même sens}.
+        \item[\textcolor{red}{$\bullet$}] Si $k < 0$, alors $k\vec{u}$ et $\vec{u}$ sont de \textbf{sens opposés}.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{\underline{\color{red}Remarque :}}
+\begin{enumerate}
+    \item[i)] $k\vec{u} = \vec{0} \iff k = 0$ ou $\vec{u} = \vec{0}$.
+    \item[ii)] $(-1)\vec{u} = -\vec{u}$.
+\end{enumerate}
+
 \end{document}
