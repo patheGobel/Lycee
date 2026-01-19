@@ -1,0 +1,852 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{titlesec}
+
+% --- Configuration automatique des couleurs pour les titres ---
+% Change la couleur des sections (\section) en rouge
+\titleformat{\section}
+{\color{red}\normalfont\Large\bfseries}{\thesection}{1em}{\underline}
+
+% Change la couleur des sous-sections (\subsection) en rouge
+\titleformat{\subsection}
+{\color{red}\normalfont\large\bfseries}{\thesubsection}{1em}{\underline}
+
+% Change la couleur des sous-sous-sections (\subsubsection) en rouge
+\titleformat{\subsubsection}
+{\color{red}\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{\underline}
+
+\begin{document}
+
+\section*{Chap : Barycentre}
+
+\subsection*{Introduction}
+
+\noindent Sachant que la balance ci-dessous est en équilibre au point $G$.
+
+\vspace{1em}
+
+\begin{center}
+    \begin{tikzpicture}[thick, scale=0.8]
+        % La barre de la balance
+        \draw (0,0) -- (6,0);
+        
+        % Les masses (boîtes)
+        \draw (0,0) rectangle (1,1) node[midway, above=0.5cm] {$m_A$};
+        \draw (5,0) rectangle (6,1) node[midway, above=0.5cm] {$m_B$};
+        
+        % Les points
+        \node at (0.5,-0.3) {$A$};
+        \node at (5.5,-0.3) {$B$};
+        \node at (3,0) {$\times$};
+        \node at (3,-0.3) {$G$};
+    \end{tikzpicture}
+\end{center}
+
+\vspace{1em}
+
+\noindent Où $m_A$ et $m_B$ sont les masses respectives des objets posés au point $A$ et $B$. \\
+Alors, d'après les lois de la physique, on a : \\
+$m_A \overrightarrow{AG} = m_B \overrightarrow{GB}$ \\
+$-m_A \overrightarrow{GA} = m_B \overrightarrow{GB}$ \\
+$-m_A \overrightarrow{GA} - m_B \overrightarrow{GB} = \vec{0}$ \\
+$m_A \overrightarrow{GA} + m_B \overrightarrow{GB} = \vec{0}$
+
+\vspace{1em}
+
+\noindent En physique, on dit que $G$ est le \textbf{centre d'inertie}. \\
+En mathématiques, on dit que $G$ est le \textbf{barycentre}.
+\section*{I- Barycentre de deux points pondérés}
+
+\subsection*{1- Notions de base}
+
+\subsubsection*{Définition}
+
+\noindent On appelle \textbf{point pondéré} tout couple $(P, m)$ où $P$ est un point du plan et $m$ un réel appelé \textbf{coefficient} de $P$ ou \textbf{masse} de $P$.
+
+\vspace{1em}
+
+\noindent \underline{\textbf{Ex :}} \\
+$(A, 2)$ est un point pondéré. \\
+$(B, -3)$ est un point pondéré.
+
+\subsection*{Théorème - Définition}
+
+\noindent Soient $(A, a)$ et $(B, b)$ deux points pondérés. \\
+Si $a + b \neq 0$, alors il existe un unique point $G$ du plan tel que :
+\[ a \overrightarrow{GA} + b \overrightarrow{GB} = \vec{0} \]
+\noindent Le point $G$ est appelé \textbf{barycentre} des points pondérés $(A, a)$ et $(B, b)$, on note :
+
+\vspace{1em}
+
+\noindent $G = \text{bar} \{(A, a), (B, b)\}$
+
+\vspace{1em}
+
+\noindent $G = \text{bar} \begin{tabular}{|c|c|}
+\hline
+$A$ & $B$ \\
+\hline
+$a$ & $b$ \\
+\hline
+\end{tabular}$
+
+\subsection*{Preuve :}
+
+\noindent On a : $a \overrightarrow{GA} + b \overrightarrow{GB} = \vec{0}$ \\
+$a \overrightarrow{GA} + b (\overrightarrow{GA} + \overrightarrow{AB}) = \vec{0}$ \\
+$a \overrightarrow{GA} + b \overrightarrow{GA} + b \overrightarrow{AB} = \vec{0}$ \\
+$(a + b) \overrightarrow{GA} + b \overrightarrow{AB} = \vec{0}$ \\
+$-(a + b) \overrightarrow{AG} + b \overrightarrow{AB} = \vec{0}$ \\
+$-(a + b) \overrightarrow{AG} = -b \overrightarrow{AB}$ \\
+$(a + b) \overrightarrow{AG} = b \overrightarrow{AB}$ \\
+$\overrightarrow{AG} = \dfrac{b}{(a + b)} \overrightarrow{AB}$
+
+\vspace{1.5em}
+
+\noindent En posant $\vec{u} = \dfrac{b}{a + b} \overrightarrow{AB}$ \\
+On obtient $\overrightarrow{AG} = \vec{u}$
+
+\vspace{1em}
+
+\noindent Donc d'après la propriété fondamentale, $G$ est l'unique point tel que
+
+ $a \overrightarrow{GA} + b \overrightarrow{GB} = \vec{0}$ avec $a + b \neq 0$.
+ 
+ \subsection*{Remarque :}
+
+\noindent \textbf{1) Compte tenu de la preuve du théorème - définition, on a :}
+
+\vspace{0.5em}
+
+\begin{itemize}
+    \item[i)] $G = \text{bar} \{(A, a), (B, b)\} \iff \overrightarrow{AG} = \dfrac{b}{a+b} \overrightarrow{AB}$
+    \item[ii)] $G = \text{bar} \{(A, a), (B, b)\} \iff \overrightarrow{BG} = \dfrac{a}{a+b} \overrightarrow{BA}$
+\end{itemize}
+
+\vspace{0.5em}
+
+\noindent \textbf{Donc pour construire le point $G$, on applique i) ou ii).}
+
+\vspace{1em}
+
+\noindent \textbf{\color{red}2) Si $a = b$ alors $A = B = G$} (Note : Cas de confusion de points dans le plan)
+
+\vspace{0.5em}
+
+\noindent \textbf{\color{red}3) Si $G = \text{bar} \{(A, a), (B, b)\}$ alors $G \in (AB)$}
+
+\subsection*{Application}
+
+\noindent Soit $G = \text{bar} \{(A, 2), (B, 1)\}$ \\
+Construire le point $G$.
+
+\vspace{1.5em}
+
+\begin{center}
+    \underline{\color{red}Correction}
+\end{center}
+
+\noindent $\overrightarrow{AG} = \dfrac{b}{a + b} \overrightarrow{AB} \implies \overrightarrow{AG} = \dfrac{1}{2 + 1} \overrightarrow{AB} \implies \overrightarrow{AG} = \dfrac{1}{3} \overrightarrow{AB}$
+
+\vspace{2em}
+
+\begin{center}
+    \begin{tikzpicture}[thick, scale=1.5]
+        % Tracé du segment principal
+        \draw (0,0) -- (4,0);
+        
+        % Graduations (tiers du segment)
+        \foreach \x in {0, 1.33, 2.66, 4}
+            \draw (\x, 0.1) -- (\x, -0.1);
+            
+        % Marquage des points
+        \node[below] at (0,-0.1) {$A$};
+        \node[below] at (4,-0.1) {$B$};
+        \node at (1.33, 0) {$\times$};
+        \node[below] at (1.33,-0.1) {$G$};
+        
+        % Triangle de construction manuscrit
+        \draw (0,0) -- (2,-1) -- (4,0);
+    \end{tikzpicture}
+\end{center}
+
+\subsubsection*{Définition :}
+
+Le barycentre des points pondérés affecté des coefficients égaux est appelé \textbf{isobarycentre}.
+
+\vspace{1em}
+
+\subsubsection*{Exemple :}
+
+\noindent \textbf{i)} $G = \text{bar} \{(A, 4), (B, 4)\}$ \\
+\textbf{ii)} $G = \text{bar} \{(A, -3), (B, -3)\}$
+
+\vspace{1em}
+
+\subsubsection*{Remarque :}
+
+L'isobarycentre de deux points $A$ et $B$ distincts est le \textbf{milieu} du segment $[AB]$.
+
+\vspace{1em}
+
+\noindent \textit{En effet,} \\
+Soit $G = \text{bar} \{(A, b), (B, a)\}$ \\
+$G$ est l'isobarycentre des points $A$ et $B$ lorsque $a = b$. \\
+$G = \text{bar} \{(A, b), (B, b)\} \implies b \overrightarrow{GA} + b \overrightarrow{GB} = \vec{0}$ \\
+\phantom{$G = \text{bar} \{(A, b), (B, b)\} \implies$} or $a = b$ donc $b \overrightarrow{GA} + b \overrightarrow{GB} = \vec{0}$ \\
+\phantom{$G = \text{bar} \{(A, b), (B, b)\} \implies$} $b (\overrightarrow{GA} + \overrightarrow{GB}) = \vec{0}$ \\
+\phantom{$G = \text{bar} \{(A, b), (B, b)\} \implies$} Donc $\overrightarrow{GA} + \overrightarrow{GB} = \vec{0}$ \\
+\phantom{$G = \text{bar} \{(A, b), (B, b)\} \implies$} $\overrightarrow{GA} = -\overrightarrow{GB}$ \\
+\textbf{D'où $G$ est le milieu de $[AB]$.}
+
+\subsubsection*{Exemple :}
+
+$G = \text{bar} \{(A, 1), (B, 1)\}$ \\
+donc $G$ est le milieu de $[AB]$.
+
+\vspace{2em}
+
+\subsection*{2- Propriétés}
+
+\subsubsection*{Propriété 1 : Homogénéité du Barycentre}
+
+Le barycentre de deux points pondérés est inchangé lorsqu'on multiplie tous les points par un même nombre réel non nul.
+
+\vspace{1em}
+
+$G = \text{bar} \{(A, a), (B, b)\} \iff G = \text{bar} \{(A, ka), (B, kb)\}$ avec $k \neq 0$
+
+\subsubsection*{Exemple :}
+
+\noindent 1) $G = \text{bar } \{(A, 1), (B, 2)\}$ \\
+Si $K = 5$ \\
+$G = \text{bar } \{(A, 5), (B, 10)\}$ \\
+Si $K = -2$ \\
+$G = \text{bar } \{(A, -2), (B, -4)\}$
+
+\vspace{1em}
+
+\noindent 2) $G = \text{bar } \{(A, 4), (B, 6)\}$ \\
+Si $K = \dfrac{1}{2}$ \\
+$G = \text{bar } \{(A, 2), (B, 3)\}$
+
+\vspace{2em}
+
+\subsection*{Propriété 2 : Réduction de la somme $a\overrightarrow{MA} + b\overrightarrow{MB}$}
+
+\noindent Soient $(A, a)$ et $(B, b)$ deux points pondérés tel que $a + b \neq 0$. \\
+Pour tout point $M$ du plan, on a : \\
+$G = \text{bar } \{(A, a), (B, b)\} \iff a\overrightarrow{MA} + b\overrightarrow{MB} = (a + b)\overrightarrow{MG}$
+
+\subsection*{Preuve :}
+
+\noindent $G = \text{bar } \{(A, a), (B, b)\} \iff a \overrightarrow{GA} + b \overrightarrow{GB} = \vec{0}$ \\
+\phantom{$G = \text{bar } \{(A, a), (B, b)\} \iff$} $a (\overrightarrow{GM} + \overrightarrow{MA}) + b (\overrightarrow{GM} + \overrightarrow{MB}) = \vec{0}$ \\
+\phantom{$G = \text{bar } \{(A, a), (B, b)\} \iff$} $a \overrightarrow{GM} + a \overrightarrow{MA} + b \overrightarrow{GM} + b \overrightarrow{MB} = \vec{0}$ \\
+\phantom{$G = \text{bar } \{(A, a), (B, b)\} \iff$} $(a + b) \overrightarrow{GM} + a \overrightarrow{MA} + b \overrightarrow{MB} = \vec{0}$ \\
+\phantom{$G = \text{bar } \{(A, a), (B, b)\} \iff$} $a \overrightarrow{MA} + b \overrightarrow{MB} = -(a + b) \overrightarrow{GM}$ \\
+\phantom{$G = \text{bar } \{(A, a), (B, b)\} \iff$} $a \overrightarrow{MA} + b \overrightarrow{MB} = (a + b) \overrightarrow{MG}$
+
+\vspace{2em}
+
+\subsection*{Remarque 1 :}
+
+\noindent En vertu de la preuve de la propriété 2), pour tout point $M$ du plan, on a : \\
+$G = \text{bar } \{(A, a), (B, b)\} \iff \overrightarrow{MG} = \dfrac{1}{(a + b)} \left( a \overrightarrow{MA} + b \overrightarrow{MB} \right)$
+
+\subsection*{Remarque 2 :}
+
+Si $a + b = 0$ alors partout pour tout point $M$, le vecteur $a\overrightarrow{MA} + b\overrightarrow{MB}$ est indépendant du point $M$.
+
+\vspace{1em}
+
+\noindent \textit{En effet,}
+\begin{align*}
+    a\overrightarrow{MA} + b\overrightarrow{MB} &= a\overrightarrow{MA} + b(\overrightarrow{MA} + \overrightarrow{AB}) \\
+    &= a\overrightarrow{MA} + b\overrightarrow{MA} + b\overrightarrow{AB} \\
+    &= (a + b)\overrightarrow{MA} + b\overrightarrow{AB}
+\end{align*}
+
+\noindent Donc si $a + b = 0$ alors 
+\begin{center}
+    \color{red}
+    \framebox{\color{black} $a\overrightarrow{MA} + b\overrightarrow{MB} = b\overrightarrow{AB}$}
+\end{center}
+
+\noindent D'où $a\overrightarrow{MA} + b\overrightarrow{MB}$ est indépendant de $M$.
+
+\section*{NB :}
+
+\noindent Soient $A$ et $B$ deux points distincts.
+
+\vspace{1em}
+
+\noindent \textbf{*1) Si $MA = MB$ alors l'ensemble des points $M$ est la médiatrice du segment $[AB]$.}
+
+\vspace{1.5em}
+
+\noindent Soient $R > 0$ et $G$ un point.
+
+\vspace{1em}
+
+\noindent \textbf{*2) Si $MG = R$ alors l'ensemble des points $M$ est un cercle de centre $G$ et de rayon $R$.}
+
+\section*{Application}
+
+\noindent $AB = 5\text{ cm}$
+
+\vspace{1em}
+
+\noindent \textbf{1) Soit $G$ barycentre des points pondérés $\{(A, 2), (B, 3)\}$} \\
+Montrer que pour tout point $M$ : \\
+$2 \overrightarrow{MA} + 3 \overrightarrow{MB} = 5 \overrightarrow{MG}$
+
+\vspace{1.5em}
+
+\noindent \textbf{2) Montrer que le vecteur} \\
+$3 \overrightarrow{MA} - 3 \overrightarrow{MB}$ est indépendant du point $M$.
+
+\vspace{1.5em}
+
+\noindent \textbf{3) Déterminer l'ensemble des points $M$ du plan dans les cas suivants :}
+
+\vspace{1em}
+
+\begin{itemize}
+    \item[a)] $\| 2 \overrightarrow{MA} + 3 \overrightarrow{MB} \| = \| 3 \overrightarrow{MA} - 3 \overrightarrow{MB} \|$
+    \item[b)] $\| 2 \overrightarrow{MA} + 3 \overrightarrow{MB} \| = \| 3 \overrightarrow{MA} + 2 \overrightarrow{MB} \|$
+\end{itemize}
+
+\section*{Solution}
+
+\noindent \textbf{1) Montrons que pour tout point $M$ :} \\
+$2 \overrightarrow{MA} + 3 \overrightarrow{MB} = 5 \overrightarrow{MG}$
+
+\vspace{1em}
+
+\begin{align*}
+    2 \overrightarrow{MA} + 3 \overrightarrow{MB} &= 2 (\overrightarrow{MG} + \overrightarrow{GA}) + 3 (\overrightarrow{MG} + \overrightarrow{GB}) \\
+    &= 2 \overrightarrow{MG} + 2 \overrightarrow{GA} + 3 \overrightarrow{MG} + 3 \overrightarrow{GB} \\
+    &= 5 \overrightarrow{MG} + 2 \overrightarrow{GA} + 3 \overrightarrow{GB}
+\end{align*}
+
+\vspace{1.5em}
+
+\noindent or $G = \text{bar } \{(A, 2), (B, 3)\} \implies 2 \overrightarrow{GA} + 3 \overrightarrow{GB} = \vec{0}$ \\
+D'où 
+\begin{center}
+    \framebox{$2 \overrightarrow{MA} + 3 \overrightarrow{MB} = 5 \overrightarrow{MG}$}
+\end{center}
+
+\noindent \underline{Méthode 2 :} $a = 2$ et $b = 3$ \\
+$a \overrightarrow{MA} + b \overrightarrow{MB} = (a + b) \overrightarrow{MG}$ \\
+$2 \overrightarrow{MA} + 3 \overrightarrow{MB} = (2 + 3) \overrightarrow{MG}$ \\
+$2 \overrightarrow{MA} + 3 \overrightarrow{MB} = 5 \overrightarrow{MG}$
+
+\vspace{2em}
+
+\noindent \textbf{2) Montrons que le vecteur $3 \overrightarrow{MA} - 3 \overrightarrow{MB}$ est indépendant du point $M$.}
+
+\vspace{1em}
+
+\begin{align*}
+    3 \overrightarrow{MA} - 3 \overrightarrow{MB} &= 3 \overrightarrow{MA} - 3 (\overrightarrow{MA} + \overrightarrow{AB}) \\
+    &= 3 \overrightarrow{MA} - 3 \overrightarrow{MA} - 3 \overrightarrow{AB} \\
+    &= -3 \overrightarrow{AB}
+\end{align*}
+
+\vspace{1em}
+
+\noindent $3 \overrightarrow{MA} - 3 \overrightarrow{MB} = -3 \overrightarrow{AB}$ \\
+\textbf{Donc le vecteur $3 \overrightarrow{MA} - 3 \overrightarrow{MB}$ est indépendant du point $M$.}
+
+\noindent \underline{Méthode 2 :} \\
+On a : $3 + (-3) = 0$ donc le vecteur $3\overrightarrow{MA} - 3\overrightarrow{MB}$ est indépendant du point $M$.
+
+\vspace{1.5em}
+
+\noindent \textbf{3) Déterminons l'ensemble des points $M$ dans les cas suivants :}
+
+\vspace{1em}
+
+\noindent \textbf{a)} $\| 2\overrightarrow{MA} + 3\overrightarrow{MB} \| = \| 3\overrightarrow{MA} - 3\overrightarrow{MB} \|$
+
+\vspace{1em}
+
+\noindent D'après ce qui précède on a : \\
+$2\overrightarrow{MA} + 3\overrightarrow{MB} = 5\overrightarrow{MG}$ avec $G = \text{bar } \{(A, 2), (B, 3)\}$ \\
+$3\overrightarrow{MA} - 3\overrightarrow{MB} = 3\overrightarrow{BA}$
+
+\vspace{1em}
+
+\noindent Donc $\| 5\overrightarrow{MG} \| = \| 3\overrightarrow{BA} \|$ \\
+\phantom{Donc} $5MG = 3BA$ \\
+\phantom{Donc} $5MG = 3 \times 5 \implies MG = \dfrac{3}{5}(5)$ \\
+\phantom{Donc} \framebox{$MG = 3$}
+
+\vspace{1.5em}
+
+\noindent \textbf{L'ensemble des points $M$ est un cercle de centre $G$ et de rayon $3$.}
+
+\vspace{2em}
+
+\noindent \textbf{b)} $\| 2\overrightarrow{MA} + 3\overrightarrow{MB} \| = \| 3\overrightarrow{MA} + 2\overrightarrow{MB} \|$ \\
+$2\overrightarrow{MA} + 3\overrightarrow{MB} = 5\overrightarrow{MG}$
+
+\noindent Soit $H = \text{bar } \{(A, 3), (B, 2)\}$ \\
+Alors $3 \overrightarrow{MA} + 2 \overrightarrow{MB} = (3 + 2) \overrightarrow{MH}$ \\
+\phantom{Alors} $3 \overrightarrow{MA} + 2 \overrightarrow{MB} = 5 \overrightarrow{MH}$
+
+\vspace{1em}
+
+\noindent $\| 5 \overrightarrow{MG} \| = \| 5 \overrightarrow{MH} \|$ \\
+$5 MG = 5 MH$ \\
+$MG = MH$
+
+\vspace{1.5em}
+
+\noindent \textbf{Donc l'ensemble des points $M$ est la médiatrice de $[GH]$.}
+
+\subsection*{Propriété 3 : Coordonnées du barycentre}
+
+\noindent Soit $(O, \vec{i}, \vec{j})$ un repère orthonormé. \\
+Si $G = \text{bar } \{(A, a), (B, b)\}$ alors :
+
+\vspace{1.5em}
+
+\noindent $x_G = \dfrac{a x_A + b x_B}{a + b}$
+
+\vspace{1.5em}
+
+\noindent $y_G = \dfrac{a y_A + b y_B}{a + b}$
+
+\subsection*{\underline{\color{red}Preuve :}}
+
+\noindent On a : $G = \text{bar } \{(A, a), (B, b)\} \iff \overrightarrow{OG} = \dfrac{1}{a+b} \left( a \overrightarrow{OA} + b \overrightarrow{OB} \right)$
+
+\vspace{1em}
+
+\noindent Or $\overrightarrow{OG} = \begin{pmatrix} x_G - x_O \\ y_G - y_O \end{pmatrix} \iff \overrightarrow{OG} = \begin{pmatrix} x_G \\ y_G \end{pmatrix}$
+
+\vspace{1em}
+
+\noindent $\overrightarrow{OA} = \begin{pmatrix} x_A - x_O \\ y_A - y_O \end{pmatrix} \iff \overrightarrow{OA} = \begin{pmatrix} x_A \\ y_A \end{pmatrix}$
+
+\vspace{1em}
+
+\noindent $\overrightarrow{OB} = \begin{pmatrix} x_B - x_O \\ y_B - y_O \end{pmatrix} \iff \overrightarrow{OB} = \begin{pmatrix} x_B \\ y_B \end{pmatrix}$
+
+\vspace{1.5em}
+
+\noindent Donc $\begin{pmatrix} x_G \\ y_G \end{pmatrix} = \dfrac{1}{a + b} \left( a \begin{pmatrix} x_A \\ y_A \end{pmatrix} + b \begin{pmatrix} x_B \\ y_B \end{pmatrix} \right)$
+
+\vspace{1em}
+
+\noindent \phantom{Donc $\begin{pmatrix} x_G \\ y_G \end{pmatrix}$} $= \dfrac{1}{a + b} \begin{pmatrix} a x_A + b x_B \\ a y_A + b y_B \end{pmatrix}$
+
+\vspace{1em}
+
+\noindent \phantom{Donc $\begin{pmatrix} x_G \\ y_G \end{pmatrix}$} $= \begin{pmatrix} \dfrac{a x_A + b x_B}{a + b} \\ \vspace{0.5em} \\ \dfrac{a y_A + b y_B}{a + b} \end{pmatrix}$
+
+\noindent D'où $x_G = \dfrac{a x_A + b x_B}{a + b}$ \quad et \quad $y_G = \dfrac{a y_A + b y_B}{a + b}$
+
+\vspace{2em}
+
+\subsection*{Exemple :}
+
+\noindent Soient $A \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ et $B \begin{pmatrix} -2 \\ -1 \end{pmatrix}$ dans un repère orthonormé $(O, \vec{i}, \vec{j})$. \\
+Soit $G$ barycentre des points pondérés $(A, 2)$ et $(B, 3)$. \\
+Déterminer les coordonnées du point $G$.
+
+\vspace{2em}
+
+\begin{center}
+    \textbf{Correction}
+\end{center}
+
+\noindent On a : $G = \text{bar } \{(A, 2), (B, 3)\}$ donc :
+
+\vspace{1.5em}
+
+\noindent $x_G = \dfrac{2 x_A + 3 x_B}{2 + 3} = \dfrac{2(2) + 3(-2)}{2 + 3} = -\dfrac{2}{5}$
+
+\vspace{2em}
+
+\noindent $y_G = \dfrac{2 y_A + 3 y_B}{2 + 3} = \dfrac{2(3) + 3(-1)}{2 + 3} = \dfrac{3}{5}$
+
+\vspace{2em}
+
+\noindent D'où \framebox{$G = \begin{pmatrix} -2/5 \\ 3/5 \end{pmatrix}$}
+
+\section*{II- Barycentre de trois points pondérés}
+
+\subsection*{Théorème - définition}
+
+\noindent Soient $(A, a)$, $(B, b)$ et $(C, c)$ 3 points pondérés tel que $a + b + c \neq 0$. Alors il existe un unique point $G$ du plan tel que :
+\begin{center}
+    $a \overrightarrow{GA} + b \overrightarrow{GB} + c \overrightarrow{GC} = \vec{0}$
+\end{center}
+
+\noindent Le point $G$ est appelé barycentre des points $(A, a)$, $(B, b)$ et $(C, c)$, on note $G = \text{bar } \{(A, a), (B, b), (C, c)\}$ ou bien :
+\begin{center}
+    $G = \text{bar } \begin{array}{|c|c|c|}
+        \hline
+        A & B & C \\
+        \hline
+        a & b & c \\
+        \hline
+    \end{array}$
+\end{center}
+
+\vspace{1em}
+
+\subsection*{Preuve : (TPE)}
+
+\subsection*{Remarque :}
+
+\noindent L'isobarycentre de 3 points non alignés est le centre de gravité du triangle formé par les points.
+
+\vspace{1em}
+
+\noindent \textbf{Ex :} \framebox{$ \overrightarrow{GA} + \overrightarrow{GB} + \overrightarrow{GC} = \vec{0} $}
+
+\vspace{1em}
+
+\noindent Donc $G = \text{bar } \{(A, 1), (B, 1), (C, 1)\}$ \\
+$G$ est le centre de gravité du triangle $ABC$.
+
+\subsection*{Propriété 1 : Réduction de la somme $a\overrightarrow{MA} + b\overrightarrow{MB} + c\overrightarrow{MC}$}
+
+\noindent Soient $(A, a)$, $(B, b)$ et $(C, c)$ trois points pondérés tel que $a + b + c \neq 0$. \\
+Pour tout point $M$ du plan on a : \\
+$G = \text{bar } \{(A, a), (B, b), (C, c)\} \iff a\overrightarrow{MA} + b\overrightarrow{MB} + c\overrightarrow{MC} = (a + b + c)\overrightarrow{MG}$
+
+\vspace{1em}
+
+\noindent \textit{Preuve : (TPE)}
+
+\vspace{1.5em}
+
+\noindent \textbf{Remarque :} Compte tenu de la propriété 1, on a : \\
+$G = \text{bar } \{(A, a), (B, b), (C, c)\} \iff \overrightarrow{MG} = \dfrac{1}{(a + b + c)} (a\overrightarrow{MA} + b\overrightarrow{MB} + c\overrightarrow{MC})$
+
+\vspace{1.5em}
+
+\noindent \textbf{Par conséquent :}
+
+\vspace{1em}
+
+\noindent $\overrightarrow{AG} = \dfrac{1}{(a + b + c)} (b\overrightarrow{AB} + c\overrightarrow{AC})$
+
+\vspace{1.5em}
+
+\noindent $\overrightarrow{BG} = \dfrac{1}{(a + b + c)} (a\overrightarrow{BA} + c\overrightarrow{BC})$
+
+\vspace{1.5em}
+
+\noindent $\overrightarrow{CG} = \dfrac{1}{(a + b + c)} (a\overrightarrow{CA} + b\overrightarrow{CB})$
+
+\vspace{2em}
+
+\noindent Pour la construction du barycentre $G$, souvent l'une de ces égalités est appliquée.
+
+\subsection*{Ex :}
+
+\noindent Soit $G = \text{bar } \{(A, 2), (B, 1), (C, 1)\}$ \\
+Construire le point $G$.
+
+\begin{center}
+    \underline{Correction}
+\end{center}
+
+\noindent On a : $G = \text{bar } \{(A, 2), (B, 1), (C, 1)\}$ \\
+donc $\overrightarrow{AG} = \dfrac{1}{2+1+1} (1 \overrightarrow{AB} + 1 \overrightarrow{AC})$ \\
+\phantom{donc} $\overrightarrow{AG} = \dfrac{1}{4} (\overrightarrow{AB} + \overrightarrow{AC})$
+
+\vspace{2em}
+
+\subsection*{Propriété 2 : Coordonnées du barycentre}
+
+\noindent Soit $G = \text{bar } \{(A, a), (B, b), (C, c)\}$ dans un repère orthonormé $(O, \vec{i}, \vec{j})$. Alors :
+
+\vspace{1.5em}
+
+\begin{center}
+    \color{red}
+    \framebox{\color{black} $x_G = \dfrac{ax_A + bx_B + cx_C}{a + b + c}$} 
+    \quad et \quad 
+    \framebox{\color{black} $y_G = \dfrac{ay_A + by_B + cy_C}{a + b + c}$}
+\end{center}
+
+\subsubsection*{Exemple :}
+
+\noindent Soient $A \begin{pmatrix} 0 \\ 1 \end{pmatrix}$, $B \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ et $C \begin{pmatrix} -1 \\ 2 \end{pmatrix}$ \\
+Si $G = \text{bar } \{(A, 2), (B, 2), (C, 3)\}$ \\
+Alors : $x_G = \dfrac{2x_A + 2x_B + 3x_C}{2 + 2 + 3}$ 
+
+\vspace{1em}
+
+\noindent et $y_G = \dfrac{2y_A + 2y_B + 3y_C}{2 + 2 + 3}$
+
+\vspace{1.5em}
+
+\noindent $x_G = \dfrac{2(0) + 2(1) + 3(-1)}{7} = -\dfrac{1}{7}$
+
+\vspace{1.5em}
+
+\noindent et $y_G = \dfrac{2(1) + 2(0) + 3(2)}{7} = \dfrac{8}{7}$
+
+\vspace{1.5em}
+
+\noindent D'où $G \begin{pmatrix} -1/7 \\ 8/7 \end{pmatrix}$
+
+\vspace{2em}
+
+\subsection*{Propriété 3 : Homogénéité}
+
+\noindent Le barycentre de 3 points pondérés est inchangé lorsqu'on multiplie tous les points par un nombre réel non nul.
+
+\vspace{1em}
+
+\noindent $G = \text{bar } \{(A, a), (B, b), (C, c)\} \iff G = \text{bar } \{(A, ka), (B, kb), (C, kc)\}$
+
+\subsubsection*{Exemple :}
+
+\noindent $G = \text{bar } \{(A, -1), (B, 2), (C, 1)\}$. Alors : \\
+$G = \text{bar } \{(A, -2), (B, 4), (C, 2)\}$ \quad ($k = 2$)
+
+\vspace{2em}
+
+\subsection*{Propriété 4 : Barycentre partiel (ou association du barycentre)}
+
+\noindent Soient $a, b$ et $c$ des réels tels que : $a + b \neq 0$ et $a + b + c \neq 0$.
+
+\vspace{1em}
+
+\noindent Si $G = \text{bar } \{(A, a), (B, b), (C, c)\}$ et \\
+$H = \text{bar } \{(A, a), (B, b)\}$ alors :
+
+\vspace{1.5em}
+
+\begin{center}
+    \color{red}
+    \framebox{\color{black} $G = \text{bar } \{(H, a + b), (C, c)\}$}
+\end{center}
+
+\vspace{2em}
+
+\subsection*{Preuve :}
+
+\noindent On a : $G = \text{bar } \{(A, a), (B, b), (C, c)\}$ \\
+alors $a \overrightarrow{GA} + b \overrightarrow{GB} + c \overrightarrow{GC} = \vec{0}$ \\
+$a (\overrightarrow{GH} + \overrightarrow{HA}) + b (\overrightarrow{GH} + \overrightarrow{HB}) + c \overrightarrow{GC} = \vec{0}$
+
+\noindent $a \overrightarrow{GH} + a \overrightarrow{HA} + b \overrightarrow{GH} + b \overrightarrow{HB} + c \overrightarrow{GC} = \vec{0}$ \\
+$(a + b) \overrightarrow{GH} + a \overrightarrow{HA} + b \overrightarrow{HB} + c \overrightarrow{GC} = \vec{0}$
+
+\vspace{1em}
+
+\noindent Sachant que $H = \text{bar } \{(A, a), (B, b)\}$ alors il en découle que $a \overrightarrow{HA} + b \overrightarrow{HB} = \vec{0}$
+
+\vspace{1em}
+
+\noindent Donc, par la suite on a : \\
+$(a + b) \overrightarrow{GH} + \vec{0} + c \overrightarrow{GC} = \vec{0}$ \\
+$(a + b) \overrightarrow{GH} + c \overrightarrow{GC} = \vec{0}$
+
+\vspace{1em}
+
+\noindent D'où $G = \text{bar } \{(H, a + b), (C, c)\}$
+
+\vspace{2em}
+
+\subsubsection*{Exemple :}
+
+\noindent Si $G = \text{bar } \{(A, 2), (B, 1), (C, -1)\}$ \\
+et $H = \text{bar } \{(A, 2), (B, 1)\}$ \\
+alors $G = \text{bar } \{(H, 2 + 1), (C, -1)\}$
+
+\vspace{1.5em}
+
+\begin{center}
+    \framebox{$G = \text{bar } \{(H, 3), (C, -1)\}$}
+\end{center}
+
+\section*{III - Utilisation de la propriété du barycentre partiel}
+
+En général, pour montrer que 3 points sont alignés ou que 3 droites sont concourantes, on applique la propriété du barycentre partiel.
+
+\vspace{1em}
+
+\subsection*{1) 3 points alignés}
+
+\noindent \textbf{N.B :} Pour montrer que 3 points sont alignés, il suffit de montrer que l'un des points est le barycentre des deux autres points en appliquant la propriété du barycentre partiel.
+
+\vspace{2em}
+
+\begin{center}
+    \color{red} \Large \underline{Application}
+\end{center}
+
+\noindent Soit $ABC$ un triangle et $J$ le milieu de $[AC]$, $I$ et $K$ les points tels que $\overrightarrow{AI} = \dfrac{2}{3} \overrightarrow{AB}$ et $\overrightarrow{CK} = \dfrac{3}{4} \overrightarrow{CJ}$.
+
+\vspace{1em}
+
+\begin{itemize}
+    \item[a)] Montrer que $J = \text{bar } \{(A, 1), (C, 1)\}$, $I = \text{bar } \{(A, 1), (B, 2)\}$ et $K = \text{bar } \{(I, 3), (C, 1)\}$.
+    \item[b)] Montrer que $K = \text{bar } \{(A, 1), (B, 2), (C, 1)\}$.
+    \item[c)] En déduire que $B, J$ et $K$ sont alignés.
+\end{itemize}
+
+\section*{Correction}
+
+\noindent \textbf{1) *$_1$ Montrons que $I = \text{bar } \{(A, 1), (C, 1)\}$} \\
+On a : $I$ est le milieu de $[AC]$ donc $I$ est l'isobarycentre des points $A$ et $C$. \\
+D'où \framebox{$I = \text{bar } \{(A, 1), (C, 1)\}$}
+
+\vspace{2em}
+
+\noindent \textbf{*$_2$ Montrons que $J = \text{bar } \{(A, 1), (B, 2)\}$}
+
+\vspace{1em}
+
+\noindent \underline{Méthode 1 :} \\
+On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff 3 \overrightarrow{AJ} = 2 \overrightarrow{AB}$ \\
+\phantom{On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff$} $3 \overrightarrow{AJ} = 2 (\overrightarrow{AJ} + \overrightarrow{JB})$ \\
+\phantom{On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff$} $3 \overrightarrow{AJ} = 2 \overrightarrow{AJ} + 2 \overrightarrow{JB}$ \\
+\phantom{On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff$} $3 \overrightarrow{AJ} - 2 \overrightarrow{AJ} - 2 \overrightarrow{JB} = \vec{0}$ \\
+\phantom{On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff$} $\overrightarrow{AJ} - 2 \overrightarrow{JB} = \vec{0}$ \\
+\phantom{On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff$} $-\overrightarrow{JA} - 2 \overrightarrow{JB} = \vec{0}$ \quad or $-1 - 2 \neq 0$
+
+\vspace{1em}
+
+\noindent Donc $J = \text{bar } \{(A, -1), (B, -2)\}$ \\
+D'où par l'homogénéité du barycentre, on a :
+\begin{center}
+    \framebox{$J = \text{bar } \{(A, 1), (B, 2)\}$}
+\end{center}
+
+\noindent \underline{Méthode 2 :}
+
+\noindent \textbf{Rappel :} \framebox{$G = \text{bar } \{(A, a), (B, b)\} \iff \overrightarrow{AG} = \dfrac{b}{a + b} \overrightarrow{AB}$}
+
+\vspace{1.5em}
+
+\noindent On a : $\overrightarrow{AJ} = \dfrac{2}{3} \overrightarrow{AB} \iff \overrightarrow{AJ} = \dfrac{2}{1 + 2} \overrightarrow{AB}$
+
+\vspace{1em}
+
+\noindent D'où \framebox{$J = \text{bar } \{(A, 1), (B, 2)\}$}
+
+\vspace{2em}
+
+\noindent \textbf{*$_3$ Montrons que $K = \text{bar } \{(J, 3), (C, 1)\}$}
+
+\noindent \underline{Méthode 1 :} Montrer que $3 \overrightarrow{JK} + \overrightarrow{JC} = \vec{0}$ (TPE)
+
+\noindent \underline{Méthode 2 :}
+
+\noindent On a : $\overrightarrow{CK} = \dfrac{3}{4} \overrightarrow{CJ} \iff \overrightarrow{CK} = \dfrac{3}{1 + 3} \overrightarrow{CJ}$
+
+\vspace{1.5em}
+
+\noindent Donc $K = \text{bar } \{(C, 1), (J, 3)\}$ \\
+D'où \framebox{$K = \text{bar } \{(J, 3), (C, 1)\}$}
+
+\vspace{2em}
+
+\noindent \textbf{b) Montrons que $K = \text{bar } \{(A, 1), (B, 2), (C, 1)\}$}
+
+\noindent On a : $K = \text{bar } \{(J, 3), (C, 1)\}$ \\
+\phantom{On a : } et $J = \text{bar } \{(A, 1), (B, 2)\}$. Alors d'après la propriété \\
+du barycentre partiel on a : \\
+$K = \text{bar } \{(A, 1), (B, 2), (C, 1)\}$
+
+\vspace{2em}
+
+\noindent \textbf{c) Déduisons-en que les points $B, I$ et $K$ sont alignés.}
+
+\vspace{1em}
+
+\noindent On a : $K = \text{bar } \{(A, 1), (B, 2), (C, 1)\}$ \\
+\phantom{On a : } $K = \text{bar } \{(A, 1), (C, 1), (B, 2)\}$ \\
+\phantom{On a : } or $I = \text{bar } \{(A, 1), (C, 1)\}$
+
+\vspace{1em}
+
+\noindent D'après la propriété du barycentre partiel on a : \\
+$K = \text{bar } \{(I, 1 + 1), (B, 2)\}$ \\
+$K = \text{bar } \{(I, 2), (B, 2)\}$
+
+\vspace{1.5em}
+
+\noindent \textbf{D'où $B, I$ et $K$ sont alignés.}
+
+\subsection*{2) Droites concourantes}
+
+\noindent \textbf{N.B :} Pour montrer que des droites sont concourantes, il suffit de trouver un point commun à toutes ces droites. En général, pour le prouver, on applique la propriété du barycentre partiel.
+
+\vspace{2em}
+
+\begin{center}
+    \color{red} \Large \underline{Application}
+\end{center}
+
+\noindent Soit $ABC$ un triangle, $I, J, K$ des points tels que : \\
+$\overrightarrow{AI} = \dfrac{1}{3} \overrightarrow{AB}$ , $\overrightarrow{AJ} = \dfrac{3}{4} \overrightarrow{AC}$ et $\overrightarrow{BK} = \dfrac{6}{7} \overrightarrow{BC}$
+
+\vspace{1em}
+
+\begin{itemize}
+    \item[1)] Montrer que $I = \text{bar } \{(A, 2), (B, 1)\}$, \\
+    $J = \text{bar } \{(A, 2), (C, 6)\}$ et $K = \text{bar } \{(B, 1), (C, 6)\}$
+    \item[2)] On pose $G = \text{bar } \{(A, 2), (B, 1), (C, 6)\}$
+    \begin{itemize}
+        \item[a)] Montrer que $G \in (AK)$, $G \in (BJ)$ et $G \in (IC)$
+        \item[b)] Justifier que les droites $(AK)$, $(BJ)$ et $(IC)$ sont concourantes.
+    \end{itemize}
+\end{itemize}
+
+\section*{Correction}
+
+\noindent \textbf{1) Montrons les relations de barycentre :}
+
+\vspace{0.5em}
+\noindent $\bullet$ \textbf{Pour $I$ :} On a $\overrightarrow{AI} = \frac{1}{3} \overrightarrow{AB} \iff 3\overrightarrow{AI} = \overrightarrow{AB} \iff 3\overrightarrow{AI} = \overrightarrow{AI} + \overrightarrow{IB}$ \\
+$\iff 2\overrightarrow{AI} - \overrightarrow{IB} = \vec{0} \iff -2\overrightarrow{IA} - \overrightarrow{IB} = \vec{0} \iff 2\overrightarrow{IA} + \overrightarrow{IB} = \vec{0}$ \\
+D'où \framebox{$I = \text{bar } \{(A, 2), (B, 1)\}$}
+
+\vspace{1em}
+\noindent $\bullet$ \textbf{Pour $J$ :} On a $\overrightarrow{AJ} = \frac{3}{4} \overrightarrow{AC} \iff 4\overrightarrow{AJ} = 3\overrightarrow{AC} \iff 4\overrightarrow{AJ} = 3(\overrightarrow{AJ} + \overrightarrow{JC})$ \\
+$\iff \overrightarrow{AJ} - 3\overrightarrow{JC} = \vec{0} \iff -\overrightarrow{JA} - 3\overrightarrow{JC} = \vec{0} \iff \overrightarrow{JA} + 3\overrightarrow{JC} = \vec{0}$ \\
+Par homogénéité ($k=2$) : \framebox{$J = \text{bar } \{(A, 2), (C, 6)\}$}
+
+\vspace{1em}
+\noindent $\bullet$ \textbf{Pour $K$ :} On a $\overrightarrow{BK} = \frac{6}{7} \overrightarrow{BC} \iff 7\overrightarrow{BK} = 6(\overrightarrow{BK} + \overrightarrow{KC})$ \\
+$\iff \overrightarrow{BK} - 6\overrightarrow{KC} = \vec{0} \iff -\overrightarrow{KB} - 6\overrightarrow{KC} = \vec{0} \iff \overrightarrow{KB} + 6\overrightarrow{KC} = \vec{0}$ \\
+D'où \framebox{$K = \text{bar } \{(B, 1), (C, 6)\}$}
+
+\vspace{2em}
+
+\noindent \textbf{2) a) Montrons l'appartenance de $G$ aux droites :}
+
+\vspace{0.5em}
+\noindent $G = \text{bar } \{(A, 2), (B, 1), (C, 6)\}$
+\begin{itemize}
+    \item $G = \text{bar } \{(A, 2), \underbrace{(B, 1), (C, 6)}_{K, 7}\} \implies G = \text{bar } \{(A, 2), (K, 7)\} \implies \mathbf{G \in (AK)}$
+    \item $G = \text{bar } \{(B, 1), \underbrace{(A, 2), (C, 6)}_{J, 8}\} \implies G = \text{bar } \{(B, 1), (J, 8)\} \implies \mathbf{G \in (BJ)}$
+    \item $G = \text{bar } \{(C, 6), \underbrace{(A, 2), (B, 1)}_{I, 3}\} \implies G = \text{bar } \{(C, 6), (I, 3)\} \implies \mathbf{G \in (IC)}$
+\end{itemize}
+
+\vspace{1em}
+\noindent \textbf{b) Justification :} \\
+Le point $G$ appartient simultanément aux trois droites $(AK)$, $(BJ)$ et $(IC)$. Par conséquent, ces trois droites sont concourantes en $G$.
+
+\end{document}
