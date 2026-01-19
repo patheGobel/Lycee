@@ -596,7 +596,7 @@ $\vec{u} = \overrightarrow{AB}$, $\vec{v} = \overrightarrow{AC}$ et $\overrighta
 \noindent \textbf{i) Comparons les caractéristiques des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AI}$} \\
 $\overrightarrow{AB}$ et $\overrightarrow{AI}$ ont \textbf{même direction}, \textbf{même sens} tel que $AB = 2AI$.
 
-\vspace{1.5em}
+\vspace{0.5em}
 
 \noindent \textbf{ii) Comparons les caractéristiques des vecteurs $\overrightarrow{JB}$ et $\overrightarrow{BA}$} \\
 $\overrightarrow{JB}$ et $\overrightarrow{BA}$ ont \textbf{même direction}, de \textbf{sens opposés} tel que : \\
@@ -617,10 +617,159 @@ On appelle \textbf{produit du vecteur $\vec{u}$ par le réel $k$}, le vecteur no
     \end{itemize}
 \end{itemize}
 
-\subsection*{\underline{\color{red}Remarque :}}
-\begin{enumerate}
-    \item[i)] $k\vec{u} = \vec{0} \iff k = 0$ ou $\vec{u} = \vec{0}$.
-    \item[ii)] $(-1)\vec{u} = -\vec{u}$.
-\end{enumerate}
+\subsection*{\underline{\color{red}Exemple :}}
 
+\noindent \textbf{i)} $\vec{v} = 2 \vec{u}$ \\
+$\vec{v}$ et $\vec{u}$ ont \textbf{même direction} et \textbf{même sens} tel que : \\
+$\|\vec{v}\| = |2| \|\vec{u}\| = 2 \|\vec{u}\|$
+
+\vspace{1.5em}
+
+\noindent \textbf{ii)} $\vec{v} = -4 \vec{u}$ \\
+$\vec{v}$ et $\vec{u}$ ont \textbf{même direction} mais de \textbf{sens opposés} tel que : \\
+$\|\vec{v}\| = |-4| \|\vec{u}\|$ \\
+$\|\vec{v}\| = 4 \|\vec{u}\|$
+
+\subsection*{\underline{\color{red}Remarque :}}
+
+\noindent Pour tout vecteur $\vec{u}$ et pour tout réel $\lambda$, on a :
+
+\begin{enumerate}
+    \item[i)] $0 \cdot \vec{u} = \vec{0}$
+    \item[ii)] $\lambda \cdot \vec{0} = \vec{0}$
+\end{enumerate}
+\section*{5- \underline{Combinaison linéaire de vecteurs}}
+
+\subsection*{a- \underline{Combinaison linéaire de deux vecteurs}}
+
+\subsubsection*{\underline{\color{red}Définition}}
+
+\noindent Soient $\vec{u}$ et $\vec{v}$ deux vecteurs, $a$ et $b$ des réels. On appelle \textbf{combinaison linéaire de $\vec{u}$ et $\vec{v}$ de coefficients respectifs $a$ et $b$}, le vecteur $a\vec{u} + b\vec{v}$.
+
+\vspace{1em}
+
+\noindent \underline{\textbf{Ex :}} \\
+$\vec{w} = 2\vec{u} - 5\vec{v}$ \\
+Alors $\vec{w}$ est une combinaison linéaire des vecteurs $\vec{u}$ et $\vec{v}$ de coefficients respectifs $2$ et $-5$.
+
+\subsection*{b- \underline{Vecteurs colinéaires}}
+
+\subsubsection*{\underline{\color{red}Définition}}
+
+\noindent Deux vecteurs $\vec{u}$ et $\vec{v}$ sont \textbf{colinéaires} ssi il existe un réel $K$ tel que $\vec{u} = K\vec{v}$ et $\vec{v} = K'\vec{u}$.
+
+\vspace{1em}
+
+\subsection*{\underline{\color{red}Exemple :}}
+
+\noindent \textbf{i)} $\vec{u} = -2\vec{v} \quad (K = -2)$ \\
+$\vec{u}$ et $\vec{v}$ sont \textbf{colinéaires}.
+
+\vspace{1em}
+
+\noindent \textbf{ii)} $\vec{v} = 5\vec{u} \quad (K = 5)$ \\
+$\vec{u}$ et $\vec{v}$ sont \textbf{colinéaires}.
+
+\vspace{1.5em}
+
+\subsection*{\underline{\color{red}Remarque :}}
+
+\noindent Le vecteur nul est \textbf{colinéaire} à tous les vecteurs. \\
+En effet, pour tout vecteur $\vec{u}$, on a : \\
+$\vec{0} = 0\vec{u} \quad (K = 0)$
+
+\noindent \underline{NB :} \\
+En général pour montrer que deux droites sont parallèles ou bien que 3 points sont alignés, on utilise la notion de colinéarité.
+
+\vspace{1.5em}
+
+\section*{\underline{\color{red}Application}}
+
+\noindent $ABC$ un triangle quelconque. \\
+\textbf{1)} Construire $M$ et $N$ tels que $\overrightarrow{AM} = -\frac{2}{3} \overrightarrow{AB}$ et $\overrightarrow{AN} = -\frac{2}{3} \overrightarrow{AC}$
+
+\vspace{1em}
+
+\noindent \textbf{2)} Démontrer que $(MN)$ et $(BC)$ sont parallèles.
+
+\vspace{1em}
+
+\noindent \textbf{3)} Soient $S'$ et $T$ les milieux respectifs de $[BC]$ et $[MN]$. \\
+Démontrer que $A$, $S'$ et $T$ sont alignés.
+
+\section*{\underline{\color{red}Solution de l'Application}}
+\begin{center}
+    \begin{tikzpicture}[scale=1.5, >=stealth, thick]
+        % Définition des points du triangle ABC
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3,-1);
+        \coordinate (C) at (2,2);
+        
+        % Calcul des points M et N (AM = -2/3 AB et AN = -2/3 AC)
+        \coordinate (M) at ($ (A) ! -0.666 ! (B) $);
+        \coordinate (N) at ($ (A) ! -0.666 ! (C) $);
+        
+        % Calcul des milieux S' (de BC) et T (de MN)
+        \coordinate (S) at ($ (B) ! 0.5 ! (C) $);
+        \coordinate (T) at ($ (M) ! 0.5 ! (N) $);
+        
+        % Tracé du triangle et des segments
+        \draw (A) -- (B) -- (C) -- cycle;
+        \draw[red] (M) -- (N);
+        \draw[blue, dashed] (S) -- (T); % Ligne d'alignement passant par A
+        
+        % Prolongements pour montrer M et N
+        \draw[dashed] (A) -- (M);
+        \draw[dashed] (A) -- (N);
+        
+        % Marquage des points
+        \node[below left] at (A) {$A$};
+        \node[below right] at (B) {$B$};
+        \node[above right] at (C) {$C$};
+        \node[above right] at (M) {$M$};
+        \node[below left] at (N) {$N$};
+        \node[right] at (S) {$S'$};
+        \node[left] at (T) {$T$};
+        
+        % Optionnel : ajout de petites croix pour les milieux
+        \node at (S) {$\times$};
+        \node at (T) {$\times$};
+    \end{tikzpicture}
+\end{center}
+
+\subsection*{1) Construction (Description)}
+\noindent Pour construire $M$ et $N$, on divise les segments $[AB]$ et $[AC]$ en trois parties égales. Comme le coefficient est $-\frac{2}{3}$, les points $M$ et $N$ sont placés sur les demi-droites opposées à $[AB)$ et $[AC)$ en partant de $A$.
+
+\vspace{1em}
+
+\subsection*{2) Montrons que $(MN) // (BC)$}
+\noindent Exprimons le vecteur $\overrightarrow{MN}$ en fonction de $\overrightarrow{BC}$ en utilisant la relation de Chasles :
+\begin{align*}
+\overrightarrow{MN} &= \overrightarrow{MA} + \overrightarrow{AN} \\
+\overrightarrow{MN} &= -\overrightarrow{AM} + \overrightarrow{AN}
+\end{align*}
+\noindent En remplaçant par les données de l'énoncé :
+\begin{align*}
+\overrightarrow{MN} &= -\left( -\frac{2}{3}\overrightarrow{AB} \right) + \left( -\frac{2}{3}\overrightarrow{AC} \right) \\
+\overrightarrow{MN} &= \frac{2}{3}\overrightarrow{AB} - \frac{2}{3}\overrightarrow{AC} \\
+\overrightarrow{MN} &= -\frac{2}{3}(\overrightarrow{AC} - \overrightarrow{AB}) \\
+\overrightarrow{MN} &= -\frac{2}{3}\overrightarrow{BC}
+\end{align*}
+\noindent Comme $\overrightarrow{MN} = k\overrightarrow{BC}$ (avec $k = -\frac{2}{3}$), les vecteurs $\overrightarrow{MN}$ et $\overrightarrow{BC}$ sont \textbf{colinéaires}. \\
+\textbf{Conclusion :} Les droites $(MN)$ et $(BC)$ sont parallèles.
+
+\vspace{1em}
+
+\subsection*{3) Montrons que $A$, $S'$ et $T$ sont alignés}
+\noindent On sait que $S'$ est le milieu de $[BC]$ et $T$ est le milieu de $[MN]$. \\
+D'après la propriété du milieu, on a :
+\[ \overrightarrow{AS'} = \frac{1}{2}(\overrightarrow{AB} + \overrightarrow{AC}) \quad \text{et} \quad \overrightarrow{AT} = \frac{1}{2}(\overrightarrow{AM} + \overrightarrow{AN}) \]
+\noindent Remplaçons $\overrightarrow{AM}$ et $\overrightarrow{AN}$ :
+\begin{align*}
+\overrightarrow{AT} &= \frac{1}{2}\left( -\frac{2}{3}\overrightarrow{AB} - \frac{2}{3}\overrightarrow{AC} \right) \\
+\overrightarrow{AT} &= \frac{1}{2} \times \left( -\frac{2}{3} \right) (\overrightarrow{AB} + \overrightarrow{AC}) \\
+\overrightarrow{AT} &= -\frac{2}{3} \left[ \frac{1}{2}(\overrightarrow{AB} + \overrightarrow{AC}) \right] \\
+\overrightarrow{AT} &= -\frac{2}{3} \overrightarrow{AS'}
+\end{align*}
+\noindent Le vecteur $\overrightarrow{AT}$ est un multiple du vecteur $\overrightarrow{AS'}$, ils sont donc \textbf{colinéaires}. Ayant le point $A$ en commun, les points $A$, $S'$ et $T$ sont \textbf{alignés}.
 \end{document}
