@@ -5,6 +5,8 @@
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{lmodern}
+\usepackage[table,dvipsnames]{xcolor} % Pour les couleurs dans le tableau
+\usepackage{array} % Pour un meilleur ajustement des colonnes
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
 \node[circle,draw=gray, fill=red!55,
@@ -24,7 +26,6 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage{float}
 \tcbuselibrary{skins,hooks}
 \usetikzlibrary{patterns}
-
 \newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
 colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
 attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
@@ -65,6 +66,20 @@ middle color = tcbcolback!80!black]
 \usepackage{systeme}
 \usepackage{tkz-tab}
 \usepackage{tikz}
+
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Automatisation de la couleur rouge pour les sections
+\titleformat{\section}
+{\color{red}\normalfont\Large\bfseries} % Format : Rouge, Large, Gras
+{\thesection}{1em}{}
+
+% Automatisation de la couleur rouge pour les sous-sections
+\titleformat{\subsection}
+{\color{red}\normalfont\large\bfseries} % Format : Rouge, large, Gras
+{\thesubsection}{1em}{}
+
 \usetikzlibrary{arrows}
 \newcounter{exemple} % Compteur pour les questions
 
@@ -113,7 +128,7 @@ middle color = tcbcolback!80!black]
 \begin{center}
     \Large\textbf{\underline{\textcolor{red}{Similitude plane directe}}}\\[-0.1cm]
     \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TS2}\\[-0.1cm]
-    \textbf{Année scolaire : 2024 -- 2025}
+    \textbf{Année scolaire : 2025 -- 2026}
 \end{center}
 
 
@@ -193,7 +208,7 @@ middle color = tcbcolback!80!black]
 \noindent \textbf{Toute transformation du plan d'écriture complexe $z' = z + b$, $b \in \mathbb{C}$, est une translation de vecteur $\vec{u}$ d'affixe $b$.}
 
 \vspace{0.5em}
-\noindent \colorbox{blue!20}{\textbf{\textit{Démonstration}}}
+\subsection*{Démonstration : Écriture complexe d'une Translation}
 \vspace{1em}
 
 \begin{center}
@@ -219,7 +234,7 @@ middle color = tcbcolback!80!black]
 
 \noindent \textbf{Toute écriture complexe de la forme : $z' = z + b$ est une translation de vecteur $\vec{u}$ d'affixe $b$.}
 
-\noindent \colorbox{blue!20}{\textbf{\textit{Exercice d'application}}}
+\subsection*{ \underline{Exercice d'application}}
 
 \vspace{1em}
 
@@ -229,7 +244,7 @@ middle color = tcbcolback!80!black]
 
 \vspace{1em}
 
-\noindent \colorbox{blue!20}{\textbf{\textit{Solution}}}
+\subsection*{ \underline{Solution}}
 
 \vspace{1em}
 
@@ -257,7 +272,7 @@ middle color = tcbcolback!80!black]
 
 \vspace{1em}
 
-\noindent \colorbox{blue!20}{\textbf{\textit{Démonstration}}}
+\subsection*{Démonstration : Écriture complexe d'une Homothétie}
 
 \begin{center}
 $
@@ -289,5 +304,362 @@ $
 \vspace{1em}
 
 \noindent \textbf{Toute transformation du plan d'écriture complexe $z' = az + b$, $a \in \mathbb{R} \setminus \{0; 1\}$, $b \in \mathbb{C}$, est une homothétie de rapport $k = a$ et de centre $\Omega$ tel que $z_{\Omega} = \frac{b}{1 - a}$.}
+
+\subsection*{ \underline{Exercice d'application}}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \item \textit{Donner la nature de la transformation du plan d'écriture complexe : $z' = -\frac{1}{2}z + 3 - 6i$.}
+    \item \textit{Soit l'homothétie de rapport -2 et de centre A d'affixe $-1 + i$. Donner son écriture complexe.}
+\end{enumerate}
+
+\subsection*{ \underline{Solution}}
+
+\textbf{1) Donnons la nature de la transformation du plan d'écriture complexe : $z' = -\frac{1}{2} z + 3 - 6i$.}
+
+$K = a = -\frac{1}{2} \quad b = 3 - 6i \quad . \quad z_{\Omega} = \frac{b}{1 - a} = \frac{3 - 6i}{1 - (-\frac{1}{2})} = \frac{3 - 6i}{\frac{3}{2}} = 2 - 4i \quad . \quad z_{\Omega} = 2 - 4i$
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.95\textwidth}
+    \textit{La transformation du plan d'écriture complexe : $z' = -\frac{1}{2} z + 3 - 6i$ est l'homothétie de rapport $-\frac{1}{2}$ et de centre $\Omega$ d'affixe $2 - 4i$.}
+    \end{minipage}
+}
+\end{center}
+
+\textbf{2) Soit l'homothétie de rapport -2 et de centre A d'affixe $-1 + i$. Donnons son écriture complexe.}
+
+$k = a = -2 \quad , \quad z_A = -1 + i \quad , \quad b = (1 - a) z_A = (1 - (-2))(-1 + i) = -3 + 3i \quad , \quad b = -3 + 3i \quad .$
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.95\textwidth}
+    \textit{L'homothétie de rapport -2 et de centre A d'affixe $-1 + i$ est d'écriture complexe : $z' = -2 z - 3 + 3i$.}
+    \end{minipage}
+}
+\end{center}
+
+\section*{5) \underline{Rotation}}
+
+\textbf{Toute transformation du plan d'écriture complexe $z' = a z + b$ , $a \in \mathbb{C} \setminus \mathbb{R}$ , $|a| = 1$ , $b \in \mathbb{C}$ , est une rotation d'angle $\theta = \text{arg } a \ (2\pi)$ et de centre $\Omega$ tel que $z_{\Omega} = \frac{b}{1 - a}$.}
+
+
+ \textbf{Soit $z' = a z + b$ , $a \in \mathbb{C}$ , $|a| = 1$ , $b \in \mathbb{C}$ l'écriture complexe de la rotation d'angle $\theta$ et de centre $\Omega$ alors $a = e^{i\theta}$ et $b = (1 - a) z_{\Omega}$.}
+
+\subsection*{Démonstration : Écriture complexe d'une rotation}
+
+Soit $r$ une rotation de centre $\Omega$ d'affixe $z_{\Omega}$ et d'angle $\theta$. 
+Soit $M$ un point du plan d'affixe $z$ et $M'$ son image par $r$ d'affixe $z'$.
+
+\subsection*{1. Définition géométrique}
+Par définition de la rotation $r(\Omega, \theta)$, le point $M'$ est l'image de $M$ si et seulement si :
+\begin{itemize}
+    \item $\Omega M' = \Omega M$ (conservation de la distance au centre)
+    \item $(\overrightarrow{\Omega M}, \overrightarrow{\Omega M'}) \equiv \theta \pmod{2\pi}$ (mesure de l'angle orienté)
+\end{itemize}
+
+\subsection*{2. Traduction complexe}
+Ces deux conditions se traduisent avec les affixes par :
+\begin{enumerate}
+    \item $|z' - z_{\Omega}| = |z - z_{\Omega}|$ ce qui implique $\left| \frac{z' - z_{\Omega}}{z - z_{\Omega}} \right| = 1$
+    \item $\text{arg}\left( \frac{z' - z_{\Omega}}{z - z_{\Omega}} \right) \equiv \theta \pmod{2\pi}$
+\end{enumerate}
+
+Le nombre complexe $\frac{z' - z_{\Omega}}{z - z_{\Omega}}$ a donc pour module $1$ et pour argument $\theta$. 
+D'après la forme exponentielle, nous avons :
+\[ \frac{z' - z_{\Omega}}{z - z_{\Omega}} = e^{i\theta} \]
+
+\subsection*{3. Passage à la forme $z' = az + b$}
+En isolant $z'$, on obtient successivement :
+\begin{itemize}
+    \item $z' - z_{\Omega} = e^{i\theta}(z - z_{\Omega})$
+    \item $z' = e^{i\theta} z - e^{i\theta} z_{\Omega} + z_{\Omega}$
+    \item $z' = e^{i\theta} z + (1 - e^{i\theta}) z_{\Omega}$
+\end{itemize}
+
+\subsection*{Conclusion}
+En posant $a = e^{i\theta}$ et $b = (1 - a) z_{\Omega}$, on retrouve bien la forme :
+\[ z' = az + b \]
+Où :
+\begin{itemize}
+    \item $|a| = |e^{i\theta}| = 1$
+    \item $\theta = \text{arg}(a) \pmod{2\pi}$
+    \item $z_{\Omega} = \frac{b}{1 - a}$ (affixe du point invariant)
+\end{itemize}
+
+\subsection*{Exercice d'application}
+
+\begin{enumerate}
+    \item Donner la nature de la transformation du plan d'écriture complexe : \(z' = \frac{1}{2}(1 - i\sqrt{3}) z - \sqrt{3} + i\).
+    \item Soit la rotation d'angle \(-\frac{2\pi}{3}\) et de centre \(A\) d'affixe \(-2i\). Donner son écriture complexe.
+\end{enumerate}
+
+\subsection*{ \underline{Solution}}
+
+\textbf{1) Donnons la nature de la transformation du plan d'écriture complexe : \(z' = \frac{1}{2}(1 - i\sqrt{3}) z - \sqrt{3} + i\).}
+
+On a : \(a = \frac{1}{2}(1 - i\sqrt{3}) = \frac{1}{2} - i\frac{\sqrt{3}}{2}\) et \(b = -\sqrt{3} + i\).
+
+\begin{itemize}
+    \item \textbf{Module de \(a\) :} \(|a| = \sqrt{\left(\frac{1}{2}\right)^2 + \left(-\frac{\sqrt{3}}{2}\right)^2} = \sqrt{\frac{1}{4} + \frac{3}{4}} = 1\).
+    \item \textbf{Argument de \(a\) :} \(\cos \theta = \frac{1}{2}\) et \(\sin \theta = -\frac{\sqrt{3}}{2}\), donc \(\theta = -\frac{\pi}{3} \ [2\pi]\).
+    \item \textbf{Centre \(\Omega\) :} \(z_{\Omega} = \frac{b}{1 - a} = \frac{-\sqrt{3} + i}{1 - (\frac{1}{2} - i\frac{\sqrt{3}}{2})} = \frac{-\sqrt{3} + i}{\frac{1}{2} + i\frac{\sqrt{3}}{2}}\).
+    
+    En multipliant par l'expression conjuguée :
+    \(z_{\Omega} = \frac{(-\sqrt{3} + i)(\frac{1}{2} - i\frac{\sqrt{3}}{2})}{\frac{1}{4} + \frac{3}{4}} = -\frac{\sqrt{3}}{2} + \frac{3}{2}i + \frac{1}{2}i + \frac{\sqrt{3}}{2} = 2i\).
+\end{itemize}
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.95\textwidth}
+    \textbf{La transformation est la rotation d'angle \(-\frac{\pi}{3}\) et de centre \(\Omega\) d'affixe \(2i\).}
+    \end{minipage}
+}
+\end{center}
+
+\textbf{2) Soit la rotation d'angle \(-\frac{2\pi}{3}\) et de centre \(A\) d'affixe \(-2i\). Donnons son écriture complexe.}
+
+On a : \(\theta = -\frac{2\pi}{3}\) et \(z_A = -2i\).
+\begin{itemize}
+    \item \(a = e^{i(-\frac{2\pi}{3})} = \cos(-\frac{2\pi}{3}) + i\sin(-\frac{2\pi}{3}) = -\frac{1}{2} - i\frac{\sqrt{3}}{2}\).
+    \item \(b = (1 - a) z_A = \left(1 - (-\frac{1}{2} - i\frac{\sqrt{3}}{2})\right)(-2i) = \left(\frac{3}{2} + i\frac{\sqrt{3}}{2}\right)(-2i)\).
+    \item \(b = -3i - i^2\sqrt{3} = \sqrt{3} - 3i\).
+\end{itemize}
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.95\textwidth}
+    \textbf{L'écriture complexe de la rotation est : \(z' = \left(-\frac{1}{2} - i\frac{\sqrt{3}}{2}\right) z + \sqrt{3} - 3i\).}
+    \end{minipage}
+}
+\end{center}
+\section*{6) \underline{Similitude plane directe}}
+
+\textbf{On appelle similitude plane directe toute transformation du plan d'écriture complexe :}
+\[ z' = az + b \text{ , } a \in \mathbb{C} \setminus \mathbb{R} \text{ , } |a| \neq 1 \text{ , } b \in \mathbb{C} \text{ .} \]
+
+\textbf{Les éléments caractéristiques de la similitude plane directe sont :}
+\begin{itemize}
+    \item[$\blacktriangleright$] \textbf{Son rapport : $\lambda = |a|$}
+    \item[$\blacktriangleright$] \textbf{Son angle : $\theta = \text{arg}(a) \ (2\pi)$}
+\end{itemize}
+
+\begin{itemize}
+    \item[$\blacktriangleright$] \textbf{Son centre : son centre est $\Omega$ tel que $z_{\Omega} = \frac{b}{1 - a}$ .}
+\end{itemize}
+
+\textbf{$\lambda$ , $\theta$ et $\Omega$ sont appelés les éléments caractéristiques de la similitude plane directe .}
+
+\textbf{La similitude plane directe est souvent notée $S$ .}
+
+\textbf{On dit $S$ est la similitude directe de rapport $\lambda$ , d'angle $\theta$ et de centre $\Omega$ .}
+
+\begin{itemize}
+    \item[$\blacktriangleright$] \textbf{Soit $z' = az + b$ , $a \in \mathbb{C} \setminus \mathbb{R}$ , $|a| \neq 1$ , $b \in \mathbb{C}$ l'écriture d'une similitude plane directe de rapport $\lambda$ , d'angle $\theta$ et de centre $\Omega$ alors $a = \lambda e^{i\theta}$ et $b = (1 - a) z_{\Omega}$ .}
+\end{itemize}
+
+\subsection*{Remarque}
+
+\textbf{$z_{\Omega} = \frac{b}{1 - a} \iff b = (1 - a) z_{\Omega}$ .}
+
+\textbf{$\lambda = |a|$ donc $|a| = \lambda$ , $\text{arg}(a) = \theta$ d'où $a = \lambda \times e^{i\theta} = \lambda e^{i\theta}$ .}
+
+\textbf{Les deux écritures complexes suivantes sont équivalentes :}
+\begin{enumerate}
+    \item \textbf{Forme développée :} \( z' = az + b \)
+    \item \textbf{Forme réduite :} \( z' - z_{\Omega} = \lambda e^{i\theta}(z - z_{\Omega}) \)
+\end{enumerate}
+
+\begin{comment}
+\textbf{En effet, comme \( z_{\Omega} \) est le point invariant (\( z_{\Omega} = az_{\Omega} + b \)), on peut écrire :}
+\[ z' - z_{\Omega} = (az + b) - (az_{\Omega} + b) \]
+\[ z' - z_{\Omega} = a(z - z_{\Omega}) \]
+
+\textbf{En remplaçant \( a \) par sa forme exponentielle \( a = \lambda e^{i\theta} \), on retrouve exactement la forme réduite. Cette dernière met en évidence que la similitude est la composée d'une rotation d'angle \( \theta \) et d'une homothétie de rapport \( \lambda \), toutes deux de même centre \( \Omega \).}
+\end{comment}
+
+\subsection*{ \underline{Exemple}}
+\begin{enumerate}
+    \item Soit la similitude directe $S$ telle que $z_A - z_B = 2 e^{i\frac{\pi}{4}}(z_C - z_B)$.
+    
+    On a $S(C) = A$ , $\lambda = 2$ , $\theta = \frac{\pi}{4}$.
+    
+    $S$ est la similitude directe de rapport 2, d'angle $\frac{\pi}{4}$ et son centre est le point $B$.
+    
+    \item Soit la similitude directe $S$ telle que $z_E - z_D = 5 e^{i\frac{2\pi}{3}}(z_F - z_D)$.
+    
+    On a $S(F) = E$ , $\lambda = 5$ , $\theta = \frac{2\pi}{3}$.
+    
+    $S$ est la similitude directe de rapport 5, d'angle $\frac{2\pi}{3}$ et son centre est le point $D$.
+\end{enumerate}
+
+\subsection*{ \underline{Exercice d'application}}
+
+\begin{enumerate}
+    \item Donner les éléments caractéristiques de la similitude plane directe $S$ d'écriture complexe :
+    \[ z' = (1 + i) z - 2i \text{ .} \]
+    \item Donner l'écriture complexe de la similitude plane directe de rapport $2$ , d'angle $-\frac{\pi}{3}$ et de centre $\Omega$ d'affixe $1 + i$ .
+\end{enumerate}
+\subsection*{ \underline{Solution}}
+
+\textbf{1) Déterminons les éléments caractéristiques de la similitude plane directe \(S\) d'écriture complexe : \(z' = (1 + i) z - 2i\).}
+
+On a : \(a = 1 + i\) et \(b = -2i\).
+
+\begin{itemize}
+    \item \textbf{Rapport \(\lambda\) :} \(\lambda = |a| = |1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2}\).
+    \item \textbf{Angle \(\theta\) :} \(\cos \theta = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\) et \(\sin \theta = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\), donc \(\theta = \frac{\pi}{4} \ [2\pi]\).
+    \item \textbf{Centre \(\Omega\) :} \(z_{\Omega} = \frac{b}{1 - a} = \frac{-2i}{1 - (1 + i)} = \frac{-2i}{-i} = 2\).
+\end{itemize}
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.95\textwidth}
+    \textbf{La similitude plane directe \(S\) a pour rapport \(\sqrt{2}\), pour angle \(\frac{\pi}{4}\) et pour centre \(\Omega\) d'affixe \(2\).}
+    \end{minipage}
+}
+\end{center}
+
+\textbf{2) Donnons l'écriture complexe de la similitude plane directe de rapport 2, d'angle \(-\frac{\pi}{3}\) et de centre \(\Omega\) d'affixe \(1 + i\).}
+
+On a : \(\lambda = 2\), \(\theta = -\frac{\pi}{3}\) et \(z_{\Omega} = 1 + i\).
+\begin{itemize}
+    \item \textbf{Calcul de \(a\) :} \(a = \lambda e^{i\theta} = 2 \left(\cos(-\frac{\pi}{3}) + i\sin(-\frac{\pi}{3})\right) = 2 \left(\frac{1}{2} - i\frac{\sqrt{3}}{2}\right) = 1 - i\sqrt{3}\).
+    \item \textbf{Calcul de \(b\) :} \(b = (1 - a) z_{\Omega} = (1 - (1 - i\sqrt{3}))(1 + i) = (i\sqrt{3})(1 + i) = i\sqrt{3} + i^2\sqrt{3} = -\sqrt{3} + i\sqrt{3}\).
+\end{itemize}
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.95\textwidth}
+    \textbf{L'écriture complexe de la similitude est : \(z' = (1 - i\sqrt{3}) z - \sqrt{3} + i\sqrt{3}\).}
+    \end{minipage}
+}
+\end{center}
+\newpage
+\section*{7) Récapitulatif : Nature des transformations complexes}
+
+\renewcommand{\arraystretch}{1.8} % Pour aérer le tableau
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \rowcolor{gray!20} \textbf{Valeur de } $a$ & \textbf{Nature de la transformation} & \textbf{Éléments caractéristiques} \\ \hline
+        $a = 1$ & \textbf{Translation} & Vecteur $\overrightarrow{u}$ d'affixe $b$ \\ \hline
+        $a \in \mathbb{R} \setminus \{0 ; 1\}$ & \textbf{Homothétie} & 
+        $\begin{cases} 
+            \text{Rapport } k = a \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \frac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}$a \in \mathbb{C} \setminus \mathbb{R}$ \\ $|a| = 1$\end{tabular} & \textbf{Rotation} & 
+        $\begin{cases} 
+            \text{Angle } \theta = \text{arg}(a) \ [2\pi] \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \frac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}$a \in \mathbb{C} \setminus \mathbb{R}$ \\ $|a| \neq 1$\end{tabular} & \textbf{Similitude plane directe} & 
+        $\begin{cases} 
+            \text{Rapport } \lambda = |a| \\ 
+            \text{Angle } \theta = \text{arg}(a) \ [2\pi] \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \frac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{ Comment identifier la transformation ?}
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75!black,title=Méthode de reconnaissance]
+Regardez attentivement le coefficient \textbf{$a$} :
+\begin{enumerate}
+    \item \textbf{Si $a = 1$} : C'est une \textbf{Translation} de vecteur d'affixe $b$.
+    \item \textbf{Si $a$ est un nombre réel} ($a \in \mathbb{R} \setminus \{0, 1\}$) : C'est une \textbf{Homothétie}.
+    \item \textbf{Si $a$ est complexe ($a \notin \mathbb{R}$) et $|a| = 1$} : C'est une \textbf{Rotation}.
+    \item \textbf{Si $a$ est complexe ($a \notin \mathbb{R}$) et $|a| \neq 1$} : C'est une \textbf{Similitude plane directe}.
+\end{enumerate}
+\end{tcolorbox}
+
+\subsection*{ \underline{Propriété}}
+\textbf{Une similitude plane directe est soit une translation, soit une homothétie, soit une rotation, soit une composition commutative de rotation et d'homothétie de même centre.}
+\section*{9) Détermination d'une similitude à partir de ses éléments caractéristiques}
+\begin{enumerate}
+\item  À partir de deux points et de leurs images
+
+Soit la similitude plane directe $S$ telle que $S(A) = A'$ et $S(B) = B'$.
+
+La similitude plane directe $S$ est d'écriture complexe : $z' = az + b$ avec $a = \frac{z_{A'} - z_{B'}}{z_A - z_B}$ et
+
+$b = z_{A'} - az_A$.
+
+\item À partir de son centre, d'un point et son image
+
+Soit la similitude plane directe $S$ telle que $S(A) = A'$ et $S(\Omega) = \Omega$.
+
+La similitude plane directe $S$ est d'écriture complexe : $z' = az + b$ avec $a = \frac{z_{A'} - z_{\Omega}}{z_A - z_{\Omega}}$ et
+
+$b = z_{\Omega} - az_{\Omega}$.
+\end{enumerate}
+
+\section*{Démonstration : Détermination par le centre, un point et son image}
+\begin{enumerate}
+\item
+$z' = az + b$ , $S(A) = A'$ et $S(B) = B'$ .
+
+$S(A) = A'$ donc $z_{A'} = az_A + b \ (1)$ , $S(B) = B'$ donc $z_{B'} = az_B + b \ (2)$
+
+En faisant la différence de $(1)$ et $(2)$, on a $z_{A'} - z_{B'} = a(z_A - z_B)$ d'où $a = \frac{z_{A'} - z_{B'}}{z_A - z_B}$
+
+$z_{A'} = az_A + b$ donc $b = z_{A'} - az_A$ .
+
+Donc $z' = az + b$ avec $a = \frac{z_{A'} - z_{B'}}{z_A - z_B}$ et $b = z_{A'} - az_A$ .
+
+\item
+
+$z' = az + b$ , $S(A) = A'$ et $S(\Omega) = \Omega$ .
+
+$S(A) = A'$ donc $z_{A'} = az_A + b \ (1)$ , $S(\Omega) = \Omega$ donc $z_{\Omega} = az_{\Omega} + b \ (2)$
+
+En faisant la différence de $(1)$ et $(2)$, on a $z_{A'} - z_{\Omega} = a(z_A - z_{\Omega})$ d'où $a = \frac{z_{A'} - z_{\Omega}}{z_A - z_{\Omega}}$
+
+$z_{\Omega} = az_{\Omega} + b$ donc $b = z_{\Omega} - az_{\Omega}$ .
+
+Donc $z' = az + b$ avec $a = \frac{z_{A'} - z_{\Omega}}{z_A - z_{\Omega}}$ et $b = z_{\Omega} - az_{\Omega}$ .
+\end{enumerate}
+
+\section*{Exercice d'application : Similitudes Planes Directes}
+
+Le plan complexe est rapporté à un repère orthonormé direct $(O; \vec{u}, \vec{v})$.
+
+Soit $s$ la similitude plane directe qui transforme le point $A$ d'affixe $z_A = 1 + i$ en $A'$ d'affixe $z_{A'} = 2 + 5i$, et le point $B$ d'affixe $z_B = i$ en $B'$ d'affixe $z_{B'} = 4 + 3i$.
+\begin{enumerate}
+    \item Déterminer le coefficient complexe $a$ de cette similitude.
+    \item En déduire la valeur de $b$ et donner l'écriture complexe de $s$.
+\end{enumerate}
+
+\section*{Correction détaillée}
+
+\begin{enumerate}
+    \item \textbf{Calcul de $a$ :}
+    D'après la formule $a = \frac{z_{A'} - z_{B'}}{z_A - z_B}$ :
+    \[ a = \frac{(2 + 5i) - (4 + 3i)}{(1 + i) - i} = \frac{-2 + 2i}{1} = -2 + 2i \]
+    
+    \item \textbf{Calcul de $b$ :}
+    En utilisant $b = z_{A'} - az_A$ :
+    \[ b = (2 + 5i) - (-2 + 2i)(1 + i) = (2 + 5i) - (-2 - 2i + 2i + 2i^2) \]
+    \[ b = (2 + 5i) - (-2 - 2) = (2 + 5i) - (-4) = 6 + 5i \]
+    L'écriture complexe est : \textbf{$z' = (-2 + 2i)z + 6 + 5i$}.
+\end{enumerate}
+
+\section*{10) Similitude plane directe déterminée par son écriture complexe}
+
+\textit{Soit S l'application du plan dans lui-même d'écriture complexe : \(z' = 3i z - 1 - 7i\).}
+
+\begin{enumerate}
+    \item \textit{Justifier que S est une similitude plane directe et préciser ses éléments caractéristiques.}
+    \item \textit{Déterminer l'expression analytique de S.}
+    \item \textit{Déterminer une équation de l'image par S de la droite(BC), B et C étant les points d'affixes respectives 2 et \(3 - i\).}
+\end{enumerate}
+
+\begin{enumerate}
+    \item[4)] \textit{Déterminer une équation de \((C')\), image par S du cercle\((C)\) d'équation : \((x - 2)^2 + y^2 = 1\).}
+\end{enumerate}
 
 \end{document}
