@@ -78,6 +78,7 @@ middle color = tcbcolback!80!black]
 
 % Définir la commande \exo
 \newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+
 \begin{document}
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
@@ -105,6 +106,56 @@ $ABC$ est un triangle ; $I$ milieu de $[AB]$,
     \item Faire la figure.
     \item Montrer que $I$, $J$ et $K$ sont alignés.
 \end{enumerate}
+
++++++++++++++++++++
+
+\fbox{\textbf{\exo}}
+$ABC$ est un triangle. $I$ est le milieu du segment $[AB]$.
+On considère les points $J$ et $K$ tels que :
+\[ \overrightarrow{CJ} = \frac{1}{4} \overrightarrow{AC} \quad \text{et} \quad \overrightarrow{CK} = \frac{1}{6} \overrightarrow{CB} \]
+
+\begin{enumerate}
+    \item Faire une figure précise (attention à la position de $J$).
+    \item Exprimer les vecteurs $\overrightarrow{IJ}$ et $\overrightarrow{IK}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AC}$.
+    \item Montrer que les points $I$, $J$ et $K$ sont alignés.
+\end{enumerate}
+
++++++++++++++++++++
+
+\fbox{\textbf{\exo}}
+
+\textbf{1. Expression de $\overrightarrow{IJ}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AC}$}
+En utilisant la relation de Chasles :
+\[ \overrightarrow{IJ} = \overrightarrow{IA} + \overrightarrow{AC} + \overrightarrow{CJ} \]
+\begin{itemize}
+    \item Comme $I$ est le milieu de $[AB]$, on a $\overrightarrow{IA} = \frac{1}{2}\overrightarrow{BA} = -\frac{1}{2}\overrightarrow{AB}$.
+    \item La relation de l'énoncé donne $\overrightarrow{CJ} = \frac{1}{4}\overrightarrow{AC}$.
+\end{itemize}
+D'où :
+\[ \overrightarrow{IJ} = -\frac{1}{2}\overrightarrow{AB} + \overrightarrow{AC} + \frac{1}{4}\overrightarrow{AC} \]
+\[ \overrightarrow{IJ} = -\frac{1}{2}\overrightarrow{AB} + \frac{5}{4}\overrightarrow{AC} \]
+
+\textbf{2. Expression de $\overrightarrow{IK}$ en fonction de $\overrightarrow{AB}$ et $\overrightarrow{AC}$}
+De même :
+\[ \overrightarrow{IK} = \overrightarrow{IB} + \overrightarrow{BC} + \overrightarrow{CK} \]
+\begin{itemize}
+    \item $\overrightarrow{IB} = \frac{1}{2}\overrightarrow{AB}$.
+    \item $\overrightarrow{BC} = \overrightarrow{BA} + \overrightarrow{AC} = -\overrightarrow{AB} + \overrightarrow{AC}$.
+    \item $\overrightarrow{CK} = \frac{1}{6}\overrightarrow{CB} = \frac{1}{6}(\overrightarrow{CA} + \overrightarrow{AB}) = -\frac{1}{6}\overrightarrow{AC} + \frac{1}{6}\overrightarrow{AB}$.
+\end{itemize}
+En sommant :
+\[ \overrightarrow{IK} = \left( \frac{1}{2} - 1 + \frac{1}{6} \right)\overrightarrow{AB} + \left( 1 - \frac{1}{6} \right)\overrightarrow{AC} \]
+\[ \overrightarrow{IK} = -\frac{1}{3}\overrightarrow{AB} + \frac{5}{6}\overrightarrow{AC} \]
+
+\textbf{3. Conclusion sur l'alignement}
+Cherchons s'il existe un réel $k$ tel que $\overrightarrow{IK} = k \cdot \overrightarrow{IJ}$. \\
+Comparons les coefficients :
+\[ \frac{-\frac{1}{3}}{-\frac{1}{2}} = \frac{2}{3} \quad \text{et} \quad \frac{\frac{5}{6}}{\frac{5}{4}} = \frac{5}{6} \times \frac{4}{5} = \frac{4}{6} = \frac{2}{3} \]
+On a donc $\overrightarrow{IK} = \frac{2}{3}\overrightarrow{IJ}$. Les vecteurs $\overrightarrow{IJ}$ et $\overrightarrow{IK}$ sont colinéaires et ont le point $I$ en commun. \\
+\textbf{Les points $I$, $J$ et $K$ sont donc alignés.}
+
+++++++++++++++++++
+
 \fbox{\textbf{\exo}}
 Soit $ABCD$ un parallélogramme.
 
