@@ -1,0 +1,69 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[a4paper, margin=0.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage{bold-extra}
+\usepackage[table]{xcolor}
+\renewcommand{\seriesdefault}{b}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{1.8}
+
+% ===== Premier tableau =====
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \rowcolor{gray!20} \textbf{Valeur de $a$} & \textbf{Nature de la transformation} & \textbf{Éléments caractéristiques} \\ \hline
+        $a = 1$ & \textbf{Translation} & Vecteur $\overrightarrow{u}$ d'affixe $b$ \\ \hline
+        $a \in \mathbb{R} \setminus \{0 ; 1\}$ & \textbf{Homothétie} & 
+        $\begin{cases} 
+            \text{Rapport } k = a \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \dfrac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}$a \in \mathbb{C} \setminus \mathbb{R}$ \\ $|a| = 1$\end{tabular} & \textbf{Rotation} & 
+        $\begin{cases} 
+            \text{Angle } \theta = \arg(a) \ [2\pi] \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \dfrac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}$a \in \mathbb{C} \setminus \mathbb{R}$ \\ $|a| \neq 1$\end{tabular} & \textbf{Similitude plane directe} & 
+        $\begin{cases} 
+            \text{Rapport } \lambda = |a| \\ 
+            \text{Angle } \theta = \arg(a) \ [2\pi] \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \dfrac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+    \end{tabular}
+\end{table}
+
+\vspace{4mm}
+
+% ===== Deuxième tableau (copie) =====
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \rowcolor{gray!20} \textbf{Valeur de $a$} & \textbf{Nature de la transformation} & \textbf{Éléments caractéristiques} \\ \hline
+        $a = 1$ & \textbf{Translation} & Vecteur $\overrightarrow{u}$ d'affixe $b$ \\ \hline
+        $a \in \mathbb{R} \setminus \{0 ; 1\}$ & \textbf{Homothétie} & 
+        $\begin{cases} 
+            \text{Rapport } k = a \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \dfrac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}$a \in \mathbb{C} \setminus \mathbb{R}$ \\ $|a| = 1$\end{tabular} & \textbf{Rotation} & 
+        $\begin{cases} 
+            \text{Angle } \theta = \arg(a) \ [2\pi] \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \dfrac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}$a \in \mathbb{C} \setminus \mathbb{R}$ \\ $|a| \neq 1$\end{tabular} & \textbf{Similitude plane directe} & 
+        $\begin{cases} 
+            \text{Rapport } \lambda = |a| \\ 
+            \text{Angle } \theta = \arg(a) \ [2\pi] \\ 
+            \text{Centre } \Omega \left( z_{\Omega} = \dfrac{b}{1-a} \right) 
+        \end{cases}$ \\ \hline
+    \end{tabular}
+\end{table}
+
+\end{document}
