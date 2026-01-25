@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  19 JAN 2026 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  22 JAN 2026 08:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,7 +479,7 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count303
 \l__pdf_internal_box=\box65
 )
-No file barycentre.aux.
+(build/barycentre.aux)
 \openout1 = `barycentre.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -498,6 +498,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Info: Redefining \degres on input line 25.
 LaTeX Info: Redefining \up on input line 25.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count304
@@ -535,12 +536,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (27.28107pt too wide) in paragraph at lines 627--627
+Overfull \hbox (27.28107pt too wide) in paragraph at lines 628--628
 |$[]$| 
  []
 
 [11]
-Overfull \hbox (22.26552pt too wide) in paragraph at lines 682--682
+Overfull \hbox (22.26552pt too wide) in paragraph at lines 683--683
 |$[]$| 
  []
 
@@ -551,10 +552,10 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15402 strings out of 474222
- 300045 string characters out of 5748732
+ 15405 strings out of 474222
+ 300112 string characters out of 5748732
  1958975 words of memory out of 5000000
- 37402 multiletter control sequences out of 15000+600000
+ 37403 multiletter control sequences out of 15000+600000
  575287 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,20n,107p,412b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -571,7 +572,7 @@ b></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on build/barycentre.pdf (15 pages, 233908 bytes).
+Output written on build/barycentre.pdf (15 pages, 234484 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream
