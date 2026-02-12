@@ -1,0 +1,627 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage{enumitem}
+%---------------------------------------
+% Définir un compteur pour les exemples
+\newcounter{exemple}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
+}
+%---------------------------------------
+\newcounter{solution}
+
+% Définir la commande \solutione pour afficher un solution numéroté
+\newcommand{\solution}{%
+  \refstepcounter{solution}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
+}
+%---------------------------------------
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Définir un compteur pour les exercices d'application
+\newcounter{exerciceapp}
+
+% Définir la commande pour afficher un exercice d'application numéroté
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les exercices d'application
+\newcounter{correction}
+
+% Définir la commande pour afficher un correction exercice d'application numéroté
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les remarque d'application
+\newcounter{remarque}
+
+%----------------------------------------
+\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
+% Définir la commande pour afficher un remarque numéroté
+\newcommand{\remarque}{%
+  \refstepcounter{remarque}%
+  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
+}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Trinôme du $2^{\text{nd}}$ degré et système d’équations}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TS2}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\section*{\underline{\textbf{\textcolor{red}{I.Trinôme du $2^{\text{nd}}$ degré}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
+Soient $a,b,c \in \mathbb{R}$ tels que $a \neq 0$.
+
+On appelle \textcolor{red}{trinôme du second degré} à variable $x$ toute expression qui s’écrit sous la forme :
+
+\(
+ax^2 + bx + c \qquad (a \neq 0)
+\)
+$a$, $b$ et $c$ sont appelés les coefficients du trinôme.
+
+\textbf{\underline{\exemple}}
+
+\begin{enumerate}
+\item $H(x)=x^2-4$ est un trinôme du $2^{\text{nd}}$ degré tel que 
+
+\(
+a=1,\quad b=0 \quad \text{et} \quad c=-4.
+\)
+
+\item $G(x)=3x^2-x-1$ est un trinôme du $2^{\text{nd}}$ degré tel que
+ 
+\(
+a=3,\quad b=-1 \quad \text{et} \quad c=-1.
+\)
+
+\item $R(x)=x+4 \quad (R(x)\ \text{n’est pas un trinôme du } 2^{\text{nd}}\ \text{degré}).$
+
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Forme canonique d’un trinôme du $2^{\text{nd}}$ degré }}}}
+
+\textcolor{red}{\underline{Activité}}
+
+\begin{enumerate}
+\item Soit $\alpha \in \mathbb{R}$. Montrer que pour tout réel $x$ on a :
+\(
+x^2+\alpha x=\left(x+\frac{\alpha}{2}\right)^2-\left(\frac{\alpha}{2}\right)^2
+\)
+
+\item Soient $P$, $G$ et $R$ des trinômes du $2^{\text{nd}}$ degré tels que :
+
+\(
+P(x)=2x^2-x+2
+\)
+
+\(
+G(x)=3x^2-2x-1
+\)
+
+\(
+R(x)=3x^2-2\sqrt{3}\,x+1
+\)
+
+En utilisant la relation démontrée dans 1), montrer que :
+
+\begin{itemize}
+\item[a)] $P(x)=2\left[\left(x-\frac{1}{2}\right)^2+\frac{15}{16}\right]$
+\item[b)] $G(x)=3\left[\left(x-\frac{1}{3}\right)^2-\frac{4}{9}\right]$
+\item[c)] $R(x)=3\left(x-\frac{\sqrt{3}}{3}\right)^2$
+\end{itemize}
+
+\end{enumerate}
+
+
+\noindent
+\textcolor{red}{\underline{\textbf{Théorème}}}
+
+\medskip
+
+Soit 
+\(
+P(x)=ax^2+bx+c
+\)
+où $a,b,c\in\mathbb{R}$ avec $a\neq0$.
+
+Alors
+\(
+P(x)=a\left[\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a^2}\right]
+\)
+où
+\(
+\Delta=b^2-4ac.
+\)
+
+(On lit $\Delta$ « delta ».)
+
+\medskip
+
+L’expression obtenue dans $(*)$ est appelée \textcolor{red}{forme canonique} du trinôme du $2^{\text{nd}}$ degré $P(x)$.
+
+\medskip
+
+$\Delta$ est appelé le \textcolor{red}{discriminant} de $P(x)$.
+
+\bigskip
+\textcolor{red}{\underline{\textbf{Preuve}}}
+
+\medskip
+
+On part de l’expression :
+\(
+P(x)=ax^2+bx+c.
+\)
+
+On factorise par $a$ les termes contenant $x$ :
+\(
+P(x)=a\left(x^2+\frac{b}{a}x\right)+c.
+\)
+
+On complète le carré :
+\(
+x^2+\frac{b}{a}x
+=
+\left(x+\frac{b}{2a}\right)^2-\left(\frac{b}{2a}\right)^2.
+\)
+
+Donc
+\(
+P(x)
+=
+a\left[\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a^2}\right]+c.
+\)
+
+On distribue $a$ :
+\(
+P(x)
+=
+a\left(x+\frac{b}{2a}\right)^2-\frac{b^2}{4a}+c.
+\)
+
+On met le second membre sous un seul dénominateur :
+\(
+-\frac{b^2}{4a}+c
+=
+\frac{-b^2+4ac}{4a}
+=
+-\frac{b^2-4ac}{4a}.
+\)
+
+Donc
+\(
+P(x)
+=
+a\left(x+\frac{b}{2a}\right)^2
+-
+\frac{b^2-4ac}{4a}.
+\)
+
+On factorise par $a$ :
+\(
+P(x)
+=
+a\left[
+\left(x+\frac{b}{2a}\right)^2
+-
+\frac{b^2-4ac}{4a^2}
+\right].
+\)
+
+Or
+\(
+\Delta=b^2-4ac.
+\)
+
+Ainsi
+\(
+P(x)=a\left[\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a^2}\right].
+\)
+
+\hfill $\square$
+
+\textbf{\underline{\exerciceapp}}
+
+Déterminer la forme canonique des trinômes du 2\textsuperscript{nd} degré suivants :
+
+\begin{enumerate}
+\item $P(x)=4x^2-2x+8$
+\item $Q(x)=-3x^2+2\sqrt{6}\,x+2$
+\item $R(x)=5x^2+4x-1$
+\end{enumerate}
+
+\textbf{\underline{\correction}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{3.Factorisation d’un trinôme du second degré}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{Définition}}}}
+
+Soit $P$ un trinôme du second degré.  
+Un réel $\alpha$ est \textcolor{red}{racine} de $P$ si $P(\alpha)=0$.
+
+\textbf{\underline{\exemple}}
+
+Soit 
+\(
+P(x)=3x^2-x-2.
+\)
+
+\begin{enumerate}
+\item 
+\(
+P(1)=3(1)^2-1-2
+\)
+
+\(
+P(1)=3-1-2
+\)
+
+\(
+P(1)=0
+\)
+
+Donc \textcolor{red}{$1$ est racine de $P$.}
+
+\item 
+\(
+P(0)=3(0)^2-0-2
+\)
+
+\(
+P(0)=-2\neq0
+\)
+
+Donc \textcolor{red}{$0$ n’est pas racine de $P$.}
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
+
+\medskip
+
+Soit 
+\(
+P(x)=ax^2+bx+c
+\)
+où $a,b,c\in\mathbb{R}$ avec $a\neq0$.
+
+\(
+\Delta=b^2-4ac
+\)
+
+\begin{enumerate}
+\item[(i)] Si $\Delta<0$ alors $P$ n’admet pas de racine.
+
+\item[(ii)] Si $\Delta>0$ alors $P$ admet deux racines distinctes $x_1$ et $x_2$ telles que :
+
+\(
+x_1=\frac{-b-\sqrt{\Delta}}{2a}
+\quad \text{et} \quad
+x_2=\frac{-b+\sqrt{\Delta}}{2a}.
+\)
+
+\item[(iii)] Si $\Delta=0$ alors $P$ admet une racine double $x_0$ telle que :
+
+\(
+x_0=\frac{-b}{2a}.
+\)
+\end{enumerate}
+\bigskip
+\textcolor{red}{\underline{\textbf{Preuve}}}
+
+\medskip
+
+On sait que
+\[
+P(x)=a\left[\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a^2}\right].
+\]
+
+\[
+P(x)=0
+\iff
+a\left[\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a^2}\right]=0
+\]
+
+\[
+\iff
+\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a^2}=0
+\quad \text{car } a\neq0
+\]
+
+\[
+\iff
+\left(x+\frac{b}{2a}\right)^2=\frac{\Delta}{4a^2}
+\tag{$*$}
+\]
+
+Ainsi, on distingue 3 cas suivant les valeurs de $\Delta$ :
+
+\begin{enumerate}
+
+\item[(i)] Si $\Delta<0$ alors la relation $(*)$ est impossible car le carré d’un réel n’est jamais négatif.
+
+\medskip
+
+\item[(ii)] Si $\Delta>0$ alors $(*)$ devient :
+
+\[
+x+\frac{b}{2a}
+=
+\sqrt{\frac{\Delta}{4a^2}}
+\quad \text{ou} \quad
+x+\frac{b}{2a}
+=
+-\sqrt{\frac{\Delta}{4a^2}}
+\]
+
+\[
+x+\frac{b}{2a}
+=
+\frac{\sqrt{\Delta}}{2a}
+\quad \text{ou} \quad
+x+\frac{b}{2a}
+=
+-\frac{\sqrt{\Delta}}{2a}
+\]
+
+\[
+x
+=
+-\frac{b}{2a}
++
+\frac{\sqrt{\Delta}}{2a}
+\quad \text{ou} \quad
+x
+=
+-\frac{b}{2a}
+-
+\frac{\sqrt{\Delta}}{2a}
+\]
+
+\[
+x_1=\frac{-b+\sqrt{\Delta}}{2a}
+\quad \text{et} \quad
+x_2=\frac{-b-\sqrt{\Delta}}{2a}
+\]
+
+\medskip
+
+\item[(iii)] Si $\Delta=0$ alors $(*)$ devient :
+
+\[
+\left(x+\frac{b}{2a}\right)^2=0
+\]
+
+\[
+x+\frac{b}{2a}=0
+\]
+
+\[
+x=-\frac{b}{2a}
+\]
+
+\end{enumerate}
+
+\hfill $\square$
+
+\noindent
+\textcolor{red}{\underline{Conséquence : Factorisation de $P(x)$}}
+
+\medskip
+
+Soit $P(x)=ax^2+bx+c$, $a,b,c\in\mathbb{R}$ avec $a\neq0$.
+
+\begin{enumerate}
+\item[(i)] Si $\Delta<0$ alors $P(x)$ n’a pas de factorisation dans $\mathbb{R}$.
+
+\item[(ii)] Si $\Delta>0$ alors $P(x)$ est factorisable telle que :
+
+\(
+\boxed{P(x)=a(x-x_1)(x-x_2)}
+\)
+
+\item[(iii)] Si $\Delta=0$ alors $P(x)$ est factorisable telle que :
+
+\(
+\boxed{P(x)=a(x-x_0)^2}
+\)
+\end{enumerate}
+
+\textcolor{red}{\underline{Application}}
+
+Dans chacun des cas suivants, factoriser $P(x)$ si possible :
+
+\begin{enumerate}
+\item $P(x)=3x^2-x-2$
+\item $P(x)=-x^2+x-3$
+\item $P(x)=3x^2+2\sqrt{6}\,x+2$
+\end{enumerate}
+
+\noindent
+\textcolor{red}{\underline{Remarque :}}
+
+\medskip
+
+\textbf{Calcul des racines avec $\Delta'$}
+
+\medskip
+
+Soit 
+\(
+P(x)=ax^2+bx+c
+\)
+où $a,b,c\in\mathbb{R}$ avec $a\neq0$.
+
+Si 
+\(
+b'=\frac{b}{2}
+\)
+alors
+\(
+\Delta'=(b')^2-ac.
+\)
+
+\medskip
+
+Tel que :
+
+\begin{enumerate}
+
+\item[(i)] Si $\Delta'<0$ alors $P(x)$ n’admet pas de racine dans $\mathbb{R}$.
+
+\item[(ii)] Si $\Delta'>0$ alors $P(x)$ admet deux racines distinctes $x_1$ et $x_2$ telles que :
+
+\(
+x_1=\frac{-b'-\sqrt{\Delta'}}{a}
+\quad \text{et} \quad
+x_2=\frac{-b'+\sqrt{\Delta'}}{a}.
+\)
+
+\end{enumerate}
+
+\begin{enumerate}
+\item[(iii)] Si $\Delta'=0$ alors $P(x)$ admet une racine double $x_0$ telle que :
+\[
+x_0=\frac{-b'}{a}.
+\]
+\end{enumerate}
+
+\medskip
+
+\textbf{En effet :}
+
+\[
+\Delta=b^2-4ac
+\]
+
+Si $b'=\frac{b}{2}$ alors $b=2b'$.
+
+Donc
+\[
+\Delta=(2b')^2-4ac
+\]
+
+\[
+\Delta=4(b')^2-4ac
+\]
+
+\[
+\Delta=4\big((b')^2-ac\big)
+\]
+
+Posons
+\[
+\Delta'=(b')^2-ac.
+\]
+
+Alors
+\[
+\Delta=4\Delta'.
+\]
+
+\medskip
+
+\begin{enumerate}
+\item[(i)] Si $\Delta'<0$ alors $\Delta<0$.
+
+\item[(ii)] Si $\Delta'>0$ alors
+\[
+\sqrt{\Delta}=\sqrt{4\Delta'}=2\sqrt{\Delta'}.
+\]
+
+Ainsi,
+\[
+x_1=\frac{-b-\sqrt{\Delta}}{2a}
+\quad \text{et} \quad
+x_2=\frac{-b+\sqrt{\Delta}}{2a}.
+\]
+
+Or $b=2b'$ et $\sqrt{\Delta}=2\sqrt{\Delta'}$, donc
+
+\[
+x_1=\frac{-2b'-2\sqrt{\Delta'}}{2a}
+\quad \text{et} \quad
+x_2=\frac{-2b'+2\sqrt{\Delta'}}{2a}.
+\]
+
+En simplifiant :
+
+\[
+x_1=\frac{-b'-\sqrt{\Delta'}}{a}
+\quad \text{et} \quad
+x_2=\frac{-b'+\sqrt{\Delta'}}{a}.
+\]
+
+\item[(iii)] Si $\Delta'=0$ alors $\Delta=0$.
+
+\[
+x_0=\frac{-b}{2a}
+=\frac{-2b'}{2a}
+=\frac{-b'}{a}.
+\]
+
+\end{enumerate}
+
+\hfill $\square$
+
+\end{document}
