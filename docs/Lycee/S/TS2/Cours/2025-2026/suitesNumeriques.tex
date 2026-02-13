@@ -120,7 +120,7 @@ Le réel $U_n$ est appelé  \textcolor{red}{\textit{terme général}} ou  \textc
 L'ensemble des termes de la suite est noté $(U_n)$ et $n \in \mathbb{N}$ ou $(U_{n})n\in\mathbb{N}$.
 \subsection*{\underline{\textbf{\textcolor{red}{2. Modes de définition d'une suite }}}}
 \subsection*{\underline{\textbf{\textcolor{red}{2.1. Suite explicite}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{2.2.Définition}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{ Définition}}}}
 Lorsqu'une suite $(U_{n})$ est exprimée en fonction de $n$, alors on dit que la suite $(U_{n})$ est définie par une \textcolor{red}{\textit{formule explicite}} et on note $U_{n} = f(n)$.
 
 \textbf{\underline{\exemple}}
@@ -135,8 +135,8 @@ $v_{1}$ ; $v_{10}$ ; $v_{50}$
 
 \textbf{\underline{\solution}}
 
-\subsection*{\underline{\textbf{\textcolor{red}{3.Suite définie par récurrence}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{3.1.Définition}}}}	
+\subsection*{\underline{\textbf{\textcolor{red}{2.2. Suite définie par récurrence}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{ Définition}}}}	
 Lorsque la suite $(U_n)$ est définie par une relation entre $U_n$ et $U_{n+1}$, alors on dit que $(U_n)$ est définie par une \textcolor{red}{\textit{relation de récurrence}}.
 
 	$$\left\lbrace\begin{array}{rcl} u_{0}& =& \alpha \\ u_{n+1}& =& 2u_{n}-3\end{array}\right.\;,\quad\left\lbrace\begin{array}{rcl} v_{1}& =& \alpha \\ v_{n+1}& =& f(v_{n})\end{array}\right.$$
@@ -166,27 +166,115 @@ Dans chacun des cas suivants, calculer les $6$ premiers termes de la suite $U_{n
 
 \textbf{\underline{\correction}}
 
-\subsection*{\underline{\textbf{\textcolor{red}{4. Sens de variation d'une suite}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{Définition :}}}}
-	
+\subsection*{\underline{\textbf{\textcolor{red}{3. Sens de variation d'une suite}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3.1. Définition :}}}}
+
 Une suite $\left(u_{n}\right)$ est dite :
+
+\begin{itemize}
+	\item \textbf{Croissante} si : $\forall n,\; u_{n+1}\geq u_{n}$,
 	
-$-\ $Croissante si : $\forall\;n\;,\ :\ u_{n+1}\geq u_{n} .$ c'est-à-dire, $\ u_{n+1}- u_{n}>0$
+	c'est-à-dire $u_{n+1}-u_{n}\geq 0$.
 	
-$-\ $Décroissante si : $\forall\;n;,\ :\ u_{n+1}\leq u_{n}$. c'est-à-dire, $\ u_{n+1}- u_{n}<0$
+	\item \textbf{Décroissante} si : $\forall n,\; u_{n+1}\leq u_{n}$,
+	
+	c'est-à-dire $u_{n+1}-u_{n}\leq 0$.
+	
+	\item \textbf{Constante} si : $\forall n,\; u_{n+1}=u_{n}$.
+\end{itemize}
 
-$-\ $Monotone si elle est croissante ou décroissante.
+\medskip
 
-$-\ $Constante si : $\forall\;n\;,\ :\ u_{n+1}=u_{n}.$
+\textbf{Étudier le sens de variation d'une suite} $\left(u_{n}\right)$ consiste à déterminer 
+si elle est croissante, décroissante ou constante.
 
-Étudier le sens de variation d'une suite $\left(u_{n}\right)$
+\subsection*{\underline{\textbf{\textcolor{red}{3.2 Méthode du quotient (si $u_n>0$)}}}} 
+	
+	On étudie le signe de $\dfrac{u_{n+1}}{u_n}-1$ ou on compare 
+	$\dfrac{u_{n+1}}{u_n}$ à $1$.
+	
+	\begin{itemize}
+		\item Si $\dfrac{u_{n+1}}{u_n} \geq 1$, alors la suite est croissante.
+		\item Si $\dfrac{u_{n+1}}{u_n} \leq 1$, alors la suite est décroissante.
+	\end{itemize}
+	
+	Cette méthode est valable uniquement si $u_n>0$.
 
-C'est dire si elle est croissante ou décroissante ou constante.
 
-\subsection*{\underline{\textbf{\textcolor{red}{Règle :}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3.3. Méthode par une fonction associée}}}}  
+	
+	Si $u_n=f(n)$, on peut étudier les variations de la fonction $f$ 
+	sur l'intervalle considéré et en déduire le sens de variation de la suite.
 
-Pour étudier le sens de variation d'une suite $\left(u_{n}\right)$,on compare deux termes consécutifs, pour cela, on peut étudier le signe de leur différence, ou, s'il s'agit de nombres strictement positifs, comparer leur quotient à $1.$
+\subsection*{\underline{\textbf{\textcolor{red}{3.4. Méthode par récurrence}}}}   
+	
+	Dans certains cas, on peut démontrer par récurrence que 
+	$u_{n+1} \geq u_n$ ou $u_{n+1} \leq u_n$.
 
++++++++++++++++++++++++++++++++++++++++++++++
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exercices d'application}}}} 
+
+\textbf{Exercice 1 : Méthode par différence}
+
+Soit la suite $\left(u_n\right)$ définie par :
+\[
+u_n = n^2 - 3n + 1.
+\]
+
+Étudier le sens de variation de la suite $\left(u_n\right)$.
+
+\bigskip
+
+\textbf{Exercice 2 : Méthode du quotient (suite positive)}
+
+Soit la suite $\left(u_n\right)$ définie par :
+\[
+u_n = 2^n.
+\]
+
+\begin{itemize}
+	\item Vérifier que $u_n>0$ pour tout $n$.
+	\item Étudier le sens de variation de la suite.
+\end{itemize}
+
+\bigskip
+
+\textbf{Exercice 3 : Méthode par fonction associée}
+
+Soit la suite $\left(u_n\right)$ définie par :
+\[
+u_n = \dfrac{1}{n+1}.
+\]
+
+On considère la fonction $f(x)=\dfrac{1}{x+1}$.
+
+\begin{itemize}
+	\item Étudier les variations de la fonction $f$ sur $[0,+\infty[$.
+	\item En déduire le sens de variation de la suite $\left(u_n\right)$.
+\end{itemize}
+
+\bigskip
+
+\textbf{Exercice 4 : Méthode par récurrence}
+
+Soit la suite $\left(u_n\right)$ définie par :
+\[
+\begin{cases}
+u_0 = 1 \\
+u_{n+1} = \sqrt{2+u_n}
+\end{cases}
+\]
+
+\begin{itemize}
+	\item Montrer que $u_n \geq 0$ pour tout $n$.
+	\item Montrer que $u_{n+1} \geq u_n$.
+	\item En déduire le sens de variation de la suite.
+\end{itemize}
+
+
++++++++++++++++++++++++++++++++++++++++++++++	
+	
 \textbf{\underline{\exemple}}
 
 Soit la suite $\left(u_{n}\right)$ définie par : $u_{n}=\dfrac{n+2}{2n+1}$
