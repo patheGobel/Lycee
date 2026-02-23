@@ -1,0 +1,870 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+\usepackage{verbatim}
+
+\usepackage{color,soul}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{tkz-tab}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\newcounter{exemple} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}%
+  \textbf{\textcolor{green}{Exemple \theexemple :}} \ignorespaces
+}
+%---------------------------------------
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Définir un compteur pour les exercices d'application
+\newcounter{exerciceapp}
+
+% Définir la commande pour afficher un exercice d'application numéroté
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les exercices d'application
+\newcounter{correction}
+
+% Définir la commande pour afficher un correction exercice d'application numéroté
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+%--------------------------------------
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+%\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+%This command takes a colour as an optional argument; the default colour is black.
+\usetikzlibrary{shapes.geometric,fit}
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{ EQUATIONS A UNE INCONNUE }}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 4eme}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+
+
+\subsection*{\textcolor{red}{\underline{Introduction :}}}
+
+Dans la vie courante, nous rencontrons souvent des situations où une quantité inconnue doit être déterminée.  
+Mettre une situation en équation consiste à traduire un problème concret en langage mathématique afin de trouver cette valeur inconnue.
+
+
+\section*{\underline{\textcolor{red}{I - METTRE EN ÉQUATION UNE SITUATION SIMPLE}}}
+
+\subsection*{\textcolor{red}{\underline{Objectif :}}}
+\textbf{Savoir traduire une situation concrète par une équation et résoudre une équation du premier degré à une inconnue.}
+
+\vspace{0.3cm}
+
+\subsection*{\textcolor{red}{\underline{I - 1) Activité :}}}
+
+Omar achète une gomme et un crayon noir pour 150 F.  
+La gomme coûte deux fois plus cher que le crayon noir.
+
+\begin{enumerate}
+    \item On désigne par $x$ le prix du crayon noir.
+    
+    \begin{enumerate}
+        \item Exprimer le prix de la gomme en fonction de $x$.
+        \item Exprimer la dépense totale en fonction de $x$.
+        \item Déterminer le prix du crayon noir.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Mise en équation :}
+
+Si le prix du crayon noir est $x$, alors le prix de la gomme est $2x$.
+
+La dépense totale est donc :
+\[
+x + 2x = 150
+\]
+
+On obtient l’équation :
+\[
+3x = 150
+\]
+
+\[
+x = 50
+\]
+
+Le prix du crayon noir est donc \textbf{50 F} et celui de la gomme est \textbf{100 F}.
+
+\vspace{0.5cm}
+
+\subsection*{\textcolor{red}{\underline{I - 2) Définition :}}}
+
+\textbf{Définition :}  
+Une \textbf{équation} est une égalité contenant au moins une inconnue.  
+
+L’inconnue est généralement désignée par une lettre telle que $x$, $y$, $a$, etc.
+
+\vspace{0.3cm}
+
+\textbf{Exemples :}
+
+\[
+x - 3 = 0 \quad ; \quad 7a - 5 = 2a + 3 \quad ; \quad 3m + 9 = 0 \quad ; \quad -4y + 12 = \frac{3x + 7}{3}
+\]
+
+\vspace{0.5cm}
+
+\section*{\underline{\textcolor{red}{II - RÉSOLUTION D’UNE ÉQUATION}}}
+
+Résoudre une équation dans $\mathbb{Q}$ revient à déterminer l’ensemble des nombres rationnels qui vérifient cette égalité.  
+
+Cet ensemble est appelé \textbf{ensemble des solutions} de l’équation.  
+On le note $S$.
+
+\vspace{0.4cm}
+
+\underline{\exemple}
+
+\begin{enumerate}
+\item Résoudre dans $\mathbb{Q}$ l’équation $x + 6 = 9$.
+
+le nombre qu'il faut ajouter à 6 pour avoir 9 est 3
+\[
+x = 3
+\]
+
+Comme $3 \in \mathbb{Q}$, l’ensemble des solutions est :
+\[
+S = \{3\}
+\]
+
+\vspace{0.5cm}
+
+\item Résoudre dans $\mathbb{Q}$ l’équation $3x = 150$.
+
+le nombre qu'il faut multiplier par 3 pour avoir 150 est 50
+
+\[
+x = 50
+\]
+
+Comme $50 \in \mathbb{Q}$, l’ensemble des solutions est :
+\[
+S = \{50\}
+\]
+\end{enumerate}
+
+\subsection*{\underline{\textcolor{red}{A - Équations se ramenant à la forme $ax + b = 0$ avec $a \neq 0$}}}
+
+\vspace{0.3cm}
+
+\subsubsection*{\textcolor{red}{1) Définition}}
+
+On appelle équation du premier degré à une inconnue toute équation pouvant s’écrire sous la forme :
+
+\[
+ax + b = 0
+\]
+
+où $a$ et $b$ sont des nombres rationnels et $a \neq 0$.
+
+\vspace{0.4cm}
+
+\subsubsection*{\textcolor{red}{2) Méthode de résolution}}
+
+Pour résoudre une équation du type $ax + b = 0$, il faut :
+
+\begin{itemize}
+    \item[\textcolor{red}{\checkmark}] ajouter à chaque membre de l’égalité l’opposé de $b$ ;
+    \item[\textcolor{red}{\checkmark}] multiplier chaque membre de la nouvelle équation par l’inverse de $a$ ;
+    \item[\textcolor{red}{\checkmark}] vérifier, puis donner la solution de l’équation.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\textbf{Soit à résoudre l’équation $ax + b = 0$ avec $a \neq 0$.}
+
+\[
+ax + b = 0
+\]
+\textit{On part de l’équation donnée.}
+
+\[
+ax + b - b = 0 - b
+\]
+\textit{On ajoute $-b$ aux deux membres de l’égalité afin de supprimer le terme $b$ dans le premier membre.}
+
+\[
+ax = -b
+\]
+\textit{Après simplification, il reste uniquement le terme contenant l’inconnue.}
+
+\[
+x = \frac{-b}{a}
+\]
+\textit{On multiplie les deux membres par l’inverse de $a$ (possible car $a \neq 0$) afin d’isoler $x$.}
+
+d’où 
+\[
+S = \left\{ \frac{-b}{a} \right\}
+\]
+\textit{L’équation admet donc une solution unique.}
+
+\vspace{0.5cm}
+
+\subsubsection*{\textcolor{red}{3) Exemples}}
+
+\subsubsection*{\textcolor{red}{Exemple :}}
+
+Résoudre dans $\mathbb{Q}$ l’équation :
+
+\[
+5x - 15 = 0
+\]
+
+\[
+5x - 15 + 15 = 0 + 15
+\]
+\textit{On ajoute $15$ aux deux membres pour supprimer le terme constant.}
+
+\[
+5x = 15
+\]
+\textit{Après simplification, il reste le terme contenant l’inconnue.}
+
+\[
+x = \frac{15}{5}
+\]
+\textit{On divise les deux membres par $5$ (possible car $5 \neq 0$) afin d’isoler $x$.}
+
+\[
+x = 3
+\]
+
+Donc :
+\[
+S = \{3\}
+\]
+\textit{L’équation admet une solution unique.}
+
+\subsubsection*{\textcolor{red}{Exemple :}}
+
+Résoudre dans $\mathbb{Q}$ l’équation :
+
+\[
+-4x + 12 = 0
+\]
+
+\[
+-4x + 12 - 12 = 0 - 12
+\]
+\textit{On ajoute $-12$ aux deux membres pour supprimer le terme constant.}
+
+\[
+-4x = -12
+\]
+\textit{Après simplification, il reste le terme contenant l’inconnue.}
+
+\[
+x = \frac{-12}{-4}
+\]
+\textit{On divise les deux membres par $-4$ (possible car $-4 \neq 0$) afin d’isoler $x$.}
+
+\[
+x = 3
+\]
+
+Donc :
+\[
+S = \{3\}
+\]
+\textit{L’équation admet une solution unique.}
+
+\subsubsection*{\textcolor{red}{4) Remarque importante}}
+
+Dans la pratique, au lieu de dire que l’on ajoute l’opposé de $b$ aux deux membres, 
+on dit souvent que l’on \textbf{transpose} $b$ dans l’autre membre.
+
+Ainsi, dans l’équation :
+
+\[
+ax + b = 0
+\]
+
+on écrit directement :
+
+\[
+ax = -b
+\]
+
+\textbf{Règle 1 :} Lorsqu’un \textbf{terme} change de membre, il change de signe.
+
+\medskip
+
+\begin{comment}
+En réalité, transposer un terme consiste à ajouter son opposé aux deux membres de l’égalité.
+
+Par exemple :
+
+\[
+ax - b = 0 \quad \Longrightarrow \quad ax = b
+\]
+
+\textit{Le terme $-b$ devient $+b$.}
+\end{comment}
+
+\vspace{0.4cm}
+
+\textbf{Attention :}
+
+Si c’est un \textbf{facteur} qui change de membre, il \textbf{ne change pas de signe}.  
+On effectue alors une division (ou une multiplication).
+
+Par exemple :
+
+\[
+3x = 12
+\]
+
+\[
+x = \frac{12}{3}
+\]
+
+\textit{Le nombre $3$ ne change pas de signe ; on divise simplement par $3$.}
+
+
+\textbf{\exerciceapp}
+
+Résoudre dans $\mathbb{Q}$ les équations suivantes :
+
+\begin{enumerate}
+    \item $7x + 5 = 0$
+    
+    \item $-3x - 9 = 0$
+    
+    \item $4x = 20$
+    
+    \item $-5x + 15 = 0$
+    
+    \item $6 - 2x = 0$
+\end{enumerate}
+\textbf{\correction}\\
+
+\subsection*{\underline{\textcolor{red}{B - Passage de $cx + d = ex + f$ à la forme $ax + b = 0$ }}}
+
+\subsection*{\textcolor{red}{1) Principe}}
+
+On considère une équation du type :
+
+\[
+cx + d = ex + f
+\]
+
+où $c$, $d$, $e$ et $f$ sont des nombres rationnels.
+
+L’objectif est de regrouper tous les termes dans un même membre afin d’obtenir une équation de la forme :
+
+\[
+ax + b = 0
+\]
+
+\vspace{0.5cm}
+
+\subsection*{\textcolor{red}{2) Méthode}}
+
+\[
+cx + d = ex + f
+\]
+
+\textbf{Étape 1 :} On regroupe les termes contenant $x$ dans le premier membre.
+
+\[
+cx - ex + d = f
+\]
+
+\[
+(c - e)x + d = f
+\]
+
+\textbf{Étape 2 :} On regroupe les termes constants dans le second membre.
+
+\[
+(c - e)x = f - d
+\]
+
+\textbf{Étape 3 :} On met tout dans le même membre.
+
+\[
+(c - e)x - (f - d) = 0
+\]
+
+On obtient alors une équation de la forme :
+
+\[
+ax + b = 0
+\]
+
+avec :
+\[
+a = c - e \quad \text{et} \quad b = -(f - d)
+\]
+
+\vspace{0.5cm}
+
+\subsection*{\textcolor{red}{3) Résolution}}
+
+Si $a \neq 0$, l’équation admet une solution unique :
+
+\[
+x = \frac{-b}{a}
+\]
+
+\vspace{0.5cm}
+
+\subsection*{\textcolor{red}{4) Exemple}}
+
+Résoudre dans $\mathbb{Q}$ l’équation :
+
+\[
+3x + 5 = x + 9
+\]
+
+\[
+3x - x + 5 = 9
+\]
+
+\[
+2x + 5 = 9
+\]
+
+\[
+2x = 9 - 5
+\]
+
+\[
+2x = 4
+\]
+
+\[
+x = 2
+\]
+
+Donc :
+\[
+S = \{2\}
+\]
+
+\textbf{\exerciceapp}
+
+Résoudre dans $\mathbb{Q}$ les équations suivantes en les ramenant d’abord à la forme $ax + b = 0$ :
+
+\begin{enumerate}
+    \item $4x + 3 = 2x + 11$
+    
+    \item $7x - 5 = 3x + 9$
+    
+    \item $5x + 8 = 5x - 2$
+    
+    \item $6x - 4 = 6x + 1$
+    
+    \item $-2x + 7 = 3x - 8$
+\end{enumerate}
+
+\section*{\underline{\textcolor{red}{III - Équations de la forme $(ax + b)(cx + d) = 0$}}}
+
+\subsection*{\textcolor{red}{1) Principe fondamental}}
+
+On considère une équation de la forme :
+
+\[
+(ax + b)(cx + d) = 0
+\]
+
+où $a$, $b$, $c$ et $d$ sont des nombres rationnels.
+
+\medskip
+
+\textbf{Propriété (Produit nul) :}
+
+Un produit est nul si et seulement si au moins un de ses facteurs est nul.
+
+Autrement dit :
+
+\[
+A \times B = 0 \quad \Longleftrightarrow \quad A = 0 \ \text{ou} \ B = 0
+\]
+
+\vspace{0.5cm}
+
+\subsection*{\textcolor{red}{2) Méthode de résolution}}
+
+Pour résoudre :
+
+\[
+(ax + b)(cx + d) = 0
+\]
+
+On résout séparément les deux équations :
+
+\[
+ax + b = 0
+\quad \text{ou} \quad
+cx + d = 0
+\]
+
+On obtient :
+
+\[
+x = \frac{-b}{a}
+\quad \text{ou} \quad
+x = \frac{-d}{c}
+\]
+
+L’ensemble des solutions est donc :
+
+\[
+S = \left\{ \frac{-b}{a} \ ; \ \frac{-d}{c} \right\}
+\]
+
+(à condition que $a \neq 0$ et $c \neq 0$)
+
+\vspace{0.5cm}
+
+\subsection*{\textcolor{red}{3) Exemple}}
+
+Résoudre dans $\mathbb{Q}$ l’équation :
+
+\[
+(2x - 4)(x + 3) = 0
+\]
+
+D’après la propriété du produit nul :
+
+\[
+2x - 4 = 0
+\quad \text{ou} \quad
+x + 3 = 0
+\]
+
+Première équation :
+
+\[
+2x = 4
+\]
+
+\[
+x = 2
+\]
+
+Deuxième équation :
+
+\[
+x = -3
+\]
+
+Donc :
+
+\[
+S = \{2 \ ; \ -3\}
+\]
+\textbf{\exerciceapp}
+
+\begin{enumerate}
+\item Résoudre dans $\mathbb{Q}$ les équations ci-dessous :
+\begin{enumerate}
+    \item $(3x - 6)(x + 4) = 0$
+    
+    \item $(2x + 5)(5x - 10) = 0$
+    
+    \item $(4x - 8)(2x + 3) = 0$
+    
+    \item $(x - 7)(-3x + 9) = 0$
+    
+    \item $(5x + 1)(5x + 1) = 0$
+\end{enumerate}
+
+\item Résoudre dans $\mathbb{Q}$ les équations ci-dessous :
+\begin{enumerate}
+\item $x^2 - 9 = 0 $
+\item $4x^2 - 25 = 0$
+\item $(2x - 3)^2 = (2x - 3)(x + 4)$
+\item $4x^2 - 1 + (2x - 1)(x + 3) = 0$
+\end{enumerate}
+\end{enumerate}
+\section*{\underline{\textcolor{red}{IV - Équations quotient}}}
+\subsection*{\underline{\textcolor{red}{A. - Équations quotient du type $\dfrac{P(x)}{Q(x)} = 0$}}}
+\subsection*{\underline{\textcolor{red}{1) Définition}}}
+
+On appelle \textbf{équation quotient} toute équation pouvant s’écrire sous la forme :
+
+\[
+\frac{p(x)}{q(x)} = 0
+\]
+
+où $p(x)$ et $q(x)$ sont des expressions algébriques et $q(x)$ n’est pas identiquement nul.
+
+\medskip
+
+L’équation n’a de sens que pour les valeurs de $x$ telles que $q(x) \neq 0$.
+
+\vspace{0.5cm}
+
+\subsection*{\underline{\textcolor{red}{2) Propriété fondamentale}}}
+
+Un quotient est nul si et seulement si son numérateur est nul et son dénominateur est non nul.
+
+Ainsi,
+
+\[
+\frac{p(x)}{q(x)} = 0
+\quad \Longleftrightarrow \quad
+\begin{cases}
+p(x) = 0 \\
+q(x) \neq 0
+\end{cases}
+\]
+
+\vspace{0.5cm}
+
+\subsection*{\underline{\textcolor{red}{3) Méthode de résolution}}}
+
+Pour résoudre une équation quotient :
+
+\begin{enumerate}
+    \item Déterminer les valeurs qui annulent le dénominateur  
+    (ce sont les \textbf{valeurs interdites}).
+    
+    \item Résoudre l’équation obtenue en annulant le numérateur.
+    
+    \item Vérifier que les solutions trouvées ne font pas annuler le dénominateur.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsection*{\underline{\textcolor{red}{4) Exemple}}}
+
+Résoudre dans $\mathbb{Q}$ l’équation :
+
+\[
+\frac{x^2 - 4}{x - 2} = 0
+\]
+
+\textbf{Condition d’existence :}
+
+\[
+x - 2 \neq 0 \quad \Longrightarrow \quad x \neq 2
+\]
+
+\textbf{Résolution :}
+
+\[
+x^2 - 4 = 0
+\]
+
+\[
+(x - 2)(x + 2) = 0
+\]
+
+\[
+x = 2 \quad \text{ou} \quad x = -2
+\]
+
+Or $x \neq 2$, donc la solution admise est :
+
+\[
+S = \{-2\}
+\]
+\textbf{\exerciceapp}
+
+Résoudre dans $\mathbb{Q}$ les équations suivantes :
+
+\begin{enumerate}
+    \item $\displaystyle \frac{x - 3}{x + 2} = 0$
+    
+    \item $\displaystyle \frac{2x + 5}{x - 1} = 0$
+    
+    \item $\displaystyle \frac{x^2 - 9}{x - 3} = 0$
+    
+    \item $\displaystyle \frac{(x - 4)(x + 1)}{x - 4} = 0$
+    
+    \item $\displaystyle \frac{x^2 - 4x}{x} = 0$
+\end{enumerate}
+\subsection*{\underline{\textcolor{red}{B- Équations quotient du type $\dfrac{a}{x} =\dfrac{b}{c}$ avec $x\neq 0$ et $c\neq 0$}}}
+
+\subsubsection*{\textcolor{red}{1) Principe}}
+
+On considère une équation de la forme :
+
+\[
+\frac{a}{x} = \frac{b}{c}
+\]
+
+où $a$, $b$ et $c$ sont des nombres rationnels avec $c \neq 0$.
+
+L’équation n’a de sens que pour $x \neq 0$.
+
+\vspace{0.4cm}
+\subsubsection*{\textcolor{red}{2) Méthode de résolution}}
+
+On considère l’équation :
+
+\[
+\frac{a}{x} = \frac{b}{c}
+\quad \text{avec } x \neq 0 \text{ et } c \neq 0.
+\]
+
+On multiplie les deux membres par le produit $xc$ (possible car $x \neq 0$ et $c \neq 0$) :
+
+\[
+xc \times \frac{a}{x} = xc \times \frac{b}{c}
+\]
+
+\[
+ac = bx
+\]
+
+On isole alors $x$ :
+$
+x = \frac{ac}{b}
+\quad \text{(si } b \neq 0\text{)}.
+$
+
+\subsubsection*{\textcolor{red}{ Remarque (\textit{produit en croix})}}  
+
+\[
+\frac{a}{x} = \frac{b}{c},
+\]
+
+le produit des moyens est égal au produit des extrêmes.
+
+Autrement dit : $a \times c = b \times x.$
+
+On isole alors $x$ :
+$
+x = \frac{ac}{b}
+\quad \text{(si } b \neq 0\text{)}.
+$
+
+\subsubsection*{\textcolor{red}{3) Cas particulier}}
+
+\begin{itemize}
+    \item Si $b = 0$, l’équation devient :
+    \[
+    \frac{a}{x} = 0
+    \]
+    Or un quotient est nul si et seulement si son numérateur est nul.
+    
+    Donc :
+    \[
+    a = 0
+    \]
+    
+    \begin{itemize}
+        \item Si $a = 0$, tout $x \neq 0$ est solution.
+        \item Si $a \neq 0$, l’équation n’admet aucune solution.
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsubsection*{\textcolor{red}{4) Exemple}}
+
+Résoudre dans $\mathbb{Q}$ l’équation :
+
+\[
+\frac{6}{x} = \frac{3}{4}
+\]
+
+On multiplie les deux membres par $4x$ :
+
+\[
+4x \times \frac{6}{x} = 4x \times \frac{3}{4}
+\]
+
+\[
+24 = 3x
+\]
+
+\[
+x = 8
+\]
+
+Comme $8 \neq 0$, la solution est :
+
+\[
+S = \{8\}
+\]
+\end{document}
