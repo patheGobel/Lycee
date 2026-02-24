@@ -35,6 +35,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage{tkz-tab}
 \usepackage{mdframed}
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usetikzlibrary{arrows, shapes.geometric, fit}
 
 % Commande pour la couleur d'accentuation
@@ -623,5 +624,1160 @@ x_0=\frac{-b}{2a}
 \end{enumerate}
 
 \hfill $\square$
+\section*{\underline{\textcolor{red}{II- Équations et inéquations du second degré}}}
 
+\subsection*{1)\quad Équations du second degré}
+
+\subsubsection*{a)\quad Définition}
+
+On appelle \textbf{équation du second degré}, toute équation qui s'écrit sous la forme :
+\[
+ax^2 + bx + c = 0
+\]
+où $a,b,c \in \mathbb{R}$ avec $a \neq 0$.
+
+\textbf{Exemple :}
+\[
+x^2 + 3x - 4 = 0
+\]
+
+\subsubsection*{b)\quad Théorème}
+
+Soit $(E) : ax^2 + bx + c = 0$ où $a,b,c \in \mathbb{R}$ avec $a \neq 0$.
+
+On appelle \textbf{discriminant} de l'équation $(E)$ le nombre réel :
+\[
+\Delta = b^2 - 4ac
+\]
+
+\begin{enumerate}
+    \item Si $\Delta < 0$, alors l'équation $(E)$ n'admet \textbf{aucune solution réelle}.  
+    \[
+    S = \varnothing
+    \]
+
+    \item Si $\Delta > 0$, alors l'équation $(E)$ admet \textbf{deux solutions réelles distinctes} $x_1$ et $x_2$ telles que :
+    \[
+    x_1 = \frac{-b - \sqrt{\Delta}}{2a}
+    \qquad
+    x_2 = \frac{-b + \sqrt{\Delta}}{2a}
+    \]
+    \[
+    S = \{x_1 \; ; \; x_2\}
+    \]
+
+    \item Si $\Delta = 0$, alors l'équation $(E)$ admet \textbf{une solution réelle double} $x_0$ telle que :
+    \[
+    x_0 = \frac{-b}{2a}
+    \]
+    \[
+    S = \{x_0\}
+    \]
+\end{enumerate}
+\subsubsection*{c)\quad Démonstration}
+
+Posons 
+\[
+P(x) = ax^2 + bx + c
+\]
+
+Résoudre $(E)$ revient à résoudre :
+\[
+P(x) = 0
+\]
+
+\medskip
+
+On met $P(x)$ sous forme canonique :
+
+\[
+P(x) = a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} \right]
+\]
+
+où $\Delta = b^2 - 4ac$.
+
+\medskip
+
+\textbf{Résolution de $P(x)=0$ :}
+
+\[
+P(x)=0 
+\Longleftrightarrow 
+a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} \right] = 0
+\]
+
+Comme $a \neq 0$, on obtient :
+
+\[
+\left(x + \frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} = 0
+\]
+
+\[
+\Longleftrightarrow
+\left(x + \frac{b}{2a}\right)^2 = \frac{\Delta}{4a^2}
+\]
+
+\bigskip
+
+\textbf{i) Si $\Delta < 0$}
+
+\[
+\left(x + \frac{b}{2a}\right)^2 = \frac{\Delta}{4a^2}
+\]
+
+Le membre de droite est négatif, ce qui est impossible car un carré est toujours positif ou nul.
+
+Donc :
+\[
+S = \varnothing
+\]
+
+\bigskip
+
+\textbf{ii) Si $\Delta > 0$}
+
+On a :
+\[
+P(x) = a(x - x_1)(x - x_2)
+\]
+
+Donc :
+
+\[
+P(x)=0 \Longleftrightarrow (x - x_1)(x - x_2)=0
+\]
+
+\[
+\Longleftrightarrow x - x_1 = 0 \quad \text{ou} \quad x - x_2 = 0
+\]
+
+\[
+\Longleftrightarrow x = x_1 \quad \text{ou} \quad x = x_2
+\]
+
+\[
+S = \{x_1 \; ; \; x_2\}
+\]
+
+\bigskip
+
+\textbf{iii) Si $\Delta = 0$}
+
+On a :
+
+\[
+P(x) = a(x - x_0)^2
+\]
+
+Alors :
+
+\[
+P(x)=0 \Longleftrightarrow (x - x_0)^2 = 0
+\]
+
+\[
+\Longleftrightarrow x - x_0 = 0
+\]
+
+\[
+\Longleftrightarrow x = x_0
+\]
+
+\[
+S = \{x_0\}
+\]
+
+\subsubsection*{\underline{\textcolor{red}{Application}}}
+
+Résoudre dans $\mathbb{R}$ les équations suivantes :
+
+\begin{enumerate}
+    \item $4x^2 + 3x - 2 = 0$
+    
+    \item $x^2 - \sqrt{2}\,x - 3x + 1 = 0$
+    
+    \item $x^2 - 3x + 1 = 0$
+    
+    \item $x^2 + 2x = -1$
+    
+    \item $3x^2 + 3x + 1 = -x + \dfrac{1}{2}$
+    
+    \item $4x^2 + 8x + 4 = 0$
+\end{enumerate}
+\subsubsection*{\underline{\textcolor{red}{Correction}}}
+
+\begin{enumerate}
+
+%------------------------------------------------
+\item $4x^2 + 3x - 2 = 0$
+
+On a $a=4$, $b=3$, $c=-2$.
+
+\[
+\Delta = b^2 - 4ac = 3^2 - 4 \times 4 \times (-2)
+\]
+\[
+\Delta = 9 + 32 = 41 > 0
+\]
+
+Donc l'équation admet deux solutions réelles distinctes :
+
+\[
+x_1 = \frac{-3 - \sqrt{41}}{8}
+\qquad
+x_2 = \frac{-3 + \sqrt{41}}{8}
+\]
+
+\[
+S = \left\{ \frac{-3 - \sqrt{41}}{8} \; ; \; \frac{-3 + \sqrt{41}}{8} \right\}
+\]
+
+%------------------------------------------------
+\item $x^2 - 3x + 1 = 0$
+
+On a $a=1$, $b=-3$, $c=1$.
+
+\[
+\Delta = (-3)^2 - 4 \times 1 \times 1
+\]
+\[
+\Delta = 9 - 4 = 5 > 0
+\]
+
+Donc :
+
+\[
+x_1 = \frac{3 - \sqrt{5}}{2}
+\qquad
+x_2 = \frac{3 + \sqrt{5}}{2}
+\]
+
+\[
+S = \left\{ \frac{3 - \sqrt{5}}{2} \; ; \; \frac{3 + \sqrt{5}}{2} \right\}
+\]
+
+%------------------------------------------------
+\item $x^2 + 2x = -1$
+
+On ramène tout au premier membre :
+
+\[
+x^2 + 2x + 1 = 0
+\]
+
+On reconnaît une identité remarquable :
+
+\[
+(x+1)^2 = 0
+\]
+
+Donc :
+
+\[
+x = -1
+\]
+
+\[
+S = \{-1\}
+\]
+
+%------------------------------------------------
+\item $3x^2 + 3x + 1 = -x + \dfrac{1}{2}$
+
+On ramène tout au premier membre :
+
+\[
+3x^2 + 3x + 1 + x - \frac{1}{2} = 0
+\]
+
+\[
+3x^2 + 4x + \frac{1}{2} = 0
+\]
+
+On multiplie par 2 pour supprimer la fraction :
+
+\[
+6x^2 + 8x + 1 = 0
+\]
+
+On a $a=6$, $b=8$, $c=1$.
+
+\[
+\Delta = 8^2 - 4 \times 6 \times 1
+\]
+\[
+\Delta = 64 - 24 = 40 > 0
+\]
+
+\[
+x_1 = \frac{-8 - \sqrt{40}}{12}
+\qquad
+x_2 = \frac{-8 + \sqrt{40}}{12}
+\]
+
+Or $\sqrt{40} = 2\sqrt{10}$, donc :
+
+\[
+x_1 = \frac{-4 - \sqrt{10}}{6}
+\qquad
+x_2 = \frac{-4 + \sqrt{10}}{6}
+\]
+
+\[
+S = \left\{ \frac{-4 - \sqrt{10}}{6} \; ; \; \frac{-4 + \sqrt{10}}{6} \right\}
+\]
+
+%------------------------------------------------
+\item $4x^2 + 8x + 4 = 0$
+
+On remarque :
+
+\[
+4x^2 + 8x + 4 = 4(x^2 + 2x + 1)
+\]
+
+\[
+= 4(x+1)^2
+\]
+
+Donc :
+
+\[
+4(x+1)^2 = 0
+\]
+
+\[
+x = -1
+\]
+
+\[
+S = \{-1\}
+\]
+\end{enumerate}
+\subsubsection*{\underline{\textcolor{red}{C- Somme et produit des solutions}}}
+
+\textbf{Définition :}
+
+Soit $P(x) = ax^2 + bx + c$ où $a,b,c \in \mathbb{R}$ avec $a \neq 0$.
+
+Si $\Delta = b^2 - 4ac \geq 0$, alors l’équation $P(x)=0$ admet deux solutions réelles 
+$x_1$ et $x_2$.
+
+On définit :
+
+\[
+S = x_1 + x_2
+\qquad \text{et} \qquad
+P = x_1 x_2
+\]
+
+\bigskip
+
+\textbf{Remarque :}
+
+Si $\Delta = 0$, alors $x_1 = x_2 = x_0$ et :
+
+\[
+S = 2x_0
+\qquad \text{et} \qquad
+P = x_0^2
+\]
+
+\bigskip
+
+\textbf{Théorème :}
+
+Soit $P(x) = ax^2 + bx + c$ où $a,b,c \in \mathbb{R}$ avec $a \neq 0$.
+
+Si $\Delta \geq 0$, alors :
+
+\[
+S = x_1 + x_2 = -\frac{b}{a}
+\]
+
+\[
+P = x_1 x_2 = \frac{c}{a}
+\]
+\subsubsection*{\underline{\textcolor{red}{Démonstration du théorème}}}
+
+On suppose $\Delta > 0$.  
+Alors l’équation $P(x)=0$ admet deux solutions réelles $x_1$ et $x_2$.
+
+On peut donc écrire :
+
+\[
+P(x) = a(x - x_1)(x - x_2)
+\]
+
+Développons :
+
+\[
+P(x) = a \left[ x^2 - x x_2 - x x_1 + x_1 x_2 \right]
+\]
+
+\[
+P(x) = a \left[ x^2 - (x_1 + x_2)x + x_1 x_2 \right]
+\]
+
+Posons :
+\[
+S = x_1 + x_2
+\qquad \text{et} \qquad
+P = x_1 x_2
+\]
+
+On obtient alors :
+
+\[
+P(x) = a \left[ x^2 - Sx + P \right]
+\]
+
+\[
+P(x) = ax^2 - aSx + aP
+\]
+
+Or, par définition :
+
+\[
+P(x) = ax^2 + bx + c
+\]
+
+\bigskip
+
+Par identification des coefficients, on obtient :
+
+\[
+\begin{cases}
+a = a \\
+-aS = b \\
+aP = c
+\end{cases}
+\]
+
+\bigskip
+
+De $-aS = b$, on déduit :
+
+\[
+S = -\frac{b}{a}
+\]
+
+De $aP = c$, on déduit :
+
+\[
+P = \frac{c}{a}
+\]
+
+\bigskip
+
+\[
+\boxed{
+x_1 + x_2 = -\frac{b}{a}
+\qquad \text{et} \qquad
+x_1 x_2 = \frac{c}{a}
+}
+\]
+\subsubsection*{\underline{\textcolor{red}{Exemple}}}
+
+Soit 
+\[
+P(x) = 2x^2 - 5x + 3
+\]
+
+On a $a=2$, $b=-5$, $c=3$.
+
+\[
+S = -\frac{b}{a} = -\frac{-5}{2} = \frac{5}{2}
+\]
+
+\[
+P = \frac{c}{a} = \frac{3}{2}
+\]
+
+\bigskip
+
+\subsubsection*{\underline{\textcolor{red}{Théorème réciproque}}}
+
+Une somme $S$ et un produit $P$ de deux réels $x$ et $y$ sont liés par l’équation suivante :
+
+\[
+\boxed{x^2 - Sx + P = 0}
+\]
+
+Autrement dit, si :
+\[
+x + y = S
+\quad \text{et} \quad
+xy = P,
+\]
+alors $x$ et $y$ sont les solutions de l’équation :
+
+\[
+x^2 - Sx + P = 0.
+\]
+\subsubsection*{\underline{\textcolor{red}{Démonstration du théorème réciproque}}}
+
+Supposons que deux réels $x$ et $y$ vérifient :
+
+\[
+\begin{cases}
+x + y = S \quad (1) \\
+xy = P \quad (2)
+\end{cases}
+\]
+
+\medskip
+
+De (1), on tire :
+
+\[
+y = S - x
+\]
+
+Remplaçons $y$ dans (2) :
+
+\[
+x(S - x) = P
+\]
+
+\[
+Sx - x^2 = P
+\]
+
+\[
+-x^2 + Sx - P = 0
+\]
+
+En multipliant par $-1$, on obtient :
+
+\[
+x^2 - Sx + P = 0
+\]
+
+\bigskip
+
+De manière analogue, on obtient également :
+
+\[
+y^2 - Sy + P = 0
+\]
+
+\bigskip
+
+Donc $x$ et $y$ sont solutions de l’équation :
+
+\[
+\boxed{x^2 - Sx + P = 0}
+\]
+\subsubsection*{\underline{\textcolor{red}{Remarque}}}
+
+Soit $(E) : x^2 - Sx + P = 0$ avec
+\[
+\begin{cases}
+S = x + y \\
+P = xy
+\end{cases}
+\]
+
+Alors le discriminant de $(E)$ est :
+
+\[
+\Delta = S^2 - 4P
+\]
+
+\begin{enumerate}
+    \item Si $\Delta < 0$, alors $(E)$ n’admet aucune solution réelle :
+    \[
+    \mathcal{S} = \varnothing
+    \]
+
+    \item Si $\Delta > 0$, alors $(E)$ admet deux solutions réelles distinctes 
+    $x_1$ et $x_2$ :
+    \[
+    \mathcal{S} = \{(x_1,x_2)\ ;\ (x_2,x_1)\}
+    \]
+
+    \item Si $\Delta = 0$, alors $(E)$ admet une solution réelle double $x_0$ :
+    \[
+    \mathcal{S} = \{(x_0,x_0)\}
+    \]
+\end{enumerate}
+
+\bigskip
+
+\subsubsection*{\underline{\textcolor{red}{Application}}}
+
+Résoudre dans $\mathbb{R}$ les systèmes suivants :
+
+\begin{enumerate}
+    \item 
+    \[
+    \begin{cases}
+    xy = 2 \\
+    x + y = 3
+    \end{cases}
+    \]
+
+    \item 
+    \[
+    \begin{cases}
+    xy = 2 \\
+    x^2 + y^2 = 5
+    \end{cases}
+    \]
+
+    \item 
+    \[
+    \begin{cases}
+    x + y = 3 \\
+    x^2 + 3xy + y^2 = 11
+    \end{cases}
+    \]
+\end{enumerate}
+\section*{\underline{\textcolor{red}{2- Inéquations du second degré}}}
+
+\subsection*{\underline{\textcolor{red}{a) Signe d’un trinôme du second degré}}}
+
+Pour résoudre une inéquation du second degré, il est nécessaire 
+de connaître le signe du trinôme du second degré associé.
+
+\medskip
+
+Soit 
+\[
+P(x) = ax^2 + bx + c
+\quad \text{où } a,b,c \in \mathbb{R} \text{ avec } a \neq 0.
+\]
+
+\bigskip
+
+\textbf{Signe de $P(x)$ lorsque $\Delta > 0$}
+
+\medskip
+
+Si $\Delta > 0$, alors il existe deux racines réelles distinctes 
+$x_1$ et $x_2$ telles que :
+
+\[
+P(x) = a(x - x_1)(x - x_2)
+\]
+
+Supposons que $x_1 < x_2$.  
+On obtient alors le tableau de signe suivant :
+
+\[
+\begin{array}{c|cccc}
+x & -\infty & x_1 & x_2 & +\infty \\
+\hline
+x - x_1 & - & 0 & + & + \\
+x - x_2 & - & - & 0 & + \\
+\hline
+(x - x_1)(x - x_2) & + & 0 & - & + \\
+\hline
+P(x)=a(x-x_1)(x-x_2) 
+& \text{Signe}(a) 
+& 0 
+& -\text{Signe}(a) 
+& \text{Signe}(a)
+\end{array}
+\]
+\subsubsection*{\underline{\textcolor{red}{À retenir}}}
+
+Si $\Delta > 0$, alors le trinôme $P(x)=ax^2+bx+c$ est :
+
+\begin{itemize}
+    \item du \textbf{signe de $a$ à l’extérieur des racines},
+    \item du \textbf{signe contraire de $a$ à l’intérieur des racines}.
+\end{itemize}
+
+\bigskip
+
+\subsubsection*{\underline{\textcolor{red}{Exemple}}}
+
+Soit 
+\[
+P(x) = -3x^2 + x + 2
+\]
+
+On a $a=-3$, $b=1$, $c=2$.
+
+\[
+\Delta = b^2 - 4ac
+\]
+
+\[
+\Delta = 1^2 - 4(-3)(2)
+\]
+
+\[
+\Delta = 1 + 24 = 25
+\]
+
+\[
+\sqrt{\Delta} = 5
+\]
+
+\medskip
+
+Calcul des racines :
+
+\[
+x_1 = \frac{-1 - 5}{2(-3)} = \frac{-6}{-6} = 1
+\]
+
+\[
+x_2 = \frac{-1 + 5}{2(-3)} = \frac{4}{-6} = -\frac{2}{3}
+\]
+
+On ordonne :
+
+\[
+x_1 = -\frac{2}{3}
+\quad ; \quad
+x_2 = 1
+\]
+
+Comme $a=-3<0$, le trinôme est négatif à l’extérieur des racines
+et positif entre les racines.
+
+\bigskip
+
+\[
+\begin{array}{c|cccc}
+x & -\infty & -\dfrac{2}{3} & 1 & +\infty \\
+\hline
+P(x) & - & 0 & + & -
+\end{array}
+\]
+
+\subsubsection*{\underline{\textcolor{red}{Exemple 2}}}
+
+Soit 
+\[
+P(x)=x^2 - x - 2
+\]
+
+On a $a=1$, $b=-1$, $c=-2$.
+
+\[
+\Delta = b^2 - 4ac
+\]
+
+\[
+\Delta = (-1)^2 - 4(1)(-2)
+\]
+
+\[
+\Delta = 1 + 8 = 9
+\]
+
+\[
+\sqrt{\Delta}=3
+\]
+
+\medskip
+
+Calcul des racines :
+
+\[
+x_1=\frac{-(-1)-3}{2(1)}=\frac{1-3}{2}=-1
+\]
+
+\[
+x_2=\frac{-(-1)+3}{2(1)}=\frac{1+3}{2}=2
+\]
+
+On ordonne : $-1<2$.
+
+Comme $a=1>0$, le trinôme est positif à l’extérieur des racines
+et négatif entre les racines.
+
+\[
+\begin{array}{c|cccc}
+x & -\infty & -1 & 2 & +\infty \\
+\hline
+P(x) & + & 0 & - & +
+\end{array}
+\]
+
+\bigskip
+\subsubsection*{\underline{\textcolor{red}{Signe de $P(x)$ lorsque $\Delta<0$}}}
+
+On a la forme canonique :
+
+\[
+P(x)=a\left[\left(x+\frac{b}{2a}\right)^2-\frac{\Delta}{4a^2}\right]
+\]
+
+Si $\Delta<0$, alors :
+
+\[
+-\frac{\Delta}{4a^2} >0
+\]
+
+Or :
+
+\[
+\left(x+\frac{b}{2a}\right)^2 \geq 0
+\]
+
+Donc :
+
+\[
+\left(x+\frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} > 0
+\]
+
+Ainsi :
+
+\[
+P(x) \text{ est du signe de } a \text{ pour tout } x\in\mathbb{R}.
+\]
+\subsubsection*{\underline{\textcolor{red}{Conclusion lorsque $\Delta < 0$}}}
+
+On a vu que si $\Delta < 0$, alors le signe de $P(x)$ dépend uniquement de $a$.
+
+Ainsi, le tableau de signe est :
+
+\[
+\begin{array}{c|cc}
+x & -\infty & +\infty \\
+\hline
+P(x) & \text{Signe}(a)
+\end{array}
+\]
+
+\bigskip
+
+\textbf{À retenir :}
+
+Si $\Delta < 0$, alors $P(x)$ garde partout le signe de $a$.
+
+\bigskip
+
+\subsubsection*{\underline{\textcolor{red}{Exemples}}}
+
+\textbf{1) } $P(x)=2x^2 - x + 1$
+
+\[
+\Delta = (-1)^2 - 4(2)(1)
+\]
+
+\[
+\Delta = 1 - 8 = -7 < 0
+\]
+
+Comme $a=2>0$, le trinôme est strictement positif sur $\mathbb{R}$.
+
+\[
+\begin{array}{c|cc}
+x & -\infty & +\infty \\
+\hline
+P(x) & +
+\end{array}
+\]
+
+\bigskip
+
+\textbf{2) } $P(x)=-x^2 + 2x - 5$
+
+\[
+\Delta = 2^2 - 4(-1)(-5)
+\]
+
+\[
+\Delta = 4 - 20 = -16 < 0
+\]
+
+Comme $a=-1<0$, le trinôme est strictement négatif sur $\mathbb{R}$.
+
+\[
+\begin{array}{c|cc}
+x & -\infty & +\infty \\
+\hline
+P(x) & -
+\end{array}
+\]
+\subsubsection*{\underline{\textcolor{red}{Signe de $P(x)$ lorsque $\Delta = 0$}}}
+
+Si $\Delta = 0$, alors il existe une racine double $x_0$ telle que :
+
+\[
+P(x)=a(x-x_0)^2
+\]
+
+Or :
+
+\[
+(x-x_0)^2 \geq 0
+\]
+
+Donc le signe de $P(x)$ dépend uniquement de $a$.
+
+\bigskip
+
+Ainsi, si $\Delta = 0$, on obtient le tableau de signe suivant :
+
+\[
+\begin{array}{c|ccc}
+x & -\infty & x_0 & +\infty \\
+\hline
+P(x) & \text{Signe}(a) & 0 & \text{Signe}(a)
+\end{array}
+\]
+
+\bigskip
+
+\textbf{À retenir :}
+
+Si $\Delta = 0$, alors $P(x)$ est du signe de $a$ pour tout $x \neq x_0$  
+et s'annule en $x_0$.
+\subsubsection*{\underline{\textcolor{red}{Exemple}}}
+
+Soit 
+\[
+P(x) = -2x^2 + 2\sqrt{10}\,x - 5
+\]
+
+On a :
+\[
+a=-2 \quad ; \quad b=2\sqrt{10} \quad ; \quad c=-5
+\]
+
+\medskip
+
+Calcul du discriminant :
+
+\[
+\Delta = b^2 - 4ac
+\]
+
+\[
+\Delta = (2\sqrt{10})^2 - 4(-2)(-5)
+\]
+
+\[
+\Delta = 40 - 40 = 0
+\]
+
+Donc l’équation admet une racine double $x_0$.
+
+\medskip
+
+Calcul de la racine :
+
+\[
+x_0 = \frac{-b}{2a}
+\]
+
+\[
+x_0 = \frac{-2\sqrt{10}}{2(-2)}
+\]
+
+\[
+x_0 = \frac{\sqrt{10}}{2}
+\]
+
+\bigskip
+
+Comme $a=-2<0$, le trinôme est négatif sur $\mathbb{R}$ 
+et s’annule uniquement en $x_0=\dfrac{\sqrt{10}}{2}$.
+
+\[
+\begin{array}{c|ccc}
+x & -\infty & \dfrac{\sqrt{10}}{2} & +\infty \\
+\hline
+P(x) & - & 0 & -
+\end{array}
+\]
+\subsubsection*{\underline{\textcolor{red}{Application}}}
+
+Résoudre dans $\mathbb{R}$ les inéquations suivantes :
+
+\begin{enumerate}
+
+%-------------------------------------------------
+\item $-2x^2 + 3x - 1 < 0$
+
+
+
+%-------------------------------------------------
+\item $x^2 + x + 2 > 0$
+
+
+
+%-------------------------------------------------
+\item $x^2 - 2\sqrt{2}\,x + 2 < 0$
+
+
+\end{enumerate}
+\subsubsection*{\underline{\textcolor{red}{Correction}}}
+\begin{comment}
+On a $a=-2$, $b=3$, $c=-1$.
+
+\[
+\Delta = b^2 - 4ac
+\]
+
+\[
+\Delta = 3^2 - 4(-2)(-1)
+\]
+
+\[
+\Delta = 9 - 8 = 1 > 0
+\]
+
+\[
+x_1 = \frac{-3 - 1}{2(-2)} = 1
+\qquad
+x_2 = \frac{-3 + 1}{2(-2)} = \frac{1}{2}
+\]
+
+On ordonne : $\dfrac{1}{2} < 1$.
+
+Comme $a=-2<0$, le trinôme est :
+
+- négatif à l’extérieur des racines,
+- positif entre les racines.
+
+Donc :
+
+\[
+S = \left]-\infty,\frac{1}{2}\right[ 
+\;\cup\;
+\left]1,+\infty\right[
+\]
+\end{comment}
+\begin{comment}
+On a $a=1$, $b=1$, $c=2$.
+
+\[
+\Delta = 1^2 - 4(1)(2)
+\]
+
+\[
+\Delta = 1 - 8 = -7 < 0
+\]
+
+Comme $a>0$ et $\Delta<0$, le trinôme est strictement positif sur $\mathbb{R}$.
+
+Donc :
+
+\[
+S = \mathbb{R}
+\]
+\end{comment}
+\begin{comment}
+On a $a=1$, $b=-2\sqrt{2}$, $c=2$.
+
+\[
+\Delta = (-2\sqrt{2})^2 - 4(1)(2)
+\]
+
+\[
+\Delta = 8 - 8 = 0
+\]
+
+Il existe une racine double :
+
+\[
+x_0 = \frac{2\sqrt{2}}{2} = \sqrt{2}
+\]
+
+Or $a=1>0$, donc le trinôme est toujours positif ou nul.
+
+Ainsi :
+
+\[
+x^2 - 2\sqrt{2}x + 2 < 0
+\]
+
+n’admet aucune solution.
+
+\[
+S = \varnothing
+\]
+\end{comment}
+\section*{\underline{\textcolor{red}{III- Systèmes d’équations linéaires dans $\mathbb{R}^2$}}}
+
+\subsection*{\underline{\textcolor{red}{Définition}}}
+
+On appelle \textbf{système d’équations linéaires dans $\mathbb{R}^2$} 
+tout système qui s’écrit sous la forme :
+
+\[
+\begin{cases}
+ax + by = c \\
+a'x + b'y = c'
+\end{cases}
+\]
+
+où :
+
+\begin{itemize}
+    \item $x$ et $y$ sont les inconnues,
+    \item $a, b, a', b'$ sont les coefficients,
+    \item $c$ et $c'$ sont des réels.
+\end{itemize}
+
+\bigskip
+
+\textbf{Exemple :}
+
+\[
+\begin{cases}
+3x + 4y = 5 \\
+2x - 3y = 1
+\end{cases}
+\]
+
+\bigskip
+
+Pour la résolution d’un tel système (en classe de 3\textsuperscript{ème}),
+on connaît quatre méthodes :
+
+\begin{itemize}
+    \item la méthode de \textbf{substitution},
+    \item la méthode d’\textbf {addition},
+    \item la méthode de \textbf{comparaison},
+    \item la méthode \textbf{graphique}.
+\end{itemize}
+
+\medskip
+
+Dans ce qui suit, nous allons exposer la méthode de \textbf{Cramer}.
+\subsection*{\underline{\textcolor{red}{Définition}}}
+
+On considère dans $\mathbb{R}^2$ le système d’équations linéaires
+suivant, d’inconnues $x$ et $y$ et de coefficients 
+$a,b,c,a',b',c'$ :
+
+\[
+\begin{cases}
+ax + by = c \\
+a'x + b'y = c'
+\end{cases}
+\]
+
+où $(a,b) \neq (0,0)$ et $(a',b') \neq (0,0)$.
+
+
+On définit par :
+
+$*_{1} \quad \Delta = \begin{vmatrix} a & b \\ a' & b' \end{vmatrix} = ab' - a'b \quad (\text{règle de gamma})$
+
+$*_{2} \quad \Delta_x = \begin{vmatrix} c & b \\ c' & b' \end{vmatrix} = cb' - c'b$
+
+$*_{3} \quad \Delta_y = \begin{vmatrix} a & c \\ a' & c' \end{vmatrix} = ac' - a'c$
+\begin{comment}
+% Commande personnalisée pour le gamma décoratif
+\newcommand{\gammaflow}{
+    \begin{tikzpicture}[overlay, remember picture, >=Stealth, blue]
+        \draw[->, thick, rounded corners=3pt] 
+            (-0.5, 0.4) -- (0.4, -0.4) -- (-0.4, -0.4) -- (0.5, 0.4);
+    \end{tikzpicture}
+}
+
+% Utilisation dans ton document
+$*_{1} \quad \Delta = \begin{vmatrix} a & \gammaflow b \\ a' & b' \end{vmatrix} = ab' - a'b$
+\end{comment}
 \end{document}
