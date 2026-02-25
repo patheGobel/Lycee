@@ -403,7 +403,7 @@ u_0 = 0. &
 \end{enumerate}
 \textbf{\underline{\correction}}
 
-\section*{\underline{\textbf{\textcolor{red}{III. Suites Minorée-Majorée-Bornée-Convergente-Divergente-adjacents}}}}
+\section*{\underline{\textbf{\textcolor{red}{III. Suites Minorée-Majorée-Bornée-Convergente-Divergente}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Suites Minorées}}}}
 
 Une suite $(u_n)$ est dite \textbf{minorée} s'il existe un réel $m \in \mathbb{R}$ tel que :
@@ -534,6 +534,155 @@ $$\lim_{n\to \infty}u_n=\lim_{n\to \infty}(n-3+\frac{1}{n+1})$$
 \item Toute suite croissante et non majorée a pour limite $+\infty$.
 \item Toute suite décroissante et non minorée a pour limite $-\infty$.
 \end{itemize}
+++++++++++++++++++++++
+\subsection*{\underline{\textbf{\textcolor{red}{1. Suites minorées}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{minorée} s'il existe un réel $m$ tel que :
+\[
+\forall n \in \mathbb{N}, \quad u_n \geq m
+\]
+Le réel $m$ s'appelle un \textbf{minorant} de la suite.
+
+\textbf{\underline{\exemple}}\\
+
+Soit la suite définie par :
+\[
+u_n = n^2 + 3
+\]
+On a $n^2 \geq 0$, donc :
+\[
+u_n = n^2 + 3 \geq 3
+\]
+La suite est donc minorée par $3$.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Suites majorées}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{majorée} s'il existe un réel $M$ tel que :
+\[
+\forall n \in \mathbb{N}, \quad u_n \leq M
+\]
+Le réel $M$ s'appelle un \textbf{majorant}.
+
+\textbf{\underline{\exemple}}\\
+
+Soit :
+\[
+u_n = \frac{1}{n+1}
+\]
+On a :
+\[
+0 < \frac{1}{n+1} \leq 1
+\]
+La suite est donc majorée par $1$.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Suites bornées}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{bornée} si elle est à la fois minorée et majorée.  
+Autrement dit :
+\[
+\exists m, M \in \mathbb{R} \quad \text{tel que} \quad m \leq u_n \leq M
+\]
+
+\textbf{\underline{\exemple}}\\
+
+Soit :
+\[
+u_n = \sin(n)
+\]
+On sait que :
+\[
+-1 \leq \sin(n) \leq 1
+\]
+La suite est donc bornée.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{4. Suites convergentes}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{convergente} si elle admet une limite réelle $\ell$ lorsque $n \to +\infty$ :
+\[
+\lim\limits_{n \to +\infty} u_n = \ell
+\]
+Cela signifie que les termes de la suite se rapprochent d’un même nombre réel.
+
+\textbf{\underline{\exemple}}\\
+
+\[
+u_n = \frac{1}{n}
+\]
+On a :
+\[
+\lim\limits_{n \to +\infty} \frac{1}{n} = 0
+\]
+La suite converge donc vers $0$.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{5. Suites divergentes}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite est dite \textbf{divergente} lorsqu’elle n’admet pas de limite réelle.
+
+Elle peut :
+\begin{itemize}
+\item tendre vers $+\infty$
+\item tendre vers $-\infty$
+\item osciller
+\end{itemize}
+
+\textbf{\underline{\exemple 1 : Divergence vers $+\infty$}}\\
+
+\[
+u_n = n
+\]
+\[
+\lim\limits_{n \to +\infty} n = +\infty
+\]
+
+\textbf{\underline{\exemple 2 : Oscillation}}\\
+
+\[
+u_n = (-1)^n
+\]
+La suite alterne entre $-1$ et $1$ : elle ne possède pas de limite.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{6. Théorème de la convergence}}}}
+
+\textbf{\underline{Théorème}}\\
+
+\begin{itemize}
+\item Toute suite croissante et majorée est convergente.
+\item Toute suite décroissante et minorée est convergente.
+\end{itemize}
+
+\textbf{\underline{\exemple}}\\
+
+Soit :
+\[
+u_n = 1 - \frac{1}{n}
+\]
+
+La suite est croissante et majorée par $1$.  
+D’après le théorème de la convergence, elle est donc convergente et :
+\[
+\lim\limits_{n \to +\infty} u_n = 1
+\]
+++++++++++++++++++++++++
 \subsection*{\underline{\textbf{\textcolor{red}{7. Suites adjacents}}}}
 Deux suites $u$ et $v$ sont adjacentes si et seulement si , l’une est croissante, l’autre est décroissante et la
 limite de leur différence est égale à 0 . C'est-à-dire
@@ -736,6 +885,131 @@ u_{n+1} = \frac{u_n + v_n}{2}, & v_{n+1} = \sqrt{u_n \cdot v_n}.
 %
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
++++++++++++++++++++++
+\subsection*{\underline{\textcolor{red}{Théorème du point fixe}}}
+
+\subsubsection*{\textcolor{red}{1) Définition}}
+
+Soit $f$ une fonction définie sur un intervalle $I$.
+
+On appelle \textbf{point fixe} de $f$ tout réel $\ell \in I$ tel que :
+
+\[
+f(\ell) = \ell.
+\]
+
+Autrement dit, $\ell$ est solution de l’équation :
+
+\[
+f(x) = x.
+\]
+
+\vspace{0.3cm}
+
+\subsubsection*{\textcolor{red}{2) Théorème}}
+
+Soit $f$ une fonction continue sur un intervalle $I$.
+
+Soit $(u_n)$ une suite définie par récurrence par :
+
+\[
+u_{n+1} = f(u_n)
+\]
+
+Si la suite $(u_n)$ converge vers un réel $\ell \in I$, alors :
+
+\[
+\ell \text{ est un point fixe de } f.
+\]
+
+C’est-à-dire :
+
+\[
+f(\ell) = \ell.
+\]
+
+\vspace{0.3cm}
+
+\subsubsection*{\textcolor{red}{3) Démonstration}}
+
+Supposons que :
+
+\[
+\lim\limits_{n\to +\infty} u_n = \ell.
+\]
+
+Alors :
+
+\[
+\lim\limits_{n\to +\infty} u_{n+1} = \ell.
+\]
+
+Or :
+
+\[
+u_{n+1} = f(u_n).
+\]
+
+Par continuité de $f$ :
+
+\[
+\lim\limits_{n\to +\infty} f(u_n) = f(\ell).
+\]
+
+Donc :
+
+\[
+\ell = f(\ell).
+\]
+
+\hfill $\square$
+
+\vspace{0.3cm}
+
+\subsubsection*{\textcolor{red}{4) Méthode pratique}}
+
+Pour déterminer la limite d’une suite définie par :
+
+\[
+u_{n+1} = f(u_n),
+\]
+
+on procède ainsi :
+
+\begin{itemize}
+\item On montre d’abord que la suite est convergente.
+\item On pose $\displaystyle \lim\limits_{n\to +\infty} u_n = \ell$.
+\item On passe à la limite dans la relation de récurrence.
+\item On résout l’équation $f(\ell) = \ell$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\subsubsection*{\textcolor{red}{5) Exemple}}
+
+Soit la suite définie par :
+
+\[
+u_{n+1} = \frac{1}{2}(u_n + 3).
+\]
+
+Si la suite converge vers $\ell$, alors :
+
+\[
+\ell = \frac{1}{2}(\ell + 3).
+\]
+
+Donc :
+
+\[
+2\ell = \ell + 3
+\]
+
+\[
+\ell = 3.
+\]
+++++++++++++++++++++
+
 \subsection*{\textcolor{red}{\underline{7.Théorème du point fixe } }}
 \[
 \begin{cases}
@@ -745,6 +1019,7 @@ f \text{ une fonction définie sur un intervalle } I \text{ et continue en } \el
 \end{cases}
 \textbf{Alors} \lim_{x \to +\infty} f(u_{n})=f(\ell)
 \]
+
 \textbf{\underline{\exemple}}
 
 $(u_n)$ est la suite définie par $u_0=0$ et pour tout entier naturel $n$,$u_n+1=\frac{1}{2}u_n+1$.
