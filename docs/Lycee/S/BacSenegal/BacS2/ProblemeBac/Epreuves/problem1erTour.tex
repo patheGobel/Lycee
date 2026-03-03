@@ -2044,7 +2044,9 @@ On note $(C_f)$ sa courbe représentative dans un repère orthonormé $(O;\vec{i
 
 \item 
 \begin{enumerate}
-\item Montrer que la droite $(\Delta)$ d’équation \( y=-x+4 \) est une asymptote oblique à $(C_f)$ au voisinage de $-\infty$.
+\item Montrer que la droite $(\Delta)$ d’équation
+
+\( y=-x+4 \) est une asymptote oblique à $(C_f)$ au voisinage de $-\infty$.
 \item Étudier la position relative de $(\Delta)$ par rapport à $(C_f)$.
 \end{enumerate}
 
@@ -2057,9 +2059,9 @@ On admet que
 
 \item 
 \begin{enumerate}
-\item Calculer $f'(x)$ pour \( x\in]-\infty;2[ \) et pour \( x\in]2;+\infty[ \) puis montrer que pour tout  
-\( x\in]2;+\infty[ \),  
-\( f'(x)=\dfrac{g(x)}{h(x)} \).
+\item Calculer $f'(x)$ pour \( x\in]-\infty;2[ \) et pour \( x\in]2;+\infty[ \) puis montrer que pour tout
+
+  \( x\in]2;+\infty[ \),  \( f'(x)=\dfrac{g(x)}{h(x)} \).
 \item En déduire des questions 1.d) et 2.b) de la partie A, dresser le tableau de variations de $f$.
 \end{enumerate}
 
@@ -2075,6 +2077,516 @@ Soit $\lambda>0$ et $D_\lambda$ le domaine délimité par la courbe $(C_f)$, la 
 \item Déterminer en fonction de $\lambda$ l’aire $A(D_\lambda)$ du domaine $D_\lambda$ en cm$^2$.
 \item Calculer \( \lim_{\lambda\to +\infty} A(D_\lambda). \)
 \end{enumerate}
-\end{multicols}
 
+\exo
+
+On considère la fonction $f$ définie par :
+
+\(
+f(x)=
+\begin{cases}
+x+1+\dfrac{3e^x}{e^x+2} & \text{si } x\leq 0 \\[0.4cm]
+x+2+\dfrac{\ln(x+1)}{x+1} & \text{si } x>0
+\end{cases}
+\)
+
+et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O;\vec{i},\vec{j})$ d’unité graphique 1 cm.
+
+\begin{enumerate}
+\item Établir que $f$ est définie sur $\mathbb{R}$.
+
+\item 
+\begin{enumerate}
+\item Étudier la continuité de $f$ en $0$.
+\item Pour tout $x<0$, montrer que  
+
+\( \dfrac{f(x)-f(0)}{x-0}
+=1+\dfrac{2(e^x-1)}{x}\times\dfrac{1}{e^x+2}. \)  
+
+En déduire  
+\( \lim_{x\to 0^-}\dfrac{f(x)-f(0)}{x-0}. \)
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item En utilisant les variations de la fonction $h$ définie par \( h(x)=\ln x - x \), montrer que \( \ln(x)<x \) pour $x>0$.  
+En déduire que \( \ln(x+1)<(x+1)^2 \) pour $x>0$.
+\item Calculer $f'(x)$ pour $x>0$ et utiliser 3.a) pour déterminer son signe.
+\item Calculer $f'(x)$ pour $x<0$ et donner son signe.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Calculer les limites de $f$ aux bornes de son domaine de définition $D_f$.
+\item Calculer \( \lim_{x\to -\infty}[f(x)-(x+1)] \) et interpréter le résultat.
+\item Calculer \( \lim_{x\to +\infty}[f(x)-(x+2)] \) et interpréter le résultat.
+\item Étudier le signe de $f(x)-(x+1)$ pour $x<0$, montrer que $f(x)-(x+2)>0$ pour $x>0$ et interpréter graphiquement les résultats.
+\end{enumerate}
+
+\item Déterminer les coordonnées du point $A$ de la courbe où la tangente est parallèle à l’asymptote pour $x>0$.
+
+\item Établir que $f$ est une bijection de $\mathbb{R}$ sur un intervalle $J$ à préciser.
+
+\item Représenter graphiquement les courbes de $f$ et $f^{-1}$ dans un même repère.
+
+\item Calculer  
+\( \displaystyle \int_{-\ln 3}^{0} \big(f(x)-(x+1)\big)\,dx. \)
+
+\item Interpréter le résultat précédent en terme d’aire.
+\end{enumerate}
+
+\exo
+
+Soit $f$ la fonction définie par :
+
+\(
+f(x)=
+\begin{cases}
+e^x-x & \text{si } x<0 \\[0.3cm]
+\dfrac{x^2+x+1}{-x^2+x-1} & \text{si } x\geq 0
+\end{cases}
+\)
+
+et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O;\vec{i},\vec{j})$ d’unité graphique 1 cm.
+
+\begin{enumerate}
+\item Montrer que $f$ est définie sur $\mathbb{R}$.
+
+\item 
+\begin{enumerate}
+\item Calculer les limites de $f$ aux bornes de son ensemble de définition.
+\item Calculer \( \lim_{x\to -\infty}[f(x)+x]. \)
+\item Interpréter graphiquement les résultats de calcul de limites.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Étudier la continuité de $f$ en $0$ puis sur son ensemble de définition.
+\item Étudier la dérivabilité de $f$ en $0$ puis interpréter graphiquement les résultats obtenus.
+\end{enumerate}
+
+\item Calculer $f'(x)$ et déterminer son signe sur les intervalles sur lesquels $f$ est dérivable.
+
+\item Dresser le tableau de variations de $f$.
+
+\item Soit $h$ la restriction de $f$ à $]-\infty;0[$.  
+Montrer que $h$ réalise une bijection sur $]-\infty;0[$ vers un intervalle $J$ que l’on précisera.
+
+\item Représenter la courbe $(C_f)$ de $f$ et la courbe $(C_{h^{-1}})$ de $h^{-1}$ réciproque de $h$, dans le même repère.
+\end{enumerate}
+
+\exo
+
+\textbf{Partie A :}
+
+\begin{enumerate}
+\item Soit $g$ la fonction définie sur $[0;+\infty[$ par 
+ 
+\( g(x)=\dfrac{1}{1+x}-1-\ln(1+x). \)
+
+\begin{enumerate}
+\item Dresser le tableau de variations de $g$ sur $[0;+\infty[$.
+\item En déduire le signe de $g(x)$ sur $[0;+\infty[$.
+\end{enumerate}
+
+\item Le plan est muni d’un repère orthonormé $(O;\vec{i},\vec{j})$ d’unité graphique 1 cm.  
+On considère la fonction $f$ de représentation graphique $(C_f)$ définie par :
+
+\(
+f(x)=
+\begin{cases}
+e^{-x}[\,1+\ln(1+x)\,] & \text{si } x\geq 0 \\[0.4cm]
+x+\dfrac{2x^2}{e^x+1} & \text{si } x<0
+\end{cases}
+\)
+
+\begin{enumerate}
+\item Montrer que l’ensemble de définition $D_f$ de $f$ est $\mathbb{R}$.
+\item Étudier les limites aux bornes de $D_f$.
+\item Montrer que $f$ est continue en $0$.
+\item Démontrer que pour tout $x\in]0;+\infty[$,
+\( \dfrac{f(x)-f(0)}{x-0}
+=\dfrac{1}{e^x}\left[\dfrac{\ln(x+1)}{x}-\dfrac{e^x-1}{x}\right]. \)
+\item Étudier la dérivabilité de $f$ en $0$ et interpréter géométriquement les résultats obtenus.
+\item Calculer $f'(x)$ sur chacun des intervalles où $f$ est dérivable.
+\end{enumerate}
+
+\item Étudier le sens de variations de $f$ puis dresser son tableau de variations.
+
+\item Montrer que l’équation $f(x)=0$ admet une unique solution $\alpha\in]-\infty;0[$ et vérifier que  
+
+\( -0,7<\alpha<-0,6. \)
+
+\item Montrer que la droite $(\Delta)$ d’équation \( y=x \) est une asymptote oblique à $(C_f)$ en $-\infty$ et donner l’autre asymptote à $(C_f)$.
+
+\item Préciser la position relative de $(\Delta)$ par rapport à $(C_f)$.
+
+\item Tracer $(C_f)$ et ses asymptotes.
+\end{enumerate}
+
+\textbf{Partie B :}
+
+Soit $\lambda\in]-\infty;0[$ tel que $\lambda<\alpha$, $\alpha$ étant le réel défini dans la partie A.
+
+Soit la partie du plan comprise entre $(C_f)$, $(\Delta)$, les droites d’équations $x=\lambda$ et $x=\alpha$ et $A(\lambda)$ son aire exprimée avec l’unité d’aire.
+
+\begin{enumerate}
+\item Calculer $A(\lambda)$ en fonction de $\lambda$ et $\alpha$.
+\item En déduire \( \lim_{\lambda\to -\infty} A(\lambda). \)
+\end{enumerate}
+
+\exo
+
+\textbf{I)}
+
+On considère la fonction $f$ définie sur $\mathbb{R}$ par :
+
+\(
+f(x)=
+\begin{cases}
+x+(1-x)e^{2x} & \text{si } x\in]-\infty;0[ \\[0.3cm]
+xe^{-x} & \text{si } x\in[0;+\infty[
+\end{cases}
+\)
+
+et on désigne par $(C_f)$ sa courbe représentative dans un repère orthonormé $(O;\vec{i},\vec{j})$, d’unité graphique 2 cm.
+
+\begin{enumerate}
+\item Déterminer le domaine de définition de $f$.
+
+\item 
+\begin{enumerate}
+\item Étudier les limites de $f$ en $-\infty$ et en $+\infty$.
+\item Interpréter graphiquement, si possible, les résultats obtenus.
+\item Montrer que la droite $(\Delta)$ d’équation \( y=x \) est une asymptote oblique pour $(C_f)$ au voisinage de $-\infty$.
+\end{enumerate}
+
+\item Étudier la continuité de $f$ en $0$.
+
+\item Soit $h$ la fonction définie sur $]-\infty;0[$ par  
+
+\( h(x)=1+(1-2x)e^{2x}. \)
+
+\begin{enumerate}
+\item Dresser le tableau de variations de $h$ sur $]-\infty;0[$.
+\item En déduire son signe sur $]-\infty;0[$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Étudier la dérivabilité de $f$ en $0$.
+\item Calculer $f'(x)$ dans chaque intervalle où $f$ est dérivable.
+\item Dresser le tableau de variations de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+
+\item Tracer la courbe $(C_f)$ dans le repère $(O;\vec{i},\vec{j})$.  
+(On précisera les demi-tangentes à $(C_f)$ au point $O$.)
+\end{enumerate}
+
+\textbf{II)}
+
+Soit $\alpha$ un nombre réel strictement positif $(\alpha>0)$.
+
+\begin{enumerate}
+\item Calculer en cm$^2$, l’aire $S(\alpha)$ de la partie du plan formée par l’ensemble des points $M(x;y)$ tels que  
+\( 0\leq x\leq \alpha \) et \( 0\leq y\leq f(x). \)
+
+\item Déterminer la limite de $S(\alpha)$ quand $\alpha$ tend vers $+\infty$.
+\end{enumerate}
+
+\exo
+
+\textbf{A.} Soit la fonction $f$ définie par :
+
+\(
+f(x)=
+\begin{cases}
+1+x-x\ln x & \text{si } 0<x<1 \\[0.3cm]
+1+\dfrac{1}{\sqrt{x}} & \text{si } x\geq 1
+\end{cases}
+\)
+
+et $(C_f)$ sa courbe représentative dans le plan muni d’un repère orthonormal $(O;\vec{i},\vec{j})$, d’unité 2 cm.
+
+\begin{enumerate}
+\item Montrer que l’ensemble de définition de $f$ est  
+\( D_f=]0;+\infty[. \)
+
+\item Étudier la continuité de $f$ en $1$.
+
+\item Étudier la dérivabilité de $f$ en $1$ et interpréter graphiquement les résultats obtenus.
+
+\item Déterminer les limites de $f$ aux bornes de $D_f$ et interpréter graphiquement, si possible, les résultats obtenus.
+
+\item Montrer que $f$ admet un prolongement par continuité à droite en $0$ et définir ce prolongement $h$.
+
+\item Calculer $f'(x)$ dans chacun des intervalles $]0;1[$ et $]1;+\infty[$.  
+Dresser le tableau de variations de $f$.
+
+\item 
+\begin{enumerate}
+\item Tracer $(C_f)$.
+\item Calculer l’aire $A$ en cm$^2$ de la partie du plan comprise entre $(C_f)$, la droite d’équation $y=1$, la droite d’équation $x=1$ et la droite d’équation $x=4$.
+\end{enumerate}
+\end{enumerate}
+
+\textbf{B.}
+
+\begin{enumerate}
+\item Soit $g$ la fonction définie sur $[1;+\infty[$ par :  
+
+\( g(x)=1+\dfrac{1}{\sqrt{x}}. \)
+
+\begin{enumerate}
+\item Étudier les variations de $g$.
+\item Montrer que l’équation $g(x)=x$ admet une unique solution $\alpha$ et que  
+\( 1<\alpha<2. \)  
+En déduire un encadrement de $\alpha$ à $10^{-1}$ près.
+\item Montrer que : \( \forall x\in[1;+\infty[, \ |g'(x)|\leq \dfrac{1}{2}. \)
+\item En déduire que : 
+ 
+\( \forall x\in[1;+\infty[, \ |g(x)-\alpha|\leq \dfrac{1}{2}|x-\alpha|. \)
+\end{enumerate}
+
+\item Soit $(W_n)$ la suite définie par :
+
+\(
+\begin{cases}
+W_0=2 \\
+W_{n+1}=1+\dfrac{1}{\sqrt{W_n}}, \quad n\in\mathbb{N}
+\end{cases}
+\)
+
+Démontrer que : \( \forall n\in\mathbb{N}, \)
+
+\begin{enumerate}
+\item $W_n\geq 1$,
+\item $|W_{n+1}-\alpha|\leq \dfrac{1}{2}|W_n-\alpha|$,
+\item $|W_n-\alpha|\leq \left(\dfrac{1}{2}\right)^n |W_0-\alpha|$.  
+
+En déduire \( \displaystyle \lim_{n\to+\infty} W_n. \)
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+\textbf{I)}
+
+On considère la fonction $f$ définie sur $\mathbb{R}$ par :
+
+\(
+f(x)=
+\begin{cases}
+2x+(1-x)e^x & \text{si } x\in]-\infty;0[ \\[0.3cm]
+xe^{-2x} & \text{si } x\in[0;+\infty[
+\end{cases}
+\)
+
+et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O;\vec{i},\vec{j})$, d’unité graphique 1 cm.
+
+\begin{enumerate}
+\item Déterminer l’ensemble de définition de $f$.
+
+\item 
+\begin{enumerate}
+\item Étudier les limites de $f$ en $-\infty$ et en $+\infty$.
+\item Interpréter graphiquement, si possible, les résultats obtenus.
+\item Montrer que la droite $(\Delta)$ d’équation \( y=2x \) est une asymptote oblique à $(C_f)$ au voisinage de $-\infty$.
+\end{enumerate}
+
+\item Étudier la continuité de $f$ en $0$.
+
+\item Soit $h$ la fonction définie sur $]-\infty;0[$ par  
+
+\( h(x)=2-xe^x. \)
+
+\begin{enumerate}
+\item Dresser le tableau de variations de $h$ sur $]-\infty;0[$.
+\item En déduire son signe sur $]-\infty;0[$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Étudier la dérivabilité de $f$ en $0$.
+\item Interpréter graphiquement, si possible, les résultats obtenus.
+\item Dresser le tableau de variations de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+
+\item Tracer $(C_f)$ dans le repère $(O;\vec{i},\vec{j})$.  
+(On précisera les demi-tangentes à $(C_f)$ en $0$.)
+\end{enumerate}
+
+\textbf{II)}
+
+Soit $\alpha$ un réel strictement positif $(\alpha>0)$.
+
+\begin{enumerate}
+\item Calculer, en cm$^2$, l’aire $S(\alpha)$ de la partie du plan formée par l’ensemble des points $M(x;y)$ tels que  
+\( 0\leq x\leq \alpha \) et \( 0\leq y\leq f(x). \)
+
+\item Déterminer la limite de $S(\alpha)$ quand $\alpha$ tend vers $+\infty$.
+\end{enumerate}
+
+\exo
+\exo
+\exo
+\exo
+
+\textbf{Partie A}
+
+Soit $g$ la fonction définie sur $[1;+\infty[$ par :
+
+\( g(x)=1-x\ln x. \)
+
+\begin{enumerate}
+\item Montrer que \( \forall x\in[1;+\infty[, \ g'(x)<0. \)  \textbf{(0,25 point)}
+
+\item Dresser le tableau de variations de $g$. \textbf{(0,5 point)}
+
+\item Montrer que $g$ est une bijection de $[1;+\infty[$ sur un intervalle à préciser. \hfill (0,5 point)
+
+\item Montrer que l’équation $g(x)=0$ admet une unique solution $\alpha$ dans $[1;+\infty[$. \hfill (0,25 point)
+
+\item Montrer que $1,7<\alpha<1,8$. \hfill (0,25 point)
+
+\item Préciser le signe de $g$ sur $[1;+\infty[$. \hfill (0,25 point)
+\end{enumerate}
+
+\textbf{Partie B}
+
+Soit $f$ la fonction définie par :
+
+\(
+f(x)=
+\begin{cases}
+(-x+1)\ln(-x+1) & \text{si } x<1 \\[0.3cm]
+e^{-x+1}\ln x & \text{si } x\geq 1
+\end{cases}
+\)
+
+$(C_f)$ sa courbe représentative dans le plan muni d’un repère orthonormé $(O;\vec{i},\vec{j})$ d’unité 2 cm.
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Montrer que $f$ est définie sur $\mathbb{R}$. \hfill (0,5 point)
+
+\item Rappeler les limites suivantes :
+\( \lim_{x\to +\infty}\dfrac{\ln x}{x}, \quad
+\lim_{x\to 1}\dfrac{\ln x}{x-1}, \quad
+\lim_{x\to +\infty}\ln x, \quad
+\lim_{x\to -\infty} xe^x. \)
+\hfill (01 point)
+
+\item Déterminer \( \lim_{x\to -\infty} f(x), \quad
+\lim_{x\to +\infty} f(x) \)
+et interpréter graphiquement, si possible, les résultats obtenus.
+\hfill (0,75 point)
+
+\item Étudier la branche infinie de la courbe $(C_f)$ de $f$ en $-\infty$.
+\hfill (0,25 point)
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Montrer que $f$ est continue en $1$. \hfill (0,5 point)
+
+\item Étudier la dérivabilité de $f$ en $1$ et interpréter géométriquement, si possible, les résultats obtenus.
+\hfill (0,5 point)
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Calculer $f'(x)$ sur $]-\infty;1[$ et étudier son signe.
+\hfill (0,5 point)
+
+\item Montrer que :
+
+ \( \forall x\in]1;+\infty[, \ f'(x)=\dfrac{g(x)e^{-x+1}}{x}. \)
+\hfill (0,25 point)
+
+En déduire le signe de $f'(x)$ sur $]1;+\infty[$.
+\hfill (0,25 point)
+\end{enumerate}
+
+\item Dresser le tableau de variations de $f$. \hfill (0,5 point)
+
+\item Tracer la courbe représentative $(C_f)$ de $f$ dans le plan muni du repère $(O;\vec{i},\vec{j})$.
+\hfill (0,75 point)
+\end{enumerate}
+
+\textbf{Partie C}
+
+\begin{enumerate}
+\item Soit $h$ la restriction de $f$ à l’intervalle $[\alpha;+\infty[$.
+\begin{enumerate}
+\item Montrer que $h$ admet une fonction réciproque $h^{-1}$. \hfill (0,25 point)
+
+\item Préciser l’ensemble de définition de $h^{-1}$ et tracer sa courbe dans le plan muni du repère $(O;\vec{i},\vec{j})$.
+\hfill (0,25 point)
+\end{enumerate}
+
+\item Calculer en cm$^2$ l’aire $A(\xi)$ de la partie $\xi$ du plan comprise entre l’axe des abscisses, la droite d’équation $x=-1$, l’axe des ordonnées et la courbe $(C_f)$ de $f$.
+\hfill (0,25 point)
+\end{enumerate}
+
+\exo
+
+Le plan est muni d’un repère orthonormé $(O;\vec{i},\vec{j})$ d’unité 2 cm.
+
+\textbf{Partie A}
+
+On considère l’équation différentielle (E) :
+
+\( y'' - y' - 2y = 0. \)
+
+\begin{enumerate}
+\item Résous (E).
+
+\item Détermine la solution particulière de (E) dont la courbe représentative passe par le point $A(0,3)$ et admet en ce point une tangente parallèle à l’axe des abscisses.
+\end{enumerate}
+
+\textbf{Partie B}
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par :
+
+\(
+f(x)=
+\begin{cases}
+\sqrt{x+2}\ln(x+1) & \text{si } x>0 \\[0.3cm]
+e^{2x}+2e^{-x}-3 & \text{si } x\leq 0
+\end{cases}
+\)
+
+$(C_f)$ est sa courbe représentative.
+
+\begin{enumerate}
+\item Détermine le domaine de définition $D_f$ de $f$.
+\item Montre que $f$ est continue sur $\mathbb{R}$.
+\item Détermine les limites de $f$ en $-\infty$ et en $+\infty$.
+\item Étudie la nature des branches infinies de $(C_f)$.
+\item Étudie la dérivabilité de $f$ en $0$ et interprète géométriquement les résultats.
+\item Calcule $f'(x)$ sur chacun des intervalles $]-\infty,0[$ et $]0,+\infty[$ et étudie son signe.
+\item Dresse le tableau de variations de $f$.
+\item Construis la courbe $(C_f)$.
+\end{enumerate}
+
+\textbf{Partie C}
+
+\begin{enumerate}
+\item Soit $g$ la restriction de $f$ à l’intervalle $]-\infty,0]$.
+\begin{enumerate}
+\item Montre que $g$ admet une fonction réciproque $g^{-1}$ dont on précisera l’ensemble de définition.
+\item Construis la courbe $(C_{g^{-1}})$ de $g^{-1}$ dans le même repère $(O;\vec{i},\vec{j})$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item Calcule en cm$^2$ l’aire $A(P)$ de la partie $P$ du plan comprise entre la courbe $(C_f)$, l’axe des abscisses, les droites d’équations $x=-1$ et $x=0$.
+\item Pour $-1\leq x\leq 0$, on fait tourner $(C_f)$ autour de l’axe des abscisses, ce qui engendre un solide $S$.  
+Calcule en cm$^3$ le volume $V(S)$ de ce solide $S$.
+\end{enumerate}
+\end{enumerate}
+
+\end{multicols}
 \end{document}
