@@ -404,6 +404,7 @@ u_0 = 0. &
 \textbf{\underline{\correction}}
 
 \section*{\underline{\textbf{\textcolor{red}{III. Suites Minorée-Majorée-Bornée-Convergente-Divergente}}}}
+\begin{comment}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Suites Minorées}}}}
 
 Une suite $(u_n)$ est dite \textbf{minorée} s'il existe un réel $m \in \mathbb{R}$ tel que :
@@ -534,7 +535,8 @@ $$\lim_{n\to \infty}u_n=\lim_{n\to \infty}(n-3+\frac{1}{n+1})$$
 \item Toute suite croissante et non majorée a pour limite $+\infty$.
 \item Toute suite décroissante et non minorée a pour limite $-\infty$.
 \end{itemize}
-++++++++++++++++++++++
+
+\end{comment}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Suites minorées}}}}
 
 \textbf{\underline{Définition}}\\
@@ -612,20 +614,19 @@ La suite est donc bornée.
 \textbf{\underline{Définition}}\\
 
 Une suite $(u_n)$ est dite \textbf{convergente} si elle admet une limite réelle $\ell$ lorsque $n \to +\infty$ :
-\[
+\(
 \lim\limits_{n \to +\infty} u_n = \ell
-\]
+\)
 Cela signifie que les termes de la suite se rapprochent d’un même nombre réel.
 
 \textbf{\underline{\exemple}}\\
-
-\[
+\(
 u_n = \frac{1}{n}
-\]
+\)
 On a :
-\[
+\(
 \lim\limits_{n \to +\infty} \frac{1}{n} = 0
-\]
+\)
 La suite converge donc vers $0$.
 
 %----------------------------------------------------------
@@ -645,18 +646,19 @@ Elle peut :
 
 \textbf{\underline{\exemple 1 : Divergence vers $+\infty$}}\\
 
-\[
+\(
 u_n = n
-\]
-\[
+\)
+
+\(
 \lim\limits_{n \to +\infty} n = +\infty
-\]
+\)
 
 \textbf{\underline{\exemple 2 : Oscillation}}\\
 
-\[
+\(
 u_n = (-1)^n
-\]
+\)
 La suite alterne entre $-1$ et $1$ : elle ne possède pas de limite.
 
 %----------------------------------------------------------
@@ -673,16 +675,16 @@ La suite alterne entre $-1$ et $1$ : elle ne possède pas de limite.
 \textbf{\underline{\exemple}}\\
 
 Soit :
-\[
+\(
 u_n = 1 - \frac{1}{n}
-\]
+\)
 
 La suite est croissante et majorée par $1$.  
 D’après le théorème de la convergence, elle est donc convergente et :
-\[
+\(
 \lim\limits_{n \to +\infty} u_n = 1
-\]
-++++++++++++++++++++++++
+\)
+
 \subsection*{\underline{\textbf{\textcolor{red}{7. Suites adjacents}}}}
 Deux suites $u$ et $v$ sont adjacentes si et seulement si , l’une est croissante, l’autre est décroissante et la
 limite de leur différence est égale à 0 . C'est-à-dire
@@ -703,9 +705,9 @@ $$
 
 Soient deux suites définies par :
 
-\[
+\(
 u_n = 1-\frac{1}{n}, \quad v_n = 1+\frac{1}{n}.
-\]
+\)
 
 Montrer que les deux suite sont adjacents.
 
@@ -713,12 +715,13 @@ Montrer que les deux suite sont adjacents.
 
 \textbf{\underline{\exerciceapp}}
 Soient les deux suites suivantes définies par récurrence pour tout $n \in \mathbb{N}$ :
-\[
+\(
 \begin{cases}
 u_0 = 1, & v_0 = 2, \\
 u_{n+1} = \frac{u_n + v_n}{2}, & v_{n+1} = \sqrt{u_n \cdot v_n}.
 \end{cases}
-\]
+\)
+
 \textbf{\underline{\correction}}
 
 %\textbf{\underline{Étude des propriétés :}}\\
@@ -885,94 +888,160 @@ u_{n+1} = \frac{u_n + v_n}{2}, & v_{n+1} = \sqrt{u_n \cdot v_n}.
 %
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-+++++++++++++++++++++
-\subsection*{\underline{\textcolor{red}{Théorème du point fixe}}}
+\subsection*{\underline{\textcolor{red}{8.Théorème du point fixe}}}
 
-\subsubsection*{\textcolor{red}{1) Définition}}
+\subsubsection*{\textcolor{red}{a) Définition}}
 
 Soit $f$ une fonction définie sur un intervalle $I$.
 
 On appelle \textbf{point fixe} de $f$ tout réel $\ell \in I$ tel que :
 
-\[
+\(
 f(\ell) = \ell.
-\]
+\)
 
 Autrement dit, $\ell$ est solution de l’équation :
-
-\[
+\(
 f(x) = x.
-\]
+\)
 
 \vspace{0.3cm}
 
-\subsubsection*{\textcolor{red}{2) Théorème}}
+\subsubsection*{\textcolor{red}{b) Théorème}}
 
 Soit $f$ une fonction continue sur un intervalle $I$.
 
 Soit $(u_n)$ une suite définie par récurrence par :
-
-\[
+\(
 u_{n+1} = f(u_n)
-\]
+\)
 
 Si la suite $(u_n)$ converge vers un réel $\ell \in I$, alors :
-
-\[
+\(
 \ell \text{ est un point fixe de } f.
-\]
+\)
 
 C’est-à-dire :
-
-\[
+\(
 f(\ell) = \ell.
-\]
+\)
 
 \vspace{0.3cm}
 
-\subsubsection*{\textcolor{red}{3) Démonstration}}
+\subsubsection*{\textcolor{red}{b) Théorème}}
 
-Supposons que :
+\textbf{Énoncé :}
 
-\[
-\lim\limits_{n\to +\infty} u_n = \ell.
-\]
+Soit $f$ une fonction continue sur un intervalle $I$.
 
-Alors :
+Soit $(u_n)$ une suite définie par récurrence par :
+\(
+u_{n+1} = f(u_n)
+\)
 
-\[
-\lim\limits_{n\to +\infty} u_{n+1} = \ell.
-\]
+Si la suite $(u_n)$ converge vers un réel $\ell \in I$, alors :
+\(
+\ell \text{ est un point fixe de } f,
+\)
+c'est-à-dire :
+\(
+f(\ell)=\ell.
+\)
 
-Or :
+\bigskip
 
-\[
-u_{n+1} = f(u_n).
-\]
+\subsubsection*{\textcolor{red}{Preuve détaillée}}
 
-Par continuité de $f$ :
+On suppose que la suite $(u_n)$ converge vers un réel $\ell \in I$.
 
-\[
-\lim\limits_{n\to +\infty} f(u_n) = f(\ell).
-\]
+\medskip
 
+\textbf{1) Limite de la suite décalée}
+
+On sait que si une suite $(u_n)$ converge vers $\ell$, alors la suite décalée $(u_{n+1})$ converge vers la même limite.
+
+Ainsi :
+\(
+\lim_{n\to +\infty} u_n = \ell
+\quad \Longrightarrow \quad
+\lim_{n\to +\infty} u_{n+1} = \ell
+\)
+
+\medskip
+
+\textbf{2) Utilisation de la relation de récurrence}
+
+Or, pour tout entier $n$ :
+\(
+u_{n+1} = f(u_n)
+\)
 Donc :
+\(
+\lim_{n\to +\infty} u_{n+1}
+=
+\lim_{n\to +\infty} f(u_n)
+\)
 
-\[
-\ell = f(\ell).
-\]
+\medskip
+
+\textbf{3) Utilisation de la continuité}
+
+La fonction $f$ est continue sur $I$ et $\ell \in I$.
+
+Par définition de la continuité :
+\(
+\lim_{x \to \ell} f(x) = f(\ell)
+\)
+
+Comme $u_n \to \ell$, on peut écrire :
+\(
+\lim_{n\to +\infty} f(u_n)
+=
+f\!\left(\lim_{n\to +\infty} u_n\right)
+=
+f(\ell)
+\)
+
+\medskip
+
+\textbf{4) Conclusion}
+
+On obtient donc :
+\(
+\lim_{n\to +\infty} u_{n+1}
+=
+f(\ell)
+\)
+
+Mais d’après la première étape :
+\(
+\lim_{n\to +\infty} u_{n+1} = \ell
+\)
+
+Ainsi :
+\(
+\ell = f(\ell)
+\)
+
+\medskip
+
+Donc $\ell$ est un point fixe de $f$.
+
+\(
+\boxed{f(\ell)=\ell}
+\)
 
 \hfill $\square$
 
 \vspace{0.3cm}
 
-\subsubsection*{\textcolor{red}{4) Méthode pratique}}
+\subsubsection*{\textcolor{red}{c) Méthode pratique}}
 
 Pour déterminer la limite d’une suite définie par :
 
-\[
+\(
 u_{n+1} = f(u_n),
-\]
+\)
 
 on procède ainsi :
 
@@ -989,36 +1058,154 @@ on procède ainsi :
 
 Soit la suite définie par :
 
-\[
+\(
 u_{n+1} = \frac{1}{2}(u_n + 3).
-\]
+\)
 
 Si la suite converge vers $\ell$, alors :
-
-\[
+\(
 \ell = \frac{1}{2}(\ell + 3).
-\]
+\)
 
 Donc :
-
-\[
+\(
 2\ell = \ell + 3
-\]
+\)
 
-\[
+\(
 \ell = 3.
-\]
-++++++++++++++++++++
+\)
 
+\subsubsection*{\textcolor{red}{Application du théorème du point fixe}}
+
+\textbf{\underline{\exemple}}
+
+On considère la suite $(u_n)$ définie par :
+\(
+u_{n+1}=\frac{1}{2}(u_n+3)
+\quad \text{avec} \quad u_0>0
+\)
+
+\bigskip
+
+\textbf{\textcolor{red}{1) Montrons que la suite est majorée par 3}}
+
+On montre par récurrence que :
+\(
+u_n \leq 3
+\)
+
+\textbf{Initialisation :}
+
+Si $u_0 \leq 3$, la propriété est vraie au rang 0.
+
+\textbf{Hérédité :}
+
+Supposons que $u_n \leq 3$.
+
+Alors :
+\(
+u_{n+1}=\frac{1}{2}(u_n+3)
+\leq
+\frac{1}{2}(3+3)
+=
+3
+\)
+
+Donc $u_{n+1} \leq 3$.
+
+La propriété est donc vraie pour tout $n$.
+
+\bigskip
+
+\textbf{\textcolor{red}{2) Étudions la monotonie}}
+
+Calculons :
+\(
+u_{n+1}-u_n
+=
+\frac{1}{2}(u_n+3)-u_n
+\)
+
+\(
+=
+\frac{1}{2}u_n+\frac{3}{2}-u_n
+=
+-\frac{1}{2}u_n+\frac{3}{2}
+=
+\frac{1}{2}(3-u_n)
+\)
+
+Or on a montré que $u_n \leq 3$, donc :
+\(
+3-u_n \geq 0
+\)
+
+Ainsi :
+\(
+u_{n+1}-u_n \geq 0
+\)
+
+La suite est donc croissante.
+
+\bigskip
+
+\textbf{\textcolor{red}{3) Conclusion sur la convergence}}
+
+La suite $(u_n)$ est :
+
+\begin{itemize}
+\item croissante
+\item majorée par 3
+\end{itemize}
+
+Donc elle est convergente.
+
+On note :
+\(
+\lim_{n\to+\infty} u_n = \ell
+\)
+
+\bigskip
+
+\textbf{\textcolor{red}{4) Utilisation du théorème du point fixe}}
+
+On a :
+\(
+u_{n+1}=\frac{1}{2}(u_n+3)
+\)
+
+En passant à la limite :
+\(
+\ell=\frac{1}{2}(\ell+3)
+\)
+
+On résout :
+\(
+2\ell=\ell+3
+\)
+
+\(
+\ell=3
+\)
+
+
+\(
+\boxed{\lim_{n\to+\infty} u_n = 3}
+\)
+
+\hfill $\square$
+
+\begin{comment}
 \subsection*{\textcolor{red}{\underline{7.Théorème du point fixe } }}
-\[
+\(
 \begin{cases}
 (u_{n}) \text{ est une suite qui converge vers un réel } \ell \\
 f \text{ une fonction définie sur un intervalle } I \text{ et continue en } \ell \\
 \text{ Pour tout entier naturel } n, u_{n}\in I
 \end{cases}
 \textbf{Alors} \lim_{x \to +\infty} f(u_{n})=f(\ell)
-\]
+\)
 
 \textbf{\underline{\exemple}}
 
@@ -1031,6 +1218,8 @@ b)En déduire que $(u_n)$ est convergente. On note $\ell$ sa limite.
 c) Déterminer la valeur de $\ell$
 
 \textbf{\underline{\solution}}
+\end{comment}
+
 \section*{\underline{\textbf{\textcolor{red}{IV. Représentation graphique des termes d'une suite}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Suite explicite}}}}
 $-\ $ Si $u_{n}$ est définie de façon explicite ; $u_{n}=f(n)$ alors représenter graphiquement la suite $(u_{n})$ consiste à représenter dans un repère l'ensemble des points isolés $(n\;,\ u_{n}).$
@@ -1139,7 +1328,51 @@ Ainsi, pour tout $n\in\mathbb{N}, u_{n+1}=f(u_{n})$
 1.On trace $(\mathcal{C}_{f})$, la courbe représentation de la fonction $f$.
 
 2.On trace la droite la d'équation $y=x$
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
 
+% Axes
+\draw[->] (-0.2,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-0.2) -- (0,5) node[above] {$y$};
+
+% Courbe y = 2sqrt(x)
+\draw[domain=0:4.5,smooth,variable=\x,blue,thick]
+plot ({\x},{2*sqrt(\x)}) node[right] {$C_g$};
+
+% Bissectrice
+\draw[red,thick] (0,0) -- (4.5,4.5) node[right] {$y=x$};
+
+% Valeur initiale
+\def\u{2}
+
+% Point initial sur l'axe
+\filldraw[black] (\u,0) circle (1.5pt) node[below] {$u_0$};
+
+% Construction des 6 termes : u0 à u5
+\foreach \n in {1,2,3,4,5} {
+
+    % Projection verticale vers la courbe
+    \draw[dashed] (\u,0) -- (\u,{2*sqrt(\u)});
+    
+    % Point sur la courbe
+    \filldraw[black] (\u,{2*sqrt(\u)}) circle (1.5pt);
+    
+    % Projection horizontale vers la bissectrice
+    \draw[dashed] (\u,{2*sqrt(\u)}) -- ({2*sqrt(\u)},{2*sqrt(\u)});
+    
+    % Nouveau terme
+    \pgfmathsetmacro\unew{2*sqrt(\u)}
+    
+    % Point sur l’axe des abscisses
+    \filldraw[black] (\unew,0) circle (1.5pt)
+    node[below] {$u_{\n}$};
+    
+    % Mise à jour
+    \xdef\u{\unew}
+}
+
+\end{tikzpicture}
+\end{center}
 \textbf{\underline{\exerciceapp}}
 
 b) $u_{n}=2n-7$
