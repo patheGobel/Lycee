@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+
+%----------------------------------
+% Compteurs
+%----------------------------------
+
+\newcounter{probleme}
+\newcounter{annee}
+\newcounter{session}
+
+\setcounter{probleme}{0}
+\setcounter{annee}{1999}   % année de départ
+\setcounter{session}{0}    % 0 = 1er groupe, 1 = Remplacement
+
+%----------------------------------
+% Commande automatique
+%----------------------------------
+
+\newcommand{\exo}{%
+    \refstepcounter{probleme}%
+    \par\medskip
+    \noindent\textbf{\underline{Problème \theprobleme}\quad
+    BAC \theannee\ %
+    \ifnum\value{session}=0
+        1\textsuperscript{er} GROUPE%
+        \setcounter{session}{1}%
+    \else
+        Remplacement%
+        \setcounter{session}{0}%
+        \stepcounter{annee}%
+    \fi
+    }
+    \par\medskip
+}
+
+%----------------------------------
+% Document
+%----------------------------------
+
+\begin{document}
+
+\exo
+
+Contenu...
+
+\exo
+
+Contenu...
+
+\exo
+
+Contenu...
+
+\exo
+
+Contenu...
+
+\exo
+
+Contenu...
+
+\end{document}
