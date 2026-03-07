@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  23 FEB 2026 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  7 MAR 2026 22:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1157,7 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
 [4] [5] [6] [7] [8] [9]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-24.
+23.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [10{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] (build/equations.aux)
@@ -1170,12 +1170,12 @@ Package rerunfilecheck Info: File `equations.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  31234 strings out of 474222
- 624027 string characters out of 5748732
+ 624037 string characters out of 5748732
  1940975 words of memory out of 5000000
  52822 multiletter control sequences out of 15000+600000
  625540 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,411b,875s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,411b,871s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/
@@ -1184,7 +1184,7 @@ re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm
 /lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/equations.pdf (10 pages, 198498 bytes).
+Output written on build/equations.pdf (10 pages, 198483 bytes).
 PDF statistics:
  254 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams
