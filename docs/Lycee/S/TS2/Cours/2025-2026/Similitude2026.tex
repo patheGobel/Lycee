@@ -579,6 +579,27 @@ Regardez attentivement le coefficient \textbf{$a$} :
 
 \subsection*{ \underline{Propriété}}
 \textbf{Une similitude plane directe est soit une translation, soit une homothétie, soit une rotation, soit une composition commutative de rotation et d'homothétie de même centre.}
+\subsection*{\underline{Exemple}}
+
+Soit $S$ définie par l'écriture complexe :
+$
+z' = 2e^{i\frac{\pi}{3}}\,z.
+$
+
+On a $a = 2e^{i\frac{\pi}{3}}$, donc :
+$
+k = |a| = 2, \qquad \theta = \frac{\pi}{3}, \qquad \Omega(0).
+$
+
+Ainsi,
+$
+S = H_{\Omega,2} \circ R_{\Omega,\frac{\pi}{3}}
+= R_{\Omega,\frac{\pi}{3}} \circ H_{\Omega,2}.
+$
+
+C'est donc une similitude plane directe égale à la composition commutative
+d'une rotation et d'une homothétie de même centre.
+
 \section*{9) Détermination d'une similitude à partir de ses éléments caractéristiques}
 \begin{enumerate}
 \item  À partir de deux points et de leurs images
@@ -649,6 +670,8 @@ Soit $s$ la similitude plane directe qui transforme le point $A$ d'affixe $z_A =
 \end{enumerate}
 
 \section*{10) Similitude plane directe déterminée par son écriture complexe}
+\section*{10) Étude d'une similitude plane à partir de son écriture complexe}
+
 
 \textit{Soit S l'application du plan dans lui-même d'écriture complexe : \(z' = 3i z - 1 - 7i\).}
 
@@ -661,5 +684,126 @@ Soit $s$ la similitude plane directe qui transforme le point $A$ d'affixe $z_A =
 \begin{enumerate}
     \item[4)] \textit{Déterminer une équation de \((C')\), image par S du cercle\((C)\) d'équation : \((x - 2)^2 + y^2 = 1\).}
 \end{enumerate}
+\section*{Correction -- Similitude plane directe}
+
+On considère l'application $S$ d'écriture complexe :
+\[
+z' = 3iz - 1 - 7i.
+\]
+
+\subsection*{1) Nature de $S$ et éléments caractéristiques}
+
+On écrit :
+\[
+z' = az + b \quad \text{avec} \quad a = 3i,\; b = -1 - 7i.
+\]
+
+On a $a \neq 0$, donc $S$ est une similitude.  
+De plus,
+\[
+a = 3i = 3e^{i\pi/2}.
+\]
+
+Ainsi :
+\[
+k = |a| = 3, \qquad \theta = \arg(a) = \frac{\pi}{2}.
+\]
+
+Le centre $\Omega$ d'affixe $\omega$ vérifie :
+\[
+\omega = a\omega + b \;\;\Longleftrightarrow\;\; \omega(1 - 3i) = -1 - 7i.
+\]
+
+\[
+\omega = \frac{-1 - 7i}{1 - 3i}
+= \frac{(-1 - 7i)(1 + 3i)}{(1 - 3i)(1 + 3i)}
+= \frac{20 - 10i}{10}
+= 2 - i.
+\]
+
+\[
+\boxed{\text{$S$ est une similitude directe de centre $\Omega(2-i)$, de rapport $3$ et d'angle $\dfrac{\pi}{2}$.}}
+\]
+
+\subsection*{2) Expression analytique de $S$}
+
+Posons $z = x + iy$. Alors :
+\[
+z' = 3i(x + iy) - 1 - 7i
+= 3ix - 3y - 1 - 7i
+= (-3y - 1) + i(3x - 7).
+\]
+
+Donc :
+\[
+\boxed{
+\begin{cases}
+x' = -3y - 1,\\
+y' = 3x - 7.
+\end{cases}}
+\]
+
+\subsection*{3) Image de la droite $(BC)$}
+
+Affixes :
+\[
+z_B = 2 \Rightarrow B(2,0), \qquad
+z_C = 3 - i \Rightarrow C(3,-1).
+\]
+
+Pente :
+\[
+m = \frac{-1 - 0}{3 - 2} = -1.
+\]
+
+Équation de $(BC)$ :
+\[
+y = -x + 2.
+\]
+
+On applique $S$ :
+\[
+x' = -3y - 1, \qquad y' = 3x - 7.
+\]
+
+Or $y = -x + 2$, donc :
+\[
+x' = -3(-x + 2) - 1 = 3x - 7,
+\qquad
+y' = 3x - 7.
+\]
+
+Ainsi :
+\[
+\boxed{y' = x'.}
+\]
+
+\subsection*{4) Image du cercle $(C)$}
+
+Cercle $(C)$ :
+\[
+(x - 2)^2 + y^2 = 1.
+\]
+
+Centre $A(2,0)$ et rayon $r = 1$.
+
+Image du centre :
+\[
+x'_A = -3(0) - 1 = -1,
+\qquad
+y'_A = 3(2) - 7 = -1.
+\]
+
+Donc $A'(-1,-1)$.
+
+Le rayon est multiplié par $3$ :
+\[
+r' = 3.
+\]
+
+Équation de $(C')$ :
+\[
+\boxed{(x' + 1)^2 + (y' + 1)^2 = 9.}
+\]
 
 \end{document}

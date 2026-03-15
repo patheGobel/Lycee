@@ -1,0 +1,348 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage{enumitem}
+%---------------------------------------
+% Définir un compteur pour les exemples
+\newcounter{exemple}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
+}
+%---------------------------------------
+\newcounter{solution}
+
+% Définir la commande \solutione pour afficher un solution numéroté
+\newcommand{\solution}{%
+  \refstepcounter{solution}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
+}
+%---------------------------------------
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Définir un compteur pour les exercices d'application
+\newcounter{exerciceapp}
+
+% Définir la commande pour afficher un exercice d'application numéroté
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les exercices d'application
+\newcounter{correction}
+
+% Définir la commande pour afficher un correction exercice d'application numéroté
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les remarque d'application
+\newcounter{remarque}
+
+%----------------------------------------
+\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
+% Définir la commande pour afficher un remarque numéroté
+\newcommand{\remarque}{%
+  \refstepcounter{remarque}%
+  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
+}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Dénombrement}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TS2}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\section*{\underline{\textbf{\textcolor{red}{Rappel sur la théorie des ensembles}}}}
+
+\subsection*{\underline{Définition et vocabulaire}}
+
+Un ensemble est un regroupement d'objets défini par une caractéristique commune ou par une énumération complète.
+
+Chaque objet de l'ensemble est appelé un \textcolor{red}{élément}.
+
+Un ensemble est dit \textcolor{red}{fini} s'il est constitué d'un nombre fini d'éléments et ce nombre est appelé le \textcolor{red}{cardinal} de l'ensemble.
+
+Il existe un ensemble qui ne contient aucun élément, il est appelé \textcolor{red}{l'ensemble vide} noté $\varnothing$.
+
+\textbf{\underline{\exemple}}
+
+\[
+E=\{a,b,c,d,e\}, \qquad 
+J=\{x\in\mathbb{R}\mid x\geq 2\}
+\]
+
+\[
+K=\{1,2,3,4,5,6\}, \qquad 
+P=\{n\in\mathbb{N}\mid 10\leq n\leq100\}
+\]
+
+\[
+E,\;K \text{ et } P \text{ sont des ensembles finis}
+\]
+
+\[
+\mathrm{card}(E)=5 \;;\quad 
+\mathrm{card}(P)=91 \;;\quad 
+\mathrm{card}(K)=6 \;;\quad 
+\mathrm{card}(\varnothing)=0
+\]
+\subsection*{\underline{\textbf{\textcolor{red}{2. Partie d'un ensemble : }}}}
+
+Soit $E$ un ensemble fini de cardinal $n$.
+
+$A$ est dit un sous-ensemble ou une partie de $E$ ssi $x \in A \implies x \in E \iff A \subset E$ ($A$ incluse dans $E$). 
+
+On écrit que $A \in \mathcal{P}(E)$ où $\mathcal{P}(E)$ est l'ensemble des sous-ensembles de $E$ et :
+\[ \text{card } \mathcal{P}(E) = 2^{\text{card } E} \implies \text{card } \mathcal{P}(E) = 2^n \]
+
+\textbf{\underline{\exemple}}
+
+Soit $E = \{1; 2; 3\}$ \\
+$\text{card } E = 3$ \\
+$\text{card } \mathcal{P}(E) = 2^3 = 8$
+
+\[ \mathcal{P}(E) = \{E, \emptyset, \{1\}, \{2\}, \{3\}, \{1; 2\}, \{1; 3\}, \{2; 3\}\} \]
+
+\subsection*{\underline{\textbf{\textcolor{red}{Complémentaire d'un ensemble }}}}
+
+Soit $E$ un ensemble fini non vide, $A$ un sous-ensemble de $E$.
+
+On appelle complémentaire de $A$, l'ensemble des éléments de $E$ qui ne sont pas dans $A$ noté $\overline{A}$.
+\[ x \in \overline{A} \iff x \in E \text{ et } x \notin A \]
+
+\begin{center}
+    \fbox{$\text{card } \overline{A} = \text{card } E - \text{card } A$}
+\end{center}
+\subsection*{\underline{\textbf{\textcolor{red}{ Réunion et intersection :}}}}
+
+Soit $A$ et $B$ deux sous-ensembles de $E$.
+
+La réunion de $A$ et $B$ est un sous-ensemble de $E$ noté : 
+$A \cup B = \{x \in E / x \in A \text{ ou } x \in B\}$
+\[ x \in A \cup B \iff x \in A \text{ ou } x \in B \]
+
+\subsection*{Propriétés :}
+\begin{itemize}
+    \item $A \cup B \subset E$ \hfill $\circ$ $A \cup E = E$
+    \item $A \subset A \cup B$ \hfill $\circ$ $A \cup \overline{A} = E$
+    \item $B \subset A \cup B$ \hfill $\circ$ $A \cup \emptyset = A$
+\end{itemize}
+
+L'intersection de $A$ et $B$ est un sous-ensemble de $E$ noté :
+$A \cap B = \{x \in E / x \in A \text{ et } x \in B\}$
+\[ x \in A \cap B \iff x \in A \text{ et } x \in B \]
+\subsection*{Propriétés :}
+\begin{itemize}
+    \item $A \cap B \subset E$ \hfill $\circ$ $A \cap B \subset A$
+    \item $A \cap E = A$ \hfill $\circ$ $A \cap B \subset B$
+    \item $A \cap \overline{A} = \emptyset$ \hfill $\circ$ $A \cap \emptyset = \emptyset$
+\end{itemize}
+
+
+% Code pour le diagramme :
+\begin{center}
+\begin{tikzpicture}[fill opacity=0.3]
+    % Cercle A
+    \draw (0,0) circle (1.2cm) node[below left, opacity=1] {$A$};
+    % Cercle B
+    \draw (1.5,0) circle (1.2cm) node[below right, opacity=1] {$B$};
+    % Zone d'intersection (A inter B)
+    \node at (0.75,0) [opacity=1, scale=0.8, rotate=90] {$A \cap B$};
+\end{tikzpicture}
+\end{center}
+
+\[ \text{card}(A \cup B) = \text{card } A + \text{card } B - \text{card}(A \cap B) \]
+
+% Note : Pour le diagramme de Venn, on utilise généralement l'environnement tikz, 
+% mais voici la transcription textuelle de la suite :
+
+\section*{Différence de deux ensembles}
+
+Soit $A$ et $B$ deux sous-ensembles de $E$.
+
+On appelle la différence entre $A$ et $B$ le sous-ensemble de $E$ noté :
+
+$A \setminus B$ (on lit $A$ sans $B$) : 
+$x \in A \setminus B \implies x \in A \text{ et } x \notin B$
+
+$A \setminus B = A \cap \overline{B}$
+
+\[ \text{card}(A \setminus B) = \text{card } A - \text{card}(A \cap B) \]
+
+On appelle différence symétrique le sous-ensemble de $E$ noté :
+\[ A \Delta B = (A \setminus B) \cup (B \setminus A) \]
+\[ A \Delta B = (A \cup B) \setminus (A \cap B) \]
+
+\begin{center}
+    \begin{tikzpicture}[fill opacity=0.4]
+        % Zones colorées (différence symétrique)
+        \fill[red] (0,0) circle (1.2cm);
+        \fill[red] (1.5,0) circle (1.2cm);
+        \fill[white, opacity=1] (0.75,0) circle (1.2cm); % On "efface" l'intersection
+        \begin{scope}
+            \clip (0,0) circle (1.2cm);
+            \fill[white, opacity=1] (1.5,0) circle (1.2cm);
+        \end{scope}
+        
+        % Contours
+        \draw (0,0) circle (1.2cm) node[left, opacity=1] {$A$};
+        \draw (1.5,0) circle (1.2cm) node[right, opacity=1] {$B$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \fbox{$\text{card}(A \Delta B) = \text{card } A + \text{card } B - 2 \text{ card}(B \cap A)$}
+\end{center}
+\textbf{\underline{\exemple}}
+
+Dans une classe de 45 élèves, 33 ont la moyenne en PC et 24 ont la moyenne en math, 20 élèves ont la moyenne en math et en PC.
+
+\begin{enumerate}
+    \item Calculer le nombre d'élèves qui ont la moyenne en Math ou PC.
+    \item Calculer le nombre d'élèves qui ont la moyenne qu'en Math.
+    \item Calculer le nombre d'élèves qui ont la moyenne qu'en une seule des deux matières.
+    \item Calculer le nombre d'élèves qui n'ont la moyenne ni en Math ni en PC.
+\end{enumerate}
+
+On notera par $A$ l'ensemble des élèves qui ont la moyenne en PC, $B$ ceux en maths.
+\textbf{\underline{\solution}}
+\subsection*{Propriétés :}
+\[ \text{card}(A \times B) = \text{card } A \times \text{card } B \]
+\[ \text{card}(A^n) = (\text{card } A)^n, \quad \forall n \in \mathbb{N}, n \ge 2 \]
+
+\textbf{\underline{\exemple}}
+Une entreprise fabrique des valises avec des codes de sécurité constitués de 2 lettres suivies de 2 chiffres.
+
+\begin{enumerate}
+    \item Calculer le nombre de codes possibles pour un client.
+    \item Calculer le nombre de codes commençant par une voyelle et finissant par un chiffre impair.
+\end{enumerate}
+\textbf{\underline{\solution}}
+
+\section*{3. P-LISTE}
+
+Soit $E$ un ensemble fini non vide de cardinal $n$, $p$ un nombre entier naturel.
+
+On appelle $p$-liste d'éléments de $E$ toute liste de longueur $p$ constituée des éléments de $E$ distincts ou identiques.
+
+Une $p$-liste de $E$ est un élément de $E^p$.	
+
+\textbf{\underline{\exemple}}
+
+Soit $E = \{1, 2, 3, a, b\}$
+
+$(1; 2), (2; 2), (3; a), (a; a) \dots$ etc sont des 2-listes de $E$.
+
+$(1; 1; 2), (1; 3; a), (a; a; a), (b; 1; 3) \dots$ etc sont des 3-listes de $E$.
+
+$(1; 1; a; 1; 3; 2; a)$ est une 7-liste de $E$.
+
+\begin{center}
+    \fbox{
+    \begin{minipage}{0.8\textwidth}
+        \textbf{REMARQUE :} Une $p$-liste est caractérisée par l'importance de la position et la possibilité de répétition d'élément.
+    \end{minipage}
+    }
+\end{center}
+
+\subsection*{PROPRIÉTÉS}
+Soit $E$ un ensemble fini de card $n$, $p$ un nombre entier naturel non nul, le nombre de $p$-listes de $E$ est égal à $n^p$.	
+
+\section*{4. P-ARRANGEMENT}
+
+Soit $E$ un ensemble fini non-nul de card $n$ ; $p$ un entier naturel non nul tel que $1 \le p \le n$. 
+
+On appelle $p$-arrangement de $E$ toute liste de longueur $p$ constituée des éléments distincts de $E$.
+
+Un $p$-arrangement est une $p$-liste sans répétition d'élément.
+
+\textbf{\underline{\exemple}}
+
+Soit $E = \{1; 2; 3; 4; 5\}$
+
+$12 ; 14 ; 41 ; 52 ; 32 ; 15 \dots$ etc sont des $2$-arrangements de $E$
+
+$145 ; 134 ; 152 ; 543 \dots$ ets sont des $3$-arrangements de $E$
+
+\begin{tcolorbox}
+\textbf{REMARQUE :} Un arrangement est caractérisé par l'importance de la position (\textit{l'ordre}) et l'absence de répétition.
+\end{tcolorbox}
+
+\textbf{\underline{PROPRIÉTÉ :}}
+Soit $E$ un ensemble fini non vide de cardinal $n$, $p$ un entier naturel tel que $1 \le p \le n$. Le nombre de $p$-arrangement de $E$ est noté : 
+\begin{center}
+    \fbox{$A_n^p = n(n-1)\dots(n-p+1)$}
+\end{center}
+
+\textbf{\underline{Notation avec factorielles :}}
+
+Le nombre de $p$-arrangements de $n$ éléments peut aussi s'écrire à l'aide des factorielles :
+\begin{center}
+    \fbox{$A_n^p = \frac{n!}{(n-p)!}$}
+\end{center}
+
+\subsection*{Cas particulier : Permutations}
+Si $p = n$, on parle de permutation de $n$ éléments.
+\[ A_n^n = n! \]
+\textbf{\underline{\exerciceapp}}
+
+\textbf{\underline{\correction}}
+
+\end{document}

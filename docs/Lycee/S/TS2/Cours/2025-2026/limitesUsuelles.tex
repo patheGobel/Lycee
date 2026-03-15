@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+\begin{document}
+
+\section*{\underline{\textcolor{red}{Limites usuelles}}}
+
+\subsection*{\textcolor{red}{1. Fonction logarithme népérien}}
+
+\[
+\lim_{x \to +\infty} \ln x = +\infty
+\]
+
+\[
+\lim_{x \to 0^+} \ln x = -\infty
+\]
+
+\[
+\lim_{x \to +\infty} \frac{\ln x}{x} = 0
+\]
+
+\[
+\lim_{x \to +\infty} \frac{\ln x}{x^n} = 0 
+\quad (n \in \mathbb{N}^*)
+\]
+
+\[
+\lim_{x \to 0^+} x \ln x = 0
+\]
+
+\[
+\lim_{x \to 0^+} x^n \ln x = 0 
+\quad (n \in \mathbb{N}^*)
+\]
+
+\[
+\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1
+\]
+
+\subsection*{\textcolor{red}{2. Fonction exponentielle}}
+
+\[
+\lim_{x \to +\infty} e^x = +\infty
+\]
+
+\[
+\lim_{x \to -\infty} e^x = 0
+\]
+
+\[
+\lim_{x \to +\infty} \frac{e^x}{x} = +\infty
+\]
+
+\[
+\lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty
+\quad (n \in \mathbb{N})
+\]
+
+\[
+\lim_{x \to -\infty} x e^x = 0
+\]
+
+\[
+\lim_{x \to -\infty} x^n e^x = 0
+\quad (n \in \mathbb{N})
+\]
+
+\[
+\lim_{x \to 0} \frac{e^x - 1}{x} = 1
+\]
+
+\textbf{Comparaison de croissances :}
+
+\[
+\text{Puissances} \ll \text{Exponentielle}
+\]
+
+\[
+\lim_{x \to +\infty} \frac{x^n}{e^x} = 0
+\quad (n \in \mathbb{N})
+\]
+
+
+\subsection*{\textcolor{red}{3. Limites fondamentales liées à \(e\)}}
+
+\[
+\lim_{x \to 0} (1+x)^{\frac{1}{x}} = e
+\]
+
+\[
+\lim_{n \to +\infty} \left(1 + \frac{1}{n}\right)^n = e
+\]
+
+\[
+\lim_{x \to 0} \frac{a^x - 1}{x} = \ln a 
+\quad (a > 0)
+\]
+
+\end{document}
