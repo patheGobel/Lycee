@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  21 MAR 2026 15:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  2 APR 2026 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1342,9 +1342,9 @@ Package rerunfilecheck Info: File `denombrement2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41200 strings out of 474222
- 968064 string characters out of 5748732
- 1947975 words of memory out of 5000000
+ 41201 strings out of 474222
+ 968080 string characters out of 5748732
+ 1950975 words of memory out of 5000000
  62666 multiletter control sequences out of 15000+600000
  612589 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1357,10 +1357,10 @@ blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
 mri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on build/denombrement2026.pdf (9 pages, 192817 bytes).
+Output written on build/denombrement2026.pdf (9 pages, 193058 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 77 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

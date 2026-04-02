@@ -255,7 +255,6 @@ Dans une classe de 45 élèves, 33 ont la moyenne en PC et 24 ont la moyenne en 
 
 \begin{enumerate}
     \item Calculer le nombre d'élèves qui ont la moyenne en Math ou PC.
-    \item Calculer le nombre d'élèves qui ont la moyenne qu'en Math.
     \item Calculer le nombre d'élèves qui ont la moyenne qu'en une seule des deux matières.
     \item Calculer le nombre d'élèves qui n'ont la moyenne ni en Math ni en PC.
 \end{enumerate}
@@ -267,29 +266,38 @@ On notera par $A$ l'ensemble des élèves qui ont la moyenne en PC, $B$ ceux en 
 \textbf{Données :}
 Soit $E$ l'ensemble des élèves de la classe.
 \begin{itemize}
-    \item $n(E) = 45$ (Effectif total)
-    \item $n(A) = 33$ (Moyenne en PC)
-    \item $n(B) = 24$ (Moyenne en Math)
-    \item $n(A \cap B) = 20$ (Moyenne en Math et en PC)
+    \item $card(E) = 45$ (Effectif total)
+    \item $card(A) = 33$ (Moyenne en PC)
+    \item $card(B) = 24$ (Moyenne en Math)
+    \item $card(A \cap B) = 20$ (Moyenne en Math et en PC)
 \end{itemize}
 
 \begin{enumerate}
     \item \textbf{Nombre d'élèves qui ont la moyenne en Math ou PC :}
-    On cherche le cardinal de l'union $n(A \cup B)$.
-    \[ n(A \cup B) = n(A) + n(B) - n(A \cap B) \]
-    \[ n(A \cup B) = 33 + 24 - 20 = 37 \]
+    On cherche le cardinal de l'union $card(A \cup B)$.
+    \[ card(A \cup B) = card(A) + card(B) - card(A \cap B) \]
+    \[ card(A \cup B) = 33 + 24 - 20 = 37 \]
     Il y a \textbf{37 élèves} qui ont la moyenne dans au moins une des deux matières.
 
-    \item \textbf{Nombre d'élèves qui ont la moyenne qu'en Math :}
+    \item \textbf{Nombre d'élèves qui ont la moyenne qu'en une seule des deux matières :}
+    
+    \textbf{Nombre d'élèves qui ont la moyenne qu'en Math :}
+    
     Il s'agit de l'ensemble $B$ privé de l'intersection.
-    \[ n(B \text{ uniquement}) = n(B) - n(A \cap B) \]
-    \[ n(B \text{ uniquement}) = 24 - 20 = 4 \]
+    \[ card(B \text{ uniquement}) = card(B) - card(A \cap B) \]
+    \[ card(B \text{ uniquement}) = 24 - 20 = 4 \]
     Il y a \textbf{4 élèves} qui ont la moyenne uniquement en Math.
 
-    \item \textbf{Nombre d'élèves qui ont la moyenne qu'en une seule des deux matières :}
+    \textbf{Nombre d'élèves qui ont la moyenne qu'en PC :}
+    
+     Il s'agit de l'ensemble $A$ privé de l'intersection.
+    \[ card(A \text{ uniquement}) = card(A) - card(A \cap B) \]
+    \[ card(A \text{ uniquement}) = 33 - 20 = 13 \]
+    Il y a \textbf{13 élèves} qui ont la moyenne uniquement en PC.
+    
     On additionne ceux qui n'ont que la PC et ceux qui n'ont que les Math.
     \begin{itemize}
-        \item Uniquement PC : $n(A) - n(A \cap B) = 33 - 20 = 13$
+        \item Uniquement PC : $13$
         \item Uniquement Math : $4$
     \end{itemize}
     Total : $13 + 4 = 17$.
@@ -297,8 +305,8 @@ Soit $E$ l'ensemble des élèves de la classe.
 
     \item \textbf{Nombre d'élèves qui n'ont la moyenne ni en Math ni en PC :}
     On cherche le complémentaire de l'union dans l'ensemble total $E$.
-    \[ n(\overline{A \cup B}) = n(E) - n(A \cup B) \]
-    \[ n(\overline{A \cup B}) = 45 - 37 = 8 \]
+    \[ card(\overline{A \cup B}) = card(E) - card(A \cup B) \]
+    \[ card(\overline{A \cup B}) = 45 - 37 = 8 \]
     Il y a \textbf{8 élèves} qui n'ont aucune des deux moyennes.
 \end{enumerate}
 
@@ -449,7 +457,8 @@ $123; 213; 312; 231; 132$ sont des permutations de $E$
             \item Application : Les Anagrammes (Cas des lettres distinctes et répétées)
             
             Deux mots sont dits des anagrammes s'ils s'écrivent avec les mêmes lettres mais disposées différemment.
-            \item Exemple
+            
+            \exemple
             
 {\color{red}ASTOU} et SATOU \\
 CHIEN et {\color{red}NICHE}
@@ -480,7 +489,7 @@ Soit $E$ un ensemble fini non vide de cardinal $n$, $P \in \mathbb{N} / P \le n$
 
             \item Formule de calcul ($C_n^p$)
             
-            \item Exemple
+            \exemple
             
             Soit $E = \{1, 2, 3, 4\}$
             
@@ -503,7 +512,8 @@ Le nombre de $P$-combinaisons de $E$ est noté $C_n^P$ défini :
     \fbox{$C_n^P = \frac{n!}{P!(n-P)!} = \frac{A_n^P}{P!}$}
 \end{center}
             \item Relation de Pascal ($C_{n-1}^{p-1} + C_{n-1}^p = C_n^p$)
-            \item Exemple
+            
+            \exemple
             
             $C_7^3 = \frac{7!}{3!(7-3)!} = \frac{7 \times 6 \times 5}{3 \times 2} = 35$
 
