@@ -1,10 +1,7 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{array,amsmath,amssymb,mathrsfs, makecell,tikz,times,pifont}
 \usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{lmodern}
+
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
 \node[circle,draw=gray, fill=red!55,
@@ -15,27 +12,65 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 minimum size=1.2em,inner sep=0] (char) {#1};}}
 \setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
 \setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
 \everymath{\displaystyle}
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 \usepackage{array,multirow}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
-\usepackage{float}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
 \tcbuselibrary{skins,hooks}
 \usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{fancyhdr}
+%\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
 \usepackage{tkz-tab}
-\usepackage{mdframed}
-\usepackage{tikz}
-\usetikzlibrary{arrows, shapes.geometric, fit}
+%\AddToShipoutPicture{
+   % \AtTextCenter{%
+      %  \makebox[0pt]{\rotatebox{35}{\textcolor[gray]{0.5}{\fontsize{1.5cm}{1.5cm}\selectfont DIONE@MATHS TL}}}
+%    }
+%}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{red}\ding{45}\ \textbf{TL, 2025}
+}
+\fancyfoot[L]{
+\color{black}\ding{45}\ \textbf{Prof : M. DIONE}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+
 
 % Commande pour la couleur d'accentuation
 \newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
@@ -45,6 +80,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 
 \usepackage{enumitem}
+\usepackage{makecell}
 %---------------------------------------
 % Définir un compteur pour les exemples
 \newcounter{exemple}
@@ -310,41 +346,188 @@ Soit $E$ l'ensemble des élèves de la classe.
     Il y a \textbf{8 élèves} qui n'ont aucune des deux moyennes.
 \end{enumerate}
 
-\item Produit Cartésien (Propriétés des cardinaux de $A \times B$ et $A^n$)
+ \item Produit cartésien
+ 
+        \begin{itemize}
+            \item \textbf{Définition}
 
-\textbf{Propriétés :}
+Soient \( A \) et \( B \) deux ensembles.
 
-\( \text{card}(A \times B) = \text{card } A \times \text{card } B \)
+On appelle \textbf{produit cartésien} de \( A \) et \( B \), noté \( A \times B \), l’ensemble des couples ordonnés \((a,b)\) tels que :
+\(
+a \in A \quad \text{et} \quad b \in B
+\)
 
-\( \text{card}(A^n) = (\text{card } A)^n, \quad \forall n \in \mathbb{N}, n \ge 2 \)
+Ainsi :
+\(
+A \times B = \{ (a,b) \mid a \in A \text{ et } b \in B \}
+\)
+
+\textbf{Remarque :} l’ordre est important, en général
+\[
+(a,b) \neq (b,a)
+\]
+
+\item  \textbf{Exemple}
+
+Soient :
+\(
+A = \{1,2\}, \quad B = \{x,y\}
+\)
+
+Alors :
+\(
+A \times B = \{ (1,x), (1,y), (2,x), (2,y) \}
+\)
+
+\item \textbf{Interprétation}
+
+Former \( A \times B \), c’est associer chaque élément de \( A \) avec chaque élément de \( B \).
+
+Ce type de situation apparaît lorsqu’on effectue des choix successifs :
+\begin{itemize}
+    \item choix d’un vêtement et d’une couleur ;
+    \item choix d’un nombre et d’une lettre ;
+    \item choix d’un menu (entrée, plat).
+\end{itemize}
+
+\item \textbf{Cardinal du produit cartésien}
+
+Si \( A \) et \( B \) sont finis, alors :
+\(
+\mathrm{Card}(A \times B) = \mathrm{Card}(A) \times \mathrm{Card}(B)
+\)
+
+\textbf{Exemple :}
+
+Si \( \mathrm{Card}(A) = 3 \) et \( \mathrm{Card}(B) = 4 \), alors :
+\(
+\mathrm{Card}(A \times B) = 3 \times 4 = 12
+\)
+
+\item \textbf{Généralisation}  
+
+Pour \( n \) ensembles \( A_1, A_2, \dots, A_n \) :
+\(
+A_1 \times A_2 \times \cdots \times A_n
+\)
+
+et :
+\(
+\mathrm{Card}(A_1 \times A_2 \times \cdots \times A_n)
+= \mathrm{Card}(A_1)\times \mathrm{Card}(A_2)\times \cdots \times \mathrm{Card}(A_n)
+\)
+
+\item \textbf{Exemple concret} 
+
+On veut former un code composé de :
+\begin{itemize}
+    \item une lettre parmi \( \{A,B,C\} \) ;
+    \item un chiffre parmi \( \{1,2,3,4\} \).
+\end{itemize}
+
+Le nombre de codes possibles est :
+\(
+3 \times 4 = 12
+\)
+
+\item \textbf{Remarque importante} 
+
+On a en général :
+\(
+A \times B \neq B \times A
+\)
+
+mais :
+\(
+\mathrm{Card}(A \times B) = \mathrm{Card}(B \times A)
+\)
+
+\item \textbf{Erreur fréquente} 
+
+Ne pas oublier que l’on manipule des couples ordonnés :
+
+\[
+(1,2) \neq (2,1)
+\]
+
+\item \textbf{Conclusion} 
+
+Le produit cartésien permet de compter les situations où l’on effectue des choix successifs.  
+Il constitue la base du \textbf{principe multiplicatif} en dénombrement.
+\end{itemize}
 
 \textbf{\underline{\exemple}}
 
-Une entreprise fabrique des valises avec des codes de sécurité constitués de 2 lettres suivies de 2 chiffres.
+Dans un lycée, on veut former des binômes composés :
+\begin{itemize}
+    \item d’un élève de la classe de Terminale \( A = \{\text{Ali}, \text{Binta}, \text{Cheikh}\} \) ;
+    \item d’un élève de la classe de Première \( B = \{\text{Moussa}, \text{Awa}\} \).
+\end{itemize}
+
+L’ensemble des binômes possibles est le produit cartésien \( A \times B \) :
+
+\[
+A \times B = \{ (\text{Ali}, \text{Moussa}), (\text{Ali}, \text{Awa}),
+(\text{Binta}, \text{Moussa}), (\text{Binta}, \text{Awa}),
+(\text{Cheikh}, \text{Moussa}), (\text{Cheikh}, \text{Awa}) \}
+\]
+
+Ainsi, le nombre total de binômes est :
+\[
+\mathrm{Card}(A \times B) = 3 \times 2 = 6
+\]
+
+\textbf{\underline{\exemple}}
+
+Une entreprise fabrique des valises avec des codes de sécurité constitués de deux lettres suivies de deux chiffres.
+
+On suppose que les lettres et les chiffres peuvent être répétés.
 
 \begin{enumerate}
-    \item Calculer le nombre de codes possibles pour un client.
-    \item Calculer le nombre de codes commençant par une voyelle et finissant par un chiffre impair.
+    \item \textbf{Calcul du nombre total de codes}
+
+    Il y a 26 choix pour chaque lettre et 10 choix pour chaque chiffre.
+
+    Ainsi, le nombre total de codes est :
+    \[
+    26 \times 26 \times 10 \times 10 = 67600
+    \]
+
+    \item \textbf{Codes commençant par une voyelle et finissant par un chiffre impair}
+
+    Il y a 5 voyelles (A, E, I, O, U), 26 choix pour la deuxième lettre,
+    10 choix pour le premier chiffre et 5 choix pour un chiffre impair (1, 3, 5, 7, 9).
+
+    Donc le nombre de codes est :
+    \[
+    5 \times 26 \times 10 \times 5 = 6500
+    \]
 \end{enumerate}
 
 \textbf{\underline{\solution}}  
       
 \item \textbf{Les outils du dénombrement} 
+
+Ces outils permettent de compter efficacement le nombre de possibilités dans une situation donnée.
+
 \begin{enumerate}
-\item La $p$-liste
 
-        \begin{itemize}
-            \item \textbf{Définition et caractéristiques (Ordre et répétition)}
-            
-            Soit $E$ un ensemble fini non vide de cardinal $n$, $p$ un nombre entier naturel.
+%---------------------------------
+\item \textbf{La $p$-liste}
 
-On appelle $p$-liste d'éléments de $E$ toute liste de longueur $p$ constituée des éléments de $E$ distincts ou identiques.
+\begin{itemize}
+    \item \textbf{Définition}
 
-Une $p$-liste de $E$ est un élément de $E^p$.	
+    Soit \( E \) un ensemble fini de cardinal \( n \).
 
-\textbf{\underline{\exemple}}
+    On appelle \textbf{$p$-liste} d’éléments de \( E \) toute suite ordonnée de \( p \) éléments de \( E \), avec répétition possible.
 
-Soit $E = \{1, 2, 3, a, b\}$
+\item \textbf{Exemples}
+
+\begin{itemize}
+    \item \textbf{Exemple 1 :}
+    Soit $E = \{1, 2, 3, a, b\}$
 
 $(1; 2), (2; 2), (3; a), (a; a) \dots$ etc sont des 2-listes de $E$.
 
@@ -352,79 +535,161 @@ $(1; 1; 2), (1; 3; a), (a; a; a), (b; 1; 3) \dots$ etc sont des 3-listes de $E$.
 
 $(1; 1; a; 1; 3; 2; a)$ est une 7-liste de $E$.
 
-        \textbf{Remarque :} 
+    \item \textbf{Exemple 2 (Codes) :}
+    
+     Le nombre de codes PIN à 4 chiffres (de 0 à 9) est une 4-liste d'un ensemble à 10 éléments. Il y en a $10^4 = 10\,000$.
+    \item \textbf{Exemple 3 (Lancer de dé) :} 
+    
+    On lance un dé 3 fois. Le nombre de résultats possibles est $6^3 = 216$.
+\end{itemize}
+
+\item \textbf{Interprétation} : 
+
+Une $p$-liste correspond à un choix successif de \( p \) éléments dans \( E \), \textbf{avec remise}.
+
+    \item \textbf{Nombre de $p$-listes}
+
+    Le nombre de $p$-listes d’un ensemble de cardinal \( n \) est :
+    \(
+    n^p
+    \)
+
+\end{itemize}
+
+%---------------------------------
+\item \textbf{Le $p$-arrangement}
+\begin{itemize}
+    \item \textbf{Définition}
+Soit $E$ un ensemble fini de cardinal $n$.
+On appelle \textbf{$p$-arrangement} d'éléments de $E$ toute suite ordonnée de $p$ éléments \textbf{distincts} de $E$ ($p \leq n$).
+\item \textbf{Interprétation}
+
+Un $p$-arrangement correspond à un choix successif de $p$ éléments dans $E$, \textbf{sans remise}. L'ordre des éléments est primordial.
+
+\item \textbf{Nombre de $p$-arrangements}
+
+Le nombre de $p$-arrangements d’un ensemble de cardinal $n$ est :
+\[ A_n^p = \frac{n!}{(n-p)!} = n(n-1)\dots(n-p+1) \]
+\item \textbf{Exemples}
+\begin{itemize}
+    \item \textbf{Exemple 1 :} Soit $E = \{1,2,3\}$.\\ 
+    Les $2$-arrangements de $E$ sont : $(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)$.
+    \item \textbf{Exemple 2 (Podium) :} 
+    
+    Dans une course de 8 chevaux, le nombre de triplés possibles pour le podium (ordre 1er, 2ème, 3ème) est un 3-arrangement de 8.
+    
+     Il y en a $A_8^3 = 8 \times 7 \times 6 = 336$.
+    \item \textbf{Exemple 3 (Bureau) :} 
+    
+    Dans une association de 20 membres, le nombre de façons d'élire un président et un secrétaire (deux rôles distincts) est $A_{20}^2 = 20 \times 19 = 380$.
+\end{itemize}
+
+\end{itemize}
+%---------------------------------
+\item \textbf{La permutation}
+\begin{itemize}
+    \item \textbf{Définition}
+Soit \( E \) un ensemble fini de cardinal \( n \).
+On appelle \textbf{permutation} de \( E \) tout arrangement des \( n \) éléments de \( E \). C'est une suite ordonnée de tous les éléments de l'ensemble, sans répétition.
+\item \textbf{Nombre de permutations}
+
+    Le nombre de permutations de \( n \) éléments est :
+    \(
+    n! = n \times (n-1) \times \cdots \times 1
+    \)
+    
+\textbf{Par Exemple}
+Le nombre de façons d’ordonner 3 objets est :
+    \(
+    3! = 6
+    \)
+\begin{itemize}
+    \item \textbf{Exemple 1 :} 
+    
+		Une permutation de $E$ est un **3-arrangement** de ses 3 éléments. On les utilise tous :
+    \( (a,b,c), (a,c,b), (b,a,c), (b,c,a), (c,a,b), (c,b,a) \)
+    
+    Le nombre de possibilités est $3 \times 2 \times 1 = 3! = 6$.
+    
+    \item \textbf{Exemple 2 (Rangement) :} 
+    
+    Le nombre de façons de ranger 5 manuels de mathématiques différents sur une étagère est une permutation de 5 éléments. Il y en a $5! = 120$.
+    
+    \item \textbf{Exemple 3 (Course) :} 
+    
+    Dans une finale de 100m avec 8 athlètes, le nombre de ordres d'arrivée possibles (du 1er au 8ème) est une permutation de 8. Il y en a $8! = 40\,320$.
+    
+    \item \textbf{Exemple 4 : Les Anagrammes (Cas des lettres distinctes et répétées)} 
+                Deux mots sont dits des anagrammes s'ils s'écrivent avec les mêmes lettres mais disposées différemment.
+                
+\begin{itemize}
+    \item Si un mot est constitué de $n$ lettres distinctes, le nombre d'anagrammes possibles avec les lettres du mot est égale à {\color{red}$n!$}
+    \item Si un mot est constitué de $n$ lettres dont quelques unes se répètent le nombre d'anagramme possible avec les lettres du mot est égale à {\color{red}$n!$} divisé par le produit des factorielles du nombre de fois que chaque lettre se répète.
+\end{itemize} 
+
+    \begin{itemize}
+    \item Le nombre d'anagrammes du mot "LOGIQUE" (7 lettres distinctes) est une permutation des 7 lettres. Il y en a $7! = 5\,040$.
+
+    \item Le nombre d'anagramme possible avec les lettres du mot "SCIENCES" est $ \frac{8!}{{\color{red}2!2!2!}} = \frac{8!}{8} = 5040$
+
+    \end{itemize}
+    
+\end{itemize}
+
+\end{itemize}
+
+%---------------------------------
+\item \textbf{La combinaison}
+\begin{itemize}
+    \item \textbf{Définition}
+Soit \( E \) un ensemble fini de cardinal \( n \).
+On appelle \textbf{combinaison} de \( p \) éléments de \( E \) tout sous-ensemble (ou partie) de \( E \) contenant \( p \) éléments ($p \leq n$).
+\item \textbf{Interprétation}
+
+Une combinaison correspond à un choix \textbf{simultané} de \( p \) éléments. Contrairement aux listes et aux arrangements, \textbf{l'ordre ne compte pas}.
+
+Ici, l’ordre ne compte pas : choisir \( A \) puis \( B \) est la même chose que choisir \( B \) puis \( A \).
+ 
+\item \textbf{Nombre de combinaisons}
+
+Le nombre de combinaisons de \( p \) éléments parmi \( n \) est noté \( \binom{n}{p} \) ou \( C_n^p \) :
+\[
+\binom{n}{p} = \frac{n!}{p!(n-p)!} = \frac{A_n^p}{p!}
+\]
+\item \textbf{Exemples}
+
+\begin{itemize}
+    \item \textbf{Exemple 1 : Cas de l'ensemble $E = \{a, b, c\}$ ($n=3$)}
+    
+    \begin{itemize}
+        \item \textbf{Les 1-combinaisons :} On choisit 1 élément parmi 3.
+        \[ \{a\}, \{b\}, \{c\} \]
+        Il y en a $\binom{3}{1} = 3$.
         
-        Une $p$-liste est caractérisée par l'importance de la position et la possibilité de répétition d'élément.
+        \item \textbf{Les 2-combinaisons :} On choisit 2 éléments parmi 3. L'ordre ne compte pas ($\{a,b\}$ est identique à $\{b,a\}$).
+        \( \{a,b\}, \{a,c\}, \{b,c\} \)
+        Il y en a $\binom{3}{2} = 3$.
+        
+        \item \textbf{Les 3-combinaisons :} On choisit les 3 éléments parmi 3.
+        \[ \{a,b,c\} \]
+        Il y en a $\binom{3}{3} = 1$.
+    \end{itemize}
 
-            \item \textbf{Propriété du dénombrement ($n^p$)}
-            
-            Soit $E$ un ensemble fini de card $n$, $p$ un nombre entier naturel non nul, le nombre de $p$-listes de $E$ est égal à $n^p$.	
-        \end{itemize}
-         \item Le $p$-arrangement
-        \begin{itemize}
-            \item \textbf{Définition et caractéristiques (Ordre sans répétition)]}
-            
-            Soit $E$ un ensemble fini non-nul de card $n$ ; $p$ un entier naturel non nul tel que $1 \le p \le n$. 
+    \item \textbf{Exemple 2 (Élèves) :} Dans une classe de 4 élèves $\{A, B, C, D\}$, le nombre de façons de choisir un binôme (groupe de 2) pour un exposé est :
+    \[ \{A,B\}, \{A,C\}, \{A,D\}, \{B,C\}, \{B,D\}, \{C,D\} \]
+    Il y en a $\binom{4}{2} = 6$.
 
-On appelle $p$-arrangement de $E$ toute liste de longueur $p$ constituée des éléments distincts de $E$.
+    \item \textbf{Exemple 3 (Loto) :} Au jeu du Loto, le nombre de façons de choisir 6 numéros parmi 49 est une combinaison de 6 parmi 49.
+    \( \binom{49}{6} = 13\,983\,816 \)
 
-Un $p$-arrangement est une $p$-liste sans répétition d'élément.
+    \item \textbf{Exemple 4 (Main de cartes) :} Le nombre de mains de 5 cartes que l'on peut recevoir d'un jeu de 32 cartes est :
+    \( \binom{32}{5} = 201\,376 \)
+\end{itemize}
 
-\textbf{\underline{\exemple}}
+\end{itemize}
+\end{enumerate}
 
-Soit $E = \{1; 2; 3; 4; 5\}$
-
-$12 ; 14 ; 41 ; 52 ; 32 ; 15 \dots$ etc sont des $2$-arrangements de $E$
-
-$145 ; 134 ; 152 ; 543 \dots$ ets sont des $3$-arrangements de $E$
-
-\textbf{Remarque :} 
-
-Un arrangement est caractérisé par l'importance de la position (\textit{l'ordre}) et l'absence de répétition.
-
-\textbf{\underline{Propriété :}}
-
-Soit $E$ un ensemble fini non vide de cardinal $n$, $p$ un entier naturel tel que $1 \le p \le n$. Le nombre de $p$-arrangement de $E$ est noté : 
-\begin{center}
-    \fbox{$A_n^p = n(n-1)\dots(n-p+1)$}
-\end{center}
-
-\textbf{\underline{Notation avec factorielles :}}
-
-Le nombre de $p$-arrangements de $n$ éléments peut aussi s'écrire à l'aide des factorielles :
-\begin{center}
-    \fbox{$A_n^p = \frac{n!}{(n-p)!}$}
-\end{center}
-
-\textbf{Cas particulier : Permutations}
-Si $p = n$, on parle de permutation de $n$ éléments.
-\[ A_n^n = n! \]
-
-\textbf{\underline{\exemple}}
-
-$A_7^2 = 7 \times 6 = 42$
-
-$A_{10}^8 = 10 \times 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 = 1\,814\,400$
-
-$A_8^3 = 8 \times 7 \times 6 = 336$
-\textbf{Définition de la factorielle}
-
-Soit $n \in \mathbb{N}, n \ge 2$, on appelle \textbf{factorielle de $n$} le nombre noté $n!$ défini par :
-\[ n! = n(n-1)\dots \times 1 \]
-
-\begin{center}
-    \fbox{$1! = 1$} \quad \fbox{$0! = 1$}
-\end{center}
-
-\textbf{\underline{\exemple}}
-
-$5! = 5 \times 4 \times 3 \times 2 \times 1$
-
-$4! = 4 \times 3 \times 2 \times 1$
-
-$7! = 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1$
-
-\color{red}{Propriétés :}
+\item \textbf{Opérations sur les factotielles}
 
 $\forall n \in \mathbb{N} ; n \ge 2 $
 
@@ -441,89 +706,8 @@ $A_n^1 = n$
 $A_n^n = n!$
 
 $A_n^{n-1} = n!$
-            \item \textbf{Formule de calcul ($A_n^p$) et notation avec factorielles}
-        \end{itemize}
-\item La Permutation
 
-Soit $E$ un ensemble fini de cardinal $n$ non vide, on appelle permutation de $E$ toute liste de longueur $n$ constituée des $n$ éléments de $E$. Donc une permutation est un $n$-arrangement de $E$.
-\begin{itemize}
-            \item Exemple
-            
-            Soit $E = \{1; 2; 3\}$
-$123; 213; 312; 231; 132$ sont des permutations de $E$
-            \item Propriété
-            
-            Le nombre de permutation de $E$ est égale à \underline{{\color{red}$n!$}}
-            \item Application : Les Anagrammes (Cas des lettres distinctes et répétées)
-            
-            Deux mots sont dits des anagrammes s'ils s'écrivent avec les mêmes lettres mais disposées différemment.
-            
-            \exemple
-            
-{\color{red}ASTOU} et SATOU \\
-CHIEN et {\color{red}NICHE}
-
-\begin{itemize}
-    \item Si un mot est constitué de $n$ lettres distinctes, le nombre d'anagrammes possibles avec les lettres du mot est égale à {\color{red}$n!$}
-    \item Si un mot est constitué de $n$ lettres dont quelques unes se répètent le nombre d'anagramme possible avec les lettres du mot est égale à {\color{red}$n!$} divisé par le produit des factorielles du nombre de fois que chaque lettre se répète.
-\end{itemize}
-            \item Exemple
-            
-- Donner le nombre d'anagramme possible avec les lettres du mot "{\color{red}ASTOU}"
-
-- Donner le nombre d'anagramme possible avec les lettres du mot "SCIENCES"
-
-\vspace{0.5cm}
-
-\begin{itemize}
-    \item $N = {\color{red}5!} = 120$
-    \item $M = \frac{8!}{{\color{red}2!2!2!}} = \frac{8!}{8} = 5040$
-\end{itemize}
-
-\end{itemize}
- 
-\item La Combinaison
-        \begin{itemize}
-            \item Définition et caractéristiques (Sans ordre ni répétition)
-Soit $E$ un ensemble fini non vide de cardinal $n$, $P \in \mathbb{N} / P \le n$. On appelle {\color{red}combinaison} de $p$ éléments de $E$ tout sous ensemble de $E$ de cardinal $P$.
-
-            \item Formule de calcul ($C_n^p$)
-            
-            \exemple
-            
-            Soit $E = \{1, 2, 3, 4\}$
-            
-$\{1; 2\}, \{2; 3\}, \{4; 3\}, \{2; 4\}$ sont des \textbf{2-sous-combinaison} de $E$
-
-$\{1; 2; 3\}, \{2; 3; 4\}, \{1; 2; 4\}, \{1; 3; 4\}$ sont \textbf{3-combinaison} de $E$
-
-$\{1; 2; 3; 4\}$ est la \textbf{seule 4-combinaison} de $E$
-
-            \item Remarque (Symétrie, valeurs particulières)
-            
-            Une combinaison est caractérisée par le fait que la position n'est pas importante et l'absence de répétition d'éléments.
-            
-            \item Propriétés
-            
-            Soit $E$ un ensemble fini non vide de cardinal $n$, $P \in \mathbb{N} / P \le n$
-
-Le nombre de $P$-combinaisons de $E$ est noté $C_n^P$ défini : 
-\begin{center}
-    \fbox{$C_n^P = \frac{n!}{P!(n-P)!} = \frac{A_n^P}{P!}$}
-\end{center}
-            \item Relation de Pascal ($C_{n-1}^{p-1} + C_{n-1}^p = C_n^p$)
-            
-            \exemple
-            
-            $C_7^3 = \frac{7!}{3!(7-3)!} = \frac{7 \times 6 \times 5}{3 \times 2} = 35$
-
-\vspace{0.5cm}
-
-$C_{10}^2 = \frac{10!}{2!(10-2)!} = \frac{10 \times 9}{2} = 45$
-
-\vspace{0.5cm}
-
-$C_{11}^7 = \frac{11!}{7!(11-7)!} = \frac{11!}{7! \, {\color{red}4!}} = \frac{11 \times 10 \times 9 \times 8}{4 \times 3 \times 2} = 330$
+++++++++++
 
 $C_n^0 = 1$
 
@@ -577,8 +761,8 @@ C_{n-1}^{p-1} + C_{n-1}^p &= \frac{(n-1)!}{\frac{p!}{p}(n-p)!} + \frac{(n-1)!}{p
 &= \frac{n!}{p!(n-p)!} = C_n^p
 \end{aligned}
 \]
-\end{itemize}  
-\item Triangle de Pascal
+
+\textbf{Triangle de Pascal}
 
 \begin{center}
 \begin{tikzpicture}
@@ -606,9 +790,9 @@ $n \backslash p$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
 6 & 1 & 6 & 15 & 20 & 15 & 6 & 1 \\ \hline
 \end{tabular}
 \end{center}
-\item Binome De NEWTON
 
-     Soient $a$ et $b$ deux réels, $n \in \mathbb{N}, n \ge 1$
+\textbf{Binome De NEWTON}																																																																																																					
+Soient $a$ et $b$ deux réels, $n \in \mathbb{N}, n \ge 1$
 
 \begin{center}
     {\color{red}
@@ -635,7 +819,6 @@ $f(x) = C_5^0 (2x)^5 + C_5^1 (2x)^4(3) + C_5^2 (2x)^3(3)^2 + C_5^3 (2x)^2(3)^3 +
 \begin{center}
     \fbox{$f(x) = 32x^5 + 240x^4 + 720x^3 + 1080x^2 + 810x + 243$}
 \end{center}
-\end{enumerate}
 \item Situation De Dénombrement
 
 Le dénombrement est une application des propriétés de l'analyse combinatoire dans des situations pratiques.
@@ -694,7 +877,37 @@ On tire simultanément 4 cartes du jeu.
         \item[F :] le tirage contient un seul AS et 3 piques
     \end{itemize}
 \end{enumerate}
+
 \end{enumerate}
+
+\textbf{Dénombrement - Applications}
+
+Soit l'urne contenant: 4 boules noires, 3 boules vertes et 2 boules rouges.
+
+
+On tire 4 boules de l'urne. Déterminer le nombre de cas où l'on obtient :
+
+\begin{enumerate}
+    \item Exactement une verte parmi les boules tirées.
+    \item Au moins deux vertes parmi les boules tirées.
+    \item Au plus une rouge parmi les boules tirées.
+    \item Aucune boule noire.
+    \item Une rouge puis deux noires puis une verte.
+\end{enumerate}
+
+\renewcommand{\arraystretch}{2} % Pour aérer un peu les lignes du tableau
+
+\raggedright
+\begin{tabular}{|p{6cm}|p{6cm}|p{5cm}|}
+\hline
+\textbf{Simultané} & \textbf{Successif sans remise} & \textbf{Successif avec remise}\\
+\hline
+\makecell[l]{\textbf{1)} il faut tirer : $V \ \overline{V} \ \overline{V} \ \overline{V}$\\ le nombre demandé est :$C_3^1 \times C_6^3 $} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ A_3^1 \times A_6^3 \times \color{red} C_4^1 \times C_3^3$} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^1 \times 6^3 \times \color{red} C_4^1 \times C_3^3 $} \\
+\hline
+
+\hline
+\end{tabular}
+
 
     \item \textbf{Probabilité}
 
