@@ -4,7 +4,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xcolor}
-
+\usepackage{tikz}
+\usepackage{graphicx}
 \begin{document}
 
 \section*{\underline{Dénombrement}}
@@ -47,5 +48,39 @@ Lors d'un sondage chez 100 ouvriers dans une usine concernant la lecture de deux
 \end{itemize}
 
 Quel est le nombre des ouvriers qui ne lisent aucune des deux Revues ?
+
+% ... dans le corps du texte :
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Screenshot from 2026-04-04 22-06-17.png}
+    \caption{Diagramme de Venn du cours}
+\end{figure}
+
+\begin{tikzpicture}[thick, scale=1.2]
+    % 1. L'ensemble E (le contour extérieur)
+    % On dessine une grande ellipse pour l'ensemble E
+    \draw (0,0) ellipse (3.5cm and 2.2cm);
+    \node at (-2.8, 1.8) {\Large $E$};
+
+    % 2. Séparation interne pour créer A et B
+    % On dessine les deux arcs de cercle qui se croisent à l'intérieur de E
+    % Arc pour la limite de B
+    \draw[blue] (0.2, 2.15) to[out=-100, in=100] (0.2, -2.15);
+    
+    % Arc pour la limite de A
+    \draw[red] (-1, 2.15) to[out=-100, in=100] (1, -2.15);
+
+    % 3. Les flèches d'annotation (exactement comme sur ton image)
+    
+    % Flèche pour A
+    \draw[red, <-, >=stealth] (-2.2, -1) -- (-2.8, -1.8) node[below, black] {\Large $A$};
+    
+    % Flèche pour B
+    \draw[blue, <-, >=stealth] (2.5, -1.2) -- (3.2, -1.8) node[below, black] {\Large $B$};
+    
+    % Flèche pour l'intersection A ∩ B
+    \draw[<-, >=stealth] (0.5, -1.5) -- (0.5, -2.2) node[below] {\Large $A \cap B$};
+
+\end{tikzpicture}
 
 \end{document}
