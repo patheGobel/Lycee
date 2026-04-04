@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+\begin{document}
+
+\section*{\underline{Dénombrement}}
+
+\subsection*{I) Cardinal d'un ensemble fini}
+
+\subsubsection*{1) Définition}
+\fbox{
+\begin{minipage}{0.5\textwidth}
+Soit $E$ un ensemble fini non vide. Le cardinal de $E$ est le nombre d'éléments contenus dans $E$. \\
+On le note : {\color{red} $Card(E)$}
+\end{minipage}
+}
+
+\paragraph{Exemples :}
+\begin{itemize}
+    \item $card \{a\} = 1$ ; $card \{a; b\} = 2$
+    \item $card D_{14} = 4$ ; $\dots$
+\end{itemize}
+
+\subsubsection*{2) Remarques}
+\begin{itemize}
+    \item $card \emptyset = 0$
+    \item $A \subset B \implies card A \leqslant card B$
+\end{itemize}
+
+\subsubsection*{3) Résultat}
+$A, B$ ensembles finis \\
+{\Large $card(A \cup B) = {\color{red} card A + card B - card(A \cap B)}$}
+
+\vspace{2cm}
+
+\section*{\underline{Exercice}}
+
+Lors d'un sondage chez 100 ouvriers dans une usine concernant la lecture de deux Revues $A$ et $B$ ; On a eu les résultats suivants :
+\begin{itemize}
+    \item 78 lisent la Revue \textcircled{A}
+    \item 52 lisent la Revue \textcircled{B}
+    \item 40 lisent les deux Revues.
+\end{itemize}
+
+Quel est le nombre des ouvriers qui ne lisent aucune des deux Revues ?
+
+\end{document}
