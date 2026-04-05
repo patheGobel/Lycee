@@ -1,11 +1,13 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[french]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usetikzlibrary{trees} % Nécessaire pour l'arbre
 \begin{document}
 
 \section*{\underline{Dénombrement}}
@@ -82,5 +84,67 @@ Quel est le nombre des ouvriers qui ne lisent aucune des deux Revues ?
     \draw[<-, >=stealth] (0.5, -1.5) -- (0.5, -2.2) node[below] {\Large $A \cap B$};
 
 \end{tikzpicture}
+
+\subsection*{II)Principe fondamentale du dénombrement (Principe multiplicatif)}
+
+\noindent
+\textcircled{1} \underline{Exemple 1} : On lance dans l'air une pièce de monnaie 3 fois successives. \\
+Quel est le nombre total de cas possibles ?
+
+\vspace{1em}
+
+\noindent
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\centering \Large \color{red} l'arbre & \centering \Large \color{red} Loi Produit \tabularnewline
+\hline
+& \\
+% --- DÉBUT DE L'ARBRE ---
+\begin{tikzpicture}[level distance=1.5cm,
+  level 1/.style={sibling distance=2.5cm},
+  level 2/.style={sibling distance=1.2cm},
+  level 3/.style={sibling distance=0.6cm},
+  thick]
+  \node {}
+    child {node {P}
+      child {node {P}
+        child {node {P}}
+        child {node {F}}
+      }
+      child {node {F}
+        child {node {P}}
+        child {node {F}}
+      }
+    }
+    child {node {F}
+      child {node {P}
+        child {node {P}}
+        child {node {F}}
+      }
+      child {node {F}
+        child {node {P}}
+        child {node {F}}
+      }
+    };
+\end{tikzpicture} 
+& 
+% --- DÉBUT DU TABLEAU LOI PRODUIT ---
+\vspace{1cm}
+\begin{tabular}{|c|c|c|}
+\hline
+1\textsuperscript{er} lancer & 2\textsuperscript{e} lancer & 3\textsuperscript{e} lancer \\
+\hline
+{\color{green!60!black}\Huge 2} & {\color{green!60!black}\Huge 2} & {\color{green!60!black}\Huge 2} \\
+\hline
+\end{tabular}
+\newline \centering $\times$ \hspace{0.8cm} $\times$
+\vspace{1cm}
+
+Le nombre de cas possibles : \\
+{\color{red} \Large $2 \times 2 \times 2 = \underline{\underline{8}}$}
+\tabularnewline
+\Large On a {\color{red}\underline{8}} cas possibles. & \\
+\hline
+\end{tabular}
 
 \end{document}
