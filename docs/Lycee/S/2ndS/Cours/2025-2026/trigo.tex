@@ -6,10 +6,13 @@
 \usepackage{amsfonts}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{tkz-tab}
 \usepackage{verbatim} % INDISPENSABLE pour l'environnement comment
 \usepackage{yhmath}
 \usetikzlibrary{angles,quotes,arrows.meta}
-
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
 % Définition du rouge pour les titres et soulignements
 \definecolor{monRouge}{RGB}{180, 0, 0}
 
@@ -712,4 +715,352 @@ $(\vec{u}, \vec{v}) = (\vec{u}, \vec{w}) + (\vec{w}, \vec{v})$
     \item[e)] $(\vec{u}, -\vec{u})$
 \end{itemize}
 
+    \subsection*{%
+    \color{monRouge} \underline{II - Trigonométrie}%
+}
+
+
+\noindent \textbf{\textcolor{monRouge}{\underline{1 - Cosinus, sinus et tangente}}}
+
+\subsection*{%
+    \color{monRouge} \underline{a) Définitions}%
+}
+
+\noindent \textcolor{monRouge}{\underline{Définition 1 :}} \\
+Dans un repère orthonormé $(O, \vec{i}, \vec{j})$, on appelle \textcolor{monRouge}{cercle trigonométrique}, le cercle de centre $O$ et de rayon $1$ orienté dans le \textcolor{monRouge}{sens direct} (sens contraire des aiguilles d'une montre). Le sens direct est aussi appelé sens trigonométrique.
+
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Axes
+        \draw[->] (-1.5,0) -- (1.5,0);
+        \draw[->] (0,-1.5) -- (0,1.5);
+        
+        % Cercle
+        \draw[thick] (0,0) circle (1cm);
+        
+        % Origine et unités
+        \node[below left] at (0,0) {$O$};
+        \node[below right] at (1,0) {$1$};
+        \node[below left] at (-1,0) {$-1$};
+        \node[above left] at (0,1) {$1$};
+        \node[below left] at (0,-1) {$-1$};
+        
+        % Symbole sens direct (plus dans un cercle)
+        \draw[->, monRouge, thick] (1.1,0.5) arc (10:50:0.8);
+        \node[monRouge, draw, circle, inner sep=1pt] at (1.3,0.9) {$+$};
+    \end{tikzpicture}
+\end{center}
+
+\noindent \textcolor{monRouge}{\underline{Définition :}} \\
+On munit le plan d'un cercle trigonométrique $(\mathcal{C})$ dans un repère $(O, \vec{i}, \vec{j})$. \\
+Soient $M \in (\mathcal{C})$ et $\alpha \in ]-\pi, \pi]$ tel que $\alpha = (\vec{i}, \overrightarrow{OM})$.
+
+\begin{center}
+    \begin{tikzpicture}[scale=2]
+        % Axes
+        \draw[->] (-1.2,0) -- (1.2,0);
+        \draw[->] (0,-1.2) -- (0,1.2);
+        
+        % Cercle
+        \draw[thick] (0,0) circle (1cm);
+        
+        % Point M et angle
+        \coordinate (M) at (50:1);
+        \draw[thick] (0,0) -- (M);
+        \node[above right] at (M) {$M$};
+        \draw[->, >=stealth] (0.3,0) arc (0:50:0.3);
+        \node at (25:0.45) {$\alpha$};
+        
+        % Projections (pointillés)
+        \draw[dashed] (M) -- ({cos(50)},0) node[below] {$\cos \alpha$};
+        \draw[dashed] (M) -- (0,{sin(50)}) node[left] {$\sin \alpha$};
+        
+        % Unités et Origine
+        \node[below left] at (0,0) {$0$};
+        \node[below right] at (1,0) {$1$};
+        \node[below left] at (-1,0) {$-1$};
+        \node[above left] at (0,1) {$1$};
+        \node[below left] at (0,-1) {$-1$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+    \item L'\textcolor{monRouge}{abscisse} du point $M$ dans $(O, \vec{i}, \vec{j})$ est appelée \textcolor{monRouge}{cosinus} de $\alpha$ et est notée \textcolor{monRouge}{$\cos \alpha$}.
+    \item L'\textcolor{monRouge}{ordonnée} du point $M$ dans $(O, \vec{i}, \vec{j})$ est appelée \textcolor{monRouge}{sinus} de $\alpha$ et est notée \textcolor{monRouge}{$\sin \alpha$}.
+\end{itemize}
+
+\noindent \textcolor{monRouge}{\underline{Remarque :}} \\
+Soit $\alpha \in ]-\pi, \pi]$. On appelle \textcolor{monRouge}{tangente} de $\alpha$ notée $\tan \alpha$ le réel défini par :
+\begin{center}
+    \color{monRouge} \fbox{$\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$}
+\end{center}
+
+\noindent $\tan \alpha$ existe ssi $\alpha \neq \dfrac{\pi}{2} + k\pi, k \in \mathbb{Z}$.
+
+\vspace{1.5em}
+
+\subsection*{%
+    \color{monRouge} \underline{b) Propriétés : conséquences de la définition}%
+}
+\vspace{1em}
+
+\noindent \textcolor{monRouge}{\underline{Propriété 1 :}} Pour tout réel $\alpha$, on a :
+\begin{itemize}
+    \item[i)] $\cos(\alpha + 2k\pi) = \cos \alpha, \quad k \in \mathbb{Z}$
+    \item[ii)] $\sin(\alpha + 2k\pi) = \sin \alpha, \quad k \in \mathbb{Z}$
+\end{itemize}
+
+\noindent \textcolor{monRouge}{\underline{Propriété 2 :}} Pour tout réel $\alpha$, on a :
+\begin{itemize}
+    \item[i)] $-1 \le \cos \alpha \le 1$
+    \item[ii)] $-1 \le \sin \alpha \le 1$
+\end{itemize}
+
+\vspace{1.5em}
+
+\noindent \textcolor{monRouge}{\underline{Propriété 3 :}} Pour tout réel $\alpha$, on a :
+\begin{center}
+    $\cos^2(\alpha) + \sin^2(\alpha) = 1$
+\end{center}
+
+
+\noindent \textcolor{monRouge}{\underline{Preuve :}}
+
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Axes
+        \draw (0,-1.2) -- (0,1.2);
+        \draw (-1.2,0) -- (1.2,0);
+        
+        % Cercle
+        \draw (0,0) circle (1cm);
+        
+        % Triangle OMN
+        \coordinate (O) at (0,0);
+        \coordinate (M) at (40:1);
+        \coordinate (N) at ({cos(40)},0);
+        
+        \draw[thick] (O) -- (M) -- (N) -- cycle;
+        
+        % Labels
+        \node[below left] at (O) {$O$};
+        \node[above right] at (M) {$M$};
+        \node[below] at (N) {$N$};
+        
+        % Angle alpha
+        \draw (0.3,0) arc (0:40:0.3);
+        \node at (20:0.45) {$\alpha$};
+        
+        % Angle droit
+        \draw (0.7,0) -- (0.7,0.06) -- ({cos(40)},0.06);
+    \end{tikzpicture}
+\end{center}
+
+\noindent Soit le triangle $OMN$ rectangle en $N$, d'après le théorème de Pythagore, on a :
+\[ ON^2 + MN^2 = OM^2 \]
+
+\noindent $\begin{cases} ON = \cos \alpha \\ MN = \sin \alpha \\ OM = 1 \end{cases}$
+
+\vspace{1em}
+
+\noindent Donc $\cos^2 \alpha + \sin^2 \alpha = 1$
+
+\noindent \textcolor{monRouge}{\underline{Exercice :}} \\
+Soit $\alpha \neq \dfrac{\pi}{2} + k\pi, \quad k \in \mathbb{Z}$
+
+\vspace{0.5em}
+
+\noindent Montrer que $1 + \tan^2 \alpha = \dfrac{1}{\cos^2 \alpha}$
+
+\vspace{1.5em}
+
+\subsection*{%
+    \color{monRouge} \underline{c) Étude du signe du cosinus et du sinus dans les 4 quadrants}%
+}
+\vspace{1em}
+
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Axes
+        \draw (0,-1.2) -- (0,1.2);
+        \draw (-1.2,0) -- (1.2,0);
+        
+        % Cercle
+        \draw[thick] (0,0) circle (1cm);
+        
+        % Labels des angles
+        \node[right] at (1,0) {$0 \text{ ou } 2\pi$};
+        \node[above] at (0,1) {$\frac{\pi}{2}$};
+        \node[left] at (-1,0) {$-\pi \text{ ou } \pi$};
+        \node[below] at (0,-1) {$-\frac{\pi}{2}$};
+    \end{tikzpicture}
+\end{center}
+
+
+\noindent Soit $\alpha \in ]-\pi, \pi]$.
+
+\begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=2, espcl=1.5]{$\alpha$ / .8, $\sin \alpha$ / .8, $\cos \alpha$ / .8}{$-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$}
+        \tkzTabLine{, -, z, -, z, +, z, +, }
+        \tkzTabLine{, -, z, +, z, +, z, -, }
+    \end{tikzpicture}
+\end{center}
+\vspace{1em}
+
+\begin{center}
+    \textcolor{monRouge}{\underline{\Large Application}}
+\end{center}
+
+\noindent \textbf{1)} Calculer $\cos x$, sachant que :
+\[ \sin x = \dfrac{\sqrt{3}}{2} \quad \text{et} \quad \dfrac{\pi}{2} < x < \pi \]
+
+\noindent \textbf{2)} Soit $x \in ]-\pi, 0[$ tel que : $\cos x = \dfrac{\sqrt{2}}{2}$. Déterminer la valeur de $\sin x$.
+
+\noindent \textbf{3)} On donne $\tan x = \sqrt{3}$, $x \in ]0, \pi/2[$. Déterminer $\sin x$ et $\cos x$.
+
+\begin{center}
+    \textcolor{monRouge}{\underline{Correction}}
+\end{center}
+
+\noindent \textbf{1) Calculons $\cos x$} \\
+On sait que $\cos^2 x + \sin^2 x = 1$ \\
+$\cos^2 x = 1 - \sin^2 x$ \\
+$\cos^2 x = 1 - \left( \dfrac{\sqrt{3}}{2} \right)^2$ \\
+$\cos^2 x = 1 - \dfrac{3}{4}$ \\
+$\cos^2 x = \dfrac{4-3}{4}$ \\
+$\cos^2 x = \dfrac{1}{4}$ \\
+$\cos x = \dfrac{1}{2} \quad \text{ou} \quad \cos x = -\dfrac{1}{2}$ \\
+or $x \in \left] \pi/2, \pi \right[ \quad \text{donc} \quad \cos x < 0$
+
+\vspace{1em}
+
+\begin{center}
+    \fbox{$\cos x = -\dfrac{1}{2}$}
+\end{center}
+\noindent \textbf{2) Déterminons la valeur de $\sin x$} \\
+On sait que : $\cos^2 x + \sin^2 x = 1 \implies \sin^2 x = 1 - \cos^2 x$
+
+\begin{align*}
+    \sin^2 x &= 1 - \left( \frac{\sqrt{2}}{2} \right)^2 \\
+    \sin^2 x &= 1 - \frac{2}{4} \\
+    \sin^2 x &= \frac{2}{4} \\
+    \sin x &= \frac{\sqrt{2}}{2} \quad \text{ou} \quad -\frac{\sqrt{2}}{2}
+\end{align*}
+
+\noindent Or $x \in ]-\pi, 0[$, donc $\sin x < 0$.
+
+\begin{center}
+    \fbox{$\sin x = -\dfrac{\sqrt{2}}{2}$}
+\end{center}
+
+\noindent \textbf{3) Déterminons $\sin x$ et $\cos x$} \\
+On a : $1 + \tan^2 x = \dfrac{1}{\cos^2 x} \implies \cos^2 x = \dfrac{1}{1 + \tan^2 x}$
+
+\begin{align*}
+    \cos^2 x &= \dfrac{1}{1 + (\sqrt{3})^2} \text{} \\
+    \cos^2 x &= \dfrac{1}{1 + 3} = \dfrac{1}{4} \text{} \\
+    \cos x &= \frac{1}{2} \quad \text{ou} \quad \cos x = -\frac{1}{2} \text{}
+\end{align*}
+
+\noindent Or $x \in ]0, \pi/2[ \implies \cos x > 0$
+
+\begin{center}
+    \fbox{$\cos x = \dfrac{1}{2}$} \text{}
+\end{center}
+
+\noindent $\tan x = \dfrac{\sin x}{\cos x} \implies \sin x = \cos x \times \tan x$ \\
+$\sin x = \frac{1}{2} \times \sqrt{3}$
+
+\begin{center}
+    \fbox{$\sin x = \dfrac{\sqrt{3}}{2}$} \text{}
+\end{center}
+
+\vspace{1.5em}
+
+\subsection*{%
+    \color{monRouge} \underline{d) Valeurs particulières de cosinus, sinus et tangente}%
+}
+\vspace{1em}
+
+\noindent Le tableau suivant indique les valeurs remarquables des lignes trigonométriques à retenir.
+
+\vspace{1em}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $\alpha$ & $0$ & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\pi$ \\
+        \hline
+        $\sin \alpha$ & $0$ & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & $1$ & $0$ \\
+        \hline
+        $\cos \alpha$ & $1$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & $0$ & $-1$ \\
+        \hline
+        $\tan \alpha$ & $0$ & $\frac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & \fcolorbox{black}{gray!30}{\phantom{X}} & $0$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\vspace{1.5em}
+
+\begin{center}
+    \textcolor{monRouge}{\underline{\Large Application}}
+\end{center}
+
+\noindent Calculer $\cos \left( \dfrac{97\pi}{4} \right)$ et $\sin \left( \dfrac{31\pi}{4} \right)$
+
+\vspace{0.5em}
+
+\begin{center}
+    \textcolor{monRouge}{\underline{Correction}}
+\end{center}
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+    $\dfrac{97\pi}{4} = \dfrac{\pi + 4 \times 24}{4}$ \\
+    $\dfrac{97\pi}{4} = \dfrac{\pi}{4} + \dfrac{4 \times 24}{4}$ \\
+    $\dfrac{97\pi}{4} = \dfrac{\pi}{4} + 24$ \\
+    $\cos \left( \dfrac{97\pi}{4} \right) = \cos \left( \dfrac{\pi}{4} + 24 \right)$ \\
+    \fbox{$\cos \left( \dfrac{97\pi}{4} \right) = \dfrac{\sqrt{2}}{2}$}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    $\dfrac{31\pi}{3} = \dfrac{\pi + 3 \times 10}{3}$ \\
+    $\dfrac{31\pi}{3} = \dfrac{\pi}{3} + 10$ \\
+    $\sin \left( \dfrac{31\pi}{3} \right) = \sin \left( \dfrac{\pi}{3} + 10 \right)$ \\
+    \fbox{$\sin \left( \dfrac{31\pi}{3} \right) = \dfrac{\sqrt{3}}{2}$}
+\end{minipage}
+
+\vspace{1.5em}
+
+\subsection*{%
+    \color{monRouge} \underline{2)Angles associés}%
+}
+\subsection*{%
+    \color{monRouge} \underline{a) Angles opposés}%
+}
+\vspace{1em}
+\begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Axes
+        \draw (0,-1.2) -- (0,1.2);
+        \draw (-1.2,0) -- (1.2,0);
+        % Cercle
+        \draw (0,0) circle (1cm);
+        % Points alpha et -alpha
+        \coordinate (A) at (40:1);
+        \coordinate (B) at (-40:1);
+        \draw (0,0) -- (A) node[right] {$\alpha$};
+        \draw (0,0) -- (B) node[right] {$-\alpha$};
+        % Projections
+        \draw[dashed] (A) -- ({cos(40)},0);
+        \draw[dashed] (B) -- ({cos(40)},0);
+        \draw[dashed] (A) -- (0,{sin(40)});
+        \draw[dashed] (B) -- (0,{sin(-40)});
+    \end{tikzpicture}
+\end{center}
+
+\textcolor{monRouge}{$\cos(-\alpha) = \cos(\alpha)$}
+
+\textcolor{monRouge}{$\sin(-\alpha) = -\sin(\alpha)$}
 \end{document}
