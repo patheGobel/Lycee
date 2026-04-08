@@ -1,0 +1,420 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%\usepackage[margin=2cm]{geometry}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage{enumitem}
+%---------------------------------------
+% Définir un compteur pour les exemples
+\newcounter{exemple}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
+}
+%---------------------------------------
+\newcounter{solution}
+
+% Définir la commande \solutione pour afficher un solution numéroté
+\newcommand{\solution}{%
+  \refstepcounter{solution}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
+}
+%---------------------------------------
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Définir un compteur pour les exercices d'application
+\newcounter{exerciceapp}
+
+% Définir la commande pour afficher un exercice d'application numéroté
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les exercices d'application
+\newcounter{correction}
+
+% Définir la commande pour afficher un correction exercice d'application numéroté
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les remarque d'application
+\newcounter{remarque}
+
+%----------------------------------------
+\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
+% Définir la commande pour afficher un remarque numéroté
+\newcommand{\remarque}{%
+  \refstepcounter{remarque}%
+  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
+}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Répérage}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 2ndS}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\begin{center}
+    \fbox{
+        \Large \textbf{Chapitre : Repérage Cartésien et Droite du Plan}
+    }
+\end{center}
+
+\vspace{0.5cm}
+
+\section*{\centering \underline{I- Repérage cartésien}}
+
+\subsection*{\centering \underline{\sffamily 1- Repérage sur une droite}}
+
+\subsubsection*{\centering \underline{a) Définition}}
+
+Un repère sur une droite $(D)$ est un bipoint $(O, I)$ de $(D)$ tq $O \neq I$. \\
+La distance $OI$ est l'unité de mesure sur $(D)$. \\
+Le vecteur $\vec{i} = \overrightarrow{OI}$ est le vecteur directeur de $(D)$.
+
+\vspace{0.5cm}
+
+% Représentation simplifiée de la figure
+\begin{center}
+    \begin{picture}(100,20)
+        \line(1,0){100} % La droite (D)
+        \put(90,5){$(D)$}
+        
+        \put(30,0){$\times$}
+        \put(30,-10){$O$}
+        
+        \put(70,0){$\times$}
+        \put(70,-10){$I$}
+    \end{picture}
+\end{center}
+\subsubsection*{b) \underline{\color{red}Abscisse d'un point}}
+
+Soit $(D)$ une droite de vecteur directeur $\vec{i}$ et $O$ un point de $(D)$.
+
+\begin{figure}[h] % [h] pour "here" (ici)
+    \centering % Pour centrer l'image
+    \includegraphics[width=0.8\textwidth]{Screenshot from 2026-03-15 18-51-35} 
+    \caption{Description de l'image} % La légende
+    \label{fig:mon_image} % Pour faire des renvois dans le texte
+\end{figure}
+
+Pour tout point $M \in (D)$ les vecteurs $\overrightarrow{OM}$ et $\vec{i}$ sont colinéaires. Alors il existe un unique réel $x$ tel que $\overrightarrow{OM} = x\vec{i}$.
+
+\begin{itemize}
+    \item[\color{red}*] $(O, \vec{i})$ est un repère de $(D)$ d'origine $O$.
+    \item[\color{red}*] $x$ est l'abscisse du point $M$ sur $(O, \vec{i})$ noté souvent $x_M$.
+\end{itemize}
+
+\subsection*{\centering \underline{\color{red}2- Mesure algébrique}}
+
+\subsubsection*{\centering \underline{a) Définition}}
+
+Soit $(D)$ une droite de repère $(O, \vec{i})$, $A$ et $B$ deux points de $(D)$.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+    % La droite (D)
+    \draw[thick] (-1,0) -- (5,0);
+    
+    % Point A
+    \node at (0,0) {$\times$};
+    \node[anchor=south] at (0, 0.1) {$A$};
+    
+    % Point O
+    \node at (1,0) {$\times$};
+    \node[anchor=south] at (1, 0.1) {$O$};
+
+    % Le vecteur i (flèche noire surmontée de i)
+    \draw[->, >=latex, thick] (1,0) -- (2,0);
+    \node[anchor=south] at (1.5, 0.1) {$\vec{i}$};
+    
+    % Point B
+    \node at (3,0) {$\times$};
+    \node[anchor=south] at (3, 0.1) {$B$};
+    
+    % Label (D)
+    \node[anchor=south] at (4, 0.1) {$(D)$};
+\end{tikzpicture}
+\end{center}
+
+Les vecteurs $\overrightarrow{AB}$ et $\vec{i}$ sont colinéaires donc il existe un réel $K$ tel que $\overrightarrow{AB} = K\vec{i}$.
+
+Le réel $K$ est appelé mesure algébrique du vecteur $\overrightarrow{AB}$ relativement à $\vec{i}$.
+
+\subsubsection*{\centering \underline{\color{red}b) Notation}}
+
+La mesure algébrique du vecteur $\overrightarrow{AB}$ est notée $\overline{AB}$ ($K = \overline{AB}$).
+
+D'où $\overrightarrow{AB} = \overline{AB} \ \vec{i}$ et par conséquent, on a les propriétés suivantes.
+
+\subsubsection*{\centering \underline{\color{red}c) Propriétés}}
+
+\begin{itemize}
+    \item[\color{red} i)] $|\overline{AB}| = AB$
+    \item[\color{red} ii)] $\overline{BA} = -\overline{AB}$
+    \item[\color{red} iii)] Lorsque $A \neq B$, on a :
+    \[ \overline{AB} = \begin{cases} AB & \text{si } \overrightarrow{AB} \text{ et } \vec{i} \text{ sont colinéaires} \\ \text{ou} \\ -AB & \text{si } \overrightarrow{AB} \text{ et } \vec{i} \text{ sont de sens contraire} \end{cases} \]
+    \item[\color{red} iv)] $\overline{AB} = 0 \iff A = B$
+    \item[\color{red} v)] Pour tout $\lambda \in \mathbb{R}$, $\overrightarrow{AB} = \lambda \overrightarrow{AC} \iff \overline{AB} = \lambda \overline{AC}$
+    \item[\color{red} vi)] $\overline{AC} = \overline{AB} + \overline{BC}$ (Relation de Chasles)
+    \item[\color{red} vii)] $\overline{AB} = x_B - x_A$
+\end{itemize}
+
+\noindent \underline{\textbf{\color{red}Remarque :}} \\
+Si $(O, I)$ est un repère axial d'une droite $(D)$ alors pour tout point $M \in (D)$, on a :
+\[ x_M = \frac{\overline{OM}}{\overline{OI}} \]
+
+\noindent \underline{\textbf{Exemple :}}
+
+\begin{center}
+\begin{tikzpicture}[x=1.5cm, y=1cm]
+    % Axe horizontal
+    \draw[thick] (-3.5,0) -- (3.5,0);
+    
+    % Graduations et nombres
+    \foreach \x in {-3,-2,-1,0,1,2,3} {
+        \draw[thick] (\x,0.1) -- (\x,-0.1);
+        \node[below] at (\x,-0.1) {$\x$};
+    }
+    
+    % Points avec leurs labels au-dessus
+    \node[anchor=south] at (-2, 0.2) {$D$};
+    \node[anchor=south] at (-1, 0.2) {$C$};
+    \node[anchor=south] at (0, 0.2) {$O$};
+    \node at (0,0) {$\times$}; % O est marqué par une croix
+    \node[anchor=south] at (1, 0.2) {$I$};
+    \node[anchor=south] at (2, 0.2) {$A$};
+    \node[anchor=south] at (3, 0.2) {$B$};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+
+Dans le repère $(O, I)$ : $x_M = \dfrac{\overline{OM}}{\overline{OI}} \quad \forall M \in (D)$
+
+\medskip
+
+$x_A = \dfrac{\overline{OA}}{\overline{OI}} = \dfrac{2}{1} = 2$
+
+\smallskip
+
+$x_D = \dfrac{\overline{OD}}{\overline{OI}} = \dfrac{-2}{1} = -2$
+
+\medskip
+
+Dans le repère $(A, B)$ : $x_M = \dfrac{\overline{AM}}{\overline{AB}} \quad \forall M \in (D)$
+
+\medskip
+
+$x_A = \dfrac{\overline{AA}}{\overline{AB}} = \dfrac{0}{\overline{AB}} = 0$
+
+\smallskip
+
+$x_B = \dfrac{\overline{AB}}{\overline{AB}} = 1$
+
+\smallskip
+
+$x_D = \dfrac{\overline{AD}}{\overline{AB}} = \dfrac{x_D - x_A}{x_B - x_A} = \dfrac{-2 - 2}{3 - 2} = -4$
+
+% --- Chapitre : Repérage Cartésien et Droite du Plan ---
+\begin{center}
+    \setlength{\fboxsep}{10pt}
+    \fbox{\huge \textbf{Chapitre : Repérage Cartésien et Droite du Plan}}
+\end{center}
+
+\section*{\centering \underline{I- Repérage cartésien}}
+\subsection*{\centering \underline{1- Repérage sur une droite}}
+
+\subsubsection*{\centering \underline{a) Définition}}
+
+Un repère sur une droite $(D)$ est un bipoint $(O, I)$ de $(D)$ tq $O \neq I$. \\
+La distance $OI$ est l'unité de mesure sur $(D)$. \\
+Le vecteur $\vec{i} = \overrightarrow{OI}$ est le vecteur directeur de $(D)$.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+    % Droite (D)
+    \draw[thick] (-1,0) -- (3,0);
+    \node[anchor=south] at (2.5, 0.1) {$(D)$};
+    
+    % Point O
+    \node at (0,0) {$\times$};
+    \node[anchor=north] at (0, -0.1) {$O$};
+    
+    % Point I
+    \node at (1.5,0) {$\times$};
+    \node[anchor=north] at (1.5, -0.1) {$I$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{1cm}
+
+% --- 3- Version algébrique du Théorème de Thalès ---
+\section*{\centering \underline{\color{red}3- Version algébrique du Théorème de Thalès et sa réciproque}}
+
+\subsubsection*{\centering \underline{\color{red}a) Théorème de Thalès}}
+
+Soit $ABC$ un triangle, $M$ un point de $(AB)$ et $N$ un point de $(AC)$. \\
+Si $(MN) // (BC)$ alors $\dfrac{\overline{AM}}{\overline{AB}} = \dfrac{\overline{AN}}{\overline{AC}} = \dfrac{\overline{MN}}{\overline{BC}}$
+
+\subsubsection*{\centering \underline{\color{red}b) Propriété réciproque}}
+
+Soit $ABC$ un triangle, $M$ un point de $(AB)$ et $N$ un point de $(AC)$. \\
+Si $\dfrac{\overline{AM}}{\overline{AB}} = \dfrac{\overline{AN}}{\overline{AC}}$ alors $(MN) // (BC)$
+
+\subsubsection*{\centering \underline{\color{red} 4) Base du plan vectoriel}}
+\subsubsection*{\centering \underline{\color{red} a) Définition}}
+
+\vspace{0.3cm}
+
+On appelle \textbf{base du plan vectoriel} tout couple {\color{red} $(\vec{i}, \vec{j})$} de vecteurs non colinéaires.
+
+\vspace{0.2cm}
+
+{\color{red} En particulier :}
+\begin{itemize}
+    \item[\color{red} i)] La base {\color{red} $(\vec{i}, \vec{j})$} est dite \textbf{base orthogonale} ssi {\color{red} $\vec{i} \perp \vec{j}$}
+    \item[\color{red} ii)] La base {\color{red} $(\vec{i}, \vec{j})$} est dite \textbf{base orthonormale} (ou base orthonormé) ssi {\color{red} $\vec{i} \perp \vec{j}$} et {\color{red} $\|\vec{i}\| = \|\vec{j}\| = 1$}
+\end{itemize}
+
+\subsubsection*{\centering \underline{\color{red} Exemple :}}
+
+Soit $ABC$ un triangle rectangle en $A$.
+
+% Pour le triangle, tu peux utiliser l'environnement picture ou tikz si nécessaire
+\begin{center}
+    % [Schéma du triangle rectangle ABC ici]
+\end{center}
+
+{\color{red}$(\vec{BA}, \vec{BC})$} est une base car $\vec{BA}$ et $\vec{BC}$ sont non colinéaires. \\
+{\color{red}$(\vec{AB}, \vec{AC})$} est une base orthogonale car {\color{red}$\vec{AB} \perp \vec{AC}$}.
+
+\vspace{0.5cm}
+
+\subsubsection*{\centering \underline{\color{red} b) Coordonnées d'un vecteur}}
+
+Soit {\color{red}$(\vec{i}, \vec{j})$} une base du plan vectoriel. Pour tout vecteur {\color{red}$\vec{u}$} du plan, il existe un unique couple {\color{red}$(x, y)$} de réels tels que {\color{red}$\vec{u} = x\vec{i} + y\vec{j}$}.
+
+Les réels {\color{red}$x$} et {\color{red}$y$} sont les coordonnées du vecteur {\color{red}$\vec{u}$} dans la base {\color{red}$(\vec{i}, \vec{j})$} et on note {\color{red}$\vec{u} \begin{pmatrix} x \\ y \end{pmatrix}$} (ou bien {\color{red}$\vec{u}(x, y)$}).
+
+\subsubsection*{\centering \underline{\color{red} c) Condition de colinéarité}}
+\subsubsection*{\centering \underline{\color{red} Définition}}
+
+\vspace{0.3cm}
+
+Soient {\color{red}$\vec{u} \begin{pmatrix} x \\ y \end{pmatrix}$} et {\color{red}$\vec{v} \begin{pmatrix} x' \\ y' \end{pmatrix}$} deux vecteurs du plan. On appelle déterminant de {\color{red}$(\vec{u}, \vec{v})$} noté {\color{red}$det(\vec{u}, \vec{v})$}, le réel défini par :
+
+\vspace{0.2cm}
+
+{\color{red} $det(\vec{u}, \vec{v}) = \begin{vmatrix} x & x' \\ y & y' \end{vmatrix} = xy' - x'y$}
+
+\subsubsection*{\centering \underline{\color{red} Propriété :}}
+
+Deux vecteurs {\color{red}$\vec{u} \begin{pmatrix} x \\ y \end{pmatrix}$} et {\color{red}$\vec{v} \begin{pmatrix} x' \\ y' \end{pmatrix}$} sont colinéaires \\
+ssi {\color{red}$det(\vec{u}, \vec{v}) = 0$} \\
+ssi {\color{red}$xy' - x'y = 0$}
+
+\vspace{0.3cm}
+
+\textbf{\underline{\exerciceapp}}
+
+Soit {\color{red}$(\vec{i}, \vec{j})$} une base du plan vectoriel. On considère les vecteurs {\color{red}$\vec{u}$} et {\color{red}$\vec{v}$} définis par :
+\begin{center}
+    {\color{red}$\vec{u} = 2\vec{i} - \vec{j}$} et {\color{red}$\vec{v} = \vec{i} + 3\vec{j}$}
+\end{center}
+
+1-a) Montrer que {\color{red}$(\vec{u}, \vec{v})$} est une base. \\
+b) Exprimer {\color{red}$\vec{i}$} et {\color{red}$\vec{j}$} en fonction de {\color{red}$\vec{u}$} et {\color{red}$\vec{v}$} puis donner les coordonnées de {\color{red}$\vec{i}$} et {\color{red}$\vec{j}$} dans la base {\color{red}$(\vec{u}, \vec{v})$}.
+
+2) Soit {\color{red}$\vec{w}$} de coordonnées {\color{red}$(x, y)$} dans la base {\color{red}$(\vec{u}, \vec{v})$}. Déterminer les coordonnées de {\color{red}$\vec{w}$} dans la base {\color{red}$(\vec{i}, \vec{j})$}.
+
+3) Soit {\color{red}$\vec{n} = \alpha\vec{i} + \beta\vec{j}$}, où {\color{red}$\alpha, \beta \in \mathbb{R}$}. \\
+Déterminer les coordonnées de {\color{red}$\vec{n}$} dans la base {\color{red}$(\vec{u}, \vec{v})$}.
+
+4) Application : Soit $P$ de coordonnées {\color{red}$(-1, 3)$}. \\
+Déterminer les coordonnées de $P$ dans {\color{red}$(\vec{u}, \vec{v})$}.
+
+\subsubsection*{\centering \underline{\color{red} 5) Repère du plan}}
+\subsubsection*{\centering \underline{\color{red} a) Définition}}
+
+\vspace{0.3cm}
+
+On appelle repère cartésien du plan tout triplet {\color{red}$(O, \vec{i}, \vec{j})$} tel que {\color{red}$O$} est un point et {\color{red}$(\vec{i}, \vec{j})$} est une base. \\
+Le point {\color{red}$O$} est appelé origine du repère.
+
+\vspace{0.2cm}
+
+{\color{red} En particulier :}
+\begin{itemize}
+    \item[\color{red} i)] Le repère {\color{red}$(O, \vec{i}, \vec{j})$} est dit orthogonal ssi la base {\color{red}$(\vec{i}, \vec{j})$} est orthogonale ({\color{red}$\vec{i} \perp \vec{j}$}).
+    \item[\color{red} ii)] Le repère {\color{red}$(O, \vec{i}, \vec{j})$} est dit orthonormé ou orthonormal ssi la base {\color{red}$(\vec{i}, \vec{j})$} est orthogonale ({\color{red}$\vec{i} \perp \vec{j}$}) et {\color{red}$\|\vec{i}\| = \|\vec{j}\| = 1$}.
+\end{itemize}
+
+\textbf{\underline{\exemple}}
+
+
+
+\textbf{\underline{\solution}}        
+        
+
+
+\textbf{\underline{\exerciceapp}}
+
+\textbf{\underline{\correction}}
+
+\end{document}
