@@ -1,10 +1,42 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
 \usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{tkz-tab}
@@ -22,17 +54,17 @@
 \definecolor{monRouge}{RGB}{180, 0, 0}
 
 \begin{document}
-
-% Le texte par défaut est en noir
-
-% --- TITRE PRINCIPAL ---
+% En-tête personnalisée
 \begin{center}
-    \color{monRouge}
-    \begin{tabular}{|c|}
-        \hline
-        \Large \bfseries Chapitre : Angles orientés et trigonométrie \\
-        \hline
-    \end{tabular}
+    \Large\textbf{\underline{\textcolor{red}{Trigonométrie}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 2ndS}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\begin{center}
+    \fbox{
+        \Large \textbf{Chapitre : Angles orientés et trigonométrie}
+    }
 \end{center}
 
 \vspace{1.5em}
