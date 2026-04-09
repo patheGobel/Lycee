@@ -1,11 +1,58 @@
-\documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{verbatim} % INDISPENSABLE pour l'environnement comment
+\usepackage{yhmath}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{graphicx}
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usetikzlibrary{angles,quotes,arrows.meta}
+% Définition du rouge pour les titres et soulignements
+\definecolor{monRouge}{RGB}{180, 0, 0}
+
 \usepackage{graphicx}
 \usetikzlibrary{trees} % Nécessaire pour l'arbre
 \usetikzlibrary{shapes.geometric, positioning}
@@ -16,8 +63,18 @@
 \newcommand{\coche}{{\color{red}\ding{51}}}
 \newcommand{\croix}{{\color{red}\ding{55}}}
 \begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Dénombrement}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 2ndS}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
 
-\section*{\underline{Dénombrement}}
+\begin{center}
+    \fbox{
+        \Large \textbf{Chapitre : Dénombrement}
+    }
+\end{center}
 
 \subsection*{I) Cardinal d'un ensemble fini}
 
