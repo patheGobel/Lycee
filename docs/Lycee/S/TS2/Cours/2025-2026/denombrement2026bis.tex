@@ -49,6 +49,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usetikzlibrary{shapes.geometric, positioning}
 \usepackage{tabularx}
 \usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 \usetikzlibrary{angles,quotes,arrows.meta}
 % Définition du rouge pour les titres et soulignements
 \definecolor{monRouge}{RGB}{180, 0, 0}
@@ -58,10 +59,19 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usetikzlibrary{shapes.geometric, positioning}
 \usepackage{tabularx}
 \usepackage{pifont} % Pour les symboles de coches et croix
-
+\usepackage{enumitem}
+\usepackage{makecell}
 % Définition des symboles du tableau
 \newcommand{\coche}{{\color{red}\ding{51}}}
 \newcommand{\croix}{{\color{red}\ding{55}}}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
 \begin{document}
 % En-tête personnalisée
 \begin{center}
@@ -76,9 +86,9 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
     }
 \end{center}
 
-\subsection*{I) Cardinal d'un ensemble fini}
+\section*{\color{red}{I) Cardinal d'un ensemble fini}}
 
-\subsubsection*{1) Définition}
+\subsection*{\color{red}{1) Définition}}
 \fbox{
 \begin{minipage}{0.5\textwidth}
 Soit $E$ un ensemble fini non vide. Le cardinal de $E$ est le nombre d'éléments contenus dans $E$. \\
@@ -92,19 +102,19 @@ On le note : {\color{red} $Card(E)$}
     \item $card D_{14} = 4$ ; $\dots$
 \end{itemize}
 
-\subsubsection*{2) Remarques}
+\subsubsection*{\color{red}{2) Remarques}}
 \begin{itemize}
     \item $card \emptyset = 0$
     \item $A \subset B \implies card A \leqslant card B$
 \end{itemize}
 
-\subsubsection*{3) Résultat}
+\subsubsection*{\color{red}{3) Résultat}}
 $A, B$ ensembles finis \\
 {\Large $card(A \cup B) = {\color{red} card A + card B - card(A \cap B)}$}
 
 \vspace{2cm}
 
-\section*{\underline{Exercice}}
+\subsubsection*{\underline{\color{red}{Exercice}}}
 
 Lors d'un sondage chez 100 ouvriers dans une usine concernant la lecture de deux Revues $A$ et $B$ ; On a eu les résultats suivants :
 \begin{itemize}
@@ -114,13 +124,15 @@ Lors d'un sondage chez 100 ouvriers dans une usine concernant la lecture de deux
 \end{itemize}
 
 Quel est le nombre des ouvriers qui ne lisent aucune des deux Revues ?
-
+\subsubsection*{\underline{\color{red}{Solution (Indications)}}}
 % ... dans le corps du texte :
+\begin{comment}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{Screenshot from 2026-04-04 22-06-17.png}
     \caption{Diagramme de Venn du cours}
 \end{figure}
+\end{comment}
 
 \begin{tikzpicture}[thick, scale=1.2]
     % 1. L'ensemble E (le contour extérieur)
@@ -149,7 +161,7 @@ Quel est le nombre des ouvriers qui ne lisent aucune des deux Revues ?
 
 \end{tikzpicture}
 
-\subsection*{II)Principe fondamentale du dénombrement (Principe multiplicatif)}
+\section*{\color{red}{II)Principe fondamentale du dénombrement (Principe multiplicatif)}}
 
 \noindent
 \textcircled{1} \underline{Exemple 1} : On lance dans l'air une pièce de monnaie 3 fois successives. \\
@@ -263,7 +275,7 @@ Quel est le nombre total de \color{red}\underline{\color{black}nombres pairs} \c
 
 \vspace{1em}
 
-\section*{\underline{Exercice}}
+\subsubsection*{\underline{\color{red}{Exercice}}}
 
 On lance dans l'air une pièce de monnaie puis un dé cubique puis un dé tétraédrique.
 
@@ -322,7 +334,7 @@ On lance dans l'air une pièce de monnaie puis un dé cubique puis un dé tétra
 \hrule
 \vspace{1em}
 
-\section*{\underline{Solution (Indications)}}
+\subsubsection*{\underline{\color{red}{Solution (Indications)}}}
 
 \begin{enumerate}
     \item \textbf{Nombre total} : 
@@ -341,7 +353,7 @@ On lance dans l'air une pièce de monnaie puis un dé cubique puis un dé tétra
 \hrule
 \vspace{1em}
 
-\noindent \textbf{Solution :}
+\noindent \textbf{\color{red}{Solution} :}
 \begin{enumerate}
     \item Selon le principe multiplicatif : $2 \times 6 \times 4 = \mathbf{48}$ cas possibles.
     \item Pour le dé tétraédrique, il y a deux situations :
@@ -392,7 +404,7 @@ On lance dans l'air une pièce de monnaie puis un dé cubique puis un dé tétra
     &= 24 + 18 = \underline{\underline{42}}
 \end{align*}
 
-\section*{\underline{III) Modèles de dénombrements :}}
+\section*{\underline{\color{red}{III) Modèles de dénombrements :}}}
 
 \begin{small}
 \renewcommand{\arraystretch}{2.5}
@@ -408,4 +420,43 @@ On lance dans l'air une pièce de monnaie puis un dé cubique puis un dé tétra
 \hline
 \end{tabularx}
 \end{small}
+
+\subsubsection*{\underline{\color{red}{Dénombrement - Applications}}}
+
+Soit l'urne contenant: 4 boules noires, 3 boules vertes et 2 boules rouges.
+
+
+On tire 4 boules de l'urne. Déterminer le nombre de cas où l'on obtient :
+
+\begin{enumerate}
+    \item Exactement une verte parmi les boules tirées.
+    \item Au moins deux vertes parmi les boules tirées.
+    \item Au plus une rouge parmi les boules tirées.
+    \item Aucune boule noire.
+    \item Une rouge puis deux noires puis une verte.
+\end{enumerate}
+
+\subsubsection*{\underline{\color{red}{Solution}}}
+
+\renewcommand{\arraystretch}{2} % Pour aérer un peu les lignes du tableau
+
+\raggedright
+\begin{tabular}{|p{6cm}|p{6cm}|p{5cm}|}
+\hline
+\textbf{Simultané} & \textbf{Successif sans remise} & \textbf{Successif avec remise}\\
+\hline
+\makecell[l]{\textbf{1)} il faut tirer : $V \ \overline{V} \ \overline{V} \ \overline{V}$\\ le nombre demandé est :$C_3^1 \times C_6^3 $} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ A_3^1 \times A_6^3 \times \color{red} C_4^1 \times C_3^3$} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^1 \times 6^3 \times \color{red} C_4^1 \times C_3^3 $} \\
+\hline
+\makecell[l]{\textbf{2)} il faut tirer :\\ $V V \overline{V} \overline{V} \text{ ou } V V V \overline{V}$\\ le nombre demandé est :\\$ C_3^2 \times C_6^2 + C_3^3 C_6^1 $} & \makecell[l]{\textbf{2)} il faut tirer : $V V \overline{V} \ \overline{V} \text{ ou } V V V \overline{V}$\\ en tenant compte de l'ordre.\\ le nombre demandé est :\\$ A_3^2 \times A_6^2 \times \color{red} C_4^2 \times C_2^2 \color{black} +$ \\$ A_3^3 \times A_6^1 \times \color{red} C_4^3 \times C_1^1 $} & \makecell[l]{\textbf{2)} il faut tirer :\\$ V V V V \text{ ou } V V V \overline{V} \text{ ou }$\\$ V V \overline{V} \ \overline{V} $\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^4 + 3^3 \times 6^1 \times \color{red} C_4^3 \times C_1^1 \color{black} + $\\$3^2 \times 6^2 \times \color{red} C_4^2 \times C_2^2$} \\
+\hline
+\makecell[l]{\textbf{3)} il faut tirer :\\ $R \overline{R} \ \overline{R} \ \overline{R} \text{ ou } \overline{R} \ \overline{R} \ \overline{R} \ \overline{R}$\\ le nombre demandé est :\\$ C_2^1 \times C_7^3 + C_7^4 $} & \makecell[l]{\textbf{3)} il faut tirer :\\ $R \overline{R} \ \overline{R} \ \overline{R} \text{ ou } \overline{R} \overline{R} \ \overline{R} \ \overline{R}$\\ en tenant compte de l'ordre.\\ le nombre demandé est :\\$ A_2^1 \times A_7^3 \times \color{red} C_4^1 \times C_3^3 \color{black} + A_7^4$} & \makecell[l]{\textbf{2)} il faut tirer :\\$ R \overline{R} \ \overline{R} \overline{R} \text{ ou } \overline{R} \ \overline{R} \ \overline{R} \ \overline{R} $\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 2^1 \times 7^3 \times \color{red} C_4^1 \times C_3^3 \color{black} + 7^4$} \\
+\hline
+\makecell[l]{\textbf{4)} il faut tirer : $ \overline{N} \ \overline{N} \ \overline{N} \ \overline{N} $\\ le nombre demandé est :$ C_5^4 $} & \makecell[l]{\textbf{4)} il faut tirer : $ \overline{ N} \ \overline{ N} \overline{ N} \ \overline{ N} $\\ le nombre demandé est : $ A_5^4 $} & \makecell[l]{\textbf{4)} il faut tirer : $ \overline{N} \ \overline{N} \ \overline{N} \ \overline{N} $\\ le nombre demandé est : $ 5^4 $} \\
+\hline
+\makecell[l]{\textbf{5)} \color{red}{IMPOSSIBLE} } & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \overline{N} \ \overline{V} $\\ le nombre demandé est :\\ $ A_2^1 \times A_4^2 \times A_3^1 $} & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \ \overline{N} \ \overline{V} $\\ le nombre demandé est :\\ $ 2^1 \times 4^2 \times 3^1 $} \\
+\hline
+\end{tabular}
+\href{https://youtu.be/qFJ1n8jrv64?si=MjvJm_fOW7me83Bt}{Partie 1}
+
+\href{https://youtu.be/5J5j-lTfKF8?si=hcWnDxxaoGrN18Kd}{Coefficient d'ordre}
 \end{document}
