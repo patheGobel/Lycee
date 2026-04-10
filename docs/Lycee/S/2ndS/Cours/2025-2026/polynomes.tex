@@ -1,0 +1,298 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{verbatim} % INDISPENSABLE pour l'environnement comment
+\usepackage{yhmath}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{graphicx}
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+\usetikzlibrary{angles,quotes,arrows.meta}
+% Définition du rouge pour les titres et soulignements
+\definecolor{monRouge}{RGB}{180, 0, 0}
+
+\usepackage{graphicx}
+\usetikzlibrary{trees} % Nécessaire pour l'arbre
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{enumitem}
+\usepackage{makecell}
+% Définition des symboles du tableau
+\newcommand{\coche}{{\color{red}\ding{51}}}
+\newcommand{\croix}{{\color{red}\ding{55}}}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Polynôme}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 2ndS}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\begin{center}
+    \fbox{
+        \Large \textbf{Chapitre 4 : Polynôme et Fraction Rationnelle}
+    }
+\end{center}
+
+\vspace{1.5em}
+
+% --- SECTION I ---
+\section*{%
+    \color{red}I - \underline{Polynôme}%
+}
+
+% --- SUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{1 - Définitions}%
+}
+
+% --- SUBSUBSECTION a) ---
+\subsubsection*{%
+    \color{red} \underline{a) }%
+}
+
+% --- DÉFINITION ---
+\textbf{\underline{\textcolor{red}{Définition 1 :}}}
+
+On appelle \textbf{\textcolor{red}{monôme}} à variable $x$ toute expression qui s'écrit sous la forme $a_n x^n$ où $n \in \mathbb{N}$, $a_n \in \mathbb{R}$.
+
+\begin{itemize}
+    \item $a_n$ est appelé le \textbf{\textcolor{red}{coefficient}} du monôme.
+    \item $n$ est appelé \textbf{\textcolor{red}{degré}} du monôme si $a_n \neq 0$.
+\end{itemize}
+
+\textbf{\underline{\textcolor{red}{Exemples :}}}
+\begin{enumerate}
+    \item $2x^8 : n = 8$ et $a_8 = 2$ \\
+    $2x^8$ est un monôme de degré $8$ et de coefficient $2$.
+    
+    \item $-5x^4 : n = 4$ et $a_4 = -5$ \\
+    $-5x^4$ est un monôme de degré $4$ et de coefficient $-5$.
+\end{enumerate}
+
+\textbf{\underline{\textcolor{red}{Remarque :}}} \\
+Toute constante $C \neq 0$ est un monôme de degré $0$. En effet, si $C$ est une constante, alors $C = C \cdot x^0$ ($x \neq 0$). \\
+\textbf{\underline{\textcolor{red}{Exemple :}}} $5, 4, 8$ sont des monômes de degré $0$.
+
+\vspace{0.5cm}
+
+\textbf{\underline{\textcolor{red}{Définition 2 :}}} 
+
+Soit $n \in \mathbb{N}$ \\
+On appelle \textbf{\textcolor{red}{polynôme}} (somme de plusieurs monômes) de degré $n$, toute expression qui s'écrit sous la forme :
+\[ \textcolor{red}{a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0} \]
+où \textcolor{red}{$a_n, a_{n-1}, \dots, a_1, a_0$} sont des réels appelés \textbf{\textcolor{red}{coefficients}} du polynôme avec $a_n \neq 0$.
+
+\textbf{\underline{\textcolor{red}{Exemples :}}}
+
+\begin{enumerate}
+    \item $P(x) = 3x^2 + 4x + 8$ : \\
+    $n = 2$, $a_2 = 3$, $a_1 = 4$, $a_0 = 8$ \\
+    $P$ est un polynôme de degré $2$.
+    
+    \item $Q(x) = -5x^6 + 4x^4 + x + 4$ \\
+    $n = 6$, $a_6 = -5$, $a_5 = 0$, $a_4 = 4$, $a_3 = 0$, $a_2 = 0$, $a_1 = 1$, $a_0 = 4$ \\
+    $Q$ est un polynôme de degré $6$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{\underline{\textcolor{red}{Définition 3 :}}} 
+
+Un polynôme est dit \textbf{\textcolor{red}{nul}} lorsque tous ses coefficients sont nuls.
+
+\textbf{\underline{\textcolor{red}{Notation :}}}
+
+\begin{itemize}
+    \item[i)] Si $P$ est un polynôme, on note son degré par \textcolor{red}{$d^{\circ}p$} ou \textcolor{red}{$\deg(p)$}.
+    \item[ii)] Le polynôme nul est noté $0$ tel que : \\
+    \textcolor{red}{$\deg(0) = -\infty$} (Par convention).
+\end{itemize}
+
+% --- SUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{2 - Égalités de deux polynômes}%
+}
+
+\textbf{\underline{\textcolor{red}{Théorème :}}} Deux polynômes $P$ et $Q$ sont \textcolor{red}{égaux} ssi :
+\begin{itemize}
+    \item[i)] $\deg(P) = \deg(Q)$
+    \item[ii)] Les coefficients des monômes de même degré de $P$ et $Q$ sont \textcolor{red}{égaux}.
+\end{itemize}
+
+\textbf{\underline{\textcolor{red}{Preuve :}}} T.P.E (Travail Personnel de l'Élève)
+
+\vspace{0.5cm}
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Application}}}
+\end{center}
+
+Soit $P(x) = 2x^3 - 5x^2 + x + 2$ \\
+et $Q(x) = (x - 2)(ax^2 + bx + c)$
+
+\begin{enumerate}
+    \item Développer, réduire et ordonner $Q(x)$.
+    \item Déterminer les réels $a, b$ et $c$ pour que l'on ait $P(x) = Q(x)$ pour tout réel $x$.
+\end{enumerate}
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Correction}}}
+\end{center}
+
+\textbf{1 - Développons, réduisons et ordonnons $Q(x)$.}
+$Q(x) = (x - 2)(ax^2 + bx + c)$ \\
+$Q(x) = ax^3 + bx^2 + cx - 2ax^2 - 2bx - 2c$ \\
+$Q(x) = ax^3 + bx^2 - 2ax^2 + cx - 2bx - 2c$ \\
+\fbox{$Q(x) = ax^3 + (b - 2a)x^2 + (c - 2b)x - 2c$}
+
+\textbf{2 - Déterminons $a, b$ et $c$ tels que : $P(x) = Q(x)$}
+On a : \\
+$P(x) = 2x^3 - 5x^2 + x + 2$ \\
+$Q(x) = ax^3 + (b - 2a)x^2 + (c - 2b)x - 2c$
+
+\vspace{0.3cm}
+Par \textbf{identification des coefficients}, on a :
+\begin{align}
+    a &= 2 \quad (1) & c - 2b &= 1 \quad (3) \\
+    b - 2a &= -5 \quad (2) & -2c &= 2 \quad (4)
+\end{align}
+
+\fbox{\textbf{\textcolor{red}{$a = 2$}}}
+
+\vspace{0.2cm}
+$b - 2a = -5 \implies b = -5 + 2a$ \\
+$b = -5 + 2(2)$ \\
+$b = -5 + 4$ \\
+\fbox{\textbf{\textcolor{red}{$b = -1$}}}
+
+\vspace{0.2cm}
+$c - 2b = 1 \implies c = 1 + 2b$ \\
+$c = 1 + 2(-1)$ \\
+$c = 1 - 2$ \\
+\fbox{\textbf{\textcolor{red}{$c = -1$}}}
+
+% --- SUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{3 - Opérations sur les polynômes}%
+}
+
+% --- SUBSUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{a - Somme de deux polynômes}%
+}
+
+\paragraph{\underline{Activité}}
+Soit $P(x) = -2x^4 + 3x^3 + x^2 - 4$ \\
+$Q(x) = 2x^4 + x^3 - 2x + 1$
+
+\begin{enumerate}
+    \item Calculer $P(x) + Q(x)$. En déduire $\deg(P+Q)$.
+    \item Comparer $\deg(P+Q)$ et $\max(\deg(P); \deg(Q))$.
+\end{enumerate}
+
+\paragraph{\underline{\textcolor{red}{Correction}}}
+\begin{enumerate}
+    \item Calculons $P(x) + Q(x)$ : \\
+    $P(x) + Q(x) = -2x^4 + 3x^3 + x^2 - 4 + 2x^4 + x^3 - 2x + 1$ \\
+    $P(x) + Q(x) = -2x^4 + 2x^4 + 3x^3 + x^3 + x^2 - 2x - 4 + 1$ \\
+    $P(x) + Q(x) = 0 + 4x^3 + x^2 - 2x - 3$ \\
+    \fbox{$P(x) + Q(x) = 4x^3 + x^2 - 2x - 3$} \\
+    Donc \textbf{$\deg(P+Q) = 3$}.
+
+    \item On a :
+    \[
+    \begin{cases}
+    \deg(P+Q) = 3 \\
+    \max(\deg(P), \deg(Q)) = 4
+    \end{cases}
+    \]
+    Donc \textbf{$\deg(P+Q) < \max(\deg(P); \deg(Q))$}.
+\end{enumerate}
+
+\textbf{\underline{\textcolor{red}{Théorème :}}} La somme de polynômes $P$ et $Q$ est un polynôme noté $P+Q$ tel que :
+\[ \textcolor{red}{\deg(P+Q) \leq \max(\deg(P); \deg(Q))} \]
+
+\vspace{0.5cm}
+
+% --- SUBSUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{b - Produit de deux polynômes}%
+}
+
+\textbf{\underline{\textcolor{red}{Activité}}}
+Soit $P(x) = 2x^3 - x^2 + x + 1$ \\
+$Q(x) = x^2 + x + 3$
+
+\begin{enumerate}
+    \item Calculer $P(x) \times Q(x)$. En déduire $\deg(P \times Q)$.
+    \item Comparer $\deg(P \times Q)$ et $\deg(P) + \deg(Q)$.
+\end{enumerate}
+
+\textbf{\underline{\textcolor{red}{Correction}}}
+\begin{enumerate}
+    \item Calculons $P(x) \times Q(x)$ : \\
+    $P(x) \times Q(x) = (2x^3 - x^2 + x + 1)(x^2 + x + 3)$ \\
+    $P(x) \times Q(x) = 2x^5 + 2x^4 + 6x^3 - x^4 - x^3 - 3x^2 + x^3 + x^2 + 3x + x^2 + x + 3$ \\
+    $P(x) \times Q(x) = 2x^5 + x^4 + 6x^3 - x^2 + 4x + 3$ \\
+    \textbf{$\deg(P \times Q) = 5$}.
+
+    \item Comparons $\deg(P \times Q)$ et $\deg(P) + \deg(Q)$ : \\
+    $\deg(P \times Q) = 5$ \\
+    $\left. \begin{array}{l} \deg(P) = 3 \\ \deg(Q) = 2 \end{array} \right\} \implies \deg(P) + \deg(Q) = 5$ \\
+    Donc \textbf{$\deg(P \times Q) = \deg(P) + \deg(Q)$}.
+\end{enumerate}
+
+\end{document}
