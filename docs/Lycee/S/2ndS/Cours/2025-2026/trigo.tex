@@ -46,6 +46,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
 \usepackage{graphicx}
+\usepackage{float}
 \usetikzlibrary{shapes.geometric, positioning}
 \usepackage{tabularx}
 \usepackage{pifont} % Pour les symboles de coches et croix
@@ -1111,8 +1112,43 @@ $\sin x = \frac{1}{2} \times \sqrt{3}$
 
 \textcolor{monRouge}{$ \alpha $} et \textcolor{monRouge}{$ \theta $} sont \textcolor{red}{supplémentaire} ssi \textcolor{red}{$ \alpha + \theta = \pi $} $(\theta = \pi - \alpha)$
 
-\noindent \textcolor{monRouge}{\underline{Remarque :}} \\
+\begin{center}
+    \begin{tikzpicture}[scale=1.8]
+        % Axes
+        \draw (0,-1.2) -- (0,1.2);
+        \draw (-1.2,0) -- (1.2,0);
+        % Cercle
+        \draw (0,0) circle (1cm);
+        
+        % Points et angles
+        \coordinate (alpha) at (35:1);
+        \coordinate (pi_alpha) at (145:1);
+        \coordinate (pi_plus_alpha) at (215:1);
+        
+        % Lignes de projection
+        \draw[dashed, blue] (alpha) -- ({cos(35)},0);
+        \draw[dashed, blue] (alpha) -- (0,{sin(35)});
+        
+        \draw[dashed, red] (pi_alpha) -- ({cos(145)},0);
+        \draw[dashed, red] (pi_alpha) -- (0,{sin(145)});
+        
+        \draw[dashed, red] (pi_plus_alpha) -- ({cos(215)},0);
+        \draw[dashed, red] (pi_plus_alpha) -- (0,{sin(215)});
+        
+        % Labels des points
+        \node[right] at (alpha) {$\alpha$};
+        \node[left] at (pi_alpha) {$\pi - \alpha$};
+        \node[left] at (pi_plus_alpha) {$\pi + \alpha$};
+    \end{tikzpicture}
+\end{center}
 
+\noindent \textbf{Pour tout réel $\alpha$, on a :} \\
+\textcolor{red}{$\cos(\pi - \alpha) = -\cos \alpha$} \\
+\textcolor{red}{$\sin(\pi - \alpha) = \sin \alpha$}
+
+\noindent \textcolor{monRouge}{\underline{Remarque :}} \textbf{Pour tout réel $\alpha$, on a :} \\
+\textcolor{red}{$\cos(\pi + \alpha) = -\cos \alpha$} \\
+\textcolor{red}{$\sin(\pi + \alpha) = -\sin \alpha$}
 \vspace{1.5em}
 
 \subsection*{%
@@ -1120,14 +1156,67 @@ $\sin x = \frac{1}{2} \times \sqrt{3}$
 }
 \vspace{1em}
 
-\noindent \textcolor{monRouge}{\underline{Remarque :}} \\
+Deux angles $\alpha$ et $\theta$ sont complémentaires ssi $\alpha + \theta = \dfrac{\pi}{2}$ \quad $\left( \theta = \dfrac{\pi}{2} - \alpha \right)$
+
+\begin{center}
+    \begin{tikzpicture}[scale=2.5]
+        % Axes principaux
+        \draw[thick] (-1.2,0) -- (1.2,0);
+        \draw[thick] (0,-1.2) -- (0,1.2);
+        
+        % Cercle trigonométrique
+        \draw[thick] (0,0) circle (1cm);
+        
+        % Graduations des axes (comme sur ton dessin)
+        \node[above] at (0,1.05) {$\frac{\pi}{2}$};
+        \node[below] at (0,-1.05) {$-\frac{\pi}{2}$};
+        \node[left] at (-1.05,0.1) {$-\pi$ ou $\pi$};
+        \node[right] at (1.05,0.1) {$0$ ou $2\pi$};
+
+        % Coordonnées des points (angles)
+        \coordinate (alpha) at (25:1);
+        \coordinate (pi_2_moins) at (65:1);
+        \coordinate (pi_2_plus) at (115:1);
+        
+        % Pointillés bleus pour pi/2 - alpha et alpha
+        \draw[dashed, blue, thick] (pi_2_moins) -- ({cos(65)},0);
+        \draw[dashed, blue, thick] (pi_2_moins) -- (0,{sin(65)});
+        \draw[dashed, blue, thick] (alpha) -- ({cos(25)},0);
+        \draw[dashed, blue, thick] (alpha) -- (0,{sin(25)});
+        
+        % Pointillés rouges pour pi/2 + alpha
+        \draw[dashed, red, thick] (pi_2_plus) -- ({cos(115)},0);
+        \draw[dashed, red, thick] (pi_2_plus) -- (0,{sin(115)});
+
+        % Labels des angles (en rouge comme sur le cahier)
+        \node[right, red] at (alpha) {$\alpha$};
+        \node[above right, red] at (pi_2_moins) {$\frac{\pi}{2} - \alpha$};
+        \node[above left, red] at (pi_2_plus) {$\frac{\pi}{2} + \alpha$};
+        
+        % Petits points aux intersections
+        \fill[blue] (alpha) circle (1pt);
+        \fill[blue] (pi_2_moins) circle (1pt);
+        \fill[red] (pi_2_plus) circle (1pt);
+
+    \end{tikzpicture}
+\end{center}
+
+\noindent \textbf{Pour tout réel $\alpha$, on a :} \\
+\textcolor{red}{ $\cos\left( \dfrac{\pi}{2} - \alpha \right) = \sin \alpha$} \quad;\quad
+\textcolor{red}{ $\sin\left( \dfrac{\pi}{2} - \alpha \right) = \cos \alpha$}
+
+\vspace{1em}
+
+\noindent \textcolor{monRouge}{\underline{Remarque :}} \textbf{Pour tout réel $\alpha$, on a :} \\
+\textcolor{red}{$\cos \left( \dfrac{\pi}{2} - \alpha \right) = -\sin \alpha$} \quad;\quad
+\textcolor{red}{$\sin \left( \dfrac{\pi}{2} + \alpha \right) =  \cos \alpha$}
 
 \subsection*{%
     \color{monRouge} \underline{C) Construction du trigonométrique}%
 }
 \vspace{1em}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{cercle1.png}
     \caption{Cercle Trigonométrique}
@@ -1136,6 +1225,17 @@ $\sin x = \frac{1}{2} \times \sqrt{3}$
 \begin{center}
     \textcolor{monRouge}{\underline{\Large Application}}
 \end{center}
+
+\noindent Pour tout nombre réel $x$ appartenant à l'intervalle $\left] -\dfrac{\pi}{2}, \dfrac{\pi}{2} \right[$, on définit les nombres $A(x)$ et $B(x)$ par :
+
+\vspace{1em}
+
+\noindent $A(x) = \cos(-x) + \sin(-x) + \sin(\pi - x) - \cos(\pi - x)$ \\
+$B(x) = \sin x + \sin\left( \dfrac{\pi}{2} - x \right) + \cos\left( \dfrac{\pi}{2} - x \right) - \cos\left( x - \dfrac{\pi}{2} \right)$
+
+\vspace{1.5em}
+
+\noindent \textbf{Mettre $A(x)$ et $B(x)$ sous la forme la plus simple possible}
 
 \begin{center}
     \textcolor{monRouge}{\underline{Correction}}
