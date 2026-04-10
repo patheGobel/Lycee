@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  15 MAR 2026 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  10 APR 2026 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1319,43 +1319,31 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 122.
+(Font)              <14.4> on input line 121.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 122.
+(Font)              <7> on input line 121.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-22.
+21.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 124.
+(Font)              <8> on input line 123.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 124.
-<Screenshot from 2026-03-15 18-51-35.png, id=43, 466.74374pt x 111.41624pt>
-File: Screenshot from 2026-03-15 18-51-35.png Graphic file (type png)
-<use Screenshot from 2026-03-15 18-51-35.png>
-Package pdftex.def Info: Screenshot from 2026-03-15 18-51-35.png  used on input
- line 151.
-(pdftex.def)             Requested size: 432.48355pt x 103.24202pt.
+(Font)              <6> on input line 123.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/e
 nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.205 \subsubsection
-                    *{\centering \underline{\color{red}c) Propriétés}} <build
-/Screenshot from 2026-03-15 18-51-35.png>]
-Overfull \hbox (83.96945pt too wide) in paragraph at lines 277--278
- [] 
- []
+s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [2{/usr
+/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
+86.
 
-[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4]
-(build/reperage.aux)
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [9{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [10] (build/reperage.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1364,13 +1352,13 @@ Package rerunfilecheck Info: File `reperage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41192 strings out of 474222
- 968343 string characters out of 5748732
- 1947975 words of memory out of 5000000
- 62698 multiletter control sequences out of 15000+600000
- 625100 words of font info for 95 fonts, out of 8000000 for 9000
+ 41324 strings out of 474222
+ 970218 string characters out of 5748732
+ 1956975 words of memory out of 5000000
+ 62787 multiletter control sequences out of 15000+600000
+ 623625 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,19n,107p,729b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,19n,107p,729b,799s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
@@ -1378,10 +1366,10 @@ blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/reperage.pdf (4 pages, 223840 bytes).
+Output written on build/reperage.pdf (10 pages, 181074 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 223 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
