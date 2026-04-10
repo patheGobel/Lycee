@@ -46,13 +46,31 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage[most]{tcolorbox}
 \usepackage{varwidth}
 \usepackage{graphicx}
-\usepackage{float}
 \usetikzlibrary{shapes.geometric, positioning}
 \usepackage{tabularx}
 \usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 \usetikzlibrary{angles,quotes,arrows.meta}
 % Définition du rouge pour les titres et soulignements
 \definecolor{monRouge}{RGB}{180, 0, 0}
+
+\usepackage{graphicx}
+\usetikzlibrary{trees} % Nécessaire pour l'arbre
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{enumitem}
+\usepackage{makecell}
+% Définition des symboles du tableau
+\newcommand{\coche}{{\color{red}\ding{51}}}
+\newcommand{\croix}{{\color{red}\ding{55}}}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
 
 \begin{document}
 % En-tête personnalisée
