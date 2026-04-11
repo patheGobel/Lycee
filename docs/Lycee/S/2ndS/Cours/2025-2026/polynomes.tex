@@ -98,11 +98,6 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
     \color{red} \underline{1 - Définitions}%
 }
 
-% --- SUBSUBSECTION a) ---
-\subsubsection*{%
-    \color{red} \underline{a) }%
-}
-
 % --- DÉFINITION ---
 \textbf{\underline{\textcolor{red}{Définition 1 :}}}
 
@@ -224,17 +219,17 @@ $c = 1 + 2(-1)$ \\
 $c = 1 - 2$ \\
 \fbox{\textbf{\textcolor{red}{$c = -1$}}}
 
-% --- SUBSECTION 1 ---
+% --- SUBSECTION 3 ---
 \subsection*{%
     \color{red} \underline{3 - Opérations sur les polynômes}%
 }
 
 % --- SUBSUBSECTION 1 ---
-\subsection*{%
+\subsubsection*{%
     \color{red} \underline{a - Somme de deux polynômes}%
 }
 
-\paragraph{\underline{Activité}}
+\underline{Activité}
 Soit $P(x) = -2x^4 + 3x^3 + x^2 - 4$ \\
 $Q(x) = 2x^4 + x^3 - 2x + 1$
 
@@ -243,7 +238,7 @@ $Q(x) = 2x^4 + x^3 - 2x + 1$
     \item Comparer $\deg(P+Q)$ et $\max(\deg(P); \deg(Q))$.
 \end{enumerate}
 
-\paragraph{\underline{\textcolor{red}{Correction}}}
+\underline{\textcolor{red}{Correction}}
 \begin{enumerate}
     \item Calculons $P(x) + Q(x)$ : \\
     $P(x) + Q(x) = -2x^4 + 3x^3 + x^2 - 4 + 2x^4 + x^3 - 2x + 1$ \\
@@ -268,11 +263,12 @@ $Q(x) = 2x^4 + x^3 - 2x + 1$
 \vspace{0.5cm}
 
 % --- SUBSUBSECTION 1 ---
-\subsection*{%
+\subsubsection*{%
     \color{red} \underline{b - Produit de deux polynômes}%
 }
 
 \textbf{\underline{\textcolor{red}{Activité}}}
+
 Soit $P(x) = 2x^3 - x^2 + x + 1$ \\
 $Q(x) = x^2 + x + 3$
 
@@ -295,4 +291,238 @@ $Q(x) = x^2 + x + 3$
     Donc \textbf{$\deg(P \times Q) = \deg(P) + \deg(Q)$}.
 \end{enumerate}
 
+\textbf{\underline{\textcolor{red}{Théorème :}}} Le produit de deux polynômes $P$ et $Q$ est un polynôme noté $P \times Q$ tel que :
+\[ \textcolor{red}{\deg(P \times Q) = \deg(P) + \deg(Q)} \]
+
+\subsection*{%
+    \color{red} \underline{4 - Factorisation d'un polynôme}%
+}
+
+\subsubsection*{%
+    \color{red} \underline{a - Définition}%
+}
+
+Un réel $\alpha$ est \textbf{\textcolor{red}{racine}} (ou \textbf{\textcolor{red}{zéro}}) d'un polynôme $P$ si \fbox{\textcolor{red}{$P(\alpha) = 0$}}.
+
+\textbf{\underline{\textcolor{red}{Exemples :}}} Soit $P(x) = 3x^3 - 2x^2 + 4x - 5$
+\begin{enumerate}
+    \item On a : $P(1) = 3(1)^3 - 2(1)^2 + 4(1) - 5 = 3 - 2 + 4 - 5 = 0$. \\
+    Donc \textbf{1 est racine de $P$}.
+    \item On a : $P(-1) = 3(-1)^3 - 2(-1)^2 + 4(-1) - 5 = -3 - 2 - 4 - 5 = -14$. \\
+    Donc \textbf{$-1$ n'est pas racine de $P$} car $P(-1) \neq 0$.
+\end{enumerate}
+
+\subsubsection*{%
+    \color{red} \underline{b - Théorème}%
+}
+
+Soient $P$ un polynôme et $\alpha$ un réel : \\
+\textcolor{red}{$\alpha$ est racine de $P$ ssi $P(x) = (x - \alpha) Q(x)$} \\
+Où $Q$ est un polynôme tel que : \textcolor{red}{$\deg(Q) = \deg(P) - 1$}.
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Application}}}
+\end{center}
+
+Soit $P(x) = 2x^3 - 5x^2 - x + 6$
+\begin{enumerate}
+    \item Montrer que 2 est racine de $P$.
+    \item En déduire une factorisation de $P(x)$.
+\end{enumerate}
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Correction}}}
+\end{center}
+
+1) Montrons que 2 est racine de $P$ : \\
+$P(2) = 2(2)^3 - 5(2)^2 - 2 + 6 = 2(8) - 5(4) - 2 + 6 = 16 - 20 - 2 + 6 = 0$. \\
+Donc \textbf{2 est racine de $P$}.
+
+2) Déduisons-en une factorisation de $P(x)$ : \\
+2 racine de $P \implies P(x) = (x - 2) Q(x)$ avec $\deg(Q) = 3 - 1 = 2$. \\
+Ainsi, pour déterminer $Q(x)$, on distingue \textbf{3 méthodes} :
+
+\paragraph{\underline{Méthode 1 : Identification des coefficients}}
+On a $\deg(Q) = 2$ alors $Q(x) = ax^2 + bx + c$ où $a, b, c \in \mathbb{R}$ avec $a \neq 0$. \\
+$P(x) = (x - 2)(ax^2 + bx + c) = ax^3 + bx^2 + cx - 2ax^2 - 2bx - 2c$ \\
+$P(x) = ax^3 + (b - 2a)x^2 + (c - 2b)x - 2c$ \\
+Or $P(x) = 2x^3 - 5x^2 - x + 6$. Par identification :
+\[
+\begin{cases}
+a = 2 \\
+b - 2a = -5 \implies b = -5 + 2(2) = -1 \\
+c - 2b = -1 \implies c = -1 + 2(-1) = -3 \\
+-2c = 6 \implies c = -3
+\end{cases}
+\]
+\fbox{$Q(x) = 2x^2 - x - 3$} \quad D'où \fbox{$P(x) = (x - 2)(2x^2 - x - 3)$}
+
+\paragraph{\underline{Méthode 2 : Méthode d'Horner}}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Coef $P$ & 2 & -5 & -1 & 6 \\ \hline
+2 & $\downarrow$ & 4 & -2 & -6 \\ \hline
+Coef $Q$ & 2 & -1 & -3 & \textbf{0} \\ \hline
+\end{tabular}
+\end{center}
+$Q(x) = 2x^2 - x - 3$ d'où $P(x) = (x - 2)(2x^2 - x - 3)$.
+
+
+\paragraph{\underline{Méthode 3 : Méthode de la division euclidienne}}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r|l}
+$2x^3 - 5x^2 - x + 6$ & $x - 2$ \\ \cline{2-2}
+$- (2x^3 - 4x^2)$ & $2x^2 - x - 3$ \\ \cline{1-1}
+$-x^2 - x + 6$ & \\
+$- (-x^2 + 2x)$ & \\ \cline{1-1}
+$-3x + 6$ & \\
+$- (-3x + 6)$ & \\ \cline{1-1}
+$0$ & 
+\end{tabular}
+\end{center}
+
+\paragraph{\underline{\textcolor{red}{Exercice : T.P.E}}}
+
+Soit $P(x) = 3x^3 + x + 4$
+
+\begin{enumerate}
+    \item Montrer que $-1$ est racine de $P$
+    \item En déduire une factorisation de $P(x)$ (utiliser les 3 méthodes).
+\end{enumerate}
+
+\vspace{1cm}
+
+\noindent \textbf{\underline{\textcolor{red}{Remarque :}}} \\
+
+Soit $P$ un polynôme de degré $n$. \\
+Les réels $\alpha_1, \alpha_2, \dots, \alpha_m$ ($1 \le m \le n$) sont racines de $P$ si :
+\[ P(x) = (x - \alpha_1)(x - \alpha_2) \times \dots \times (x - \alpha_m) Q(x) \]
+Où $Q$ est un polynôme tel que $d^\circ Q = n - m$.
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Application}}}
+\end{center}
+Soit $P(x) = 3x^4 + x^3 - 11x^2 - 4x - 4$
+
+\begin{enumerate}
+    \item Montrer que $2$ et $-2$ sont racines de $P(x)$
+    \item En déduire $P(x) = (x - 2)(x + 2) Q(x)$ où $Q$ est un polynôme à déterminer.
+\end{enumerate}
+
+% --- SECTION I ---
+\section*{%
+    \color{red}II - \underline{ Fraction rationnelle}%
+}
+
+% --- SUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{1 - Définitions}%
+}
+On appelle fraction rationnelle le rapport $\dfrac{P}{q}$ où $P$ et $q$ sont des polynômes.
+
+\paragraph{Exemple :}
+\[ f(x) = \frac{3x^2 + 4x + 1}{x - 4} \]
+$f$ est une fraction rationnelle.
+
+% --- SUBSECTION 1 ---
+\subsection*{%
+    \color{red} \underline{2 - Domaine de définition d'une fraction rationnelle}%
+}
+Soit $f = \dfrac{P}{q}$ où $P$ et $q$ sont des polynômes.
+
+\vspace{1em}
+
+$f(x)$ existe ssi $q(x) \neq 0$.
+
+L'ensemble noté $D_f$ défini par :
+\[ D_f = \{x \in \mathbb{R} \mid q(x) \neq 0\} \]
+est appelé \textbf{domaine de définition de $f$}.
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Application}}}
+\end{center}
+
+\begin{enumerate}
+    \item Soit $P(x) = 3x^3 + x^2 + 3x + 5$
+    \begin{enumerate}
+        \item Montrer que $-1$ est racine de $P(x)$.
+        \item En déduire une factorisation de $P(x)$.
+    \end{enumerate}
+    
+    \item Soit $f(x) = \dfrac{3x^3 + x^2 + 3x + 5}{x^2 + 3x + 2}$
+    \begin{enumerate}
+        \item Déterminer $D_f$.
+        \item Simplifier l'expression de $f(x)$ pour tout réel $x \in D_f$.
+        \item Résoudre $f(x) \le 0$.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Correction}}}
+\end{center}
+
+\noindent \underline{Exemples :}
+\begin{enumerate}
+    \item $x^2 - 1 = (x - 1)(x + 1)$ \\
+    Donc $q(x) = x - 1$ divise $P(x) = x^2 - 1$.
+    \item $x^3 - 8 = x^3 - 2^3$ \\
+    $x^3 - 8 = (x - 2)(x^2 + 2x + 4)$ \\
+    Donc $q(x) = x - 2$ divise $P(x) = x^3 - 8$.
+\end{enumerate}
+
+\noindent \underline{Propriété :} Soient $P$ et $q$ deux polynômes tels que $q$ divise $P$ ($q \mid P$). Alors toute racine de $q$ est racine de $P$.
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Application}}}
+\end{center}
+
+\noindent Déterminer les réels $a$ et $b$ de telle sorte que le polynôme $x^4 + ax^2 + b$ soit divisible par $x^2 - 6x + 5$.
+
+\begin{center}
+    \textbf{\underline{\textcolor{red}{Correction}}}
+\end{center}
+
+Posons $P(x) = x^4 + ax^2 + b$ \\
+et $q(x) = x^2 - 6x + 5$
+
+$q \mid P \implies$ toute racine de $q$ est racine de $P$.
+
+Déterminons les racines de $q$ : \\
+$q(x) = x^2 - 6x + 5$ \\
+$\Delta = (-6)^2 - 4(1)(5)$ \\
+$\Delta = 36 - 20$ \\
+$\Delta = 16 \implies \sqrt{\Delta} = 4$
+
+$x_1 = \dfrac{6 - 4}{2} = 1 \quad \text{et} \quad x_2 = \dfrac{6 + 4}{2} = 5$
+
+$1$ et $5$ sont racines de $q$, donc $1$ et $5$ sont racines de $P$.
+
+Alors on a : 
+$\begin{cases} P(1) = 0 \\ P(5) = 0 \end{cases}$
+
+$P(1) = (1)^4 + a(1)^2 + b = 1 + a + b$
+
+$P(5) = (5)^4 + a(5)^2 + b = 625 + 25a + b$
+
+Ainsi, on a :
+$\begin{cases} 1 + a + b = 0 \\ 625 + 25a + b = 0 \end{cases} \implies -1 \times \begin{cases} a + b = -1 & (E_1) \\ 25a + b = -625 & (E_2) \end{cases}$
+
+$\begin{cases} -a - b = 1 \\ 25a + b = -625 \end{cases}$
+
+\rule{2cm}{0.4pt} \\
+$24a + 0 = -624$
+
+$a = \dfrac{-624}{24}$
+
+\fbox{$a = -26$}
+
+Remplaçons la valeur de $a$ dans $(E_1)$ :
+$-26 + b = -1$
+$b = -1 + 26$
+
+\fbox{$b = 25$}
 \end{document}
