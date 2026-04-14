@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  14 APR 2026 22:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  14 APR 2026 22:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1411,6 +1411,16 @@ Overfull \hbox (1.28406pt too wide) in paragraph at lines 108--109
 |[][]
  []
 
+
+Overfull \hbox (3.9507pt too wide) in paragraph at lines 146--147
+|[][]
+ []
+
+
+Overfull \hbox (1.28406pt too wide) in paragraph at lines 148--149
+|[][]
+ []
+
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}
 
@@ -1427,16 +1437,16 @@ Package rerunfilecheck Info: File `exoDappliDenombrement.out' has not changed.
 Here is how much of TeX's memory you used:
  41721 strings out of 474222
  982037 string characters out of 5748732
- 1999975 words of memory out of 5000000
+ 1997975 words of memory out of 5000000
  63238 multiletter control sequences out of 15000+600000
  584175 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,19n,107p,876b,836s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,19n,107p,866b,836s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmb10.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmbx6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb>
-Output written on build/exoDappliDenombrement.pdf (1 page, 117926 bytes).
+Output written on build/exoDappliDenombrement.pdf (1 page, 117792 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
