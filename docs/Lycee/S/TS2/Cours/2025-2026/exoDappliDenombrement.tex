@@ -1,0 +1,155 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{verbatim} % INDISPENSABLE pour l'environnement comment
+\usepackage{yhmath}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{graphicx}
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+\usetikzlibrary{angles,quotes,arrows.meta}
+% Définition du rouge pour les titres et soulignements
+\definecolor{monRouge}{RGB}{180, 0, 0}
+
+\usepackage{graphicx}
+\usetikzlibrary{trees} % Nécessaire pour l'arbre
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{enumitem}
+\usepackage{makecell}
+% Définition des symboles du tableau
+\newcommand{\coche}{{\color{red}\ding{51}}}
+\newcommand{\croix}{{\color{red}\ding{55}}}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\renewcommand{\seriesdefault}{b} % rend tout plus foncé
+
+\begin{document}
+
+\tiny
+
+\textbf{Exercice D'application} \\[2pt]
+
+Soit l'urne contenant: 4 boules noires, 3 boules vertes et 2 boules rouges.
+
+
+On tire 4 boules de l'urne. Déterminer le nombre de cas où l'on obtient :
+
+\begin{enumerate}
+    \item Exactement une verte parmi les boules tirées.
+    \item Au moins deux vertes parmi les boules tirées.
+    \item Au plus une rouge parmi les boules tirées.
+    \item Aucune boule noire.
+    \item Une rouge puis deux noires puis une verte.
+\end{enumerate}
+
+\textbf{Solution} \\[2pt]
+
+\renewcommand{\arraystretch}{2} % Pour aérer un peu les lignes du tableau
+
+\raggedright
+\begin{tabular}{|p{6cm}|p{6cm}|p{5cm}|}
+\hline
+\textbf{Simultané} & \textbf{Successif sans remise} & \textbf{Successif avec remise}\\
+\hline
+\makecell[l]{\textbf{1)} il faut tirer : $V \ \overline{V} \ \overline{V} \ \overline{V}$\\ le nombre demandé est :$C_3^1 \times C_6^3 $} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ A_3^1 \times A_6^3 \times \color{red} C_4^1 \times C_3^3$} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^1 \times 6^3 \times \color{red} C_4^1 \times C_3^3 $} \\
+\hline
+\makecell[l]{\textbf{2)} il faut tirer :\\ $V V \overline{V} \overline{V} \text{ ou } V V V \overline{V}$\\ le nombre demandé est :\\$ C_3^2 \times C_6^2 + C_3^3 C_6^1 $} & \makecell[l]{\textbf{2)} il faut tirer : $V V \overline{V} \ \overline{V} \text{ ou } V V V \overline{V}$\\ en tenant compte de l'ordre.\\ le nombre demandé est :\\$ A_3^2 \times A_6^2 \times \color{red} C_4^2 \times C_2^2 \color{black} +$ \\$ A_3^3 \times A_6^1 \times \color{red} C_4^3 \times C_1^1 $} & \makecell[l]{\textbf{2)} il faut tirer :\\$ V V V V \text{ ou } V V V \overline{V} \text{ ou }$\\$ V V \overline{V} \ \overline{V} $\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^4 + 3^3 \times 6^1 \times \color{red} C_4^3 \times C_1^1 \color{black} + $\\$3^2 \times 6^2 \times \color{red} C_4^2 \times C_2^2$} \\
+\hline
+\makecell[l]{\textbf{3)} il faut tirer :\\ $R \overline{R} \ \overline{R} \ \overline{R} \text{ ou } \overline{R} \ \overline{R} \ \overline{R} \ \overline{R}$\\ le nombre demandé est :\\$ C_2^1 \times C_7^3 + C_7^4 $} & \makecell[l]{\textbf{3)} il faut tirer :\\ $R \overline{R} \ \overline{R} \ \overline{R} \text{ ou } \overline{R} \overline{R} \ \overline{R} \ \overline{R}$\\ en tenant compte de l'ordre.\\ le nombre demandé est :\\$ A_2^1 \times A_7^3 \times \color{red} C_4^1 \times C_3^3 \color{black} + A_7^4$} & \makecell[l]{\textbf{2)} il faut tirer :\\$ R \overline{R} \ \overline{R} \overline{R} \text{ ou } \overline{R} \ \overline{R} \ \overline{R} \ \overline{R} $\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 2^1 \times 7^3 \times \color{red} C_4^1 \times C_3^3 \color{black} + 7^4$} \\
+\hline
+\makecell[l]{\textbf{4)} il faut tirer : $ \overline{N} \ \overline{N} \ \overline{N} \ \overline{N} $\\ le nombre demandé est :$ C_5^4 $} & \makecell[l]{\textbf{4)} il faut tirer : $ \overline{ N} \ \overline{ N} \overline{ N} \ \overline{ N} $\\ le nombre demandé est : $ A_5^4 $} & \makecell[l]{\textbf{4)} il faut tirer : $ \overline{N} \ \overline{N} \ \overline{N} \ \overline{N} $\\ le nombre demandé est : $ 5^4 $} \\
+\hline
+\makecell[l]{\textbf{5)} \color{red}{IMPOSSIBLE} } & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \overline{N} \ \overline{V} $\\ le nombre demandé est :\\ $ A_2^1 \times A_4^2 \times A_3^1 $} & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \ \overline{N} \ \overline{V} $\\ le nombre demandé est :\\ $ 2^1 \times 4^2 \times 3^1 $} \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+--------------------------------------------------------------------------------
+\vspace{1cm}
+
+\textbf{Exercice D'application} \\[2pt]
+
+Soit l'urne contenant: 4 boules noires, 3 boules vertes et 2 boules rouges.
+
+
+On tire 4 boules de l'urne. Déterminer le nombre de cas où l'on obtient :
+
+\begin{enumerate}
+    \item Exactement une verte parmi les boules tirées.
+    \item Au moins deux vertes parmi les boules tirées.
+    \item Au plus une rouge parmi les boules tirées.
+    \item Aucune boule noire.
+    \item Une rouge puis deux noires puis une verte.
+\end{enumerate}
+
+\textbf{Solution} \\[2pt]
+
+\renewcommand{\arraystretch}{2} % Pour aérer un peu les lignes du tableau
+
+\raggedright
+\begin{tabular}{|p{6cm}|p{6cm}|p{5cm}|}
+\hline
+\textbf{Simultané} & \textbf{Successif sans remise} & \textbf{Successif avec remise}\\
+\hline
+\makecell[l]{\textbf{1)} il faut tirer : $V \ \overline{V} \ \overline{V} \ \overline{V}$\\ le nombre demandé est :$C_3^1 \times C_6^3 $} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ A_3^1 \times A_6^3 \times \color{red} C_4^1 \times C_3^3$} & \makecell[l]{\textbf{1)} il faut tirer :$ V \ \overline{V} \ \overline{V} \ \overline{V}$\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^1 \times 6^3 \times \color{red} C_4^1 \times C_3^3 $} \\
+\hline
+\makecell[l]{\textbf{2)} il faut tirer :\\ $V V \overline{V} \overline{V} \text{ ou } V V V \overline{V}$\\ le nombre demandé est :\\$ C_3^2 \times C_6^2 + C_3^3 C_6^1 $} & \makecell[l]{\textbf{2)} il faut tirer : $V V \overline{V} \ \overline{V} \text{ ou } V V V \overline{V}$\\ en tenant compte de l'ordre.\\ le nombre demandé est :\\$ A_3^2 \times A_6^2 \times \color{red} C_4^2 \times C_2^2 \color{black} +$ \\$ A_3^3 \times A_6^1 \times \color{red} C_4^3 \times C_1^1 $} & \makecell[l]{\textbf{2)} il faut tirer :\\$ V V V V \text{ ou } V V V \overline{V} \text{ ou }$\\$ V V \overline{V} \ \overline{V} $\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 3^4 + 3^3 \times 6^1 \times \color{red} C_4^3 \times C_1^1 \color{black} + $\\$3^2 \times 6^2 \times \color{red} C_4^2 \times C_2^2$} \\
+\hline
+\makecell[l]{\textbf{3)} il faut tirer :\\ $R \overline{R} \ \overline{R} \ \overline{R} \text{ ou } \overline{R} \ \overline{R} \ \overline{R} \ \overline{R}$\\ le nombre demandé est :\\$ C_2^1 \times C_7^3 + C_7^4 $} & \makecell[l]{\textbf{3)} il faut tirer :\\ $R \overline{R} \ \overline{R} \ \overline{R} \text{ ou } \overline{R} \overline{R} \ \overline{R} \ \overline{R}$\\ en tenant compte de l'ordre.\\ le nombre demandé est :\\$ A_2^1 \times A_7^3 \times \color{red} C_4^1 \times C_3^3 \color{black} + A_7^4$} & \makecell[l]{\textbf{2)} il faut tirer :\\$ R \overline{R} \ \overline{R} \overline{R} \text{ ou } \overline{R} \ \overline{R} \ \overline{R} \ \overline{R} $\\ en tenant l'ordre en compte\\ le nombre demandé est :\\$ 2^1 \times 7^3 \times \color{red} C_4^1 \times C_3^3 \color{black} + 7^4$} \\
+\hline
+\makecell[l]{\textbf{4)} il faut tirer : $ \overline{N} \ \overline{N} \ \overline{N} \ \overline{N} $\\ le nombre demandé est :$ C_5^4 $} & \makecell[l]{\textbf{4)} il faut tirer : $ \overline{ N} \ \overline{ N} \overline{ N} \ \overline{ N} $\\ le nombre demandé est : $ A_5^4 $} & \makecell[l]{\textbf{4)} il faut tirer : $ \overline{N} \ \overline{N} \ \overline{N} \ \overline{N} $\\ le nombre demandé est : $ 5^4 $} \\
+\hline
+\makecell[l]{\textbf{5)} \color{red}{IMPOSSIBLE} } & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \overline{N} \ \overline{V} $\\ le nombre demandé est :\\ $ A_2^1 \times A_4^2 \times A_3^1 $} & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \ \overline{N} \ \overline{V} $\\ le nombre demandé est :\\ $ 2^1 \times 4^2 \times 3^1 $} \\
+\hline
+\end{tabular}
+\end{document}
