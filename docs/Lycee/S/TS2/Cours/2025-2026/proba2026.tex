@@ -113,7 +113,7 @@ middle color = tcbcolback!80!black]
 \begin{center}
     \Large\textbf{\underline{\textcolor{red}{Probabilité}}}\\[-0.1cm]
     \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TS2}\\[-0.1cm]
-    \textbf{Année scolaire : 2024 -- 2025}
+    \textbf{Année scolaire : 2025 -- 2026}
 \end{center}
 
 \section*{\underline{\textbf{\textcolor{red}{I.Vocabulaire et Notation}}}}
@@ -194,7 +194,7 @@ L’événement « le numéro de la face apparue est supérieur à 7 » est $\em
 
 C’est l’événement impossible. Il ne se réalise jamais.
 
-\subsection*{\underline{\textbf{\textcolor{red}{8. Évènement contraire}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{8. Évènements contraires}}}}
 
 L’évènement contraire de $A$, noté $\overline{A}$ ou $\overline{A}=C^{A}_{\Omega}$, est l'ensemble des issues de $\Omega$ qui ne sont pas dans $A$.
 
@@ -229,7 +229,7 @@ En notation mathématique :
 
 Ainsi, si $A$ est l'évènement "obtenir un nombre pair", alors $\overline{A}$ est l'évènement "obtenir un nombre impair".
 
-\subsection*{\underline{\textbf{\textcolor{red}{8. Évènements incompatibles}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{9. Évènements incompatibles}}}}
 Deux évènements $A$ et $B$ sont incompatibles s'ils ne peuvent pas se réaliser en même temps. Leur intersection est vide : $A \cap B = \emptyset$.
 
 % Pour les évènements incompatibles
@@ -292,8 +292,30 @@ On lance un dé à 6 faces ($\Omega = \{1; 2; 3; 4; 5; 6\}$).
 
 
 \section*{\underline{\textbf{\textcolor{red}{II. Généralités sur la probabilité}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition de Probabilité}}}}
 
-\subsection*{\underline{\textbf{\textcolor{red}{1. Probabilité d'un évènement}}}}
+Soit $\mathcal{E}$ une épreuve aléatoire d'univers $\Omega$. On appelle probabilité toute application $P$
+\begin{align*}
+    P : \mathcal{P}(\Omega) &\longrightarrow [0 ; 1] \\
+    A &\longrightarrow P(A)
+\end{align*}
+telle que
+\[
+\begin{cases}
+    P(\Omega) = \textcolor{red}{1} \\
+    \text{Si } A \cap B = \emptyset \text{ alors } \textcolor{red}{P(A \cup B) = P(A) + P(B)}
+\end{cases}
+\]
+
+\underline{\textbf{\textcolor{red}{Propriété}}}\\
+$P(\emptyset) = 0$ \\
+$P(\bar{A}) = 1 - P(A)$ \\
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$ \\
+\indent Si $A = \{\textcolor{red}{a_1 ; a_2 ; \dots ; a_n}\}$ \\
+$P(A) = P(\{a_1\}) + P(\{a_2\}) + \dots + P(\{a_n\})$ \\
+$P(A) = \sum_{i=1}^{n} P(\{a_i\})$
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Probabilité d'un évènement}}}}
 
 Considérons un dé numéroté de 1 à 6.
 
@@ -308,12 +330,176 @@ La probabilité de l'évènement $A$ est donc égale à $\frac{1}{6}$, que l'on 
 De même, considérons l'évènement $B=\{1, 6\}$. Il y a deux chances sur 6 de réaliser l'évènement $B$.
 
 La probabilité de l'évènement $B$ est donc égale à $\frac{2}{6}$. On note $P(B)=\frac{1}{3}$.
-\subsection*{\underline{\textbf{\textcolor{red}{2. Probabilité uniforme}}}}
+
+\underline{\textbf{\textcolor{red}{Exercice D'application}}}\\
+On considère l’ensemble E des entiers de 20 à 40. On choisit l’un de ses nombres au hasard.
+
+\begin{itemize}
+\item[•] A est l’événement : « le nombre est multiple de 3 »
+\item[•] B est l’événement : « le nombre est multiple de 2 »
+\item[•] C est l’événement : « le nombre est multiple de 6 ».
+\end{itemize}
+Calculer $p(A)$, $p(B)$, $p(C)$, $p(A\cap B)$, $p(A\cup B)$, $p(A\cap C)$ et $p(A\cup C)$.
+
+\underline{\textbf{\textcolor{red}{Correction de l'Exercice d'Application}}}
+
+\subsubsection*{1. Analyse de l'univers $\Omega$}
+L'ensemble $E$ contient les entiers de 20 à 40.
+$\text{Card}(\Omega) = 40 - 20 + 1 = 21$
+
+\subsubsection*{2. Probabilités simples}
+
+\begin{itemize}
+    \item \textbf{Événement A :} Multiples de 3 dans $\{20, \dots, 40\}$
+    $A = \{21, 24, 27, 30, 33, 36, 39\} \Rightarrow \text{Card}(A) = 7$
+    \[ p(A) = \frac{7}{21} = \frac{1}{3} \]
+
+    \item \textbf{Événement B :} Multiples de 2 (nombres pairs)
+    $B = \{20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40\} \Rightarrow \text{Card}(B) = 11$
+    \[ p(B) = \frac{11}{21} \]
+
+    \item \textbf{Événement C :} Multiples de 6
+    $C = \{24, 30, 36\} \Rightarrow \text{Card}(C) = 3$
+    \[ p(C) = \frac{3}{21} = \frac{1}{7} \]
+\end{itemize}
+
+\subsubsection*{3. Probabilités composées}
+
+\begin{itemize}
+    \item \textbf{Intersection $p(A \cap B)$ :}
+    $A \cap B$ sont les multiples de $3 \times 2 = 6$. On constate que $A \cap B = C$.
+    \[ p(A \cap B) = \frac{3}{21} = \frac{1}{7} \]
+
+    \item \textbf{Union $p(A \cup B)$ :}
+    $p(A \cup B) = p(A) + p(B) - p(A \cap B)$
+    \[ p(A \cup B) = \frac{7}{21} + \frac{11}{21} - \frac{3}{21} = \frac{15}{21} = \frac{5}{7} \]
+
+    \item \textbf{Intersection $p(A \cap C)$ :}
+    Comme $C \subset A$ (tout multiple de 6 est multiple de 3), $A \cap C = C$.
+    \[ p(A \cap C) = \frac{3}{21} = \frac{1}{7} \]
+
+    \item \textbf{Union $p(A \cup C)$ :}
+    Comme $C \subset A$, $A \cup C = A$.
+    \[ p(A \cup C) = \frac{7}{21} = \frac{1}{3} \]
+\end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Équiprobabilité ou probabilité uniforme}}}}
+
+Soit $E$ une épreuve aléatoire d'univers $\Omega$. \\
+Une équiprobabilité ou une probabilité uniforme est une probabilité telle que tout les éléments élémentaires sont d'égale probabilité, elle est annoncée dans des situations de parfait hasard :
+\begin{itemize}
+    \item "Dé parfait" ; "Dé non pipé"
+    \item "boules indiscernables au toucher"
+    \item "cartes bien battues"
+\end{itemize}
+
+\underline{\textbf{\textcolor{red}{ Propriété }}}\\
+En situation d'équiprobabilité $\forall A \subset \Omega$
+\begin{equation*}
+    \boxed{P(A) = \frac{\text{Card } A}{\text{Card } \Omega}}
+\end{equation*}
+
+\rule{\linewidth}{0.5pt}
+
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+On lance un dé parfait de 6 faces numéroté de 1 à 6. \\
+Calculer la probabilité des éléments suivant : \\
+$A$: "Le numéro apparu est pair" \\
+$B$: "Le numéro apparu est supérieur à 3" \\
+$C$: "Le numéro apparu est un multiple de 3" \\
+
+$\Omega = \{1; 2; 3; 4; 5; 6\} \quad A = \{2; 4; 6\} \quad B = \{4; 5; 6\} \quad C = \{3; 6\}$
+
+\begin{enumerate}
+    \item $P(A) = \frac{\text{Card } A}{\text{Card } \Omega} = \frac{3}{6} = \frac{1}{2}$
+    \item $P(B) = \frac{\text{Card } B}{\text{Card } \Omega} = \frac{3}{6} = \frac{1}{2}$
+    \item $P(C) = \frac{\text{Card } C}{\text{Card } \Omega} = \frac{2}{6} = \frac{1}{3}$
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+Une urne contient 3 boules blanches numérotées de 1 à 3, 4 boules rouges numérotées de 1 à 4, 2 boules noires numérotées de 1 à 2. Les boules sont indiscernables au toucher. On tire successivement sans remise trois boules de l'urne. \\
+Calculer le nombre de tirage possible. \\
+Calculer la probabilité des éléments suivants : \\
+$A$: "le tirage est unicolore" \\
+$B$: "le tirage contient 2 blanches exactement" \\
+$C$: "le tirage contient au moins 1 boule de numéro impair" \\
+$D$: "la première boule tirée porte un numéro pair" \\
+$E$: "la première boule est noire et la deuxième porte le numéro 2" \\
+$F$: "le tirage contient au plus 2 boules rouges"
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+Urne : $\{b_1; b_2; b_3; R_1; R_2; R_3; R_4; n_1; n_2\}$
+\begin{enumerate}
+    \item $\text{Card } \Omega = A_9^3 = 504$
+    \item 
+    $\text{Card } A = A_3^3 + A_4^3 = 30 \Rightarrow P(A) = \frac{\text{Card } A}{\text{Card } \Omega} = \frac{30}{504} = \frac{5}{84}$ \\
+    
+    $\text{Card } B = A_3^2 \times A_6^1 \times \frac{3!}{2!} = 108$ \\
+    $P(B) = \frac{\text{Card } B}{\text{Card } \Omega} = \frac{108}{504} = \frac{3}{14}$ \\
+    
+    $\text{Card } C = \text{Card } \Omega - \text{Card } \bar{C}$ \\
+    $\text{Card } \bar{C} = A_4^3 = 24$ \\
+    $\text{Card } C = 504 - 24 = 480$ \\
+    $P(C) = \frac{480}{504} = \frac{20}{21}$ \\
+    
+    $\text{Card } D = A_4^1 \times A_8^2 = 224$ \\
+    $P(D) = \frac{\text{Card } D}{\text{Card } \Omega} = \frac{224}{504} = \frac{4}{9}$ \\
+    
+    $\text{Card } E = A_1^1 \times A_3^1 \times A_7^1 + A_1^1 \times A_2^1 \times A_7^1 = 35$ \\
+    $P(E) = \frac{\text{Card } E}{\text{Card } \Omega} = \frac{35}{504} = \frac{5}{72}$ \\
+    
+    $\text{Card } F = \text{Card } \Omega - \text{Card } \bar{F}$ \\
+    $\text{Card } \bar{F} = A_3^3 = 6$ \\
+    $\text{Card } F = 504 - 6 = 498$ \\
+    $P(F) = \frac{498}{504} = \frac{83}{84}$
+\end{enumerate}
+
+\rule{\linewidth}{0.5pt}
+
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+On lance 2 dé parfait de 6 faces numéroté de 1 à 6. On note par $S$ la somme des numéros apparus sur les faces supérieurs des 2 dés.
+\begin{enumerate}
+    \item À l'aide d'un tableau à double entrée donner toute les valeurs possible de $S$.
+    \item Calculer la probabilité des événements suivants :
+\end{enumerate}
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+\begin{itemize}
+    \item $A = \text{"S est pair"}$
+    \item $B = \text{"S} \geqslant 7\text{"}$
+    \item $C = \text{"S est un multiple de 3"}$
+    \item $D = \text{"S} \geqslant 7 \text{ et S est impair"}$
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$d_2 \setminus d_1$ & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\ \hline
+\textbf{1} & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+\textbf{2} & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+\textbf{3} & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+\textbf{4} & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+\textbf{5} & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+\textbf{6} & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+\end{tabular}
+\end{center}
+
+$\text{Card } \Omega = 36$
+
+\begin{align*}
+    P(A) &= \frac{18}{36} = \frac{3}{6} = \frac{1}{2} \qquad & P(C) &= \frac{12}{36} = \frac{2}{6} = \frac{1}{3} \\
+    P(B) &= \frac{21}{36} = \frac{7}{12} \qquad & P(D) &= \frac{12}{36} = \frac{2}{6} = \frac{1}{3}
+\end{align*}
+
+\begin{comment}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Equiprobabilité ou Probabilité uniforme}}}}
 Lorsque les évènements \textcolor{blue}{élémentaires} ont la même probabilité, on dit que on a une 
 \textcolor{red}{équiprobabilité.}
 
 Une probabilité est dite uniforme si tous les évènements élémentaire sont \textcolor{red}{équiprobables}.\\
-\subsection*{\underline{\textbf{\textcolor{red}{3.Formule de probabilité uniforme}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{4. Formule de probabilité uniforme}}}}
 Soit $\Omega$ un univers et $p$ une probabilité définit dans cet univers.
 
 $\Omega=\left\lbrace w_{1}, w_{2},...,w_{n}\right\rbrace $ on suppose que on a une probabilité \textcolor{green}{uniforme.}
@@ -369,32 +555,7 @@ $\Omega=\left\lbrace 1, 2, 3, 4, 5, 6 \right\rbrace $ et $card(\Omega)=6$
 \end{enumerate}
 
 Ainsi, dans tous les cas, la probabilité est $\frac{1}{2}$, ce qui est conforme à la notion de probabilité uniforme pour un dé équilibré à six faces.
-\subsection*{\underline{\textbf{\textcolor{red}{4. Définition de Probabilité}}}}
-Soit $\Omega$ un univers associé à une expérience aléatoires.\\
-On appelle probabilité sur un univers $\Omega$ toute application 
-$p:\Omega \rightarrow[0;1]$ vérifiant:
-\begin{enumerate}
-\item $p(\Omega)=1$
-\item Si A et B deux évènements de $\Omega$ et
-
-$A\cap B=\emptyset \Longrightarrow p(A\cup B)=p(A)+p(B)$
-\end{enumerate}
-\underline{\textbf{\textcolor{red}{Conséquence}}}\\
-\begin{enumerate}
-\item $\forall A$ la probabilité de l'évènement est compris entre $[0,1]$\\
-$0 \leq p(A)\leq 1$
-\item $p(\emptyset)=0$
-\item$p(\overline{A})=1-p(A)$
-\item $p(A \cup B)=p(A)+p(B)-p(A\cap B)$\\
-\underline{\textbf{\textcolor{red}{Exercice 1}}}\\
-On considère l’ensemble E des entiers de 20 à 40. On choisit l’un de ses nombres au hasard.
-\end{enumerate}
-\begin{itemize}
-\item[•] A est l’événement : « le nombre est multiple de 3 »
-\item[•] B est l’événement : « le nombre est multiple de 2 »
-\item[•] C est l’événement : « le nombre est multiple de 6 ».
-\end{itemize}
-Calculer $p(A)$, $p(B)$, $p(C)$, $p(A\cap B)$, $p(A\cup B)$, $p(A\cap C)$ et $p(A\cup C)$.
+\end{comment}
 
 \section*{\underline{\textbf{\textcolor{red}{III. Probabilité conditionnelle et indépendance}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{A. Probabilité conditionnelle}}}}

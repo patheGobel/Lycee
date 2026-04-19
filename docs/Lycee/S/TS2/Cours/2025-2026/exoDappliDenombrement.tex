@@ -152,4 +152,105 @@ On tire 4 boules de l'urne. Déterminer le nombre de cas où l'on obtient :
 \makecell[l]{\textbf{5)} \color{red}{IMPOSSIBLE} } & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \overline{N} \ \overline{V} $\\ le nombre demandé est : $ A_2^1 \times A_4^2 \times A_3^1 $} & \makecell[l]{\textbf{5)} il faut tirer : $ \overline{R} \ \overline{N} \ \overline{N} \ \overline{V} $\\ le nombre demandé est : $ 2^1 \times 4^2 \times 3^1 $} \\
 \hline
 \end{tabular}
+
+\vspace{1cm}
+--------------------------------------------------------------------------------
+\vspace{1cm}
+
+\textbf{Application Exercise} \\[2pt]
+
+Consider an urn containing 4 black balls, 3 green balls, and 2 red balls.
+
+Four balls are drawn from the urn. Determine the number of possible outcomes in each of the following cases:
+
+\begin{enumerate}
+    \item Exactly one green ball is drawn.
+    \item At least two green balls are drawn.
+    \item At most one red ball is drawn.
+    \item No black ball is drawn.
+    \item One red ball, followed by two black balls, and then one green ball.
+\end{enumerate}
+
+\textbf{Solution} \\[2pt]
+
+\renewcommand{\arraystretch}{2}
+
+\raggedright
+\begin{tabular}{|p{6cm}|p{6cm}|p{5cm}|}
+\hline
+\textbf{Simultaneous Draw} & \textbf{Sequential Draw Without Replacement} & \textbf{Sequential Draw With Replacement}\\
+\hline
+
+\makecell[l]{\textbf{1)} We require: $V \ \overline{V} \ \overline{V} \ \overline{V}$\\
+The number of outcomes is: $C_3^1 \times C_6^3$}
+&
+\makecell[l]{\textbf{1)} We require: $V \ \overline{V} \ \overline{V} \ \overline{V}$\\
+Taking order into account,\\
+The number of outcomes is: $A_3^1 \times A_6^3 \times \color{red} C_4^1 \times C_3^3$}
+&
+\makecell[l]{\textbf{1)} We require: $V \ \overline{V} \ \overline{V} \ \overline{V}$\\
+Taking order into account,\\
+The number of outcomes is: $3^1 \times 6^3 \times \color{red} C_4^1 \times C_3^3$}
+\\
+
+\hline
+
+\makecell[l]{\textbf{2)} We require:\\
+$V V \overline{V} \overline{V}$ or $V V V \overline{V}$\\
+The number of outcomes is: $C_3^2 \times C_6^2 + C_3^3 \times C_6^1$}
+&
+\makecell[l]{\textbf{2)} We require: $V V \overline{V} \ \overline{V}$ or $V V V \overline{V}$\\
+Taking order into account,\\
+The number of outcomes is: $A_3^2 \times A_6^2 \times \color{red} C_4^2 \times C_2^2$\\
+$+ \ A_3^3 \times A_6^1 \times \color{red} C_4^3 \times C_1^1$}
+&
+\makecell[l]{\textbf{2)} We require:\\
+$V V V V$ or $V V V \overline{V}$ or $V V \overline{V} \ \overline{V}$\\
+Taking order into account,\\
+The number of outcomes is: $3^4 + 3^3 \times 6^1 \times \color{red} C_4^3 \times C_1^1$\\
+$+ \ 3^2 \times 6^2 \times \color{red} C_4^2 \times C_2^2$}
+\\
+
+\hline
+
+\makecell[l]{\textbf{3)} We require: $R \overline{R} \ \overline{R} \ \overline{R}$ or $\overline{R} \ \overline{R} \ \overline{R} \ \overline{R}$\\
+The number of outcomes is: $C_2^1 \times C_7^3 + C_7^4$}
+&
+\makecell[l]{\textbf{3)} We require: $R \overline{R} \ \overline{R} \ \overline{R}$ or $\overline{R} \overline{R} \ \overline{R} \ \overline{R}$\\
+Taking order into account,\\
+The number of outcomes is: $A_2^1 \times A_7^3 \times \color{red} C_4^1 \times C_3^3$\\
+$+ \ A_7^4$}
+&
+\makecell[l]{\textbf{3)} We require: $R \overline{R} \ \overline{R} \ \overline{R}$ or $\overline{R} \ \overline{R} \ \overline{R} \ \overline{R}$\\
+Taking order into account,\\
+The number of outcomes is: $2^1 \times 7^3 \times \color{red} C_4^1 \times C_3^3$\\
+$+ \ 7^4$}
+\\
+
+\hline
+
+\makecell[l]{\textbf{4)} We require: $\overline{N} \ \overline{N} \ \overline{N} \ \overline{N}$\\
+The number of outcomes is: $C_5^4$}
+&
+\makecell[l]{\textbf{4)} We require: $\overline{N} \ \overline{N} \ \overline{N} \ \overline{N}$\\
+The number of outcomes is: $A_5^4$}
+&
+\makecell[l]{\textbf{4)} We require: $\overline{N} \ \overline{N} \ \overline{N} \ \overline{N}$\\
+The number of outcomes is: $5^4$}
+\\
+
+\hline
+
+\makecell[l]{\textbf{5)} \color{red}{IMPOSSIBLE}}
+&
+\makecell[l]{\textbf{5)} We require: $R \ N \ N \ V$\\
+The number of outcomes is: $A_2^1 \times A_4^2 \times A_3^1$}
+&
+\makecell[l]{\textbf{5)} We require: $R \ N \ N \ V$\\
+The number of outcomes is: $2^1 \times 4^2 \times 3^1$}
+\\
+
+\hline
+\end{tabular}
+
 \end{document}
