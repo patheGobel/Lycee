@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  19 APR 2026 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  20 APR 2026 00:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1157,72 +1157,72 @@ enc/dvips/lm/lm-ec.enc}
 s/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-mathit.enc}] [2] [3{/usr/share/texmf/fonts/enc/dvip
 s/lm/lm-mathex.enc}] [4]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 402--403
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 408--409
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--410
+Underfull \hbox (badness 10000) in paragraph at lines 410--416
 
  []
 
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 419--420
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 425--426
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--441
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--446
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 447--449
+Underfull \hbox (badness 10000) in paragraph at lines 445--447
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--452
+Underfull \hbox (badness 10000) in paragraph at lines 448--452
 
  []
 
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 459--460
+Underfull \hbox (badness 10000) in paragraph at lines 453--455
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--458
+
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 465--466
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--470
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 649--651
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 655--657
 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 726--727
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
 
  []
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 902--903
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
 
  []
 
@@ -1252,7 +1252,7 @@ fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/proba2026.pdf (13 pages, 239929 bytes).
+Output written on build/proba2026.pdf (13 pages, 239888 bytes).
 PDF statistics:
  237 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams
