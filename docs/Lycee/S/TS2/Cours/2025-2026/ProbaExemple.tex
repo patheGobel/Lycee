@@ -1,0 +1,241 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\usepackage{mdframed}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{verbatim} % INDISPENSABLE pour l'environnement comment
+\usepackage{yhmath}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{graphicx}
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+\usetikzlibrary{angles,quotes,arrows.meta}
+% Définition du rouge pour les titres et soulignements
+\definecolor{monRouge}{RGB}{180, 0, 0}
+
+\usepackage{graphicx}
+\usetikzlibrary{trees} % Nécessaire pour l'arbre
+\usetikzlibrary{shapes.geometric, positioning}
+\usepackage{tabularx}
+\usepackage{pifont} % Pour les symboles de coches et croix
+\usepackage{enumitem}
+\usepackage{makecell}
+% Définition des symboles du tableau
+\newcommand{\coche}{{\color{red}\ding{51}}}
+\newcommand{\croix}{{\color{red}\ding{55}}}
+
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\renewcommand{\seriesdefault}{b} % rend tout plus foncé
+
+\begin{document}
+
+\tiny
+
+\underline{\textbf{\textcolor{red}{Exemple}}}
+
+On considère l’ensemble E des entiers de 20 à 40. On choisit l’un de ses nombres au hasard.
+
+\begin{itemize}
+\item[•] A est l’événement : « le nombre est multiple de 3 »
+\item[•] B est l’événement : « le nombre est multiple de 2 »
+\item[•] C est l’événement : « le nombre est multiple de 6 ».
+\end{itemize}
+Calculer $p(A)$, $p(B)$, $p(C)$, $p(A\cap B)$, $p(A\cup B)$, $p(A\cap C)$ et $p(A\cup C)$.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+
+1. Analyse de l'univers $\Omega$
+
+L'ensemble $E$ contient les entiers de 20 à 40.
+$\text{Card}(\Omega) = 40 - 20 + 1 = 21$
+
+2. Probabilités simples
+
+\begin{itemize}
+    \item \textbf{Événement A :} Multiples de 3 dans $\{20, \dots, 40\}$
+    
+    $A = \{21, 24, 27, 30, 33, 36, 39\} \Rightarrow \text{Card}(A) = 7$ donc $ p(A) = \frac{7}{21} = \frac{1}{3}$
+
+    \item \textbf{Événement B :} 
+    Multiples de 2 (nombres pairs)
+    
+    $B = \{20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40\} \Rightarrow \text{Card}(B) = 11$ donc $ p(B) = \dfrac{11}{21}$
+
+    \item \textbf{Événement C :} 
+    Multiples de 6
+    
+    $C = \{24, 30, 36\} \Rightarrow \text{Card}(C) = 3$ donc $ p(C) = \frac{3}{21} = \frac{1}{7} $
+\end{itemize}
+
+3. Probabilités composées
+
+\begin{itemize}
+    \item \textbf{Intersection $p(A \cap B)$ :}
+    $A \cap B$ sont les multiples de $3 \times 2 = 6$. On constate que $A \cap B = C$. Donc
+    $ p(A \cap B) = \frac{3}{21} = \frac{1}{7} $
+
+    \item \textbf{Union $p(A \cup B)$ :}
+    $p(A \cup B) = p(A) + p(B) - p(A \cap B)$. Donc 
+    $ p(A \cup B) = \frac{7}{21} + \frac{11}{21} - \frac{3}{21} = \frac{15}{21} = \frac{5}{7} $
+
+    \item \textbf{Intersection $p(A \cap C)$ :}
+    Comme $C \subset A$ (tout multiple de 6 est multiple de 3), $A \cap C = C$. Donc
+    $ p(A \cap C) = \frac{3}{21} = \frac{1}{7} $
+
+    \item \textbf{Union $p(A \cup C)$ :}
+    Comme $C \subset A$, $A \cup C = A$. Donc
+    $ p(A \cup C) = \frac{7}{21} = \frac{1}{3} $
+\end{itemize}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\
+
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+
+On lance un dé parfait de 6 faces numéroté de 1 à 6. 
+
+Calculer la probabilité des éléments suivant : \\
+$A$: "Le numéro apparu est pair" \\
+$B$: "Le numéro apparu est supérieur à 3" \\
+$C$: "Le numéro apparu est un multiple de 3" \\
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+
+$\Omega = \{1; 2; 3; 4; 5; 6\} \quad A = \{2; 4; 6\} \quad B = \{4; 5; 6\} \quad C = \{3; 6\}$
+
+\begin{enumerate}
+    \item $P(A) = \frac{\text{Card } A}{\text{Card } \Omega} = \frac{3}{6} = \frac{1}{2}$
+    \item $P(B) = \frac{\text{Card } B}{\text{Card } \Omega} = \frac{3}{6} = \frac{1}{2}$
+    \item $P(C) = \frac{\text{Card } C}{\text{Card } \Omega} = \frac{2}{6} = \frac{1}{3}$
+\end{enumerate}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\
+
+\underline{\textbf{\textcolor{red}{Exemple}}}
+
+Une urne contient 3 boules blanches numérotées de 1 à 3, 4 boules rouges numérotées de 1 à 4, 2 boules noires numérotées de 1 à 2. Les boules sont indiscernables au toucher. On tire successivement sans remise trois boules de l'urne. \\
+Calculer le nombre de tirage possible. \\
+Calculer la probabilité des éléments suivants : \\
+$A$: "le tirage est unicolore" \\
+$B$: "le tirage contient 2 blanches exactement" \\
+$C$: "le tirage contient au moins 1 boule de numéro impair" \\
+$D$: "la première boule tirée porte un numéro pair" \\
+$E$: "la première boule est noire et la deuxième porte le numéro 2" \\
+$F$: "le tirage contient au plus 2 boules rouges"
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+Urne : $\{b_1; b_2; b_3; R_1; R_2; R_3; R_4; n_1; n_2\}$
+\begin{enumerate}
+    \item $\text{Card } \Omega = A_9^3 = 504$
+    \item 
+    $\text{Card } A = A_3^3 + A_4^3 = 30 \Rightarrow P(A) = \frac{\text{Card } A}{\text{Card } \Omega} = \frac{30}{504} = \frac{5}{84}$ \\
+    
+    $\text{Card } B = A_3^2 \times A_6^1 \times \frac{3!}{2!} = 108$ $\Rightarrow$
+    $P(B) = \frac{\text{Card } B}{\text{Card } \Omega} = \frac{108}{504} = \frac{3}{14}$ \\
+    
+    $\text{Card } C = \text{Card } \Omega - \text{Card } \bar{C}$ or
+    $\text{Card } \bar{C} = A_4^3 = 24$ donc
+    $\text{Card } C = 504 - 24 = 480$ $\Rightarrow$
+    $P(C) = \frac{480}{504} = \frac{20}{21}$ 
+    
+    $\text{Card } D = A_4^1 \times A_8^2 = 224$ $\Rightarrow$
+    $P(D) = \frac{\text{Card } D}{\text{Card } \Omega} = \frac{224}{504} = \frac{4}{9}$ \\
+    
+    $\text{Card } E = A_1^1 \times A_3^1 \times A_7^1 + A_1^1 \times A_2^1 \times A_7^1 = 35$ $\Rightarrow$
+    $P(E) = \frac{\text{Card } E}{\text{Card } \Omega} = \frac{35}{504} = \frac{5}{72}$ \\
+    
+    $\text{Card } F = \text{Card } \Omega - \text{Card } \bar{F}$ or
+    $\text{Card } \bar{F} = A_3^3 = 6$ donc
+    $\text{Card } F = 504 - 6 = 498$ $\Rightarrow$
+    $P(F) = \frac{498}{504} = \frac{83}{84}$
+\end{enumerate}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\newpage
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+On lance 2 dé parfait de 6 faces numéroté de 1 à 6. On note par $S$ la somme des numéros apparus sur les faces supérieurs des 2 dés.
+\begin{enumerate}
+    \item À l'aide d'un tableau à double entrée donner toute les valeurs possible de $S$.
+    \item Calculer la probabilité des événements suivants :
+\end{enumerate}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+\begin{itemize}
+    \item $A = \text{"S est pair"}$
+    \item $B = \text{"S} \geqslant 7\text{"}$
+    \item $C = \text{"S est un multiple de 3"}$
+    \item $D = \text{"S} \geqslant 7 \text{ et S est impair"}$
+\end{itemize}
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$d_2 \setminus d_1$ & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\ \hline
+\textbf{1} & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+\textbf{2} & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+\textbf{3} & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+\textbf{4} & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+\textbf{5} & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+\textbf{6} & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+\end{tabular}\\
+
+$\text{Card } \Omega = 36$\\
+
+$
+\begin{aligned}
+    P(A) &= \dfrac{18}{36} = \dfrac{3}{6} = \dfrac{1}{2} \qquad & P(C) &= \dfrac{12}{36} = \dfrac{2}{6} = \dfrac{1}{3} \\
+    P(B) &= \dfrac{21}{36} = \dfrac{7}{12} \qquad & P(D) &= \dfrac{12}{36} = \dfrac{2}{6} = \dfrac{1}{3}
+\end{aligned}$
+\end{document}
