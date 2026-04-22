@@ -686,164 +686,15 @@ $P_A(C) = \dfrac{\text{card}(A \cap C)}{\text{card } A} = \dfrac{6}{12} = \dfrac
 
 \end{enumerate}
 
-\subsection*{\underline{\textbf{\textcolor{red}{B.Arbre pondéré}}}}
-+++++++++++++++++++++++++++++++++++++
-
-\section*{Utilisation de l'arbre de choix pondéré}
+\subsection*{\underline{\textbf{\textcolor{red}{B. Utilisation de l'arbre de choix pondéré}}}}
 
 Les exercices de probabilité conditionnelle sont facilités par l'usage d'un arbre de choix pondéré qui respecte la règle suivante : 
 \begin{center}
     \textit{<< La somme des probabilités des branches issues d'un même nœud est égale à 1 >>}
 \end{center}
 
-\subsection*{Exemple 1 : Structure générale}
+\underline{\textbf{\textcolor{red}{Structure générale }}}\\
 
-\begin{center}
-\begin{tikzpicture}[level distance=2.5cm,
-  level 1/.style={sibling distance=3cm},
-  level 2/.style={sibling distance=1.5cm}]
-  \node {$\Omega$}
-    child {node {$A$}
-      child {node {$B$} edge from parent node[above left] {$P_A(B)$}}
-      child {node {$\bar{B}$} edge from parent node[below left] {$P_A(\bar{B})$}}
-      edge from parent node[above] {$P(A)$}
-    }
-    child {node {$\bar{A}$}
-      child {node {$\bar{B}$} edge from parent node[above right] {$P_{\bar{A}}(\bar{B})$}}
-      child {node {$B$} edge from parent node[below right] {$P_{\bar{A}}(B)$}}
-      edge from parent node[below] {$P(\bar{A})$}
-    };
-\end{tikzpicture}
-\end{center}
-
-\subsection*{Exemple 2 : Compléter l'arbre et calculer $P(B)$}
-
-Soit l'arbre suivant avec les données fournies :
-\begin{itemize}
-    \item $P(A) = 1/4 \implies P(\bar{A}) = 1 - P(A) = \boxed{3/4}$
-    \item $P_A(B) = 1/3 \implies P_A(\bar{B}) = 1 - P_A(B) = \boxed{2/3}$
-    \item $P_{\bar{A}}(B) = 1/5 \implies P_{\bar{A}}(\bar{B}) = 1 - 1/5 = \boxed{4/5}$
-\end{itemize}
-
-\textbf{Calculons $P(B)$ :}
-\begin{align*}
-    P(B) &= P(A \cap B) + P(\bar{A} \cap B) \\
-    P(B) &= P(A) \times P_A(B) + P(\bar{A}) \times P_{\bar{A}}(B) \\
-    P(B) &= \frac{1}{4} \times \frac{1}{3} + \frac{3}{4} \times \frac{1}{5} \\
-    P(B) &= \frac{1}{12} + \frac{3}{20} = \frac{5}{60} + \frac{9}{60} = \frac{14}{60} \\
-    \boxed{P(B) = \frac{7}{30}}
-\end{align*}
-
-\subsection*{Exemple 3 : Arbre à plusieurs issues}
-
-Soit l'arbre suivant :
-\begin{center}
-\begin{tikzpicture}[level distance=2.5cm,
-  level 1/.style={sibling distance=4cm},
-  level 2/.style={sibling distance=1.2cm}]
-  \node {$\Omega$}
-    child {node {$A$}
-      child {node {$B$} edge from parent node[above left] {$1/2$}}
-      child {node {$C$} edge from parent node[below left] {$1/2$}}
-      edge from parent node[above left] {$1/6$}
-    }
-    child {node {$\bar{A}$}
-      child {node {$D$} edge from parent node[above right] {$1/4$}}
-      child {node {$B$} edge from parent node[right] {$1/4$}}
-      child {node {$C$} edge from parent node[below right] {$2/4$}}
-      edge from parent node[below right] {$5/6$}
-    };
-\end{tikzpicture}
-\end{center}
-
-\textbf{Calcul des probabilités :}
-
-1. \textbf{Calcul de $P(B)$ :}
-\begin{equation*}
-    P(B) = P(A \cap B) + P(\bar{A} \cap B) = \frac{1}{6} \times \frac{1}{2} + \frac{5}{6} \times \frac{1}{4} = \frac{1}{12} + \frac{5}{24} = \frac{7}{24}
-\end{equation*}
-
-2. \textbf{Calcul de $P(C)$ :}
-\begin{equation*}
-    P(C) = P(A \cap C) + P(\bar{A} \cap C) = \frac{1}{6} \times \frac{1}{2} + \frac{5}{6} \times \frac{2}{4} = \frac{1}{12} + \frac{5}{12} = \boxed{\frac{1}{2}}
-\end{equation*}
-
-3. \textbf{Calcul de $P(D)$ :}
-\begin{equation*}
-    P(D) = P(A \cap D) + P(\bar{A} \cap D) = 0 + \frac{5}{6} \times \frac{1}{4} = \boxed{\frac{5}{24}}
-\end{equation*}
-
-
-
-++++++++++++++++++++++++++++++++++++
-\subsection*{\underline{\textbf{\textcolor{red}{B.Arbre pondéré}}}}
-Un arbre pondéré permet de représenter une situation probabiliste qui comporte des probabilités conditionnelles.
-
-\underline{\textbf{\textcolor{red}{Exemple }}}\\
-Dans un lycée comportant 800 élèves, $55\%$ sont des filles. Parmi les filles, $10\%$ sont des pensionnaires. Ce pourcentage est le même chez les garçons.
-
-On choisit un élève au hasard dans ce lycée et admet que ces choix sont équiprobables.
-
-%(Présentation de l'arbre pondéré)
-
-On note F(resp. P) l'événement "l'élève choisi est une fille (resp. une pensionnaire)".
-
-On obtient l'arbre probabiliste suivante:
-
-\begin{tikzpicture}[level distance=3cm,
-  level 1/.style={sibling distance=5cm},%Ecarte les branches des 1eme ramifications
-  level 2/.style={sibling distance=4cm},%Ecarte les branches des  2eme ramifications
-  %level 3/.style={sibling distance=2cm}]%Ecarte les branches des 3eme ramifications
-    every node/.style={text width=2cm, align=center}]%Permet de spécifier une largeur pour chaque nœud
-  \node {}
-    child {node {$\overline{F}$}
-     child {node {$\overline{P}$}    
-      }
-      child {node {$P$}    
-      }
-    }% 1ere branche      
-    child {node {$F$}  
-         child {node {$\overline{P}$}    
-      }
-      child {node {$P$}    
-      }  
-    };
-\node at (-3,-1.5) [right] {$0,45$};
-
-\node at (0.8,-1.5) [right] {$0,55$};
-
-\node at (0.8,-1.5) [right] {$0,55$};
-
-\node at (-5,-4) [right] {$0,90$};
-\node at (-2.5,-4) [right] {$0,10$};
-
-\node at (-0.1,-4) [right] {$0,90$};
-\node at (2.5,-4) [right] {$0,10$};
-
-\end{tikzpicture}\\
-\begin{itemize}
-\item La somme des probabilités des deux premières branches (c'est-à-dire issues de la racine) est 1.
-\item La somme des probabilités des branches issues du noeud F est 1.
-\item La somme des probabilité des branches issues du noeud $\overline{F}$ est 1.
-\end{itemize}
-\underline{\textbf{\textcolor{red}{Propriété 1}}}\\
-Quand plusieurs branches partent d’un même nœud dans un arbre de probabilités, les probabilités sur ces branches doivent toujours s’additionner pour donner 1, car elles représentent toutes les issues possibles à ce moment-là.
-
-\underline{\textbf{\textcolor{red}{Propriété 2}}}\\
-
-Lorsqu’on suit un chemin dans un arbre pondéré, la probabilité de l’événement associé à ce chemin est égale au produit des probabilités indiquées sur les branches empruntées.
-
-En considérant l'exemple précédent, la probabilité de l'évèvenement $F\cap \overline{P}$ est:
-
-$p(F\cap \overline{P})=p(F)\times p_{F}(\overline{P})$
-
-On obtient:
-
-$p(F\cap \overline{P})=0,55\times 0,90$
-
-$p(F\cap \overline{P})=0,495$
-
-\underline{\textbf{\textcolor{red}{La lecture d'un arbre pondéré}}}\\
 \begin{tikzpicture}[level distance=3cm,
   level 1/.style={sibling distance=5cm},%Ecarte les branches des 1eme ramifications
   level 2/.style={sibling distance=4cm},%Ecarte les branches des  2eme ramifications
@@ -880,7 +731,106 @@ p_{\overline{A}}(B)\times p(\overline{A}) $\\
 La probabilité de $A$ et $\overline{B}$ est : $p(A\cap \overline{B})=
 p_{A}(\overline{B})\times p(A)$\\
 La probabilité de $A$ et $B$ est : $p(A\cap B)=p_{A}(B)\times p(A)$ \\
-\underline{\textbf{\textcolor{red}{Propriété 3:Probabilités totales}}}\\
+
+\underline{\textbf{\textcolor{red}{ Exemple 2 : Compléter l'arbre et calculer $P(B)$ }}}\\
+
+Soit l'arbre suivant avec les données fournies :
+
+\begin{tikzpicture}[level distance=3cm,
+  level 1/.style={sibling distance=5cm},%Ecarte les branches des 1eme ramifications
+  level 2/.style={sibling distance=4cm},%Ecarte les branches des  2eme ramifications
+  %level 3/.style={sibling distance=2cm}]%Ecarte les branches des 3eme ramifications
+    every node/.style={text width=2cm, align=center}]%Permet de spécifier une largeur pour chaque nœud
+  \node {}
+    child {node {$\overline{A}$}
+     child {node {$\overline{B}$}    
+      }
+      child {node {$B$}    
+      }
+    }% 1ere branche      
+    child {node {$A$}  
+         child {node {$\overline{B}$}    
+      }
+      child {node {$B$}    
+      }  
+    };
+\node at (-3,-1.5) [right] {$...$};
+
+\node at (0.8,-1.5) [right] {$1/4$};;
+
+\node at (-5,-4) [right] {$...$};
+\node at (-2.5,-4) [right] {$1/5$};
+
+\node at (-0.1,-4) [right] {$...$};
+\node at (2.5,-4) [right] {$1/3$};
+
+\end{tikzpicture}\\
+
+\begin{itemize}
+    \item $P(A) = 1/4 \implies P(\bar{A}) = 1 - P(A) = \boxed{3/4}$
+    \item $P_A(B) = 1/3 \implies P_A(\bar{B}) = 1 - P_A(B) = \boxed{2/3}$
+    \item $P_{\bar{A}}(B) = 1/5 \implies P_{\bar{A}}(\bar{B}) = 1 - 1/5 = \boxed{4/5}$
+\end{itemize}
+
+\textbf{Calculons $P(B)$ :}
+\begin{align*}
+    P(B) &= P(A \cap B) + P(\bar{A} \cap B) \\
+    P(B) &= P(A) \times P_A(B) + P(\bar{A}) \times P_{\bar{A}}(B) \\
+    P(B) &= \frac{1}{4} \times \frac{1}{3} + \frac{3}{4} \times \frac{1}{5} \\
+    P(B) &= \frac{1}{12} + \frac{3}{20} = \frac{5}{60} + \frac{9}{60} = \frac{14}{60} \\
+    \boxed{P(B) = \frac{7}{30}}
+\end{align*}
+
+\underline{\textbf{\textcolor{red}{ Exemple 3 : Arbre à plusieurs issues }}}\\
+
+Soit l'arbre suivant :
+
+\begin{tikzpicture}[level distance=3cm,
+  level 1/.style={sibling distance=5cm},%Ecarte les branches des 1eme ramifications
+  level 2/.style={sibling distance=2cm},%Ecarte les branches des  2eme ramifications
+  %level 3/.style={sibling distance=2cm}]%Ecarte les branches des 3eme ramifications
+    every node/.style={text width=2cm, align=center}]%Permet de spécifier une largeur pour chaque nœud
+  \node {}
+    child {node {$A$}
+     child {node {$B$}}
+      child {node {$C$}}
+    }% 1ere branche      
+    child {node {$\overline{A}$}  
+      child {node {$D$}}
+      child {node {$B$}}
+      child {node {$C$}}   
+    };
+\node at (-3,-1.5) [right] {$1/6$};
+
+\node at (0.8,-1.5) [right] {$5/6$};
+
+\node at (-5,-4) [right] {$1/2$};
+\node at (-2.5,-4) [right] {$1/2$};
+
+\node at (-0.1,-4) [right] {$1/4$};
+\node at (2.5,-4) [right] {$2/4$};
+\node at (1.8,-5) [right] {$1/4$};
+
+\end{tikzpicture}\\
+
+\textbf{Calcul des probabilités :}
+
+1. \textbf{Calcul de $P(B)$ :}
+\begin{equation*}
+    P(B) = P(A \cap B) + P(\bar{A} \cap B) = \frac{1}{6} \times \frac{1}{2} + \frac{5}{6} \times \frac{1}{4} = \frac{1}{12} + \frac{5}{24} = \frac{7}{24}
+\end{equation*}
+
+2. \textbf{Calcul de $P(C)$ :}
+\begin{equation*}
+    P(C) = P(A \cap C) + P(\bar{A} \cap C) = \frac{1}{6} \times \frac{1}{2} + \frac{5}{6} \times \frac{2}{4} = \frac{1}{12} + \frac{5}{12} = \boxed{\frac{1}{2}}
+\end{equation*}
+
+3. \textbf{Calcul de $P(D)$ :}
+\begin{equation*}
+    P(D) = P(A \cap D) + P(\bar{A} \cap D) = 0 + \frac{5}{6} \times \frac{1}{4} = \boxed{\frac{5}{24}}
+\end{equation*}
+
+\underline{\textbf{\textcolor{red}{ Probabilités totales}}}\\
 Soit l'univers $\Omega$ d'une expérience aléatoire $A_{1}, A_{2},...,A_{n}$ des évènements tels que $\left\lbrace A_{1}, A_{2},...,A_{n}\right\rbrace $ forme une parition de l'univers $\Omega$.\\
 Alors, pour tout événement B, on a:\\
 \textcolor{blue}{$p(B)=p(B\cap A_{1})+p(B\cap A_{2})+...+p(B\cap A_{n})$}.
@@ -889,7 +839,123 @@ Alors, pour tout événement B, on a:\\
 
 Et, si pour tout $p(A_{i}) \neq 0$, alors:
 
-\textcolor{blue}{$p(B)=p(A_{1})\times p_{A_{1}}(B)+p(A_{2})\times p_{A_{2}}(B)+...+p(A_{n})\times p_{A_{n}}(B)$}
+\textcolor{blue}{$p(B)=p(A_{1})\times p_{A_{1}}(B)+p(A_{2})\times p_{A_{2}}(B)+...+p(A_{n})\times p_{A_{n}}(B)$}\\
+
+$\color{red}\boxed{p(B)=\sum_{i=0}^{n}p(A_{i})\times p_{A_{i}}(B)}$\\
+
+\underline{\textbf{\textcolor{red}{ Formule de Bayes}}}\\
+
+Soient $A$ et $B$ deux événements de probabilités non nulles. La probabilité de $A$ sachant $B$ est donnée par :
+
+\begin{equation*}
+    \boxed{P_B(A) = \frac{P(A) \times P_A(B)}{P(B)}}
+\end{equation*}
+
+\textbf{Extension avec les probabilités totales}
+
+Si on considère un système complet d'événements (par exemple $A$ et son contraire $\bar{A}$), la probabilité $P(B)$ peut se développer au dénominateur selon la formule des probabilités totales :
+
+\begin{equation*}
+    P_B(A) = \frac{P(A) \times P_A(B)}{P(A) \times P_A(B) + P(\bar{A}) \times P_{\bar{A}}(B)}
+\end{equation*}
+
+++++++++++++++++++++++++++++++++++++++++
+
+\section*{Exemple : Soit l'arbre}
+
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={sibling distance=3.5cm, level distance=3.5cm},
+    level 2/.style={sibling distance=1.2cm, level distance=3cm},
+    sloped, % Pour que le texte suive l'inclinaison des branches
+    every node/.style={inner sep=2pt}
+]
+% Racine de l'arbre (Omega)
+\node {$\Omega$}
+    child {
+        node {A}
+        child { node {E} edge from parent node[above] {1/5} }
+        child { node {F} edge from parent node[above] {2/5} }
+        child { node {G} edge from parent node[below] {2/5} }
+        edge from parent node[above] {1/4}
+    }
+    child {
+        node {B}
+        child { node {E} edge from parent node[above] {1/7} }
+        child { node {F} edge from parent node[below] {6/7} }
+        edge from parent node[above] {2/4}
+    }
+    child {
+        node {C}
+        child { node {G} edge from parent node[above] {3/4} }
+        child { node {E} edge from parent node[below] {1/4} }
+        edge from parent node[below] {1/4}
+    };
+\end{tikzpicture}
+\end{center}
+
+\vspace{1cm}
+
+\begin{enumerate}
+    \item \textbf{Calculer $P(E)$, $P(G), P(F)$}
+    \item \textbf{En déduire $P_E(A)$ et $P_F(B)$}
+\end{enumerate}
+
+
+\section*{Exercice : Probabilités sur Arbre}
+
+\subsection*{1. Calcul des probabilités totales}
+
+% Calcul de P(E)
+\textbf{Calcul de $P(E)$ :}
+\begin{align*}
+P(E) &= P(A \cap E) + P(B \cap E) + P(C \cap E) \\
+P(E) &= \left( \frac{1}{4} \times \frac{1}{5} \right) + \left( \frac{2}{4} \times \frac{1}{7} \right) + \left( \frac{1}{4} \times \frac{1}{4} \right) \\
+\boxed{P(E) = \frac{103}{560}}
+\end{align*}
+
+\vspace{1em}
+
+% Calcul de P(G)
+\textbf{Calcul de $P(G)$ :}
+\begin{align*}
+P(G) &= P(A \cap G) + P(C \cap G) \\
+P(G) &= \left( \frac{1}{4} \times \frac{2}{5} \right) + \left( \frac{1}{4} \times \frac{3}{4} \right) \\
+\boxed{P(G) = \frac{23}{80}}
+\end{align*}
+
+\vspace{1em}
+
+% Calcul de P(F)
+\textbf{Calcul de $P(F)$ :}
+\begin{align*}
+P(F) &= P(A \cap F) + P(B \cap F) \\
+P(F) &= \left( \frac{1}{4} \times \frac{2}{5} \right) + \left( \frac{2}{4} \times \frac{6}{7} \right) \\
+\boxed{P(F) = \frac{37}{70}}
+\end{align*}
+
+\subsection*{2. Calcul des probabilités conditionnelles (Bayes)}
+
+% Calcul de P_E(A)
+\textbf{Calcul de $P_E(A)$ :}
+\begin{align*}
+P_E(A) &= \frac{P(A \cap E)}{P(E)} \\
+P_E(A) &= \frac{\frac{1}{4} \times \frac{1}{5}}{\frac{103}{560}} \\
+\boxed{P_E(A) = \frac{28}{103}}
+\end{align*}
+
+\vspace{1em}
+
+% Calcul de P_F(B)
+\textbf{Calcul de $P_F(B)$ :}
+\begin{align*}
+P_F(B) &= \frac{P(B \cap F)}{P(F)} \\
+P_F(B) &= \frac{\frac{2}{4} \times \frac{6}{7}}{\frac{37}{70}} \\
+\boxed{P_F(B) = \frac{30}{37}}
+\end{align*}
+
+++++++++++++++++++++++++++++++++++++++++
+
 \subsection*{\underline{\textbf{\textcolor{red}{C.L'indépendance de deux évènements}}}}
 \underline{\textbf{\textcolor{red}{1.Définition}}}\\
 Deux événements sont dits indépendants lorsque le fait que l’un se produise n’a aucune influence sur la probabilité que l’autre se produise.

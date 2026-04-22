@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  20 APR 2026 09:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  22 APR 2026 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1206,56 +1206,177 @@ Underfull \hbox (badness 10000) in paragraph at lines 474--476
 
  []
 
-[6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 655--657
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 569--571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--594
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
+Underfull \hbox (badness 10000) in paragraph at lines 672--674
 
  []
 
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 908--909
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
  []
 
-[11] [12] [13] (build/proba2026.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--678
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 696--697
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 727--734
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
+
+ []
+
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 814--815
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 844--845
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
+
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
+
+ []
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1143
+
+ []
+
+[15] [16] [17] (build/proba2026.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `proba2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31456 strings out of 474222
- 629740 string characters out of 5748732
- 1947975 words of memory out of 5000000
- 53077 multiletter control sequences out of 15000+600000
- 621278 words of font info for 95 fonts, out of 8000000 for 9000
+ 31610 strings out of 474222
+ 632827 string characters out of 5748732
+ 1949975 words of memory out of 5000000
+ 53213 multiletter control sequences out of 15000+600000
+ 625540 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,411b,1161s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,13n,107p,411b,1161s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/proba2026.pdf (13 pages, 239875 bytes).
+fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on build/proba2026.pdf (17 pages, 269865 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
+ 71 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
