@@ -565,49 +565,217 @@ Ainsi, dans tous les cas, la probabilité est $\frac{1}{2}$, ce qui est conforme
 
 \section*{\underline{\textbf{\textcolor{red}{III. Probabilité conditionnelle et indépendance}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{A. Probabilité conditionnelle}}}}
+
+On lance un dé parfait de 6 faces et on note le numéro de la face apparu. \\
+La probabilité d'avoir la face de numéro 6 est égale à $\frac{1}{6}$. \\
+
+Si une autre personne regarde la face apparue avant les autres et dit : << la face porte un numéro pair >>. \\
+La probabilité d'avoir 6 est alors égale à $\frac{1}{3}$. \\
+$\frac{1}{3}$ est appelée \underline{la probabilité conditionnelle} d'avoir 6 sachant que le numéro est pair.
+
 \underline{\textbf{\textcolor{red}{1.Définition}}}\\
-Soit $\Omega$ un univers, associe à une expérience aléatoire et $p$ la probabilité définie dans cet univers. $A$ et $B$ deux évèvenements de $\Omega$ tel que $p(B)\neq 0$
 
-$p_{\frac{A}{B}}=p_{B}(A)=\frac{p(A\cap B)}{p(B)}$
+Soit $E$ une épreuve aléatoire d'univers $\Omega$. $A$ et $B$ deux événements de l'épreuve. On appelle probabilité conditionnelle de $A$ sachant $B$ le nombre réel noté $P_B(A)$ ou $P(A|B)$ défini par :
+\begin{equation*}
+    \boxed{P_B(A) = \frac{P(A \cap B)}{P(B)}}
+\end{equation*}
 
-\underline{\textbf{\textcolor{red}{1.Propriété}}}\\
-Dans une situation d’équiprobabilité, on a $p_{\frac{A}{B}}=p_{B}(A)=\frac{card(A\cap B)}{card(B)}$
+\underline{\textbf{\textcolor{red}{2.Propriété}}}\\
+
+\begin{itemize}
+    \item $P_A(\emptyset) = 0$
+    \item $P_A(\Omega) = 1$
+    \item $P_A(\bar{B}) = 1 - P_A(B)$
+    \item $P(A \cap B) = P(A) \times P_A(B) = P(B) \times P_B(A)$
+    \item $\boxed{P(A) = P(A \cap B) + P(A \cap \bar{B})}$
+\end{itemize}
 
 \underline{\textbf{\textcolor{red}{Exemple}}}\\
-Soit une expérience aléatoire comportant les évènements A et B. On sait que
-P(A)=0,4,  P(B)=0,7 et P($A\cap B$)=0,2. Calcule $p_{B}(A)$ et $p_{A}(B)$.
 
-Pour calculer la $1^{re}$ probabilité conditionnelle, on utilise la formule.
+Une urne contient trois boules rouges numérotées de 1 à 3, quatre boules vertes numérotées de 1 à 4 et 2 boules noires numérotées de 1 à 2, qui sont indiscernables au toucher. \\
+On tire successivement sans remise 3 boules de l'urne.
 
-$p_{A/B}=p_{B}(A)=\frac{p(A\cap B)}{p(B)}=\frac{card(A\cap B)}{card(B)}$
+\begin{enumerate}
+    \item Calculer la probabilité des événements suivants :
+    \begin{itemize}
+        \item $A$ : << les trois boules portent la même couleur >>
+        \item $B$ : << la première boule tirée est rouge >>
+        \item $C$ : << les boules portent des numéros pairs >>
+    \end{itemize}
+    \item Calculer $P_B(A)$ et $P_A(B)$.
+\end{enumerate}
 
 \underline{\textbf{\textcolor{red}{Solution}}}\\
-Soit une expérience aléatoire comportant les évènements A et B.
 
-On donne
-P(A)=0,4,  P(B)=0,7 et P($A\cap B$)=0,2. Calcule $p_{B}(A)$ et $p_{A}(B)$.
+$\text{Card } \Omega = A_9^3 = 504$
+\begin{enumerate}
+\item $P(A) = \dfrac{A_3^3 + A_4^3}{504} = \dfrac{6 + 24}{504} = \dfrac{30}{504} = \dfrac{5}{84}$ \\
 
-Pour calculer la $1^{re}$ probabilité conditionnelle  \textcolor{red}{($p_{B}(A)$)}, on utilise la\\ formule.
-%(Présentation de l'arbre pondéré)
+$P(B) = \dfrac{A_3^1 \times A_8^2}{504} = \dfrac{3 \times 56}{504} = \dfrac{168}{504} = \dfrac{1}{3}$ \\
 
-$p_{B}(A)=\frac{p(A\cap B)}{p(B)}$
+$P(C) = \dfrac{A_4^3}{504} = \dfrac{24}{504} = \dfrac{1}{21}$
 
-$p_{B}(A)=\frac{0,2}{0,7}$
+\item $P(A \cap B) = \dfrac{A_3^3}{504} = \dfrac{6}{504} = \dfrac{1}{84}$ \\
 
-$p_{B}(A)=\frac{2}{7}$
+$P_B(A) = \dfrac{P(A \cap B)}{P(B)} = \dfrac{\dfrac{1}{84}}{\dfrac{1}{3}} = \dfrac{3}{84}$ \\
+\begin{equation*}
+    \boxed{P_B(A) = \dfrac{3}{84} = \dfrac{1}{28}}
+\end{equation*}
 
-Pour calculer la $2^{e}$ probabilité conditionnelle, on utilise aussi la formule. Il est important de remarquer que l’intersection est \textbf{commutative}, donc 
-Pour calculer la $2^{e}$ probabilité conditionnelle \textcolor{red}{($p_{A}(B)$)}, on utilise aussi la formule. Il est important de remarquer que l’intersection est \textbf{commutative}, donc 
-%(Présentation de l'arbre pondéré)
-$p(A\cap B)=p(B\cap A)$
+$P_A(B) = \dfrac{P(A \cap B)}{P(A)} = \dfrac{\dfrac{1}{84}}{\dfrac{5}{84}} = \dfrac{1}{84} \times \dfrac{84}{5} = \dfrac{1}{5}$ \\
+\begin{equation*}
+    \boxed{P_A(B) = \dfrac{1}{5}}
+\end{equation*}
 
-$p_{A}(B)=\frac{p(A\cap B)}{p(A)}$
+\end{enumerate}
 
-$p_{A}(B)=\frac{0,2}{0,4}$
+++++++++++++++++++++++++
 
-$p_{A}(B)=\frac{1}{2}$
+\underline{\textbf{\textcolor{red}{Remarque}}}\\
+En cas d'équiprobabilité :
+\begin{equation*}
+    \boxed{P_B(A) = \frac{\text{card}(A \cap B)}{\text{card}(B)}}
+\end{equation*}
 
-$p_{A}(B)=0,5$
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+On dispose de 2 dés non pipés, numérotés de 1 à 6. On lance les deux dés et on fait la somme des numéros apparus sur la face supérieure des 2 dés.
+
+\begin{itemize}
+    \item À l'aide d'un tableau à double entrée, déterminer l'ensemble des résultats possibles.
+    \item Calculer la probabilité des événements suivants :
+    \begin{itemize}
+        \item $A$ : << La somme est un multiple de 3 >>
+        \item $B$ : << La somme est inférieure ou égale à 10 >>
+        \item $C$ : << La somme est impaire >>
+    \end{itemize}
+    \item Calculer $P_C(A)$, $P_B(A)$ et $P_A(C)$.
+\end{itemize}
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+\begin{enumerate}
+
+\item Tableau des sommes possibles
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\text{D1} \(\diagup\) \text{D2} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\  \hline
+\textbf{1} & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+\textbf{2} & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+\textbf{3} & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+\textbf{4} & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+\textbf{5} & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+\textbf{6} & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+\end{tabular}
+\end{center}
+\item Calcul des probabilités
+$\text{Card } \Omega = 36$ \\
+
+$P(A) = \dfrac{12}{36} = \dfrac{1}{3}$ \quad (Sommes : 3, 6, 9, 12) \\
+
+$P(B) = \dfrac{33}{36} = \dfrac{11}{12}$ \quad (Toutes sauf 11, 11, 12) \\
+
+$P(C) = \dfrac{18}{36} = \dfrac{1}{2}$ \quad (Sommes impaires)
+\item Probabilités conditionnelles
+$P_C(A) = \dfrac{\text{card}(A \cap C)}{\text{card } C} = \dfrac{6}{18} = \dfrac{1}{3}$ \\
+
+$P_B(A) = \dfrac{\text{card}(A \cap B)}{\text{card } B} = \dfrac{11}{33} = \dfrac{1}{3}$ \\
+
+$P_A(C) = \dfrac{\text{card}(A \cap C)}{\text{card } A} = \dfrac{6}{12} = \dfrac{1}{2}$
+
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{B.Arbre pondéré}}}}
++++++++++++++++++++++++++++++++++++++
+
+\section*{Utilisation de l'arbre de choix pondéré}
+
+Les exercices de probabilité conditionnelle sont facilités par l'usage d'un arbre de choix pondéré qui respecte la règle suivante : 
+\begin{center}
+    \textit{<< La somme des probabilités des branches issues d'un même nœud est égale à 1 >>}
+\end{center}
+
+\subsection*{Exemple 1 : Structure générale}
+
+\begin{center}
+\begin{tikzpicture}[level distance=2.5cm,
+  level 1/.style={sibling distance=3cm},
+  level 2/.style={sibling distance=1.5cm}]
+  \node {$\Omega$}
+    child {node {$A$}
+      child {node {$B$} edge from parent node[above left] {$P_A(B)$}}
+      child {node {$\bar{B}$} edge from parent node[below left] {$P_A(\bar{B})$}}
+      edge from parent node[above] {$P(A)$}
+    }
+    child {node {$\bar{A}$}
+      child {node {$\bar{B}$} edge from parent node[above right] {$P_{\bar{A}}(\bar{B})$}}
+      child {node {$B$} edge from parent node[below right] {$P_{\bar{A}}(B)$}}
+      edge from parent node[below] {$P(\bar{A})$}
+    };
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Exemple 2 : Compléter l'arbre et calculer $P(B)$}
+
+Soit l'arbre suivant avec les données fournies :
+\begin{itemize}
+    \item $P(A) = 1/4 \implies P(\bar{A}) = 1 - P(A) = \boxed{3/4}$
+    \item $P_A(B) = 1/3 \implies P_A(\bar{B}) = 1 - P_A(B) = \boxed{2/3}$
+    \item $P_{\bar{A}}(B) = 1/5 \implies P_{\bar{A}}(\bar{B}) = 1 - 1/5 = \boxed{4/5}$
+\end{itemize}
+
+\textbf{Calculons $P(B)$ :}
+\begin{align*}
+    P(B) &= P(A \cap B) + P(\bar{A} \cap B) \\
+    P(B) &= P(A) \times P_A(B) + P(\bar{A}) \times P_{\bar{A}}(B) \\
+    P(B) &= \frac{1}{4} \times \frac{1}{3} + \frac{3}{4} \times \frac{1}{5} \\
+    P(B) &= \frac{1}{12} + \frac{3}{20} = \frac{5}{60} + \frac{9}{60} = \frac{14}{60} \\
+    \boxed{P(B) = \frac{7}{30}}
+\end{align*}
+
+\subsection*{Exemple 3 : Arbre à plusieurs issues}
+
+Soit l'arbre suivant :
+\begin{center}
+\begin{tikzpicture}[level distance=2.5cm,
+  level 1/.style={sibling distance=4cm},
+  level 2/.style={sibling distance=1.2cm}]
+  \node {$\Omega$}
+    child {node {$A$}
+      child {node {$B$} edge from parent node[above left] {$1/2$}}
+      child {node {$C$} edge from parent node[below left] {$1/2$}}
+      edge from parent node[above left] {$1/6$}
+    }
+    child {node {$\bar{A}$}
+      child {node {$D$} edge from parent node[above right] {$1/4$}}
+      child {node {$B$} edge from parent node[right] {$1/4$}}
+      child {node {$C$} edge from parent node[below right] {$2/4$}}
+      edge from parent node[below right] {$5/6$}
+    };
+\end{tikzpicture}
+\end{center}
+
+\textbf{Calcul des probabilités :}
+
+1. \textbf{Calcul de $P(B)$ :}
+\begin{equation*}
+    P(B) = P(A \cap B) + P(\bar{A} \cap B) = \frac{1}{6} \times \frac{1}{2} + \frac{5}{6} \times \frac{1}{4} = \frac{1}{12} + \frac{5}{24} = \frac{7}{24}
+\end{equation*}
+
+2. \textbf{Calcul de $P(C)$ :}
+\begin{equation*}
+    P(C) = P(A \cap C) + P(\bar{A} \cap C) = \frac{1}{6} \times \frac{1}{2} + \frac{5}{6} \times \frac{2}{4} = \frac{1}{12} + \frac{5}{12} = \boxed{\frac{1}{2}}
+\end{equation*}
+
+3. \textbf{Calcul de $P(D)$ :}
+\begin{equation*}
+    P(D) = P(A \cap D) + P(\bar{A} \cap D) = 0 + \frac{5}{6} \times \frac{1}{4} = \boxed{\frac{5}{24}}
+\end{equation*}
+
+
+
+++++++++++++++++++++++++++++++++++++
 \subsection*{\underline{\textbf{\textcolor{red}{B.Arbre pondéré}}}}
 Un arbre pondéré permet de représenter une situation probabiliste qui comporte des probabilités conditionnelles.
 
