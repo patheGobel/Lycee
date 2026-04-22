@@ -238,4 +238,101 @@ $
     P(A) &= \dfrac{18}{36} = \dfrac{3}{6} = \dfrac{1}{2} \qquad & P(C) &= \dfrac{12}{36} = \dfrac{2}{6} = \dfrac{1}{3} \\
     P(B) &= \dfrac{21}{36} = \dfrac{7}{12} \qquad & P(D) &= \dfrac{12}{36} = \dfrac{2}{6} = \dfrac{1}{3}
 \end{aligned}$
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+
+Une urne contient trois boules rouges numérotées de 1 à 3, quatre boules vertes numérotées de 1 à 4 et 2 boules noires numérotées de 1 à 2, qui sont indiscernables au toucher. \\
+On tire successivement sans remise 3 boules de l'urne.
+
+\begin{enumerate}
+    \item Calculer la probabilité des événements suivants :
+    \begin{itemize}
+        \item $A$ : << les trois boules portent la même couleur >>
+        \item $B$ : << la première boule tirée est rouge >>
+        \item $C$ : << les boules portent des numéros pairs >>
+    \end{itemize}
+    \item Calculer $P_B(A)$ et $P_A(B)$.
+\end{enumerate}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+
+$\text{Card } \Omega = A_9^3 = 504$
+\begin{enumerate}
+\item $P(A) = \dfrac{A_3^3 + A_4^3}{504} = \dfrac{6 + 24}{504} = \dfrac{30}{504} = \dfrac{5}{84}$ \\
+
+$P(B) = \dfrac{A_3^1 \times A_8^2}{504} = \dfrac{3 \times 56}{504} = \dfrac{168}{504} = \dfrac{1}{3}$ \\
+
+$P(C) = \dfrac{A_4^3}{504} = \dfrac{24}{504} = \dfrac{1}{21}$
+
+\item $P(A \cap B) = \dfrac{A_3^3}{504} = \dfrac{6}{504} = \dfrac{1}{84}$ \\
+
+$P_B(A) = \dfrac{P(A \cap B)}{P(B)} = \dfrac{\dfrac{1}{84}}{\dfrac{1}{3}} = \dfrac{3}{84}$ \\
+\begin{equation*}
+    \boxed{P_B(A) = \dfrac{3}{84} = \dfrac{1}{28}}
+\end{equation*}
+
+$P_A(B) = \dfrac{P(A \cap B)}{P(A)} = \dfrac{\dfrac{1}{84}}{\dfrac{5}{84}} = \dfrac{1}{84} \times \dfrac{84}{5} = \dfrac{1}{5}$ \\
+\begin{equation*}
+    \boxed{P_A(B) = \dfrac{1}{5}}
+\end{equation*}
+
+\end{enumerate}
+\newpage
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Exemple}}}\\
+On dispose de 2 dés non pipés, numérotés de 1 à 6. On lance les deux dés et on fait la somme des numéros apparus sur la face supérieure des 2 dés.
+
+\begin{itemize}
+    \item À l'aide d'un tableau à double entrée, déterminer l'ensemble des résultats possibles.
+    \item Calculer la probabilité des événements suivants :
+    \begin{itemize}
+        \item $A$ : << La somme est un multiple de 3 >>
+        \item $B$ : << La somme est inférieure ou égale à 10 >>
+        \item $C$ : << La somme est impaire >>
+    \end{itemize}
+    \item Calculer $P_C(A)$, $P_B(A)$ et $P_A(C)$.
+\end{itemize}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Solution}}}\\
+\begin{enumerate}
+
+\item Tableau des sommes possibles
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\text{D1} \(\diagup\) \text{D2} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\  \hline
+\textbf{1} & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+\textbf{2} & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+\textbf{3} & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+\textbf{4} & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+\textbf{5} & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+\textbf{6} & 7 & 8 & 9 & 10 & 11 & 12 \\ \hline
+\end{tabular}
+\end{center}
+\item Calcul des probabilités
+$\text{Card } \Omega = 36$ \\
+
+$P(A) = \dfrac{12}{36} = \dfrac{1}{3}$ \quad (Sommes : 3, 6, 9, 12) \\
+
+$P(B) = \dfrac{33}{36} = \dfrac{11}{12}$ \quad (Toutes sauf 11, 11, 12) \\
+
+$P(C) = \dfrac{18}{36} = \dfrac{1}{2}$ \quad (Sommes impaires)
+\item Probabilités conditionnelles
+$P_C(A) = \dfrac{\text{card}(A \cap C)}{\text{card } C} = \dfrac{6}{18} = \dfrac{1}{3}$ \\
+
+$P_B(A) = \dfrac{\text{card}(A \cap B)}{\text{card } B} = \dfrac{11}{33} = \dfrac{1}{3}$ \\
+
+$P_A(C) = \dfrac{\text{card}(A \cap C)}{\text{card } A} = \dfrac{6}{12} = \dfrac{1}{2}$
+
+\end{enumerate}
+
 \end{document}
