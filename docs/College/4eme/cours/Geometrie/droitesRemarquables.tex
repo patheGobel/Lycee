@@ -65,7 +65,7 @@ middle color = tcbcolback!80!black]
 \usepackage{systeme}
 \usepackage{tkz-tab}
 \usepackage{tikz}
-\usetikzlibrary{calc}
+\usetikzlibrary{calc, intersections, through, angles, quotes}
 \usetikzlibrary{arrows}
 \newcounter{exemple} % Compteur pour les questions
 
@@ -247,38 +247,188 @@ Pour tracer le cercle inscrit dans un triangle, il faut :
 \section*{\underline{\textbf{\textcolor{red}{I. Médianes d’un triangle :}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1) Définition :}}}}
 
-Une médiane d’un triangle est une droite qui passe par un sommet et par le milieu du côté opposé à ce sommet.
+Une médiane d'un triangle est une droite qui passe par un sommet et par le milieu du côté opposé à ce sommet.
 
+% Figure TikZ pour une seule médiane
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Définition des points du triangle
+    \coordinate (A) at (2,3);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (5,0.5);
+    
+    % Calcul du milieu de [BC]
+    \coordinate (M) at ($(B)!0.5!(C)$);
+    
+    % Dessin du triangle
+    \draw[blue, thick] (A) -- (B) -- (C) -- cycle;
+    
+    % Dessin de la médiane (droite passant par A et M)
+    \draw[red, thick] ($(A)!-0.2!(M)$) -- ($(A)!1.5!(M)$);
+    
+    % Labels
+    \node[above] at (A) {A};
+    \node[left] at (B) {B};
+    \node[right] at (C) {C};
+    \node[below] at (M) {$(\Delta)$};
+    
+    % Marquage du milieu (petits traits)
+    \draw[black] ($(B)!0.5!(M)$) +(-0.1,0.1) -- +(0.1,-0.1);
+    \draw[black] ($(B)!0.5!(M)$) +(-0.05,0.1) -- +(0.15,-0.1);
+    
+    \draw[black] ($(C)!0.5!(M)$) +(-0.1,0.1) -- +(0.1,-0.1);
+    \draw[black] ($(C)!0.5!(M)$) +(-0.05,0.1) -- +(0.15,-0.1);
+    
+    \node[right] at (2.5,2) {Médiane issue de A};
+    \draw[->] (2.4,2) -- (2.1,1.5);
+\end{tikzpicture}
+\end{center}
 \subsection*{\underline{\textbf{\textcolor{red}{2) Propriétés :}}}}
 
-\begin{itemize}
-\item[$\checkmark$] Les trois médianes d’un triangle sont concourantes.
-\item[$\checkmark$] Le point de concours de ces médianes est appelé centre de gravité du triangle.
-\item[$\checkmark$] Le centre de gravité d’un triangle se trouve au deux tiers de chaque médiane à partir du sommet.
+\begin{itemize}[label=\checkmark]
+    \item Les trois médianes d'un triangle sont concourantes.
+    \item Le point de concours de ces médianes est appelé \textbf{centre de gravité} du triangle.
+    \item Le centre de gravité d'un triangle se trouve au deux tiers de chaque médiane à partir du sommet.
 \end{itemize}
+
+% Figure TikZ complète avec les 3 médianes
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Coordonnées
+    \coordinate (A) at (1.5,2.5);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (4,0);
+    
+    % Milieux des côtés
+    \coordinate (Ap) at ($(B)!0.5!(C)$); % Milieu de BC
+    \coordinate (Bp) at ($(A)!0.5!(C)$); % Milieu de AC
+    \coordinate (Cp) at ($(A)!0.5!(B)$); % Milieu de AB
+    
+    % Centre de gravité (Intersection ou Barycentre)
+    \coordinate (G) at (barycentric cs:A=1,B=1,C=1);
+    
+    % Dessin du triangle
+    \draw[blue, thick] (A) -- (B) -- (C) -- cycle;
+    
+    % Dessin des 3 médianes (prolongées légèrement)
+    \draw[red, thick] ($(A)!-0.1!(Ap)$) -- ($(A)!1.2!(Ap)$);
+    \draw[red, thick] ($(B)!-0.1!(Bp)$) -- ($(B)!1.1!(Bp)$);
+    \draw[red, thick] ($(C)!-0.1!(Cp)$) -- ($(C)!1.1!(Cp)$);
+    
+    % Points et labels
+    \node[above] at (A) {A};
+    \node[left] at (B) {B};
+    \node[right] at (C) {C};
+    \node[below] at (Ap) {A'};
+    \node[right] at (Bp) {B'};
+    \node[left] at (Cp) {C'};
+    \node[above right] at (G) {G};
+    
+    % Marquer le point G
+    \fill[black] (G) circle (1pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}[label=\textbullet]
+    \item $AG = \frac{2}{3} AA'$ et $G \in [AA']$, alors $A, G, A'$ sont alignés
+    \item $BG = \frac{2}{3} BB'$ et $G \in [BB']$, alors $B, G, B'$ sont alignés
+    \item $CG = \frac{2}{3} CC'$ et $G \in [CC']$, alors $C, G, C'$ sont alignés
+\end{itemize}
+
 \textbf{\exerciceapp}
 
 \textbf{\correction}
 
 \section*{\underline{\textbf{\textcolor{red}{I. Médiatrices d’un triangle :}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1) Définition :}}}}
-Une médiatrice d’un triangle est une droite qui passe par le milieu d’un coté et perpendiculaire à ce coté.
+Une médiatrice d'un triangle est une droite qui passe par le milieu d'un côté et perpendiculaire à ce côté.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Coordonnées du triangle
+    \coordinate (A) at (2,2.5);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (5,0);
+    
+    % Dessin du triangle
+    \draw[blue, thick] (A) -- (B) -- (C) -- cycle;
+    
+    % Milieu de [BC]
+    \coordinate (MBC) at ($(B)!0.5!(C)$);
+    
+    % Dessin de la médiatrice
+    \draw[red, thick] ($(MBC)+(0,-1)$) -- ($(MBC)+(0,3.5)$);
+    
+    % Angle droit
+    \draw (MBC) ++(0,0.2) -- ++(0.2,0) -- ++(0,-0.2);
+    
+    % Codage milieu (petits traits)
+    \draw ($(B)!0.5!(MBC)$) ++(0,-0.15) -- ++(0,0.3);
+    \draw ($(C)!0.5!(MBC)$) ++(0,-0.15) -- ++(0,0.3);
+    
+    % Labels
+    \node[above] at (A) {A};
+    \node[left] at (B) {B};
+    \node[right] at (C) {C};
+    \node[right] at (2.5,1.5) {Médiatrice de [BC]};
+    \draw[->, >=latex] (2.4,1.5) -- (2,1.3);
+\end{tikzpicture}
+\end{center}
+
 \subsection*{\underline{\textbf{\textcolor{red}{2) Propriétés :}}}}
 
-\begin{itemize}
-\item[$\checkmark$] Les trois médiatrices d’un triangle sont concourantes.
-\item[$\checkmark$] Leur point de concours est le centre du cercle passant par les trois sommets du triangle.
-\item[$\checkmark$] Ce cercle est appelé cercle circonscrit au triangle.
+\begin{itemize}[label=\checkmark]
+    \item Les trois médiatrices d'un triangle sont concourantes.
+    \item Leur point de concours est le centre du cercle passant par les trois sommets du triangle.
+    \item Ce cercle est appelé cercle circonscrit au triangle.
 \end{itemize}
 
-\textbf{\underline{\textbf{\textcolor{red}{ Remarques :}}}}
-\begin{itemize}
-\item[$\checkmark$] Quand le triangle a trois angles aigus, le centre du cercle circonscrit est à l’intérieur du triangle.
-\item[$\checkmark$] Quand le triangle a un angle obtus, le centre du cercle circonscrit est à l’extérieur du triangle.
-\item[$\checkmark$] Quand le triangle a un angle droit, le centre du cercle circonscrit est le milieu de l’hypoténuse.
-\end{itemize}
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Coordonnées
+    \coordinate (A) at (0.8,2.2);
+    \coordinate (C) at (0,0);
+    \coordinate (B) at (3.5,0);
+    
+    % Le centre O (point de concours)
+    \coordinate (O) at (1.75, 0.78); 
+    
+    % Dessin du triangle
+    \draw[thin] (A) -- (B) -- (C) -- cycle;
+    
+    % Milieux
+    \coordinate (MAB) at ($(A)!0.5!(B)$);
+    \coordinate (MBC) at ($(B)!0.5!(C)$);
+    \coordinate (MCA) at ($(C)!0.5!(A)$);
+    
+    % Médiatrices (tracées par rapport au centre O)
+    \draw[blue!70!black, thick] ($(MAB)!-1.2!(O)$) -- ($(MAB)!2.2!(O)$);
+    \draw[blue!70!black, thick] ($(MBC)!-1.0!(O)$) -- ($(MBC)!3.0!(O)$);
+    \draw[blue!70!black, thick] ($(MCA)!-1.5!(O)$) -- ($(MCA)!2.5!(O)$);
+    
+    % Cercle circonscrit
+    \draw[blue, very thick] (O) circle (1.92cm);
+    
+    % L'angle droit corrigé :
+    % Nous utilisons le pic 'right angle' qui nécessite 'angles' et 'quotes'
+    % L'ordre des points (B--MBC--O) définit l'orientation.
+    \draw pic [draw, black, angle eccentricity=1, angle radius=5pt] {right angle = B--MBC--O};
+    
+    % Labels
+    \node[above, red] at (A) {A};
+    \node[below right, red] at (B) {B};
+    \node[below left, red] at (C) {C};
+    \node[below right] at (O) {O};
+    \fill[red] (O) circle (1pt);
+\end{tikzpicture}
+\end{center}
 
 \textbf{\underline{\textbf{\textcolor{red}{ Remarques :}}}}
+\begin{itemize}[label=\checkmark]
+    \item Quand le triangle a trois angles aigus, le centre du cercle circonscrit est à l'intérieur du triangle.
+    \item Quand le triangle a un angle obtus, le centre du cercle circonscrit est à l'extérieur du triangle.
+    \item Quand le triangle a un angle droit, le centre du cercle circonscrit est le milieu de l'hypoténuse.
+\end{itemize}
 
 \textbf{\exerciceapp}
 
@@ -313,4 +463,11 @@ opposé à ce sommet.
 \textbf{\underline{\textbf{\textcolor{red}{ Remarques :}}}}
 
 \underline{\exemple}
+
++++++++++++++++++++++++
+
+
+
+
+++++++++++++++++++++++++++
 \end{document}
