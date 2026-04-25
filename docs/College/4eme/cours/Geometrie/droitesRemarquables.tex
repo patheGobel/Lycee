@@ -436,20 +436,40 @@ Une médiatrice d'un triangle est une droite qui passe par le milieu d'un côté
 
 \section*{\underline{\textbf{\textcolor{red}{I. Hauteurs d’un triangle :}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1) Définition :}}}}
-Une hauteur d’un triangle est une droite qui passe par un sommet du triangle et qui est perpendiculaire au coté
-opposé à ce sommet.
+Une hauteur d'un triangle est une droite qui passe par un sommet du triangle et qui est perpendiculaire au côté opposé à ce sommet.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    \coordinate (A) at (2,3);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (5,0);
+    \coordinate (H) at (2,0);
+    
+    \draw[blue, thick] (A) -- (B) -- (C) -- cycle;
+    \draw[red, thick] (A) -- ($(A)!1.2!(H)$);
+    
+    % Symbole angle droit
+    \draw (H) ++(0,0.2) -- ++(0.2,0) -- ++(0,-0.2);
+    
+    \node[above] at (A) {A};
+    \node[left] at (B) {B};
+    \node[right] at (C) {C};
+    \node[below] at (H) {H};
+\end{tikzpicture}
+\end{center}
+
 \subsection*{\underline{\textbf{\textcolor{red}{2) Propriétés :}}}}
 
-\begin{itemize}
-\item[$\checkmark$] Les trois hauteurs d’un triangle sont concourantes.
-\item[$\checkmark$] Le point de concours de ces trois hauteurs est appelé orthocentre du triangle.
+\begin{itemize}[label=\checkmark]
+    \item Les trois hauteurs d'un triangle sont concourantes.
+    \item Le point de concours de ces trois hauteurs est appelé orthocentre du triangle.
 \end{itemize}
 
 \textbf{\underline{\textbf{\textcolor{red}{ Remarques :}}}}
 
 
 
-\begin{itemize}
+\begin{itemize}[label=\checkmark]
 \item[$\checkmark$] Si un triangle a un angle obtus, l’orthocentre est à l’extérieur.
 \item[$\checkmark$] Si un triangle est rectangle, l’orthocentre est le sommet de l’angle droit.
 \item[$\checkmark$] Si les angles sont aigus, l’orthocentre est à l’intérieur du triangle.
@@ -460,14 +480,89 @@ opposé à ce sommet.
 
 \section*{\underline{\textbf{\textcolor{red}{V. Reconnaissance d’un triangle isocèle :}}}}
 
+\begin{itemize}
+    \item Si dans un triangle une \textbf{\color{red}hauteur} est en même temps une \textbf{\color{red}bissectrice}, alors ce triangle est isocèle.
+    \item Si dans un triangle une \textbf{\color{red}médiane} est en même temps une \textbf{\color{red}bissectrice}, alors ce triangle est isocèle.
+    \item Si dans un triangle une \textbf{\color{red}médiatrice} est en même temps une \textbf{\color{red}bissectrice}, alors ce triangle est isocèle.
+\end{itemize}
+
 \textbf{\underline{\textbf{\textcolor{red}{ Remarques :}}}}
 
-\underline{\exemple}
+\begin{itemize}
+    \item Dans un triangle isocèle, l'axe de symétrie est à la fois la médiatrice de la base, la médiane, la hauteur et la bissectrice passant par le sommet principal.
+    \item Dans un triangle équilatéral, le centre de gravité est à la fois le centre du cercle circonscrit, le centre du cercle inscrit et l'orthocentre.
+\end{itemize}
 
-+++++++++++++++++++++++
+\textbf{\exerciceapp}
 
+\vspace{1cm}
 
+\textbf{ Consigne :}
+\textit{Complète les phrases suivantes en utilisant les termes géométriques appropriés.}
 
+\vspace{0.5cm}
 
-++++++++++++++++++++++++++
+\begin{enumerate}
+    \item La \textbf{médiane} d'un triangle est une droite qui passe par un \dotfill et par le \dotfill du côté opposé.
+    
+    \item La \textbf{médiatrice} d'un triangle est la droite qui passe par le milieu d'un côté et qui est \dotfill à ce côté.
+    
+    \item Le point de concours des trois \textbf{hauteurs} d'un triangle s'appelle l'\dotfill.
+    
+    \item Le point de concours des trois \textbf{médianes} s'appelle le \dotfill.
+    
+    \item Le point de concours des médiatrices est le centre du cercle \dotfill au triangle.
+    
+    \item Dans un triangle \textbf{rectangle}, le centre du cercle circonscrit est le milieu de l'\dotfill.
+    
+    \item Dans un triangle \textbf{isocèle}, la hauteur issue du sommet principal est aussi la \dotfill de la base et la \dotfill de l'angle au sommet.
+\end{enumerate}
+
+\vspace{2cm}
+
+\textbf{ Mots à utiliser (pour vous aider) :}
+\begin{center}
+    \textit{hypoténuse -- milieu -- perpendiculaire -- orthocentre -- circonscrit} \\
+    \textit{centre de gravité -- bissectrice -- médiatrice -- sommet}
+\end{center}
+
+\textbf{\exerciceapp}
+
+\vspace{0.8cm}
+
+\textbf{. Texte à trous}
+\textit{Complétez les phrases suivantes avec les termes géométriques appropriés :}
+
+\begin{enumerate}
+    \item La \textbf{médiane} d'un triangle passe par un sommet et par le \dotfill du côté opposé.
+    \item La \textbf{médiatrice} est la droite qui coupe un côté en son milieu et qui lui est \dotfill.
+    \item Le point de rencontre des trois \textbf{hauteurs} s'appelle l'\dotfill.
+    \item Le point de rencontre des trois \textbf{bissectrices} est le centre du cercle \dotfill au triangle.
+    \item Le point de rencontre des trois \textbf{médianes} s'appelle le \dotfill.
+    \item Le cercle \textbf{circonscrit} passe par les trois \dotfill du triangle.
+\end{enumerate}
+
+\vspace{0.8cm}
+
+\textbf{ Vrai ou Faux ?}
+\textit{Cochez la bonne réponse :}
+
+\begin{itemize}
+    \item[$\square$] \textbf{Vrai} \quad [$\square$] \textbf{Faux} : Le centre du cercle inscrit est toujours à l'intérieur du triangle.
+    \item[$\square$] \textbf{Vrai} \quad [$\square$] \textbf{Faux} : Le centre du cercle circonscrit est toujours à l'intérieur du triangle.
+    \item[$\square$] \textbf{Vrai} \quad [$\square$] \textbf{Faux} : Dans un triangle équilatéral, tous les points de concours (G, O, H, I) sont confondus.
+\end{itemize}
+
+\vspace{0.8cm}
+
+\textbf{ Aide-mémoire (Mots mélangés)}
+\begin{center}
+    \fbox{
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \textit{orthocentre -- inscrit -- milieu -- sommets -- perpendiculaire -- centre de gravité}
+    \end{minipage}
+    }
+\end{center}
+
 \end{document}
