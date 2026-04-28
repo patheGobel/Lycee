@@ -334,5 +334,172 @@ $P_B(A) = \dfrac{\text{card}(A \cap B)}{\text{card } B} = \dfrac{11}{33} = \dfra
 $P_A(C) = \dfrac{\text{card}(A \cap C)}{\text{card } A} = \dfrac{6}{12} = \dfrac{1}{2}$
 
 \end{enumerate}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+-------------------------------------------------------------------------------------------------------
+\newpage
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\underline{\textbf{\textcolor{red}{Exercice}}}\\
+
+Le mois d'Août est très pluvieux. Le premier Août 2020, il a plu. Une étude a montré que :
+\begin{itemize}
+    \item S'il a plu un jour, la probabilité qu'il pleuve le jour suivant est $1/3$.
+    \item S'il n'a pas plu un jour, la probabilité qu'il ne pleuve pas le jour suivant est de $2/5$.
+\end{itemize}
+
+On note par :
+\begin{itemize}
+    \item $A_n$ : "Il a plu au $n$-ième jour du mois d'Août"
+    \item et $P_n = P(A_n)$
+\end{itemize}
+
+\begin{enumerate}
+    \item Donner $P_1$
+    \item Calculer $P_2$
+    \item Montrer que $P_{n+1} = -\frac{4}{15} P_n + \frac{3}{5}$
+    \item On note $u_n = P_n - \frac{9}{19}$
+    \begin{enumerate}
+        \item Montrer que $(u_n)$ est une suite géométrique.
+        \item Exprimer $P_n$ en fonction de $n$.
+    \end{enumerate}
+    \item Quelle est la probabilité qu'il pleuve le 5 Août ?
+\end{enumerate}
+\end{multicols}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\underline{\textbf{\textcolor{red}{Correction de l'exercice}}}\\
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\underline{\textbf{\textcolor{red}{1. Donner $P_1$}}}\\
+L'énoncé précise que le premier Août 2020, il a plu. L'événement $A_1$ est donc certain.
+$ P_1 = 1 $
+
+\underline{\textbf{\textcolor{red}{2. Calculer $P_2$}}}\\
+D'après la formule des probabilités totales en utilisant le système complet d'événements $\{A_1, \overline{A_1}\}$ :
+$ P(A_2) = P(A_2 | A_1) \times P(A_1) + P(A_2 | \overline{A_1}) \times P(\overline{A_1}) $
+D'après l'énoncé :
+\begin{itemize}
+    \item $P(A_2 | A_1) = 1/3$ (probabilité qu'il pleuve s'il a plu la veille)
+    \item $P(A_1) = 1$ et donc $P(\overline{A_1}) = 0$
+\end{itemize}
+$ P_2 = \frac{1}{3} \times 1 + P(A_2 | \overline{A_1}) \times 0 = \frac{1}{3} $
+
+\underline{\textbf{\textcolor{red}{3. Montrer que $P_{n+1} = -\frac{4}{15} P_n + \frac{3}{5}$}}}\\
+Appliquons la formule des probabilités totales pour le jour $n+1$ :
+
+$ P_{n+1} = P(A_{n+1} | A_n) P(A_n) + P(A_{n+1} | \overline{A_n}) P(\overline{A_n}) $
+On sait que :
+\begin{itemize}
+    \item $P(A_{n+1} | A_n) = 1/3$
+    \item $P(\overline{A_{n+1}} | \overline{A_n}) = 2/5$, donc $P(A_{n+1} | \overline{A_n}) = 1 - 2/5 = 3/5$
+    \item $P(\overline{A_n}) = 1 - P_n$
+\end{itemize}
+En remplaçant :
+$ P_{n+1} = \frac{1}{3} P_n + \frac{3}{5} (1 - P_n) \implies$
+$ P_{n+1} = \frac{1}{3} P_n + \frac{3}{5} - \frac{3}{5} P_n \implies$
+$ P_{n+1} = \left( \frac{5}{15} - \frac{9}{15} \right) P_n + \frac{3}{5} \implies$
+$ P_{n+1} = -\frac{4}{15} P_n + \frac{3}{5} $
+
+\underline{\textbf{\textcolor{red}{4. Étude de la suite $(u_n)$}}}\\
+Soit $u_n = P_n - \frac{9}{19}$.
+
+\textbf{a) Montrer que $(u_n)$ est une suite géométrique :}
+$ u_{n+1} = P_{n+1} - \frac{9}{19} = \left( -\frac{4}{15} P_n + \frac{3}{5} \right) - \frac{9}{19} $
+En remplaçant $P_n$ par $u_n + \frac{9}{19}$ :
+$ u_{n+1} = -\frac{4}{15} \left( u_n + \frac{9}{19} \right) + \frac{3}{5} - \frac{9}{19} $
+$ u_{n+1} = -\frac{4}{15} u_n - \frac{36}{285} + \frac{171}{285} - \frac{135}{285} $
+$ u_{n+1} = -\frac{4}{15} u_n $
+$(u_n)$ est une suite géométrique de raison $q = -\frac{4}{15}$ et de premier terme $u_1 = P_1 - \frac{9}{19} = 1 - \frac{9}{19} = \frac{10}{19}$.
+
+\textbf{b) Exprimer $P_n$ en fonction de $n$ :}
+On a $u_n = u_1 \times q^{n-1}$, soit :
+$ u_n = \frac{10}{19} \left( -\frac{4}{15} \right)^{n-1} $
+D'où :
+$ P_n = \frac{10}{19} \left( -\frac{4}{15} \right)^{n-1} + \frac{9}{19} $
+
+\underline{\textbf{\textcolor{red}{5. Probabilité qu'il pleuve le 5 Août}}}
+On calcule $P_5$ en posant $n=5$ :
+$ P_5 = \frac{10}{19} \left( -\frac{4}{15} \right)^4 + \frac{9}{19} $
+$ P_5 = \frac{10}{19} \times \frac{256}{50625} + \frac{9}{19} \approx 0,4763 $
+La probabilité qu'il pleuve le 5 août est d'environ \textbf{0,476} (soit 47,6\%).
+\end{multicols}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\underline{\textbf{\textcolor{red}{Exercice}}}\\
+
+Demain sera la rentrée des classes. Fatou est une élève assidue, elle s'est absentée le jour de la rentrée une seule fois sur les 5 dernières années. 
+\begin{itemize}
+    \item Si elle s'absente un jour, la probabilité qu'elle s'absente le jour suivant est de $1/2$.
+    \item Si elle ne s'absente pas un jour, la probabilité qu'elle s'absente le jour suivant est $1/4$.
+\end{itemize}
+
+On note $A_n$ : "Fatou s'absente au $n$-ième jour" et $P_n = P(A_n)$.
+
+\begin{enumerate}
+    \item Calculer $P_1$
+    \item Calculer $P_2$
+    \item Montrer que $P_{n+1} = \frac{1}{4} P_n + \frac{1}{4}$
+    \item Soit $u_n = P_n - \frac{1}{3}$
+    \begin{enumerate}
+        \item Montrer que $(u_n)$ est une suite géométrique.
+        \item Exprimer $P_n$ en fonction de $n$.
+    \end{enumerate}
+    \item Au $4^{\text{ème}}$ jour Fatou s'est absentée, quelle est la probabilité qu'elle se fût absentée au $3^{\text{ème}}$ jour ?
+\end{enumerate}
+\end{multicols}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\underline{\textbf{\textcolor{red}{Correction de l'exercice}}}\\
+
+\underline{\textbf{\textcolor{red}{1. Calculer $P_1$}}}
+
+D'après les données statistiques de l'énoncé (une absence sur les 5 dernières années le jour de la rentrée) :
+$ P_1 = \frac{1}{5} = 0,2 $
+
+\underline{\textbf{\textcolor{red}{2. Calculer $P_2$}}}
+En utilisant le système complet d'événements $\{A_1, \overline{A_1}\}$, on a :
+$ P(A_2) = P(A_2 | A_1) P(A_1) + P(A_2 | \overline{A_1}) P(\overline{A_1}) $
+$ P_2 = \left( \frac{1}{2} \times \frac{1}{5} \right) + \left( \frac{1}{4} \times \frac{4}{5} \right) $
+$ P_2 = \frac{1}{10} + \frac{1}{5} = \frac{1}{10} + \frac{2}{10} = \frac{3}{10} $
+$ P_2 = 0,3 $
+
+\underline{\textbf{\textcolor{red}{3. Montrer que $P_{n+1} = \frac{1}{4} P_n + \frac{1}{4}$}}}
+D'après la formule des probabilités totales pour le passage du jour $n$ au jour $n+1$ :
+$ P_{n+1} = P(A_{n+1} | A_n) P(A_n) + P(A_{n+1} | \overline{A_n}) P(\overline{A_n}) $
+En remplaçant par les probabilités conditionnelles données :
+$ P_{n+1} = \frac{1}{2} P_n + \frac{1}{4} (1 - P_n) $
+$ P_{n+1} = \frac{1}{2} P_n + \frac{1}{4} - \frac{1}{4} P_n $
+$ P_{n+1} = \frac{1}{4} P_n + \frac{1}{4} $
+
+\underline{\textbf{\textcolor{red}{4. Étude de la suite $(u_n)$}}}
+Soit $u_n = P_n - \frac{1}{3}$.
+
+\textbf{a) Montrer que $(u_n)$ est une suite géométrique :}
+$ u_{n+1} = P_{n+1} - \frac{1}{3} = \left( \frac{1}{4} P_n + \frac{1}{4} \right) - \frac{1}{3} $
+$ u_{n+1} = \frac{1}{4} P_n - \frac{1}{12} = \frac{1}{4} \left( P_n - \frac{1}{3} \right) $
+$ u_{n+1} = \frac{1}{4} u_n $
+$(u_n)$ est une suite géométrique de raison $q = \frac{1}{4}$ et de premier terme $u_1 = P_1 - \frac{1}{3} = \frac{1}{5} - \frac{1}{3} = -\frac{2}{15}$.
+
+\textbf{b) Exprimer $P_n$ en fonction de $n$ :}
+$ u_n = u_1 \times q^{n-1} = -\frac{2}{15} \left( \frac{1}{4} \right)^{n-1} $
+D'où :
+$ P_n = -\frac{2}{15} \left( \frac{1}{4} \right)^{n-1} + \frac{1}{3} $
+
+\underline{\textbf{\textcolor{red}{5. Probabilité conditionnelle (Probabilité qu'elle se fût absentée au jour 3)}}}
+On cherche $P(A_3 | A_4)$. Par la définition de la probabilité conditionnelle :
+$ P(A_3 | A_4) = \frac{P(A_4 \cap A_3)}{P(A_4)} = \frac{P(A_4 | A_3) P(A_3)}{P(A_4)} $
+Calculons d'abord $P_3$ et $P_4$ :
+\begin{itemize}
+    \item $P_3 = -\frac{2}{15} (\frac{1}{4})^2 + \frac{1}{3} = -\frac{2}{240} + \frac{80}{240} = \frac{78}{240} = \frac{13}{40}$
+    \item $P_4 = \frac{1}{4} P_3 + \frac{1}{4} = \frac{13}{160} + \frac{40}{160} = \frac{53}{160}$
+\end{itemize}
+$ P(A_3 | A_4) = \frac{\frac{1}{2} \times \frac{13}{40}}{\frac{53}{160}} = \frac{13}{80} \times \frac{160}{53} = \frac{13 \times 2}{53} = \frac{26}{53} $
+La probabilité est donc d'environ \textbf{0,49}.
+
+\end{multicols}
 \end{document}
