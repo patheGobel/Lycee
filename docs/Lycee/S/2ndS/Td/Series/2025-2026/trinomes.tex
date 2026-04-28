@@ -1,0 +1,200 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2025}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 2nd}\textbf{S} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Trinome Du Second degré}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\fbox{\textbf{\exo}}
+\begin{enumerate}
+    \item Pour chacun des trinômes suivants, donner la forme canonique :
+    \begin{enumerate}
+        \item $-x^2 + 2x + 2$
+        \item $4\sqrt{2}x - x^2 - 8$
+        \item $\frac{1}{2}x^2 + x - 43(x + 1)^2 - x$
+        \item $(2x - 5)(2x + 5)$
+    \end{enumerate}
+    \item Factoriser les trinômes suivants si possible :
+    \begin{enumerate}
+        \item $14x^2 - 9x + 1$
+        \item $-4x^2 + 15x - 9$
+        \item $-15x^2 + 10x - 2$
+        \item $-\frac{1}{2}x^2 - x - \frac{1}{2}$
+        \item $x^2 - (1 + \sqrt{2})x + 3 + 2\sqrt{2}$
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Résoudre dans $\mathbb{R}$ les équations suivantes :
+    \begin{enumerate}
+        \item $x^2 + 4x - 5 = 0$
+        \item $7x^2 - 12x + 5 = 0$
+        \item $x^2 - 2\sqrt{2}x + 3 = 0$
+        \item $(2x^2 + 3x + 7)^2 = (x^2 - 4x + 1)^2$
+        \item $(x^2 - 5x + 4)(x^2 - 4x + 3) = 0$
+        \item $\frac{x}{3} + \frac{3}{x} = \frac{5}{2}$
+        \item $\frac{x}{x+2} - \frac{5}{x^2 - x - 6} = \frac{5 - 2x}{x - 3}$
+        \item $\frac{x^2 + x + 1}{x^2 + 1} = \frac{x + 5}{x + 3}$
+        \item $(x^2 - x)^2 - 9(x^2 - x) = 10$
+        \item $5x^2 - 16|x| + 3 = 0$
+        \item $\left(\frac{3x + 1}{x - 1}\right)^2 - 7\left(\frac{3x + 1}{x - 1}\right) + 6 = 0$
+        \item $3x^2 - |2x - 3| - 5 = 0$
+    \end{enumerate}
+    \item Calculer $(4 - 3\sqrt{5})^2$ et résoudre dans l'ensemble des réels l'équation :
+    \[ -x^2 + (3 - 2\sqrt{5})x + 8 - 3\sqrt{5} = 0 \]
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item On considère l'équation : $(E) : \sqrt{2}x^2 - 4x - \sqrt{6}$
+    \begin{enumerate}
+        \item Sans calculer le discriminant montrer que l'équation admet deux solutions distinctes $\alpha$ et $\beta$.
+        \item Sans déterminer les valeurs de $\alpha$ et $\beta$ calculer : $\alpha\beta$ ; $\alpha + \beta$ ; $\frac{1}{\alpha} + \frac{1}{\beta}$ ; $\alpha^2 + \beta^2$ ; $\alpha^2\beta + \alpha\beta^2$ ; $\alpha^3 + \beta^3$ ; $|\alpha - \beta|$ et $\frac{1}{\alpha - 1} + \frac{1}{\beta - 1}$
+    \end{enumerate}
+    \item Résoudre dans $\mathbb{R}$ l'équation : $2x^2 - x - 6 = 0$
+    \item En déduire les solutions dans $\mathbb{R}$ des équations suivantes :
+    \begin{enumerate}
+        \item $2(2x - 1)^2 - (2x - 1) - 6 = 0$
+        \item $2x^4 - x^2 - 6 = 0$
+        \item $2x - \sqrt{x} - 6 = 0$
+        \item $2 - \frac{1}{x^2} - \frac{6}{x^4} = 0$
+        \item $2E(x)^2 - E(x) - 6 = 0$
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Résoudre les équations suivantes sans calculer le discriminant $\Delta$ :
+\begin{itemize}
+    \item $x^2 - 6x + 5 = 0$
+    \item $2x^2 - 6x - 8 = 0$
+    \item $5x^2 - 8x - 13 = 0$
+    \item $\pi x^2 - (\pi + \sqrt{2})x - \sqrt{2} = 0$
+    \item $3bx^2 - (2a + 3b)x + 2a = 0$ avec $a$ et $b$ des réels
+\end{itemize}
+
+\fbox{\textbf{\exo}}
+Résoudre dans $\mathbb{R}$ chacune des inéquations suivantes :
+\begin{enumerate}
+    \item $9x^2 - 6\sqrt{2}x + 2 \le 0$
+    \item $2x^2 - 3x + 1 < 0$
+    \item $-x^2 + 6x - 5 \ge 0$
+    \item $-x^2 + 6x - 5 \ge 0$ (Répétition sur l'image)
+    \item $(4x^2 - 4x + 1)(-5x^2 + 3x - 2) \le 0$
+    \item $(2x^2 + 3x + 7)^2 > (x^2 - 4x + 1)^2$
+    \item $\frac{(x + 1)(-x^2 + 3x - 2)}{-x^2 + 3x + 10} \le 0$
+    \item $\frac{(1 - 4x)(2x^2 + 3x - 5)}{-x^2 + 5x - 6} \ge 0$
+    \item $|x^2 - 5x + 10| < |x^2 - 9x + 14|$
+\end{enumerate}
+
+\fbox{\textbf{\exo}} % Combiné d'après les captures
+
+Résoudre dans $\mathbb{R}$ les systèmes suivants :
+\begin{enumerate}
+    \item $\begin{cases} x + y = -2 \\ xy = -15 \end{cases}$
+    \item $\begin{cases} x + y = -8 \\ xy = 5 \end{cases}$
+    \item $\begin{cases} x + y = -\frac{\sqrt{2}}{3} \\ xy = \frac{\sqrt{2}-3}{3} \end{cases}$
+    \item $\begin{cases} x^2 + y^2 = 34 \\ xy = 15 \end{cases}$
+    \item $\begin{cases} \frac{1}{x} + \frac{1}{y} = -3 \\ (3x - 1)(3y - 1) = \frac{5}{14} \end{cases}$
+    \item $\begin{cases} x - y = 6 \\ xy = 16 \end{cases}$
+    \item $\begin{cases} |x| + y = 13 \\ |x|y = 36 \end{cases}$
+    \item $\begin{cases} (x - 1)^2 + (y - 2)^2 = 5 \\ (x - 1)(y - 2) = 2 \end{cases}$
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\end{multicols}
+
+\end{document}
