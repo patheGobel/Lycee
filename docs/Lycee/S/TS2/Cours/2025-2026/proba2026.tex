@@ -97,6 +97,7 @@ middle color = tcbcolback!80!black]
 % Commande pour ajouter du texte en arrière-plan
 \usepackage{fancyhdr}
 \usepackage{eso-pic}
+\usepackage{diagbox}
 %\usepackage{tkz-tab}
 \AddToShipoutPicture{
     \AtTextCenter{%
@@ -948,7 +949,7 @@ P_F(B) &= \frac{\frac{2}{4} \times \frac{6}{7}}{\frac{37}{70}} \\
 \boxed{P_F(B) = \frac{30}{37}}
 \end{align*}
 
-\subsection*{\underline{\textbf{\textcolor{red}{C.L'indépendance de deux évènements}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{C. Evènements Indépéndant}}}}
 \underline{\textbf{\textcolor{red}{1.Définition}}}\\
 Deux événements sont dits indépendants lorsque le fait que l’un se produise n’a aucune influence sur la probabilité que l’autre se produise.
 
@@ -996,35 +997,144 @@ Montrer que $\overline{A}$ et $\overline{B}$ sont aussi indépendantes.
 \underline{\textbf{\textcolor{red}{Exercice 2 }}}\\
 
 \section*{\underline{\textbf{\textcolor{red}{IV. Variable aléatoires}}}}
-\underline{\textbf{\textcolor{red}{a.Définition}}}
+\underline{\textbf{\textcolor{red}{a. Définition}}}
+
+Soit $\mathcal{E}$ une épreuve aléatoire d'univers $\Omega$.
+
+On appelle \textbf{\color{red}variable aléatoire réelle} toute application définie de :
+\begin{center}
+    $X : \Omega \to \mathbb{R}$ \\
+    $a_i \to x_i$
+\end{center}
+
+On appelle l'univers image l'ensemble des valeurs possibles de $X$ noté \textbf{\color{red}$X(\Omega)$}.
+
+
+\underline{\textbf{\textcolor{red}{ Exemple }}}
+
+On dispose de 2 dés notés de 1 à 6. On lance les 2 dés. On définit la variable aléatoire $X$ qui prend la valeur absolue de la différence des numéros apparus sur la face des 2 dés.
+
+Déterminer l'univers d'image de la variable aléatoire $X$
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5} % Pour aérer le tableau
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\diagbox{$D_2$}{$D_1$} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\ \hline
+\textbf{1} & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+\textbf{2} & 1 & 0 & 1 & 2 & 3 & 4 \\ \hline
+\textbf{3} & 2 & 1 & 0 & 1 & 2 & 3 \\ \hline
+\textbf{4} & 3 & 2 & 1 & 0 & 1 & 2 \\ \hline
+\textbf{5} & 4 & 3 & 2 & 1 & 0 & 1 \\ \hline
+\textbf{6} & 5 & 4 & 3 & 2 & 1 & 0 \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+L'univers image est : 
+\[ X(\Omega) = \{0, 1, 2, 3, 4, 5\} \]
 
 \underline{\textbf{\textcolor{red}{Remarque}}}
 
-\underline{\textbf{\textcolor{red}{b.Loi de probabilité}}}
+Sur une épreuve aléatoire on peut définir plusieurs variables aléatoires.
 
+% --- Section Loi de Probabilité ---
+
+\underline{\textbf{\textcolor{red}{b. Loi de probabilité}}}
+
+Soit $X$ une variable aléatoire d'univers image $X(\Omega) = \{x_1, x_2, \dots, x_n\}$.
+
+\vspace{1em}
+
+On appelle \textbf{loi de probabilité} de $X$ l'application :
+\begin{center}
+    $X(\Omega) \longrightarrow [0, 1]$ \\
+    $x_i \longmapsto P(X = x_i)$
+\end{center}
+
+Elle est souvent représentée sous forme de \textbf{tableau} :
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x_i$ & $x_1$ & $x_2$ & $\dots$ & $x_n$ \\ \hline
+        $P(X = x_i)$ & $P(X = x_1)$ & $P(X = x_2)$ & $\dots$ & $P(X = x_n)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\vspace{2em}
+
+% --- Reprise de l'Exemple ---
+\textbf{Reprenons l'exemple précédent :} \\
+$X(\Omega) = \{0, 1, 2, 3, 4, 5\}$
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $x_i$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+        $P_i$ & $\dfrac{6}{36}$ & $\dfrac{10}{36}$ & $\dfrac{8}{36}$ & $\dfrac{6}{36}$ & $\dfrac{4}{36}$ & $\dfrac{2}{36}$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\vspace{2em}
+
+% --- Deuxième Remarque (Somme) ---
 \underline{\textbf{\textcolor{red}{Remarque}}}
 
-\underline{\textbf{\textcolor{red}{c.Espérance mathématique}}}
+Si $X(\Omega) = \{x_1, x_2, \dots, x_n\}$ \\
 
+\begin{center}
+\fbox{\color{red} $\displaystyle \sum_{i=1}^{n} P(X = x_i) = 1$}
+\end{center}
+
+
+
+\underline{\textbf{\textcolor{red}{c. Espérance mathématique}}}
+
+Soit $X$ une variable aléatoire d'univers $\Omega$ et d'univers image $X(\Omega) = \{x_1, x_2, \dots, x_n\}$.
+On appelle \textbf{espérance mathématique} de la variable aléatoire $X$ le nombre réel :
+\begin{center}
+    \fbox{\color{red} $\displaystyle E(X) = \sum_{i=1}^{n} x_i P(X = x_i)$}
+\end{center}
+
+\vspace{1em}
+
+\textbf{Reprenons l'exemple précédent :}
+\begin{align*}
+E(X) &= \left( 0 \times \frac{6}{36} \right) + \left( 1 \times \frac{10}{36} \right) + \left( 2 \times \frac{8}{36} \right) + \left( 3 \times \frac{6}{36} \right) + \left( 4 \times \frac{4}{36} \right) + \left( 5 \times \frac{2}{36} \right) \\
+E(X) &= \frac{70}{36} \\
+\boxed{E(X) = \frac{35}{18}}
+\end{align*}
+
+\vspace{1em}
 \underline{\textbf{\textcolor{red}{Remarque}}}
 
-\underline{\textbf{\textcolor{red}{d.Variance et Ecart-type :}}}
+L'espérance mathématique d'une variable aléatoire est en quelque sorte la valeur moyenne la plus probable.
 
-Soit \( X \) une variable aléatoire d'univers image \( X(\Omega) = \{ x_1, x_2, \dots, x_n \} \). On appelle variance de \( X \), le nombre réel positif
+\vspace{2em}
 
-\[
-V(X) = \mathbb{E} \left( (X - \mathbb{E}(X))^2 \right) = \mathbb{E}(X^2) - (\mathbb{E}(X))^2
-\]
+\underline{\textbf{\textcolor{red}{d. Variance et écart-type}}}
 
-\[
-V(X) = \sum_{i=1}^{n} x_i^2 P_i - (\mathbb{E}(X))^2
-\]
+Soit $X$ une variable aléatoire d'univers image $X(\Omega) = \{x_1, x_2, \dots, x_n\}$. On appelle \textbf{variance} de $X$, le nombre réel positif :
+\begin{center}
+    {\color{red} $V(X) = E\left( [X - E(X)]^2 \right) = E(X^2) - [E(X)]^2$}
+\end{center}
 
-On appelle écart-type de \( X \) le nombre réel positif défini par
+\vspace{0.5em}
 
-\[
-\sigma(X) = \sqrt{V(X)}
-\]
+\begin{center}
+    \underline{\color{red} $V(X) = \displaystyle \sum_{i=1}^{n} x_i^2 P_i - [E(X)]^2$}
+\end{center}
+
+\vspace{1em}
+
+On appelle \textbf{écart-type} de $X$ le nombre réel positif défini par :
+\begin{center}
+    \underline{\color{red} $\sigma(X) = \sqrt{V(X)}$}
+\end{center}
 
 \underline{\textbf{\textcolor{red}{Exemple}}}
 
@@ -1068,7 +1178,7 @@ V(X) = \frac{11}{16}
 \sigma_X = \frac{\sqrt{11}}{4}
 \]
 
-\underline{\textbf{\textcolor{red}{e.Fonction de répartition :}}}
+\underline{\textbf{\textcolor{red}{e. Fonction de répartition :}}}
 
 Soit \( X \) une variable aléatoire d'univers image \( X(\Omega) = \{ \alpha_1, \alpha_2, \dots, \alpha_n \} \). On appelle fonction de répartition de la variable aléatoire \( X \) la fonction
 
@@ -1183,6 +1293,87 @@ $P(X > a) = 1 - F(a)$
     \label{fig:courbe_f}
 \end{figure}
 
+\underline{\textbf{\textcolor{red}{d. Représentation de la Fonction de répartition :}}}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Axes
+    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
+    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
+
+    % Grille et graduations
+    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
+    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
+        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
+    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
+        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
+
+    % Tracé des morceaux de la fonction
+    \draw[thick, red] (-4.5, 0) -- (-3, 0);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
+
+    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
+
+    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
+    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
+
+    \draw[thick, red] (0, 0.5) -- (2, 0.5);
+    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
+
+    \draw[thick, red] (2, 0.7) -- (3, 0.7);
+    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
+
+    \draw[thick, red] (3, 1) -- (4.5, 1);
+    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
+
+\end{tikzpicture}
+\end{center}
+++++++++++
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Axes
+    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
+    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
+
+    % Grille et graduations
+    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
+    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
+        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
+    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
+        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
+
+    % Tracé des morceaux de la fonction
+    \draw[thick, red] (-4.5, 0) -- (-3, 0);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
+
+    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
+
+    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
+    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
+
+    \draw[thick, red] (0, 0.5) -- (2, 0.5);
+    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
+
+    \draw[thick, red] (2, 0.7) -- (3, 0.7);
+    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
+
+    \draw[thick, red] (3, 1) -- (4.5, 1);
+    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
+
+\end{tikzpicture}
+\end{center}
+
+++++++++++++++++++++++++++++++++++++++++++
 
 \subsection*{\underline{\textbf{\textcolor{red}{2. Loi de Binomiale}}}}
 
