@@ -52,6 +52,8 @@ middle color = tcbcolback!80!black]
 \usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 % Commande pour ajouter du texte en arrière-plan
 \usepackage{tkz-tab}
+\usepackage{tikz}
+\usepackage[siunitx, european, RPvoltages]{circuitikz}
 \AddToShipoutPicture{
     \AtTextCenter{%
         \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
@@ -85,9 +87,9 @@ middle color = tcbcolback!80!black]
     \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
                 \hline
                 \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
-                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 2nd}\textbf{S} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 2nd}\textbf{S} & \textbf{Date: 28/04/2026} & \textbf{} \\ \hline
                 \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
-                                                                  \textbf{{\Large\sffamily Trinome Du Second degré}}
+                                                                  \textbf{{\Large\sffamily Trinôme Du Second degré}}
                                                               \end{center}}}                                                                                                        \\ \hline
             \end{tabular}}\endgroup};
 \end{tikzpicture}
@@ -194,6 +196,112 @@ Résoudre dans $\mathbb{R}$ les systèmes suivants :
 \end{enumerate}
 
 \fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Calculer deux nombres $x$ et $y$ connaissant leur somme $S$ et leur produit $P$ tel que : $S = \frac{a^2 + 1}{a}$ et $P = 1$ avec $a \in \mathbb{R}^*$
+    \item Discuter, suivant les valeurs du paramètre $m$, l'existence et le signe des racines de l'équation : $(E_m) : (m - 2)x^2 - (2m - 1)x + m + 3 = 0$
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Résoudre dans $\mathbb{R}$ les systèmes d'inéquations suivants :
+\begin{enumerate}
+    \item[a)] $\begin{cases} -2x^2 - x + 3 \le 0 \\ 2x^2 + 5x - 3 < 0 \end{cases}$
+    \item[b)] $\begin{cases} x^2 + 4x - 5 < 0 \\ \frac{x - 3}{x - 4} > 1 \end{cases}$
+    \item[c)] $\begin{cases} \frac{x^2 + 3x + 2}{x - 1} < 0 \\ x^4 - 16 > 0 \end{cases}$
+    \item[d)] $\begin{cases} 1 < -x^2 + 2x + 3 \le 4 \\ x^2 - 3x + 4 > 0 \end{cases}$
+    \item[e)] $2 < \frac{x - 3}{x - 5} \le 3$
+    \item[f)] $\begin{cases} |x^2 - 5| \ge 2 \\ x^2 - x - 2 \le 0 \end{cases}$
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit $(E_m) : mx^2 - 2(m - 1)x + m - 2 = 0$
+\begin{enumerate}
+    \item Étudier suivant les valeurs de $m$ l'existence et le signe des solutions de l'équation $(E_m)$
+    \item Trouver entre les solutions une relation indépendante de $m$.
+    \item Trouver $m$ pour que l'une des solutions soit le double de l'autre.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+Soit $(E_m) : (m + 3)x^2 + 2mx + m - 5 = 0$
+\begin{enumerate}
+    \item Discuter suivant les valeurs du paramètre réel $m$ l'existence et le signe des solutions de l'équation $(E_m)$
+    \item Déterminer $m$ pour que les racines $x'$ et $x''$ de $(E_m)$ vérifient l'égalité : $(2x' - 1)(2x'' - 1) = 6$
+    \item Déterminer une relation entre $x'$ et $x''$ indépendante de $m$.
+    \item Déterminer $m$ pour que l'équation $(E_m)$ admette :
+    \begin{enumerate}
+        \item Deux solutions de signes positifs.
+        \item Deux solutions de signes contraires.
+    \end{enumerate}
+    \item Former une équation du second degré ayant pour solutions $X' = 3x' - 2$ et $X'' = 3x'' - 2$
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit $(E) : x^4 + 10x^3 + 26x^2 + 10x + 1 = 0$
+\begin{enumerate}
+    \item Montrer que 0 n'est pas solution de $(E)$.
+    \item En déduire que $(E)$ a les mêmes solutions que $(E') : x^2 + 10x + 26 + \frac{10}{x} + \frac{1}{x^2} = 0$
+    \item On pose $X = x + \frac{1}{x}$
+    \begin{enumerate}
+        \item Montrer que $x^2 + \frac{1}{x^2} = X^2 - 2$.
+        \item Montrer que si $x$ est solution de $(E')$ alors $X$ est solution de l'équation $(E'') : X^2 + 10X + 24 = 0$
+    \end{enumerate}
+    \item Résoudre $(E'')$, puis en déduire les solutions de $(E)$.
+    \item Utiliser la même méthode pour résoudre $20x^4 - 19x^3 - 402x^2 - 19x + 20 = 0$
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Déterminer deux entiers naturels consécutifs sachant que la somme de leurs carrés est 2813.
+    \item Trouver deux entiers naturels impairs consécutifs dont le produit vaut 323.
+    \item Trouver les dimensions d'un rectangle de périmètre 140 m et de diagonale 50 m.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Dans un circuit électrique, des résistances ont été montées comme l'indique la figure ci-dessous. Déterminer la valeur de la résistance $x$ pour que la résistance équivalente de l'ensemble soit de $6\Omega$.
+
+\begin{circuitikz}[american] 
+    % On dessine le point d'entrée
+    \draw (0,0) -- (0.5,0);
+    
+    % Branche en parallèle (début)
+    \draw (0.5,0) -- (0.5,0.8) to[R, l=\fbox{$4\Omega$}, color=blue] (2.5,0.8) -- (2.5,0);
+    \draw (0.5,0) -- (0.5,-0.8) to[R, l=\fbox{$x\,\Omega$}, color=brown] (2.5,-0.8) -- (2.5,0);
+    
+    % Liaison entre parallèle et série
+    \draw (2.5,0) -- (3.5,0);
+    
+    % Résistance en série
+    \draw (3.5,0) to[R, l=\fbox{$x\,\Omega$}, color=brown] (5.5,0);
+    
+    % Point de sortie
+    \draw (5.5,0) -- (6,0);
+\end{circuitikz}
+
+\fbox{\textbf{\exo}}
+
+Soit l'équation $(E) : x^2 - (2m + 1)x + m^2 + m = 0$
+\begin{enumerate}
+    \item Résoudre $(E)$ pour $m = 0$
+    \item Déterminer $m$ pour que 2 soit solution de $(E)$ puis calculer alors l'autre solution.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Un magicien demande à un spectateur de :
+\begin{itemize}
+    \item penser à un nombre ;
+    \item de le multiplier par deux ;
+    \item de retrancher 3 à ce produit ;
+    \item de multiplier le tout par 6.
+\end{itemize}
+Le spectateur annonce comme résultat 294. Quel était le nombre du départ ?
+
+\fbox{\textbf{\exo}}
+La somme de deux chiffres d'un nombre est 13. Si, à leur produit on ajoute 34, on trouve pour total le nombre renversé. Quel est ce nombre ? (\textit{ind. : Le nombre renversé de 24 donne 42 ; par calcul $42 = 4 \times 10 + 2$})
 
 \end{multicols}
 
