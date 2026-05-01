@@ -1236,7 +1236,7 @@ Soit \( X \) une variable aléatoire de loi de probabilité ci-dessous.
 \hline
 X_i & -3 & -1 & 0 & 2 & 3 \\
 \hline
-P_i & \frac{1}{10} & \frac{3}{10} & \frac{1}{16} & \frac{2}{10} & \frac{3}{16} \\
+P_i & \frac{1}{10} & \frac{3}{10} & \frac{1}{10} & \frac{2}{10} & \frac{3}{10} \\
 \hline
 \end{array}
 \]
@@ -1279,6 +1279,91 @@ F(x) =
 \end{cases}
 \]
 
+\begin{figure}[h!]
+    \centering
+%    \includegraphics[width=0.8\textwidth]{repartition.png} % Remplacez par le chemin de votre image
+    \label{fig:courbe_f}
+\end{figure}
+
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Axes
+    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
+    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
+
+    % Grille et graduations
+    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
+    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
+        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
+    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
+        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
+
+    % Tracé des morceaux de la fonction
+    \draw[thick, red] (-4.5, 0) -- (-3, 0);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
+
+    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
+
+    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
+    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
+
+    \draw[thick, red] (0, 0.5) -- (2, 0.5);
+    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
+
+    \draw[thick, red] (2, 0.7) -- (3, 0.7);
+    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
+
+    \draw[thick, red] (3, 1) -- (4.5, 1);
+    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Axes
+    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
+    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
+
+    % Grille et graduations
+    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
+    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
+        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
+    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
+        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
+
+    % Tracé des morceaux de la fonction
+    \draw[thick, red] (-4.5, 0) -- (-3, 0);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
+
+    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
+    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
+
+    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
+    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
+
+    \draw[thick, red] (0, 0.5) -- (2, 0.5);
+    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
+
+    \draw[thick, red] (2, 0.7) -- (3, 0.7);
+    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
+    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
+
+    \draw[thick, red] (3, 1) -- (4.5, 1);
+    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
+
+\end{tikzpicture}
+\end{center}
+
 \underline{\textbf{\textcolor{red}{Remarque}}}
 
 Soit X une fonction aléatoire de fonction de répartition \( F: \)
@@ -1286,92 +1371,6 @@ Soit X une fonction aléatoire de fonction de répartition \( F: \)
 $P(X > a) = 1 - P(X \leq a)$
 
 $P(X > a) = 1 - F(a)$
-
-\begin{figure}[h!]
-    \centering
-%    \includegraphics[width=0.8\textwidth]{repartition.png} % Remplacez par le chemin de votre image
-    \label{fig:courbe_f}
-\end{figure}
-
-\underline{\textbf{\textcolor{red}{d. Représentation de la Fonction de répartition :}}}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.2]
-    % Axes
-    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
-    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
-
-    % Grille et graduations
-    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
-    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
-        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
-    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
-        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
-
-    % Tracé des morceaux de la fonction
-    \draw[thick, red] (-4.5, 0) -- (-3, 0);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
-
-    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
-
-    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
-    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
-
-    \draw[thick, red] (0, 0.5) -- (2, 0.5);
-    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
-
-    \draw[thick, red] (2, 0.7) -- (3, 0.7);
-    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
-
-    \draw[thick, red] (3, 1) -- (4.5, 1);
-    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
-
-\end{tikzpicture}
-\end{center}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.2]
-    % Axes
-    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
-    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
-
-    % Grille et graduations
-    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
-    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
-        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
-    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
-        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
-
-    % Tracé des morceaux de la fonction
-    \draw[thick, red] (-4.5, 0) -- (-3, 0);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
-
-    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
-
-    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
-    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
-
-    \draw[thick, red] (0, 0.5) -- (2, 0.5);
-    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
-
-    \draw[thick, red] (2, 0.7) -- (3, 0.7);
-    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
-
-    \draw[thick, red] (3, 1) -- (4.5, 1);
-    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
-
-\end{tikzpicture}
-\end{center}
 
 \subsection*{\underline{\textbf{\textcolor{red}{2. Loi de Binomiale}}}}
 
