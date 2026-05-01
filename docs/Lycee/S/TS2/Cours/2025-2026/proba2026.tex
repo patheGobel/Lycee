@@ -1288,78 +1288,70 @@ F(x) =
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
-    % Axes
-    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
-    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
 
-    % Grille et graduations
-    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
-    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
-        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
-    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
-        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
+% Axes
+\draw[->, thick] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->, thick] (0,-0.2) -- (0,11) node[above] {$F(x)$};
 
-    % Tracé des morceaux de la fonction
-    \draw[thick, red] (-4.5, 0) -- (-3, 0);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
+% Grille
+\draw[help lines, dashed, gray!30] (-4.5,0) grid (4.5,10);
 
-    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
+% Graduations axe x
+\foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
+{
+    \draw (\x,0.02) -- (\x,-0.02);
+    \node[below] at (\x,0) {\small $\x$};
+}
 
-    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
-    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
+% Graduations axe y
+\foreach \y/\label in {0/0,1/1,4/4,5/5,7/7,10/10}
+{
+    \draw (0.02,\y) -- (-0.02,\y);
+    \node[left] at (0,\y) {\small $\label$};
+}
 
-    \draw[thick, red] (0, 0.5) -- (2, 0.5);
-    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
+% Style des points
+\tikzset{
+    plein/.style={circle, fill=red, inner sep=1.5pt},
+    vide/.style={circle, draw=red, fill=white, inner sep=1.5pt}
+}
 
-    \draw[thick, red] (2, 0.7) -- (3, 0.7);
-    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
+% Fonction en escalier
 
-    \draw[thick, red] (3, 1) -- (4.5, 1);
-    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
+% [-4.5, -3]
+\draw[thick, red] (-4.5,0) -- (-3,0);
+\node[plein] at (-3,0) {};
 
-\end{tikzpicture}
-\end{center}
+% [-3, -1[
+\draw[thick, red] (-3,1) -- (-1,1);
+\node[plein] at (-3,1) {};
+\node[vide] at (-1,1) {};
 
-\begin{center}
-\begin{tikzpicture}[scale=1.2]
-    % Axes
-    \draw[->, >=latex] (-5,0) -- (5,0) node[right] {$x$};
-    \draw[->, >=latex] (0,-0.5) -- (0,1.5) node[above] {$F(x)$};
+% [-1, 0[
+\draw[thick, red] (-1,4) -- (0,4);
+\node[plein] at (-1,4) {};
+\node[vide] at (0,4) {};
 
-    % Grille et graduations
-    \draw[help lines, gray!30] (-4.5,-0.1) grid (4.5,1.1);
-    \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
-        \draw (\x,1pt) -- (\x,-1pt) node[below, font=\tiny] {\x};
-    \foreach \y in {0.1, 0.4, 0.5, 0.7, 1}
-        \draw (1pt,\y) -- (-1pt,\y) node[left, font=\tiny] {\y};
+% [0, 2[
+\draw[thick, red] (0,5) -- (2,5);
+\node[plein] at (0,5) {};
+\node[vide] at (2,5) {};
 
-    % Tracé des morceaux de la fonction
-    \draw[thick, red] (-4.5, 0) -- (-3, 0);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3,0) {}; % Point fermé à -3
+% [2, 3[
+\draw[thick, red] (2,7) -- (3,7);
+\node[plein] at (2,7) {};
+\node[vide] at (3,7) {};
 
-    \draw[thick, red] (-3, 0.1) -- (-1, 0.1);
-    \node[circle, fill=red, inner sep=1.2pt] at (-3, 0.1) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (-1, 0.1) {}; % [
+% [3, 4.5]
+\draw[thick, red] (3,10) -- (4.5,10);
+\node[plein] at (3,10) {};
 
-    \draw[thick, red] (-1, 0.4) -- (0, 0.4);
-    \node[circle, fill=red, inner sep=1.2pt] at (-1, 0.4) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (0, 0.4) {}; % [
-
-    \draw[thick, red] (0, 0.5) -- (2, 0.5);
-    \node[circle, fill=red, inner sep=1.2pt] at (0, 0.5) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (2, 0.5) {}; % [
-
-    \draw[thick, red] (2, 0.7) -- (3, 0.7);
-    \node[circle, fill=red, inner sep=1.2pt] at (2, 0.7) {}; % [
-    \node[circle, draw=red, fill=white, inner sep=1.2pt] at (3, 0.7) {}; % [
-
-    \draw[thick, red] (3, 1) -- (4.5, 1);
-    \node[circle, fill=red, inner sep=1.2pt] at (3, 1) {}; % [
+% Lignes pointillées (aide lecture)
+\foreach \x/\y in {-3/1, -1/4, 0/5, 2/7, 3/10}
+{
+    \draw[dashed, gray] (\x,0) -- (\x,\y);
+    \draw[dashed, gray] (0,\y) -- (\x,\y);
+}
 
 \end{tikzpicture}
 \end{center}
@@ -1429,8 +1421,8 @@ Soit une épreuve aléatoire qui présente 2 issues possibles \( S \) et \( \ove
         child {node {$S$}}   % 2ème branche de $P$
       }
     } % 1ère branche      
-    child {node {$s$}  
-      child {node {$\overline{s}$}
+    child {node {$S$}  
+      child {node {$\overline{S}$}
         child {node {$\overline{S}$}}   % 1ère branche de $\overline{P}$
         child {node {$S$}}   % 2ème branche de $\overline{P}$
       }
@@ -1483,5 +1475,21 @@ E(X) = n pq
 \]
 
 \underline{\textbf{\textcolor{red}{Exemple BAC 2004}}}
+
+
+Un porte-monnaie contient quatre pièces de 500 F CFA et six pièces de 200 F CFA. Un enfant tire au hasard et simultanément 3 pièces de ce porte-monnaie.
+
+\begin{enumerate}
+    \item Calculer la probabilité de l'événement A : << tirer trois pièces de 500 F >>.
+    
+    \item Soit $X$ la variable aléatoire égale au nombre de pièces de 500 F figurant parmi les trois pièces tirées.
+    \begin{enumerate}
+        \item Déterminer la loi de probabilité de $X$.
+        \item Calculer l'espérance mathématique et l'écart-type de $X$.
+    \end{enumerate}
+    
+    \item L'enfant répète cinq fois l'expérience en remettant chaque fois les trois pièces tirées dans le porte-monnaie. \\
+    Quelle est la probabilité que l'événement A se réalise trois fois à l'issue des cinq tirages ?
+\end{enumerate}
 
 \end{document}
