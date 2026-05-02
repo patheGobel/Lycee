@@ -1492,4 +1492,142 @@ Un porte-monnaie contient quatre pièces de 500 F CFA et six pièces de 200 F CF
     Quelle est la probabilité que l'événement A se réalise trois fois à l'issue des cinq tirages ?
 \end{enumerate}
 
+\begin{correction}
+On a un total de $10$ pièces : $4$ pièces de $500$ F et $6$ pièces de $200$ F.
+
+\bigskip
+
+\textbf{1. Calcul de la probabilité de l'événement $A$ : ``tirer trois pièces de 500 F''}
+
+Le nombre total de tirages possibles de $3$ pièces parmi $10$ est :
+\[
+\binom{10}{3} = 120
+\]
+
+Le nombre de tirages favorables (choisir $3$ pièces parmi les $4$ pièces de $500$ F) est :
+\[
+\binom{4}{3} = 4
+\]
+
+Donc :
+\[
+P(A) = \frac{\binom{4}{3}}{\binom{10}{3}} = \frac{4}{120} = \frac{1}{30}
+\]
+
+\bigskip
+
+\textbf{2. Étude de la variable aléatoire $X$}
+
+$X$ désigne le nombre de pièces de $500$ F obtenues lors du tirage de $3$ pièces.
+
+\medskip
+
+\textbf{(a) Loi de probabilité de $X$}
+
+Les valeurs possibles de $X$ sont : $0, 1, 2, 3$.
+
+\[
+P(X = k) = \frac{\binom{4}{k} \binom{6}{3-k}}{\binom{10}{3}}
+\]
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$k$ & $P(X = k)$ \\
+\hline
+0 & $\dfrac{\binom{4}{0}\binom{6}{3}}{120} = \dfrac{20}{120} = \dfrac{1}{6}$ \\
+\hline
+1 & $\dfrac{\binom{4}{1}\binom{6}{2}}{120} = \dfrac{4 \times 15}{120} = \dfrac{60}{120} = \dfrac{1}{2}$ \\
+\hline
+2 & $\dfrac{\binom{4}{2}\binom{6}{1}}{120} = \dfrac{6 \times 6}{120} = \dfrac{36}{120} = \dfrac{3}{10}$ \\
+\hline
+3 & $\dfrac{\binom{4}{3}\binom{6}{0}}{120} = \dfrac{4}{120} = \dfrac{1}{30}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\textbf{(b) Espérance et écart-type}
+
+\medskip
+
+Espérance :
+\[
+E(X) = \sum k \cdot P(X=k)
+\]
+\[
+E(X) = 0 \cdot \frac{1}{6} + 1 \cdot \frac{1}{2} + 2 \cdot \frac{3}{10} + 3 \cdot \frac{1}{30}
+\]
+\[
+E(X) = \frac{1}{2} + \frac{6}{10} + \frac{3}{30} = \frac{1}{2} + \frac{3}{5} + \frac{1}{10}
+\]
+\[
+E(X) = \frac{5}{10} + \frac{6}{10} + \frac{1}{10} = \frac{12}{10} = \frac{6}{5}
+\]
+
+\medskip
+
+Calcul de $E(X^2)$ :
+\[
+E(X^2) = 0 + 1^2 \cdot \frac{1}{2} + 2^2 \cdot \frac{3}{10} + 3^2 \cdot \frac{1}{30}
+\]
+\[
+E(X^2) = \frac{1}{2} + \frac{12}{10} + \frac{9}{30}
+\]
+\[
+E(X^2) = \frac{1}{2} + \frac{6}{5} + \frac{3}{10}
+\]
+\[
+E(X^2) = \frac{5}{10} + \frac{12}{10} + \frac{3}{10} = \frac{20}{10} = 2
+\]
+
+\medskip
+
+Variance :
+\[
+V(X) = E(X^2) - (E(X))^2 = 2 - \left(\frac{6}{5}\right)^2
+\]
+\[
+V(X) = 2 - \frac{36}{25} = \frac{50}{25} - \frac{36}{25} = \frac{14}{25}
+\]
+
+\medskip
+
+Écart-type :
+\[
+\sigma(X) = \sqrt{\frac{14}{25}} = \frac{\sqrt{14}}{5}
+\]
+
+\bigskip
+
+\textbf{3. Répétition de l'expérience}
+
+On répète $5$ fois l'expérience avec remise. Les tirages sont donc indépendants.
+
+La probabilité de succès (événement $A$) est :
+\[
+p = \frac{1}{30}
+\]
+
+On cherche la probabilité d'obtenir exactement $3$ succès en $5$ répétitions :
+
+\[
+P = \binom{5}{3} p^3 (1-p)^2
+\]
+
+\[
+P = \binom{5}{3} \left(\frac{1}{30}\right)^3 \left(\frac{29}{30}\right)^2
+\]
+
+\[
+P = 10 \times \frac{1}{27000} \times \frac{841}{900}
+\]
+
+\[
+P = \frac{8410}{24300000} = \frac{841}{2430000}
+\]
+
+\end{correction}
+
 \end{document}
