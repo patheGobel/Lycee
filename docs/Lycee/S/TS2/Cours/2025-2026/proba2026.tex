@@ -1373,6 +1373,45 @@ Soit \(X\) la variable aléatoire qui prend \(1\) si (\(S\)) se réalise et \(0\
 On note par \(p = P(X = 1)\) et \(q = P(X = 0)\), on dit que \(X\) suit une loi de Bernoulli de paramètre \(p\).
 On note \(X \sim B(p)\).
 
+****************************************************
+
+\subsection*{\underline{\textbf{\textcolor{red}{a. Loi de Bernoulli}}}}
+
+Une variable aléatoire qui ne présente que deux résultats possibles : succès (\(S\)) et échec (\(\overline{S}\)). 
+
+Soit \(X\) la variable aléatoire qui prend \(1\) si (\(S\)) se réalise et \(0\) si (\(\overline{S}\)) se réalise.
+
+On note \(p = P(X = 1)\) et \(P(X = 0) = 1 - p\). On dit que \(X\) suit une loi de Bernoulli de paramètre \(p\).
+
+On note \(X \sim \mathcal{B}(p)\).
+
+****************************************************
+
++++++++++++++++++
+\subsection*{\underline{\textbf{\textcolor{red}{a. Loi de Bernoulli}}}}
+
+Une expérience aléatoire est dite de Bernoulli lorsqu’elle ne comporte que deux issues possibles : 
+le succès (noté \(S\)) et l’échec (noté \(\overline{S}\)).
+
+On définit une variable aléatoire \(X\) telle que :
+\[
+X =
+\begin{cases}
+1 & \text{si le succès se réalise} \\
+0 & \text{si l’échec se réalise}
+\end{cases}
+\]
+
+On pose \(p = P(X = 1)\) avec \(p \in [0,1]\), alors :
+\[
+P(X = 0) = 1 - p
+\]
+
+On dit que \(X\) suit une loi de Bernoulli de paramètre \(p\), et on note :
+\[
+X \sim \mathcal{B}(p)
+\]
++++++++++++++++++
 \textbf{Loi de probabilité de \( X \):}
 
 \[
@@ -1404,6 +1443,13 @@ Dans toute épreuve aléatoire, il est possible de définir une variable aléato
 \subsection*{\underline{\textbf{\textcolor{red}{b.Schéma de Bernoulli}}}}
 
 Soit une épreuve aléatoire qui présente 2 issues possibles \( S \) et \( \overline{S} \), \( n \in \mathbb{N} \). Si la répétition successive et indépendante \( n \) fois de la même épreuve aléatoire est appelée schéma de Bernoulli.
+
++++++++++++++++++++++++++
+\subsection*{\underline{\textbf{\textcolor{red}{b. Schéma de Bernoulli}}}}
+
+Soit une épreuve aléatoire qui présente deux issues possibles \( S \) et \( \overline{S} \), et soit \( n \in \mathbb{N} \). 
+La répétition successive et indépendante \( n \) fois de cette épreuve aléatoire est appelée schéma de Bernoulli.
++++++++++++++++++++++
 
 \begin{tikzpicture}[level distance=5cm,
   level 1/.style={sibling distance=7cm}, % Ecarte les branches des 1ere ramifications

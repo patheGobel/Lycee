@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  2 MAY 2026 23:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  4 MAY 2026 08:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1423,7 +1423,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1249--1250
 [16]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 1304.
- [17] [18] [19] [20] [21] (build/proba2026.aux)
+ [17]
+Overfull \hbox (61.014pt too wide) in paragraph at lines 1450--1453
+\T1/lmr/m/n/12 et in-dépen-dante $\OML/lmm/m/it/12 n$ \T1/lmr/m/n/12 fois de ce
+tte épreuve aléa-toire est ap-pelée schéma de Bernoulli. +++++++++++++++++++++ 
+
+ []
+
+[18] [19] [20] [21] (build/proba2026.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1432,8 +1439,8 @@ Package rerunfilecheck Info: File `proba2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32028 strings out of 474222
- 639705 string characters out of 5748732
+ 32031 strings out of 474222
+ 639738 string characters out of 5748732
  1949975 words of memory out of 5000000
  53608 multiletter control sequences out of 15000+600000
  632708 words of font info for 103 fonts, out of 8000000 for 9000
@@ -1450,10 +1457,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/proba2026.pdf (21 pages, 305900 bytes).
+Output written on build/proba2026.pdf (21 pages, 307778 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 305 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 80 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
