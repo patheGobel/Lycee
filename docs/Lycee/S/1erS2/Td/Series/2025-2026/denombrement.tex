@@ -64,11 +64,322 @@ Combien d’équipes possibles ?
 \item Dans une classe de 15 garçons et 10 filles, on forme une équipe de 5 personnes contenant \textbf{au moins 2 filles}.\\
 Combien d’équipes possibles ?
 
+\item Combien de nombres de 5 chiffres \textbf{sans répétition} peut-on former avec les chiffres de 0 à 9 ?
+
+\vspace{0.3cm}
+
+\item Combien de nombres de 5 chiffres \textbf{sans répétition} contiennent \textbf{exactement 3 chiffres impairs} ?
+
+\vspace{0.3cm}
+
+\item Combien de nombres de 6 chiffres contiennent \textbf{au moins un chiffre pair} ?
+
+\vspace{0.3cm}
+
+\item Dans une classe de 25 élèves, on choisit un groupe de 4 élèves puis on désigne un chef.\\
+Combien de possibilités ?
+
+\vspace{0.3cm}
+
+\item On dispose de 6 livres différents.\\
+Combien de façons peut-on les ranger sur une étagère ?
+
+\vspace{0.3cm}
+
+\item Parmi 8 garçons et 7 filles, on veut former une équipe de 5 personnes contenant \textbf{exactement 2 filles}.\\
+Combien d’équipes possibles ?
+
+\vspace{0.3cm}
+
+\item Parmi 10 élèves, on choisit 4 élèves puis on leur attribue les rôles A, B, C et D.\\
+Combien de possibilités ?
+
+\vspace{0.3cm}
+
+\item Combien de mots différents peut-on former avec les lettres du mot \textbf{MATHEMATIQUE} ?
+
+\vspace{0.3cm}
+
+\item Dans une classe, on veut former un bureau composé de :
+\begin{itemize}
+    \item un président
+    \item un secrétaire
+\end{itemize}
+Parmi 12 élèves.\\
+Combien de bureaux possibles ?
+
+\vspace{0.3cm}
+
+\item Combien de nombres de 5 chiffres contiennent \textbf{au moins un chiffre impair} ?
+
 \end{enumerate}
 
 \vspace{0.5cm}
 
 \textbf{Conseil :} Avant chaque exercice, se poser la question :\\
 \textit{“Est-ce que je forme un groupe ou est-ce que je remplis des rôles ?”}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\begin{center}
+    \Large \textbf{Correction des Exercices de Dénombrement}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\textbf{Exercice \arabic*.}]
+
+\item \textbf{Nombres de 4 chiffres}
+
+Un nombre de 4 chiffres ne commence pas par 0.
+
+\begin{itemize}
+    \item 1er chiffre : 9 choix (1 à 9)
+    \item les 3 autres : 10 choix chacun
+\end{itemize}
+
+\[
+9 \times 10^3 = 9000
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Sans répétition}
+
+\begin{itemize}
+    \item 1er chiffre : 9 choix
+    \item 2e : 9 choix
+    \item 3e : 8 choix
+    \item 4e : 7 choix
+\end{itemize}
+
+\[
+9 \times 9 \times 8 \times 7 = 4536
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Exactement 2 chiffres pairs}
+
+\textbf{Étape 1 :} choisir les positions des 2 chiffres pairs
+\[
+\binom{5}{2} = 10
+\]
+
+\textbf{Étape 2 :} remplir
+\[
+10 \times 5^2 \times 5^3 = 10 \times 5^5 = 31250
+\]
+
+\textbf{Étape 3 :} enlever les cas commençant par 0
+
+\[
+\binom{4}{1} \times 5^4 = 4 \times 625 = 2500
+\]
+
+\[
+31250 - 2500 = 28750
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{2 pairs suivis de 3 impairs}
+
+\begin{itemize}
+    \item 1er chiffre pair $\neq 0$ : 4 choix
+    \item 2e pair : 5 choix
+    \item 3 impairs : $5^3$
+\end{itemize}
+
+\[
+4 \times 5 \times 5^3 = 4 \times 5^4 = 2500
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Choisir 5 délégués}
+
+Pas d’ordre $\implies$ combinaison :
+\[
+\binom{20}{5}
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Président, vice-président, secrétaire}
+
+Rôles distincts $\implies$ ordre :
+
+\[
+20 \times 19 \times 18 = A_{20}^3
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Choisir puis attribuer}
+
+\[
+\binom{20}{3} \times 3! = A_{20}^3
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{3 garçons et 2 filles}
+
+\[
+\binom{10}{3} \times \binom{8}{2}
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Un garçon imposé}
+
+On fixe 1 garçon, il reste à choisir 2 parmi 9 :
+
+\[
+\binom{9}{2} \times \binom{8}{2}
+\]
+
+\vspace{0.3cm}
+
+\item \textbf{Au moins 2 filles}
+
+On fait les cas :
+
+\[
+\binom{10}{2}\binom{15}{3}
++ \binom{10}{3}\binom{15}{2}
++ \binom{10}{4}\binom{15}{1}
++ \binom{10}{5}\binom{15}{0}
+\]
+
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Rappel important :}
+
+\begin{itemize}
+    \item Combinaisons : pas d’ordre
+    \item Arrangements : ordre
+    \item Combinaisons + $n!$ : choisir puis organiser
+\end{itemize}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+\begin{center}
+    \Large \textbf{Correction des Exercices de Dénombrement}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\textbf{Exercice \arabic*.}]
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On remplit des rôles (les positions des chiffres).\\
+
+Un nombre de 4 chiffres ne commence pas par 0.
+
+\[
+9 \times 10^3 = 9000
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On remplit des rôles sans répétition.
+
+\[
+9 \times 9 \times 8 \times 7 = 4536
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On remplit des rôles (positions des chiffres).
+
+\[
+\binom{5}{2} \times 5^5 - \binom{4}{1} \times 5^4
+= 31250 - 2500 = 28750
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On remplit des rôles avec ordre imposé.
+
+\[
+4 \times 5^4 = 2500
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On forme un groupe.
+
+\[
+\binom{20}{5}
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On remplit des rôles.
+
+\[
+A_{20}^3 = 20 \times 19 \times 18
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On choisit un groupe puis on attribue des rôles.
+
+\[
+\binom{20}{3} \times 3!
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On forme un groupe.
+
+\[
+\binom{10}{3} \times \binom{8}{2}
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On forme un groupe avec contrainte.
+
+\[
+\binom{9}{2} \times \binom{8}{2}
+\]
+
+\vspace{0.3cm}
+
+\item \textit{Est-ce que je forme un groupe ou je remplis des rôles ?}\\
+\textbf{Réponse :} On forme un groupe avec condition.
+
+\[
+\binom{10}{2}\binom{15}{3}
++ \binom{10}{3}\binom{15}{2}
++ \binom{10}{4}\binom{15}{1}
++ \binom{10}{5}
+\]
+
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Méthode à retenir :}
+
+\begin{itemize}
+    \item \textbf{Groupe} $\Rightarrow$ Combinaisons
+    \item \textbf{Rôles} $\Rightarrow$ Arrangements
+    \item \textbf{Groupe + rôles} $\Rightarrow$ Combinaisons $\times n!$
+\end{itemize}
+
 
 \end{document}
