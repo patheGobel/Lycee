@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  24 MAR 2026 10:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  11 MAY 2026 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**limitesContinuite.tex
-(./limitesContinuite.tex
+**derivee.tex
+(./derivee.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1007,8 +1007,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count364
 \l__pdf_internal_box=\box131
 )
-(build/limitesContinuite.aux)
-\openout1 = `limitesContinuite.aux'.
+No file derivee.aux.
+\openout1 = `derivee.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
 LaTeX Font Info:    ... okay on input line 99.
@@ -1028,7 +1028,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
 LaTeX Font Info:    ... okay on input line 99.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
 LaTeX Font Info:    ... okay on input line 99.
-
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count365
@@ -1086,14 +1085,12 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 99.
-(build/limitesContinuite.out) (build/limitesContinuite.out)
 \@outlinefile=\write4
-\openout4 = `limitesContinuite.out'.
+\openout4 = `derivee.out'.
 
 \c@lstlisting=\count371
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 02.
-
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1152,22 +1149,29 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [2] [3]
- (build/limitesContinuite.aux)
+ (build/derivee.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `limitesContinuite.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+Package rerunfilecheck Warning: File `derivee.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `derivee.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31078 strings out of 474222
- 620937 string characters out of 5748732
+ 31070 strings out of 474222
+ 620597 string characters out of 5748732
  1939975 words of memory out of 5000000
- 52717 multiletter control sequences out of 15000+600000
+ 52715 multiletter control sequences out of 15000+600000
  610059 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,451b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,441b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/publ
@@ -1177,7 +1181,7 @@ xmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
 s/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on build/limitesContinuite.pdf (3 pages, 161960 bytes).
+Output written on build/derivee.pdf (3 pages, 161960 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  119 compressed objects within 2 object streams
