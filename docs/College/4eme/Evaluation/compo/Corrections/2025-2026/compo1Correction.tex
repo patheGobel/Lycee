@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{mathrsfs} 
+\usepackage{calligra}
+\newcommand{\Dcalligra}{\text{\calligra D}}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Dindéfélo-Ségou}}
+\cfoot{\bf \thepage / \pageref{LastPage}}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Dindéfélo-Ségou}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2025/2026} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : 4}\textbf{ème} &\textbf{Date: 17/12/2025} & \textbf{Durée : 2 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction du Premier Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\section*{Exercice 1 : Identités remarquables et Factorisation}
+\begin{enumerate}
+    \item \textbf{Développement et réduction en utilisant les identités remarquables :}
+    \begin{enumerate}
+        \item $A = (x + 5)^2 = x^2 + 2 \times x \times 5 + 5^2 \implies \mathbf{A = x^2 + 10x + 25}$
+        \item $B = (3x - 2)^2 = (3x)^2 - 2 \times 3x \times 2 + 2^2 \implies \mathbf{B = 9x^2 - 12x + 4}$
+        \item $C = (x - 4)(x + 4) = x^2 - 4^2 \implies \mathbf{C = x^2 - 16}$
+    \end{enumerate}
+    
+    \item \textbf{Développement et réduction généraux :}
+    \begin{enumerate}
+        \item $A = 3(2x - 5) + 4x(x + 2) = 6x - 15 + 4x^2 + 8x \implies \mathbf{A = 4x^2 + 14x - 15}$
+        \item $B = (2x + 3)(x - 4) - (x^2 - 5) = (2x^2 - 8x + 3x - 12) - x^2 + 5$ \\
+        $B = 2x^2 - 5x - 12 - x^2 + 5 \implies \mathbf{B = x^2 - 5x - 7}$
+    \end{enumerate}
+
+    \item \textbf{Factorisation en recherchant un facteur commun :}
+    \begin{enumerate}
+        \item $E = 5x^2 - 15x = 5x \times x - 5x \times 3 \implies \mathbf{E = 5x(x - 3)}$
+        \item $F = (x + 3)(2x - 1) + (x + 3)(x + 5) = (x + 3)[(2x - 1) + (x + 5)]$ \\
+        $F = (x + 3)(2x - 1 + x + 5) \implies \mathbf{F = (x + 3)(3x + 4)}$
+        \item $G = (x - 2)^2 - 3(x - 2) = (x - 2)[(x - 2) - 3] \implies \mathbf{G = (x - 2)(x - 5)}$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 1 (Variante) : Développement et Factorisation}
+\begin{enumerate}
+    \item \textbf{Développement et réduction :}
+    \begin{enumerate}
+        \item $\mathbf{A = 4x^2 + 14x - 15}$ \textit{(voir calcul précédent)}
+        \item $\mathbf{B = x^2 - 5x - 7}$ \textit{(voir calcul précédent)}
+    \end{enumerate}
+    \item \textbf{Factorisation :}
+    \begin{enumerate}
+        \item $\mathbf{C = 5x(x - 3)}$
+        \item $\mathbf{D = (x + 3)(3x + 4)}$
+        \item $E = 7x(x - 2) - (x - 2) = 7x(x - 2) - 1(x - 2) \implies \mathbf{E = (x - 2)(7x - 1)}$
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2 : Équations et Inéquations}
+\begin{enumerate}
+    \item \textbf{Résolution dans $\mathbb{R}$ des équations :}
+    \begin{enumerate}
+        \item $5x - 8 = 2x + 7 \implies 5x - 2x = 7 + 8 \implies 3x = 15 \implies x = \frac{15}{3} \implies \mathbf{S = \{5\}}$
+        \item $3(x - 2) = 4x + 5 \implies 3x - 6 = 4x + 5 \implies 3x - 4x = 5 + 6 \implies -x = 11 \implies \mathbf{S = \{-11\}}$
+        \item $(2x - 4)(3x + 9) = 0 \implies 2x - 4 = 0 \text{ ou } 3x + 9 = 0$ \\
+        $2x = 4 \implies x = 2 \quad \text{ou} \quad 3x = -9 \implies x = -3 \implies \mathbf{S = \{-3 ; 2\}}$
+    \end{enumerate}
+    \item \textbf{Résolution dans $\mathbb{R}$ des inéquations et représentations :}
+    \begin{enumerate}
+        \item $2x + 5 < 13 \implies 2x < 13 - 5 \implies 2x < 8 \implies \mathbf{x < 4}$ \\
+        \textit{Représentation :} On colorie la zone à gauche du nombre 4. Le crochet en 4 est exclu (tourné vers la droite).
+        \item $-3x + 4 \geq 10 \implies -3x \geq 10 - 4 \implies -3x \geq 6$ \\
+        On divise par un nombre négatif ($-3$), donc le sens change : $x \leq \frac{6}{-3} \implies \mathbf{x \leq -2}$ \\
+        \textit{Représentation :} On colorie la zone à gauche de $-2$. Le crochet en $-2$ est inclus (tourné vers la gauche).
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 3 : Droites remarquables du triangle}
+\begin{enumerate}
+    \item \textbf{Définitions :}
+    \begin{enumerate}
+        \item \textbf{Faux.} Elles se coupent au centre du cercle \textit{circonscrit}.
+        \item \textbf{Vrai.} Par définition de la hauteur issue d'un sommet.
+        \item \textbf{Vrai.} C'est la propriété fondamentale du centre de gravité.
+        \item \textbf{Faux.} L'orthocentre est l'intersection des \textit{hauteurs}.
+    \end{enumerate}
+    \item \textbf{Construction :}
+    \begin{enumerate}
+        \item \textit{(Tracé du triangle $ABC$ selon les dimensions données : $AB=6$cm, $AC=8$cm, $BC=7$cm, accompagné des trois hauteurs se coupant à l'intérieur du triangle).}
+        \item Le point d'intersection $H$ des trois hauteurs s'appelle \textbf{l'orthocentre} du triangle $ABC$.
+        \item \textit{(Tracé du cercle passant par les trois sommets $A$, $B$ et $C$, dont le centre est le point d'intersection des médiatrices).}
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 4 : Droite des milieux}
+\begin{enumerate}
+    \item \textbf{Figure :} \textit{(La figure comporte le triangle $ABC$, les milieux $I$ et $J$ avec les codes de longueurs égales sur $[AB]$ et $[AC]$).}
+    \item Dans le triangle $ABC$, comme $I$ est le milieu du segment $[AB]$ et $J$ le milieu du segment $[AC]$, d'après le théorème de la droite des milieux : \textbf{les droites $(IJ)$ et $(BC)$ sont parallèles}, soit $\mathbf{(IJ) // (BC)}$.
+    \item D'après ce même théorème, la longueur du segment reliant les deux milieux vaut la moitié du troisième côté : \\
+    $IJ = \frac{BC}{2} = \frac{9}{2} \implies \mathbf{IJ = 4,5\text{ cm}}$.
+    \item \textbf{Question bonus :} Par énoncé, le point $K$ est le symétrique de $I$ par rapport à $B$. Par définition même de la symétrie centrale, cela implique directement que le point \textbf{$B$ est le milieu du segment $[IK]$}.
+\end{enumerate}
+
+\end{document}
