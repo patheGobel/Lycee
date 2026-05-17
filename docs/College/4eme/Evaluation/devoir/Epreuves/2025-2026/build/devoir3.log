@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  17 MAY 2026 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  17 MAY 2026 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,16 +856,16 @@ LaTeX Font Info:    Trying to load font information for OT1+phv on input line 8
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
-)
-Overfull \hbox (7.2839pt too wide) in paragraph at lines 116--123
-[]$[][]$ 
- []
-
-[1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
 st/fonts/enc/dvips/base/8r.enc}]
-Overfull \hbox (19.62837pt too wide) in paragraph at lines 215--224
+Underfull \hbox (badness 10000) in paragraph at lines 196--205
+
+ []
+
+
+Overfull \hbox (15.6459pt too wide) in paragraph at lines 217--227
 []$[][]$ 
  []
 
@@ -880,7 +880,7 @@ L3 programming layer <2024-01-22>
 Here is how much of TeX's memory you used:
  22293 strings out of 474222
  476264 string characters out of 5748732
- 1950975 words of memory out of 5000000
+ 1948975 words of memory out of 5000000
  44126 multiletter control sequences out of 15000+600000
  577309 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -893,7 +893,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/devoir3.pdf (2 pages, 91405 bytes).
+Output written on build/devoir3.pdf (2 pages, 91350 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
