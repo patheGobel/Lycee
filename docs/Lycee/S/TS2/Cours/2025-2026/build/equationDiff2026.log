@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  22 MAY 2026 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  22 MAY 2026 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**EquationDifferentielle2025.tex
-(./EquationDifferentielle2025.tex
+**equationDiff2026.tex
+(./equationDiff2026.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1124,8 +1124,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count371
 \l__pdf_internal_box=\box132
 )
-(build/EquationDifferentielle2025.aux)
-\openout1 = `EquationDifferentielle2025.aux'.
+(build/equationDiff2026.aux)
+\openout1 = `equationDiff2026.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
 LaTeX Font Info:    ... okay on input line 115.
@@ -1203,9 +1203,9 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 115.
-(build/EquationDifferentielle2025.out) (build/EquationDifferentielle2025.out)
+(build/equationDiff2026.out) (build/equationDiff2026.out)
 \@outlinefile=\write4
-\openout4 = `EquationDifferentielle2025.out'.
+\openout4 = `equationDiff2026.out'.
 
 \c@lstlisting=\count378
 
@@ -1314,23 +1314,22 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.416 \end{document}
-                    ] (build/EquationDifferentielle2025.aux)
+                    ] (build/equationDiff2026.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `EquationDifferentielle2025.out' has not chan
-ged.
+Package rerunfilecheck Info: File `equationDiff2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  41637 strings out of 474222
- 976055 string characters out of 5748732
+ 975865 string characters out of 5748732
  1945975 words of memory out of 5000000
  63136 multiletter control sequences out of 15000+600000
  625988 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,747b,2251s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,737b,2251s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/p
@@ -1341,8 +1340,7 @@ onts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb>
-Output written on build/EquationDifferentielle2025.pdf (7 pages, 216477 bytes).
-
+Output written on build/equationDiff2026.pdf (7 pages, 216534 bytes).
 PDF statistics:
  203 PDF objects out of 1000 (max. 8388607)
  137 compressed objects within 2 object streams
