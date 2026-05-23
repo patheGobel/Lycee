@@ -469,6 +469,28 @@ On a :
     = \left[ \frac{\pi}{2} \times 1 \right] - \left[ - 0 + 1 \right] = \frac{\pi}{2} - 1
     \]
 \end{itemize}
+
+\begin{tcolorbox}[
+    colframe=red, % Bordure rouge
+    colback=white, % Fond blanc
+    title=\textbf{Remarque : Choix de $u(x)$ (Méthode ALPES)}, 
+    coltitle=white, % Texte du titre en blanc sur fond rouge
+    fonttitle=\bfseries,
+    arc=2mm % Angles légèrement arrondis
+]
+Pour effectuer une intégration par parties (IPP) efficace, le choix de la fonction $u(x)$ à dériver se fait judicieusement grâce au moyen mnémotechnique \textbf{ALPES}. 
+
+En lisant le mot de gauche à droite, la première fonction rencontrée dans l'intégrale définit $u(x)$ :
+\begin{itemize}
+    \item[\textbf{A} :] \textbf{A}rc (Fonctions réciproques : $\arctan$, $\arcsin$...)
+    \item[\textbf{L} :] \textbf{L}ogarithme ($\ln$)
+    \item[\textbf{P} :] \textbf{P}olynôme ($x$, $x^2-1$...)
+    \item[\textbf{E} :] \textbf{E}xponentielle ($e^x$...)
+    \item[\textbf{S} :] \textbf{S}inus / Cosinus (Fonctions trigonométriques)
+\end{itemize}
+\textit{Exemple :} Dans $\int x e^x \,dx$, le polynôme ($x$) passe avant l'exponentielle ($e^x$) dans le mot A-\textbf{P}-\textbf{E}-S, on pose donc $u(x) = x$.
+\end{tcolorbox}
+
 \subsection*{\underline{\textbf{\textcolor{red}{3. Intégration de fonctions paires, impaires, périodiques : }}}}
 \subsubsection*{\underline{\textcolor{red}{Propriété 1 :}}}
 Soit \(f\) une fonction continue sur un intervalle \(I\) symétrique par rapport à \(0\).
