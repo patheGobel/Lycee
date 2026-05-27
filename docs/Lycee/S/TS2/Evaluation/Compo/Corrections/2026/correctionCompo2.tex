@@ -50,6 +50,10 @@ middle color = tcbcolback!80!black]
 \usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
 % Commande pour ajouter du texte en arrière-plan
 \usepackage{tkz-tab}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.18}
+\geometry{hmargin=2cm,vmargin=2.5cm}
 \AddToShipoutPicture{
     \AtTextCenter{%
         \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
@@ -274,48 +278,97 @@ Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text
 
     \hfill \textcolor{red}{0,75pt}
 
-    \item \textbf{Montrons que l'équation $f(x) = 0$ admet une unique solution $\alpha$ sur $]-\infty ; 0]$ puis vérifier que $-0,5 \le \alpha \le -0,4$}
+    \item \textbf{Montrons que l'équation $f(x) = 0$ admet une unique solution $\alpha$ sur $]-\infty ; 0]$ puis vérifier que }
     
-    $f$ est bijective de $]-\infty ; 0]$ vers $]-1 ; 1]$ et $0 \in ]-1 ; 1]$ donc \colorbox{yellow}{$f(x) = 0$ admet une unique solution $\alpha$} \colorbox{yellow}{sur $]-\infty ; 0]$} \hfill \textcolor{red}{0,25pt}
+    \colorbox{green}{$-0,5 \le \alpha \le -0,4$}
     
-    $f(-0,5) \times f(-0,4) \approx -0,003 < 0$ donc \colorbox{yellow}{$-0,5 \le \alpha \le -0,4$} \hfill \textcolor{red}{0,25pt}
+    $f$ est bijective de $]-\infty ; 0]$ vers $]-1 ; 1]$ et $0 \in ]-1 ; 1]$ donc 
+    
+    \colorbox{green}{$f(x) = 0$ admet une unique solution $\alpha$} \colorbox{green}{sur $]-\infty ; 0]$} \hfill \textcolor{red}{0,25pt}
+    
+    $f(-0,5) \times f(-0,4) \approx -0,003 < 0$ donc \colorbox{green}{$-0,5 \le \alpha \le -0,4$} \hfill \textcolor{red}{0,25pt}
 
     \item \textbf{Soit $g$ ; la restriction de $f$ sur $I = ]-\infty ; 0]$.}
     \begin{enumerate}
         \item \textbf{Montrons que $g$ est bijective de $I$ vers $J$ à préciser.}
         
-        $g$ est continue et strictement croissante sur $I = ]-\infty ; 0]$ donc $g$ est bijective de $I$ vers \colorbox{yellow}{$J = g(I) = ]-1 ; 1]$} \hfill \textcolor{red}{0,25pt}
+        $g$ est continue et strictement croissante sur $I = ]-\infty ; 0]$ donc $g$ est bijective de $I$ vers \colorbox{green}{$J = g(I) = ]-1 ; 1]$} \hfill \textcolor{red}{0,25pt}
         
         \item \textbf{Calculons $g(-\ln 2)$ puis $(g^{-1})'\left(-\dfrac{1}{4}\right)$. Quelle est alors la position relative de la tangente à la courbe $(C_{g^{-1}})$ au point d'abscisse $-\dfrac{1}{4}$ par rapport la première bissectrice ?}
         \begin{itemize}
             \item $g(-\ln 2) = e^{2(-\ln 2)} + e^{-\ln 2} - 1 = \dfrac{1}{4} + \dfrac{1}{2} - 1 = -\dfrac{1}{4}$ \\
-            \colorbox{yellow}{$g(-\ln 2) = -\dfrac{1}{4}$} \hfill \textcolor{red}{0,25pt}
+            \colorbox{green}{$g(-\ln 2) = -\dfrac{1}{4}$} \hfill \textcolor{red}{0,25pt}
             
-            \item $(g^{-1})'\left(-\dfrac{1}{4}\right) = \dfrac{1}{g'(-\ln 2)}$ or $g'(-\ln 2) = 2e^{2(-\ln 2)} + e^{-\ln 2} = \dfrac{2}{4} + \dfrac{1}{2} = 1$ donc \colorbox{yellow}{$(g^{-1})'\left(-\dfrac{1}{4}\right) = 1$} \hfill \textcolor{red}{0,5pt}
+            \item $(g^{-1})'\left(-\dfrac{1}{4}\right) = \dfrac{1}{g'(-\ln 2)}$ or $g'(-\ln 2) = 2e^{2(-\ln 2)} + e^{-\ln 2} = \dfrac{2}{4} + \dfrac{1}{2} = 1$ donc \colorbox{green}{$(g^{-1})'\left(-\dfrac{1}{4}\right) = 1$} \hfill \textcolor{red}{0,5pt}
             
-            \item \colorbox{yellow}{La tangente à la courbe $(C_{g^{-1}})$ au point d'abscisse $-\dfrac{1}{4}$ est parallèle à la première} \colorbox{yellow}{bissectrice puisqu'elles ont le même coefficient directeur 1.} \hfill \textcolor{red}{0,25pt}
+            \item \colorbox{green}{La tangente à la courbe $(C_{g^{-1}})$ au point d'abscisse $-\dfrac{1}{4}$ est parallèle à la première} 
+            
+            \colorbox{green}{bissectrice puisqu'elles ont le même coefficient directeur 1.} \hfill \textcolor{red}{0,25pt}
         \end{itemize}
         
         \item \textbf{Dressons le tableau de variation de $g^{-1}$ sur $J$.}
         
-        \begin{center}
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|lcr|}
-        \hline
-        $x$ & $-1$ & & $1$ \\ \hline
-        & & & $0$ \\ 
-        $g^{-1}$ & & $\nearrow$ & \\ 
-        & $-\infty$ & & \\ \hline
-        \end{tabular}
-        \end{center}
+\begin{tikzpicture}
+        % Initialisation du tableau pour g^(-1) sur l'intervalle J = ]-1 ; 1]
+        % On définit la hauteur des lignes pour correspondre à l'image
+        \tkzTabInit[espcl=6]{$x$ / .7 , $g^{-1}$ / 1.5}{$-1$, $1$}
+        
+        % Ligne des variations de la fonction g^(-1) :
+        % La fonction croît de -\infty (en bas à gauche) vers 0 (en haut à droite)
+        \tkzTabVar{ - / $-\infty$ , + / $0$ }
+\end{tikzpicture}
         \hfill \textcolor{red}{0,25pt}
     \end{enumerate}
 
     \item \textbf{Traçons les courbes $(C_f)$ et $(C_{g^{-1}})$ dans le même repère.}
     
     \textit{(Se référer au graphique fourni dans les documents originaux contenant $(\mathcal{E}_f)$, $(\mathcal{E}_{g^{-1}})$, la droite $y=x$, ainsi que les asymptotes $y=-1$ et $y=2$.)} \hfill \textcolor{red}{1pt+0,5pt}
-\end{enumerate}
 
-+++++++++
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle,
+            xlabel={$x$}, ylabel={$y$},
+            xmin=-4.5, xmax=5.5,
+            ymin=-4.5, ymax=4.5,
+            xtick={-3,-2,-1,1,2,3,4},
+            ytick={-3,-2,-1,1,2,3},
+            unit vector ratio=1 1,
+            grid=none,
+            scale=1.3,
+            every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+            every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+        ]
+            % Première bissectrice y = x
+            \addplot[dashed, domain=-4.5:4.5, samples=2] {x} node[pos=0.75, above left] {$y=x$};
+            
+            % Asymptotes horizontales et verticales
+            \addplot[thick, color=black!60, domain=-4.5:2] {-1} node[pos=0.15, below] {$y=-1$};
+            \addplot[thick, color=black!60, domain=0:5.5] {2} node[pos=0.85, above] {$y=2$};
+            \draw[thick, color=black!60] (axis cs:-1,-4.5) -- (axis cs:-1,0) node[pos=0.2, left] {$x=-1$};
+            
+            % Courbe (Cf) pour x <= 0
+            \addplot[red, very thick, domain=-4.5:0, samples=100] {exp(2*x) + exp(x) - 1};
+            % Courbe (Cf) pour x > 0
+            \addplot[red, very thick, domain=0.001:5.5, samples=150] {1 - x*ln(x/(x+1))} node[pos=0.3, above left] {$(\mathcal{E}_f)$};
+            
+            % Courbe (C_g^-1) réciproque sur J = ]-1, 1]
+            % Trouvé par inversion x = exp(2y) + exp(y) - 1 => exp(y) = (-1 + sqrt(5+4x))/2
+            \addplot[blue, very thick, domain=-0.99:1, samples=100] {ln((-1 + sqrt(5 + 4*x))/2)} node[pos=0.4, right] {$(\mathcal{E}_{g^{-1}})$};
+            
+            % Tangentes et points remarquables (Alpha)
+            \node[above left] at (axis cs:-0.45, 0) {$\alpha$};
+            \node[below right] at (axis cs:0, -0.45) {$\alpha$};
+            \fill (axis cs:-0.453, 0) circle (2pt);
+            \fill (axis cs:0, -0.453) circle (2pt);
+            
+            % Demi-tangentes en (0,1)
+            \draw[->, >=stealth, very thick] (axis cs:0,1) -- (axis cs:-0.3,0.1);
+            \draw[->, >=stealth, very thick] (axis cs:0,1) -- (axis cs:0,2);
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}    
+   
 
 \end{document}
