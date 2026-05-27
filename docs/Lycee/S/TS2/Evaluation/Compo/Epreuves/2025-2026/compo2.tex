@@ -2,6 +2,7 @@
 \usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
+\usepackage{multicol}
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
 \node[circle,draw=gray, fill=red!55,
@@ -84,30 +85,32 @@ middle color = tcbcolback!80!black]
 \end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
-\section*{\underline{Exercice 1 : ($5,25$ pts)}}
+\section*{\underline{Exercice 1 : (5 pts)}}
 
 On munit le plan d'un repère orthonormé $\left(O, \vec{u}, \vec{v}\right)$.
-
+    %\begin{multicols}{2}
+%\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
 \begin{enumerate}
     \item Soit $A(\sqrt{3} - i)$ et $r$ la rotation de centre $O$ et d'angle $\dfrac{\pi}{4}$.
     \begin{enumerate}
-        \item Déterminer la forme exponentielle de $\sqrt{3} - i$. \hfill (0,5pt)
-        \item Déterminer l'écriture complexe de la rotation $r$. \hfill (0,5pt)
+        \item Déterminer la forme exponentielle de $\sqrt{3} - i$\hfill \textbf{(0,25 pt)}
+        \item Déterminer l'écriture complexe de la rotation $r$.\hfill \textbf{(0,5 pt)}
         \item Soit $B$ l'image de $A$ par la rotation $r$. Montrer que l'affixe $b$ du point $B$ est \\$b = \left(\dfrac{\sqrt{6}+\sqrt{2}}{2}\right) + i \left(\dfrac{\sqrt{6}-\sqrt{2}}{2}\right)$.
-        \item Écrire $b$ sous forme exponentielle puis sous forme trigonométrique. \hfill (0,5pt + 0,5pt)
-        \item En déduire les valeurs exactes de $\cos \dfrac{\pi}{12}$ et $\sin \dfrac{\pi}{12}$. \hfill (0,25pt $\times$ 2)
-        \item Résoudre dans $\mathbb{C}$ l'équation : $z^3 = 1$. \hfill (0,5pt)
-        \item En déduire les solutions dans $\mathbb{C}$ sous forme algébrique de l'équation $z^3 = b^3$. \hfill (0,5pt)
+        \item Écrire $b$ sous forme exponentielle puis sous forme trigonométrique.\hfill \textbf{(0,5pt + 0,5pt)} 
+        \item En déduire les valeurs exactes de $\cos \dfrac{\pi}{12}$ et $\sin \dfrac{\pi}{12}$.\hfill \textbf{(0,25pt $\times$ 2)}
+        \item Résoudre dans $\mathbb{C}$ l'équation : $z^3 = 1$.\hfill \textbf{(0,5 pt)}
+        \item En déduire les solutions dans $\mathbb{C}$ sous forme algébrique de l'équation $z^3 = b^3$.\hfill \textbf{(0,5 pt)}
     \end{enumerate}
-    
+%\end{multicols}  
     \item Soit $f$ la transformation d'écriture complexe : $z' = \left(1 - i\sqrt{3}\right)z + 2i\sqrt{3}$.
     \begin{enumerate}
-        \item Déterminer la nature et les éléments caractéristiques de $f$. \hfill (0,75pt)
-        \item Déterminer une équation cartésienne de la droite $(\Delta')$, image de la droite $(\Delta) : -x + y - 1 = 0$ par $f$.
-        \item Déterminer l'image du cercle $(C)$ de centre $A$ et de rayon $\dfrac{1}{2}$ par $f$. \hfill (0,5pt)
+        \item Déterminer la nature et les éléments caractéristiques de $f$. \hfill \textbf{(0,75 pt)}
+        \item Déterminer une équation cartésienne de la droite $(\Delta')$, image de la droite $(\Delta) : -x + y - 1 = 0$ par $f$.\hfill \textbf{(0,5 pt)}
+        \item Déterminer l'image du cercle $(C)$ de centre $A$ et de rayon $\dfrac{1}{2}$ par $f$. \hfill \textbf{(0,5 pt)}
     \end{enumerate}
 \end{enumerate}
-\section*{\underline{Exercice 2 :(6 pts)} }
+
+\section*{\underline{Exercice 2 :(5 pts)} }
 
 \subsection*{Contexte}
 Une entreprise de services numériques supervise un serveur informatique qui peut être dans deux états : \textbf{Actif (A)} ou \textbf{En maintenance (M)}.
@@ -122,7 +125,7 @@ On constate que :
 Le premier jour du déploiement (jour 0), le serveur est garanti \textbf{Actif}.\\
 Pour tout entier naturel $n$, on note $A_n$ l'événement « le serveur est actif au jour $n$ » et $p_n = P(A_n)$ sa probabilité. On a ainsi $p_0 = 1$.
 
-\subsection*{Partie A : Modélisation par une suite numérique}
+\subsection*{Partie A }
 \begin{enumerate}
     \item Déterminer la valeur de $p_1$. \hfill \textbf{(0,25 pt)}
     \item Traduire la situation par un arbre pondéré reliant le jour $n$ au jour $n+1$.\hfill \textbf{(0,5 pt)}
@@ -135,14 +138,14 @@ Pour tout entier naturel $n$, on note $A_n$ l'événement « le serveur est acti
     \end{enumerate}
 \end{enumerate}
 
-\subsection*{Partie B : Analyse sur une période donnée (Loi binomiale)}
+\subsection*{Partie B }
 L'entreprise décide d'analyser le comportement du serveur sur une période de \textbf{10 jours consécutifs}, après une très longue période de mise en service (on considère alors que la probabilité qu'il soit actif chaque jour est stabilisée à sa valeur limite, soit $p = \dfrac{9}{13}$). On suppose que l'état du serveur d'un jour à l'autre sur cette période devient indépendant.\\
 Soit $X$ la variable aléatoire égale au nombre de jours où le serveur est \textbf{Actif} durant cette période de 10 jours.
 \begin{enumerate}
     \item Justifier que $X$ suit une loi binomiale dont on précisera les paramètres.\hfill \textbf{(0,5 pt)}
     \item Calculer l'espérance mathématique de $X$. Que représente cette valeur ?\hfill \textbf{(0,5 pt)}
-    \item Calculer la probabilité que le serveur soit actif pendant exactement 8 jours (arrondir à $10^{-3}$).\hfill \textbf{(0,5 pt)}
-    \item Calculer la probabilité que le serveur subisse au moins une maintenance durant ces 10 jours (arrondir à $10^{-3}$).\hfill \textbf{(0,5 pt)}
+    \item Calculer la probabilité que le serveur soit actif pendant exactement 8 jours (arrondir à $10^{-3}$).\hfill \textbf{(0,25 pt)}
+    \item Calculer la probabilité que le serveur subisse au moins une maintenance durant ces 10 jours (arrondir à $10^{-3}$).\hfill \textbf{(0,25 pt)}
 \end{enumerate}
 
 \subsection*{Partie C : Optimisation financière}
@@ -150,7 +153,7 @@ Chaque jour où le serveur est actif, il génère un profit de $5\,000$ FCFA. Ch
 \begin{enumerate}
     \item Justifier que le gain net moyen attendu au jour $n$ est donné par : $E(G_n) = 7\,000p_n - 2\,000$.\hfill \textbf{(0,5 pt)}
     \item L'entreprise souhaite évaluer le gain total moyen cumulé $\Sigma_N$ sur les $N$ premiers jours (du jour 0 au jour $N-1$), défini par : $\Sigma_N = \sum_{n=0}^{N-1} E(G_n)$.\\
-    Montrer que : $\Sigma_N = \dfrac{280\,000}{13} \times \left[1 - (-0,3)^N\right] + \dfrac{37\,000}{13}N$.\hfill \textbf{(1 pt)}
+    Montrer que : $\Sigma_N = \dfrac{280\,000}{13} \times \left[1 - (-0,3)^N\right] + \dfrac{37\,000}{13}N$.\hfill \textbf{(0,5 pt)}
 \end{enumerate}
 
 \section*{\underline{Problème :}\quad\textbf{10 pts}} 
@@ -158,11 +161,11 @@ Chaque jour où le serveur est actif, il génère un profit de $5\,000$ FCFA. Ch
 \subsection*{Partie A (1,25 point)}
 
 On considère la fonction $h$ définie sur $]0 ; +\infty[$ par : 
-$$h(x) = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}$$
+$h(x) = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}$
 
 \begin{enumerate}
     \item Montrer que pour tout $x \in ]0 ; +\infty[$, la fonction dérivée $h'$ de $h$ est définie par :
-    $$h'(x) = -\dfrac{1}{x(x+1)^2}$$ \hfill \textbf{(0,25 pt)}
+    $h'(x) = -\dfrac{1}{x(x+1)^2}$ \hfill \textbf{(0,25 pt)}
     
     \item Calculer les limites de la fonction $h$ en $0^+$ et en $+\infty$, puis dresser le tableau de variation complet de $h$ sur $]0 ; +\infty[$. \hfill \textbf{(0,75 pt)}
     
@@ -172,10 +175,10 @@ $$h(x) = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}$$
 \subsection*{Partie B (8,75 points)}
 
 Soit la fonction $f$ définie sur $\mathbb{R}$ par :
-$$f(x) = \begin{cases} 
+$f(x) = \begin{cases} 
 e^{2x} + e^x - 1 & \text{si } x \le 0 \\ 
 1 - x\ln\left(\dfrac{x}{x+1}\right) & \text{si } x > 0 
-\end{cases}$$
+\end{cases}$
 On note $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \vec{i}, \vec{j})$ d'unité graphique $2\text{ cm}$.
 
 \begin{enumerate}
@@ -184,7 +187,7 @@ On note $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \vec{
     \item Calculer $\lim\limits_{x \to -\infty} f(x)$. En déduire que la courbe $(C_f)$ admet une asymptote horizontale en $-\infty$ dont on précisera l'équation. \hfill \textbf{(0,5 pt)}
     
     \item Vérifier que pour tout $x > 0$, on peut écrire :
-    $$f(x) = 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x+1}{x}-1}\left(\dfrac{x}{x+1}\right)$$
+    $f(x) = 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x+1}{x}-1}\left(\dfrac{x}{x+1}\right)$
     En déduire $\lim\limits_{x \to +\infty} f(x)$ et préciser l'équation de l'asymptote horizontale à $(C_f)$ en $+\infty$. \hfill \textbf{(0,75 pt)}
     
     \item Étudier la continuité de $f$ en $0$. \hfill \textbf{(0,5 pt)}
