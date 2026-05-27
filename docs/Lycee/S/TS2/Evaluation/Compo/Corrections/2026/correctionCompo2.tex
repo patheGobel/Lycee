@@ -276,7 +276,13 @@ middle color = tcbcolback!80!black]
 
 \begin{enumerate}
     \item Au jour 0, le serveur est actif donc $p_0 = 1$ et $P(M_0) = 0$. D'après l'énoncé, la probabilité qu'il reste actif sachant qu'il l'était est de $0,6$. On a donc :
-    \[ p_1 = P(A_1) = P(A_1 | A_0) \times P(A_0) = 0,6 \times 1 = \mathbf{0,6} \]
+    
+    \begin{align*}
+    p_1 &= P(A_1) \\
+        &= P(A_1 | A_0) \times P(A_0) \\
+        &= 0,6 \times 1 \\
+        &= \mathbf{0,6}
+    \end{align*}
 
     \item L'arbre pondéré reliant le jour $n$ au jour $n+1$ est le suivant :
 \begin{comment}
@@ -355,15 +361,29 @@ middle color = tcbcolback!80!black]
     \begin{enumerate}
         \item Exprimons $u_{n+1}$ en fonction de $u_n$ :
         \begin{align*}
-            u_{n+1} = p_{n+1} - \dfrac{9}{13} &= -0,3p_n + 0,9 - \dfrac{9}{13} \\
+            u_{n+1} &= p_{n+1} - \dfrac{9}{13} \\
+            &= -0,3p_n + 0,9 - \dfrac{9}{13} \\
             &= -0,3\left(u_n + \dfrac{9}{13}\right) + \dfrac{9}{10} - \dfrac{9}{13} \\
             &= -0,3u_n - \dfrac{2,7}{13} + \dfrac{11,7 - 9}{13} \\
-            &= -0,3u_n - \dfrac{2,7}{13} + \dfrac{2,7}{13} = \mathbf{-0,3u_n}
+            &= -0,3u_n - \dfrac{2,7}{13} + \dfrac{2,7}{13}\\ 
+            &= \mathbf{-0,3u_n}
         \end{align*}
         La suite $\left(u_n\right)$ est donc géométrique de raison $\mathbf{q = -0,3}$.\\
-        Son premier terme est $u_0 = p_0 - \dfrac{9}{13} = 1 - \dfrac{9}{13} = \mathbf{\dfrac{4}{13}}$.
+        Son premier terme est 
         
-        \item On en déduit que : $u_n = u_0 \times q^n = \mathbf{\dfrac{4}{13} \times (-0,3)^n}$.\\
+        \begin{align*}
+        u_0 &= p_0 - \dfrac{9}{13}\\
+            &= 1 - \dfrac{9}{13} \\
+            &= \mathbf{\dfrac{4}{13}}
+        \end{align*}
+        
+        \item On en déduit que : 
+        
+        $\begin{aligned}
+        u_n &= u_0 \times q^n \\
+            &= \mathbf{\dfrac{4}{13} \times (-0,3)^n}
+        \end{aligned}$
+        
         Comme $p_n = u_n + \dfrac{9}{13}$, on a : $\mathbf{p_n = \dfrac{4}{13} \times (-0,3)^n + \dfrac{9}{13}}$.
         
         \item Comme $-1 < -0,3 < 1$, on a $\lim\limits_{n \to +\infty} (-0,3)^n = 0$, d'où :
@@ -374,7 +394,10 @@ middle color = tcbcolback!80!black]
 
 \subsection*{Partie B : Analyse sur une période donnée (Loi binomiale)}
 \begin{enumerate}
-    \item On répète 10 fois de manière indépendante et identique une expérience à deux issues (Succès $A$ : « le serveur est actif » avec $p = \dfrac{9}{13}$, Échec $M$ : « le serveur est en maintenance » avec $q = \dfrac{4}{13}$).
+    \item On répète 10 fois de manière indépendante et identique une expérience à deux issues 
+    
+    Succès $A$ : « le serveur est actif » avec $p = \dfrac{9}{13}$,\\ Échec $M$ : « le serveur est en maintenance » avec $q = \dfrac{4}{13}$.
+    
     La variable aléatoire $X$ suit donc une loi binomiale : $\mathbf{X \hookrightarrow \mathcal{B}\left(10 \ ; \ \dfrac{9}{13}\right)}$.
     
     \item L'espérance est $E(X) = n \times p = 10 \times \dfrac{9}{13} = \mathbf{\dfrac{90}{13} \approx 6,92}$ jours.\\
