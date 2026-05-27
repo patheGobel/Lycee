@@ -88,10 +88,148 @@ middle color = tcbcolback!80!black]
 \end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
+
+\section*{Correction détaillée}
+
+\subsection*{Partie A : Modélisation par une suite numérique}
+
+\begin{enumerate}
+    \item Au jour 0, le serveur est actif donc $p_0 = 1$ et $P(M_0) = 0$. D'après l'énoncé, la probabilité qu'il reste actif sachant qu'il l'était est de $0,6$. On a donc :
+    \[ p_1 = P(A_1) = P(A_1 | A_0) \times P(A_0) = 0,6 \times 1 = \mathbf{0,6} \]
+
+    \item L'arbre pondéré reliant le jour $n$ au jour $n+1$ est le suivant :
+\begin{comment}
+\begin{center}
+    \begin{tikzpicture}[level distance=3cm,
+  level 1/.style={sibling distance=5cm},%Ecarte les branches des 1eme ramifications
+  level 2/.style={sibling distance=4cm},%Ecarte les branches des  2eme ramifications
+  %level 3/.style={sibling distance=2cm}]%Ecarte les branches des 3eme ramifications
+    every node/.style={text width=2cm, align=center}]%Permet de spécifier une largeur pour chaque nœud
+  \node {}
+    child {node {$\overline{A}$}
+     child {node {$\overline{B}$}    
+      }
+      child {node {$B$}    
+      }
+    }% 1ere branche      
+    child {node {$A$}  
+         child {node {$\overline{B}$}    
+      }
+      child {node {$B$}    
+      }  
+    };
+\node at (-3,-1.5) [right] {$...$};
+
+\node at (0.8,-1.5) [right] {$1/4$};;
+
+\node at (-5,-4) [right] {$...$};
+\node at (-2.5,-4) [right] {$1/5$};
+
+\node at (-0.1,-4) [right] {$...$};
+\node at (2.5,-4) [right] {$1/3$};
+
+\end{tikzpicture}
+\end{center}
+\end{comment}
+
+\begin{center}
+\begin{tikzpicture}[xscale=2.5, yscale=1.2, >=latex]
+    % Niveau 0 (Racine virtuelle)
+    \node (R) at (0,0) {};
+    
+    % Niveau 1 (Événements au jour n)
+    \node (A) at (1,1) {$A_n$};
+    \node (M) at (1,-1) {$M_n$};
+    
+    % Branches du premier niveau
+    \draw[->, line width=0.6pt] (R) -- (A) node[midway, above, sloped] {$p_n$};
+    \draw[->, line width=0.6pt] (R) -- (M) node[midway, below, sloped] {$1-p_n$};
+    
+    % Niveau 2 (Événements au jour n+1 issus de A_n)
+    \node (AA) at (2,1.5) {$A_{n+1}$};
+    \node (AM) at (2,0.5) {$M_{n+1}$};
+    
+    % Branches issues de A_n
+    \draw[->, line width=0.6pt] (A) -- (AA) node[midway, above, sloped] {$0,6$};
+    \draw[->, line width=0.6pt] (A) -- (AM) node[midway, below, sloped] {$0,4$};
+    
+    % Niveau 2 (Événements au jour n+1 issus de M_n)
+    \node (MA) at (2,-0.5) {$A_{n+1}$};
+    \node (MM) at (2,-1.5) {$M_{n+1}$};
+    
+    % Branches issues de M_n
+    \draw[->, line width=0.6pt] (M) -- (MA) node[midway, above, sloped] {$0,9$};
+    \draw[->, line width=0.6pt] (M) -- (MM) node[midway, below, sloped] {$0,1$};
+\end{tikzpicture}
+\end{center}
+    \item En utilisant la formule des probabilités totales d'après l'arbre précédent :
+    \begin{align*}
+        p_{n+1} = P(A_{n+1}) &= P(A_n \cap A_{n+1}) + P(M_n \cap A_{n+1}) \\
+        &= p_n \times 0,6 + (1 - p_n) \times 0,9 \\
+        &= 0,6p_n + 0,9 - 0,9p_n \\
+        &= \mathbf{-0,3p_n + 0,9}
+    \end{align*}
+
+    \item Soit $u_n = p_n - \dfrac{9}{13}$.
+    \begin{enumerate}
+        \item Exprimons $u_{n+1}$ en fonction de $u_n$ :
+        \begin{align*}
+            u_{n+1} = p_{n+1} - \dfrac{9}{13} &= -0,3p_n + 0,9 - \dfrac{9}{13} \\
+            &= -0,3\left(u_n + \dfrac{9}{13}\right) + \dfrac{9}{10} - \dfrac{9}{13} \\
+            &= -0,3u_n - \dfrac{2,7}{13} + \dfrac{11,7 - 9}{13} \\
+            &= -0,3u_n - \dfrac{2,7}{13} + \dfrac{2,7}{13} = \mathbf{-0,3u_n}
+        \end{align*}
+        La suite $\left(u_n\right)$ est donc géométrique de raison $\mathbf{q = -0,3}$.\\
+        Son premier terme est $u_0 = p_0 - \dfrac{9}{13} = 1 - \dfrac{9}{13} = \mathbf{\dfrac{4}{13}}$.
+        
+        \item On en déduit que : $u_n = u_0 \times q^n = \mathbf{\dfrac{4}{13} \times (-0,3)^n}$.\\
+        Comme $p_n = u_n + \dfrac{9}{13}$, on a : $\mathbf{p_n = \dfrac{4}{13} \times (-0,3)^n + \dfrac{9}{13}}$.
+        
+        \item Comme $-1 < -0,3 < 1$, on a $\lim\limits_{n \to +\infty} (-0,3)^n = 0$, d'où :
+        \[ \mathbf{\lim_{n \to +\infty} p_n = \dfrac{9}{13} \approx 0,692} \]
+        \textit{Interprétation :} Sur le long terme, le serveur a environ 69,2\,\% de chances d'être actif chaque jour.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie B : Analyse sur une période donnée (Loi binomiale)}
+\begin{enumerate}
+    \item On répète 10 fois de manière indépendante et identique une expérience à deux issues (Succès $A$ : « le serveur est actif » avec $p = \dfrac{9}{13}$, Échec $M$ : « le serveur est en maintenance » avec $q = \dfrac{4}{13}$).
+    La variable aléatoire $X$ suit donc une loi binomiale : $\mathbf{X \hookrightarrow \mathcal{B}\left(10 \ ; \ \dfrac{9}{13}\right)}$.
+    
+    \item L'espérance est $E(X) = n \times p = 10 \times \dfrac{9}{13} = \mathbf{\dfrac{90}{13} \approx 6,92}$ jours.\\
+    Cela signifie que sur une période de 10 jours, le serveur sera actif en moyenne environ 7 jours.
+    
+    \item On cherche $P(X = 8)$ :
+    \[ P(X = 8) = \binom{10}{8} \times \left(\dfrac{9}{13}\right)^8 \times \left(\dfrac{4}{13}\right)^2 \approx \mathbf{0,221} \]
+    
+    \item « Subir au moins une maintenance » correspond à l'événement $(X \le 9)$ ou encore le contraire de « être actif tous les jours » $(X = 10)$ :
+    \[ P(X \le 9) = 1 - P(X = 10) = 1 - \left(\dfrac{9}{13}\right)^{10} \approx 1 - 0,024 = \mathbf{0,976} \]
+\end{enumerate}
+
+\subsection*{Partie C : Optimisation financière}
+\begin{enumerate}
+    \item La variable $G_n$ prend la valeur $5\,000$ avec une probabilité $p_n$, et $-2\,000$ avec une probabilité $1-p_n$. L'espérance de gain est :
+    \begin{align*}
+        E(G_n) &= 5000 \times p_n + (-2000) \times (1 - p_n) \\
+        &= 5000p_n - 2000 + 2000p_n = \mathbf{7000p_n - 2000}
+    \end{align*}
+    
+    \item Calculons la somme cumulée $\Sigma_N$ :
+    \[ \Sigma_N = \sum_{n=0}^{N-1} \left(7000p_n - 2000\right) = 7000 \sum_{n=0}^{N-1} p_n - 2000N \]
+    En remplaçant $p_n$ par sa forme explicite :
+    \begin{align*}
+        \Sigma_N &= 7000 \sum_{n=0}^{N-1} \left( \dfrac{4}{13}(-0,3)^n + \dfrac{9}{13} \right) - 2000N \\
+        &= 7000 \times \dfrac{4}{13} \sum_{n=0}^{N-1} (-0,3)^n + 7000 \times \dfrac{9}{13}N - 2000N \\
+        &= \dfrac{28\,000}{13} \times \left( \dfrac{1 - (-0,3)^N}{1 - (-0,3)} \right) + \left( \dfrac{63\,000 - 26\,000}{13} \right)N \\
+        &= \dfrac{28\,000}{13} \times \dfrac{1 - (-0,3)^N}{1,3} + \dfrac{37\,000}{13}N \\
+        &= \mathbf{\dfrac{280\,000}{13} \times \left[1 - (-0,3)^N\right] + \dfrac{37\,000}{13}N}
+    \end{align*}
+    Le résultat est démontré.
+\end{enumerate} 
  
 \section*{\underline{Problème :}\quad\textbf{10 pts}} 
 
-\subsection*{\underline{Partie A:}\quad\textbf{.. pts}}
+\subsection*{\underline{Partie A:}\quad\textbf{1,25 pts}}
 
 On donne la fonction $h$ définie sur $]0 ; +\infty[$ par : $h(x) = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}$
 
@@ -135,7 +273,7 @@ On donne la fonction $h$ définie sur $]0 ; +\infty[$ par : $h(x) = \ln\left(\df
 
 \newpage
 
-\subsection*{\underline{Partie A:}\quad\textbf{... pts}}
+\subsection*{\underline{Partie A:}\quad\textbf{8,75 pts}}
 
 Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text{si } x \le 0 \\ 1 - x\ln\left(\dfrac{x}{x+1}\right) & \text{si } x > 0 \end{cases}$ et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \vec{i}, \vec{j})$ d'unité $2\text{cm}$.
 
@@ -368,7 +506,6 @@ Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text
         \end{axis}
     \end{tikzpicture}
     \end{center}
-\end{enumerate}    
-   
+\end{enumerate}   
 
 \end{document}
