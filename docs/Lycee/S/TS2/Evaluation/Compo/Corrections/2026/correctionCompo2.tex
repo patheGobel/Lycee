@@ -119,59 +119,104 @@ middle color = tcbcolback!80!black]
 
         \item \textbf{Affixe $b$ du point $B$, image de $A$ par $r$ :}
         Par définition, $b = e^{i\frac{\pi}{4}}z_A$. En utilisant la forme algébrique :
-        \begin{align*}
+        
+        $\begin{aligned}
             b &= \left(\cos\dfrac{\pi}{4} + i\sin\dfrac{\pi}{4}\right)(\sqrt{3} - i) \\
             &= \left(\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2}\right)(\sqrt{3} - i) \\
             &= \dfrac{\sqrt{6}}{2} - i\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{6}}{2} - i^2\dfrac{\sqrt{2}}{2} \\
             &= \mathbf{\left(\dfrac{\sqrt{6}+\sqrt{2}}{2}\right) + i \left(\dfrac{\sqrt{6}-\sqrt{2}}{2}\right)}.
-        \end{align*}
+        \end{aligned}$
+        
         Le résultat est bien démontré. \hfill \textbf{(0,5 pt)}
 
         \item \textbf{Formes exponentielle et trigonométrique de $b$ :}
         \begin{itemize}
             \item \textit{Forme exponentielle :} En utilisant le produit des formes exponentielles :
             
-            \begin{align*}
+            $\begin{aligned}
             b &= e^{i\frac{\pi}{4}} \times 2e^{-i\frac{\pi}{6}} \\
             &= 2e^{i\left(\frac{\pi}{4} - \frac{\pi}{6}\right)} \\
             &= \mathbf{2e^{i\frac{\pi}{12}}}
-            \end{align*} \hfill \textbf{(0,5 pt)}
+            \end{aligned}$
+            
+            \colorbox{green}{$b= \mathbf{2e^{i\frac{\pi}{12}}}$}\hfill \textbf{(0,5 pt)}
             \item \textit{Forme trigonométrique :} On en déduit immédiatement :
-            $\mathbf{b = 2\left(\cos\dfrac{\pi}{12} + i\sin\dfrac{\pi}{12}\right)}$. \hfill \textbf{(0,5 pt)}
+            
+            \colorbox{green}{$\mathbf{b = 2\left(\cos\dfrac{\pi}{12} + i\sin\dfrac{\pi}{12}\right)}$}. \hfill \textbf{(0,5 pt)}
         \end{itemize}
 
         \item \textbf{Valeurs exactes de $\cos \dfrac{\pi}{12}$ et $\sin \dfrac{\pi}{12}$ :}
         Par identification entre la forme algébrique de $b$ et sa forme trigonométrique, on a :
+        
         $2\cos\dfrac{\pi}{12} = \dfrac{\sqrt{6}+\sqrt{2}}{2} \implies \mathbf{\cos\dfrac{\pi}{12} = \dfrac{\sqrt{6}+\sqrt{2}}{4}}$ \hfill \textbf{(0,25 pt)} \\
+        
         $2\sin\dfrac{\pi}{12} = \dfrac{\sqrt{6}-\sqrt{2}}{2} \implies \mathbf{\sin\dfrac{\pi}{12} = \dfrac{\sqrt{6}-\sqrt{2}}{4}}$ \hfill \textbf{(0,25 pt)}
 
         \item \textbf{Résolution dans $\mathbb{C}$ de l'équation $z^3 = 1$ :}
         Il s'agit de déterminer les racines cubiques de l'unité. Les solutions sont de la forme $z_k = e^{i\frac{2k\pi}{3}}$ avec $k \in \{0, 1, 2\}$ :
+
         $\mathbf{S = \left\{1 \ ; \ e^{i\frac{2\pi}{3}} \ ; \ e^{-i\frac{2\pi}{3}}\right\} = \left\{1 \ ; \ -\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2} \ ; \ -\dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\right\}}$. \hfill \textbf{(0,5 pt)}
 
         \item \textbf{Déduction des solutions algébriques de l'équation $z^3 = b^3$ :}
-        L'équation $z^3 = b^3 \iff \left(\dfrac{z}{b}\right)^3 = 1$. Ainsi, $\dfrac{z}{b} \in \{1, e^{i\frac{2\pi}{3}}, e^{-i\frac{2\pi}{3}}\}$, soit $z \in \{b, b\,e^{i\frac{2\pi}{3}}, b\,e^{-i\frac{2\pi}{3}}\}$.
+        
+        L'équation $z^3 = b^3 \iff \left(\dfrac{z}{b}\right)^3 = 1$. 
+        
+        Ainsi, $\dfrac{z}{b} \in \{1, e^{i\frac{2\pi}{3}}, e^{-i\frac{2\pi}{3}}\}$, soit $z \in \{b, b\,e^{i\frac{2\pi}{3}}, b\,e^{-i\frac{2\pi}{3}}\}$.
+        
         Avec $b = 2e^{i\frac{\pi}{12}}$, les solutions sous forme exponentielle sont :
-        $z_0 = 2e^{i\frac{\pi}{12}}$, \ $z_1 = 2e^{i\left(\frac{\pi}{12} + \frac{2\pi}{3}\right)} = 2e^{i\frac{3\pi}{4}}$, \ $z_2 = 2e^{i\left(\frac{\pi}{12} - \frac{2\pi}{3}\right)} = 2e^{-i\frac{7\pi}{12}}$.
+        
+        \colorbox{green}{$z_0 = 2e^{i\frac{\pi}{12}}$},
+        
+        $\begin{aligned}
+        z_1 &= 2e^{i\left(\frac{\pi}{12} + \frac{2\pi}{3}\right)}\\
+        &= 2e^{i\frac{3\pi}{4}}
+        \end{aligned}$
+        
+        \colorbox{green}{$z_1= 2e^{i\frac{3\pi}{4}}$}
+        
+         $\begin{aligned}
+        z_2 &= 2e^{i\left(\frac{\pi}{12} - \frac{2\pi}{3}\right)}\\
+        &= 2e^{-i\frac{7\pi}{12}}
+        \end{aligned}$
+        
+        \colorbox{green}{$z_2= 2e^{-i\frac{7\pi}{12}}$}
         
         Exprimons-les sous forme algébrique :
         \begin{itemize}
             \item $\mathbf{z_0 = \left(\dfrac{\sqrt{6}+\sqrt{2}}{2}\right) + i \left(\dfrac{\sqrt{6}-\sqrt{2}}{2}\right)}$
-            \item $z_1 = 2\left(\cos\dfrac{3\pi}{4} + i\sin\dfrac{3\pi}{4}\right) = 2\left(-\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2}\right) = \mathbf{-\sqrt{2} + i\sqrt{2}}$
-            \item Pour $z_2$, comme $z_0^3 = b^3$ et $z_1^3 = b^3$, on sait que la somme des racines d'une équation de la forme $z^3 - b^3 = 0$ est nulle ($z_0 + z_1 + z_2 = 0$). Donc $z_2 = -(z_0 + z_1)$ :
-            $\mathbf{z_2 = \left(\dfrac{2\sqrt{2} - \sqrt{6} - \sqrt{2}}{2}\right) + i\left(\dfrac{\sqrt{2} - \sqrt{6} - 2\sqrt{2}}{2}\right) = \left(\dfrac{\sqrt{2}-\sqrt{6}}{2}\right) - i\left(\dfrac{\sqrt{6}+\sqrt{2}}{2}\right)}$.
+            \item.
+            
+            $
+            \begin{aligned}
+            z_1 &= 2\left(\cos\dfrac{3\pi}{4} + i\sin\dfrac{3\pi}{4}\right)\\
+                &= 2\left(-\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2}\right) \\
+                &= \mathbf{-\sqrt{2} + i\sqrt{2}}
+            \end{aligned}
+            $
+            \item Pour $z_2$, comme $z_0^3 = b^3$ et $z_1^3 = b^3$, on sait que la somme des racines d'une équation de la forme $z^3 - b^3 = 0$ est nulle ($z_0 + z_1 + z_2 = 0$). 
+            
+            Donc $z_2 = -(z_0 + z_1)$ : 
+            
+            $
+            \begin{aligned}
+            z_2 &= \left(\dfrac{2\sqrt{2} - \sqrt{6} - \sqrt{2}}{2}\right) + i\left(\dfrac{\sqrt{2} - \sqrt{6} - 2\sqrt{2}}{2}\right)\\
+            &= \left(\dfrac{\sqrt{2}-\sqrt{6}}{2}\right) - i\left(\dfrac{\sqrt{6}+\sqrt{2}}{2}\right)
+            \end{aligned}$.
         \end{itemize} \hfill \textbf{(0,5 pt)}
     \end{enumerate}
 
     \item \subsection*{2. Étude de la transformation $f$}
     \begin{enumerate}
         \item \textbf{Nature et éléments caractéristiques de $f$ :}
+        
         L'écriture complexe est de la forme $z' = az + b$ avec $a = 1 - i\sqrt{3}$ et $b = 2i\sqrt{3}$.
         \begin{itemize}
             \item Module de $a$ : $|a| = \sqrt{1^2 + (-\sqrt{3})^2} = \sqrt{1+3} = 2$. Comme $|a| \neq 1$, $f$ est une \textbf{similitude directe}.
             \item Rapport de la similitude : $k = |a| = \mathbf{2}$.
             \item Angle de la similitude : $\theta = \arg(a)$. $\cos\theta = \dfrac{1}{2}$ et $\sin\theta = -\dfrac{\sqrt{3}}{2}$, d'où $\theta \equiv \mathbf{-\dfrac{\pi}{3}} \pmod{2\pi}$.
-            \item Centre $\Omega$ de la similitude : C'est le point fixe vérifiant $z_{\Omega} = a z_{\Omega} + b$.
+            \item Centre $\Omega$ de la similitude : C'est le point fixe vérifiant 
+            
+            $z_{\Omega} = a z_{\Omega} + b$.
             $z_{\Omega} = \dfrac{b}{1-a} = \dfrac{2i\sqrt{3}}{1 - (1 - i\sqrt{3})} = \dfrac{2i\sqrt{3}}{i\sqrt{3}} = \mathbf{2}$.
         \end{itemize}
         \textbf{Conclusion :} $f$ est une similitude directe de centre $\Omega(2)$, de rapport $2$ et d'angle $-\dfrac{\pi}{3}$. \hfill \textbf{(0,75 pt)}
@@ -179,12 +224,31 @@ middle color = tcbcolback!80!black]
         \item \textbf{Équation cartésienne de la droite $(\Delta')$, image de $(\Delta) : -x + y - 1 = 0$ :}
         \textit{Méthode géométrique ou analytique :} Choisissons deux points de $(\Delta)$.
         \begin{itemize}
-            \item Si $x = 0$, $y = 1 \implies C(i) \in (\Delta)$. Son image $C'$ a pour affixe :
-            $z_{C'} = (1-i\sqrt{3})i + 2i\sqrt{3} = i - i^2\sqrt{3} + 2i\sqrt{3} = \sqrt{3} + 3i\sqrt{3}$. Donc $C'(\sqrt{3} \ ; \ 3\sqrt{3})$.
+            \item Si $x = 0$, $y = 1 \implies C(i) \in (\Delta)$. 
+            
+            Son image $C'$ a pour affixe :
+            
+            $
+            \begin{aligned}
+            z_{C'} &= (1-i\sqrt{3})i + 2i\sqrt{3}\\
+                   &= i - i^2\sqrt{3} + 2i\sqrt{3}\\
+                   &= \sqrt{3} + 3i\sqrt{3}.
+            \end{aligned}$ 
+            
+            Donc $C'(\sqrt{3} \ ; \ 3\sqrt{3})$.
             \item Si $y = 0$, $x = -1 \implies D(-1) \in (\Delta)$. Son image $D'$ a pour affixe :
-            $z_{D'} = (1-i\sqrt{3})(-1) + 2i\sqrt{3} = -1 + i\sqrt{3} + 2i\sqrt{3} = -1 + 3i\sqrt{3}$. Donc $D'(-1 \ ; \ 3\sqrt{3})$.
+            
+            $
+            \begin{aligned}
+            z_{D'} &= (1-i\sqrt{3})(-1) + 2i\sqrt{3} \\
+                   &= -1 + i\sqrt{3} + 2i\sqrt{3} \\
+                   &= -1 + 3i\sqrt{3}
+            \end{aligned}$ . 
+            
+            Donc $D'(-1 \ ; \ 3\sqrt{3})$.
         \end{itemize}
         On remarque que $C'$ et $D'$ ont la même ordonnée $y = 3\sqrt{3}$. La droite $(\Delta')$ passant par ces deux points est donc une droite horizontale.
+        
         L'équation de $(\Delta')$ est : $\mathbf{y - 3\sqrt{3} = 0}$. \hfill \textbf{(0,5 pt)}
 
         \item \textbf{Image du cercle $(C)$ de centre $A$ et de rayon $R = \dfrac{1}{2}$ :}
@@ -192,11 +256,16 @@ middle color = tcbcolback!80!black]
         \begin{itemize}
             \item Rayon : $R' = 2 \times \dfrac{1}{2} = \mathbf{1}$.
             \item Centre $A'$ : Calculons $z_{A'}$ sachant que $z_A = \sqrt{3}-i$.
-            \begin{align*}
+            
+            $
+            \begin{aligned}
                 z_{A'} &= (1-i\sqrt{3})(\sqrt{3}-i) + 2i\sqrt{3} \\
                 &= (\sqrt{3} - i - 3i + i^2\sqrt{3}) + 2i\sqrt{3} \\
-                &= (\sqrt{3} - 4i - \sqrt{3}) + 2i\sqrt{3} = \mathbf{-2i\sqrt{3}}.
-            \end{align*}
+                &= (\sqrt{3} - 4i - \sqrt{3}) + 2i\sqrt{3} \\
+                &= \mathbf{-2i\sqrt{3}}.
+            \end{aligned}
+            $
+            
         \end{itemize}
         \textbf{Conclusion :} $(C')$ est le cercle de centre $A'(0 \ ; \ -2\sqrt{3})$ et de rayon $\mathbf{1}$. \hfill \textbf{(0,5 pt)}
     \end{enumerate}
