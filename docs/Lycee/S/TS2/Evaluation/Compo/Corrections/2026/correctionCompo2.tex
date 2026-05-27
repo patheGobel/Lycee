@@ -171,7 +171,12 @@ Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text
         \end{aligned}$   		   
          \hfill \textcolor{red}{0,25pt}
         
-        \item $\lim\limits_{x \to +\infty} f(x) = \lim\limits_{x \to +\infty} 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x}{x+1}-1}\left(\dfrac{x}{x+1}\right) = 1 + 1 \times 1 = 2$. 
+        \item $
+        \begin{aligned}
+        \lim\limits_{x \to +\infty} f(x) &= \lim\limits_{x \to +\infty} 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x}{x+1}-1}\left(\dfrac{x}{x+1}\right)\\ 
+        &= 1 + 1 \times 1 \\
+        &= 2
+        \end{aligned}$ 
         
         Donc \colorbox{green}{$\lim\limits_{x \to +\infty} f(x) = 2$} \hfill \textcolor{red}{0,25pt}
         
@@ -184,11 +189,21 @@ Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text
         
         $f(0) = e^0 + e^0 - 1 = 1$
         
-        $\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^-} e^{2x} + e^x - 1 = 1$
+        $
+        \begin{aligned}
+        \lim\limits_{x \to 0^-} f(x) &= \lim\limits_{x \to 0^-} e^{2x} + e^x - 1\\ 
+        &= 1
+        \end{aligned}$
         
-        $\lim\limits_{x \to 0^+} f(x) = \lim\limits_{x \to 0^+} 1 - x\ln\left(\dfrac{x}{x+1}\right) = \lim\limits_{x \to 0^+} 1 - x\ln x + x\ln(x+1) = 1 - 0 + 0 = 1$
+        $
+        \begin{aligned}
+        \lim\limits_{x \to 0^+} f(x) &= \lim\limits_{x \to 0^+} 1 - x\ln\left(\dfrac{x}{x+1}\right) \\
+        &= \lim\limits_{x \to 0^+} 1 - x\ln x + x\ln(x+1)\\ 
+        &= 1 - 0 + 0\\
+        & = 1
+        \end{aligned}$
         
-        $\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0)$ donc \colorbox{green}{$f$ est continue en 0.} \hfill \textcolor{red}{0,5pt}
+        \colorbox{green}{$\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0)$ donc $f$ est continue en 0.} \hfill \textcolor{red}{0,5pt}
         
         \item \underline{Dérivabilité en 0}
         
@@ -213,46 +228,50 @@ Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text
 
         Donc {\color{blue}$\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x-0} = +\infty$}
         
-        $f$ est dérivable à gauche de 0 mais pas dérivable à droite de 0. On conclut que : \colorbox{yellow}{$f$ n'est pas} \colorbox{yellow}{dérivable en 0.} \hfill \textcolor{red}{0,5pt}
+        $f$ est dérivable à gauche de 0 mais pas dérivable à droite de 0. On conclut que :
+        
+         \colorbox{green}{$f$ n'est pas} \colorbox{green}{dérivable en 0.} \hfill \textcolor{red}{0,5pt}
         
         \item \underline{Interprétation}
         \begin{itemize}
-            \item[$\succ$] À gauche de 0 ; on a \colorbox{yellow}{une demi-tangente d'équation $(T_g) : y = 3x + 1$} \hfill \textcolor{red}{0,25pt}
-            \item[$\succ$] À droite de 0 ; on a \colorbox{yellow}{une demi-tangente verticale dirigée vers le haut.} \hfill \textcolor{red}{0,25pt}
+            \item[$\succ$] À gauche de 0 ; on a \colorbox{green}{une demi-tangente d'équation $(T_g) : y = 3x + 1$} \hfill \textcolor{red}{0,25pt}
+            \item[$\succ$] À droite de 0 ; on a \colorbox{green}{une demi-tangente verticale dirigée vers le haut.} \hfill \textcolor{red}{0,25pt}
         \end{itemize}
     \end{itemize}
 
     \item \textbf{Donnons $f'(x)$ si $x \le 0$ puis montrons que si $x > 0$ ; $f'(x) = h(x)$.}
     
-    si $x \le 0$ ; $f$ est dérivable et on a : \colorbox{yellow}{$f'(x) = 2e^{2x} + e^x$} \hfill \textcolor{red}{0,25pt}
+    si $x \le 0$ ; $f$ est dérivable et on a : 
     
-    si $x > 0$ ; $f$ est dérivable et on a : $f'(x) = -\ln\left(\dfrac{x}{x+1}\right) - \dfrac{1}{x+1} = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1} = h(x)$.
+    \colorbox{green}{$f'(x) = 2e^{2x} + e^x$} \hfill \textcolor{red}{0,25pt}
     
-    D'où \colorbox{yellow}{$f'(x) = h(x)$} \hfill \textcolor{red}{0,5pt}
+    si $x > 0$ ; $f$ est dérivable et on a : 
+    
+    $
+     \begin{aligned}
+        f'(x) &= -\ln\left(\dfrac{x}{x+1}\right) - \dfrac{1}{x+1}\\
+         &= \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}\\ 
+         &= h(x)
+      \end{aligned}
+     $
+    
+    D'où \colorbox{green}{$f'(x) = h(x)$} \hfill \textcolor{red}{0,5pt}
 
     \item \textbf{Étudions les signes de $f'$ puis dresser le tableau de variation de $f$ sur $D_f$.}
     \begin{itemize}
         \item si $x \le 0$ ; $f'(x) = 2e^{2x} + e^x > 0$ \hfill \textcolor{red}{0,25pt}
         \item si $x > 0$ ; $f'(x) = h(x) > 0$ \hfill \textcolor{red}{0,25pt}
     \end{itemize}
-\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
-        \tkzTabInit[espcl=3]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$\alpha$,$-1$,$0$,$+\infty$}
-        \tkzTabLine{,+,z,-,d,-,d,+,}
-        \tkzTabVar{-/$-\infty$,+/$f(\alpha)$,-D+/ $+\infty$, -/$0$,+/$+\infty$/}
-        \node at (11,-0.8) {\small $-\infty$};
-        \node at (11.7,-0.8) {\small $2$};
+
+\begin{tikzpicture}
+   \tkzTabInit{$x$ /1, $h'(x)$ /1, $h$ /1.5} {$-\infty$ , $0$, $+\infty$}
+   \tkzTabLine{, +, d, +, } 
+   \tkzTabVar{-/$-1$, R/, +/ $2$}
+   \tkzTabIma{1}{3}{2}{$1$}
+   \node at (5,-1.5) {\small $3$};
+   \node at (6,-1.5) {\small $+\infty$};
 \end{tikzpicture}
-    \begin{center}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|c|l*2{cr}|}
-    \hline
-    $x$ & $-\infty$ & & $0$ & & $+\infty$ \\ \hline
-    $f'(x)$ & & $+$ & $3 \ \Vert \ +\infty$ & $+$ & \\ \hline
-    & & & & & $2$ \\ 
-    $f$ & & & $1$ & $\nearrow$ & \\ 
-    & $-1$ & $\nearrow$ & & & \\ \hline
-    \end{tabular}
-    \end{center}
+
     \hfill \textcolor{red}{0,75pt}
 
     \item \textbf{Montrons que l'équation $f(x) = 0$ admet une unique solution $\alpha$ sur $]-\infty ; 0]$ puis vérifier que $-0,5 \le \alpha \le -0,4$}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  26 MAY 2026 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  27 MAY 2026 00:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -969,7 +969,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 f-dist/fonts/enc/dvips/base/8r.enc}
 
 ] [2] [3]
-Overfull \hbox (14.01974pt too wide) in paragraph at lines 268--269
+Overfull \hbox (14.01974pt too wide) in paragraph at lines 287--288
 []$\OML/cmm/m/it/12 g$ \T1/ptm/m/n/12 est con-tinue et stricte-ment crois-sante
  sur $\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 =] \OMS/cmsy/m/n/12 ^^@ 1\OT1/cmr/m/n/
 12 ; 0]$ \T1/ptm/m/n/12 donc $\OML/cmm/m/it/12 g$ \T1/ptm/m/n/12 est bi-jec-tiv
@@ -977,7 +977,7 @@ e de $\OML/cmm/m/it/12 I$ \T1/ptm/m/n/12 vers [][][][][][]
  []
 
 
-Overfull \hbox (10.50336pt too wide) in paragraph at lines 275--276
+Overfull \hbox (10.50336pt too wide) in paragraph at lines 294--295
 []$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 )[] [] = []$ \T1/ptm/m/
 n/12 or $\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/
 m/n/12 2) = 2\OML/cmm/m/it/12 e[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 e[] \OT1/c
@@ -985,7 +985,7 @@ mr/m/n/12 = [] + [] = 1$ \T1/ptm/m/n/12 donc [][][][][][]
  []
 
 
-Overfull \hbox (224.34047pt too wide) in paragraph at lines 277--278
+Overfull \hbox (224.34047pt too wide) in paragraph at lines 296--297
 [][][][][][][] [][][][][][]
  []
 
@@ -1000,13 +1000,13 @@ Package rerunfilecheck Info: File `correctionCompo2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30484 strings out of 474222
- 607645 string characters out of 5748732
- 1960975 words of memory out of 5000000
- 52183 multiletter control sequences out of 15000+600000
+ 30304 strings out of 474222
+ 605215 string characters out of 5748732
+ 1957975 words of memory out of 5000000
+ 52003 multiletter control sequences out of 15000+600000
  604988 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,430b,1060s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,15n,107p,430b,1057s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -1022,7 +1022,7 @@ msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/zapfding/uzdr.pfb>
-Output written on build/correctionCompo2.pdf (4 pages, 172861 bytes).
+Output written on build/correctionCompo2.pdf (4 pages, 172220 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  108 compressed objects within 2 object streams
