@@ -107,8 +107,51 @@ On munit le plan d'un repère orthonormé $\left(O, \vec{u}, \vec{v}\right)$.
         \item Déterminer l'image du cercle $(C)$ de centre $A$ et de rayon $\dfrac{1}{2}$ par $f$. \hfill (0,5pt)
     \end{enumerate}
 \end{enumerate}
-\section*{\underline{Exercice 2 :($3$ pts)} }
+\section*{\underline{Exercice 2 :(6 pts)} }
 
+\subsection*{Contexte}
+Une entreprise de services numériques supervise un serveur informatique qui peut être dans deux états : \textbf{Actif (A)} ou \textbf{En maintenance (M)}.
+Le comportement du serveur est observé chaque jour à heure fixe. 
+
+On constate que :
+\begin{itemize}
+    \item Si le serveur est \textbf{Actif} un jour donné, il a une probabilité de $0,6$ de rester actif le lendemain.
+    \item Si le serveur est \textbf{En maintenance} un jour donné, il a une probabilité de $0,1$ de le rester le lendemain pour finaliser les mises à jour.
+\end{itemize}
+
+Le premier jour du déploiement (jour 0), le serveur est garanti \textbf{Actif}.\\
+Pour tout entier naturel $n$, on note $A_n$ l'événement « le serveur est actif au jour $n$ » et $p_n = P(A_n)$ sa probabilité. On a ainsi $p_0 = 1$.
+
+\subsection*{Partie A : Modélisation par une suite numérique}
+\begin{enumerate}
+    \item Déterminer la valeur de $p_1$. \hfill \textbf{(0,25 pt)}
+    \item Traduire la situation par un arbre pondéré reliant le jour $n$ au jour $n+1$.\hfill \textbf{(0,5 pt)}
+    \item Montrer que, pour tout entier naturel $n$, on a : $p_{n+1} = -0,3p_n + 0,9$.\hfill \textbf{(0,5 pt)}
+    \item Soit la suite $\left(u_n\right)$ définie pour tout entier naturel $n$ par $u_n = p_n - \dfrac{9}{13}$.
+    \begin{enumerate}
+        \item Montrer que $\left(u_n\right)$ est une suite géométrique dont on précisera la raison et le premier terme.\hfill \textbf{(0,5 pt)}
+        \item Exprimer $u_n$, puis $p_n$ en fonction de $n$.\hfill \textbf{(0,25 pt)}
+        \item Déterminer la limite de la suite $\left(p_n\right)$ et interpréter ce résultat dans le contexte du problème.\hfill \textbf{(0,5 pt)}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie B : Analyse sur une période donnée (Loi binomiale)}
+L'entreprise décide d'analyser le comportement du serveur sur une période de \textbf{10 jours consécutifs}, après une très longue période de mise en service (on considère alors que la probabilité qu'il soit actif chaque jour est stabilisée à sa valeur limite, soit $p = \dfrac{9}{13}$). On suppose que l'état du serveur d'un jour à l'autre sur cette période devient indépendant.\\
+Soit $X$ la variable aléatoire égale au nombre de jours où le serveur est \textbf{Actif} durant cette période de 10 jours.
+\begin{enumerate}
+    \item Justifier que $X$ suit une loi binomiale dont on précisera les paramètres.\hfill \textbf{(0,5 pt)}
+    \item Calculer l'espérance mathématique de $X$. Que représente cette valeur ?\hfill \textbf{(0,5 pt)}
+    \item Calculer la probabilité que le serveur soit actif pendant exactement 8 jours (arrondir à $10^{-3}$).\hfill \textbf{(0,5 pt)}
+    \item Calculer la probabilité que le serveur subisse au moins une maintenance durant ces 10 jours (arrondir à $10^{-3}$).\hfill \textbf{(0,5 pt)}
+\end{enumerate}
+
+\subsection*{Partie C : Optimisation financière}
+Chaque jour où le serveur est actif, il génère un profit de $5\,000$ FCFA. Chaque jour de maintenance coûte $2\,000$ FCFA à l'entreprise. On note $G_n$ le gain net réalisé par le serveur au jour $n$.
+\begin{enumerate}
+    \item Justifier que le gain net moyen attendu au jour $n$ est donné par : $E(G_n) = 7\,000p_n - 2\,000$.\hfill \textbf{(0,5 pt)}
+    \item L'entreprise souhaite évaluer le gain total moyen cumulé $\Sigma_N$ sur les $N$ premiers jours (du jour 0 au jour $N-1$), défini par : $\Sigma_N = \sum_{n=0}^{N-1} E(G_n)$.\\
+    Montrer que : $\Sigma_N = \dfrac{280\,000}{13} \times \left[1 - (-0,3)^N\right] + \dfrac{37\,000}{13}N$.\hfill \textbf{(1 pt)}
+\end{enumerate}
 
 \section*{\underline{Problème :}\quad\textbf{10 pts}} 
 
@@ -165,186 +208,5 @@ On note $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \vec{
     
     \item Dans le repère $(O, \vec{i}, \vec{j})$, tracer la première bissectrice (la droite d'équation $y=x$), les asymptotes, puis les courbes représentatives $(C_f)$ de $f$ et $(C_{g^{-1}})$ de la fonction réciproque de $g$. \hfill \textbf{(1,5 pt)}
 \end{enumerate}
-
-++++++++++++++++++++++
-
-\subsection*{\underline{Partie A:}\quad\textbf{.. pts}}
-
-On donne la fonction $h$ définie sur $]0 ; +\infty[$ par : $h(x) = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}$
-
-\begin{enumerate}
-    \item \textbf{Montrons que $h'(x) = -\dfrac{1}{x(x+1)^2}$}
-    
-    On a : $h'(x) = \dfrac{x-x-1}{x(x+1)} + \dfrac{1}{(x+1)^2} = \dfrac{-1}{x(x+1)} + \dfrac{1}{(x+1)^2} = \dfrac{-x-1+x}{x(x+1)^2} = -\dfrac{1}{x(x+1)^2}$
-    
-    Donc \colorbox{green}{$h'(x) = -\dfrac{1}{x(x+1)^2}$} \hfill \textcolor{red}{0,25pt}
-
-    \item \textbf{Dressons le tableau de variation de $h$ sur $]0 ; +\infty[$}
-    \begin{itemize}
-        \item $\lim\limits_{x \to 0^+} h(x) = \lim\limits_{x \to 0^+} \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1}$ \\
-        or $\lim\limits_{x \to 0^+} \dfrac{x+1}{x} = +\infty$ donc $\lim\limits_{x \to 0^+} \ln\left(\dfrac{x+1}{x}\right) = +\infty$ et comme $\lim\limits_{x \to 0^+} -\dfrac{1}{x+1} = -1$ alors\\ \colorbox{green}{$\lim\limits_{x \to 0^+} h(x) = +\infty$}
-        
-        \item $\lim\limits_{x \to +\infty} h(x) = \lim\limits_{x \to +\infty} \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1} = \ln(1) + 0 = 0$\\
-        \colorbox{green}{$\lim\limits_{x \to +\infty} h(x)=0$}
-        \item $h'(x) = -\dfrac{1}{x(x+1)^2} < 0 \ ; \ \forall x > 0$ donc $h$ est strictement décroissante sur $]0 ; +\infty[$.
-    \end{itemize}
-\begin{tikzpicture}
-        % On définit l'initialisation du tableau : 
-        % espcl=4 augmente l'espace horizontal pour que ce soit plus aéré.
-        \tkzTabInit[espcl=4]{$x$ / .7 , $h'(x)$ / .7 , $h$ / 1.6}{$0$, $+\infty$}
-        
-        % La ligne de la dérivée : 
-        % 'd' au début met la double barre en 0, puis on met le signe moins.
-        \tkzTabLine{d, -, }
-        
-        % La ligne des variations de h :
-        % D+ / $+\infty$ signifie : au niveau de la double barre (D), la limite est à gauche/haut (+).
-        % - / $0$ signifie : la flèche descend (-) vers la valeur 0.
-        \tkzTabVar{D+ / $+\infty$, - / $0$}
-\end{tikzpicture}
-
-    \hfill \textcolor{red}{0,75pt}
-
-    \item \textbf{Déduisons le signe de $h$ sur $]0 ; +\infty[$.}
-    
-    D'après le tableau de variation ; on conclut que \colorbox{yellow}{$h(x) > 0 \ ; \ \forall x > 0$}. \hfill \textcolor{red}{0,25pt}
-\end{enumerate}
-
-\newpage
-
-\subsection*{\underline{Partie A:}\quad\textbf{... pts}}
-
-Soit la fonction $f$ définie par $f(x) = \begin{cases} e^{2x} + e^x - 1 & \text{si } x \le 0 \\ 1 - x\ln\left(\dfrac{x}{x+1}\right) & \text{si } x > 0 \end{cases}$ et $(C_f)$ sa courbe représentative dans un repère orthonormé $(O, \vec{i}, \vec{j})$ d'unité $2\text{cm}$.
-
-\begin{enumerate}
-    \item \textbf{Montrons que l'ensemble de définition de $f$ est $D_f = \mathbb{R}$.}
-    
-    Soit $f_1(x) = e^{2x} + e^x - 1$ si $x \le 0$. $D_{f_1} = \mathbb{R} \cap ]-\infty ; 0] = ]-\infty ; 0]$
-    
-    Soit $f_2(x) = 1 - x\ln\left(\dfrac{x}{x+1}\right)$ si $x > 0$. $f_2(x)$ existe ssi $\dfrac{x}{x+1} > 0 \ ; \ x + 1 \neq 0$ et $x > 0$
-    
-    $D_{f_2} = ( ]-\infty ; -1[ \cup ]0 ; +\infty[ ) \cap ]0 ; +\infty[ = ]0 ; +\infty[$.
-    
-    $D_f = D_{f_1} \cup D_{f_2} = ]-\infty ; 0] \cup ]0 ; +\infty[ = \mathbb{R}$. Donc \colorbox{yellow}{$D_f = \mathbb{R}$} \hfill \textcolor{red}{0,5pt}
-
-    \item \textbf{Calculons $\lim\limits_{x \to -\infty} f(x)$ puis déduisons l'asymptote en $-\infty$.}
-    
-    $\lim\limits_{x \to -\infty} f(x) = \lim\limits_{x \to -\infty} e^{2x} + e^x - 1 = 0 + 0 - 1 = -1$. \colorbox{yellow}{$\lim\limits_{x \to -\infty} f(x) = -1$} \hfill \textcolor{red}{0,25pt}
-    
-    On a une \colorbox{yellow}{asymptote horizontale d'équation $y = -1$ en $-\infty$} \hfill \textcolor{red}{0,25pt}
-
-    \item \textbf{Vérifions que si $x > 0$ alors $f(x) = 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x+1}{x}-1}\left(\dfrac{x}{x+1}\right)$. Déduisons $\lim\limits_{x \to +\infty} f(x)$ puis précisons l'asymptote en $+\infty$.}
-    
-    \begin{itemize}
-        \item \colorbox{yellow}{$1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x+1}{x}-1}\left(\dfrac{x}{x+1}\right) = 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{1}{x+1}}\left(\dfrac{x}{x+1}\right) = 1 - \ln\left(\dfrac{x}{x+1}\right)(x+1)\left(\dfrac{x}{x+1}\right) = 1 - x\ln\left(\dfrac{x}{x+1}\right)$} \hfill \textcolor{red}{0,25pt}
-        
-        \item $\lim\limits_{x \to +\infty} f(x) = \lim\limits_{x \to +\infty} 1 + \dfrac{\ln\left(\frac{x}{x+1}\right)}{\frac{x}{x+1}-1}\left(\dfrac{x}{x+1}\right) = 1 + 1 \times 1 = 2$. Donc \colorbox{yellow}{$\lim\limits_{x \to +\infty} f(x) = 2$} \hfill \textcolor{red}{0,25pt}
-        
-        \item On a une \colorbox{yellow}{asymptote horizontale d'équation $y = 2$ en $+\infty$} \hfill \textcolor{red}{0,25pt}
-    \end{itemize}
-
-    \item \textbf{Étudions la continuité et la dérivabilité de $f$ en 0. Interpréter les résultats.}
-    \begin{itemize}
-        \item \underline{Continuité en 0}
-        
-        $f(0) = e^0 + e^0 - 1 = 1$
-        
-        $\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^-} e^{2x} + e^x - 1 = 1$
-        
-        $\lim\limits_{x \to 0^+} f(x) = \lim\limits_{x \to 0^+} 1 - x\ln\left(\dfrac{x}{x+1}\right) = \lim\limits_{x \to 0^+} 1 - x\ln x + x\ln(x+1) = 1 - 0 + 0 = 1$
-        
-        $\lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^+} f(x) = f(0)$ donc \colorbox{yellow}{$f$ est continue en 0.} \hfill \textcolor{red}{0,5pt}
-        
-        \item \underline{Dérivabilité en 0}
-        
-        $\lim\limits_{x \to 0^-} \dfrac{f(x)-f(0)}{x-0} = \lim\limits_{x \to 0^-} \dfrac{e^{2x}+e^x-1-1}{x} = \lim\limits_{x \to 0^-} \dfrac{e^{2x}-1}{x} + \dfrac{e^x-1}{x} = 2 + 1 = 3$. Donc {\color{blue}$f'_g(0) = 3$}
-        
-        $\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x-0} = \lim\limits_{x \to 0^+} \dfrac{1-x\ln\left(\frac{x}{x+1}\right)-1}{x} = \lim\limits_{x \to 0^+} -\ln\left(\dfrac{x}{x+1}\right) = +\infty$. Donc {\color{blue}$\lim\limits_{x \to 0^+} \dfrac{f(x)-f(0)}{x-0} = +\infty$}
-        
-        $f$ est dérivable à gauche de 0 mais pas dérivable à droite de 0. On conclut que : \colorbox{yellow}{$f$ n'est pas} \colorbox{yellow}{dérivable en 0.} \hfill \textcolor{red}{0,5pt}
-        
-        \item \underline{Interprétation}
-        \begin{itemize}
-            \item[$\succ$] À gauche de 0 ; on a \colorbox{yellow}{une demi-tangente d'équation $(T_g) : y = 3x + 1$} \hfill \textcolor{red}{0,25pt}
-            \item[$\succ$] À droite de 0 ; on a \colorbox{yellow}{une demi-tangente verticale dirigée vers le haut.} \hfill \textcolor{red}{0,25pt}
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Donnons $f'(x)$ si $x \le 0$ puis montrons que si $x > 0$ ; $f'(x) = h(x)$.}
-    
-    si $x \le 0$ ; $f$ est dérivable et on a : \colorbox{yellow}{$f'(x) = 2e^{2x} + e^x$} \hfill \textcolor{red}{0,25pt}
-    
-    si $x > 0$ ; $f$ est dérivable et on a : $f'(x) = -\ln\left(\dfrac{x}{x+1}\right) - \dfrac{1}{x+1} = \ln\left(\dfrac{x+1}{x}\right) - \dfrac{1}{x+1} = h(x)$.
-    
-    D'où \colorbox{yellow}{$f'(x) = h(x)$} \hfill \textcolor{red}{0,5pt}
-
-    \item \textbf{Étudions les signes de $f'$ puis dresser le tableau de variation de $f$ sur $D_f$.}
-    \begin{itemize}
-        \item si $x \le 0$ ; $f'(x) = 2e^{2x} + e^x > 0$ \hfill \textcolor{red}{0,25pt}
-        \item si $x > 0$ ; $f'(x) = h(x) > 0$ \hfill \textcolor{red}{0,25pt}
-    \end{itemize}
-\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
-        \tkzTabInit[espcl=3]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$-\infty$,$\alpha$,$-1$,$0$,$+\infty$}
-        \tkzTabLine{,+,z,-,d,-,d,+,}
-        \tkzTabVar{-/$-\infty$,+/$f(\alpha)$,-D+/ $+\infty$, -/$0$,+/$+\infty$/}
-        \node at (11,-0.8) {\small $-\infty$};
-        \node at (11.7,-0.8) {\small $2$};
-\end{tikzpicture}
-    \begin{center}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|c|l*2{cr}|}
-    \hline
-    $x$ & $-\infty$ & & $0$ & & $+\infty$ \\ \hline
-    $f'(x)$ & & $+$ & $3 \ \Vert \ +\infty$ & $+$ & \\ \hline
-    & & & & & $2$ \\ 
-    $f$ & & & $1$ & $\nearrow$ & \\ 
-    & $-1$ & $\nearrow$ & & & \\ \hline
-    \end{tabular}
-    \end{center}
-    \hfill \textcolor{red}{0,75pt}
-
-    \item \textbf{Montrons que l'équation $f(x) = 0$ admet une unique solution $\alpha$ sur $]-\infty ; 0]$ puis vérifier que $-0,5 \le \alpha \le -0,4$}
-    
-    $f$ est bijective de $]-\infty ; 0]$ vers $]-1 ; 1]$ et $0 \in ]-1 ; 1]$ donc \colorbox{yellow}{$f(x) = 0$ admet une unique solution $\alpha$} \colorbox{yellow}{sur $]-\infty ; 0]$} \hfill \textcolor{red}{0,25pt}
-    
-    $f(-0,5) \times f(-0,4) \approx -0,003 < 0$ donc \colorbox{yellow}{$-0,5 \le \alpha \le -0,4$} \hfill \textcolor{red}{0,25pt}
-
-    \item \textbf{Soit $g$ ; la restriction de $f$ sur $I = ]-\infty ; 0]$.}
-    \begin{enumerate}
-        \item \textbf{Montrons que $g$ est bijective de $I$ vers $J$ à préciser.}
-        
-        $g$ est continue et strictement croissante sur $I = ]-\infty ; 0]$ donc $g$ est bijective de $I$ vers \colorbox{yellow}{$J = g(I) = ]-1 ; 1]$} \hfill \textcolor{red}{0,25pt}
-        
-        \item \textbf{Calculons $g(-\ln 2)$ puis $(g^{-1})'\left(-\dfrac{1}{4}\right)$. Quelle est alors la position relative de la tangente à la courbe $(C_{g^{-1}})$ au point d'abscisse $-\dfrac{1}{4}$ par rapport la première bissectrice ?}
-        \begin{itemize}
-            \item $g(-\ln 2) = e^{2(-\ln 2)} + e^{-\ln 2} - 1 = \dfrac{1}{4} + \dfrac{1}{2} - 1 = -\dfrac{1}{4}$ \\
-            \colorbox{yellow}{$g(-\ln 2) = -\dfrac{1}{4}$} \hfill \textcolor{red}{0,25pt}
-            
-            \item $(g^{-1})'\left(-\dfrac{1}{4}\right) = \dfrac{1}{g'(-\ln 2)}$ or $g'(-\ln 2) = 2e^{2(-\ln 2)} + e^{-\ln 2} = \dfrac{2}{4} + \dfrac{1}{2} = 1$ donc \colorbox{yellow}{$(g^{-1})'\left(-\dfrac{1}{4}\right) = 1$} \hfill \textcolor{red}{0,5pt}
-            
-            \item \colorbox{yellow}{La tangente à la courbe $(C_{g^{-1}})$ au point d'abscisse $-\dfrac{1}{4}$ est parallèle à la première} \colorbox{yellow}{bissectrice puisqu'elles ont le même coefficient directeur 1.} \hfill \textcolor{red}{0,25pt}
-        \end{itemize}
-        
-        \item \textbf{Dressons le tableau de variation de $g^{-1}$ sur $J$.}
-        
-        \begin{center}
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|lcr|}
-        \hline
-        $x$ & $-1$ & & $1$ \\ \hline
-        & & & $0$ \\ 
-        $g^{-1}$ & & $\nearrow$ & \\ 
-        & $-\infty$ & & \\ \hline
-        \end{tabular}
-        \end{center}
-        \hfill \textcolor{red}{0,25pt}
-    \end{enumerate}
-
-    \item \textbf{Traçons les courbes $(C_f)$ et $(C_{g^{-1}})$ dans le même repère.}
-    
-    \textit{(Se référer au graphique fourni dans les documents originaux contenant $(\mathcal{E}_f)$, $(\mathcal{E}_{g^{-1}})$, la droite $y=x$, ainsi que les asymptotes $y=-1$ et $y=2$.)} \hfill \textcolor{red}{1pt+0,5pt}
-\end{enumerate}
-
-+++++++++
 
 \end{document}

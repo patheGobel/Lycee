@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  26 MAY 2026 14:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  27 MAY 2026 01:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -959,48 +959,16 @@ LaTeX Font Info:    Trying to load font information for T1+phv on input line 84
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
+18.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texm
 f-dist/fonts/enc/dvips/base/8r.enc}
 
-] [2]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-84.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-[3]
-Overfull \hbox (48.16695pt too wide) in paragraph at lines 239--240
-[][][][][][][]
- []
-
-
-Overfull \hbox (20.2819pt too wide) in paragraph at lines 262--263
-[]$[] [] \OT1/cmr/m/n/12 = [] [] = [] \OMS/cmsy/m/n/12 ^^@ [] [] \OT1/cmr/m/n/1
-2 = +\OMS/cmsy/m/n/12 1$\T1/ptm/m/n/12 . Donc []$[] [] \OT1/cmr/m/n/12 =
- []
-
-[4]
-Overfull \hbox (14.01974pt too wide) in paragraph at lines 316--317
-[]$\OML/cmm/m/it/12 g$ \T1/ptm/m/n/12 est con-tinue et stricte-ment crois-sante
- sur $\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 =] \OMS/cmsy/m/n/12 ^^@ 1\OT1/cmr/m/n/
-12 ; 0]$ \T1/ptm/m/n/12 donc $\OML/cmm/m/it/12 g$ \T1/ptm/m/n/12 est bi-jec-tiv
-e de $\OML/cmm/m/it/12 I$ \T1/ptm/m/n/12 vers [][][][][][]
- []
-
-
-Overfull \hbox (10.50336pt too wide) in paragraph at lines 323--324
-[]$\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 )[] [] = []$ \T1/ptm/m/
-n/12 or $\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/
-m/n/12 2) = 2\OML/cmm/m/it/12 e[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 e[] \OT1/c
-mr/m/n/12 = [] + [] = 1$ \T1/ptm/m/n/12 donc [][][][][][]
- []
-
-[5]
-Overfull \hbox (224.34047pt too wide) in paragraph at lines 325--326
-[][][][][][][] [][][][][][]
- []
-
-[6] 
+] [2] [3] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (build/compo2.aux)
  ***********
@@ -1011,33 +979,31 @@ Package rerunfilecheck Info: File `compo2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30517 strings out of 474222
- 607652 string characters out of 5748732
- 1961975 words of memory out of 5000000
- 52181 multiletter control sequences out of 15000+600000
- 604988 words of font info for 111 fonts, out of 8000000 for 9000
+ 29826 strings out of 474222
+ 597019 string characters out of 5748732
+ 1957975 words of memory out of 5000000
+ 51496 multiletter control sequences out of 15000+600000
+ 596261 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,420b,1060s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,15n,107p,435b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfd
-ing/uzdr.pfb>
-Output written on build/compo2.pdf (6 pages, 195848 bytes).
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on build/compo2.pdf (3 pages, 164845 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 55 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
