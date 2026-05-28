@@ -1,0 +1,255 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+
+% Configuration de la couleur rouge pour les titres et résultats
+\definecolor{myred}{RGB}{180, 0, 0}
+\newcommand{\redtitle}[1]{\textcolor{myred}{\textbf{#1}}}
+\newcommand{\redbox}[1]{\color{myred}\boxed{#1}\color{black}}
+
+\begin{document}
+
+\section*{\underline{\redtitle{Correction de l'Exercice 1 : (5 pts)}}}
+
+\subsection*{\underline{\redtitle{Partie A}}}
+
+On considère le polynôme $P(x) = x^3 - 2x^2 - x + 2$.
+
+\begin{enumerate}
+    \item \textbf{Calculons $P(1)$ et concluons :}
+    
+    $P(1) = 1^3 - 2(1)^2 - 1 + 2 = 1 - 2 - 1 + 2 = 0$.
+    
+    \textbf{Conclusion :} Puisque $P(1) = 0$, alors $1$ est une racine du polynôme $P(x)$. Par conséquent, $P(x)$ est divisible par $(x - 1)$. \hfill \textbf{0,25pt}
+    
+    \item \textbf{Déterminons les réels $a$, $b$ et $c$ :}
+    
+    Développons l'expression $(x - 1)(ax^2 + bx + c)$ :
+    \begin{align*}
+        (x - 1)(ax^2 + bx + c) &= ax^3 + bx^2 + cx - ax^2 - bx - c \\
+        &= ax^3 + (b - a)x^2 + (c - b)x - c
+    \end{align*}
+    Par identification avec $P(x) = x^3 - 2x^2 - x + 2$, on obtient le système suivant :
+    \[
+    \begin{cases}
+        a = 1 \\
+        b - a = -2 \\
+        c - b = -1 \\
+        -c = 2
+    \end{cases}
+    \implies
+    \begin{cases}
+        a = 1 \\
+        b = -2 + 1 = -1 \\
+        c = -2
+    \end{cases}
+    \]
+    Les réels cherchés sont donc : $\redbox{a = 1 \,;~ b = -1 \,;~ c = -2}$.
+    
+    Ainsi, $P(x) = (x - 1)(x^2 - x - 2)$. \hfill \textbf{0,5pt}
+    
+    \item On pose $Q(x) = x^2 - x - 2$.
+    \begin{enumerate}
+        \item \textbf{Donner une factorisation complète de $P(x)$ :}
+        
+        Cherchons les racines du trinôme $Q(x) = x^2 - x - 2$. \\
+        On remarque une racine évidente $x_1 = -1$ (car $(-1)^2 - (-1) - 2 = 1 + 1 - 2 = 0$). \\
+        Le produit des racines étant $\frac{c}{a} = -2$, la seconde racine est $x_2 = 2$.
+        
+        D'où la factorisation de $Q(x) = (x + 1)(x - 2)$.
+        
+        La factorisation complète de $P(x)$ est donc :
+        \[\redbox{P(x) = (x - 1)(x + 1)(x - 2)}\] \hfill \textbf{0,25pt}
+        
+        \item \textbf{Résolvons dans $\mathbb{R}$ l'équation $P(x) = 0$ et l'inéquation $P(x) \leq 0$ :}
+        
+        \begin{itemize}
+            \item \textbf{Équation $P(x) = 0$ :}
+            \[ P(x) = 0 \iff (x - 1)(x + 1)(x - 2) = 0 \]
+            L'ensemble des solutions est : $\redbox{S = \{-1 \,;~ 1 \,;~ 2\}}$.
+            
+            \item \textbf{Inéquation $P(x) \leq 0$ :} \\
+            Dressons le tableau de signes de $P(x)$ à l'aide de ses facteurs :
+            
+            \begin{center}
+            \begin{tikzpicture}
+                \tkzTabInit[lgt=3, espcl=1.5]{$x$ / 1 , $x+1$ / 0.6, $x-1$ / 0.6, $x-2$ / 0.6, $P(x)$ / 0.8}{$-\infty$, $-1$, $1$, $2$, $+\infty$}
+                \tkzTabLine{, -, z, +, t, +, t, +, }
+                \tkzTabLine{, -, t, -, z, +, t, +, }
+                \tkzTabLine{, -, t, -, t, -, z, +, }
+                \tkzTabLine{, -, z, +, z, -, z, +, }
+            \end{tikzpicture}
+            \end{center}
+            
+            L'ensemble des solutions de l'inéquation $P(x) \le 0$ est : $\redbox{S = ]-\infty \,;~ -1] \cup [1 \,;~ 2]}$. \hfill \textbf{1pt}
+        \end{itemize}
+        
+        \item \textbf{En déduire les solutions dans $\mathbb{R}$ de l'équation $P(x-2) = 0$ et de l'inéquation $P(x-2) \leq 0$ :}
+        
+        En posant $X = x - 2$, on utilise directement les résultats de la question précédente :
+        
+        \begin{itemize}
+            \item \textbf{Pour l'équation $P(x-2) = 0$ :}
+            \[
+            x - 2 = -1 \implies x = 1
+            \]
+            \[
+            x - 2 = 1 \implies x = 3
+            \]
+            \[
+            x - 2 = 2 \implies x = 4
+            \]
+            L'ensemble des solutions est : $\redbox{S_1 = \{1 \,;~ 3 \,;~ 4\}}$.
+            
+            \item \textbf{Pour l'inéquation $P(x-2) \leq 0$ :}
+            \[ X \in ]-\infty \,;~ -1] \cup [1 \,;~ 2] \]
+            Ce qui se traduit par :
+            \begin{align*}
+                x - 2 \le -1 &\implies x \le 1 \\
+                \text{ou } 1 \le x - 2 \le 2 &\implies 3 \le x \le 4
+            \end{align*}
+            L'ensemble des solutions est : $\redbox{S_2 = ]-\infty \,;~ 1] \cup [3 \,;~ 4]}$. \hfill \textbf{1pt}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{\underline{\redtitle{Partie B}}}
+
+Soit l'équation $(E) : x^2 - 2x - 3 = 0$ de la forme $ax^2 + bx + c = 0$ avec $a=1$, $b=-2$ et $c=-3$.
+
+\begin{enumerate}
+    \item \redtitle{Calculons sans calculer $x'$ et $x''$ :}
+    
+    On sait que la somme des racines est $S = -\frac{b}{a}$ et le produit est $P = \frac{c}{a}$.
+    
+    \begin{multicols}{2}
+    \setlength{\columnseprule}{0.1mm}
+    \begin{enumerate}
+        \item $A = x' + x'' = -\dfrac{-2}{1}$ \\
+        Donc : $\redbox{A = 2}$ \hfill \textbf{0,25pt}
+        \item $B = x'x'' = \dfrac{-3}{1}$ \\
+        Donc : $\redbox{B = -3}$ \hfill \textbf{0,25pt}
+    \end{enumerate}
+    \end{multicols}
+
+    \item \redtitle{Déduisons-en les valeurs de :}
+    
+    \begin{enumerate}
+        \item Réduisons au même dénominateur :
+        \[ A' = \dfrac{1}{x'} + \dfrac{1}{x''} = \dfrac{x'' + x'}{x'x''} = \dfrac{A}{B} \]
+        \[ \redbox{A' = -\dfrac{2}{3}} \] \hfill \textbf{0,5pt}
+        
+        \item Identité remarquable :
+        \begin{align*}
+            C &= {x'}^2 + {x''}^2 \\
+              &= (x' + x'')^2 - 2x'x'' \\
+              &= A^2 - 2B \\
+              &= (2)^2 - 2(-3) \\
+              &= 4 + 6
+        \end{align*}
+        \[ \redbox{C = 10} \] \hfill \textbf{0,5pt}
+        
+        \item Identité remarquable :
+        \begin{align*}
+            D &= {x'}^3 + {x''}^3 \\
+              &= (x' + x'')( {x'}^2 - x'x'' + {x''}^2 ) \\
+              &= A(C - B) \\
+              &= 2(10 - (-3)) \\
+              &= 2(13)
+        \end{align*}
+        \[ \redbox{D = 26} \] \hfill \textbf{0,5pt}
+    \end{enumerate}
+
+\end{enumerate}
+
+
+\section*{\underline{\redtitle{Correction de l'Exercice 2 : (3 pts)}}}
+
+Soit l'équation $(E) : x^2 - (2m + 1)x + m^2 - 2 = 0$ de la forme $ax^2 + bx + c = 0$ avec :
+$a = 1$, $b = -(2m + 1)$ et $c = m^2 - 2$.
+
+\begin{enumerate}
+    \item \redtitle{Discutons suivant les valeurs de $m$, les solutions de l'équation $(E)$ :}
+    
+    Calculons le discriminant $\Delta$ de l'équation $(E)$ :
+    \begin{align*}
+        \Delta &= b^2 - 4ac \\
+               &= [-(2m + 1)]^2 - 4(1)(m^2 - 2) \\
+               &= (4m^2 + 4m + 1) - 4m^2 + 8 \\
+               &= 4m + 9
+    \end{align*}
+    
+    Étudions le signe de $\Delta$ :
+    \[ \Delta = 0 \iff 4m + 9 = 0 \iff m = -\dfrac{9}{4} \]
+    
+    \textbf{Discussion :}
+    \begin{itemize}
+        \item Si $m \in \left]-\infty \,;~ -\dfrac{9}{4}\right[$, alors $\Delta < 0$ : L'équation $(E)$ n'admet aucune solution réelle. $\redbox{S = \emptyset}$.
+        \item Si $m = -\dfrac{9}{4}$, alors $\Delta = 0$ : L'équation $(E)$ admet une solution double :
+        \[ x_0 = -\dfrac{b}{2a} = \dfrac{2\left(-\frac{9}{4}\right) + 1}{2} = \dfrac{-\frac{9}{2} + 1}{2} = -\dfrac{7}{4} \]
+        L'ensemble des solutions est : $\redbox{S = \left\{-\dfrac{7}{4}\right\}}$.
+        \item Si $m \in \left]-\dfrac{9}{4} \,;~ +\infty\right[$, alors $\Delta > 0$ : L'équation $(E)$ admet deux solutions distinctes :
+        \[ \redbox{x' = \dfrac{(2m+1) - \sqrt{4m+9}}{2} \quad \text{et} \quad x'' = \dfrac{(2m+1) + \sqrt{4m+9}}{2}} \]
+    \end{itemize} \hfill \textbf{(0,75 pt)}
+    
+    \item \redtitle{Trouvons une relation indépendante de $m$ entre $x'$ et $x''$ :}
+    
+    Exprimons la somme $S$ et le produit $P$ des racines en fonction de $m$ :
+    \[ S = x' + x'' = -\dfrac{b}{a} = 2m + 1 \implies m = \dfrac{S - 1}{2} \]
+    \[ P = x'x'' = \dfrac{c}{a} = m^2 - 2 \]
+    
+    En substituant l'expression de $m$ dans celle de $P$, on obtient :
+    \[ P = \left(\dfrac{S - 1}{2}\right)^2 - 2 \iff P = \dfrac{S^2 - 2S + 1}{4} - 2 \]
+    \[ 4P = S^2 - 2S + 1 - 8 \iff S^2 - 2S - 4P - 7 = 0 \]
+    
+    En remplaçant par $x'$ et $x''$, la relation indépendante de $m$ est :
+    \[ \redbox{(x' + x'')^2 - 2(x' + x'') - 4x'x'' - 7 = 0} \] \hfill \textbf{(0,5 pt)}
+    
+    \item Pour que $(E)$ admette deux solutions, il faut d'abord que celles-ci existent, c'est-à-dire $\Delta \geq 0 \iff m \geq -\dfrac{9}{4}$.
+
+la somme $S = 2m+1$ et du produit $P = m^2-2$.
+    
+    Dressons un tableau récapitulatif des signes pour mener la discussion :
+    
+    \begin{center}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=3, espcl=1.5]{$m$ / 1 , $\Delta=4m+9$ / 0.6, $P=m^2-2$ / 0.6, $S=2m+1$ / 0.6}{$-\dfrac{9}{4}$, $-\sqrt{2}$, $-\dfrac{1}{2}$, $\sqrt{2}$, $+\infty$}
+        \tkzTabLine{z, +, t, +, t, +, t, +, }
+        \tkzTabLine{, +, z, -, t, -, z, +, }
+        \tkzTabLine{, -, t, -, z, +, t, +, }
+    \end{tikzpicture}
+    \end{center}
+    
+    \begin{enumerate}
+        \item \redtitle{Deux solutions de signes contraires :}
+        
+        L'équation admet deux solutions de signes contraires si et seulement si leur produit est strictement négatif ($P < 0$). 
+        
+        En lisant sur la ligne de $m^2-2$ dans notre tableau sur l'intervalle d'existence ($\Delta \geq 0$), on obtient :
+        \[ \redbox{m \in ]-\sqrt{2} \,;~ \sqrt{2}[} \] \hfill \textbf{(0,25 pt)}
+        
+        \item \redtitle{Deux solutions positives :}
+        
+        L'équation admet deux solutions positives si et seulement si :
+        \[ \begin{cases} \Delta \geq 0 \\ P > 0 \\ S > 0 \end{cases} \]
+        D'après le tableau, les trois expressions ($4m+9$, $m^2-2$ et $2m+1$) sont simultanément strictement positives sur le dernier intervalle.
+        
+        La condition est donc : $\redbox{m \in ]\sqrt{2} \,;~ +\infty[}$. \hfill \textbf{(0,75 pt)}
+        
+        \item \redtitle{Deux solutions négatives :}
+        
+        L'équation admet deux solutions négatives si et seulement si :
+        \[ \begin{cases} \Delta \geq 0 \\ P > 0 \\ S < 0 \end{cases} \]
+        D'après le tableau, sur le premier intervalle d'existence, $\Delta \geq 0$ (le signe de $4m+9$ est positif ou nul), $P > 0$ (le signe de $m^2-2$ est positif) et $S < 0$ (le signe de $2m+1$ est négatif).
+        
+        La condition est donc : $\redbox{m \in \left[ -\dfrac{9}{4} \,;~ -\sqrt{2} \right[}$. \hfill \textbf{(0,75 pt)}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
