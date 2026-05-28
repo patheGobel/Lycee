@@ -252,4 +252,287 @@ la somme $S = 2m+1$ et du produit $P = m^2-2$.
     \end{enumerate}
 \end{enumerate}
 
+
+\section*{\underline{\redtitle{Correction de l'Exercice 3 : (6 pts)}}}
+
+\begin{enumerate}
+    \item \redtitle{Résolvons dans $\mathbb{R}$ les équations suivantes :}
+    
+    \begin{enumerate}
+        \item $3x^2 - 5x + 2 = 0$
+        
+        On remarque que $a + b + c = 3 - 5 + 2 = 0$. 
+        
+        Les racines sont donc évidentes : $x_1 = 1$ et $x_2 = \dfrac{c}{a} = \dfrac{2}{3}$.
+        
+        L'ensemble des solutions est : $\redbox{S = \left\{\dfrac{2}{3} \,;~ 1\right\}}$. \hfill \textbf{(0,25 pt)}
+        
+        \item $2|x - 2|^2 + 7|x - 2| + 3 = 0$
+        
+        Posons $X = |x - 2|$ avec $X \geq 0$.
+        
+        L'équation devient :$2X^2 + 7X + 3 = 0$.
+        
+        Calculons le discriminant :
+        
+         $\Delta = 7^2 - 4(2)(3) = 49 - 24 = 25 = 5^2$.
+        
+        \[ X_1 = \dfrac{-7 - 5}{4} = -3 \quad \text{et} \quad X_2 = \dfrac{-7 + 5}{4} = -\dfrac{2}{4} = -\dfrac{1}{2} \]
+        
+        Comme $X = |x - 2|$ doit être positif ou nul ($X \geq 0$), les deux valeurs $X_1$ et $X_2$ sont rejetées.
+        
+        L'ensemble des solutions est : $\redbox{S = \emptyset}$. \hfill \textbf{(0,75 pt)}
+        
+        \item $\left(x + \dfrac{1}{x}\right)^2 = 4\left(x + \dfrac{1}{x}\right) - 3$ \quad (Condition d'existence : $x \neq 0$)
+        
+        Posons $X = x + \dfrac{1}{x}$. L'équation devient :
+        \[ X^2 = 4X - 3 \iff X^2 - 4X + 3 = 0 \]
+        Ici, $1 - 4 + 3 = 0$, donc les solutions en $X$ sont $X_1 = 1$ et $X_2 = 3$.
+        
+        Revenons à $x$ :
+        \begin{itemize}
+            \item \textbf{Si $X = 1$ :} $x + \dfrac{1}{x} = 1 \iff x^2 - x + 1 = 0$. 
+            
+            $\Delta = (-1)^2 - 4(1)(1) = -3 < 0 \implies$ Pas de solution réelle.
+            \item \textbf{Si $X = 3$ :} $x + \dfrac{1}{x} = 3 \iff x^2 - 3x + 1 = 0$.
+            
+            $\Delta = (-3)^2 - 4(1)(1) = 9 - 4 = 5$.
+            \[ x_1 = \dfrac{3 - \sqrt{5}}{2} \quad \text{et} \quad x_2 = \dfrac{3 + \sqrt{5}}{2} \]
+        \end{itemize}
+        L'ensemble des solutions est : 
+        
+        $\redbox{S = \left\{\dfrac{3 - \sqrt{5}}{2} \,;~ \dfrac{3 + \sqrt{5}}{2}\right\}}$. \hfill \textbf{(0,75 pt)}
+    \end{enumerate}
+
+    \item \redtitle{Résolvons dans $\mathbb{R}$ les inéquations suivantes :}
+    
+    \begin{enumerate}
+        \item $x^2 - x + 6 \geq 0$
+        
+        Calculons le discriminant : 
+        
+        $\Delta = (-1)^2 - 4(1)(6) = 1 - 24 = -23 < 0$.
+        
+        Le trinôme n'a pas de racine réelle, il est donc strictement du signe de $a=1$ (positif) pour tout réel $x$.
+        
+        L'ensemble des solutions est : $\redbox{S = \mathbb{R}}$. \hfill \textbf{(0,25 pt)}
+        
+        \item $\dfrac{2x^2 + 3x - 5}{-x^2 + 3x + 10} \leq 0$
+        
+        Trouvons les racines du numérateur $N(x) = 2x^2 + 3x - 5$ :
+        $a+b+c = 2+3-5=0 \implies x_1 = 1$ et $x_2 = -\dfrac{5}{2}$.
+        
+        Trouvons les racines du dénominateur $D(x) = -x^2 + 3x + 10$ :
+        $\Delta = 3^2 - 4(-1)(10) = 9 + 40 = 49 = 7^2$.
+        \[ x_3 = \dfrac{-3 - 7}{-2} = 5 \quad \text{et} \quad x_4 = \dfrac{-3 + 7}{-2} = -2 \]
+        Les valeurs interdites sont donc $-2$ et $5$. Dressons le tableau de signes :
+        
+        \begin{center}
+        \begin{tikzpicture}
+            \tkzTabInit[lgt=3, espcl=1.2]{$x$ / 1 , $N(x)$ / 0.6, $D(x)$ / 0.6, Quotient / 0.8}{$-\infty$, $-\dfrac{5}{2}$, $-2$, $1$, $5$, $+\infty$}
+            \tkzTabLine{, +, z, -, t, -, z, +, t, +, }
+            \tkzTabLine{, -, t, -, z, +, t, +, z, -, }
+            \tkzTabLine{, -, z, +, d, -, z, +, d, -, }
+        \end{tikzpicture}
+        \end{center}
+        
+        L'ensemble des solutions est : 
+        
+        $\redbox{S = \left[ -\infty \,;~ -\dfrac{5}{2} \right] \cup ]-2 \,;~ 1] \cup ]5 \,;~ +\infty[}$. \hfill \textbf{(0,75 pt)}
+    \end{enumerate}
+
+    \item \redtitle{Résolvons dans $\mathbb{R}^2$ les systèmes suivants :}
+    
+    \begin{enumerate}
+        \item $\begin{cases} x + y = 3 \\ x^2 + 3xy + y^2 = 11 \end{cases}$
+        
+        On sait que $x^2 + y^2 = (x+y)^2 - 2xy$. La deuxième équation devient :
+        \[ (x+y)^2 - 2xy + 3xy = 11 \iff (x+y)^2 + xy = 11 \]
+        En substituant $x+y=3$, on obtient :
+        
+         $3^2 + xy = 11 \iff 9 + xy = 11 \iff xy = 2$.
+        
+        On se ramène à la recherche de deux nombres connaissant leur somme $S=3$ et leur produit $P=2$, qui sont solutions de 
+        
+        $t^2 - 3t + 2 = 0 \implies t_1 = 1$ et $t_2 = 2$.
+        
+        L'ensemble des solutions est :
+        
+         $\redbox{S = \{(1 \,;~ 2) \,;~ (2 \,;~ 1)\}}$. \hfill \textbf{(0,75 pt)}
+        
+        \item $\begin{cases} x^2 + y^2 = 5 \\ xy = 2 \end{cases}$
+        
+        On utilise les identités remarquables :
+        \begin{itemize}
+            \item $(x+y)^2 = x^2 + y^2 + 2xy = 5 + 2(2) = 9 \implies x + y = 3 \text{ ou } x + y = -3$
+            \item $(x-y)^2 = x^2 + y^2 - 2xy = 5 - 2(2) = 1 \implies x - y = 1 \text{ ou } x - y = -1$
+        \end{itemize}
+        En combinant les cas ou en résolvant par somme/produit ($S=3, P=2$ ou $S=-3, P=2$), on trouve :
+        \[ \redbox{S = \{(2 \,;~ 1) \,;~ (1 \,;~ 2) \,;~ (-2 \,;~ -1) \,;~ (-1 \,;~ -2)\}} \] \hfill \textbf{(0,75 pt)}
+        
+        \item $\begin{cases} x^3 + y^3 = 7 \\ x + y = 1 \end{cases}$
+        
+        On sait que $x^3 + y^3 = (x+y)(x^2 - xy + y^2) = (x+y)[(x+y)^2 - 3xy]$.
+        La première équation devient :
+        \[ 1 \cdot (1^2 - 3xy) = 7 \iff 1 - 3xy = 7 \iff -3xy = 6 \iff xy = -2 \]
+        On cherche deux nombres de somme $S=1$ et produit $P=-2$, solutions de $t^2 - t - 2 = 0$.
+        Les racines sont $t_1 = -1$ et $t_2 = 2$.
+        
+        L'ensemble des solutions est : 
+        
+        $\redbox{S = \{(-1 \,;~ 2) \,;~ (2 \,;~ -1)\}}$. \hfill \textbf{(0,75 pt)}
+    \end{enumerate}
+
+    \item \redtitle{En utilisant la méthode de Cramer, résolvons le système :} $\begin{cases} 3x + 4y = 5 \\ 2x - 3y = 1 \end{cases}$
+    
+    Calculons le déterminant principal $\det(S)$ :
+    \[ \det(S) = \begin{vmatrix} 3 & 4 \\ 2 & -3 \end{vmatrix} = 3(-3) - 4(2) = -9 - 8 = -17 \]
+    Comme $\det(S) \neq 0$, le système admet un couple solution unique.
+    
+    Calculons les déterminants secondaires $\det(x)$ et $\det(y)$ :
+    \[ \det(x) = \begin{vmatrix} 5 & 4 \\ 1 & -3 \end{vmatrix} = 5(-3) - 4(1) = -15 - 4 = -19 \]
+    \[ \det(y) = \begin{vmatrix} 3 & 5 \\ 2 & 1 \end{vmatrix} = 3(1) - 5(2) = 3 - 10 = -7 \]
+    
+    On en déduit les valeurs de $x$ et $y$ :
+    \[ x = \dfrac{\det(x)}{\det(S)} = \dfrac{-19}{-17} = \dfrac{19}{17} \quad \text{et} \quad y = \dfrac{\det(y)}{\det(S)} = \dfrac{-7}{-17} = \dfrac{7}{17} \]
+    
+    L'ensemble des solutions est : $\redbox{S = \left\{\left(\dfrac{19}{17} \,;~ \dfrac{7}{17}\right)\right\}}$. \hfill \textbf{(0,75 pt)}
+\end{enumerate}
+
+
+\section*{\underline{\redtitle{Correction de l'Exercice 4 : (6 pts)}}}
+
+Soit $ABC$ un triangle quelconque et $I$ le milieu de $[BC]$.
+
+\begin{enumerate}
+    \item \redtitle{Déterminons l'ensemble des valeurs réelles de $\alpha$ pour que le barycentre $G_\alpha$ existe :}
+    
+    Le système admet un unique barycentre si et seulement si la somme des coefficients est non nulle.
+    \begin{align*}
+        \sum \text{Coefficients} \neq 0 &\iff (2\alpha^2 - 3) + \alpha + (-\alpha) \neq 0 \\
+        & \iff 2\alpha^2 - 3 \neq 0 \\
+        & \iff \alpha^2 \neq \dfrac{3}{2} \\
+        & \iff \alpha \neq -\sqrt{\dfrac{3}{2}} \quad \text{et} \quad \alpha \neq \sqrt{\dfrac{3}{2}}
+    \end{align*}
+    L'ensemble des valeurs de $\alpha$ recherché est : $\redbox{\mathbb{R} \setminus \left\{ -\sqrt{\dfrac{3}{2}} \,;~ \sqrt{\dfrac{3}{2}} \right\}}$. \hfill \textbf{(1pt)}
+    
+    \item \redtitle{Montrons que pour tout réel $\alpha$ autorisé, on a $\overrightarrow{AG_\alpha} = -\dfrac{\alpha}{2\alpha^2 - 3}\overrightarrow{BC}$ :}
+    
+    Par définition du barycentre $G_\alpha$, on a :
+    \[ (2\alpha^2 - 3)\overrightarrow{G_\alpha A} + \alpha\overrightarrow{G_\alpha B} - \alpha\overrightarrow{G_\alpha C} = \overrightarrow{0} \]
+    En introduisant le point $A$ à l'aide de la relation de Chasles dans les deux derniers vecteurs :
+    \[ (2\alpha^2 - 3)\overrightarrow{G_\alpha A} + \alpha\left(\overrightarrow{G_\alpha A} + \overrightarrow{AB}\right) - \alpha\left(\overrightarrow{G_\alpha A} + \overrightarrow{AC}\right) = \overrightarrow{0} \]
+    \[ (2\alpha^2 - 3)\overrightarrow{G_\alpha A} + \alpha\overrightarrow{G_\alpha A} - \alpha\overrightarrow{G_\alpha A} + \alpha\overrightarrow{AB} - \alpha\overrightarrow{AC} = \overrightarrow{0} \]
+    \[ (2\alpha^2 - 3)\overrightarrow{G_\alpha A} + \alpha\left(\overrightarrow{AB} - \overrightarrow{AC}\right) = \overrightarrow{0} \]
+    Sachant que $\overrightarrow{G_\alpha A} = -\overrightarrow{AG_\alpha}$ et $\overrightarrow{AB} - \overrightarrow{AC} = \overrightarrow{CB} = -\overrightarrow{BC}$, on obtient :
+    \[ -(2\alpha^2 - 3)\overrightarrow{AG_\alpha} - \alpha\overrightarrow{BC} = \overrightarrow{0} \iff (2\alpha^2 - 3)\overrightarrow{AG_\alpha} = -\alpha\overrightarrow{BC} \]
+    D'où la relation finale : $\redbox{\overrightarrow{AG_\alpha} = -\dfrac{\alpha}{2\alpha^2 - 3}\overrightarrow{BC}}$. \hfill \textbf{(1pt)}
+
+    \item \redtitle{Construisons les points $G_1$ et $G_{-1}$ :}
+    
+    En utilisant la relation établie à la question (2) :
+    \begin{itemize}
+        \item Pour $\alpha = 1$ : $\overrightarrow{AG_1} = -\dfrac{1}{2(1)^2 - 3}\overrightarrow{BC} = -\dfrac{1}{-1}\overrightarrow{BC} \implies \redbox{\overrightarrow{AG_1} = \overrightarrow{BC}}$.
+        \item Pour $\alpha = -1$ : $\overrightarrow{AG_{-1}} = -\dfrac{-1}{2(-1)^2 - 3}\overrightarrow{BC} = \dfrac{1}{-1}\overrightarrow{BC} \implies \redbox{\overrightarrow{AG_{-1}} = -\overrightarrow{BC}}$.
+    \end{itemize}
+    \textbf{Utilisation du point $I$ :} \\
+    Puisque $I$ est le milieu de $[BC]$, on sait par ailleurs que
+    
+     $\overrightarrow{BC} = 2\overrightarrow{IC} = 2\overrightarrow{BI}$. On peut donc l'utiliser pour la précision géométrique si on le souhaite, le point $G_1$ complétant le parallélogramme $ABCG_1$. \hfill \textbf{(1pt)}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=stealth]
+    % Définition des points du triangle ABC
+    \coordinate (A) at (2,3);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (5,0);
+    
+    % Calcul du milieu I de [BC]
+    \coordinate (I) at (2.5,0);
+    
+    % Calcul des points G_1 et G_{-1}
+    % G_1 tel que AG_1 = BC -> G_1 = A + (C - B) = (2+5, 3+0) = (7,3)
+    \coordinate (G1) at (7,3);
+    % G_{-1} tel que AG_{-1} = -BC -> G_{-1} = A - (C - B) = (2-5, 3-0) = (-3,3)
+    \coordinate (G-1) at (-3,3);
+
+    % Tracé du triangle ABC
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+    
+    % Tracé des segments de construction vers G_1 et G_{-1}
+    \draw[dashed, blue] (A) -- (G1);
+    \draw[dashed, blue] (C) -- (G1);
+    \draw[dashed, purple] (A) -- (G-1);
+    \draw[dashed, purple] (B) -- (G-1);
+    
+    % Tracé de la ligne droite reliant G_{-1}, A et G_1
+    \draw[thick, red] (G-1) -- (G1);
+
+    % Marquage du milieu I (un petit trait vertical ou une croix)
+    \draw[thick] (2.5,-0.1) -- (2.5,0.1);
+
+    % Affichage des points (noeuds)
+    \fill (A) circle (1.5pt) node[above] {$A$};
+    \fill (B) circle (1.5pt) node[below left] {$B$};
+    \fill (C) circle (1.5pt) node[below right] {$C$};
+    \fill (I) circle (1.5pt) node[below] {$I$};
+    \fill[red] (G1) circle (2pt) node[above right] {$G_1$};
+    \fill[red] (G-1) circle (2pt) node[above left] {$G_{-1}$};
+
+    % Optionnel : Vecteurs pour bien comprendre le déplacement
+    \draw[->, thick, cyan] (B) -- (C) node[midway, below] {$\overrightarrow{BC}$};
+    \draw[->, thick, cyan] (A) -- (G1) node[midway, above] {$\overrightarrow{BC}$};
+    \draw[->, thick, orange] (A) -- (G-1) node[midway, above] {$-\overrightarrow{BC}$};
+
+\end{tikzpicture}
+\end{center}
+
+    \item \redtitle{Montrons que $I$ est le milieu de $[G_1 G_{-1}]$ :}
+    
+    Calculons le vecteur $\overrightarrow{IG_1} + \overrightarrow{IG_{-1}}$ en passant par le point $A$ :
+    \begin{align*}
+        \overrightarrow{IG_1} + \overrightarrow{IG_{-1}} &= \left(\overrightarrow{IA} + \overrightarrow{AG_1}\right) + \left(\overrightarrow{IA} + \overrightarrow{AG_{-1}}\right) \\
+        &= 2\overrightarrow{IA} + \overrightarrow{AG_1} + \overrightarrow{AG_{-1}}
+    \end{align*}
+    En remplaçant par les valeurs géométriques trouvées à la question (3) :
+    \[ \overrightarrow{IG_1} + \overrightarrow{IG_{-1}} = 2\overrightarrow{IA} + \overrightarrow{BC} + (-\overrightarrow{BC}) = 2\overrightarrow{IA} \]
+    \textit{Note géométrique :} Pour que $I$ soit le milieu de $[G_1G_{-1}]$, la somme vectorielle précédente doit valoir $\overrightarrow{0}$, ce qui n'est vrai que si $A=I$. Reprenons par une autre décomposition plus directe en partant de $G_1$ et $G_{-1}$ :
+    
+    On a d'une part : $\overrightarrow{AG_1} = \overrightarrow{BC} \implies \overrightarrow{G_1C} = \overrightarrow{AB}$ ($ABCG_1$ est un parallélogramme). \\
+    D'autre part : $\overrightarrow{AG_{-1}} = \overrightarrow{CB} \implies \overrightarrow{G_{-1}B} = \overrightarrow{AC}$.
+    
+    Calculons le milieu du segment $[G_1G_{-1}]$. 
+    
+    On sait que $\overrightarrow{AG_1} + \overrightarrow{AG_{-1}} = \overrightarrow{BC} - \overrightarrow{BC} = \overrightarrow{0}$. \\
+    Cela signifie que $A$ est en réalité le milieu de $[G_1 G_{-1}]$.
+    
+    Vérifions si l'énoncé d'origine ne contenait pas une coquille textuelle entre le point $A$ et le point $I$. Puisque $\overrightarrow{AG_1} + \overrightarrow{AG_{-1}} = \overrightarrow{0}$, on en déduit formellement que :
+    \[ \redbox{A \text{ est le milieu de } [G_1G_{-1}]} \] \hfill \textbf{(1pt)}
+
+    \item \redtitle{Déterminons l'ensemble (E) des points M du plan dans chaque cas :}
+    
+    Pour simplifier le vecteur commun aux deux membres
+    
+     $-\overrightarrow{MA} + \overrightarrow{MB} - \overrightarrow{MC}$, remarquons que la somme des coefficients est $-1 + 1 - 1 = -1 \neq 0$. Introduisons le barycentre particulier de ce système, qui correspond à $G_\alpha$ pour $\alpha = 1$,
+     
+      c'est-à-dire $G_1 = \{(A, -1); (B, 1); (C, -1)\}$. 
+    On a pour tout point $M$ :
+    \[ -\overrightarrow{MA} + \overrightarrow{MB} - \overrightarrow{MC} = -\overrightarrow{MG_1} \]
+    
+    \begin{enumerate}
+        \item \textbf{Cas 1 :} $\left\|-\overrightarrow{MG_1}\right\| = 9$
+        \[ \iff MG_1 = 9 \]
+        L'ensemble $(E_a)$ est le \textbf{cercle} de centre $G_1$ et de rayon $r = 9$. \hfill \textbf{(1pt)}
+        
+        \item \textbf{Cas 2 :} $\left\|-\overrightarrow{MG_1}\right\| = \left\|\overrightarrow{MA} - \overrightarrow{MB}\right\|$
+        
+        Le second membre correspond à un vecteur constant indépendant de $M$ : 
+        $\overrightarrow{MA} - \overrightarrow{MB} = \overrightarrow{BA}$.
+        L'équation devient donc :
+        \[ MG_1 = BA \]
+        L'ensemble $(E_b)$ est le \textbf{cercle} de centre $G_1$ et de rayon $r = BA$. \hfill \textbf{(1pt)}
+    \end{enumerate}
+
+\end{enumerate}
+
 \end{document}
