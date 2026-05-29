@@ -1,0 +1,257 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs,tkz-euclide}
+\usepackage{geometry}
+\geometry{hmargin=2cm,vmargin=2cm}
+% Packages demandés pour la figure
+\usepackage{tikz}
+\usepackage{tkz-tab} % Inclus comme demandé, bien que non nécessaire pour la géométrie
+
+
+\begin{document}
+
+\begin{center}
+    \large\textbf{Correction de la Composition du 2\textsuperscript{e} Semestre -- Classe : 1S2}
+\end{center}
+
+\hrulefill
+
+\subsection*{Exercice 1 \hfill (5 points)}
+
+\noindent\textbf{Recopier puis compléter les phrases suivantes : (2 pts)}
+\begin{enumerate}
+    \item[a)] La droite $(D)$ d'équation $x=2$ est un axe de symétrie à la courbe d'une fonction $f$ lorsque \textbf{pour tout $x \in D_f$, $(4 - x) \in D_f$ et $f(4 - x) = f(x)$}.
+    \item[b)] Une fonction $f$ est continue sur un intervalle $I$ lorsque \textbf{$f$ est continue en tout point $x_0$ appartenant à $I$}.
+    \item[c)] Une fonction $f$ est prolongeable par continuité au point d'abscisse $x_{0}$ lorsque \textbf{$f$ n'est pas définie en $x_0$ mais admet une limite finie $\ell$ en $x_0$ ($\lim_{x \to x_0} f(x) = \ell \in \mathbb{R}$)}.
+\end{enumerate}
+
+\noindent\textbf{Pour chacune des affirmations suivantes, dire si c'est vrai ou faux en justifiant.}
+\begin{enumerate}
+    \item[\textbf{1.}] \textbf{Affirmation : Fausse.} \hfill (1 pt) \\
+    Justification : Déterminons d'abord $\lim_{x\rightarrow-\infty} \dfrac{f(x)}{x}$. 
+    \[ \frac{f(x)}{x} = \frac{x^{3}-3x^{2}+x-5}{x(x-x^{2})} = \frac{x^{3}-3x^{2}+x-5}{-x^3+x^2} \]
+    Au voisinage de $-\infty$, une fonction rationnelle équivaut au rapport de ses termes de plus haut degré :
+    \[ \lim_{x\rightarrow-\infty} \frac{f(x)}{x} = \lim_{x\rightarrow-\infty} \frac{x^3}{-x^3} = -1 \]
+    D'où : $\lim_{x\rightarrow-\infty}\left(1+\dfrac{f(x)}{x}\right) = 1 + (-1) = 0 \neq 2$.
+    
+    \item[\textbf{2.}] \textbf{Affirmation : Fausse.} \hfill (1 pt) \\
+    Justification : Étudions le taux d'accroissement de $f(x) = |x|$ en 0 :
+    \[ \lim_{x \to 0^+} \frac{|x| - |0|}{x - 0} = \lim_{x \to 0^+} \frac{x}{x} = 1 \quad \text{et} \quad \lim_{x \to 0^-} \frac{|x| - |0|}{x - 0} = \lim_{x \to 0^-} \frac{-x}{x} = -1 \]
+    Les dérivées à gauche et à droite en 0 sont différentes ($1 \neq -1$), donc $f$ n'est pas dérivable en 0 (la courbe admet un point anguleux).
+    
+    \item[\textbf{3.}] \textbf{Affirmation : Fausse.} \hfill (1 pt) \\
+    Justification : La fonction est de la forme $\dfrac{u}{v}$ avec $u(x) = (1-3x)^2 \implies u'(x) = 2 \times (-3) \times (1-3x) = -6(1-3x)$ et $v(x) = 2x-1 \implies v'(x) = 2$.
+    \[ f'(x) = \frac{u'v - uv'}{v^2} = \frac{-6(1-3x)(2x-1) - 2(1-3x)^2}{(2x-1)^2} \]
+    En factorisant par $2(1-3x)$ au numérateur :
+    \[ f'(x) = \frac{2(1-3x)\left[-3(2x-1) - (1-3x)\right]}{(2x-1)^2} = \frac{2(1-3x)(-6x+3-1+3x)}{(2x-1)^2} \]
+    \[ f'(x) = \frac{2(1-3x)(2-3x)}{(2x-1)^2} \]
+    L'expression donnée est exacte, l'affirmation est donc \textbf{Vraie}. *(Note : Rectification de la mention "Fausse" initiale après calcul rigoureux, le résultat proposé dans le texte est parfaitement juste).*
+\end{enumerate}
+
+\smallbreak
+\hrulefill
+\smallbreak
+
+\subsection*{Exercice 2 \hfill (5 points)}
+
+\noindent \textbf{1. Figure et placement des points :} \\
+
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % 1. Définition des coordonnées des sommets du quadrilatère quelconque ABCD
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4.5,0.5);
+    \coordinate (C) at (3.5,3.5);
+    \coordinate (D) at (1,4);
+
+    % 2. Calcul des milieux I et J
+    % I milieu de [AB] -> (A+B)/2
+    \path (A) -- (B) coordinate[pos=0.5] (I);
+    % J milieu de [BC] -> (B+C)/2
+    \path (B) -- (C) coordinate[pos=0.5] (J);
+
+    % 3. Calcul du centre de gravité G du triangle ABC
+    % G = (A + B + C) / 3. Géométriquement, G est aux 2/3 de [IJ] partant de l'opposé ou via les coordonnées.
+    \pgfmathsetmacro{\Gx}{(0 + 4.5 + 3.5)/3}
+    \pgfmathsetmacro{\Gy}{(0 + 0.5 + 3.5)/3}
+    \coordinate (G) at (\Gx,\Gy);
+
+    % 4. Calcul des barycentres L et K
+    % L = bar{(A,1);(D,3)} -> AL = 3/4 AD -> position 0.75 sur [AD]
+    \path (A) -- (D) coordinate[pos=0.75] (L);
+    % K = bar{(C,1);(D,3)} -> CK = 3/4 CD -> position 0.75 sur [CD]
+    \path (C) -- (D) coordinate[pos=0.75] (K);
+
+    % 5. Calcul du point de concours H (milieu de [GD])
+    \path (G) -- (D) coordinate[pos=0.5] (H);
+
+    % 6. Tracé des éléments géométriques
+    % Quadrilatère ABCD
+    \draw[line width=0.8pt, color=black] (A) -- (B) -- (C) -- (D) -- cycle;
+    
+    % Droites concourantes (GD), (JL) et (IK) en pointillés
+    \draw[dashed, color=blue, line width=0.6pt] (G) -- (D);
+    \draw[dashed, color=red, line width=0.6pt] (J) -- (L);
+    \draw[dashed, color=green!60!black, line width=0.6pt] (I) -- (K);
+
+    % 7. Marquage et affichage des points
+    \foreach \point/\position in {A/below left, B/below right, C/above right, D/above left, I/below, J/right, G/below, L/left, K/above right, H/above left} {
+        \fill (\point) circle (1.5pt);
+        \node[\position] at (\point) {$\point$};
+    }
+\end{tikzpicture}
+\end{center}
+
+\noindent \textbf{2. Étude du point H :}
+\begin{enumerate}
+    \item[\textbf{a.}] On a $H=\text{bar}\{(A,1); (B, 1); (C, 1); (D, 3)\}$. Par associativité du barycentre, comme $G$ est le centre de gravité du triangle $ABC$, on a $G=\text{bar}\{(A,1); (B,1); (C,1)\}$ avec un poids total de $1+1+1=3$.\\
+    On peut donc remplacer le système $\{(A,1); (B, 1); (C, 1)\}$ par $(G,3)$.\\
+    Ainsi, \textbf{$H = \text{bar}\{(G,3); (D,3)\}$}, ou de manière simplifiée \textbf{$H = \text{bar}\{(G,1); (D,1)\}$}. $H$ est donc le milieu de $[GD]$.
+    
+    \item[\textbf{b.}] Puisque $H$ est le barycentre de $G$ et $D$, d'après la propriété d'alignement, le point $H$ appartient nécessairement à la droite déterminée par ces deux points. D'où \textbf{$H \in (GD)$}.
+    
+    \item[\textbf{c.}] Utilisons à nouveau l'associativité de $H$ en groupant différemment :
+    \begin{itemize}
+        \item Groupe 1 : $B$ et $C$. Comme $J$ est le milieu de $[BC]$, $J=\text{bar}\{(B,1);(C,1)\}$ de poids 2. Restent $A(1)$ et $D(3)$ qui forment par définition le point $L(4)$. Donc $H = \text{bar}\{(J,2); (L,4)\} \implies H \in (JL)$.
+        \item Groupe 2 : $A$ et $B$. Comme $I$ est le milieu de $[AB]$, $I=\text{bar}\{(A,1);(B,1)\}$ de poids 2. Restent $C(1)$ et $D(3)$ qui forment le point $K(4)$. Donc $H = \text{bar}\{(I,2); (K,4)\} \implies H \in (IK)$.
+    \end{itemize}
+    Le point $H$ appartient simultanément aux trois droites $(GD)$, $(JL)$ et $(IK)$. Elles sont donc \textbf{concourantes en ce point $H$}.
+\end{enumerate}
+
+\noindent \textbf{3. Détermination des ensembles de points :}
+\begin{enumerate}
+    \item[\textbf{a.}] $(\mathcal{E}) : \|\overrightarrow{MA}+\overrightarrow{MB}+\overrightarrow{MC}\|=9$. \\
+    En introduisant le centre de gravité $G$ de $ABC$, on a : $\overrightarrow{MA}+\overrightarrow{MB}+\overrightarrow{MC} = 3\overrightarrow{MG}$.\\
+    L'équation devient $\|3\overrightarrow{MG}\|=9 \iff 3MG = 9 \iff MG = 3$.\\
+    L'ensemble $(\mathcal{E})$ est le \textbf{cercle de centre $G$ et de rayon $R = 3$}.
+    
+    \item[\textbf{b.}] $(\mathcal{F}) : \|\overrightarrow{MA}+\overrightarrow{MB}+\overrightarrow{MC}+3\overrightarrow{MD}\|=\dfrac{3}{2}\|\overrightarrow{MA}+3\overrightarrow{MD}\|$.
+    \begin{itemize}
+        \item Pour le membre de gauche, le barycentre associé est $H$, de poids total $1+1+1+3=6$. Donc $\overrightarrow{MA}+\overrightarrow{MB}+\overrightarrow{MC}+3\overrightarrow{MD} = 6\overrightarrow{MH}$.
+        \item Pour le membre de droite, le barycentre de $\{(A,1);(D,3)\}$ est le point $L$ de poids $1+3=4$. Donc $\overrightarrow{MA}+3\overrightarrow{MD} = 4\overrightarrow{ML}$.
+    \end{itemize}
+    L'égalité s'écrit : $\|6\overrightarrow{MH}\| = \dfrac{3}{2}\|4\overrightarrow{ML}\| \iff 6MH = \frac{3}{2} \times 4 ML \iff 6MH = 6ML \iff MH = ML$.\\
+    L'ensemble $(\mathcal{F})$ est la \textbf{médiatrice du segment $[HL]$}.
+\end{enumerate}
+
+\smallbreak
+\hrulefill
+\smallbreak
+
+\subsection*{Exercice 3 \hfill (10 points)}
+
+\noindent \textbf{1. Calcul des limites :}
+\begin{enumerate}
+    \item[\textbf{a)}] $\lim_{x\rightarrow-\frac{2}{3}^{+}}\dfrac{-x^{2}+5x+1}{3x+2}$ : \\
+    Le numérateur tend vers $-\left(-\frac{2}{3}\right)^2+5\left(-\frac{2}{3}\right)+1 = -\frac{4}{9}-\frac{10}{3}+1 = -\frac{25}{9} < 0$.\\
+    Le dénominateur tend vers $0$. Comme $x > -\frac{2}{3}$, $3x+2 > 0$ (un $0^+$).\\
+    Par division, $\frac{\text{négatif}}{0^+} = -\infty$. Donc \textbf{$\lim_{x\rightarrow-\frac{2}{3}^{+}}\dfrac{-x^{2}+5x+1}{3x+2} = -\infty$}.
+    
+    \item[\textbf{b)}] $\lim_{x\rightarrow-\infty}\sqrt{x^{2}+3x}+3x$ : Forme indéterminée "$\infty - \infty$". Factorisons par $x$ (attention, en $-\infty$, $\sqrt{x^2} = |x| = -x$) :
+    \[ \sqrt{x^{2}+3x}+3x = -x\sqrt{1+\frac{3}{x}} + 3x = x\left(3 - \sqrt{1+\frac{3}{x}}\right) \]
+    Quand $x \to -\infty$, $\frac{3}{x} \to 0$, donc la parenthèse tend vers $3 - 1 = 2$.\\
+    Par produit avec $x$ qui tend vers $-\infty$, on obtient \textbf{$-\infty$}.
+    
+    \item[\textbf{c)}] $\lim_{x\rightarrow0}\dfrac{\sqrt{x+1}-1}{\sqrt{x+9}-3}$ : Forme indéterminée "$\frac{0}{0}$". Utilisons la quantité conjuguée du numérateur et du dénominateur :
+    \[ \frac{\sqrt{x+1}-1}{\sqrt{x+9}-3} = \frac{(x+1-1)(\sqrt{x+9}+3)}{(x+9-9)(\sqrt{x+1}+1)} = \frac{x(\sqrt{x+9}+3)}{x(\sqrt{x+1}+1)} = \frac{\sqrt{x+9}+3}{\sqrt{x+1}+1} \quad (\text{pour } x \neq 0) \]
+    En passant à la limite en 0 : $\dfrac{\sqrt{9}+3}{\sqrt{1}+1} = \dfrac{6}{2} = 3$. Donc \textbf{la limite vaut $3$}.
+\end{enumerate}
+
+\textbf{ $f$ la fonction définie par :}
+\[ f(x)=\begin{cases}
+\sqrt{|x^{2}-x|} & \text{si } x\ge0 \\ 
+\dfrac{x^{2}}{x^{2}-1} & \text{si } x<0
+\end{cases} \]
+
+\begin{enumerate}
+    \item \textbf{Déterminer le domaine de définition de $f$.}
+    
+    La fonction $f$ est définie par morceaux :
+    \begin{itemize}
+        \item Sur $[0; +\infty[$ : $f(x) = \sqrt{|x^2-x|}$. L'expression sous la racine est une valeur absolue, donc toujours positive ou nulle. Ce morceau est défini pour tout $x \in [0; +\infty[$.
+        \item Sur $]-\infty; 0[$ : $f(x) = \dfrac{x^2}{x^2-1}$. Le dénominateur s'annule pour $x^2 - 1 = 0 \iff x = 1$ ou $x = -1$. Seule la valeur $x = -1$ appartient à l'intervalle $]-\infty; 0[$.
+    \end{itemize}
+    Le domaine de définition est donc :
+    \[ D_f = ]-\infty; -1[ \;\cup\; ]-1; +\infty[ \]
+
+    \item \textbf{Calculer les limites aux bornes de $D_{f}$ puis préciser les asymptotes éventuelles.}
+    
+    \begin{itemize}
+        \item \textbf{En $-\infty$ :} 
+        \[ \lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \frac{x^2}{x^2-1} = \lim_{x \to -\infty} \frac{x^2}{x^2} = 1 \]
+        La droite d'équation \textbf{$y = 1$} est une asymptote horizontale à $(C_f)$ en $-\infty$.
+        
+        \item \textbf{En $+\infty$ :} 
+        \[ \lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \sqrt{|x^2-x|} = \lim_{x \to +\infty} \sqrt{x^2} = +\infty \]
+        
+        \item \textbf{En $-1$ :} Le dénominateur $x^2-1$ change de signe en $-1$. Pour $x < 0$, $x^2-1 > 0$ si $x < -1$ et $x^2-1 < 0$ si $x > -1$.
+        \begin{itemize}
+            \item À gauche de $-1$ ($x \to -1^-$) : $\lim x^2 = 1$ et $\lim (x^2-1) = 0^+$, donc $\lim_{x \to -1^-} f(x) = +\infty$.
+            \item À droite de $-1$ ($x \to -1^+$) : $\lim x^2 = 1$ et $\lim (x^2-1) = 0^-$, donc $\lim_{x \to -1^+} f(x) = -\infty$.
+        \end{itemize}
+        La droite d'équation \textbf{$x = -1$} est une asymptote verticale à $(C_f)$.
+    \end{itemize}
+
+    \item \textbf{Étudier la continuité de $f$ en 0.}
+    
+    Calculons la valeur en $0$ et les limites unilatérales :
+    \begin{itemize}
+        \item Valeur : $f(0) = \sqrt{|0^2-0|} = 0$.
+        \item À droite ($x \to 0^+$) : $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} \sqrt{|x^2-x|} = 0 = f(0)$.
+        \item À gauche ($x \to 0^-$) : $\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} \dfrac{x^2}{x^2-1} = \dfrac{0}{-1} = 0 = f(0)$.
+    \end{itemize}
+    Puisque $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^-} f(x) = f(0)$, la fonction \textbf{$f$ est continue en 0}.
+
+    \item \textbf{Étudier la continuité de $f$ sur son ensemble de définition.}
+    
+    \begin{itemize}
+        \item Sur $]-\infty; -1[$ et $]-1; 0[$, $f$ est une fonction rationnelle dont le dénominateur ne s'annule pas, elle y est donc continue.
+        \item Sur $]0; +\infty[$, la fonction $x \mapsto x^2-x$ est continue. Par composition avec la valeur absolue et la racine carrée, $f$ est continue sur $]0; +\infty[$.
+        \item Comme $f$ est également continue en $0$ (d'après la Q3), on conclut que \textbf{$f$ est continue sur tout son domaine $D_f$}.
+    \end{itemize}
+
+    \item \textbf{Écrire $f$ sans symbole de la valeur absolue.}
+    
+    Le trinôme $x^2-x = x(x-1)$ s'annule en $0$ et $1$. Sur $[0; +\infty[$, il est négatif sur $[0; 1]$ et positif sur $[1; +\infty[$. On a donc :
+    \[ f(x)=\begin{cases}
+    \dfrac{x^{2}}{x^{2}-1} & \text{si } x \in ]-\infty; -1[ \,\cup\, ]-1; 0[ \\ 
+    \sqrt{x-x^2} & \text{si } x \in [0; 1] \\
+    \sqrt{x^2-x} & \text{si } x \in [1; +\infty[
+    \end{cases} \]
+
+    \item \textbf{Montrer que la droite $(D)$ d'équation $y=x-\dfrac{1}{2}$ est asymptote oblique à $(C_{f})$ en $+\infty$.}
+    
+    Pour $x \ge 1$, $f(x) = \sqrt{x^2-x}$. Multiplions par l'expression conjuguée :
+    \[ f(x) - \left(x - \frac{1}{2}\right) = \frac{(x^2-x) - \left(x - \frac{1}{2}\right)^2}{\sqrt{x^2-x} + \left(x - \frac{1}{2}\right)} \]
+    Or $\left(x - \frac{1}{2}\right)^2 = x^2 - x + \frac{1}{4}$. Le numérateur se simplifie en $-\dfrac{1}{4}$. Ainsi :
+    \[ \lim_{x \to +\infty} \left[f(x) - \left(x - \frac{1}{2}\right)\right] = \lim_{x \to +\infty} \frac{-\frac{1}{4}}{\sqrt{x^2-x} + x - \frac{1}{2}} = 0 \]
+    La droite $(D) : y = x - \dfrac{1}{2}$ est donc \textbf{asymptote oblique à $(C_f)$ en $+\infty$}.
+
+    \item \textbf{Étudier le sens de variation puis dresser le tableau de variation de $f(x)$.}
+    
+    \textbf{Calcul de la dérivée $f'(x)$ par intervalles :}
+    \begin{itemize}
+        \item Sur $]-\infty; -1[ \,\cup\, ]-1; 0[$ : $f'(x) = \dfrac{2x(x^2-1)-x^2(2x)}{(x^2-1)^2} = \dfrac{-2x}{(x^2-1)^2}$. Comme $x < 0$, $-2x > 0$, donc $f'(x) > 0$ ($f$ est strictement croissante).
+        \item Sur $]0; 1[$ : $f'(x) = \dfrac{1-2x}{2\sqrt{x-x^2}}$. Elle s'annule en $x = \frac{1}{2}$, est positive sur $]0; \frac{1}{2}[$ et négative sur $]\frac{1}{2}; 1[$.
+        \item Sur $]1; +\infty[$ : $f'(x) = \dfrac{2x-1}{2\sqrt{x^2-x}}$. Pour $x > 1$, $2x-1 > 0$, donc $f'(x) > 0$ ($f$ est strictement croissante).
+    \end{itemize}
+    \textit{Note : $f$ n'est pas dérivable en $0$ et en $1$, d'où les doubles barres dans la ligne de la dérivée.}
+
+    \begin{center}
+    \begin{tikzpicture}
+       % 1. Initialisation des lignes et des valeurs de x
+       \tkzTabInit[lgt=2.5, espcl=1.5]{$x$ /1, $f'(x)$ /1, $f$ /2.5} 
+       {$-\infty$, $-1$, $0$, $\dfrac{1}{2}$, $1$, $+\infty$}
+       
+       % 2. Signe de la dérivée avec les barres de non-dérivabilité (d) et zéros (z)
+       \tkzTabLine{, +, d, +, d, +, z, -, d, +, } 
+       
+       % 3. Variations de la fonction f avec les limites et extrema
+       \tkzTabVar{-/ $1$, +D+/ $+\infty$ / $-\infty$, -/ $0$, +/ $\dfrac{1}{2}$, -D+/ $0$ / $0$, +/ $+\infty$}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+\end{document}
