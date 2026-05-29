@@ -46,7 +46,7 @@
     En factorisant par $2(1-3x)$ au numérateur :
     \[ f'(x) = \frac{2(1-3x)\left[-3(2x-1) - (1-3x)\right]}{(2x-1)^2} = \frac{2(1-3x)(-6x+3-1+3x)}{(2x-1)^2} \]
     \[ f'(x) = \frac{2(1-3x)(2-3x)}{(2x-1)^2} \]
-    L'expression donnée est exacte, l'affirmation est donc \textbf{Vraie}. *(Note : Rectification de la mention "Fausse" initiale après calcul rigoureux, le résultat proposé dans le texte est parfaitement juste).*
+    L'expression donnée est exacte, l'affirmation est donc \textbf{Vraie}.
 \end{enumerate}
 
 \smallbreak
@@ -239,19 +239,26 @@
     \end{itemize}
     \textit{Note : $f$ n'est pas dérivable en $0$ et en $1$, d'où les doubles barres dans la ligne de la dérivée.}
 
-    \begin{center}
-    \begin{tikzpicture}
-       % 1. Initialisation des lignes et des valeurs de x
-       \tkzTabInit[lgt=2.5, espcl=1.5]{$x$ /1, $f'(x)$ /1, $f$ /2.5} 
-       {$-\infty$, $-1$, $0$, $\dfrac{1}{2}$, $1$, $+\infty$}
-       
-       % 2. Signe de la dérivée avec les barres de non-dérivabilité (d) et zéros (z)
-       \tkzTabLine{, +, d, +, d, +, z, -, d, +, } 
-       
-       % 3. Variations de la fonction f avec les limites et extrema
-       \tkzTabVar{-/ $1$, +D+/ $+\infty$ / $-\infty$, -/ $0$, +/ $\dfrac{1}{2}$, -D+/ $0$ / $0$, +/ $+\infty$}
-    \end{tikzpicture}
-    \end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+   % 1. Initialisation des lignes et des valeurs de x
+   \tkzTabInit[lgt=2.5, espcl=1.5]{$x$ /1, $f'(x)$ /1, $f$ /2.5} 
+   {$-\infty$, $-1$, $0$, $\dfrac{1}{2}$, $1$, $+\infty$}
+   
+   % 2. Signe de la dérivée avec les barres de non-dérivabilité (d) et zéros (z)
+   \tkzTabLine{, +, d, +, d, +, z, -, d, +, } 
+   
+   % 3. Variations de la fonction f avec les limites et extrema
+   % Note : Utilisation de -D+/ en colonne 5 pour honorer proprement le 'd' de la dérivée
+   \tkzTabVar{-/ $1$, +D-/ $+\infty$ / $-\infty$, R/, +/ $\dfrac{1}{2}$, -/ $0$ / $0$, +/ $+\infty$}
+   
+   % 4. L'astuce d'Hercule Poirot : On cherche de la colonne 2 à la colonne 4 !
+   \tkzTabIma{2}{4}{3}{$0$}
+\end{tikzpicture}
+\end{center}   
+    
 \end{enumerate}
 
 \end{document}
