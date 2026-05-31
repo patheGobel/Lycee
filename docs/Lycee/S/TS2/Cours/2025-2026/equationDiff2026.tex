@@ -153,14 +153,15 @@ Soient $(E)$ une équation différentielle linéaire d'ordre $n$ à coefficients
 Si $y_1$ et $y_2$ sont deux solutions de l'équation homogène $(E')$, alors leur somme $y_1 + y_2$ est encore une solution de $(E')$.
 
 \begin{remarque}
-Plus généralement, toute combinaison linéaire $\lambda y_1 + \mu y_2$ (où $\lambda, \mu \in \mathbb{R}$) est aussi solution de $(E')$. On dit que l'ensemble des solutions de $(E')$ est un espace vectoriel.
+Plus généralement, toute combinaison linéaire $\lambda y_1 + \mu y_2$ (où $\lambda, \mu \in \mathbb{R}$) est aussi solution de $(E')$.
 \end{remarque}
 
 \subsection*{\underline{\textbf{\textcolor{red}{Propriété 2 : Cas de l'équation complète}}}}
-Si $y_h$ est une solution de l'équation homogène $(E')$ et $y_p$ est une solution de l'équation complète $(E)$, alors leur somme :
-\[ y(x) = y_h(x) + y_p(x) \]
+Si $y_h$ est une solution de l'équation homogène $(E')$ et $y_p$ est une solution de l'équation avec second membre $(E)$, alors leur somme :
+$ y(x) = y_h(x) + y_p(x)$
 est encore une solution de l'équation complète $(E)$.
 
+\begin{comment}
 -------------------------------------------------------
 
 \section*{\underline{\textbf{\textcolor{red}{Démonstrations des théorèmes de superposition}}}}
@@ -200,26 +201,29 @@ En remplaçant par les valeurs de nos hypothèses :
 \textbf{Conclusion :} On obtient exactement $L(y) = g(x)$, ce qui prouve que la fonction $y = y_h + y_p$ est bien solution de l'équation complète $(E)$.
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\end{comment}
 
-\subsection*{\underline{\textbf{\textcolor{green}{Preuve}}}}
-Soit $f_1$ une solution particulière de l'équation \textbf{(E)} avec second membre, et $f_2$ une solution générale de l'équation homogène associée \textbf{(E')}. Nous devons montrer que $f(x) = f_1(x) + f_2(x)$ est une solution générale de l'équation \textbf{(E)}.
+\subsection*{\underline{\textbf{\textcolor{green}{Preuve[Propriété 1]}}}}
+\textbf{A faire}
+\subsection*{\underline{\textbf{\textcolor{green}{Preuve[Propriété 2]}}}}
+Soit $f_p$ une solution particulière de l'équation \textbf{(E)} avec second membre, et $f_h$ une solution générale de l'équation homogène associée \textbf{(E')}. Nous devons montrer que $f(x) = f_p(x) + f_h(x) $ est une solution générale de l'équation \textbf{(E)}.
 
-Puisque $f_1$ est une solution particulière de \textbf{(E)}, cela signifie que lorsque nous remplaçons $y$ par $f_1$ dans \textbf{(E)}, nous obtenons une équation vraie. 
+Puisque $f_p$ est une solution particulière de \textbf{(E)}, cela signifie que lorsque nous remplaçons $y$ par $f_p$ dans \textbf{(E)}, nous obtenons une équation vraie. 
 
-C'est-à-dire: \textcolor{green}{\[a_{n}f_1^{(n)}(x) + a_{n-1}f_1^{(n-1)}(x) + \ldots + a_{2}f_{1}''(x) + a_{1}f_{1}'(x) + a_{0}f_{1}(x)=0\]}
+C'est-à-dire : \textcolor{green}{$ a_{n}f_p^{(n)}(x) + a_{n-1}f_p^{(n-1)}(x) + \ldots + a_{2}f_{p}''(x) + a_{1}f_{p}'(x) + a_{0}f_{p}(x)=g(x) $}
 
-De même, puisque $f_2$ est une solution générale de \textbf{(E')}, lorsque nous remplaçons $y$ par $f_2$ dans \textbf{(E')}, nous obtenons une équation vraie.
+De même, puisque $f_h$ est une solution générale de \textbf{(E')}, lorsque nous remplaçons $y$ par $f_h$ dans \textbf{(E')}, nous obtenons une équation vraie.
 
-C'est-à-dire: \textcolor{blue}{\[a_{n}f_{2}^{(n)}(x)+a_{n-1}f_{2}^{(n-1)}(x)+\cdots+a_{2}f_{2}^{''}(x)+a_{1}f_{2}^{'}(x)+a_{0}f_{2}(x)=g(x)\]}
+C'est-à-dire : \textcolor{blue}{$ a_{n}f_{h}^{(n)}(x)+a_{n-1}f_{h}^{(n-1)}(x)+\cdots+a_{2}f_{h}^{''}(x)+a_{1}f_{h}^{'}(x)+a_{0}f_{h}(x)=0 $}
 
 En ajoutant les deux équations, nous obtenons l'équation :
 
-$\textcolor{green}{a_{n}f_1^{(n)}(x) + a_{n-1}f_1^{(n-1)}(x) + \ldots + a_{2}f_{1}''(x) + a_{1}f_{1}'(x) + a_{0}f_{1}(x)}$ + $\textcolor{blue}{a_{n}f_2^{(n)}(x) + a_{n-1}f_2^{(n-1)}(x) +}$ 
-\[\textcolor{blue}{\ldots + a_{2}f_{2}''(x) + a_{1}f_{2}'(x) + a_{0}f_{2}(x)}\]
-\[=\textcolor{green}{0}+\textcolor{blue}{g(x)}\]
+$\textcolor{green}{a_{n}f_p^{(n)}(x) + a_{n-1}f_p^{(n-1)}(x) + \ldots + a_{2}f_{p}''(x) + a_{1}f_{p}'(x) + a_{0}f_{p}(x)}$ + $\textcolor{blue}{a_{n}f_h^{(n)}(x) + a_{n-1}f_h^{(n-1)}(x) +}$ 
+\[\textcolor{blue}{\ldots + a_{2}f_{h}''(x) + a_{1}f_{h}'(x) + a_{0}f_{h}(x)}\]
+\[=\textcolor{green}{g(x)}+\textcolor{blue}{0}\]
 
-\[a_{n}(f_{1}+f{2})^{(n)}(x)+a_{n-1}(f_{1}+f{2})^{(n-1)}(x)+\cdots+a_{2}(f_{1}+f{2})^{''}(x)+a_{1}(f_{1}+f{2})^{(')}(x)+a_{0}(f_{1}+f{2})(x)=g(x)\]
-Puisque $f_1$ est une solution de l'équation avec second membre \textbf{(E)} et $f_2$ est une solution de l'équation homogène \textbf{(E')}, la partie gauche de l'équation ci-dessus est égale à $g(x) + 0$, ce qui est simplement $g(x)$. Ainsi,\\ $f(x) = f_1(x) + f_2(x)$ satisfait l'équation différentielle \textbf{(E)}, ce qui prouve que c'est une solution générale de \textbf{(E)}.
+\[a_{n}(f_{p}+f_{h})^{(n)}(x)+a_{n-1}(f_{p}+f_{h})^{(n-1)}(x)+\cdots+a_{2}(f_{p}+f_{h})^{''}(x)+a_{1}(f_{p}+f_{h})'(x)+a_{0}(f_{p}+f_{h})(x)=g(x)\]
+Puisque $f_p$ est une solution de l'équation avec second membre \textbf{(E)} et $f_h$ est une solution de l'équation homogène \textbf{(E')}, la partie gauche de l'équation ci-dessus est égale à $g(x) + 0$, ce qui est simplement $g(x)$. Ainsi,\\ $f(x) = f_p(x) + f_h(x)$ satisfait l'équation différentielle \textbf{(E)}, ce qui prouve que c'est une solution générale de \textbf{(E)}.
 
 \section*{\underline{\textbf{\textcolor{red}{
 \begin{minipage}[t]{\textwidth}III. Équations différentielles linéaires d'ordre 1, à coefficients constants
@@ -245,21 +249,21 @@ La fonction nulle ($y = 0$, qui correspond au cas $k = 0$) est également une so
 
 
 \textbf{Conclusion :} Les solutions générales de l'équation homogène $(E')$ sont les fonctions $f_h$ (ou $y_h$) définies sur $\mathbb{R}$ de la forme :
-\[ f_h(x) = k e^{-\frac{b}{a}x} \quad \text{où } k \in \mathbb{R} \]
+$ f_h(x) = k e^{-\frac{b}{a}x} \quad \text{où } k \in \mathbb{R} $
 
 \noindent\textbf{Exemple :} 
 Résoudre sur $\mathbb{R}$ l'équation différentielle homogène $(E_1) : 2y' + 3y = 0$.
 
 \textbf{Solution :} 
 Ici, $a = 2$ et $b = 3$. D'après le cours, les solutions générales de cette équation sont les fonctions $y_h$ définies sur $\mathbb{R}$ par :
-\[ y_h(x) = k e^{-\frac{3}{2}x} \quad \text{où } k \in \mathbb{R} \]
+$ y_h(x) = k e^{-\frac{3}{2}x} \quad \text{où } k \in \mathbb{R} $
 \subsection*{\underline{\textbf{\textcolor{red}{2. Recherche d'une solution particulière de l'équation avec second membre}}}}
 
 Soit l'équation différentielle complète (avec second membre) $(E) : ay'(x) + by(x) = g(x)$.
 
 \begin{itemize}
     \item Une fonction $y_p$ est dite \textbf{solution particulière} de $(E)$ si elle est dérivable sur $\mathbb{R}$ et si elle vérifie l'équation complète : 
-    \[ a y_p'(x) + b y_p(x) = g(x) \]
+    $ a y_p'(x) + b y_p(x) = g(x) $
     
     \item \textbf{Cas où $g(x)$ est un polynôme :} Si $g(x)$ est un polynôme de degré $n$ et que $b \neq 0$, alors on cherche la solution particulière $y_p$ sous la forme d'un polynôme de même degré $n$.
     
@@ -280,10 +284,9 @@ Soit l'équation différentielle complète (avec second membre) $(E) : ay'(x) + 
     Le second membre $g(x) = 4x^2 - 2x$ est un polynôme de degré 2 et le coefficient devant $y$ est non nul ($b = -2 \neq 0$). On cherche donc $y_p$ sous la forme d'un polynôme de degré 2 : 
     \[ y_p(x) = Ax^2 + Bx + C \quad \Longrightarrow \quad y_p'(x) = 2Ax + B \]
     En injectant $y_p$ et $y_p'$ dans l'équation $(E_2)$, on obtient :
-    \[ (2Ax + B) - 2(Ax^2 + Bx + C) = 4x^2 - 2x \]
-    \[ -2Ax^2 + (2A - 2B)x + (B - 2C) = 4x^2 - 2x \]
-    Par identification des coefficients, on résout le système :
-    \[
+    \[ (2Ax + B) - 2(Ax^2 + Bx + C) = 4x^2 - 2x \quad \Longrightarrow \quad -2Ax^2 + (2A - 2B)x + (B - 2C) = 4x^2 - 2x \]
+    
+    \[\text{Par identification des coefficients, on résout le système :}
     \begin{cases}
     -2A = 4 \\
     2A - 2B = -2 \\
@@ -299,7 +302,8 @@ Soit l'équation différentielle complète (avec second membre) $(E) : ay'(x) + 
     Ainsi, la solution particulière est : $y_p(x) = -2x^2 - x - \frac{1}{2}$.
     
     \textbf{Cas où $g(x)$ est de forme trigonométrique :} Si $g(x)$ est de la forme $\alpha \cos(\beta x) + \mu \sin(\beta x)$ (où $\alpha$ et $\mu$ sont des constantes réelles), alors on cherche $y_p$ sous la forme :
-    \[ y_p(x) = A \cos(\beta x) + B \sin(\beta x) \]
+    $ y_p(x) = A \cos(\beta x) + B \sin(\beta x) $
+    
     où $A$ et $B$ sont deux constantes réelles à déterminer en injectant $y_p$ dans $(E)$.
     
     \item 
@@ -310,18 +314,20 @@ Soit l'équation différentielle complète (avec second membre) $(E) : ay'(x) + 
     Ici, $\beta = 2$. On cherche donc $y_p$ sous la forme :
     \[ y_p(x) = A \cos(2x) + B \sin(2x) \quad \Longrightarrow \quad y_p'(x) = -2A \sin(2x) + 2B \cos(2x) \]
     En injectant dans $(E_3)$, on a :
-    \[ (-2A \sin(2x) + 2B \cos(2x)) + (A \cos(2x) + B \sin(2x)) = 10\cos(2x) \]
+    $ (-2A \sin(2x) + 2B \cos(2x)) + (A \cos(2x) + B \sin(2x)) = 10\cos(2x) $
+    
     En regroupant les termes en $\cos(2x)$ et $\sin(2x)$ :
-    \[ (A + 2B)\cos(2x) + (-2A + B)\sin(2x) = 10\cos(2x) \]
-    Par identification, on obtient le système :
-    \[
+    $ (A + 2B)\cos(2x) + (-2A + B)\sin(2x) = 10\cos(2x) $
+    
+    
+    \[\text{Par identification, on obtient le système :}
     \begin{cases}
     A + 2B = 10 \\
-    -2A + B = 0 \implies B = 2A
+    -2A + B = 0 
     \end{cases}
     \Longrightarrow
     \begin{cases}
-    A + 4A = 10 \implies A = 2 \\
+     A = 2 \\
     B = 4
     \end{cases}
     \]
@@ -330,7 +336,8 @@ Soit l'équation différentielle complète (avec second membre) $(E) : ay'(x) + 
 
 \subsection*{\underline{\textbf{\textcolor{red}{3. Solution générale de \textbf{(E)}}}}}
 Une solution générale $y(x)$ de l'équation complète \textbf{(E)} est donnée par :
-\[ y(x) = y_h(x) + y_p(x) \] 
+$ y(x) = y_h(x) + y_p(x) $
+
 où $y_h$ est la solution générale de l'équation homogène \textbf{(E')} et $y_p$ est une solution particulière de \textbf{(E)}.
 
 \noindent\textbf{Exemple :} 
@@ -338,7 +345,7 @@ Résoudre sur $\mathbb{R}$ l'équation différentielle complète $(E_4) : y' + y
 
 \textbf{Solution :}  
 La solution générale de l'équation $(E_4)$ est la somme de ces deux fonctions. Les solutions sont donc les fonctions $y$ définies sur $\mathbb{R}$ par :
-\[ y(x) = y_h(x) + y_p(x) = k e^{-x} + 2\cos(2x) + 4\sin(2x) \quad \text{où } k \in \mathbb{R} \]
+$ y(x) = y_h(x) + y_p(x) = k e^{-x} + 2\cos(2x) + 4\sin(2x) \quad \text{où } k \in \mathbb{R} $
 
 \begin{comment}
 
@@ -466,7 +473,7 @@ Une équation différentielle du second ordre à coefficients constants est une 
 
 Soit $(E') : ay'' + by' + cy = 0$ avec $a \neq 0$. 
 Nous appelons \textbf{équation caractéristique} associée à $(E')$ l'équation du second degré : 
-\[ ar^2 + br + c = 0 \]
+\textcolor{red}{$ ar^2 + br + c = 0 $}
 
 \subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
 
@@ -474,24 +481,71 @@ Soit $(E') : ay'' + by' + cy = 0$ une équation différentielle et $ar^2 + br + 
 
 \begin{itemize}
     \item[$\bullet$] \textbf{Si $\Delta > 0$ :} L'équation caractéristique admet deux solutions réelles distinctes :
-    \[ r_1 = \frac{-b-\sqrt{\Delta}}{2a} \quad \text{et} \quad r_2 = \frac{-b+\sqrt{\Delta}}{2a} \]
+    
+    $ r_1 = \frac{-b-\sqrt{\Delta}}{2a} \quad \text{et} \quad r_2 = \frac{-b+\sqrt{\Delta}}{2a} $
     Dans ce cas, la solution générale de $(E')$ est de la forme :
-    \[ \textcolor{red}{\boxed{ y_h(x) = A e^{r_1 x} + B e^{r_2 x} }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} \]
+    
+    $ \textcolor{red}{\boxed{ y_h(x) = A e^{r_1 x} + B e^{r_2 x} }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} $
 
     \item[$\bullet$] \textbf{Si $\Delta = 0$ :} L'équation caractéristique admet une solution double réelle :
-    \[ r_0 = \frac{-b}{2a} \]
+    $ r_0 = \frac{-b}{2a} $
+    
     Dans ce cas, la solution générale de $(E')$ est de la forme :
-    \[ \textcolor{red}{\boxed{ y_h(x) = (Ax + B)e^{r_0 x} }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} \]
+    
+    $ \textcolor{red}{\boxed{ y_h(x) = (Ax + B)e^{r_0 x} }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} $
 
     \item[$\bullet$] \textbf{Si $\Delta < 0$ :} L'équation caractéristique admet deux solutions complexes conjuguées :
-    \[ r_1 = \alpha + i\beta \quad \text{et} \quad r_2 = \alpha - i\beta \quad \text{avec } \alpha = \frac{-b}{2a} \text{ et } \beta = \frac{\sqrt{-\Delta}}{2a} \]
+    
+    $ r_1 = \alpha + i\beta \quad \text{et} \quad r_2 = \alpha - i\beta \quad \text{avec } \alpha = \frac{-b}{2a} \text{ et } \beta = \frac{\sqrt{-\Delta}}{2a} $
+    
     Dans ce cas, la solution générale de $(E')$ est de la forme :
-    \[ \textcolor{red}{\boxed{ y_h(x) = e^{\alpha x} \left( A\cos(\beta x) + B\sin(\beta x) \right) }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} \]
+    
+    $ \textcolor{red}{\boxed{ y_h(x) = e^{\alpha x} \left( A\cos(\beta x) + B\sin(\beta x) \right) }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} $
 \end{itemize}
 
 
 \subsection*{\underline{\textbf{\textcolor{red}{Remarques}}}}
 Dans tous les cas, les constantes $A$ et $B$ sont dépendantes des conditions initiales.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exemples d'application}}}}
+
+\textbf{Exemple 1 : Cas $\Delta > 0$} \\
+Résoudre l'équation différentielle : $(E'_1) : y'' - 3y' + 2y = 0$.
+\begin{itemize}
+    \item L'équation caractéristique associée est : $r^2 - 3r + 2 = 0$.
+    \item Calcul du discriminant : $\Delta = (-3)^2 - 4(1)(2) = 9 - 8 = 1$.
+    \item Puisque $\Delta > 0$, l'équation admet deux racines réelles distinctes :
+    \[ r_1 = \frac{3 - \sqrt{1}}{2(1)} = 1 \quad \text{et} \quad r_2 = \frac{3 + \sqrt{1}}{2(1)} = 2 \]
+    \item La solution générale de $(E'_1)$ est donc :
+    \[ \boxed{y_h(x) = A e^{x} + B e^{2x}} \quad \text{avec } A, B \in \mathbb{R} \]
+\end{itemize}
+
+\medskip
+
+\textbf{Exemple 2 : Cas $\Delta = 0$} \\
+Résoudre l'équation différentielle : $(E'_2) : y'' - 4y' + 4y = 0$.
+\begin{itemize}
+    \item L'équation caractéristique associée est : $r^2 - 4r + 4 = 0$.
+    \item Calcul du discriminant : $\Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0$.
+    \item Puisque $\Delta = 0$, l'équation admet une racine double réelle :
+    \[ r_0 = \frac{4}{2(1)} = 2 \]
+    \item La solution générale de $(E'_2)$ est donc :
+    \[ \boxed{y_h(x) = (Ax + B)e^{2x}} \quad \text{avec } A, B \in \mathbb{R} \]
+\end{itemize}
+
+\medskip
+
+\textbf{Exemple 3 : Cas $\Delta < 0$} \\
+Résoudre l'équation différentielle : $(E'_3) : y'' - 2y' + 5y = 0$.
+\begin{itemize}
+    \item L'équation caractéristique associée est : $r^2 - 2r + 5 = 0$.
+    \item Calcul du discriminant : $\Delta = (-2)^2 - 4(1)(5) = 4 - 20 = -16$.
+    \item Puisque $\Delta < 0$, l'équation admet deux racines complexes conjuguées $r = \alpha \pm i\beta$ avec :
+    \[ \alpha = \frac{-(-2)}{2(1)} = 1 \quad \text{et} \quad \beta = \frac{\sqrt{-(-16)}}{2(1)} = \frac{\sqrt{16}}{2} = 2 \]
+    Les racines sont donc $r_1 = 1 + 2i$ et $r_2 = 1 - 2i$.
+    \item La solution générale de $(E'_3)$ est donc :
+    \[ \boxed{y_h(x) = e^{x} \left( A\cos(2x) + B\sin(2x) \right)} \quad \text{avec } A, B \in \mathbb{R} \]
+\end{itemize}
 
 \begin{comment}
 
