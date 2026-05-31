@@ -63,6 +63,8 @@ middle color = tcbcolback!80!black]
 
 \usepackage{color,soul}
 
+\newenvironment{remarque}{\smallskip\noindent\textbf{Remarque : }\itshape}{\smallskip}
+
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -122,27 +124,82 @@ middle color = tcbcolback!80!black]
 
 \section*{\underline{\textbf{\textcolor{red}{I. Définitions}}}}
 Soient $a_{0},a_{1},...,a_{n}$ des constantes réelles, $y=y(x)$ une fonction de 
-$x$. On appelle équation différentielle linéaire d'ordre $n$ à coefficients constants, une équation liant une fonction $y$ et ses dérivées successives $y',y'',\cdots , y^{n}$. On a $a_{n}y^{n}(x)+a_{n-1}y^{n-1}(x)+\cdots +a_{2}y''(x)+a_{1}y'(x)+a_{0}y(x)=g(x)$ où $g(x)$ est une fonction et $a_{n}\neq 0$
+$x$. On appelle \textbf{équation différentielle linéaire d'ordre $n$ à coefficients constants}, une équation liant une fonction $y$ et ses dérivées successives $y',y'',\cdots , y^{n}$. On a $a_{n}y^{n}(x)+a_{n-1}y^{n-1}(x)+\cdots +a_{2}y''(x)+a_{1}y'(x)+a_{0}y(x)=g(x)$ où $g(x)$ est une fonction donnée appelée second membre et $a_{n}\neq 0$
+
 \subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
-$2y''-3y'+4y=\sin 2x$ est une équation différentielle linéaire du $2^{nd}$ ordre, à coefficients constants.
+L'équation $2y'' - 3y' + 4y = \sin(2x)$ est une équation différentielle linéaire du 2\textsuperscript{nd} ordre, à coefficients constants.
+
 \begin{itemize}
-    \item pour $a_{n}\neq 0$, \textbf{(E)}$:a_{n}y^{n}(x)+a_{n-1}y^{n-1}(x)+\cdots+a_{2}y''(x)+a_{1}y'(x)+a_{0}y(x)=g(x)$ est une équation différentielle Linéaire d'ordre $n$, à coefficients constants, non homogène ou avec second membre. 
-    \item pour $a_{n}\neq 0$, \textbf{(E')}$:a_{n}y^{n}+a_{n-1}y^{n-1}+\cdots+a_{2}y''+a_{1}y'+a_{0}y=0$ est une équation différentielle linéaire d'ordre $n$, à coefficients constants, non homogène ou sans second membre ou homogène. 	   
-    \item \textbf{(E')} est associée à \textbf{(E)}
-    \item  Les solutions d'une équation différentielle sont des fonctions.
-    \item $f$ est une solution d'une équation différentielle d'ordre $n$, à coefficients constants sur \textbf{I}, si $f$ est $n$ fois dérivables sur \textbf{I} et $f$ vérifie l'équation.
-    \item L'ensemble des solutions d'une équation différentielle est appelé solution générale de l'équation différentielle.
-    \item Toute fonction vérifiant l'équation différentielle est appelée solution particulière.
-    \item Une solution qui vérifie des conditions initiales est appelée solution singulière.
+    \item L'équation \textbf{(E)} : $a_{n}y^{(n)} + a_{n-1}y^{(n-1)} + \dots + a_{1}y' + a_{0}y = g(x)$ est dite  \textbf{équation avec second membre}. 
+    
+    \item L'équation \textbf{(E')} : $a_{n}y^{(n)} + a_{n-1}y^{(n-1)} + \dots + a_{1}y' + a_{0}y = 0$ est dite \textbf{équation homogène} ou \textbf{équation sans second membre}. 	   
+    
+    \item \textbf{(E')} est appelée l'équation homogène \textbf{associée} à \textbf{(E)}.
+    
+    \item Les solutions d'une équation différentielle sont des \textbf{fonctions}.
+    
+    \item Une fonction $f$ est solution de l'équation différentielle sur un intervalle $I$ si elle est $n$ fois dérivable sur $I$ et si elle vérifie l'équation pour tout $x \in I$.
+    
+    \item L'ensemble de toutes les solutions d'une équation différentielle est appelé la \textbf{solution générale} de l'équation.
+    
+    \item Toute fonction particulière qui vérifie l'équation différentielle est appelée une \textbf{solution particulière}.
 \end{itemize}
-\section*{\underline{\textbf{\textcolor{red}{II. Théorèmes}}}}
-Soit l'équation différentielle linéaire d'ordre $n$ à coefficients constants avec $2^{nd}$ membre.
- 
-\textbf{(E)}$:a_{n}y^{(n)}(x)+a_{n-1}y^{(n-1)}(x)+\cdot+a_{2}y''(x)+a_{1}y'(x)+a_{0}y(x)=g(x)$ et l'équation différentielle linéaire d'ordre $n$ à coefficients constants sans $2^{nd}$ membre.
 
-\textbf{(E')}$:a_{n}y^{(n)}+a_{n-1}y^{(n-1)}+\cdot+a_{2}y''+a_{1}y'+a_{0}y=0$.
+\section*{\underline{\textbf{\textcolor{red}{II. Théorèmes de superposition}}}}
 
-Si $f_{1}$ est une solution particulière de \textbf{(E)} et $f_{2}$ une solution générale de \textbf{(E')} alors, $f(x)=f_{1}(x)+f_{2}(x)$ est une solution générale de \textbf{(E)}.
+Soient $(E)$ une équation différentielle linéaire d'ordre $n$ à coefficients constants avec second membre, et $(E')$ l'équation homogène associée.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Propriété 1 : Cas de l'équation homogène}}}}
+Si $y_1$ et $y_2$ sont deux solutions de l'équation homogène $(E')$, alors leur somme $y_1 + y_2$ est encore une solution de $(E')$.
+
+\begin{remarque}
+Plus généralement, toute combinaison linéaire $\lambda y_1 + \mu y_2$ (où $\lambda, \mu \in \mathbb{R}$) est aussi solution de $(E')$. On dit que l'ensemble des solutions de $(E')$ est un espace vectoriel.
+\end{remarque}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Propriété 2 : Cas de l'équation complète}}}}
+Si $y_h$ est une solution de l'équation homogène $(E')$ et $y_p$ est une solution de l'équation complète $(E)$, alors leur somme :
+\[ y(x) = y_h(x) + y_p(x) \]
+est encore une solution de l'équation complète $(E)$.
+
+-------------------------------------------------------
+
+\section*{\underline{\textbf{\textcolor{red}{Démonstrations des théorèmes de superposition}}}}
+
+Pour simplifier l'écriture, on note $L(y)$ l'expression du premier membre de l'équation :
+\[ L(y) = a_{n}y^{(n)} + a_{n-1}y^{(n-1)} + \dots + a_{1}y' + a_{0}y \]
+Ainsi, l'équation complète s'écrit $L(y) = g(x)$ et l'équation homogène s'écrit $L(y) = 0$.
+
+Grâce aux propriétés de la dérivation, pour toutes fonctions $u$ et $v$ dérivables $n$ fois, on a :
+\[ (u+v)' = u' + v', \quad (u+v)'' = u'' + v'', \quad \dots \quad (u+v)^{(n)} = u^{(n)} + v^{(n)} \]
+On en déduit la propriété de linéarité essentielle : $L(u + v) = L(u) + L(v)$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Preuve de la Propriété 1 (Cas homogène)}}}}
+
+\textbf{Hypothèses :} $y_1$ et $y_2$ sont deux solutions de $(E')$, ce qui signifie que :
+\[ L(y_1) = 0 \quad \text{et} \quad L(y_2) = 0 \]
+
+\textbf{Calcul :} Utilisons la propriété de linéarité pour la fonction somme $(y_1 + y_2)$ :
+\[ L(y_1 + y_2) = L(y_1) + L(y_2) \]
+En remplaçant par les hypothèses, on obtient :
+\[ L(y_1 + y_2) = 0 + 0 = 0 \]
+
+\textbf{Conclusion :} L'expression s'annule, donc la fonction $y_1 + y_2$ est bien solution de l'équation homogène $(E')$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Preuve de la Propriété 2 (Cas complet)}}}}
+
+\textbf{Hypothèses :} $y_h$ est solution de $(E')$ et $y_p$ est solution de $(E)$, ce qui signifie que :
+\[ L(y_h) = 0 \quad \text{et} \quad L(y_p) = g(x) \]
+
+\textbf{Calcul :} Posons la fonction somme $y = y_h + y_p$ et injectons-la dans l'opérateur $L$ :
+\[ L(y) = L(y_h + y_p) \]
+Par linéarité, on sépare les termes :
+\[ L(y) = L(y_h) + L(y_p) \]
+En remplaçant par les valeurs de nos hypothèses :
+\[ L(y) = 0 + g(x) = g(x) \]
+
+\textbf{Conclusion :} On obtient exactement $L(y) = g(x)$, ce qui prouve que la fonction $y = y_h + y_p$ est bien solution de l'équation complète $(E)$.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 \subsection*{\underline{\textbf{\textcolor{green}{Preuve}}}}
 Soit $f_1$ une solution particulière de l'équation \textbf{(E)} avec second membre, et $f_2$ une solution générale de l'équation homogène associée \textbf{(E')}. Nous devons montrer que $f(x) = f_1(x) + f_2(x)$ est une solution générale de l'équation \textbf{(E)}.
@@ -170,29 +227,121 @@ Puisque $f_1$ est une solution de l'équation avec second membre \textbf{(E)} et
 Une équation différentielle linéaire d'ordre 1, à coefficients constants est une équation de la forme
  \[\textbf{(E)}: ay'+by=g(x)\textbf{(avec second membre)} \]
  \[\textbf{(E')}: ay'+by=0\textbf{(sans second membre ou équation homogène)}\]
- \subsection*{\underline{\textbf{\textcolor{red}{1. Recherche de la solution générale de l'équation homogène}}}}
-Soit \textbf{(E')}$:ay'+by=0$ alors,
+\subsection*{\underline{\textbf{\textcolor{red}{1. Recherche de la solution générale de l'équation homogène}}}}
+$
+\begin{aligned}
+\textbf{Soit } \textbf{(E')} : ay'+by=0 \textbf{ où a et b sont des réels avec a } \neq 0 \textbf{  alors, } ay'=-by &\Longrightarrow \frac{y'}{y}=-\frac{b}{a}\\
+                                                                 &\Longrightarrow \ln|y|=-\frac{b}{a}x+c\\
+                                                                 &\Longrightarrow |y|=e^{-\frac{b}{a}x+c}\\
+                                                                 &\Longrightarrow |y|=e^{c}.e^{-\frac{b}{a}x}\\
+                                                                 &\Longrightarrow y=\pm e^{c}.e^{-\frac{b}{a}x}\end{aligned}
+$
 
-\[ay'=-by \Longrightarrow \frac{y'}{y}=-\frac{b}{a}\]
-\[\Longrightarrow \ln|y|=-\frac{b}{a}x+c\]
-\[\Longrightarrow |y|=e^{-\frac{b}{a}x+c}=e^{c}.e^{-\frac{b}{a}x}\]
-\[\Longrightarrow y=\pm e^{c}.e^{-\frac{b}{a}x}\]
+En posant $k = \pm e^c$, on obtient $y = k e^{-\frac{b}{a}x}$ avec $k \in \mathbb{R}^*$. 
 
-Soit \textbf{(E')}:$ay'+by=0$ alors $ay'=-by$ 
+\begin{remarque}
+La fonction nulle ($y = 0$, qui correspond au cas $k = 0$) est également une solution évidente de l'équation $(E')$. On peut donc étendre la constante $k$ à toutes les valeurs réelles.
+\end{remarque}
 
-Donc, $f_{2}$ est de la forme $f_{2}(x)=y_{2}(x)=ke^{-\frac{b}{a}x}$ où $K$ est une constante.
-\subsection*{\textbf{\textcolor{red}{
-\begin{minipage}[t]{\textwidth}
-\underline{2. Recherche d'une solution particulière de l'équation}\\
-\underline{différentielle linéaire d'ordre 1 avec 2\textsuperscript{nd} membre}
-\end{minipage}}}}
+
+\textbf{Conclusion :} Les solutions générales de l'équation homogène $(E')$ sont les fonctions $f_h$ (ou $y_h$) définies sur $\mathbb{R}$ de la forme :
+\[ f_h(x) = k e^{-\frac{b}{a}x} \quad \text{où } k \in \mathbb{R} \]
+
+\noindent\textbf{Exemple :} 
+Résoudre sur $\mathbb{R}$ l'équation différentielle homogène $(E_1) : 2y' + 3y = 0$.
+
+\textbf{Solution :} 
+Ici, $a = 2$ et $b = 3$. D'après le cours, les solutions générales de cette équation sont les fonctions $y_h$ définies sur $\mathbb{R}$ par :
+\[ y_h(x) = k e^{-\frac{3}{2}x} \quad \text{où } k \in \mathbb{R} \]
+\subsection*{\underline{\textbf{\textcolor{red}{2. Recherche d'une solution particulière de l'équation avec second membre}}}}
+
+Soit l'équation différentielle complète (avec second membre) $(E) : ay'(x) + by(x) = g(x)$.
+
 \begin{itemize}
-    \item Une fonction $f_{1}$ est solution de \textbf{(E)} si elle est dérivable et si elle vérifie \textbf{(E)} \[af'_{1}(x)+bf_{1}(x)=g(x)\]
-    \item Si $g(x)$ est un polynôme de degré $n$, alors $f_{1}$ est aussi un polynôme de degré $n$.
-    \item Si \( g(x) \) est de la forme \( a\cos \beta x , a\sin \beta x \) , \( a\cos \beta x + b\sin \beta x \), alors \( f_1 \) sera de la forme \( A\cos \beta x + B\sin \beta x \).
+    \item Une fonction $y_p$ est dite \textbf{solution particulière} de $(E)$ si elle est dérivable sur $\mathbb{R}$ et si elle vérifie l'équation complète : 
+    \[ a y_p'(x) + b y_p(x) = g(x) \]
+    
+    \item \textbf{Cas où $g(x)$ est un polynôme :} Si $g(x)$ est un polynôme de degré $n$ et que $b \neq 0$, alors on cherche la solution particulière $y_p$ sous la forme d'un polynôme de même degré $n$.
+    
+    \item \textbf{Cas où $g(x)$ est de forme trigonométrique :} Si $g(x)$ est de la forme $\alpha \cos(\beta x) + \mu \sin(\beta x)$ (où $\alpha$ et $\mu$ sont des constantes réelles), alors on cherche $y_p$ sous la forme :
+    $ y_p(x) = A \cos(\beta x) + B \sin(\beta x) $
+    où $A$ et $B$ sont deux constantes réelles à déterminer en injectant $y_p$ dans $(E)$.
 \end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple :}}}}
+
+\begin{itemize}
+
+    \item 
+    \noindent\textbf{Exemple :} 
+    Trouver une solution particulière de l'équation $(E_2) : y' - 2y = 4x^2 - 2x$.
+    
+    \textbf{Solution :} 
+    Le second membre $g(x) = 4x^2 - 2x$ est un polynôme de degré 2 et le coefficient devant $y$ est non nul ($b = -2 \neq 0$). On cherche donc $y_p$ sous la forme d'un polynôme de degré 2 : 
+    \[ y_p(x) = Ax^2 + Bx + C \quad \Longrightarrow \quad y_p'(x) = 2Ax + B \]
+    En injectant $y_p$ et $y_p'$ dans l'équation $(E_2)$, on obtient :
+    \[ (2Ax + B) - 2(Ax^2 + Bx + C) = 4x^2 - 2x \]
+    \[ -2Ax^2 + (2A - 2B)x + (B - 2C) = 4x^2 - 2x \]
+    Par identification des coefficients, on résout le système :
+    \[
+    \begin{cases}
+    -2A = 4 \\
+    2A - 2B = -2 \\
+    B - 2C = 0
+    \end{cases}
+    \Longrightarrow
+    \begin{cases}
+    A = -2 \\
+    B = -1 \\
+    C = -\frac{1}{2}
+    \end{cases}
+    \]
+    Ainsi, la solution particulière est : $y_p(x) = -2x^2 - x - \frac{1}{2}$.
+    
+    \textbf{Cas où $g(x)$ est de forme trigonométrique :} Si $g(x)$ est de la forme $\alpha \cos(\beta x) + \mu \sin(\beta x)$ (où $\alpha$ et $\mu$ sont des constantes réelles), alors on cherche $y_p$ sous la forme :
+    \[ y_p(x) = A \cos(\beta x) + B \sin(\beta x) \]
+    où $A$ et $B$ sont deux constantes réelles à déterminer en injectant $y_p$ dans $(E)$.
+    
+    \item 
+    \noindent\textbf{Exemple :} 
+    Trouver une solution particulière de l'équation $(E_3) : y' + y = 10\cos(2x)$.
+    
+    \textbf{Solution :} 
+    Ici, $\beta = 2$. On cherche donc $y_p$ sous la forme :
+    \[ y_p(x) = A \cos(2x) + B \sin(2x) \quad \Longrightarrow \quad y_p'(x) = -2A \sin(2x) + 2B \cos(2x) \]
+    En injectant dans $(E_3)$, on a :
+    \[ (-2A \sin(2x) + 2B \cos(2x)) + (A \cos(2x) + B \sin(2x)) = 10\cos(2x) \]
+    En regroupant les termes en $\cos(2x)$ et $\sin(2x)$ :
+    \[ (A + 2B)\cos(2x) + (-2A + B)\sin(2x) = 10\cos(2x) \]
+    Par identification, on obtient le système :
+    \[
+    \begin{cases}
+    A + 2B = 10 \\
+    -2A + B = 0 \implies B = 2A
+    \end{cases}
+    \Longrightarrow
+    \begin{cases}
+    A + 4A = 10 \implies A = 2 \\
+    B = 4
+    \end{cases}
+    \]
+    La solution particulière est donc : $y_p(x) = 2\cos(2x) + 4\sin(2x)$.
+\end{itemize}
+
 \subsection*{\underline{\textbf{\textcolor{red}{3. Solution générale de \textbf{(E)}}}}}
-Une solution générale $y(x)$ de \textbf{(E)} est donnée par \[y(x)=f_{2}(x)+f_{1}(x)\] où $f_{2}$ est une solution générale de \textbf{(E')} et $f_{1}(x)$ une solution particulière de \textbf{(E).}
+Une solution générale $y(x)$ de l'équation complète \textbf{(E)} est donnée par :
+\[ y(x) = y_h(x) + y_p(x) \] 
+où $y_h$ est la solution générale de l'équation homogène \textbf{(E')} et $y_p$ est une solution particulière de \textbf{(E)}.
+
+\noindent\textbf{Exemple :} 
+Résoudre sur $\mathbb{R}$ l'équation différentielle complète $(E_4) : y' + y = 10\cos(2x)$.
+
+\textbf{Solution :}  
+La solution générale de l'équation $(E_4)$ est la somme de ces deux fonctions. Les solutions sont donc les fonctions $y$ définies sur $\mathbb{R}$ par :
+\[ y(x) = y_h(x) + y_p(x) = k e^{-x} + 2\cos(2x) + 4\sin(2x) \quad \text{où } k \in \mathbb{R} \]
+
+\begin{comment}
+
 \subsection*{\underline{\textbf{\textcolor{red}{Exercice d'application}}}}
 Soit $\phi$ la fonction dérivable sur $\mathbb{R}$ solution de l'équation différentielle\\
 \textbf{(E)}:$2y'-3y=x^{2}+5$ dont la dérivée s'annule en 0.
@@ -298,38 +447,102 @@ Soit $\phi$ la fonction dérivable sur $\mathbb{R}$ solution de l'équation diff
         \caption{Courbe représentative de $\phi(x)$.}
     \end{figure}
 \end{enumerate}
-\section*{\underline{\textbf{\textcolor{red}{IV. Équations différentielles du 2nd ordre, à coefficients constants}}}}
-C'est une équation de la forme
 
-\textbf{(E)}: $ay''+by'+cy=g(x)$ ; $\neq 0$ (équation avec $2^{nd}$ membre)
+\end{comment}
 
-\textbf{(E')}: $ay''+by'+cy=0$ ; $\neq 0$ (équation homogène)
+\section*{\underline{\textbf{\textcolor{red}{IV. Équations différentielles du 2\textsuperscript{nd} ordre à coefficients constants}}}}
 
-$f$ est une solution de \textbf{(E):}(respectivement de \textbf{(E')}) sur \textbf{I} si $f$ est deux fois dérivables sur \textbf{I}  et $f$ vérifie \textbf{(E)}(respectivement $f$ vérifie \textbf{(E')})
-\subsection*{\underline{\textbf{\textcolor{red}{1. Recherche de la solution générale de (E')}}}}
-Soit $\textbf{(E':)}ay''+by'+cy=0$ avec $a\neq 0$, nous appelons équation\\\ caractéristique associée à \textbf{(E')} l'équation $ar^{2}+br+c=0$
+Une équation différentielle du second ordre à coefficients constants est une équation de la forme :
+
+\noindent\textbf{(E)} : $ay'' + by' + cy = g(x)$ \quad où $a, b, c \in \mathbb{R}$ avec $a \neq 0$ (Équation avec second membre).
+
+\medskip
+
+\noindent L'équation obtenue en remplaçant le second membre par $0$ est appelée \textbf{équation homogène} (ou équation sans second membre) associée à $(E)$ :
+
+\noindent\textbf{(E')} : $ay'' + by' + cy = 0$ \quad où $a \neq 0$ (Équation homogène).
+
+\subsection*{\underline{\textbf{\textcolor{red}{ Recherche de la solution homogène de (E')}}}}
+
+Soit $(E') : ay'' + by' + cy = 0$ avec $a \neq 0$. 
+Nous appelons \textbf{équation caractéristique} associée à $(E')$ l'équation du second degré : 
+\[ ar^2 + br + c = 0 \]
+
 \subsection*{\underline{\textbf{\textcolor{red}{Théorème}}}}
-Soit \textbf{(E')}:$ay''+by'+cy=0$ et $ar^{2}+br+c=0$ équation caractéristique associée de discriminant $\Delta=b^{2}-4ac$, alors:
+
+Soit $(E') : ay'' + by' + cy = 0$ une équation différentielle et $ar^2 + br + c = 0$ son équation caractéristique associée de discriminant $\Delta = b^2 - 4ac$.
+
 \begin{itemize}
-    \item[$\bullet$] Si $\Delta >0$ alors, l'équation $ar^{2}+br+c=0$ admet deux solutions réelles distinctes \[r_{1}=\frac{-b-\sqrt{\Delta}}{2a}, r_{2}=\frac{-b+\sqrt{\Delta}}{2a}\]
-    Dans ce cas, \textbf{(E')}:$ay''+by'+cy=0$ admet comme solution générale $y_{2}$ de la forme\\
-    \[\textcolor{red}{ \boxed{ y_{2}(x)=Ae^{r_{1}x}+Be^{r_{2}x} } }\text{ Avec A et B des Constants déterminées par les conditions initales}\]
-    \item[$\bullet$] Si $\Delta = 0$ alors, l'équation $ar^{2}+br+c=0$ admet une solutions double réelle \[r_{0}=\frac{-b}{2a}\]
-    Et l'équation $(E')$ admet une solution générale de la forme 
-    \[\textcolor{red}{ \boxed{ y_{2}(x)=(Ax+B)e^{r_{0}x} } }\]
-    \item[$\bullet$] Si $\Delta <0$ alors, l'équation $ar^{2}+br+c=0$ admet deux solutions complexes conjuguées \[\alpha + i\beta, \alpha - i\beta\]
-    Ainsi, \textbf{(E')}:$ay''+by'+cy=0$ admet une solution générale de la forme 
-     \[\textcolor{red}{ \boxed{ y_{2}(x)=Ae^{\alpha x}(A\cos \beta x+B\sin \beta x) } }\]
+    \item[$\bullet$] \textbf{Si $\Delta > 0$ :} L'équation caractéristique admet deux solutions réelles distinctes :
+    \[ r_1 = \frac{-b-\sqrt{\Delta}}{2a} \quad \text{et} \quad r_2 = \frac{-b+\sqrt{\Delta}}{2a} \]
+    Dans ce cas, la solution générale de $(E')$ est de la forme :
+    \[ \textcolor{red}{\boxed{ y_h(x) = A e^{r_1 x} + B e^{r_2 x} }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} \]
+
+    \item[$\bullet$] \textbf{Si $\Delta = 0$ :} L'équation caractéristique admet une solution double réelle :
+    \[ r_0 = \frac{-b}{2a} \]
+    Dans ce cas, la solution générale de $(E')$ est de la forme :
+    \[ \textcolor{red}{\boxed{ y_h(x) = (Ax + B)e^{r_0 x} }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} \]
+
+    \item[$\bullet$] \textbf{Si $\Delta < 0$ :} L'équation caractéristique admet deux solutions complexes conjuguées :
+    \[ r_1 = \alpha + i\beta \quad \text{et} \quad r_2 = \alpha - i\beta \quad \text{avec } \alpha = \frac{-b}{2a} \text{ et } \beta = \frac{\sqrt{-\Delta}}{2a} \]
+    Dans ce cas, la solution générale de $(E')$ est de la forme :
+    \[ \textcolor{red}{\boxed{ y_h(x) = e^{\alpha x} \left( A\cos(\beta x) + B\sin(\beta x) \right) }} \quad \text{où } A \text{ et } B \text{ sont des constantes réelles.} \]
 \end{itemize}
+
+
 \subsection*{\underline{\textbf{\textcolor{red}{Remarques}}}}
 Dans tous les cas, les constantes $A$ et $B$ sont dépendantes des conditions initiales.
-\subsection*{\underline{\textbf{\textcolor{red}{2. Recherche d'une solution particulière}}}}
+
+\begin{comment}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Recherche d'une solution particulière de (E)}}}}
+
+Pour trouver une solution particulière $y_p$ de l'équation complète $ay'' + by' + cy = g(x)$, on cherche une fonction $y_p$ ayant une forme similaire à celle de $g(x)$.
+
 \begin{itemize}
-    \item[$\bullet$ ] Si $g$ est un polynôme de degré $n$, alors $f_{1}$ est aussi un polynôme de degré
-    \item $n+1$ si $c=0$.
-    \item $n$ si $c\neq 0$
-    \item[$\bullet$ ] Si $g(x)$ est de la forme \( a\cos \beta x / a\sin \beta x \),\( a\cos \beta x + b\sin \beta x \) alors, $f_{1}(x)$ sera de la forme \( A\cos \beta x + B\sin \beta x \).
+    \item \textbf{Cas où $g(x)$ est un polynôme de degré $n$ :}
+    \begin{itemize}
+        \item Si $c \neq 0$, on cherche $y_p(x)$ sous la forme d'un polynôme de degré $n$.
+        \item Si $c = 0$ et $b \neq 0$, on cherche $y_p(x)$ sous la forme $x \times P(x)$, où $P(x)$ est un polynôme de degré $n$.
+        \item Si $c = 0$ et $b = 0$, on cherche $y_p(x)$ sous la forme $x^2 \times P(x)$.
+    \end{itemize}
+
+    \item \textbf{Cas où $g(x) = P(x)e^{\mu x}$ (avec $P$ un polynôme de degré $n$) :}
+    \begin{itemize}
+        \item Si $\mu$ n'est pas racine de l'équation caractéristique, on cherche : \\ $y_p(x) = Q(x)e^{\mu x}$ avec $\deg(Q) = \deg(P)$.
+        \item Si $\mu$ est racine simple de l'équation caractéristique, on cherche : \\ $y_p(x) = x \cdot Q(x)e^{\mu x}$.
+        \item Si $\mu$ est racine double de l'équation caractéristique, on cherche : \\ $y_p(x) = x^2 \cdot Q(x)e^{\mu x}$.
+    \end{itemize}
+
+    \item \textbf{Cas où $g(x) = \alpha \cos(\omega x) + \mu \sin(\omega x)$ :}
+    \begin{itemize}
+        \item Si $i\omega$ n'est pas racine de l'équation caractéristique, on cherche $y_p$ sous la forme :
+        \[ y_p(x) = A \cos(\omega x) + B \sin(\omega x) \]
+        \item Si $i\omega$ est racine de l'équation caractéristique (ce qui arrive si $b=0$ et $\omega = \sqrt{c/a}$), on cherche $y_p$ sous la forme :
+        \[ y_p(x) = x \left( A \cos(\omega x) + B \sin(\omega x) \right) \]
+    \end{itemize}
 \end{itemize}
+
+\noindent\textbf{Exemple (Cas sans résonance) :} 
+Trouver une solution particulière de $(E) : y'' - 3y' + 2y = 2x^2 + 1$.
+
+\textbf{Solution :} 
+Le second membre est un polynôme de degré 2 et le coefficient $c = 2 \neq 0$. On cherche donc $y_p$ sous la forme $y_p(x) = Ax^2 + Bx + C$.
+On calcule les dérivées :
+\[ y_p'(x) = 2Ax + B \quad \text{et} \quad y_p''(x) = 2A \]
+En injectant dans $(E)$ :
+\[ (2A) - 3(2Ax + B) + 2(Ax^2 + Bx + C) = 2x^2 + 1 \]
+\[ 2Ax^2 + (-6A + 2B)x + (2A - 3B + 2C) = 2x^2 + 1 \]
+Par identification :
+\[
+\begin{cases}
+2A = 2 \implies A = 1 \\
+-6A + 2B = 0 \implies 2B = 6 \implies B = 3 \\
+2A - 3B + 2C = 1 \implies 2(1) - 3(3) + 2C = 1 \implies 2C = 8 \implies C = 4
+\end{cases}
+\]
+La solution particulière est donc : $\boxed{y_p(x) = x^2 + 3x + 4}$.
+
 \subsection*{\underline{\textbf{\textcolor{red}{3. Solution générale de (E)}}}}
 Soit $f_{2}(x)$ solution générale de \textbf{(E')}, si $f_{1}(x)$ donnée, est solution particulière de \textbf{(E)}, alors la solution générale de \textbf{(E)}; $y(x)$,sera de la forme \[y(x)=f_{2}(x)+f_{1}(x) \]
 \subsection*{\underline{\textbf{\textcolor{red}{Exemple}}}}
@@ -413,4 +626,5 @@ Pour représenter graphiquement la solution $y(x) = \frac{1}{2} e^{3x} - \frac{1
     \end{tikzpicture}
     \caption{Courbe représentative de $y(x) = \frac{1}{2} e^{3x} - \frac{1}{2} e^x$.}
 \end{figure}
+\end{comment}
 \end{document}
