@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  31 MAY 2026 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  1 JUN 2026 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1282,7 +1282,7 @@ Overfull \hbox (8.85988pt too wide) in paragraph at lines 460--460
 [][]$[]$ 
  []
 
-[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [4] [5]
+[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [4] [5] [6]
 (build/equationDiff2026.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1292,8 +1292,8 @@ Package rerunfilecheck Info: File `equationDiff2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41080 strings out of 474222
- 960795 string characters out of 5748732
+ 41081 strings out of 474222
+ 960801 string characters out of 5748732
  1942975 words of memory out of 5000000
  62594 multiletter control sequences out of 15000+600000
  627255 words of font info for 97 fonts, out of 8000000 for 9000
@@ -1309,10 +1309,10 @@ ts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb>
-Output written on build/equationDiff2026.pdf (5 pages, 208215 bytes).
+Output written on build/equationDiff2026.pdf (6 pages, 210338 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
+ 182 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

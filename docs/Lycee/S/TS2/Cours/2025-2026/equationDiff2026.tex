@@ -547,6 +547,41 @@ Résoudre l'équation différentielle : $(E'_3) : y'' - 2y' + 5y = 0$.
     \[ \boxed{y_h(x) = e^{x} \left( A\cos(2x) + B\sin(2x) \right)} \quad \text{avec } A, B \in \mathbb{R} \]
 \end{itemize}
 
+\medskip
+
+\textbf{Exemple 4 : Résolution avec conditions initiales} \\
+Déterminer la solution unique de l'équation $(E'_1) : y'' - 3y' + 2y = 0$ vérifiant les conditions initiales :
+\[ y(0) = 3 \quad \text{et} \quad y'(0) = 4 \]
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Forme générale de la solution} \\
+    D'après l'Exemple 1, la solution générale de l'équation est :
+    \[ y_h(x) = A e^{x} + B e^{2x} \quad \text{avec } A, B \in \mathbb{R} \]
+    
+    \item \textbf{Étape 2 : Calcul de la dérivée} \\
+    Pour appliquer la seconde condition, on dérive la fonction $y_h$ :
+    \[ y_h'(x) = A e^{x} + 2B e^{2x} \]
+    
+    \item \textbf{Étape 3 : Application des conditions initiales} \\
+    En injectant $x = 0$ dans les expressions de $y_h$ et $y_h'$, on obtient le système d'équations suivant :
+    \[
+    \begin{cases}
+    y_h(0) = 3 \implies A e^{0} + B e^{0} = 3 \implies A + B = 3 \\
+    y_h'(0) = 4 \implies A e^{0} + 2B e^{0} = 4 \implies A + 2B = 4
+    \end{cases}
+    \]
+    
+    \item \textbf{Étape 4 : Résolution du système} \\
+    Par soustraction de la première ligne à la deuxième :
+    \[ (A + 2B) - (A + B) = 4 - 3 \implies B = 1 \]
+    En remplaçant $B = 1$ dans la première équation ($A + 1 = 3$), on trouve :
+    \[ A = 2 \]
+    
+    \item \textbf{Conclusion :} \\
+    La solution unique de l'équation vérifiant ces conditions initiales est :
+    \[ \boxed{y(x) = 2e^{x} + e^{2x}} \]
+\end{itemize}
+
 \begin{comment}
 
 \subsection*{\underline{\textbf{\textcolor{red}{2. Recherche d'une solution particulière de (E)}}}}
