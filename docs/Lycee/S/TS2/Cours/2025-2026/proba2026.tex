@@ -56,7 +56,7 @@ middle color = tcbcolback!80!black]
 }
 
 \usepackage{verbatim}
-
+\usepackage{istgame}
 \usepackage{color,soul}
 
 \usepackage{amsmath}
@@ -121,7 +121,7 @@ middle color = tcbcolback!80!black]
 \subsection*{\underline{\textbf{\textcolor{red}{1. Expérience aléatoire}}}}
 Une expérience est dite aléatoire si son issue est impossible à prévoir avec certitude.
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 1}}}
 \begin{enumerate}
     \item On lance une pièce de monnaie : on ne peut pas savoir à l'avance si on obtiendra "pile" ou "face".
     \item On lance un dé à 6 faces : on ne peut pas prédire quel numéro apparaîtra sur la face supérieure.
@@ -132,7 +132,7 @@ Une expérience est dite aléatoire si son issue est impossible à prévoir avec
 
 On appelle univers d’une expérience aléatoire, noté $\Omega$, l’ensemble de tous les résultats (ou issues) possibles.
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 2}}}
 \begin{itemize}
     \item Lancer d'une pièce : $\Omega = \{ \text{pile, face} \}$.
     \item Lancer d'un dé à 6 faces : $\Omega = \{1, 2, 3, 4, 5, 6\}$.
@@ -141,7 +141,7 @@ On appelle univers d’une expérience aléatoire, noté $\Omega$, l’ensemble 
 \subsection*{\underline{\textbf{\textcolor{red}{3. Evènement}}}}
 Soit $\Omega$ l’univers associé à une expérience aléatoire. On appelle évènement toute partie (sous-ensemble) de $\Omega$.
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 3}}}
 
 Soit le Lancer d’un dé numéroté de 1 à 6 .
 
@@ -156,7 +156,7 @@ $B=\left\lbrace 1, 6\right\rbrace$ est un évènement de $\Omega$ .
 
 Soit $\Omega$ un univers associé à l'expérience aléatoire. On appelle évènement élémentaire tout singleton de $\Omega$
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 4}}}
 
 Pour le lancer d'un dé
 
@@ -167,12 +167,13 @@ $E_1=\left\lbrace 1 \right\rbrace $, $E_2=\left\lbrace 3 \right\rbrace $ et $E_3
 \subsection*{\underline{\textbf{\textcolor{red}{5. Evènement réalisé}}}}
 Un événement est dit réalisé si le résultat de l’expérience appartient à cet évènement.
 
-\textbf{Exemple}
+\underline{\textbf{\textcolor{red}{Exemple 5}}}
+
 Soit $A = \{1, 2, 6\}$. Si le dé tombe sur $2$, alors $2 \in A$ : on dit que $A$ est réalisé.
 \subsection*{\underline{\textbf{\textcolor{red}{6. Évènement certain}}}}
 C'est l'évènement qui contient toutes les issues possibles. Il est noté $\Omega$. Il se réalise toujours.
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 6}}}
 
 Pour le Lancer d’un dé:
 
@@ -185,7 +186,7 @@ $\Omega = \left\lbrace 1, 2, 3, 4, 5, 6\right\rbrace $. C’est l’événement 
 \subsection*{\underline{\textbf{\textcolor{red}{7. Évènement incertain ou évènement impossible}}}}
 C'est l'évènement qui ne contient aucune issue. Il est noté $\emptyset$. Il ne se réalise jamais.
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 7}}}
 
 Soit le Lancer un dé numéroté de 1 à 6 .
 
@@ -214,7 +215,7 @@ L’évènement contraire de $A$, noté $\overline{A}$ ou $\overline{A}=C^{A}_{\
 Si A et $\overline{A}$ sont deux évènements contraires alors:
 $A \cap \overline{A} = \emptyset$ et $A \cup \overline{A} = \Omega$.
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 8}}}
 
 Pour le Lancer d’un dé:
 
@@ -244,7 +245,7 @@ Deux évènements $A$ et $B$ sont incompatibles s'ils ne peuvent pas se réalise
 
 Si $A$ et $B$ sont deux évènements incompatibles alors: $A\cap B=\emptyset$ 
 
-\underline{\textbf{\textcolor{red}{Exemple}}}
+\underline{\textbf{\textcolor{red}{Exemple 9}}}
 
 Soit le Lancer d’un dé numéroté de 1 à 6 .
 
@@ -274,7 +275,7 @@ Comme aucun nombre ne peut être à la fois pair et impair, les événements \(A
     }
 \end{center}
 
-\underline{\textbf{Exemple pour bien comprendre :}} \\
+\underline{\textbf{Exemple 10 pour bien comprendre :}} \\
 On lance un dé à 6 faces ($\Omega = \{1; 2; 3; 4; 5; 6\}$).
 
 \begin{enumerate}
@@ -332,7 +333,7 @@ De même, considérons l'évènement $B=\{1, 6\}$. Il y a deux chances sur 6 de 
 
 La probabilité de l'évènement $B$ est donc égale à $\frac{2}{6}$. On note $P(B)=\frac{1}{3}$.
 
-\underline{\textbf{\textcolor{red}{Exercice D'application}}}\\
+\underline{\textbf{\textcolor{red}{Exercice D'application 1}}}\\
 On considère l’ensemble E des entiers de 20 à 40. On choisit l’un de ses nombres au hasard.
 
 \begin{itemize}
@@ -408,7 +409,7 @@ En situation d'équiprobabilité $\forall A \subset \Omega$
 
 \rule{\linewidth}{0.5pt}
 
-\underline{\textbf{\textcolor{red}{Exemple}}}\\
+\underline{\textbf{\textcolor{red}{Exemple 11}}}\\
 On lance un dé parfait de 6 faces numéroté de 1 à 6. \\
 Calculer la probabilité des éléments suivant : \\
 $A$: "Le numéro apparu est pair" \\
@@ -425,7 +426,7 @@ $\Omega = \{1; 2; 3; 4; 5; 6\} \quad A = \{2; 4; 6\} \quad B = \{4; 5; 6\} \quad
 
 \rule{\linewidth}{0.5pt}
 
-\underline{\textbf{\textcolor{red}{Exemple}}}\\
+\underline{\textbf{\textcolor{red}{Exemple 12}}}\\
 Une urne contient 3 boules blanches numérotées de 1 à 3, 4 boules rouges numérotées de 1 à 4, 2 boules noires numérotées de 1 à 2. Les boules sont indiscernables au toucher. On tire successivement sans remise trois boules de l'urne. \\
 Calculer le nombre de tirage possible. \\
 Calculer la probabilité des éléments suivants : \\
@@ -764,35 +765,7 @@ Soit l'arbre suivant avec les données fournies :
 \node at (2.5,-4) [right] {$1/3$};
 
 \end{tikzpicture}\\
-++++++++++++++++
-\subsection*{Partie A : Modélisation par une suite numérique}
-\begin{enumerate}
-    \item Au jour 0, le serveur est actif donc $p_0 = 1$ et $P(M_0) = 0$. D'après l'énoncé, la probabilité qu'il reste actif sachant qu'il l'était est de $0,6$. On a donc :
-    \[ p_1 = P(A_1) = P(A_1 \mid A_0) \times P(A_0) = 0,6 \times 1 = \mathbf{0,6} \]
 
-    \item L'arbre pondéré reliant le jour $n$ au jour $n+1$ est le suivant :
-    \begin{center}
-    \usepackage{istgame} % À ajouter dans votre préambule si ce n'est pas fait
-    \begin{istgame}[scale=1.2]
-        \xtdistance{1.5cm}{3.5cm}
-        \istroot(0)
-            \istb{p_n}[al]{A_n}
-            \istb{1-p_n}[bl]{M_n}
-            \endgroup
-        \xtdistance{1cm}{2.5cm}
-        \istroot(1)(0-1)
-            \istb{0,6}[al]{A_{n+1}}
-            \istb{0,4}[bl]{M_{n+1}}
-            \endgroup
-        \istroot(2)(0-2)
-            \istb{0,9}[al]{A_{n+1}}
-            \istb{0,1}[bl]{M_{n+1}}
-            \endgroup
-    \end{istgame}
-    \end{center}
-
-    \item En utilisant la formule des probabilités totales d'après l'arbre précédent :
-+++++++++++++++++++++++
 \begin{itemize}
     \item $P(A) = 1/4 \implies P(\bar{A}) = 1 - P(A) = \boxed{3/4}$
     \item $P_A(B) = 1/3 \implies P_A(\bar{B}) = 1 - P_A(B) = \boxed{2/3}$
