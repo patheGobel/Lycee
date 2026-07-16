@@ -111,10 +111,24 @@ h1 {
     background: #f9f9f9;
     transition: max-height 0.5s ease, opacity 0.4s ease;
 }
-
+/* 
+   ANCIENNE VERSION ABANDONNÉE :
+   La hauteur maximale de 500px sans scroll masquait et coupait (overflow: hidden) 
+   les fichiers qui dépassaient cette limite.
+   
+   NOUVELLE VERSION : 
+   On limite à 400px pour garder un design propre et on ajoute 'overflow-y: auto' 
+   pour permettre de faire défiler (scroller) tous les fichiers s'il y en a beaucoup.
+*/
+/*
 .dropdown-content.show {
     max-height: 500px;
     opacity: 1;
+}*/
+.dropdown-content.show {
+    max-height: 400px; 
+    opacity: 1;
+    overflow-y: auto; 
 }
 
 .dropdown-content a {
@@ -165,11 +179,12 @@ h1 {
     transform: translateY(1px);
 }
 
+/*
 @media (max-width: 992px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+}*/
 
 @media (max-width: 768px) {
     .card-container {
