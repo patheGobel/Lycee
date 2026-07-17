@@ -872,6 +872,44 @@ En lisant le mot de gauche à droite, la première fonction rencontrée dans l'i
 \textit{Exemple :} Dans $\int x e^x \,dx$, le polynôme ($x$) passe avant l'exponentielle ($e^x$) dans le mot A-\textbf{P}-\textbf{E}-S, on pose donc $u(x) = x$.
 \end{tcolorbox}
 
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple d'application de la méthode ALPES}}}}
+
+On souhaite calculer l'intégrale suivante à l'aide d'une intégration par parties :
+\[ I = \int_{1}^{e} x \ln(x) \, dx \]
+
+\subsubsection*{Étape 1 : Choix de $u(x)$ et $v'(x)$ avec ALPES}
+L'expression à intégrer contient deux types de fonctions :
+\begin{itemize}
+    \item $x$ qui est une fonction \textbf{P}olynôme.
+    \item $\ln(x)$ qui est une fonction \textbf{L}ogarithme.
+\end{itemize}
+Dans le mot A-\textbf{L}-\textbf{P}-E-S, la lettre \textbf{L} arrive avant la lettre \textbf{P}. On doit donc obligatoirement poser le logarithme comme la fonction à dériver ($u$).
+
+\subsubsection*{Étape 2 : Mise en place de l'IPP}
+On pose :
+\begin{align*}
+    u(x) &= \ln(x) \quad \implies \quad u'(x) = \frac{1}{x} \\
+    v'(x) &= x \quad \implies \quad v(x) = \frac{x^2}{2}
+\end{align*}
+Les fonctions $u$, $u'$, $v$ et $v'$ sont continues sur l'intervalle $[1, e]$.
+
+\subsubsection*{Étape 3 : Calcul de l'intégrale}
+En appliquant la formule de l'IPP $\left(\int u v' = [uv] - \int u'v\right)$ :
+\[ I = \left[ \ln(x) \cdot \frac{x^2}{2} \right]_{1}^{e} - \int_{1}^{e} \frac{1}{x} \cdot \frac{x^2}{2} \, dx \]
+
+Simplifions le terme sous la deuxième intégrale $\left(\frac{1}{x} \cdot \frac{x^2}{2} = \frac{x}{2}\right)$ :
+\[ I = \left( \ln(e) \cdot \frac{e^2}{2} - \ln(1) \cdot \frac{1^2}{2} \right) - \int_{1}^{e} \frac{x}{2} \, dx \]
+
+Comme $\ln(e) = 1$ et $\ln(1) = 0$, on obtient :
+\[ I = \frac{e^2}{2} - \left[ \frac{x^2}{4} \right]_{1}^{e} \]
+\[ I = \frac{e^2}{2} - \left( \frac{e^2}{4} - \frac{1^4}{4} \right) \]
+\[ I = \frac{2e^2}{4} - \frac{e^2}{4} + \frac{1}{4} \]
+\[ I = \frac{e^2 + 1}{4} \]
+
+\textbf{Conclusion :} Le calcul par IPP guidé par la méthode ALPES nous donne :
+\[ \int_{1}^{e} x \ln(x) \, dx = \frac{e^2 + 1}{4} \]
+
+
 \subsection*{\underline{\textbf{\textcolor{red}{3. Intégration de fonctions paires, impaires, périodiques : }}}}
 \subsubsection*{\underline{\textcolor{red}{Propriété 1 :}}}
 Soit \(f\) une fonction continue sur un intervalle \(I\) symétrique par rapport à \(0\).
