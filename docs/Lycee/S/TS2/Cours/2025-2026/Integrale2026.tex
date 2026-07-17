@@ -23,8 +23,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 \usepackage{varwidth}
 \usepackage{float}
 \tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-
+\usetikzlibrary{patterns, arrows.meta}
 \newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
 colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
 attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
@@ -231,64 +230,411 @@ a \leq x \leq b \\
 A(D)=\int_a^b f(x) \, dx .u.a 
 \]
 
+
+\begin{tikzpicture}[>=Stealth, scale=1.2]
+
+    % --- 1. Grille de fond (style cahier) ---
+    \draw[step=0.2cm, gray!20, thin] (-3.5,-1.5) grid (6.5,4.5);
+    \draw[step=1cm, gray!40, semithick] (-3.5,-1.5) grid (6.5,4.5);
+
+    % --- 2. Définition de la fonction (courbe sinusoïdale lissée) ---
+    \def\fonc{cos(\x*50)*0.8 + 2.5}
+
+    % --- 3. Aire hachurée (sous la courbe entre a et b) ---
+    \def\a{-1.5}
+    \def\b{4.5}
+    
+    \path[pattern=north east lines, pattern color=teal!60] 
+        (\a,0) -- plot[domain=\a:\b, samples=100] (\x, {\fonc}) -- (\b,0) -- cycle;
+
+    % --- AJOUT : Lettre pour désigner la surface ---
+    % On place un node avec un fond blanc légèrement transparent pour couper proprement les hachures
+    \node[draw=teal!60, fill=white, rounded corners=2pt, inner sep=2pt, thick] at (1.5,1.2) {$\mathcal{D}$};
+
+    % --- 4. Axes cartésiens ---
+    \draw[->, thick] (-3.5,0) -- (6.5,0) node[below left] {$x'$};
+    \draw[->, thick] (0,-1.5) -- (0,4.5) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % --- 5. Vecteurs directeurs de la base ---
+    \draw[->, blue, thick] (0,0) -- (1,0) node[below] {$\vec{i}$};
+    \draw[->, blue, thick] (0,0) -- (0,1) node[left] {$\vec{j}$};
+
+    % --- 6. La courbe Cf ---
+    \draw[cyan!80!blue, ultra thick, smooth] plot[domain=-1.8:6.2, samples=150] (\x, {\fonc});
+    \node[cyan!80!blue, above right] at (5.8, 3.2) {$\mathcal{C}_f$};
+
+    % --- 7. Lignes verticales rouges (bornes a et b) ---
+    \draw[red, thick] (\a, -0.5) -- (\a, 4.2);
+    \draw[red, thick] (\b, -0.5) -- (\b, 4.2);
+    
+    % Points et labels sur l'axe x
+    \fill[red] (\a,0) circle (1.5pt) node[below left, scale=1.2] {$a$};
+    \fill[red] (\b,0) circle (1.5pt) node[below right, scale=1.2] {$b$};
+% --- DEPLACEMENT : Formule à droite de la figure ---
+    % Placé à x = 9 (à droite de la grille qui se termine à 6.5)
+    \node[align=left, text=red, font=\large, anchor=west] at (7.0, 2) {
+        $A(\mathcal{D}) = \int_{a}^{b} f(x) \, dx \cdot u.a$
+    };
+\end{tikzpicture}
+
+\begin{comment}
 \begin{center}
    \includegraphics[scale=0.5]{Screenshot from 2025-04-26 23-30-27.png}
 \end{center}
+\end{comment}
 
 \section*{\textbf{\textcolor{red}{Remarque}}}
-Si \( f \) une fonction continue et \textcolor{red}{négative} sur \([a,b]\). La symétrie orthogonale d'axe \( (OI) \) transforme la courbe \(\mathcal{C}_f\) en celle de \( \mathcal{C}'_{-f} \) de f.
+\begin{itemize}
+\item[--] Si \( f \) une fonction continue et \textcolor{red}{négative} sur \([a,b]\). La symétrie orthogonale d'axe \( (OI) \) transforme la courbe \(\mathcal{C}_f\) en celle de \( \mathcal{C}'_{-f} \) de f.
 
 Le domaine \( D \) est tranformé en un domaine \( D' \) de meme aire
 
 \( \text{on a :} A(D)=A(D')=\int_a^b -f(x) \, dx .u.a  \)
+
+\begin{tikzpicture}[>=Stealth, scale=1.2]
+
+    % --- 1. Grille de fond (style cahier) ---
+    \draw[step=0.2cm, gray!20, thin] (-2.5,-2.5) grid (6.5,2.5);
+    \draw[step=1cm, gray!40, semithick] (-2.5,-2.5) grid (6.5,2.5);
+
+    % --- 2. Définition des fonctions (valables UNIQUEMENT dans un plot) ---
+    \def\foncTop{-0.15*(\x-1.5)*(\x-1.5) + 1.8}
+    \def\foncBot{0.15*(\x-1.5)*(\x-1.5) - 1.8}
+
+    % Bornes a et b
+    \def\a{0.5}
+    \def\b{4.5}
+
+    % --- 3. Aire hachurée complète (correction de la syntaxe ici) ---
+    \path[pattern=north east lines, pattern color=teal!50] 
+        plot[domain=\a:\b, samples=100] (\x, {\foncTop}) -- 
+        plot[domain=\b:\a, samples=100] (\x, {\foncBot}) -- cycle;
+
+    % --- 4. Axes cartésiens ---
+    \draw[->, thick] (-2.5,0) -- (6.5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-2.5) -- (0,2.5) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % --- 5. Vecteurs de la base (i, j) ---
+    \draw[->, blue, thick] (0,0) -- (0.8,0) node[below] {$\vec{i}$};
+    \draw[->, blue, thick] (0,0) -- (0,0.8) node[left] {$\vec{j}$};
+
+    % --- 6. Les deux courbes ---
+    % Courbe du haut (verte)
+    \draw[green!60!black, ultra thick, smooth] plot[domain=-0.5:5.5, samples=100] (\x, {\foncTop});
+    \node[red, above] at (2,1.8) {$\mathcal{C'}_{-f}$};
+    
+    % Courbe du bas (bleue/cyan)
+    \draw[cyan!80!blue, ultra thick, smooth] plot[domain=-0.5:5.5, samples=100] (\x, {\foncBot});
+    \node[red, below] at (2,-1.8) {$\mathcal{C}_f$};
+
+    % --- 7. Droites verticales de délimitation ---
+    \draw[blue!60!black, thick] (\a, -2.2) -- (\a, 2.2);
+    \draw[blue!60!black, thick] (\b, -2.2) -- (\b, 2.2);
+    
+    % Noms des bornes
+    \node[below left, black] at (\a, 0) {$a$};
+    \node[below right, black] at (\b, 0) {$b$};
+
+    % --- 8. Labels de l'aire A(D) ---
+    \node[fill=white, inner sep=2pt, rounded corners=1pt, text=blue!80!black] at (2,0.8) {$\mathcal{A}(\mathcal{D'})$};
+    \node[fill=white, inner sep=2pt, rounded corners=1pt, text=blue!80!black] at (2,-0.8) {$\mathcal{A}(\mathcal{D})$};
+
+\end{tikzpicture}
+
+\section*{Exemple d'application : Aire sous une courbe négative}
+
+\subsection*{1. Énoncé}
+Soit $f$ la fonction définie sur l'intervalle $[0, 3]$ par :
+\[ f(x) = x^2 - 3x \]
+
+\begin{enumerate}
+    \item Montrer que $f$ est continue et négative sur $[0, 3]$.
+    \item Déterminer l'aire $\mathcal{A}(\mathcal{D})$ du domaine $\mathcal{D}$ délimité par la courbe $\mathcal{C}_f$, l'axe des abscisses et les droites d'équations $x = 0$ et $x = 3$.
+\end{enumerate}
+
+\subsection*{2. Graphique illustratif}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, scale=1.3]
+
+    % --- 1. Grille de fond (style cahier) ---
+    \draw[step=0.2cm, gray!20, thin] (-1.5,-3.5) grid (4.5,3.5);
+    \draw[step=1cm, gray!40, semithick] (-1.5,-3.5) grid (4.5,3.5);
+
+    % --- 2. Définition des fonctions de l'exemple ---
+    \def\foncBot{\x*\x - 3*\x}      % f(x) = x^2 - 3x
+    \def\foncTop{-1*(\x*\x - 3*\x)} % -f(x) = -x^2 + 3x
+
+    % Bornes a et b
+    \def\a{0.0}
+    \def\b{3.0}
+
+    % --- 3. Aires hachurées ---
+    % Domaine D' (symétrique, en haut)
+    \path[pattern=north east lines, pattern color=green!40!black!30] 
+        plot[domain=\a:\b, samples=100] (\x, {\foncTop}) -- (\b,0) -- (\a,0) -- cycle;
+        
+    % Domaine D (original, en bas)
+    \path[pattern=north east lines, pattern color=cyan!40] 
+        plot[domain=\a:\b, samples=100] (\x, {\foncBot}) -- (\b,0) -- (\a,0) -- cycle;
+
+    % --- 4. Axes cartésiens ---
+    \draw[->, thick] (-1.5,0) -- (4.5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-3.5) -- (0,3.5) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % --- 5. Vecteurs de la base (i, j) ---
+    \draw[->, blue, thick] (0,0) -- (1,0) node[below] {$\vec{i}$};
+    \draw[->, blue, thick] (0,0) -- (0,1) node[left] {$\vec{j}$};
+
+    % --- 6. Les deux courbes ---
+    % Courbe du haut C_(-f) (verte)
+    \draw[green!60!black, ultra thick, smooth] plot[domain=-0.8:3.8, samples=100] (\x, {\foncTop});
+    \node[green!60!black, above] at (1.5,2.3) {$\mathcal{C}_{-f}$};
+    
+    % Courbe du bas C_f (bleue/cyan)
+    \draw[cyan!80!blue, ultra thick, smooth] plot[domain=-0.8:3.8, samples=100] (\x, {\foncBot});
+    \node[cyan!80!blue, below] at (1.5,-2.3) {$\mathcal{C}_f$};
+
+    % --- 7. Droites verticales de délimitation ---
+    \draw[red, thick] (\a, -3.2) -- (\a, 3.2);
+    \draw[red, thick] (\b, -3.2) -- (\b, 3.2);
+    
+    % Noms des bornes
+    \node[below left, red, scale=1.1] at (\a, 0) {$a=0$};
+    \node[below right, red, scale=1.1] at (\b, 0) {$b=3$};
+
+    % --- 8. Labels des domaines ---
+    \node[fill=white, inner sep=2pt, rounded corners=1pt, draw=green!60!black] at (1.5,1.0) {$\mathcal{D}'$};
+    \node[fill=white, inner sep=2pt, rounded corners=1pt, draw=cyan!80!blue] at (1.5,-1.0) {$\mathcal{D}$};
+
+\end{tikzpicture}
+\end{center}
+
+\subsection*{3. Solution détaillée}
+
+\subsubsection*{Question 1 : Signe et continuité}
+\begin{itemize}
+    \item \textbf{Continuité :} $f$ est une fonction polynomiale de degré 2. Elle est donc continue sur $\mathbb{R}$, et par restriction, continue sur l'intervalle $[0, 3]$.
+    \item \textbf{Signe :} Factorisons l'expression de $f(x)$ : 
+    \[ f(x) = x(x - 3) \]
+    Pour tout $x \in [0, 3]$, le facteur $x$ est positif ($x \ge 0$) et le facteur $(x - 3)$ est négatif ou nul ($x - 3 \le 0$). Par la règle des signes du produit, on en déduit que pour tout $x \in [0, 3]$ :
+    \[ f(x) \le 0 \]
+    La fonction $f$ est donc bien \textbf{négative} sur l'intervalle $[0, 3]$.
+\end{itemize}
+
+\subsubsection*{Question 2 : Calcul de l'aire par symétrie}
+Puisque la fonction $f$ est négative sur $[0,3]$, la symétrie orthogonale d'axe $(OI)$ transforme le domaine $\mathcal{D}$ en un domaine $\mathcal{D}'$ de même aire, situé au-dessus de l'axe des abscisses et délimité par la courbe de la fonction $-f$. 
+
+On a : 
+\[ -f(x) = -(x^2 - 3x) = -x^2 + 3x \]
+
+L'aire s'exprime donc par l'intégrale suivante :
+\[ \mathcal{A}(\mathcal{D}) = \int_{0}^{3} (-x^2 + 3x) \, dx \cdot u.a \]
+
+Déterminons une primitive $F$ de la fonction $x \mapsto -x^2 + 3x$ :
+\[ F(x) = \left[ -\frac{x^3}{3} + \frac{3x^2}{2} \right] \]
+
+En appliquant le théorème fondamental de l'analyse entre les bornes $0$ et $3$ :
+\begin{align*}
+\mathcal{A}(\mathcal{D}) &= F(3) - F(0) \\
+&= \left( -\frac{3^3}{3} + \frac{3 \times 3^2}{2} \right) - \left( -\frac{0^3}{3} + \frac{3 \times 0^2}{2} \right) \\
+&= \left( -9 + \frac{27}{2} \right) - 0 \\
+&= -\frac{18}{2} + \frac{27}{2} \\
+&= \frac{9}{2} \cdot u.a
+\end{align*}
+
+\textbf{Conclusion :} L'aire du domaine $\mathcal{D}$ est égale à \textbf{$4,5 \text{ u.a.}$}
+
+\begin{comment}
 \begin{center}
    \includegraphics[scale=0.5]{Screenshot from 2025-04-27 00-00-46.png}
 \end{center}
+\end{comment}
 
-\section*{\textbf{\textcolor{red}{Exemple 3}}}
+\item[--] \textbf{si} $f$ continue et \textcolor{red}{negative} ($f \le 0$) sur $[a, c]$ \\
+    $f$ continue et positive ($f \ge 0$) sur $[c, b]$
 
-L'unité graphique est $2cm$ sur chaque axes.
+\begin{equation*}
+\int_{a}^{b} f(x) \, dx = \int_{a}^{c} f(x) \, dx + \int_{c}^{b} f(x) \, dx
+\end{equation*}
 
-Calculer l'aire, en $cm^{2}$ de l'ensemble D des points M(x,y) tels que :
-
- \(-\frac{\pi}{2}\leq x \leq \frac{\pi}{2} \) et \( 0\leq y \leq \cos x \)
-
-\section*{\textbf{\textcolor{red}{Solution 3}}}
-
-La fonctionFonction cosinus est continue et positif sur \( \left[ -\frac{\pi}{2}, \frac{\pi}{2}\right]  \)
-
-On a : $\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}dx.u.a$ avec $u.a = 2cm \times 2cm=4cm^{2}$
-
-\section*{\textbf{\textcolor{red}{Exemple 4}}}
-
-La courbe ci-dessous est la representation graphique de la fonction $f(x)=x^{2}-1$ .Calculer l'aire du domaine colorié.
+\vspace{0.3cm}
 
 \begin{center}
-   \includegraphics[scale=0.5]{Screenshot from 2025-04-27 08-29-47.png}
-\end{center}  
-
-\section*{\textbf{\textcolor{red}{Exemple 3}}}
-
-$f(x)=x^{2}-1$
-
-          \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
-              \tkzTabInit[espcl=1.75]{$x$/.5,$x^{2}-1$/.7}{$-\infty$,$-1$,$1$,$+\infty$}
-              \tkzTabLine{,+,z,-,z,+}
-          \end{tikzpicture}
-
-\begin{center}
-   \includegraphics[scale=0.5]{Screenshot from 2025-04-27 08-33-05.png}
+    \setlength{\fboxsep}{10pt} % Espace entre le texte et le cadre
+    \definecolor{mathblue}{RGB}{0, 51, 153} % Couleur bleue du cadre manuscrit
+    
+    \noindent\makebox[\textwidth]{
+    \color{mathblue}{\fbox{
+        \normalcolor
+        $\displaystyle A(\mathcal{D}) = \int_{a}^{c} -f(x) \, dx \cdot u.a + \int_{c}^{b} f(x) \, dx \cdot u.a$
+    }}
+    }
 \end{center}
-\(
-\begin{aligned}
-A(D) &= \left( \int_0^1 -f(x) \, dx + \int_1^2 f(x) \, dx \right) u.A\\
-		 &= \left( \int_0^1 -(x^{2}-1) \, dx + \int_1^2 (x^{2}-1) \, dx \right) u.A\\
-		 &=\cdots\\
-		 &=2cm^{2}
-\end{aligned}
-\)  
 
-\[\boxed{A(D)=2cm^{2}}\]   
+\begin{tikzpicture}[>=Stealth, scale=1.3]
+
+    % --- 1. Grille de fond (style cahier) ---
+    \draw[step=0.2cm, gray!20, thin] (-1.5,-2.5) grid (6.5,3.5);
+    \draw[step=1cm, gray!40, semithick] (-1.5,-2.5) grid (6.5,3.5);
+
+    % --- 2. Définition de la fonction f ---
+    % Une fonction cubique simple qui s'annule exactement en c = 2
+    % Négative avant 2, positive après 2
+    \def\fonc{0.15*(\x-2)*(\x-2)*(\x-2) + 0.6*(\x-2)}
+
+    % Bornes
+    \def\a{0.2}
+    \def\c{2.0}
+    \def\b{4.8}
+
+    % --- 3. Zones hachurées (Aires) ---
+    % Partie 1 : entre a et c (sous l'axe, car f <= 0)
+    \path[pattern=north east lines, pattern color=teal!50] 
+        plot[domain=\a:\c, samples=100] (\x, {\fonc}) -- (\c,0) -- (\a,0) -- cycle;
+        
+    % Partie 2 : entre c et b (au-dessus de l'axe, car f >= 0)
+    \path[pattern=north east lines, pattern color=teal!50] 
+        (\c,0) -- plot[domain=\c:\b, samples=100] (\x, {\fonc}) -- (\b,0) -- cycle;
+
+    % --- 4. Axes cartésiens ---
+    \draw[->, thick] (-1.5,0) -- (6.5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-2.5) -- (0,3.5) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % --- 5. Vecteurs de la base (i, j) ---
+    \draw[->, blue, thick] (0,0) -- (0.8,0) node[below] {$\vec{i}$};
+    \draw[->, blue, thick] (0,0) -- (0,0.8) node[left] {$\vec{j}$};
+
+    % --- 6. Dessin de la courbe Cf ---
+    \draw[cyan!80!blue, ultra thick, smooth] plot[domain=-0.5:5.5, samples=150] (\x, {\fonc});
+    \node[cyan!80!blue, right] at (5.3, 3.0) {$\mathcal{C}_f$};
+
+    % --- 7. Lignes verticales de délimitation ---
+    \draw[red, thick] (\a, -1.8) -- (\a, 0.5);
+    \draw[red, thick] (\b, -0.5) -- (\b, 3.2);
+    
+    % Marquage des points a, c et b sur l'axe x
+    \fill[red] (\a,0) circle (1.5pt) node[above left, scale=1.1] {$a$};
+    \fill[black] (\c,0) circle (1.5pt) node[below left, scale=1.1] {$c$};
+    \fill[red] (\b,0) circle (1.5pt) node[below right, scale=1.1] {$b$};
+
+    % --- 8. Étiquettes des formules d'aires sous/sur la courbe ---
+    % Zone négative (Aire = intégrale de -f)
+    \node[fill=white, inner sep=2pt, rounded corners=2pt, draw=teal!50, text=black, scale=0.8] at (1.0, -0.7) 
+        {$\displaystyle \mathcal{A}_1 = \int_{a}^{c} -f(x)\,dx$};
+
+    % Zone positive (Aire = intégrale de f)
+    \node[fill=white, inner sep=2pt, rounded corners=2pt, draw=teal!50, text=black, scale=0.8] at (3.5, 0.9) 
+        {$\displaystyle \mathcal{A}_2 = \int_{c}^{b} f(x)\,dx$};
+
+\end{tikzpicture}
+
+
+\end{itemize}
+
+\section*{Exercice d'application : Fonction changeant de signe}
+
+\subsection*{1. Énoncé}
+Soit $f$ la fonction définie sur l'intervalle $[0, 2]$ par :
+\[ f(x) = x^2 - 1 \]
+
+\begin{enumerate}
+    \item Étudier le signe de la fonction $f$ sur l'intervalle $[0, 2]$. En déduire la valeur du point de bascule $c$.
+    \item Calculer l'intégrale de cette fonction sur $[0, 2]$, c'est-à-dire : $\displaystyle I = \int_{0}^{2} f(x) \, dx$.
+    \item Déterminer l'aire géométrique $\mathcal{A}(\mathcal{D})$ du domaine délimité par la courbe $\mathcal{C}_f$, l'axe des abscisses et les droites d'équations $x = 0$ et $x = 2$. Conclure sur la différence avec le résultat précédent.
+\end{enumerate}
+
+\subsection*{2. Graphique de l'exercice}
+
+\begin{center}
+\begin{tikzpicture}[>=Stealth, scale=1.3]
+
+    % --- 1. Grille de fond (style cahier) ---
+    \draw[step=0.2cm, gray!20, thin] (-1.5,-2.5) grid (3.5,3.5);
+    \draw[step=1cm, gray!40, semithick] (-1.5,-2.5) grid (3.5,3.5);
+
+    % --- 2. Définition de la fonction de l'exercice ---
+    \def\fonc{\x*\x - 1} 
+
+    % Bornes
+    \def\a{0.0}
+    \def\c{1.0}
+    \def\b{2.0}
+
+    % --- 3. Zones hachurées (Aires) ---
+    % Zone négative (D1) entre 0 et 1
+    \path[pattern=north east lines, pattern color=teal!50] 
+        plot[domain=\a:\c, samples=100] (\x, {\fonc}) -- (\c,0) -- (\a,0) -- cycle;
+        
+    % Zone positive (D2) entre 1 et 2
+    \path[pattern=north east lines, pattern color=teal!50] 
+        (\c,0) -- plot[domain=\c:\b, samples=100] (\x, {\fonc}) -- (\b,0) -- cycle;
+
+    % --- 4. Axes cartésiens ---
+    \draw[->, thick] (-1.5,0) -- (3.5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-2.5) -- (0,3.5) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % --- 5. Vecteurs de la base (i, j) ---
+    \draw[->, blue, thick] (0,0) -- (1,0) node[below] {$\vec{i}$};
+    \draw[->, blue, thick] (0,0) -- (0,1) node[left] {$\vec{j}$};
+
+    % --- 6. Dessin de la courbe Cf ---
+    \draw[cyan!80!blue, ultra thick, smooth] plot[domain=-0.5:2.1, samples=100] (\x, {\fonc});
+    \node[cyan!80!blue, right] at (2.0, 3.2) {$\mathcal{C}_f$};
+
+    % --- 7. Lignes verticales de délimitation ---
+    \draw[red, thick] (\a, -1.5) -- (\a, 0.5);
+    \draw[red, thick] (\b, -0.5) -- (\b, 3.2);
+    
+    % Marquage des points a, c et b sur l'axe x
+    \fill[red] (\a,0) circle (1.5pt) node[above left, scale=1.1] {$a=0$};
+    \fill[black] (\c,0) circle (1.5pt) node[below left, scale=1.1] {$c=1$};
+    \fill[red] (\b,0) circle (1.5pt) node[below right, scale=1.1] {$b=2$};
+
+    % --- 8. Noms des deux sous-domaines ---
+    \node[fill=white, inner sep=2pt, rounded corners=1pt, draw=teal!50] at (0.4, -0.4) {$\mathcal{D}_1$};
+    \node[fill=white, inner sep=2pt, rounded corners=1pt, draw=teal!50] at (1.6, 0.6) {$\mathcal{D}_2$};
+
+\end{tikzpicture}
+\end{center}
+
+\subsection*{3. Solution rédigée}
+
+\subsubsection*{Question 1 : Étude de signe}
+La fonction $f$ est continue sur $[0, 2]$ car c'est une fonction polynôme. 
+Résolvons l'équation $f(x) = 0$ :
+\[ x^2 - 1 = 0 \iff (x-1)(x+1) = 0 \]
+Sur l'intervalle $[0, 2]$, la seule solution est $x = 1$. Le point de bascule est donc \textbf{$c = 1$}.
+\begin{itemize}
+    \item Pour $x \in [0, 1]$, $x^2 \le 1$ donc $f(x) \le 0$ (\textbf{négative}).
+    \item Pour $x \in [1, 2]$, $x^2 \ge 1$ donc $f(x) \ge 0$ (\textbf{positive}).
+\end{itemize}
+
+\subsubsection*{Question 2 : Calcul de l'intégrale $I$}
+Trouvons une primitive de $f$ définie par $F(x) = \frac{x^3}{3} - x$.
+\[ I = \int_{0}^{2} (x^2 - 1) \, dx = \left[ \frac{x^3}{3} - x \right]_{0}^{2} = \left( \frac{8}{3} - 2 \right) - 0 = \frac{2}{3} \]
+
+\subsubsection*{Question 3 : Calcul de l'aire géométrique $\mathcal{A}(\mathcal{D})$}
+D'après la propriété du cours (Relation de Chasles adaptée aux signes), l'aire totale est la somme de l'aire des deux sous-domaines $\mathcal{D}_1$ et $\mathcal{D}_2$ :
+\[ \mathcal{A}(\mathcal{D}) = \int_{0}^{1} -f(x) \, dx \cdot u.a + \int_{1}^{2} f(x) \, dx \cdot u.a \]
+\[ \mathcal{A}(\mathcal{D}) = \int_{0}^{1} (-x^2 + 1) \, dx + \int_{1}^{2} (x^2 - 1) \, dx \]
+
+Calculons séparément chaque partie :
+\begin{itemize}
+    \item \textbf{Partie négative ($\mathcal{D}_1$) :} $\displaystyle \left[ -\frac{x^3}{3} + x \right]_{0}^{1} = \left(-\frac{1}{3} + 1\right) - 0 = \frac{2}{3}$
+    \item \textbf{Partie positive ($\mathcal{D}_2$) :} $\displaystyle \left[ \frac{x^3}{3} - x \right]{1}^{2} = \left(\frac{8}{3} - 2\right) - \left(\frac{1}{3} - 1\right) = \frac{2}{3} - \left(-\frac{2}{3}\right) = \frac{4}{3}$
+\end{itemize}
+
+On additionne les deux résultats :
+\[ \mathcal{A}(\mathcal{D}) = \frac{2}{3} + \frac{4}{3} = \frac{6}{3} = 2 \cdot u.a \]
+
+\textbf{Conclusion :} L'aire géométrique réelle vaut **$2 \text{ u.a.}$**, tandis que l'intégrale simple calculée à la question 2 ne valait que $\frac{2}{3}$. Cela s'explique par le fait que la partie négative s'est soustraite algébriquement de la partie positive lors du calcul de l'intégrale globale.
+ 
 
 \section*{\textbf{\textcolor{red}{5. Propriété algébrique de l'intégrale}}}
 \subsection*{\textbf{\textcolor{red}{a. Relation de Chasles}}}
@@ -356,6 +702,41 @@ ii)Soit $f$ et $g$ deux fonctions continues sur $I$, $a$ et $b\in I$  $(a<b)$
 \item Si $f \leq g$, $\forall x \in[a,b]$ alors $ \int_a^b f(x)dx \leq \int_a^b g(x)dx$
 \end{itemize}
 \section*{\underline{\textbf{\textcolor{red}{Exemples}}}}
+
+\subsection*{Exemple pour la propriété i) -- Cas d'une fonction positive}
+Soit l'intégrale $I = \int_{1}^{2} (x^2 + 3) \, dx$.
+\begin{itemize}
+    \item \textbf{Étude du signe :} Pour tout $x \in [1, 2]$, on a $x^2 \geq 0$, donc $x^2 + 3 \geq 3 > 0$. La fonction est strictement positive sur l'intervalle d'intégration.
+    \item \textbf{Application de la propriété : Bureau de déduction : } Comme les bornes sont ordonnées ($1 < 2$), on en déduit immédiatement que :
+    \[ I \geq 0 \]
+\end{itemize}
+
+\subsection*{Exemple pour la propriété i) -- Cas d'une fonction négative}
+Soit l'intégrale $L = \int_{0}^{3} (-e^x - 1) \, dx$.
+\begin{itemize}
+    \item \textbf{Étude du signe :} Pour tout $x \in [0, 3]$, l'exponentielle $e^x$ est strictement positive ($e^x > 0$), donc $-e^x < 0$. En retirant encore $1$, on a :
+    \[ \forall x \in [0, 3], \quad -e^x - 1 \leq -2 < 0 \]
+    La fonction est donc strictement négative sur l'intervalle $[0, 3]$.
+    \item \textbf{Application de la propriété :} Puisque l'intervalle respecte l'ordre des bornes ($0 < 3$), la propriété nous garantit sans aucun calcul que :
+    \[ L \leq 0 \]
+    \item \textbf{Vérification par le calcul :}
+    \[ L = \left[ -e^x - x \right]_{0}^{3} = (-e^3 - 3) - (-e^0 - 0) = -e^3 - 3 + 1 = -e^3 - 2 \]
+    Comme $e^3 \approx 20,08$, on trouve $L \approx -22,08$, ce qui est bel et bien négatif !
+\end{itemize}
+
+\subsection*{Exemple pour la propriété ii) (Comparaison d'intégrales)}
+On souhaite comparer, sans les calculer, les deux intégrales suivantes :
+\[ J = \int_{0}^{1} x \, dx \quad \text{et} \quad K = \int_{0}^{1} x^2 \, dx \]
+
+\begin{itemize}
+    \item \textbf{Comparaison des fonctions :} Sur l'intervalle $[0, 1]$, on sait que multiplier un nombre par lui-même le rend plus petit ou égal (par exemple $0,5^2 = 0,25 \leq 0,5$). On a donc :
+    \[ \forall x \in [0, 1], \quad x^2 \leq x \]
+    \item \textbf{Application de la propriété :} Les fonctions $x \mapsto x^2$ et $x \mapsto x$ sont continues sur $[0, 1]$ et les bornes sont ordonnées ($0 < 1$). Par croissance de l'intégrale, on obtient directement :
+    \[ \int_{0}^{1} x^2 \, dx \leq \int_{0}^{1} x \, dx \quad \implies \quad K \leq J \]
+    \item \textbf{Vérification par le calcul :} 
+    \[ K = \left[ \frac{x^3}{3} \right]_{0}^{1} = \frac{1}{3} \quad \text{et} \quad J = \left[ \frac{x^2}{2} \right]_{0}^{1} = \frac{1}{2} \]
+    On constate bien que $\frac{1}{3} \leq \frac{1}{2}$, la propriété est vérifiée.
+\end{itemize}
 
 \subsection*{\underline{\textbf{\textcolor{red}{Remarque :}}}}
 
