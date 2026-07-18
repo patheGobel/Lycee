@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 JUL 2026 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 JUL 2026 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,7 +865,7 @@ File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count365
 )
-No file coursDerivabilite2027.aux.
+(build/coursDerivabilite2027.aux)
 \openout1 = `coursDerivabilite2027.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -886,6 +886,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count366
@@ -912,6 +913,8 @@ Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 40.
 LaTeX Info: Redefining \degres on input line 40.
 Package hyperref Info: Link coloring OFF on input line 40.
+
+(build/coursDerivabilite2027.out) (build/coursDerivabilite2027.out)
 \@outlinefile=\write4
 \openout4 = `coursDerivabilite2027.out'.
 
@@ -1038,21 +1041,14 @@ Overfull \hbox (577.39328pt too wide) in paragraph at lines 471--503
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-Package rerunfilecheck Warning: File `coursDerivabilite2027.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `coursDerivabilite2027.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `coursDerivabilite2027.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37627 strings out of 467533
- 876550 string characters out of 5422138
- 1400392 words of memory out of 5000000
- 65894 multiletter control sequences out of 15000+600000
+ 37635 strings out of 467533
+ 876812 string characters out of 5422138
+ 1400421 words of memory out of 5000000
+ 65896 multiletter control sequences out of 15000+600000
  649772 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,10n,108p,742b,2148s stack positions out of 10000i,1000n,20000p,200000b,200000s
