@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 JUL 2026 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 JUL 2026 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**denombrement2026bis.tex
-(./denombrement2026bis.tex
+**suitesNumeriques2026.tex
+(./suitesNumeriques2026.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1163,125 +1163,56 @@ File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 zlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/yhmath/yhmath.sty
-Package: yhmath 2020/03/17 v1.6
-\symyhlargesymbols=\mathgroup7
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 29.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 30.
-LaTeX Font Info:    Redeclaring math symbol \braceld on input line 48.
-LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 49.
-LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 50.
-LaTeX Font Info:    Redeclaring math symbol \braceru on input line 51.
-LaTeX Font Info:    Redeclaring math delimiter \lmoustache on input line 53.
-LaTeX Font Info:    Redeclaring math delimiter \rmoustache on input line 55.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 57.
-LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 59.
-LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 61.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 63.
-LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 65.
-LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 67.
-LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 69.
-LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 71.
-LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 73.
-LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 75.
-LaTeX Font Info:    Redeclaring math delimiter \backslash on input line 79.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 81.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 83.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 85.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 87.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 89.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 91.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 93.
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 95.
-LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 97.
-LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 99.
-LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 101.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
-\TX@col@width=\dimen318
-\TX@old@table=\dimen319
-\TX@old@col=\dimen320
-\TX@target=\dimen321
-\TX@delta=\dimen322
-\TX@cols=\count392
-\TX@ftn=\toks52
-)
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
-\ESO@tempdima=\dimen323
-\ESO@tempdimb=\dimen324
+\ESO@tempdima=\dimen318
+\ESO@tempdimb=\dimen319
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibraryangles.code.tex
-File: tikzlibraryangles.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibraryquotes.code.tex
-File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
-code.tex
-File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen325
-\pgfarrowlength=\dimen326
-\pgfarrowwidth=\dimen327
-\pgfarrowlinewidth=\dimen328
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarytrees.code.tex
-File: tikzlibrarytrees.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen329
-\c@nlinenum=\count393
-\TeXr@lab=\toks53
-)
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 75
-.
+\c@exemple=\count392
+\c@solution=\count393
+\c@exerciceapp=\count394
+\c@correction=\count395
+\c@remarque=\count396
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10
+4.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (build/denombrement2026bis.aux)
-\openout1 = `denombrement2026bis.aux'.
+)
+No file suitesNumeriques2026.aux.
+\openout1 = `suitesNumeriques2026.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count394
-\scratchdimen=\dimen330
+\scratchcounter=\count397
+\scratchdimen=\dimen320
 \scratchbox=\box139
-\nofMPsegments=\count395
-\nofMParguments=\count396
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count397
-\MPscratchDim=\dimen331
-\MPnumerator=\count398
-\makeMPintoPDFobject=\count399
-\everyMPtoPDFconversion=\toks55
+\nofMPsegments=\count398
+\nofMParguments=\count399
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count400
+\MPscratchDim=\dimen321
+\MPnumerator=\count401
+\makeMPintoPDFobject=\count402
+\everyMPtoPDFconversion=\toks53
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1325,145 +1256,184 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 75.
-(build/denombrement2026bis.out) (build/denombrement2026bis.out)
+Package hyperref Info: Link coloring ON on input line 104.
 \@outlinefile=\write4
-\openout4 = `denombrement2026bis.out'.
+\openout4 = `suitesNumeriques2026.out'.
 
-\c@lstlisting=\count400
-
+\c@lstlisting=\count403
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-8.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+07.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-8.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+07.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-78.
+107.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-78.
+107.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 78.
+(Font)              <17.28> on input line 107.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 78.
+(Font)              <12> on input line 107.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 78.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 78.
-
+(Font)              <10> on input line 107.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 107
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 107
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 78
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 
-78.
-
-(/usr/share/texlive/texmf-dist/tex/latex/yhmath/OMXyhex.fd
-File: OMXyhex.fd 
-File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 97.
+(Font)              <14.4> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 97.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-01.
-
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 1
-21.
-
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 121.
+(Font)              <7> on input line 113.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 114.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 114.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/e
 nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/
-texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (4.44559pt too wide) in paragraph at lines 209--218
- []|[]  
- []
+dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+75.
 
-[2] [3]
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <17.28> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 386.
-
-Overfull \hbox (5.82988pt too wide) in paragraph at lines 421--421
- []|\T1/lmr/bx/n/10.95 répétition| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--423
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 
  []
 
 [4]
-Overfull \hbox (14.56151pt too wide) in paragraph at lines 450--450
-|[][]
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
+
  []
 
-[5] [6] (build/denombrement2026bis.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+
+ []
+
+[6] [7] [8] [9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 1467--1468
+
+ []
+
+[12]
+Package mdframed Info: Not enough space on this page on input line 1557.
+ [13] (build/suitesNumeriques2026.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `denombrement2026bis.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+Package rerunfilecheck Warning: File `suitesNumeriques2026.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `suitesNumeriques2026.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42106 strings out of 467533
- 991268 string characters out of 5422138
- 1549695 words of memory out of 5000000
- 70231 multiletter control sequences out of 15000+600000
- 719058 words of font info for 115 fonts, out of 8000000 for 9000
+ 41794 strings out of 467533
+ 984913 string characters out of 5422138
+ 1540836 words of memory out of 5000000
+ 69893 multiletter control sequences out of 15000+600000
+ 696594 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,20n,107p,897b,1384s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
+ 102i,12n,107p,741b,1914s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/denombrement2026bis.pdf (6 pages, 242551 bytes).
+ublic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b>
+Output written on build/suitesNumeriques2026.pdf (13 pages, 215072 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 100 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
