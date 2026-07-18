@@ -1,0 +1,578 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destinés à la 1\textsuperscript{ère}S2\\Au Lycée de Dindéferlo}
+\title{\textbf{Dérivée et Application}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\newcounter{exemple}
+\renewcommand{\theexemple}{\arabic{exemple}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\ex}{\refstepcounter{exemple}\textbf{Exemple \theexemple} }
+
+\begin{document}
+\maketitle
+\newpage
+\section*{\underline{\textbf{\textcolor{red}{I.Dérivabilité en un point}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
+
+Une fonction \( f \) définie sur un intervalle \( I \) contenant \( x_0 \) est dite \textbf{dérivable en} \( x_0 \) si l'une des deux limites suivantes existe et est finie :
+
+\[
+    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}=\ell \quad \text{ou} \quad \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}=\ell \text{ avec } (\ell \in\mathbb{R}).
+\]
+
+$\ell$ est appelé nombre dérivée de la fonction $f$ en $x_{0}$ et est noté $f'(x_{0})$
+
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque}}}}
+
+Les deux expressions suivantes sont équivalentes pour définir la dérivabilité en un point :
+
+\[
+    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \quad \text{et} \quad \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}.
+\]
+
+En effet, en posant \( h = x - x_0 \), lorsque \( x \to x_0 \), on a \( h \to 0 \).
+
+Ainsi :
+\[
+    x = x_0 + h,
+\]
+et
+\[
+    \frac{f(x) - f(x_0)}{x - x_0} = \frac{f(x_0 + h) - f(x_0)}{h}.
+\]
+
+Cela justifie que les deux formes peuvent être utilisées indifféremment selon les situations.
+\subsection*{\underline{\textbf{\textcolor{green}{\ex}}}}
+Soit $f(x)=x^{2}-x+1$.  Etudier la dérivabilité de $f$ en $x_{0}=2.$\\
+
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x-(-2)}=\lim_{x \to -2}\frac{x^{2}+1-5}{x+2}=
+    \lim_{x \to -2}\frac{(x-2)(x+2)}{x+2}=\lim_{x \to -2}\frac{(x-2)(x+2)}{x+2}=-4\]
+Donc\[\lim_{x \to -2}\frac{f(x)-f(-2)}{x+2}=-4\]
+Donc f est dérivable en $-2$ et sa dérivée en $-2$ est $-4$\\ On écrit $f'(-2)=-4$
+
+Exerice
+
+En utilsisant \( \lim\limits_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h} \) retrouve le meme resultat
+
+\subsection*{\underline{\textbf{\textcolor{red}{2.Dérivabilté à gauche-Dérivabilté à droite}}}}
+Soit f une fonction définie sur un intervalle I contenant $x_{0}$ et $\ell$ un réel.
+
+\begin{itemize}
+    \item si \( \lim\limits_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell \) alors $f$ est dérivable à gauche de $x_{0}$
+    \item si \( \lim\limits_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell \) alors $f$ est dérivable à droite de $x_{0}$
+\end{itemize}
+\subsection*{\underline{\textbf{\textcolor{red}{Conclusion:}}}}
+si \( \lim\limits_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim\limits_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\ell \) alors $f$ est dérivable en $x_{0}$
+\subsection*{\underline{\textbf{\textcolor{red}{Notation}}}}
+\( \lim\limits_{x \to x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{g}(x)\)(nombre dérivé de f à gauche de $x_{0}$)
+
+Si f est dérivable à droite de $x_{0}$  alors\( \lim\limits_{x \to x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}=f'_{d}(x)\) (nombre dérivé de f à droite de $x_{0}$)
+\subsection*{\underline{\textbf{\textcolor{green}{\ex}}}}
+Etudier la dérivabilté de f en $x_{0}=0$\\
+\[ f(x) = \begin{cases}
+        3x^{2},  & \text{si } x \leq 0 \\
+        -2x^{2}, & \text{si } x > 0
+    \end{cases} \]
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+Posons \( f(x) = \begin{cases}
+    f(x)_{1}=3x^{2},  & \text{si } x \leq 0 \\
+    f(x)_{2}=-2x^{2}, & \text{si } x > 0
+\end{cases} \)
+
+$f$ est dérivable en 0 ssi \( \lim\limits_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0}=\lim\limits_{x \to 0^{+}}\frac{f(x)-f(x_{0})}{x-0}=\ell \)
+
+\underline{\textbf{\textcolor{red}{En $0^{-}$, $f(x)=f_{1}(x)=3x^{2}$:}}}
+
+\( \lim\limits_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0}=\lim\limits_{x \to 0^{-}}\frac{f(x)}{x}=\lim\limits_{x \to 0^{-}}3x=0 \)
+
+Ainsi \( \lim\limits_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0} = 0\in \mathbb{R} \) donc $f$ est dérivable en $0^{-}$\\
+
+\underline{\textbf{\textcolor{red}{En $0^{+}$, $f(x)=f_{2}(x)=-2x^{2}$::}}}
+
+\( \lim\limits_{x \to 0^{+}}\frac{f(x)-f(x_{0})}{x-0}=\lim\limits_{x \to 0^{+}}\frac{f(x)}{x}=\lim\limits_{x \to 0^{+}}-2x^{2}=0 \)
+
+Ainsi \( \lim\limits_{x \to 0^{+}}\frac{f(x)-f(x_{0})}{x-0} = 0\in \mathbb{R} \) donc $f$ est dérivable en $0^{+}$\\
+
+\textbf{Conclusion}
+
+Comme \( \lim\limits_{x \to 0^{-}}\frac{f(x)-f(x_{0})}{x-0} = \lim\limits_{x \to 0^{+}}\frac{f(x)-f(x_{0})}{x-0}  \) donc f est dérivable en 0
+
+\textbf{Exerice d'application}
+
+Étudier la dérivabilité de $g(x)=|x-1|$ en $x_0=1$
+
+\section*{\underline{\textbf{\textcolor{red}{II.Interprétation géométrique du nombre dérivé}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.Définition}}}}
+Soit $f$ une fonction dérivable en $x_0$. Notons $A(x_0, f(x_0))$ le point de coordonnées $(x_0, f(x_0))$ sur la courbe représentative $\mathcal{C}_f$ de $f$. La tangente à $\mathcal{C}_f$ au point $A$ est la droite passant par $A$ et de coefficient directeur $f'(x_0)$.
+
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+    \begin{axis}[
+            x=1cm, y=1cm,
+            axis lines=middle,
+            ymajorgrids=true,
+            xmajorgrids=true,
+            xmin=-7, xmax=7,
+            ymin=-8, ymax=8,
+            xtick={-2,-15,...,30},
+            ytick={-18,-16,...,12},
+        ]
+
+        \draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-8:3] plot(\x,{(\x)^(2)});
+        \draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-2:3] plot(\x,{(\x*2-1)});
+        \begin{scriptsize}
+            \draw[color=qqwuqq] (-6,2) node {$f$};
+        \end{scriptsize}
+
+    \end{axis}
+\end{tikzpicture}
+
+L'éaqution réduite de cette tangeante est (T):$y=f'(x_{0})(x-x_{0})+f(x_{0})$
+\subsection*{\underline{\textbf{\textcolor{green}{\ex}}}}
+Soit $f(x)=x^{2}+1$, Etudier la dérivabilité de f en 1\\
+Determiner l'équation de la tangeante à $C_{f}$ au point d'abscisse 1.\\
+
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.5} % espace entre les lignes
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        $x$    & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$  \\
+        \hline
+        $f(x)$ & $10$ & $5$  & $2$  & $1$ & $2$ & $5$ & $10$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2.Théorème}}}}
+Toute Fonction dérivable en $x_{0}$ est continue en $x_{0}$
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque}}}}
+La réciproque n'est pas toujours vraie c'est-à-dire, une fonction continue en $x_{0}$ peut ne pas être dérivable en $x_{0}$.
+\subsection*{\underline{\textbf{\textcolor{green}{\ex}}}}
+La fonction $f(x)=|x|$ est-elle dérivable en $0$
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+\begin{itemize}
+    \item[•] Continuité de f en $0$\\
+          \[\textbf{A-t-on}\lim_{x \to 0}f(x)=f(x_{0})?\]
+          Oui donc f est continue en 0
+    \item[•] Dérivabilité de f en $0$\\
+          \[\textbf{A-t-on}\lim_{x \to 0}\frac{f(x)-f(x_{0})}{x-0}=\ell?\]
+          \[\lim_{x \to 0}\frac{f(x)-f(x_{0})}{x-0}=\lim_{x \to 0}\frac{|x|}{x}\]
+          Cherchons la limite a gauche et a droite de 0.
+          \[\lim_{x \to 0}\frac{|x|}{x}=\lim_{x \to 0^{-}}\frac{-x}{x}=-1\]
+          \[\lim_{x \to 0}\frac{|x|}{x}=\lim_{x \to 0^{+}}\frac{-x}{x}=1\]
+          Comme \[\lim_{x \to 0^{-}}\frac{f(x)-f(0)}{x-0}\neq \lim_{x \to 0^{+}}\frac{f(x)-f(0)}{x-0}\] donc f n'est pas dérivable en 0
+\end{itemize}
+\section*{\underline{\textbf{\textcolor{red}{III.Fonction dérivée}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1.Définition}}}}
+Soit \( f \) une fonction définie sur un intervalle \( I \subset \mathbb{R} \). On dit que \( f \) est \textbf{dérivable sur \( I \)} si elle est dérivable en tout point de cet intervalle.
+
+Dans ce cas, la fonction qui, à chaque réel \( x \in I \), associe le nombre dérivé de \( f \) en \( x \) est appelée la \textbf{fonction dérivée} de \( f \), et elle est notée :
+\[
+    f' : x \mapsto f'(x)
+\]
+\subsection*{\underline{\textbf{\textcolor{red}{2.Fonction dérivée de quelques fonctions usuelles}}}}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Fonction             & Domaine de Dérivabilité & Dérivée                       \\
+        \hline
+        $f(x) = k$           & $\mathbb{R}$            & $f'(x)=0$                     \\
+        \hline
+        $f(x) = x$           & $\mathbb{R}$            & $f'(x) = 1$                   \\
+        \hline
+        $f(x) = x^{n}$       & $\mathbb{R}$            & $f'(x) = nx^{n-1}$            \\
+        \hline
+        $f(x) = \frac{1}{x}$ & $\mathbb{R}^{*}$        & $f'(x) = -\frac{1}{x^{2}}$    \\
+        \hline
+        $f(x) = \sqrt{x}$    & $\mathbb{R}^{*}_{+}$    & $f'(x) = \frac{1}{2\sqrt{x}}$ \\
+        \hline
+    \end{tabular}
+\end{center}
+\subsection*{\underline{\textbf{\textcolor{red}{3.Opération sur les fonctions dérivables}}}}
+Soient u et v deux fonctions dérivables sur I et dont les fonctions dérivées sont notées u' et v'.
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Fonction                                        & Domaine de Dérivabilité      & Dérivée                 \\
+        \hline
+        $ku;k\in \mathbb{R}$                            & $I$                          & $ku'$                   \\
+        \hline
+        $u^{n}, \forall n \in \mathbb{N}\setminus{0,1}$ & $I$                          & $nu'u^{n-1}$            \\
+        \hline
+        $u+v$                                           & $I$                          & $u'+v'$                 \\
+        \hline
+        $uv$                                            & $I$                          & $u'v+v'u$               \\
+        \hline
+        $\frac{1}{v}$                                   & $\forall \in I; v(x) \neq 0$ & $-\frac{v'}{v^{2}}$     \\
+        \hline
+        $\frac{u}{v}$                                   & $\forall \in I; v(x) \neq 0$ & $\frac{u'v-v'u}{v^{2}}$ \\
+        \hline
+        $\sqrt{u}$                                      & $\forall \in I; u(x) > 0$    & $\frac{u'}{2\sqrt{u}}$  \\
+        \hline
+    \end{tabular}
+\end{center}
+\subsection*{\underline{\textbf{\textcolor{red}{4.Interprétation graphique du nombre dérivée à gauche et à droite}}}}
+\begin{itemize}
+    \item[*]Si $f$ est dérivable à gauche de $x_{0}$
+    \item[*]
+\end{itemize}
+\subsection*{\underline{\textbf{\textcolor{red}{5.Propriété}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{6.Dérivée d'une fonction trigonométrique}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{7.Dérivée d'une fonction composée}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{II.Variation d'une fonction numérique et courbe de représentation}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1)Variation d'une fonction numérique}}}}
+Soit $f$ une fonction dérivable sur un intervalle $I$.
+\begin{enumerate}
+    \item[•] Si $f'(x)>0$ sur $I$ alors $f$ est croissante sur $I$.
+    \item[•] Si $f'(x)<0$ sur $I$ alors $f$ est décroissante sur $I$.
+    \item[•] Si $f'(x)=0$ sur $I$ alors $f$ est constante sur $I$.
+\end{enumerate}
+\subsection*{\underline{\textbf{\textcolor{green}{\ex}}}}
+Etudions les variations de $f$ et dressons le tableau de variation de chacune des fonction suivantes:
+
+$f(x)=x^{2}+2x-3$
+
+$g(x)=\frac{2x+2}{x-3}$
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+Pour $f(x)=x^{2}+2x-3$:
+
+$D_{f}=\mathbb{R}$. Car f est une fonction polynômiale.
+
+f est dérivable sur $\mathbb{R}$ et on a:
+
+$f'(x)=2x+2$
+
+\textcolor{red}{Etudions le signe de $f'$}
+
+Posons $f'(x)=0 \Longrightarrow 2x+2=0\Longrightarrow x=-1$\\
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+    %\draw [color=cqcqcq,, xstep=1cm,ystep=1cm] (-7,-10) grid (-22,17);
+    \clip(-22,3) rectangle (12,10);
+    \draw [line width=2pt] (-23,8)-- (-7,8); %première ligne A(-22,8)---B(-7,8)
+    \draw [line width=2pt] (-22,6)-- (-7,6); %deuxième ligne
+    \draw [line width=2pt] (-22,4)-- (-7,4); %troisième ligne
+    \draw [line width=2pt] (-22,4)-- (-22,8); %première colonne (-22,4)<----(-22,8);
+    \draw [line width=2pt] (-18,8)-- (-18,4); %deuxième colone  (-18,8)--->(-18,4);
+    \draw [line width=2pt] (-7,8)-- (-7,4); %troisième colonne (-7,8)-->(-7,4);
+    \draw (-22,5.5) node[anchor=north west] {$f'(x)=2x+2$};
+    \draw (-21,7) node[anchor=north west] {$x$};
+    \draw (-18,7) node[anchor=north west] {$-\infty$};
+    \draw (-8,7) node[anchor=north west] {$+\infty$};
+    \draw (-15.8,5.3) node[anchor=north west] {$-$};
+    \draw (-10.5,5.3) node[anchor=north west] {$+$};
+    \draw [line width=2pt] (-13,6)-- (-13,4); %(-13,6)-- (-13,4);
+    \draw (-13.5,7) node[anchor=north west] {$-1$};
+    \draw (-13.3,5.3) node[anchor=north west] {$O$};
+\end{tikzpicture}
+
+$\forall x\in \left] -\infty , -1 \right[$, $f'(x)<0$ donc $f$ est décroissante.
+
+        $\forall x\in \left] -1 , +\infty \right[$, $f'(x)>0$ donc $f$ est croissante
+
+            \textcolor{red}{Limites aux bornes de $D_{f}$}
+
+            \[\lim_{x \to +\infty }f(x)=+\infty\quad\quad\lim_{x \to -\infty }f(x)=+\infty\quad\quad f(-1)=-4\]
+
+            \textcolor{red}{Tableau de variation}\\
+            %Tableau de Variation
+            \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+            \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+                %\draw [color=cqcqcq,, xstep=1cm,ystep=1cm] (-7,-10) grid (-22,17);
+                \clip(-22,-5) rectangle (12,10);
+                \draw [line width=2pt] (-23,8)-- (-7,8); %première ligne A(-22,8)---B(-7,8)
+                \draw [line width=2pt] (-22,6)-- (-7,6); %deuxième ligne
+                \draw [line width=2pt] (-22,4)-- (-7,4); %troisième ligne
+                \draw [line width=2pt] (-22,-2)-- (-7,-2);%dernière ligne
+                \draw [line width=2pt] (-22,-2)-- (-22,8); %première colonne
+                \draw [line width=2pt] (-19,8)-- (-19,-2); %deuxième colone
+                \draw [line width=2pt] (-13,6)-- (-13,-2); %troisième colonne
+                \draw [line width=2pt] (-7,8)-- (-7,-2); %quatrième colonne
+                \draw (-21,1.5) node[anchor=north west] {$f(x)$};
+                \draw (-21,5.5) node[anchor=north west] {$f'(x)$};
+                \draw (-21,7) node[anchor=north west] {$x$};
+                \draw (-19,7) node[anchor=north west] {$-\infty$};
+                \draw (-13.4,6.5) node[anchor=north west] {$-1$};
+                \draw (-8,7) node[anchor=north west] {$+\infty$};
+                %signe de la dérivé
+                \draw (-17,5.3) node[anchor=north west] {$-$};
+                \draw (-13.3,5.3) node[anchor=north west] {$O$};
+                \draw (-10,5.3) node[anchor=north west] {$+$};
+
+                \draw [->,line width=2pt] (-18,3) -- (-13.5,-1.3);
+                \draw (-18.8,3.9) node[anchor=north west] {$+\infty$};
+                \draw (-13.4,-1) node[anchor=north west] {\textbf{\textcolor{blue}{-4}}};
+
+                \draw [->,line width=2pt] (-12.5,-1.3) -- (-8,3.5);
+                \draw (-8,3.9) node[anchor=north west] {$+\infty$};
+            \end{tikzpicture}
+
+            \subsection*{\underline{\textbf{\textcolor{red}{Courbe de la fonction $f$)}}}}
+
+            \definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+            \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+                \begin{axis}[
+                        x=1cm,y=1cm,
+                        axis lines=middle,
+                        ymajorgrids=true,
+                        xmajorgrids=true,
+                        xmin=-7,
+                        xmax=7,
+                        ymin=-8,
+                        ymax=8,
+                        xtick={-2,-15,...,30},
+                        ytick={-18,-16,...,12},]
+                    \draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-8:3] plot(\x,{(\x)^(2)+2*(\x)-3});
+                    \begin{scriptsize}
+                        \draw[color=qqwuqq] (-6,2) node {$f$};
+                    \end{scriptsize}
+                \end{axis}
+            \end{tikzpicture}
+
+            Pour $g(x)=\frac{2x+2}{x-3}$:
+
+        $D_{g}=\mathbb{R}\setminus\left\lbrace 3\right\rbrace $.
+
+        $g$ est dérivable sur $D_{g}=\mathbb{R}\setminus\left\lbrace 3\right\rbrace $ et on a:
+
+        $g'(x)=\frac{-8}{(x-3)^{2}}$
+
+            \textcolor{red}{Etudions le signe de $g'$}
+
+            Le signe de $g'$ dépend du numérateur car le dénominateur est $(x-3)^{2}$ est toujours positive
+
+            Donc $\forall x \in D_{g}=\mathbb{R}\setminus\left\lbrace 3\right\rbrace$, $g'(x)<0$ donc $g$ est décroissante.\\
+            \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+            \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+                %\draw [color=cqcqcq,, xstep=1cm,ystep=1cm] (-7,-10) grid (-22,17);
+                \clip(-22,3) rectangle (12,10);
+                \draw [line width=2pt] (-23,8)-- (-7,8); %première ligne A(-22,8)---B(-7,8)
+                \draw [line width=2pt] (-22,6)-- (-7,6); %deuxième ligne
+                \draw [line width=2pt] (-22,4)-- (-7,4); %troisième ligne
+                \draw [line width=2pt] (-22,4)-- (-22,8); %première colonne (-22,4)<----(-22,8);
+                \draw [line width=2pt] (-18,8)-- (-18,4); %deuxième colone  (-18,8)--->(-18,4);
+                \draw [line width=2pt] (-7,8)-- (-7,4); %troisième colonne (-7,8)-->(-7,4);
+                \draw (-21,5.5) node[anchor=north west] {$g'(x)$};
+                \draw (-21,7) node[anchor=north west] {$x$};
+                \draw (-18,7) node[anchor=north west] {$-\infty$};
+                \draw (-8,7) node[anchor=north west] {$+\infty$};
+                \draw (-13,5.3) node[anchor=north west] {$-$};
+            \end{tikzpicture}
+            \textcolor{red}{Limites aux bornes de $D_{g}$}
+
+            Les bornes de $D_{g}$ sont $+\infty$, 3 et $-\infty$
+
+            \[\lim_{x \to +\infty }g(x)=2\quad\quad\lim_{x \to -\infty }g(x)=2\quad\quad\]
+
+            \[\lim_{x \to 3^{-} }g(x)=-\infty\quad\quad\lim_{x \to 3^{+} }g(x)=+\infty\quad\quad\]
+            %Tableau de Variation
+            \textcolor{red}{Tableau de variation}\\
+            %Tableau de Variation
+            \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+            \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+                %\draw [color=cqcqcq,, xstep=1cm,ystep=1cm] (-7,-10) grid (-22,17);
+                \clip(-22,-5) rectangle (12,10);
+                \draw [line width=2pt] (-23,8)-- (-7,8); %première ligne A(-22,8)---B(-7,8)
+                \draw [line width=2pt] (-22,6)-- (-7,6); %deuxième ligne
+                \draw [line width=2pt] (-22,4)-- (-7,4); %troisième ligne
+                \draw [line width=2pt] (-22,-2)-- (-7,-2);%dernière ligne
+                \draw [line width=2pt] (-22,-2)-- (-22,8); %première colonne
+                \draw [line width=2pt] (-19,8)-- (-19,-2); %deuxième colone
+                \draw [line width=2pt] (-13,6)-- (-13,-2); %troisième colonne
+                \draw [line width=2pt] (-13.2,6)-- (-13.2,-2); %troisième colonne
+                \draw [line width=2pt] (-7,8)-- (-7,-2); %quatrième colonne
+                \draw (-21,1.5) node[anchor=north west] {$f(x)$};
+                \draw (-21,5.5) node[anchor=north west] {$f'(x)$};
+                \draw (-21,7) node[anchor=north west] {$x$};
+                \draw (-19,7) node[anchor=north west] {$-\infty$};
+                \draw (-13.4,6.5) node[anchor=north west] {$3$};
+                \draw (-8,7) node[anchor=north west] {$+\infty$};
+                %signe de la dérivé
+                \draw (-17,5.3) node[anchor=north west] {$-$};
+                %\draw (-13.3,5.3) node[anchor=north west] {$O$};
+                \draw (-10,5.3) node[anchor=north west] {$-$};
+
+                \draw [->,line width=2pt] (-18,3) -- (-13.5,-1.3);
+                \draw (-18.8,3.9) node[anchor=north west] {$2$};
+                \draw (-14.1,-1) node[anchor=north west] {\textbf{\textcolor{blue}{$-\infty$}}};
+                \draw [->,line width=2pt] (-12.5,3) -- (-8,-1);
+                \draw (-13,4) node[anchor=north west] {\textbf{\textcolor{blue}{$+\infty$}}};
+                \draw (-8,-1) node[anchor=north west] {$2$};
+            \end{tikzpicture}
+
+            \definecolor{ccqqqq}{rgb}{0.8,0,0}
+            \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+                \begin{axis}[
+                        x=1cm,y=1cm,
+                        axis lines=middle,
+                        ymajorgrids=true,
+                        xmajorgrids=true,
+                        xmin=-4.8,
+                        xmax=23.6,
+                        ymin=-7.8,
+                        ymax=6.9,
+                        xtick={-4,-3,...,23},
+                        ytick={-7,-6,...,6},]
+                    \clip(-4.8,-7.8) rectangle (23.6,6.9);
+                    \draw[line width=2pt,color=ccqqqq,smooth,samples=100,domain=-4.8569002927688985:23.616121721840784] plot(\x,{(2*(\x)+2)/((\x)-3)});
+                    \begin{scriptsize}
+                        \draw[color=ccqqqq] (-4.6,1.15) node {$g$};
+                    \end{scriptsize}
+                \end{axis}
+            \end{tikzpicture}
+
+            \section*{\underline{\textbf{\textcolor{red}{III.Théorèmes}}}}
+            \subsection*{\underline{\textbf{\textcolor{red}{1)Théorème 1(théorème de la bijection)}}}}
+            Si $f$ est une fonction continue et strictement monotone sur un intervalle $I$ alors elle réalise une bijection de $I$ vers $f(I)$.
+            \subsection*{\underline{\textbf{\textcolor{red}{2)Théorème 2(théorème des valeurs intermédiares)}}}}
+            Si $f$ est une fonction continue sur un intervalle $[a, b]$ tel que $f(a)\times f(b)<0$ alors il existe au moins un réel $\alpha\in ]a, b[$ tel que $f(\alpha)=0$
+\subsection*{\underline{\textbf{\textcolor{red}{3)Corrolaire du théorème des valeurs intermédiares)}}}}
+Si $f$ est une fonction continue et stricement monotone sur $[a, b]$ tel que $f(a)\times f(b)<0$ alors il existe un unique $\alpha\in [a, b]$ tel que $f(\alpha)=0$
+\subsection*{\underline{\textbf{\textcolor{red}{4)Théorème 4}}}}
+Soit $f$ une fonction dérivable sur un intervalle ouvert $I$. Si au point $x_{0}$ de $I$ $f'(x)$ s'annule en changeant de signe, alors $f$ présente un extrémemum au point $x_{0}$.
+\subsection*{\underline{\textbf{\textcolor{green}{\ex}}}}
+Pour $f(x)=x^{2}+2x-3$:
+
+$f'(x)=2x+2$
+
+\textcolor{red}{Tableau de variation}\\
+%Tableau de Variation
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+    %\draw [color=cqcqcq,, xstep=1cm,ystep=1cm] (-7,-10) grid (-22,17);
+    \clip(-22,-5) rectangle (12,10);
+    \draw [line width=2pt] (-23,8)-- (-7,8); %première ligne A(-22,8)---B(-7,8)
+    \draw [line width=2pt] (-22,6)-- (-7,6); %deuxième ligne
+    \draw [line width=2pt] (-22,4)-- (-7,4); %troisième ligne
+    \draw [line width=2pt] (-22,-2)-- (-7,-2);%dernière ligne
+    \draw [line width=2pt] (-22,-2)-- (-22,8); %première colonne
+    \draw [line width=2pt] (-19,8)-- (-19,-2); %deuxième colone
+    \draw [line width=2pt] (-13,6)-- (-13,-2); %troisième colonne
+    \draw [line width=2pt] (-7,8)-- (-7,-2); %quatrième colonne
+    \draw (-21,1.5) node[anchor=north west] {$f(x)$};
+    \draw (-21,5.5) node[anchor=north west] {$f'(x)$};
+    \draw (-21,7) node[anchor=north west] {$x$};
+    \draw (-19,7) node[anchor=north west] {$-\infty$};
+    \draw (-13.4,6.5) node[anchor=north west] {$-1$};
+    \draw (-8,7) node[anchor=north west] {$+\infty$};
+    %signe de la dérivé
+    \draw (-17,5.3) node[anchor=north west] {$-$};
+    \draw (-13.3,5.3) node[anchor=north west] {$O$};
+    \draw (-10,5.3) node[anchor=north west] {$+$};
+
+    \draw [->,line width=2pt] (-18,3) -- (-13.5,-1.3);
+    \draw (-18.8,3.9) node[anchor=north west] {$-\infty$};
+    \draw (-13.4,-1) node[anchor=north west] {\textbf{\textcolor{blue}{-4}}};
+
+    \draw [->,line width=2pt] (-12.5,-1.3) -- (-8,3.5);
+    \draw (-8,3.9) node[anchor=north west] {$+\infty$};
+\end{tikzpicture}
+
+$f'$ s'annule et change de signe en $-1$ alors $f$ présente un minimum en $-1$ et cet mininum est $f(-1)=-4$
+
+\section*{\textcolor{red}{Étude des asymptotes}}
+
+\subsection*{1. Asymptote verticale}
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!80!black]
+    \textbf{Définition :} Une droite verticale \( x = a \) est une \textbf{asymptote verticale} si la fonction diverge quand \( x \) tend vers \( a \).
+
+    \[
+        \lim_{x \to a^-} f(x) = \pm \infty \quad \text{ou} \quad \lim_{x \to a^+} f(x) = \pm \infty
+    \]
+\end{tcolorbox}
+
+\textbf{Exemple :} \( f(x) = \dfrac{1}{x - 2} \) \\
+On a :
+\[
+    \lim_{x \to 2^-} f(x) = -\infty \quad ; \quad \lim_{x \to 2^+} f(x) = +\infty
+\]
+Donc la droite \( x = 2 \) est une asymptote verticale.
+
+\vspace{0.5cm}
+
+\subsection*{2. Asymptote horizontale}
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!80!black]
+    \textbf{Définition :} Une droite horizontale \( y = \ell \) est une \textbf{asymptote horizontale} si :
+
+    \[
+        \lim_{x \to +\infty} f(x) = \ell \quad \text{ou} \quad \lim_{x \to -\infty} f(x) = \ell
+    \]
+\end{tcolorbox}
+
+\textbf{Exemple :} \( f(x) = \dfrac{3x + 1}{x + 4} \) \\
+On a :
+\[
+    \lim_{x \to \pm\infty} f(x) = \dfrac{3x}{x} = 3
+\]
+Donc \( y = 3 \) est une asymptote horizontale.
+
+\vspace{0.5cm}
+
+\subsection*{3. Asymptote oblique}
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!80!black]
+    \textbf{Définition :} Si \( f(x) \to ax + b \) quand \( x \to \infty \), alors la droite \( y = ax + b \) est une \textbf{asymptote oblique}.
+
+    \[
+        \lim_{x \to \infty} \left[ f(x) - (ax + b) \right] = 0
+    \]
+\end{tcolorbox}
+
+\textbf{Exemple :} \( f(x) = \dfrac{x^2 + 1}{x} = x + \dfrac{1}{x} \) \\
+Donc :
+\[
+    f(x) - x = \dfrac{1}{x} \to 0 \quad \text{quand } x \to \infty
+\]
+La droite \( y = x \) est une asymptote oblique.
+
+\section*{\textcolor{green!50!black}{\underline{Plan d’étude d’une fonction}}}
+
+\begin{itemize}
+    \item Domaine de définition
+    \item Limites aux bornes du domaine
+    \item \textbf{Recherche d’asymptotes} :\\
+          \hspace*{0.5cm}— asymptotes verticales\\
+          \hspace*{0.5cm}— asymptotes horizontales ou obliques
+    \item Parité et périodicité (si nécessaire)
+    \item Dérivée et son signe
+    \item Tableau de variation
+    \item Intersection de $\mathcal{C}_f$ avec les axes du repère
+    \item Représentation graphique
+\end{itemize}
+
+\end{document}
