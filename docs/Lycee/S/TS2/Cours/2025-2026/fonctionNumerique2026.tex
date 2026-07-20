@@ -26,6 +26,10 @@
 \usepackage{tkz-tab}
 \usepackage[table]{xcolor}
 \usepackage{pgfplots}
+
+\usetikzlibrary{arrows.meta, plotmarks}
+\definecolor{curvegreen}{RGB}{34, 177, 76}
+
 \pgfplotsset{compat=1.18} % Indique à pgfplots d'utiliser les coordonnées standard
 \usetikzlibrary{arrows.meta}
 \author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
@@ -1106,12 +1110,77 @@ Le point \( I(a ; b) \) est un centre de symétrie de la courbe \( C_{f} \) si l
 \item[•] \( (\forall x \in D_{f}) ; f( 2a-x )+f(x) = 2b \)
 \end{itemize}
 
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines = center,
+        xmin = -2.2, xmax = 5.0,
+        ymin = -0.6, ymax = 4.5,
+        ticks = none,
+        enlargelimits = false,
+        axis line style = {-{Stealth[scale=1.2]}, thick},
+    ]
+        % ----------------------------------------------------
+        % GEOMETRIE ACCENTUEE :
+        % f(x) = (x-2.5)^3 - 0.5*(x-2.5) + 2
+        % Centre \Omega : a = 2.5, b = 2
+        % Pour h = 1.2 :
+        %   a - h = 1.3  => f(1.3) = 0.872
+        %   a + h = 3.7  => f(3.7) = 3.128
+        % ----------------------------------------------------
+
+        % 1. Tracé de la courbe C_f avec plus de pente
+        \addplot[
+            domain=0.8:4.1,
+            samples=100,
+            color=curvegreen,
+            thick
+        ] {(x-2.5)^3 - 0.5*(x-2.5) + 2} node[right, pos=0.95, color=curvegreen] {$C_f$};
+
+        % 2. Segment oblique bien pentu passant par \Omega
+        \draw[thick, gray!80!black] (axis cs:1.3, 0.872) -- (axis cs:3.7, 3.128);
+
+        % 3. Lignes de rappel pour le centre \Omega (en rouge)
+        \draw[red, dashed, thick] (axis cs:2.5, 0) -- (axis cs:2.5, 2);
+        \draw[red, dashed, thick] (axis cs:0, 2) -- (axis cs:2.5, 2);
+
+        % 4. Lignes de rappel pour a-h et a+h (bien séparées verticalement)
+        \draw[dashed] (axis cs:1.3, 0) -- (axis cs:1.3, 0.872) -- (axis cs:0, 0.872);
+        \draw[dashed] (axis cs:3.7, 0) -- (axis cs:3.7, 3.128) -- (axis cs:0, 3.128);
+
+        % 5. Marquage des 3 points par des croix 'x'
+        \node[mark=x, mark size=4pt, thick] at (axis cs:1.3, 0.872) {};
+        \node[mark=x, mark size=4pt, thick] at (axis cs:2.5, 2) {};
+        \node[mark=x, mark size=4pt, thick] at (axis cs:3.7, 3.128) {};
+
+        % 6. Placements des étiquettes (bien aérées sur l'axe y)
+        % Axe des abscisses (x)
+        \node[below] at (axis cs:1.3, 0) {$a - h$};
+        \node[below, red] at (axis cs:2.5, 0) {$a$};
+        \node[below] at (axis cs:3.7, 0) {$a + h$};
+
+        % Axe des ordonnées (y)
+        \node[left, xshift=-2pt] at (axis cs:0, 0.872) {$f(a - h)$};
+        \node[left, red, xshift=-2pt] at (axis cs:0, 2) {$b$};
+        \node[left, xshift=-2pt] at (axis cs:0, 3.128) {$f(a + h)$};
+
+        % Nom du centre \Omega
+        \node[red, above left] at (axis cs:2.5, 2) {\Large $\Omega$};
+
+    \end{axis}
+
+    % Légende sous le graphique
+    \node[red, below=0.4cm] at (current bounding box.south) {$\Omega(a, b)$ centre de symétrie};
+\end{tikzpicture}
+
+
+\begin{comment}
 \begin{figure}[H]% Forcer l'image à cet endroit
 \centering
 \includegraphics[width=0.5\textwidth]{centreSymetrie.png}
 \caption{centreSymetrie}
 \label{fig:monimage}
 \end{figure}
+\end{comment}
 
 \textbf{\textcolor{blue}{Cas particulier}} Si \( a=b=0 \) ; \( f \) est une fonction impaire
 
