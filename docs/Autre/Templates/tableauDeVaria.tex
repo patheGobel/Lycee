@@ -26,4 +26,31 @@
 	\node[above] at (4.7, -1.7) {\textcolor{black}{$-$}};
 \end{tikzpicture}
 \end{center}
+
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=5]{$x$/.5,$f'(x)$/.7,$f$/1.5}{$0$,$+\infty$}
+        \tkzTabLine{,+,}
+        \tkzTabVar{-/$-\infty$,+/$+\infty$/}
+        \tkzTabVal[draw]{1}{2}{0.3}{$0$}{$0$}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+        % On définit l'initialisation du tableau : 
+        % espcl=4 augmente l'espace horizontal pour que ce soit plus aéré.
+        \tkzTabInit[espcl=4]{$x$ / .7 , $h'(x)$ / .7 , $h$ / 1.6}{$0$, $+\infty$}
+        
+        % La ligne de la dérivée : 
+        % 'd' au début met la double barre en 0, puis on met le signe moins.
+        \tkzTabLine{d, -, }
+        
+        % La ligne des variations de h :
+        % D+ / $+\infty$ signifie : au niveau de la double barre (D), la limite est à gauche/haut (+).
+        % - / $0$ signifie : la flèche descend (-) vers la valeur 0.
+        \tkzTabVar{D+ / $+\infty$, - / $0$}
+\end{tikzpicture}
+\end{center}
+
 \end{document}
