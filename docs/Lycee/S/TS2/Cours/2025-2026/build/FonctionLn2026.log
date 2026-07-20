@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 JUL 2026 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 JUL 2026 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1286,40 +1286,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 192--198
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 230--239
+Underfull \hbox (badness 10000) in paragraph at lines 230--232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--244
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 277--280
 
- []
-
-
-Overfull \hbox (444.6157pt too wide) in paragraph at lines 292--293
-[][] 
  []
 
 [3]
-Overfull \vbox (0.39955pt too high) has occurred while \output is active []
-
-
-[4]
 Underfull \hbox (badness 10000) in paragraph at lines 295--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--335
+Overfull \hbox (444.6157pt too wide) in paragraph at lines 328--329
+[][] 
+ []
+
+[4]
+Overfull \vbox (0.39955pt too high) has occurred while \output is active []
+
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-[5] [6] (build/FonctionLn2026.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--371
+
+ []
+
+[6] [7] (build/FonctionLn2026.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1328,11 +1333,11 @@ Package rerunfilecheck Info: File `FonctionLn2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42047 strings out of 467533
- 985698 string characters out of 5422138
+ 42054 strings out of 467533
+ 985804 string characters out of 5422138
  1565840 words of memory out of 5000000
- 70209 multiletter control sequences out of 15000+600000
- 687035 words of font info for 99 fonts, out of 8000000 for 9000
+ 70213 multiletter control sequences out of 15000+600000
+ 693021 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,735b,2078s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
@@ -1344,10 +1349,10 @@ e/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm
 nts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on build/FonctionLn2026.pdf (6 pages, 168323 bytes).
+Output written on build/FonctionLn2026.pdf (7 pages, 183730 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 183 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

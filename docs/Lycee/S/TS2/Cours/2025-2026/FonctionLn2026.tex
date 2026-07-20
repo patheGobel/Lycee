@@ -229,14 +229,50 @@ f(x)=$\ln[\frac{x^{2}+2x+9}{x-2}]$
 \subsection*{\underline{\textbf{\textcolor{red}{4.Limites des composées avec ln}}}}
 Soit $U(x)$ une fonction strictement positive.\\
 Cherchons $\lim_{{x \to a}} \ln[u(x)]$\\
-$\bigotimes$ Si $\lim_{{x \to a}} u(x)=l$ et que $\lim_{{x \to l}} \ln(x)=l'$\\
-Alors \\
-$\bigotimes$ Si $\lim_{{x \to a}} ln[u(x)]=l'$\\
+
+$\textbf{Si}
+ \begin{cases}
+ \lim\limits_{{x \to a}} u(x)=l\\[2mm]
+ \lim\limits_{{X \to l}} \ln(X)=l'
+ \end{cases} \implies \lim\limits_{{x \to a}} \ln[u(x)]=l'
+$
+
 \underline{\textbf{\textcolor{red}{Exemple}}}\\
 Calcule la limite suivante\\
-$\lim_{{x \to \infty}} \ln(\frac{x^{2}}{2x^{2}-1})$\\
+$\displaystyle \lim\limits_{x \to +\infty} \ln\left(\frac{x^2}{2x^2 - 1}\right)$
+
 \underline{\textbf{\textcolor{red}{Solution}}}\\
 
+\textbf{Étape 1 : Limite de la fonction rationnelle à l'intérieur du logarithme}\\
+Quand $x \to +\infty$, le comportement en $+\infty$ d'une fonction rationnelle est donné par le rapport
+                de ses termes de plus haut degré :
+                
+                $
+                \displaystyle
+                \begin{aligned}
+                \lim\limits_{x \to +\infty} \frac{x^2}{2x^2 - 1} &= \lim_{x \to +\infty} \frac{x^2}{2x^2}\\ 
+                                                                 &= \frac{1}{2}
+                \end{aligned}
+                $
+
+\textbf{Étape 2 : Application du théorème de composition des limites}\\
+On pose $u(x) = \dfrac{x^2}{2x^2 - 1}$. 
+
+\[
+\text{Si }
+\begin{cases}
+\lim\limits_{x \to +\infty} u(x) = \dfrac{1}{2} \\[2mm]
+\lim\limits_{X \to \frac{1}{2}} \ln(X) = \ln\left(\dfrac{1}{2}\right)
+\end{cases}
+\text{ alors } \lim_{x \to +\infty} \ln\left[u(x)\right] = \ln\left(\frac{1}{2}\right)
+\]
+
+\textbf{Étape 3 : Simplification du résultat}\\
+En utilisant la propriété $\ln\left(\frac{1}{a}\right) = -\ln(a)$, on obtient :
+                $\ln\left(\frac{1}{2}\right) = -\ln(2)$
+
+\textbf{Conclusion :}
+$\displaystyle \lim\limits_{x \to +\infty} \ln\left(\frac{x^2}{2x^2 - 1}\right) = -\ln(2)$
 \section*{\underline{\textbf{\textcolor{red}{III.Etude le fonction ln}}}}
 Soit $f(x)=\ln(x)$ le domaine \\
 Le Domaine $D_{f}$ \\
