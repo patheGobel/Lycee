@@ -25,6 +25,9 @@
 \usepackage{amssymb}
 \usepackage{tkz-tab}
 \usepackage[table]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Indique à pgfplots d'utiliser les coordonnées standard
+\usetikzlibrary{arrows.meta}
 \author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
 \title{\textbf{Rappels et compléments sur les fonctions numériques}}
 \date{\today}
@@ -1045,12 +1048,48 @@ La droite d'équation cartésienne \( x=a \) est un axe de symétrie de la courb
 \item[•] \( (\forall x \in D_{f}) ; f( 2a-x )=f(x) \)
 \end{itemize}
 
-\begin{figure}[H]% Forcer l'image à cet endroit
-\centering
-\includegraphics[width=0.5\textwidth]{axeSymetrie.png}
-\caption{centreSymetrie}
-\label{fig:monimage}
-\end{figure}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines = center,
+        xmin = -2.2, xmax = 4.5, % Élargi pour donner un maximum de place au texte de gauche
+        ymin = -0.8, ymax = 4.5,
+        ticks = none,
+        enlargelimits = false,
+        axis line style = {-{Stealth[scale=1.2]}, thick},
+    ]
+        % Origine O
+        \node[below left] at (axis cs:0,0) {$O$};
+
+        % Vecteurs unitaires i et j
+        \draw[-{Stealth[scale=1.2]}, thick] (axis cs:0,0) -- (axis cs:0.6,0) node[below, midway] {$\vec{i}$};
+        \draw[-{Stealth[scale=1.2]}, thick] (axis cs:0,0) -- (axis cs:0,0.6) node[left, midway] {$\vec{j}$};
+
+        % Tracé de la courbe C_f
+        \addplot[
+            domain=0.8:3.6,
+            samples=100,
+            color=blue,
+            ultra thick
+        ] {0.8*(x-2.2)^2 + 1} node[right, pos=0.95] {$C_f$};
+
+        % Axe de symétrie x = a
+        \draw[color=magenta, thick] (axis cs:2.2,-0.5) -- (axis cs:2.2,4.2);
+        \node[color=magenta, below] at (axis cs:2.2,-0.5) {$x = a$};
+
+        % Lignes de rappel en pointillés
+        \draw[dashed, thick] (axis cs:1.1,0) -- (axis cs:1.1,1.968) -- (axis cs:0,1.968);
+        \draw[dashed, thick] (axis cs:3.3,0) -- (axis cs:3.3,1.968) -- (axis cs:0,1.968);
+
+        % Étiquettes sur l'axe x
+        \node[below] at (axis cs:1.1,0) {$a - h$};
+        \node[below] at (axis cs:3.3,0) {$a + h$};
+
+        % Étiquette sur l'axe y (Corrigée pour éviter le bug d'alignement vertical)
+        \node[left, text width=2cm, align=right] at (axis cs:-0.1,1.968) {$f(a+h)$ \\ $=$ \\ $f(a-h)$};
+
+    \end{axis}
+\end{tikzpicture}
+
 
 \textbf{\textcolor{blue}{Cas particulier}} Si \( a=0 \) ; \( f \) est une fonction paire
 
