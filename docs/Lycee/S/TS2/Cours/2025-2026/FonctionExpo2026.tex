@@ -116,112 +116,380 @@ middle color = tcbcolback!80!black]
     \textbf{Année scolaire : 2025 -- 2026}
 \end{center}
 
-\subsection*{\underline{\textbf{\textcolor{red}{1.Définition :}}}}
-La fonction \( f(x) = \ln(x) \) est continue et strictement croissante sur \( ]0; +\infty[ \), donc c'est une bijection de \( ]0; +\infty[ \) sur \( \mathbb{R} \). Ainsi, \( f \) admet une bijection réciproque \( f^{-1} \), qui est continue et strictement croissante de \( \mathbb{R} \) vers \( ]0; +\infty[ \). 
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
 
-Cette fonction réciproque est appelée **fonction exponentielle** et est notée :
-\[
-\forall x \in \mathbb{R}, \quad \exp(x) = e^x
-\]
-Elle est caractérisée par la relation :
-\[
-e^x = y \quad \Leftrightarrow \quad x = \ln(y).
-\]
-\subsection*{\underline{\textbf{\textcolor{red}{2.Conséquences de la définition}}}}
+La fonction logarithme népérien \( \ln \) est continue et strictement croissante sur \( ]0;+\infty[ \). Elle réalise donc une bijection de \( ]0;+\infty[ \) sur \( \mathbb{R} \).
 
-\begin{enumerate}[label=(\alph*)]
-    \item \textbf{Image et ensemble de définition :}
-    \begin{itemize}
-        \item \( e^x \) est définie sur \( \mathbb{R} \) et prend ses valeurs dans \( ]0; +\infty[ \).
-        \item \( e^x \) est toujours strictement positive : \( e^x > 0 \) pour tout \( x \in \mathbb{R} \).
-    \end{itemize}
+Elle admet alors une fonction réciproque, notée \( \exp \), appelée \textbf{fonction exponentielle}. Cette fonction est définie sur \( \mathbb{R} \) et à valeurs dans \( ]0;+\infty[ \).
 
-    \item \textbf{Lien avec le logarithme :}
-    \begin{itemize}
-        \item \( e^{\ln(x)} = x \) pour tout \( x > 0 \).
-        \item \( \ln(e^x) = x \) pour tout \( x \in \mathbb{R} \).
-    \end{itemize}
-
-    \item \textbf{Comportement aux valeurs remarquables :}
-    \begin{itemize}
-        \item \( e^0 = 1 \).
-        \item \( e^1 = e \approx 2.718 \).
-    \end{itemize}
-
-    \item \textbf{Monotonie de \( e^x \) :}
-    \begin{itemize}
-        \item La fonction exponentielle est strictement \textbf{croissante} sur \( \mathbb{R} \), car sa dérivée est toujours positive.
-    \end{itemize}
-\end{enumerate}
-
-\subsection*{\underline{\textbf{\textcolor{red}{3.Propriétés fondamentales de la fonction exponentielle}}}}
-\textbf{\textcolor{red}{Propriété fondamentale}}\\
-
-Pour tout réel a et b, on a: $e^{a+b}=e^{a} \times e^{b}$.
-
-\textbf{\textcolor{red}{ Autres propriétés :}}\\
-\begin{itemize}
-    \item \textbf{} \(e^{-a}=\frac{1}{e^{a}}\)
-    \item \textbf{} \(e^{a-b}=\frac{e^{a}}{e^{b}}\)
-    \item \textbf{} \(e^{ra}=(e^{a})^{r}\)
-    \item \textbf{} \(e^{a}=e^{b} \Leftrightarrow a=b\)
-    \item \textbf{} \(e^{a}<e^{b} \Leftrightarrow a<b\)
-\end{itemize}
-
-\subsection*{\textbf{\textcolor{red}{4. Limites }}}
-
-\begin{enumerate}[label=(\alph*)]
-    \item \textbf{Les limites aux bornes de l'ensemble de définition de \( e^x \):}
-    \[
-    \lim_{x \to -\infty} e^x = 0
-    \]
-    \[
-    \lim_{x \to +\infty} e^x = +\infty
-    \]
-
-    \item \textbf{Limites Usuelles :}
-
-\end{enumerate}
-
+On note :
 \(
-\lim\limits_{x \to +\infty} \frac{e^x}{x} = +\infty
+\forall x\in\mathbb{R},\qquad \exp(x)=e^x.
 \)
 
-$\lim\limits_{x \to -\infty}xe^{x}=0$
+Par définition, pour tout réel \(x\) et tout réel strictement positif \(y\),
+\(
+e^x=y
+\quad\Longleftrightarrow\quad
+x=\ln(y).
+\)
+\subsection*{\underline{\textbf{\textcolor{red}{2. Conséquences de la définition}}}}
 
-$\lim\limits_{x \to 0}\frac{e^{x}-1}{x}=1$
+\begin{enumerate}[label=(\alph*)]
 
+\item \textbf{Ensemble de définition et image}
+
+\(
+D_{e^x}=\mathbb{R}
+\qquad\text{et}\qquad
+\mathrm{Im}(e^x)=]0;+\infty[.
+\)
+
+En particulier,
+
+\(
+\forall x\in\mathbb{R},\qquad e^x>0.
+\)
+
+\item \textbf{Relations avec le logarithme}
+
+Pour tout réel \(x\) et tout réel \(a>0\),
+
+\(
+e^{\ln(a)}=a
+\)
+
+et
+
+\(
+\ln(e^x)=x.
+\)
+
+\item \textbf{Valeurs remarquables}
+
+\(
+e^0=1
+\qquad;\qquad
+e^1=e\simeq2,718.
+\)
+
+\item \textbf{Sens de variation}
+
+La fonction exponentielle est continue et strictement croissante sur \( \mathbb{R} \).
+
+Par conséquent,
+
+\(
+a<b
+\Longrightarrow
+e^a<e^b.
+\)
+
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Propriétés algébriques}}}}
+
+\underline{\textbf{\textcolor{red}{Propriété fondamentale}}}
+
+Pour tous réels \(a\) et \(b\),
+
+\(
+e^{a+b}=e^a\times e^b.
+\)
+
+Cette propriété permet d'établir les égalités suivantes.
+
+\underline{\textbf{\textcolor{red}{Conséquences}}}
+
+Pour tous réels \(a\), \(b\) et \(r\),
+
+\begin{itemize}
+\item \(
+e^0=1,
+\)
+
+\item \(
+e^{-a}=\frac1{e^a},
+\)
+
+\item \(
+e^{a-b}=\frac{e^a}{e^b},
+\)
+
+\item \(
+e^{ra}=(e^a)^r.
+\)
+\end{itemize}
+
+Comme la fonction exponentielle est strictement croissante,
+
+\(
+e^a=e^b
+\Longleftrightarrow
+a=b,
+\)
+
+et
+
+\(
+e^a<e^b
+\Longleftrightarrow
+a<b.
+\)
+
+\subsection*{\underline{\textbf{\textcolor{red}{4. Limites}}}}
+
+\textbf{Aux bornes de l'ensemble de définition}
+
+\begin{enumerate}
+\item \(
+\lim\limits_{x\to-\infty}e^x=0
+\)
+
+\item \(
+\lim\limits_{x\to+\infty}e^x=+\infty
+\)
+\end{enumerate}
+
+\textbf{Limites usuelles}
+\begin{enumerate}
+\item \(
+\lim\limits_{x\to+\infty}\frac{e^x}{x}=+\infty
+\)
+
+\item \(
+\lim\limits_{x\to-\infty}xe^x=0
+\)
+
+\item \(
+\lim\limits_{x\to0}\frac{e^x-1}{x}=1.
+\)
+\end{enumerate}
 \underline{\textbf{\textcolor{red}{Preuve de quelques limites}}}\\
 
-\underline{\textbf{\textcolor{red}{Exercice d'application}}}\\
-Déterminer les limites suivantes:\\
-Calculer les limites suivantes.\\
-a)\( \lim\limits_{x \to +\infty}\frac{3e^{x}-2}{5e^{x}+3}\) ; b)\(\lim\limits_{x \to -\infty}\frac{\ln(1+e^{x})}{e^{x}}\)
-c)\( \lim\limits_{x \to +\infty}(x-e^{x})\) ; d)\( \lim\limits_{x \to +\infty}\frac{\sin2x}{1-e^{x}}\)
-\subsection*{\underline{\textbf{\textcolor{red}{6.Limites des composées avec exp}}}}
-\underline{\textbf{\textcolor{red}{Propriété}}}\\
-Soit U une fonction dérivablesur un intervalle I de $\mathbb{R}$.\\
-La fonction $\exp\circ u $ est dérivable sur I  et on a: $(\exp\circ u )'=u' \times \exp\circ u$\\
-\underline{\textbf{\textcolor{red}{NB}}}\\
-La fonction $\exp\circ u $ est généralement notée $e^{u}$ ; sa dérivée est alors $u'e^{u}$.\\
-\underline{\textbf{\textcolor{red}{Exemple}}}\\
-Calcule la limite suivante\\
+\underline{\textbf{\textcolor{red}{Exercice d'application}}}
 
-\underline{\textbf{\textcolor{red}{Solution}}}\\
-\subsection*{\underline{\textbf{\textcolor{red}{7.Dérivée}}}}
-Soit u et v deux fonctions strictement positives \\
+Calculer les limites suivantes :
+\begin{enumerate}
+\item \(
+\lim\limits_{x\to+\infty}\frac{3e^x-2}{5e^x+3}
+\)
+\item \(
+\lim\limits_{x\to-\infty}\frac{\ln(1+e^x)}{e^x}
+\)
+\item \(
+\lim\limits_{x\to+\infty}(x-e^x)
+\)
+\item \(
+\lim\limits_{x\to+\infty}(x-e^x)
+\)
+\item \(
+\lim\limits_{x\to+\infty}\frac{\sin(2x)}{1-e^x}.
+\)
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{5. Limites des fonctions composées avec l'exponentielle}}}}
+
+\underline{\textbf{\textcolor{red}{Propriété}}}
+
+Soit \(u\) une fonction définie sur un intervalle \(I\).
+
+\begin{itemize}
+    \item Si \(\displaystyle\lim\limits_{x\to a}u(x)=+\infty\), alors
+    \(
+    \lim\limits_{x\to a}e^{u(x)}=+\infty.
+    \)
+
+    \item Si \(\displaystyle\lim\limits_{x\to a}u(x)=-\infty\), alors
+    \(
+    \lim\limits_{x\to a}e^{u(x)}=0.
+    \)
+
+    \item Si \(\displaystyle\lim\limits_{x\to a}u(x)=\ell\in\mathbb{R}\), alors
+    \(
+    \lim\limits_{x\to a}e^{u(x)}=e^{\ell}.
+    \)
+\end{itemize}
+
+\underline{\textbf{\textcolor{red}{Méthode}}}
+
+Pour calculer une limite contenant une exponentielle composée :
+
+\begin{enumerate}
+    \item On détermine d'abord la limite de l'exposant \(u(x)\).
+    \item On utilise ensuite les limites usuelles de la fonction exponentielle.
+\end{enumerate}
+
+\underline{\textbf{\textcolor{red}{Exemple}}}
+
+Calculer la limite suivante :
+\(
+\lim\limits_{x\to+\infty}e^{-3x+5}.
+\)
+
+\underline{\textbf{\textcolor{red}{Solution}}}
+
+On commence par calculer la limite de l'exposant :
+\(
+\lim\limits_{x\to+\infty}(-3x+5)=-\infty.
+\)
+
+Or,
+\(
+\lim\limits_{t\to-\infty}e^t=0.
+\)
+
+En posant \(t=-3x+5\), on obtient
+\(
+\boxed{\lim\limits_{x\to+\infty}e^{-3x+5}=0.}
+\)
+
+\underline{\textbf{\textcolor{red}{Exercices d'application}}}
+
+Calculer les limites suivantes :
+
+\begin{enumerate}
+\item \(
+\lim\limits_{x\to+\infty}e^{2x-1}
+\)
+
+\item
+\(
+\lim\limits_{x\to-\infty}e^{-5x+4}
+\)
+
+\item
+\(
+\lim\limits_{x\to+\infty}e^{\frac{1-x}{2}}
+\)
+
+\item
+\(
+\lim\limits_{x\to0}e^{\sin x}
+\)
+
+\item
+\(
+\lim\limits_{x\to+\infty}e^{\frac{3x+1}{x-2}}.
+\)
+\end{enumerate}
+
+Ces cinq exemples couvrent les trois situations classiques : un exposant qui tend vers \(+\infty\), vers \(-\infty\) ou vers une limite réelle finie.
+
+\subsection*{\underline{\textbf{\textcolor{red}{6. Dérivée d'une fonction exponentielle composée}}}}
+
+\underline{\textbf{\textcolor{red}{Propriété}}}
+
+Soit \(u\) une fonction dérivable sur un intervalle \(I\).
+
+Alors la fonction
+\(
+x\longmapsto e^{u(x)}
+\)
+
+est dérivable sur \(I\) et
+\(
+\left(e^{u(x)}\right)'=u'(x)e^{u(x)}.
+\)
+
+\underline{\textbf{\textcolor{red}{Notation}}}
+
+La composée \(\exp\circ u\) est généralement notée \(e^u\).
+
+Sa dérivée est donc
+\(
+(e^u)'=u'e^u.
+\)
 
 \underline{\textbf{\textcolor{red}{Exemple}}}\\
 Déterminer les limites suivantes:\\
-$\bullet$ La fonction $x \longmapsto e^{-x^{2}+x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est la fonction\\
-$\bullet$ La fonction $x \longmapsto e^{\cos x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est  la fonction\\
-$\bullet$ La fonction $x \longmapsto e^{\frac{1}{x}}$ est dérivable sur $\mathbb{R}^{*}$ et sa dérivée est  la fonction\\
-\subsection*{\underline{\textbf{\textcolor{red}{8.Croissance Comparée de $\ln x$ $e^{x}$ $x^{\alpha}$}}}}
-$\lim_{x \to +\infty}\frac{e^{x}}{x^{\alpha}}=+\infty$\\
-$\lim_{x \to +\infty}x^{\alpha}e^{-x}=0$\\
-\underline{\textbf{\textcolor{red}{Remarque}}}\\
-\underline{\textbf{\textcolor{red}{Exemple}}}\\
-Détermine: $\lim_{x \to +\infty}\frac{e^{x}}{\ln(x^{2}+1)}$
+\begin{itemize}
+\item[] $\bullet$ La fonction $x \longmapsto e^{-x^{2}+x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est la fonction \( \boxed{f'(x)=(-2x+1)e^{-x^2+x}} \) \\
+\item[] $\bullet$ La fonction $x \longmapsto e^{\cos x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est  la fonction \( \boxed{g'(x)=-\sin(x)e^{\cos x}} \)\\
+\item[] $\bullet$ La fonction $x \longmapsto e^{\frac{1}{x}}$ est dérivable sur $\mathbb{R}^{*}$ et sa dérivée est  la fonction \( \boxed{h'(x)=-\frac1{x^2}e^{\frac1x}} \)\\
+\end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{red}{8. Croissance comparée de \(\ln x\), \(x^\alpha\) et \(e^x\)}}}}
+
+\underline{\textbf{\textcolor{red}{a. Introduction}}}
+
+Lorsqu'une variable \(x\) tend vers \(+\infty\), certaines fonctions
+croissent beaucoup plus rapidement que d'autres.
+
+On dit qu'une fonction \(f\) a une croissance plus rapide qu'une fonction
+\(g\) lorsque le quotient \(\frac{f(x)}{g(x)}\) tend vers \(+\infty\).
+
+La comparaison des fonctions usuelles conduit aux résultats suivants :
+\(
+\ln x \ll x^\alpha \ll e^x
+\)
+
+où \(\alpha\) est un réel strictement positif.
+
+Cela signifie que :
+\begin{itemize}
+    \item les fonctions puissances \(x^\alpha\) dominent le logarithme ;
+    \item la fonction exponentielle domine toutes les fonctions puissances.
+\end{itemize}
+
+\underline{\textbf{\textcolor{red}{b. Croissance comparée de \(\ln x\) et \(x^\alpha\)}}}
+
+Soit \(\alpha>0\). On a :
+\(
+\boxed{
+\lim\limits_{x\to+\infty}\frac{\ln x}{x^\alpha}=0
+}
+\)
+
+Autrement dit :
+\(
+\ln x \text{ croît moins rapidement que } x^\alpha.
+\)
+
+On a également :
+\(
+\boxed{
+\lim\limits_{x\to0^+}x^\alpha\ln x=0
+}
+\)
+
+\underline{\textbf{\textcolor{red}{c. Croissance comparée de \(x^\alpha\) et \(e^x\)}}}
+
+Soit \(\alpha>0\). Alors :
+\(
+\boxed{
+\lim\limits_{x\to+\infty}\frac{x^\alpha}{e^x}=0
+}
+\)
+
+Ainsi :
+\(
+x^\alpha \text{ croît moins rapidement que } e^x.
+\)
+
+\underline{\textbf{\textcolor{red}{d. Résumé des croissances comparées}}}
+
+Lorsque \(x\to+\infty\),\(
+\boxed{
+\ln x \ll x^\alpha \ll e^x
+}
+\)
+\begin{itemize}
+\item
+\(
+\lim\limits_{x\to+\infty}\frac{\ln x}{x^\alpha}=0,
+\)
+\item
+\(
+\lim\limits_{x\to+\infty}\frac{x^\alpha}{e^x}=0.
+\)
+
+\item
+\(
+\lim\limits_{x\to+\infty}\frac{\ln x}{e^x}=0.
+\)
+\end{itemize}
+
 \subsection*{\underline{\textbf{\textcolor{red}{9.Equation système et Inequation avec exp}}}}
 \underline{\textbf{\textcolor{red}{a°)Equation}}}\\
 \underline{\textbf{\textcolor{red}{Exemple}}}\\
