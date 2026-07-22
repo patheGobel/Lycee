@@ -180,7 +180,8 @@ inner sep=0] (char) {#1};}}
     \textbf{Année scolaire : 2025 -- 2026}
 \end{center}
 
-\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
+\section*{\underline{\textbf{\textcolor{red}{I. Définition et propriétés}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1°) Définition}}}}
 
 La fonction logarithme népérien \( \ln \) est continue et strictement croissante sur \( ]0;+\infty[ \). Elle réalise donc une bijection de \( ]0;+\infty[ \) sur \( \mathbb{R} \).
 
@@ -197,7 +198,7 @@ e^x=y
 \quad\Longleftrightarrow\quad
 x=\ln(y).
 \)
-\subsection*{\underline{\textbf{\textcolor{red}{2. Conséquences de la définition}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2°) Conséquences de la définition}}}}
 
 \begin{enumerate}[label=(\alph*)]
 
@@ -251,7 +252,7 @@ e^a<e^b.
 
 \end{enumerate}
 
-\subsection*{\underline{\textbf{\textcolor{red}{3. Propriétés algébriques}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3°) Propriétés algébriques}}}}
 
 \underline{\textbf{\textcolor{red}{Propriété fondamentale}}}
 
@@ -301,9 +302,10 @@ e^a<e^b
 a<b.
 \)
 
-\subsection*{\underline{\textbf{\textcolor{red}{4. Limites}}}}
+\section*{\underline{\textbf{\textcolor{red}{II. Limites et Dérivée}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1°) Limites}}}}
 
-\textbf{Aux bornes de l'ensemble de définition}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a°) Aux bornes de l'ensemble de définition}}}}
 
 \begin{enumerate}
 \item \(
@@ -315,7 +317,7 @@ a<b.
 \)
 \end{enumerate}
 
-\textbf{Limites usuelles}
+\subsubsection*{\underline{\textbf{\textcolor{red}{b°) Limites usuelles}}}}
 \begin{enumerate}
 \item \(
 \lim\limits_{x\to+\infty}\frac{e^x}{x}=+\infty
@@ -331,7 +333,7 @@ a<b.
 \end{enumerate}
 \underline{\textbf{\textcolor{red}{Preuve de quelques limites}}}\\
 
-\underline{\textbf{\textcolor{red}{Exercice d'application}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{ c°) Exercice d'application  }}}}
 
 Calculer les limites suivantes :
 \begin{enumerate}
@@ -352,9 +354,9 @@ Calculer les limites suivantes :
 \)
 \end{enumerate}
 
-\subsection*{\underline{\textbf{\textcolor{red}{5. Limites des fonctions composées avec l'exponentielle}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{ d°) Limites des fonctions composées avec l'exponentielle  }}}}
 
-\underline{\textbf{\textcolor{red}{Propriété}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{ Propriété }}}}
 
 Soit \(u\) une fonction définie sur un intervalle \(I\).
 
@@ -408,7 +410,7 @@ En posant \(t=-3x+5\), on obtient
 \boxed{\lim\limits_{x\to+\infty}e^{-3x+5}=0.}
 \)
 
-\underline{\textbf{\textcolor{red}{Exercices d'application}}}
+\underline{\textbf{\textcolor{red}{ Exercices d'application }}}
 
 Calculer les limites suivantes :
 
@@ -440,7 +442,88 @@ Calculer les limites suivantes :
 
 Ces cinq exemples couvrent les trois situations classiques : un exposant qui tend vers \(+\infty\), vers \(-\infty\) ou vers une limite réelle finie.
 
-\subsection*{\underline{\textbf{\textcolor{red}{6. Dérivée d'une fonction exponentielle composée}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{8. Croissance comparée de \(\ln x\), \(x^\alpha\) et \(e^x\)}}}}
+
+\underline{\textbf{\textcolor{red}{a°) Introduction}}}
+
+Lorsqu'une variable \(x\) tend vers \(+\infty\), certaines fonctions
+croissent beaucoup plus rapidement que d'autres.
+
+On dit qu'une fonction \(f\) a une croissance plus rapide qu'une fonction
+\(g\) lorsque le quotient \(\frac{f(x)}{g(x)}\) tend vers \(+\infty\).
+
+La comparaison des fonctions usuelles conduit aux résultats suivants :
+\(
+\ln x \ll x^\alpha \ll e^x
+\)
+
+où \(\alpha\) est un réel strictement positif.
+
+Cela signifie que :
+\begin{itemize}
+    \item les fonctions puissances \(x^\alpha\) dominent le logarithme ;
+    \item la fonction exponentielle domine toutes les fonctions puissances.
+\end{itemize}
+
+\underline{\textbf{\textcolor{red}{b°) Croissance comparée de \(\ln x\) et \(x^\alpha\)}}}
+
+Soit \(\alpha>0\). On a :
+\(
+\boxed{
+\lim\limits_{x\to+\infty}\frac{\ln x}{x^\alpha}=0
+}
+\)
+
+Autrement dit :
+\(
+\ln x \text{ croît moins rapidement que } x^\alpha.
+\)
+
+On a également :
+\(
+\boxed{
+\lim\limits_{x\to0^+}x^\alpha\ln x=0
+}
+\)
+
+\underline{\textbf{\textcolor{red}{c°) Croissance comparée de \(x^\alpha\) et \(e^x\)}}}
+
+Soit \(\alpha>0\). Alors :
+\(
+\boxed{
+\lim\limits_{x\to+\infty}\frac{x^\alpha}{e^x}=0
+}
+\)
+
+Ainsi :
+\(
+x^\alpha \text{ croît moins rapidement que } e^x.
+\)
+
+\underline{\textbf{\textcolor{red}{d°) Résumé des croissances comparées}}}
+
+Lorsque \(x\to+\infty\),\(
+\boxed{
+\ln x \ll x^\alpha \ll e^x
+}
+\)
+\begin{itemize}
+\item
+\(
+\lim\limits_{x\to+\infty}\frac{\ln x}{x^\alpha}=0,
+\)
+\item
+\(
+\lim\limits_{x\to+\infty}\frac{x^\alpha}{e^x}=0.
+\)
+
+\item
+\(
+\lim\limits_{x\to+\infty}\frac{\ln x}{e^x}=0.
+\)
+\end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2°) Dérivée d'une fonction exponentielle composée}}}}
 
 \underline{\textbf{\textcolor{red}{Propriété}}}
 
@@ -473,89 +556,9 @@ Déterminer les limites suivantes:\\
 \item[] $\bullet$ La fonction $x \longmapsto e^{\frac{1}{x}}$ est dérivable sur $\mathbb{R}^{*}$ et sa dérivée est  la fonction \( \boxed{h'(x)=-\frac1{x^2}e^{\frac1x}} \)\\
 \end{itemize}
 
-\subsection*{\underline{\textbf{\textcolor{red}{8. Croissance comparée de \(\ln x\), \(x^\alpha\) et \(e^x\)}}}}
+\section*{\underline{\textbf{\textcolor{red}{III. Équations, systèmes et inéquations faisant intervenir l'exponentielle}}}}
 
-\underline{\textbf{\textcolor{red}{a. Introduction}}}
-
-Lorsqu'une variable \(x\) tend vers \(+\infty\), certaines fonctions
-croissent beaucoup plus rapidement que d'autres.
-
-On dit qu'une fonction \(f\) a une croissance plus rapide qu'une fonction
-\(g\) lorsque le quotient \(\frac{f(x)}{g(x)}\) tend vers \(+\infty\).
-
-La comparaison des fonctions usuelles conduit aux résultats suivants :
-\(
-\ln x \ll x^\alpha \ll e^x
-\)
-
-où \(\alpha\) est un réel strictement positif.
-
-Cela signifie que :
-\begin{itemize}
-    \item les fonctions puissances \(x^\alpha\) dominent le logarithme ;
-    \item la fonction exponentielle domine toutes les fonctions puissances.
-\end{itemize}
-
-\underline{\textbf{\textcolor{red}{b. Croissance comparée de \(\ln x\) et \(x^\alpha\)}}}
-
-Soit \(\alpha>0\). On a :
-\(
-\boxed{
-\lim\limits_{x\to+\infty}\frac{\ln x}{x^\alpha}=0
-}
-\)
-
-Autrement dit :
-\(
-\ln x \text{ croît moins rapidement que } x^\alpha.
-\)
-
-On a également :
-\(
-\boxed{
-\lim\limits_{x\to0^+}x^\alpha\ln x=0
-}
-\)
-
-\underline{\textbf{\textcolor{red}{c. Croissance comparée de \(x^\alpha\) et \(e^x\)}}}
-
-Soit \(\alpha>0\). Alors :
-\(
-\boxed{
-\lim\limits_{x\to+\infty}\frac{x^\alpha}{e^x}=0
-}
-\)
-
-Ainsi :
-\(
-x^\alpha \text{ croît moins rapidement que } e^x.
-\)
-
-\underline{\textbf{\textcolor{red}{d. Résumé des croissances comparées}}}
-
-Lorsque \(x\to+\infty\),\(
-\boxed{
-\ln x \ll x^\alpha \ll e^x
-}
-\)
-\begin{itemize}
-\item
-\(
-\lim\limits_{x\to+\infty}\frac{\ln x}{x^\alpha}=0,
-\)
-\item
-\(
-\lim\limits_{x\to+\infty}\frac{x^\alpha}{e^x}=0.
-\)
-
-\item
-\(
-\lim\limits_{x\to+\infty}\frac{\ln x}{e^x}=0.
-\)
-\end{itemize}
-\subsection*{\underline{\textbf{\textcolor{red}{9. Équations, systèmes et inéquations faisant intervenir l'exponentielle}}}}
-
-\subsubsection*{\underline{\textbf{\textcolor{red}{a°) Équations exponentielles}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{1°) Équations exponentielles}}}}
 
 \underline{\textbf{\textcolor{red}{Méthodes}}}
 
@@ -578,7 +581,7 @@ Résoudre dans \(\mathbb{R}\) les équations suivantes :
     \item \((e^x-2)(e^{-x}+1)=0\)
 \end{enumerate}
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{ b°) Systèmes d'équations }}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{ 2°) Systèmes d'équations }}}}
 
 \underline{\textbf{\textcolor{red}{Méthode}}}
 
@@ -602,30 +605,28 @@ Le système devient alors un système algébrique classique.
 
 Résoudre les systèmes suivants :
 
-\begin{enumerate}[label=\alph*)]
-\item \(
+\(
 \begin{cases}
 4e^x-3e^y=9\\
 2e^x+e^y=7
 \end{cases}
 \)
 
-\item \(
+\(
 \begin{cases}
 e^xe^y=10\\
 e^{x-y}=\dfrac25
 \end{cases}
 \)
 
-\item \(
+\(
 \begin{cases}
 e^{2x}-7e^{y+1}=-10\\
 x-y=1
 \end{cases}
 \)
-\end{enumerate}
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{ c°) Inéquations exponentielles }}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{ 3°) Inéquations exponentielles }}}}
 
 \underline{\textbf{\textcolor{red}{Méthodes}}}
 
@@ -659,15 +660,15 @@ Résoudre dans \(\mathbb{R}\) les inéquations suivantes :
     \item \(e^{x^2-3}\le e^{2x}\)
     \item \(2e^{2x}-5e^x+2>0\)
 \end{enumerate}
-\subsection*{\underline{\textbf{\textcolor{red}{10. Étude de la fonction exponentielle}}}}
 
+\section*{\underline{\textbf{\textcolor{red}{IV. Étude de la fonction exponentielle}}}}
 Soit \(f\) la fonction définie sur \(\mathbb{R}\) par
 
 \(
 f(x)=e^x.
 \)
 
-\underline{\textbf{\textcolor{red}{a°) Domaine de définition}}}
+\underline{\textbf{\textcolor{red}{1°) Domaine de définition}}}
 
 La fonction exponentielle est définie sur tout \(\mathbb{R}\).
 
@@ -675,7 +676,7 @@ La fonction exponentielle est définie sur tout \(\mathbb{R}\).
 D_f=\mathbb{R}.
 \)
 
-\underline{\textbf{\textcolor{red}{b°) Limites aux bornes de \(D_f\)}}}
+\underline{\textbf{\textcolor{red}{2°) Limites aux bornes de \(D_f\)}}}
 
 En \(-\infty\),
 
@@ -689,7 +690,7 @@ En \(+\infty\),
 \lim\limits_{x\to+\infty}e^x=+\infty.
 \)
 
-\underline{\textbf{\textcolor{red}{c°) Dérivée}}}
+\underline{\textbf{\textcolor{red}{3°) Dérivée}}}
 
 La fonction \(f\) est dérivable sur \(\mathbb{R}\) et
 
@@ -709,7 +710,7 @@ Par conséquent,
 \boxed{\text{La fonction }f\text{ est strictement croissante sur }\mathbb{R}.}
 \]
 
-\underline{\textbf{\textcolor{red}{d°) Tableau de variation}}}
+\underline{\textbf{\textcolor{red}{4°) Tableau de variation}}}
 
 % Insérer ici le tableau de variation TikZ
 
@@ -727,7 +728,7 @@ Par conséquent,
 
 \vspace{0.5cm}
 
-\underline{\textbf{\textcolor{red}{e°) Représentation graphique}}}
+\underline{\textbf{\textcolor{red}{5°) Représentation graphique}}}
 
 % Insérer ici la figure TikZ représentant la courbe de la fonction exponentielle.
 
@@ -812,6 +813,7 @@ coordinates {(0,1)};
 
 \end{axis}
 \end{tikzpicture}
-\subsection*{\underline{\textbf{\textcolor{red}{11. Application}}}}
+
+\section*{\underline{\textbf{\textcolor{red}{V. Application}}}}
 
 \end{document}
