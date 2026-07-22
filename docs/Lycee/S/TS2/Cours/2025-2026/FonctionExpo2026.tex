@@ -181,7 +181,7 @@ inner sep=0] (char) {#1};}}
 \end{center}
 
 \section*{\underline{\textbf{\textcolor{red}{I. Définition et propriétés}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{1°) Définition}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
 
 La fonction logarithme népérien \( \ln \) est continue et strictement croissante sur \( ]0;+\infty[ \). Elle réalise donc une bijection de \( ]0;+\infty[ \) sur \( \mathbb{R} \).
 
@@ -198,7 +198,7 @@ e^x=y
 \quad\Longleftrightarrow\quad
 x=\ln(y).
 \)
-\subsection*{\underline{\textbf{\textcolor{red}{2°) Conséquences de la définition}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Conséquences de la définition}}}}
 
 \begin{enumerate}[label=(\alph*)]
 
@@ -252,7 +252,7 @@ e^a<e^b.
 
 \end{enumerate}
 
-\subsection*{\underline{\textbf{\textcolor{red}{3°) Propriétés algébriques}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Propriétés algébriques}}}}
 
 \underline{\textbf{\textcolor{red}{Propriété fondamentale}}}
 
@@ -302,8 +302,8 @@ e^a<e^b
 a<b.
 \)
 
-\section*{\underline{\textbf{\textcolor{red}{II. Limites et Dérivée}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{1°) Limites}}}}
+\section*{\underline{\textbf{\textcolor{red}{II. Limites et Croissance Comparée}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Limites}}}}
 
 \subsubsection*{\underline{\textbf{\textcolor{red}{a°) Aux bornes de l'ensemble de définition}}}}
 
@@ -442,7 +442,7 @@ Calculer les limites suivantes :
 
 Ces cinq exemples couvrent les trois situations classiques : un exposant qui tend vers \(+\infty\), vers \(-\infty\) ou vers une limite réelle finie.
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{2. Croissance comparée de \(\ln x\), \(x^\alpha\) et \(e^x\)}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Croissance comparée de \(\ln x\), \(x^\alpha\) et \(e^x\)}}}}
 
 \underline{\textbf{\textcolor{red}{a°) Introduction}}}
 
@@ -523,7 +523,7 @@ Lorsque \(x\to+\infty\),\(
 \)
 \end{itemize}
 
-\subsection*{\underline{\textbf{\textcolor{red}{2°) Dérivée d'une fonction exponentielle composée}}}}
+\section*{\underline{\textbf{\textcolor{red}{III. Dérivée d'une fonction exponentielle composée}}}}
 
 \underline{\textbf{\textcolor{red}{Propriété}}}
 
@@ -551,116 +551,12 @@ Sa dérivée est donc
 \underline{\textbf{\textcolor{red}{Exemple}}}\\
 Déterminer les limites suivantes:\\
 \begin{itemize}
-\item[] $\bullet$ La fonction $x \longmapsto e^{-x^{2}+x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est la fonction \( \boxed{f'(x)=(-2x+1)e^{-x^2+x}} \) \\
-\item[] $\bullet$ La fonction $x \longmapsto e^{\cos x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est  la fonction \( \boxed{g'(x)=-\sin(x)e^{\cos x}} \)\\
-\item[] $\bullet$ La fonction $x \longmapsto e^{\frac{1}{x}}$ est dérivable sur $\mathbb{R}^{*}$ et sa dérivée est  la fonction \( \boxed{h'(x)=-\frac1{x^2}e^{\frac1x}} \)\\
+\item[$\bullet$] La fonction $x \longmapsto e^{-x^{2}+x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est la fonction \( \boxed{f'(x)=(-2x+1)e^{-x^2+x}} \) \\
+\item[$\bullet$] La fonction $x \longmapsto e^{\cos x}$ est dérivable sur $\mathbb{R}$ et sa dérivée est  la fonction \( \boxed{g'(x)=-\sin(x)e^{\cos x}} \)\\
+\item[$\bullet$] La fonction $x \longmapsto e^{\frac{1}{x}}$ est dérivable sur $\mathbb{R}^{*}$ et sa dérivée est  la fonction \( \boxed{h'(x)=-\frac1{x^2}e^{\frac1x}} \)\\
 \end{itemize}
 
-\section*{\underline{\textbf{\textcolor{red}{III. Équations, systèmes et inéquations faisant intervenir l'exponentielle}}}}
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{1°) Équations exponentielles}}}}
-
-\underline{\textbf{\textcolor{red}{Méthodes}}}
-
-Pour résoudre une équation contenant une exponentielle, on utilise généralement l'une des propriétés suivantes :
-
-\begin{itemize}
-    \item \(e^x>0\) pour tout \(x\in\mathbb{R}\).
-    \item \(e^a=e^b \Longleftrightarrow a=b\).
-    \item \(e^x=a\) avec \(a>0\Longleftrightarrow x=\ln(a)\).
-\end{itemize}
-
-\underline{\textbf{\textcolor{red}{Exemple}}}
-
-Résoudre dans \(\mathbb{R}\) les équations suivantes :
-
-\begin{enumerate}[label=\alph*)]
-    \item \(e^x=-1\)
-    \item \(e^{x+1}=3\)
-    \item \(e^{x^2}=e^{x+2}\)
-    \item \((e^x-2)(e^{-x}+1)=0\)
-\end{enumerate}
-
-\subsubsection*{\underline{\textbf{\textcolor{red}{ 2°) Systèmes d'équations }}}}
-
-\underline{\textbf{\textcolor{red}{Méthode}}}
-
-Dans un système contenant des exponentielles, on pose souvent
-
-\(
-X=e^x
-\quad\text{et}\quad
-Y=e^y,
-\)
-
-avec
-
-\(
-X>0,\qquad Y>0.
-\)
-
-Le système devient alors un système algébrique classique.
-
-\underline{\textbf{\textcolor{red}{Exemples}}}
-
-Résoudre les systèmes suivants :
-
-\begin{enumerate}[label=\alph*)]
-\item \(
-\begin{cases}
-4e^x-3e^y=9\\
-2e^x+e^y=7
-\end{cases}
-\)
-
-\item \(
-\begin{cases}
-e^xe^y=10\\
-e^{x-y}=\dfrac25
-\end{cases}
-\)
-
-\item \(
-\begin{cases}
-e^{2x}-7e^{y+1}=-10\\
-x-y=1
-\end{cases}
-\)
-\end{enumerate}
-\subsubsection*{\underline{\textbf{\textcolor{red}{ 3°) Inéquations exponentielles }}}}
-
-\underline{\textbf{\textcolor{red}{Méthodes}}}
-
-Pour résoudre une inéquation exponentielle, on utilise le fait que la fonction exponentielle est strictement croissante :
-
-\(
-e^a<e^b
-\Longleftrightarrow
-a<b,
-\)
-
-\(
-e^a\le e^b
-\Longleftrightarrow
-a\le b.
-\)
-
-Lorsque l'inéquation est polynomiale en \(e^x\), on effectue le changement de variable
-
-\(
-X=e^x
-\qquad(X>0).
-\)
-
-\underline{\textbf{\textcolor{red}{Exemples}}}
-
-Résoudre dans \(\mathbb{R}\) les inéquations suivantes :
-
-\begin{enumerate}[label=\alph*)]
-    \item \(e^{-x}\ge2\)
-    \item \(e^{x^2-3}\le e^{2x}\)
-    \item \(2e^{2x}-5e^x+2>0\)
-\end{enumerate}
 
 \section*{\underline{\textbf{\textcolor{red}{IV. Étude de la fonction exponentielle}}}}
 Soit \(f\) la fonction définie sur \(\mathbb{R}\) par
@@ -815,6 +711,109 @@ coordinates {(0,1)};
 \end{axis}
 \end{tikzpicture}
 
-\section*{\underline{\textbf{\textcolor{red}{V. Application}}}}
+\section*{\underline{\textbf{\textcolor{red}{V. Équations, systèmes et inéquations faisant intervenir l'exponentielle}}}}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{1°) Équations exponentielles}}}}
+
+\underline{\textbf{\textcolor{red}{Méthodes}}}
+
+Pour résoudre une équation contenant une exponentielle, on utilise généralement l'une des propriétés suivantes :
+
+\begin{itemize}
+    \item \(e^x>0\) pour tout \(x\in\mathbb{R}\).
+    \item \(e^a=e^b \Longleftrightarrow a=b\).
+    \item \(e^x=a\) avec \(a>0\Longleftrightarrow x=\ln(a)\).
+\end{itemize}
+
+\underline{\textbf{\textcolor{red}{Exemple}}}
+
+Résoudre dans \(\mathbb{R}\) les équations suivantes :
+
+\begin{enumerate}[label=\alph*)]
+    \item \(e^x=-1\)
+    \item \(e^{x+1}=3\)
+    \item \(e^{x^2}=e^{x+2}\)
+    \item \((e^x-2)(e^{-x}+1)=0\)
+\end{enumerate}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{ 2°) Systèmes d'équations }}}}
+
+\underline{\textbf{\textcolor{red}{Méthode}}}
+
+Dans un système contenant des exponentielles, on pose souvent
+
+\(
+X=e^x
+\quad\text{et}\quad
+Y=e^y,
+\)
+
+avec
+
+\(
+X>0,\qquad Y>0.
+\)
+
+Le système devient alors un système algébrique classique.
+
+\underline{\textbf{\textcolor{red}{Exemples}}}
+
+Résoudre les systèmes suivants :
+
+\(
+\begin{cases}
+4e^x-3e^y=9\\
+2e^x+e^y=7
+\end{cases}
+\)
+
+\(
+\begin{cases}
+e^xe^y=10\\
+e^{x-y}=\dfrac25
+\end{cases}
+\)
+
+\(
+\begin{cases}
+e^{2x}-7e^{y+1}=-10\\
+x-y=1
+\end{cases}
+\)
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{ 3°) Inéquations exponentielles }}}}
+
+\underline{\textbf{\textcolor{red}{Méthodes}}}
+
+Pour résoudre une inéquation exponentielle, on utilise le fait que la fonction exponentielle est strictement croissante :
+
+\(
+e^a<e^b
+\Longleftrightarrow
+a<b,
+\)
+
+\(
+e^a\le e^b
+\Longleftrightarrow
+a\le b.
+\)
+
+Lorsque l'inéquation est polynomiale en \(e^x\), on effectue le changement de variable
+
+\(
+X=e^x
+\qquad(X>0).
+\)
+
+\underline{\textbf{\textcolor{red}{Exemples}}}
+
+Résoudre dans \(\mathbb{R}\) les inéquations suivantes :
+
+\begin{enumerate}[label=\alph*)]
+    \item \(e^{-x}\ge2\)
+    \item \(e^{x^2-3}\le e^{2x}\)
+    \item \(2e^{2x}-5e^x+2>0\)
+\end{enumerate}
 
 \end{document}
