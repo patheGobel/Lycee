@@ -1,111 +1,176 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
+
+%================================================
+%                 ENCODAGE ET POLICES
+%================================================
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{amsfonts}
-\usepackage{systeme}
-\usepackage{tkz-tab}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.15}
-\usepackage{enumitem}
-\usepackage{multicol}
 \usepackage{lmodern}
+\usepackage{times}
+
+
+%================================================
+%                 MATHEMATIQUES
+%================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{systeme}
+
+
+%================================================
+%                 MISE EN PAGE
+%================================================
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{multicol}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{float}
+
+
+%================================================
+%                 COULEURS ET LIENS
+%================================================
+\usepackage{xcolor}
+\usepackage[colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+citecolor=blue]{hyperref}
+
+
+%================================================
+%                 TIKZ ET GRAPHIQUES
+%================================================
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.18}
+
+\usetikzlibrary{
+    patterns,
+    arrows,
+    shapes.geometric,
+    fit
+}
+
+
+%================================================
+%                 BOITES COLOREES
+%================================================
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+
+\tcbuselibrary{skins,hooks}
+
+
+% Boîte Exemple
+\newtcolorbox{exa}[2][]{enhanced,
+breakable,
+before skip=2mm,
+after skip=5mm,
+colback=yellow!20!white,
+colframe=black!20!blue,
+boxrule=0.5mm,
+fonttitle=\bfseries,
+title={#2},
+#1,
+}
+
+
+%================================================
+%                 STYLE DES ENUMERATIONS
+%================================================
+
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
+\node[circle,
+draw=gray,
+fill=red!55,
+minimum size=1.2em,
+inner sep=0] (char) {#1};}}
+
 \newcommand\boxitem[1]{%
 \tikz[baseline=(char.base)]{
 \node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
+minimum size=1.2em,
+inner sep=0] (char) {#1};}}
+
+
 \setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
 \setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float}
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
 
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
+
+%================================================
+%                 EN-TETES ET FILIGRANE
+%================================================
 
 \usepackage{fancyhdr}
 \usepackage{eso-pic}
-\usepackage{tkz-tab}
+
 \AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    \AtTextCenter{
+        \makebox[0pt]{
+        \rotatebox{80}{
+        \textcolor[gray]{0.7}{
+        \fontsize{5cm}{5cm}\selectfont PGB}}}
     }
 }
 
-\usepackage{verbatim}
 
-\usepackage{color,soul}
-\usetikzlibrary{arrows}
-\newcounter{exemple} % Compteur pour les questions
+%================================================
+%                 COMMANDES PERSONNELLES
+%================================================
 
-% Définir la commande pour afficher une question numérotée
+\everymath{\displaystyle}
+
+
+% Soulignement coloré
+\usepackage{soul}
+
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+
+% Tabulation personnalisée
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+
+%================================================
+%                 COMPTEURS
+%================================================
+
+
+%---------- Exemple ----------
+\newcounter{exemple}
+
 \newcommand{\exemple}{%
-  \refstepcounter{exemple}%
-  \textbf{\textcolor{green}{Exemple \theexemple :}} \ignorespaces
+\refstepcounter{exemple}
+\textbf{\textcolor{green}{Exemple \theexemple :}}
 }
-%---------------------------------------
-\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
 
-% Définir un compteur pour les exercices d'application
+
+%---------- Exercice ----------
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
 \newcounter{exerciceapp}
 
-% Définir la commande pour afficher un exercice d'application numéroté
 \newcommand{\exerciceapp}{%
-  \refstepcounter{exerciceapp}%
-  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}}
 }
-%--------------------------------------
-% Définir un compteur pour les exercices d'application
+
+
+%---------- Correction ----------
 \newcounter{correction}
 
-% Définir la commande pour afficher un correction exercice d'application numéroté
 \newcommand{\correction}{%
-  \refstepcounter{correction}%
-  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}{Correction \thecorrection :}}
 }
-%--------------------------------------
-% Commande pour ajouter du texte en arrière-plan
-\usepackage{fancyhdr}
-\usepackage{eso-pic}
-%\usepackage{tkz-tab}
-\AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
-}
-%This command takes a colour as an optional argument; the default colour is black.
-\usetikzlibrary{shapes.geometric,fit}
-\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
-\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+
+%================================================
+%                 FIN DU PREAMBULE
+%================================================
 
 \begin{document}
 % En-tête personnalisée
@@ -125,15 +190,15 @@ Toutefois cet outil ne trouvera son essor qu’après la mort de Neper. Les math
 Les mathématiciens de l’époque établissent alors des tables de logarithmes de plus en plus précises.
 L’intérêt d’établir ces tables logarithmiques est de permettre de substituer une multiplication par une addition (paragraphe II). Ceci peut paraître dérisoire aujourd’hui, mais il faut comprendre qu’à cette époque, les calculatrices n’existent évidemment pas, les nombres décimaux ne sont pas d’usage courant et les opérations posées telles que nous les utilisons ne sont pas encore connues. Et pourtant l'astronomie, la navigation ou le commerce demandent d’effectuer des opérations de plus en plus complexes.
 
-\section*{\underline{\textbf{\textcolor{red}{I.Définition et propriétés}}}}
-\subsection*{\underline{\textbf{\textcolor{red}{1.Définition}}}}
+\section*{\underline{\textbf{\textcolor{red}{I. Définition et propriétés}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
 On appelle fonction logarithmique népérien la fonction notée $\ln$ qui est définie sur $]0\;;\ +\infty[$ et qui vérifie $(\ln (x))'=\dfrac{1}{x}\ $ et $\ \ln 1=0$
 
 $$\begin{array}{rcl}
 \ln\ :\ ]0\;;\ +\infty[ & \longrightarrow & \mathbb{R} \\
 x & \longmapsto & \ln x
 \end{array}$$
-\subsection*{\underline{\textbf{\textcolor{red}{2.Conséquences de la définition}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Conséquences de la définition}}}}
 Soit $u$ une fonction définie sur un intervalle $I$ de $\mathbb{R}$ alors :
 
 - $\ln u$ existe si $u > 0$
@@ -142,7 +207,7 @@ Soit $u$ une fonction définie sur un intervalle $I$ de $\mathbb{R}$ alors :
 
 - $\ln u^{2}$ existe si $u \neq 0$
 
-\subsection*{\underline{\textbf{\textcolor{red}{3.Propriétés}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Propriétés}}}}
 Les propriétés fondamentales de la fonction logarithmique, $\ln$, sont :
 \begin{itemize}
     \item 
@@ -163,20 +228,20 @@ Les propriétés fondamentales de la fonction logarithmique, $\ln$, sont :
     \)
 \end{itemize}
 
-\subsection*{\underline{\textbf{\textcolor{red}{4.Remarque}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{4. Remarque}}}}
 La fonction $\ln$ est strictement croissante sur son domaine $]0\;;\ +\infty[$, c'est-à-dire que :
 \[
 \forall a, b \in ]0\;;\ +\infty[, \quad a < b \implies \ln a < \ln b.
 \]
 
-\section*{\underline{\textbf{\textcolor{red}{II.Limites et Dérivée}}}}
-
-\subsection*{\underline{\textbf{\textcolor{red}{1.Limites aux bornes de $D_{ln}$}}}}
+\section*{\underline{\textbf{\textcolor{red}{II. Limites et Dérivée}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Limites }}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Limites aux bornes de $D_{ln}$}}}}
 \begin{itemize}
     \item $\lim_{x \to 0^+} \ln x = -\infty$.
     \item $\lim_{x \to +\infty} \ln x = +\infty$.
 \end{itemize}
-\subsection*{\underline{\textbf{\textcolor{red}{2.Limites usuelles}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{b. Limites usuelles}}}}
 \begin{itemize}
     \item $\lim_{x \to 0^+} x \ln x = 0$.
     \item $ \lim_{x \to +\infty} \frac{\ln x}{x} = 0 $
@@ -185,21 +250,7 @@ Soit a un nombre rationnel strictement positif.
    \item $\lim_{{x \to 0^+}} x^{\alpha}\ln(x) = 0^{-} $
    \item $\lim_{{x \to +\infty}} \frac{\ln(x)}{x^{\alpha}}=0^{+}$
 \end{itemize}
-\paragraph{ Croissances comparées :}
-Soit $\alpha$ un nombre réel strictement positif ($\alpha > 0$). 
-Au voisinage de $0^+$ et de $+\infty$, la fonction puissance l'emporte sur la fonction logarithme népérien :
 
-\begin{itemize}
-    \item \textbf{En $0^+$ :} 
-    \(
-    \lim\limits_{x \to 0^+} x \ln x = 0 \quad \text{et plus généralement,} \quad \lim\limits_{x \to 0^+} x^{\alpha} \ln x = 0^{-}
-    \)
-    
-    \item \textbf{En $+\infty$ :} 
-    \(
-    \lim\limits_{x \to +\infty} \frac{\ln x}{x} = 0 \quad \text{et plus généralement,} \quad \lim\limits_{x \to +\infty} \frac{\ln x}{x^{\alpha}} = 0^{+}
-    \)
-\end{itemize}
 \underline{\textbf{\textcolor{red}{Preuve de quelques limites}}}\\
 Montrons que $\lim_{{x \to 0^+}} x^{\alpha}\ln(x) = 0^{-}$ pour $\alpha=1$\\
 pour tout $x\in]0;+\infty[,$ en posant $X=\frac{1}{x}$, on a : $xlnx=-\frac{lnX}{X}$\\
@@ -231,7 +282,7 @@ Déterminer les limites suivantes:
 \item \( \lim\limits_{x \to 1^{+}} \frac{x}{x+1}-\ln(x+1) \)
 \end{enumerate}
 
-\subsection*{\underline{\textbf{\textcolor{red}{3.Limites des composées avec ln}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{c. Limites des composées avec ln}}}}
 Soit $U(x)$ une fonction strictement positive.\\
 Cherchons $\lim_{{x \to a}} \ln[u(x)]$\\
 
@@ -279,7 +330,23 @@ En utilisant la propriété $\ln\left(\frac{1}{a}\right) = -\ln(a)$, on obtient 
 \textbf{Conclusion :}
 $\displaystyle \lim\limits_{x \to +\infty} \ln\left(\frac{x^2}{2x^2 - 1}\right) = -\ln(2)$
 
-\subsection*{\underline{\textbf{\textcolor{red}{II. Dérivée et dérivée de la composée}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{d. Croissance comparée de \(\ln x\) et \(x^\alpha\) }}}}
+Soit $\alpha$ un nombre réel strictement positif ($\alpha > 0$). 
+Au voisinage de $0^+$ et de $+\infty$, la fonction puissance l'emporte sur la fonction logarithme népérien :
+
+\begin{itemize}
+    \item \textbf{En $0^+$ :} 
+    \(
+    \lim\limits_{x \to 0^+} x \ln x = 0 \quad \text{et plus généralement,} \quad \lim\limits_{x \to 0^+} x^{\alpha} \ln x = 0^{-}
+    \)
+    
+    \item \textbf{En $+\infty$ :} 
+    \(
+    \lim\limits_{x \to +\infty} \frac{\ln x}{x} = 0 \quad \text{et plus généralement,} \quad \lim\limits_{x \to +\infty} \frac{\ln x}{x^{\alpha}} = 0^{+}
+    \)
+\end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Dérivée d'une fonction logarithme composée}}}}
 
 Soient $u$ et $v$ deux fonctions dérivables et strictement positives sur un intervalle $I$ de $\mathbb{R}$.
 
@@ -304,7 +371,8 @@ Déterminer la fonction dérivée de chacune des fonctions suivantes :
     
     \item $g(x) = \ln\left(\frac{x^{2}+2x+9}{x-2}\right) \quad \text{sur } ]2 \;;\ +\infty[$
 \end{enumerate}
-\section*{\underline{\textbf{\textcolor{red}{III.Etude le fonction ln}}}}
+\section*{\underline{\textbf{\textcolor{red}{III. Etude le fonction ln}}}}
+
 Soit $f$ la fonction définie par $f(x) = \ln(x)$.
 
 \paragraph{Domaine de définition $D_{f}$ :}
@@ -380,7 +448,7 @@ Pour tout $x \in ]0\,;\,+\infty[$, $f'(x) > 0$. On en déduit que la fonction $f
 
 \draw[dotted, thick] (A) -- (B);
 \end{tikzpicture}
-\subsection*{\underline{\textbf{\textcolor{red}{3.Branche infinie de ln}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Branche infinie de ln}}}}
 $\lim_{{x \to +\infty}} \frac{ln(x)}{x}=0$ donc ln admet une branche parabolique de direction (Ox) au voisinage de +$\infty$.\\
 
 \begin{tikzpicture}
@@ -425,7 +493,7 @@ $\lim_{{x \to +\infty}} \frac{ln(x)}{x}=0$ donc ln admet une branche parabolique
 
 \subsection*{\underline{\textbf{\textcolor{red}{1. Équations, inéquations et systèmes avec $\ln$}}}}
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{a°) Équations}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Équations}}}}
 
 Pour résoudre les équations comportant des logarithmes népériens, on peut procéder comme suit :
 \begin{itemize}
@@ -474,7 +542,7 @@ Résoudre dans $\mathbb{R}$ les équations suivantes :
 
 \vspace{0.5cm}
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{b°) Inéquations}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Inéquations}}}}
 
 Pour résoudre une inéquation comportant des logarithmes :
 \begin{itemize}
@@ -527,7 +595,7 @@ Considérons les inéquations suivantes :
 
 \vspace{0.5cm}
 
-\subsubsection*{\underline{\textbf{\textcolor{red}{c°) Systèmes d'équations et d'inéquations avec $\ln$}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{c. Systèmes d'équations et d'inéquations avec $\ln$}}}}
 
 Pour résoudre un système comportant des termes en $\ln$, on utilise souvent un **changement de variable** de la forme $X = \ln(x)$ et $Y = \ln(y)$ pour se ramener à un système linéaire classique.
 
