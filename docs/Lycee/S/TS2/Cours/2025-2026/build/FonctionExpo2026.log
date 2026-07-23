@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  22 JUL 2026 22:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1302,8 +1302,8 @@ Package rerunfilecheck Info: File `FonctionExpo2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42228 strings out of 467533
- 987518 string characters out of 5422138
+ 42231 strings out of 467533
+ 987539 string characters out of 5422138
  1618206 words of memory out of 5000000
  70375 multiletter control sequences out of 15000+600000
  679646 words of font info for 102 fonts, out of 8000000 for 9000
@@ -1319,10 +1319,10 @@ nts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on build/FonctionExpo2026.pdf (6 pages, 169290 bytes).
+Output written on build/FonctionExpo2026.pdf (6 pages, 169358 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,103 +1,182 @@
+%=========================================================
+%               CLASSE DU DOCUMENT
+%=========================================================
 \documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{lmodern}
+
+%=========================================================
+%         ENCODAGE ET POLICES DE CARACTÈRES
+%=========================================================
+\usepackage[utf8]{inputenc}    % Encodage UTF-8 (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}       % Meilleure gestion des caractères accentués
+\usepackage{lmodern}           % Police Latin Modern
+\usepackage{times}             % Police Times (à supprimer si tu préfères Latin Modern)
+
+%=========================================================
+%                MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath}           % Environnements mathématiques avancés
+\usepackage{amssymb}           % Symboles mathématiques supplémentaires
+\usepackage{amsfonts}          % Polices mathématiques
+\usepackage{mathrsfs}          % Police calligraphique (\mathscr)
+\usepackage{tkz-tab}           % Tableaux de signes et de variations
+\everymath{\displaystyle}      % Affiche toutes les formules en style "display"
+
+%=========================================================
+%               MISE EN PAGE
+%=========================================================
+\usepackage[
+    left=1cm,
+    right=1cm,
+    top=1cm,
+    bottom=1.7cm
+]{geometry}                    % Marges du document
+
+\usepackage{multicol}          % Texte sur plusieurs colonnes
+\usepackage{float}             % Placement précis des figures et tableaux
+
+%=========================================================
+%            TABLEAUX ET LISTES
+%=========================================================
+\usepackage{array}             % Colonnes de tableaux personnalisées
+\usepackage{multirow}          % Fusion de lignes dans les tableaux
+\usepackage{enumitem}          % Personnalisation des listes
+
+%=========================================================
+%            COULEURS ET BOÎTES
+%=========================================================
+\usepackage[most]{tcolorbox}   % Boîtes colorées très personnalisables
+\tcbuselibrary{skins,hooks}    % Bibliothèques supplémentaires de tcolorbox
+
+\usepackage{mdframed}          % Cadres autour de paragraphes
+\usepackage{varwidth}          % Largeur automatique des boîtes
+
+%=========================================================
+%                DESSINS ET GRAPHIQUES
+%=========================================================
+\usepackage{tikz}              % Dessins vectoriels
+
+\usetikzlibrary{
+    arrows,
+    shapes.geometric,
+    fit,
+    patterns
+}
+
+\usepackage{pgfplots}          % Tracés de fonctions et graphiques
+\pgfplotsset{compat=1.15}
+
+%=========================================================
+%              LIENS HYPERTEXTES
+%=========================================================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+%=========================================================
+%          ÉLÉMENTS EN ARRIÈRE-PLAN
+%=========================================================
+\usepackage{eso-pic}           % Ajout de filigranes ou d'éléments sur chaque page
+
+%=========================================================
+%              SYMBOLES DIVERS
+%=========================================================
+\usepackage{pifont}            % Symboles (✓, ✗, etc.)
+
+%=========================================================
+%      PERSONNALISATION DES LISTES NUMÉROTÉES
+%=========================================================
+
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
+\node[circle,draw=gray,fill=red!55,
 minimum size=1.2em,inner sep=0] (char) {#1};}}
+
 \newcommand\boxitem[1]{%
 \tikz[baseline=(char.base)]{
 \node[fill=cyan,
 minimum size=1.2em,inner sep=0] (char) {#1};}}
+
 \setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
 \setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float}
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
 
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
+%=========================================================
+%            COMMANDES PERSONNALISÉES
+%=========================================================
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{tkz-tab}
-\usepackage{mdframed}
-\usepackage{tikz}
-\usetikzlibrary{arrows, shapes.geometric, fit}
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
 
-% Commande pour la couleur d'accentuation
-\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+% Tabulation horizontale
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
-%\usepackage[margin=2cm]{geometry}
-\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+%=========================================================
+%             COMPTEURS PERSONNALISÉS
+%=========================================================
 
-\usepackage{enumitem}
-%---------------------------------------
-% Définir un compteur pour les exemples
+%---------- Exemple ----------
 \newcounter{exemple}
 
-% Définir la commande \exemple pour afficher un exemple numéroté
 \newcommand{\exemple}{%
-  \refstepcounter{exemple}% Incrémenter le compteur
-  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
-}
-%---------------------------------------
+\refstepcounter{exemple}
+\textbf{\textcolor{orange}{Exemple \theexemple : }}
+\ignorespaces}
+
+%---------- Solution ----------
 \newcounter{solution}
 
-% Définir la commande \solutione pour afficher un solution numéroté
 \newcommand{\solution}{%
-  \refstepcounter{solution}% Incrémenter le compteur
-  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
-}
-%---------------------------------------
-\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+\refstepcounter{solution}
+\textbf{\textcolor{orange}{Solution \thesolution : }}
+\ignorespaces}
 
-% Définir un compteur pour les exercices d'application
+%---------- Exercices ----------
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
 \newcounter{exerciceapp}
 
-% Définir la commande pour afficher un exercice d'application numéroté
 \newcommand{\exerciceapp}{%
-  \refstepcounter{exerciceapp}%
-  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
-}
-%--------------------------------------
-% Définir un compteur pour les exercices d'application
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}
+{Exercice d'application \theexerciceapp : }}
+\ignorespaces}
+
+%---------- Corrections ----------
 \newcounter{correction}
 
-% Définir la commande pour afficher un correction exercice d'application numéroté
 \newcommand{\correction}{%
-  \refstepcounter{correction}%
-  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
-}
-%--------------------------------------
-% Définir un compteur pour les remarque d'application
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}
+{Correction \thecorrection : }}
+\ignorespaces}
+
+%---------- Remarques ----------
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+
 \newcounter{remarque}
 
-%----------------------------------------
-\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
-% Définir la commande pour afficher un remarque numéroté
 \newcommand{\remarque}{%
-  \refstepcounter{remarque}%
-  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
-}
+\refstepcounter{remarque}
+\textbf{\textcolor{myorange1}
+{Remarque \theremarque : }}
+\ignorespaces}
 
-% Commande pour ajouter du texte en arrière-plan
+%=========================================================
+%                 FILIGRANE
+%=========================================================
+
 \AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
     }
 }
 
