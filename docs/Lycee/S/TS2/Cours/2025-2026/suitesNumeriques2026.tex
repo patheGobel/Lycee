@@ -754,6 +754,196 @@ Montrer que : \( \forall n \in \mathbb{N}^*, \; 3 \leq u_n \leq 4 \).
 
 \textbf{\underline{\correction}}
 
+%=========================================================
+\section*{\underline{\textbf{\textcolor{red}{IV. Suites bornées et convergence}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Suites minorées}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{minorée} s'il existe un réel $m$ tel que :
+\[
+\forall n \in \mathbb{N}, \quad u_n \geq m
+\]
+Le réel $m$ s'appelle un \textbf{minorant} de la suite.
+
+\textbf{\underline{\exemple}}\\
+
+Soit la suite définie par :
+\[
+u_n = n^2 + 3
+\]
+On a $n^2 \geq 0$, donc :
+\[
+u_n = n^2 + 3 \geq 3
+\]
+La suite est donc minorée par $3$.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Suites majorées}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{majorée} s'il existe un réel $M$ tel que :
+\[
+\forall n \in \mathbb{N}, \quad u_n \leq M
+\]
+Le réel $M$ s'appelle un \textbf{majorant}.
+
+\textbf{\underline{\exemple}}\\
+
+Soit :
+\[
+u_n = \frac{1}{n+1}
+\]
+On a :
+\[
+0 < \frac{1}{n+1} \leq 1
+\]
+La suite est donc majorée par $1$.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Suites bornées}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{bornée} si elle est à la fois minorée et majorée.  
+Autrement dit :
+\[
+\exists m, M \in \mathbb{R} \quad \text{tel que} \quad m \leq u_n \leq M
+\]
+
+\textbf{\underline{\exemple}}\\
+
+Soit :
+\[
+u_n = \sin(n)
+\]
+On sait que :
+\[
+-1 \leq \sin(n) \leq 1
+\]
+La suite est donc bornée.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{4. Suites convergentes}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite $(u_n)$ est dite \textbf{convergente} si elle admet une limite réelle $\ell$ lorsque $n \to +\infty$ :
+\(
+\lim\limits_{n \to +\infty} u_n = \ell
+\)
+Cela signifie que les termes de la suite se rapprochent d’un même nombre réel.
+
+\textbf{\underline{\exemple}}\\
+\(
+u_n = \frac{1}{n}
+\)
+On a :
+\(
+\lim\limits_{n \to +\infty} \frac{1}{n} = 0
+\)
+La suite converge donc vers $0$.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{5. Suites divergentes}}}}
+
+\textbf{\underline{Définition}}\\
+
+Une suite est dite \textbf{divergente} lorsqu’elle n’admet pas de limite réelle.
+
+Elle peut :
+\begin{itemize}
+\item tendre vers $+\infty$
+\item tendre vers $-\infty$
+\item osciller
+\end{itemize}
+
+\textbf{\underline{\exemple 1 : Divergence vers $+\infty$}}\\
+
+\(
+u_n = n
+\)
+
+\(
+\lim\limits_{n \to +\infty} n = +\infty
+\)
+
+\textbf{\underline{\exemple 2 : Oscillation}}\\
+
+\(
+u_n = (-1)^n
+\)
+La suite alterne entre $-1$ et $1$ : elle ne possède pas de limite.
+
+%----------------------------------------------------------
+
+\subsection*{\underline{\textbf{\textcolor{red}{6. Théorème de convergence monotone}}}}
+
+\textbf{\underline{Théorème}}\\
+
+\begin{itemize}
+\item Toute suite croissante et majorée est convergente.
+\item Toute suite décroissante et minorée est convergente.
+\end{itemize}
+
+\textbf{\underline{\exemple}}\\
+
+Soit :
+\(
+u_n = 1 - \frac{1}{n}
+\)
+
+La suite est croissante et majorée par $1$.  
+D’après le théorème de la convergence, elle est donc convergente et :
+\(
+\lim\limits_{n \to +\infty} u_n = 1
+\)
+
+\subsection*{\underline{\textbf{\textcolor{red}{7. Suites adjacentes}}}}
+\textbf{\underline{Définition}}\\
+Deux suites $u$ et $v$ sont adjacentes si et seulement si , l’une est croissante, l’autre est décroissante et la
+limite de leur différence est égale à 0 . C'est-à-dire
+$$
+\begin{cases}
+u \textbf{ est croissante}\\
+v \textbf{ est décroissante}\\
+\lim_{n\to \infty}(u_{n}-v_{n})=0
+\end{cases} \textbf{Ou}
+\begin{cases}
+v \textbf{ est croissante}\\
+u \textbf{ est décroissante}\\
+\lim_{n\to \infty}(u_{n}-v_{n})=0
+\end{cases}
+$$
+
+\textbf{\underline{\exemple}}
+
+Soient deux suites définies par :
+
+\(
+u_n = 1-\frac{1}{n}, \quad v_n = 1+\frac{1}{n}.
+\)
+
+Montrer que les deux suite sont adjacents.
+
+\textbf{\underline{\solution}}
+
+\textbf{\underline{\exerciceapp}}
+Soient les deux suites suivantes définies par récurrence pour tout $n \in \mathbb{N}$ :
+\(
+\begin{cases}
+u_0 = 1, & v_0 = 2, \\
+u_{n+1} = \frac{u_n + v_n}{2}, & v_{n+1} = \sqrt{u_n \cdot v_n}.
+\end{cases}
+\)
+
+\textbf{\underline{\correction}}
 
 
 

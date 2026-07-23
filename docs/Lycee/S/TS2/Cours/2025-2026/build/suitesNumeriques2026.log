@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1334,7 +1334,66 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [3] [4] [5] [6]
-[7] (build/suitesNumeriques2026.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--795
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 810--811
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 834--835
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 856--857
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 867--868
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 877--878
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
+
+ []
+
+[9] (build/suitesNumeriques2026.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1343,11 +1402,11 @@ Package rerunfilecheck Info: File `suitesNumeriques2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41737 strings out of 467533
- 983381 string characters out of 5422138
+ 41760 strings out of 467533
+ 983615 string characters out of 5422138
  1539552 words of memory out of 5000000
- 69866 multiletter control sequences out of 15000+600000
- 682560 words of font info for 104 fonts, out of 8000000 for 9000
+ 69868 multiletter control sequences out of 15000+600000
+ 685952 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,741b,1916s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
@@ -1358,10 +1417,10 @@ texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on build/suitesNumeriques2026.pdf (7 pages, 148436 bytes).
+Output written on build/suitesNumeriques2026.pdf (9 pages, 157952 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 65 named destinations out of 1000 (max. 500000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 86 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
