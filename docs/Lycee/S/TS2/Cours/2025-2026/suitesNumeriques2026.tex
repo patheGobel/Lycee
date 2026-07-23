@@ -945,6 +945,292 @@ u_{n+1} = \frac{u_n + v_n}{2}, & v_{n+1} = \sqrt{u_n \cdot v_n}.
 
 \textbf{\underline{\correction}}
 
+%=========================================================
+\section*{\underline{\textbf{\textcolor{red}{V. Théorème du point fixe}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition}}}}
+
+Soit $f$ une fonction définie sur un intervalle $I$.
+
+On appelle \textbf{point fixe} de $f$ tout réel $\ell \in I$ tel que :
+
+\(
+f(\ell) = \ell.
+\)
+
+Autrement dit, $\ell$ est solution de l’équation :
+\(
+f(x) = x.
+\)
+
+\vspace{0.3cm}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Théorème}}}}
+
+Soit $f$ une fonction continue sur un intervalle $I$.
+
+Soit $(u_n)$ une suite définie par récurrence par :
+\(
+u_{n+1} = f(u_n)
+\)
+
+Si la suite $(u_n)$ converge vers un réel $\ell \in I$, alors :
+\(
+\ell \text{ est un point fixe de } f.
+\)
+
+C’est-à-dire :
+\(
+f(\ell) = \ell.
+\)
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Preuve détaillée}}}}
+
+On suppose que la suite $(u_n)$ converge vers un réel $\ell \in I$.
+
+\medskip
+
+\textbf{1) Limite de la suite décalée}
+
+On sait que si une suite $(u_n)$ converge vers $\ell$, alors la suite décalée $(u_{n+1})$ converge vers la même limite.
+
+Ainsi :
+\(
+\lim_{n\to +\infty} u_n = \ell
+\quad \Longrightarrow \quad
+\lim_{n\to +\infty} u_{n+1} = \ell
+\)
+
+\medskip
+
+\textbf{2) Utilisation de la relation de récurrence}
+
+Or, pour tout entier $n$ :
+\(
+u_{n+1} = f(u_n)
+\)
+Donc :
+\(
+\lim_{n\to +\infty} u_{n+1}
+=
+\lim_{n\to +\infty} f(u_n)
+\)
+
+\medskip
+
+\textbf{3) Utilisation de la continuité}
+
+La fonction $f$ est continue sur $I$ et $\ell \in I$.
+
+Par définition de la continuité :
+\(
+\lim_{x \to \ell} f(x) = f(\ell)
+\)
+
+Comme $u_n \to \ell$, on peut écrire :
+\(
+\lim_{n\to +\infty} f(u_n)
+=
+f\!\left(\lim_{n\to +\infty} u_n\right)
+=
+f(\ell)
+\)
+
+\medskip
+
+\textbf{4) Conclusion}
+
+On obtient donc :
+\(
+\lim_{n\to +\infty} u_{n+1}
+=
+f(\ell)
+\)
+
+Mais d’après la première étape :
+\(
+\lim_{n\to +\infty} u_{n+1} = \ell
+\)
+
+Ainsi :
+\(
+\ell = f(\ell)
+\)
+
+\medskip
+
+Donc $\ell$ est un point fixe de $f$.
+
+\(
+\boxed{f(\ell)=\ell}
+\)
+
+\hfill $\square$
+
+\vspace{0.3cm}
+
+%---------------------------------------------------------
+\subsection*{\underline{\textbf{\textcolor{red}{4. Méthode pratique}}}}
+
+Pour déterminer la limite d’une suite définie par :
+
+\(
+u_{n+1} = f(u_n),
+\)
+
+on procède ainsi :
+
+\begin{itemize}
+\item On montre d’abord que la suite est convergente.
+\item On pose $\displaystyle \lim\limits_{n\to +\infty} u_n = \ell$.
+\item On passe à la limite dans la relation de récurrence.
+\item On résout l’équation $f(\ell) = \ell$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{\underline{\textcolor{red}{ Exemple}}}
+
+Soit la suite définie par :
+
+\(
+u_{n+1} = \frac{1}{2}(u_n + 3).
+\)
+
+Si la suite converge vers $\ell$, alors :
+\(
+\ell = \frac{1}{2}(\ell + 3).
+\)
+
+Donc :
+\(
+2\ell = \ell + 3
+\)
+
+\(
+\ell = 3.
+\)
+
+%---------------------------------------------------------
+\subsection*{\underline{\textbf{\textcolor{red}{5. Application du théorème du point fixe}}}}
+
+\textbf{\underline{\textcolor{red}{ Exemple}}}
+
+On considère la suite $(u_n)$ définie par :
+\(
+u_{n+1}=\frac{1}{2}(u_n+3)
+\quad \text{avec} \quad u_0>0
+\)
+
+\bigskip
+
+\textbf{\textcolor{red}{a. Montrons que la suite est majorée par 3}}
+
+On montre par récurrence que :
+\(
+u_n \leq 3
+\)
+
+\textbf{Initialisation :}
+
+Si $u_0 \leq 3$, la propriété est vraie au rang 0.
+
+\textbf{Hérédité :}
+
+Supposons que $u_n \leq 3$.
+
+Alors :
+\(
+u_{n+1}=\frac{1}{2}(u_n+3)
+\leq
+\frac{1}{2}(3+3)
+=
+3
+\)
+
+Donc $u_{n+1} \leq 3$.
+
+La propriété est donc vraie pour tout $n$.
+
+\bigskip
+
+\textbf{\textcolor{red}{b. Étudions la monotonie}}
+
+Calculons :
+\(
+u_{n+1}-u_n
+=
+\frac{1}{2}(u_n+3)-u_n
+\)
+
+\(
+=
+\frac{1}{2}u_n+\frac{3}{2}-u_n
+=
+-\frac{1}{2}u_n+\frac{3}{2}
+=
+\frac{1}{2}(3-u_n)
+\)
+
+Or on a montré que $u_n \leq 3$, donc :
+\(
+3-u_n \geq 0
+\)
+
+Ainsi :
+\(
+u_{n+1}-u_n \geq 0
+\)
+
+La suite est donc croissante.
+
+\bigskip
+
+\textbf{\textcolor{red}{c Conclusion sur la convergence}}
+
+La suite $(u_n)$ est :
+
+\begin{itemize}
+\item croissante
+\item majorée par 3
+\end{itemize}
+
+Donc elle est convergente.
+
+On note :
+\(
+\lim_{n\to+\infty} u_n = \ell
+\)
+
+\bigskip
+
+\textbf{\textcolor{red}{d. Utilisation du théorème du point fixe}}
+
+On a :
+\(
+u_{n+1}=\frac{1}{2}(u_n+3)
+\)
+
+En passant à la limite :
+\(
+\ell=\frac{1}{2}(\ell+3)
+\)
+
+On résout :
+\(
+2\ell=\ell+3
+\)
+
+\(
+\ell=3
+\)
+
+
+\(
+\boxed{\lim_{n\to+\infty} u_n = 3}
+\)
+
+
 
 
 \end{document}
