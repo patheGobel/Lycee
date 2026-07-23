@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 22:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 22:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1327,7 +1327,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [2] [3]
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [2]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
+31.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [3] [4] [5]
 (build/suitesNumeriques2026.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1337,11 +1343,11 @@ Package rerunfilecheck Info: File `suitesNumeriques2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41672 strings out of 467533
- 982596 string characters out of 5422138
+ 41721 strings out of 467533
+ 983181 string characters out of 5422138
  1539554 words of memory out of 5000000
- 69840 multiletter control sequences out of 15000+600000
- 682246 words of font info for 103 fonts, out of 8000000 for 9000
+ 69863 multiletter control sequences out of 15000+600000
+ 682560 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,741b,1916s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
@@ -1352,10 +1358,10 @@ texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on build/suitesNumeriques2026.pdf (3 pages, 131978 bytes).
+Output written on build/suitesNumeriques2026.pdf (5 pages, 139672 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 500000)
+ 186 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

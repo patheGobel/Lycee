@@ -419,5 +419,218 @@ u_0 = 1. &
 
 \textbf{\underline{\correction}}
 
+%=========================================================
+\section*{\underline{\textbf{\textcolor{red}{II. Sens de variation d'une suite}}}}
+
+%---------------------------------------------------------
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définitions}}}}
+
+Soit $\left(u_n\right)$ une suite numérique.
+
+\begin{itemize}
+	\item La suite $\left(u_n\right)$ est \textbf{croissante} si :
+	
+	\(
+	\forall n\in\mathbb{N},\quad u_{n+1}\geq u_n
+	\)
+	
+	c'est-à-dire :
+	\(
+	u_{n+1}-u_n\geq 0.
+	\)
+	
+	\item La suite $\left(u_n\right)$ est \textbf{décroissante} si :
+	
+	\(
+	\forall n\in\mathbb{N},\quad u_{n+1}\leq u_n
+	\)
+	
+	c'est-à-dire :
+	\(
+	u_{n+1}-u_n\leq 0.
+	\)
+	
+	\item La suite $\left(u_n\right)$ est \textbf{constante} si :
+	
+	\(
+	\forall n\in\mathbb{N},\quad u_{n+1}=u_n.
+	\)
+\end{itemize}
+
+
+\medskip
+
+\textbf{Étudier le sens de variation d'une suite} $\left(u_n\right)$
+consiste à déterminer si elle est croissante, décroissante ou constante.
+
+
+%---------------------------------------------------------
+\subsection*{\underline{\textbf{\textcolor{red}{2. Méthodes d'étude du sens de variation}}}}
+
+
+%---------------------------------------------------------
+\subsubsection*{\textcolor{red}{a) Méthode de la différence}}
+
+On étudie le signe de la différence :
+\(
+u_{n+1}-u_n.
+\)
+
+\begin{itemize}
+	\item Si :
+	\(
+	u_{n+1}-u_n\geq0,
+	\)
+	alors la suite $\left(u_n\right)$ est croissante.
+	
+	\item Si :
+	\(
+	u_{n+1}-u_n\leq0,
+	\)
+	alors la suite $\left(u_n\right)$ est décroissante.
+\end{itemize}
+
+\medskip
+
+Cette méthode est la plus générale et peut être utilisée dans la majorité
+des situations.
+
+
+%---------------------------------------------------------
+\subsubsection*{\textcolor{red}{b) Méthode du quotient}}
+
+Lorsque les termes de la suite sont strictement positifs :
+\(
+u_n>0,
+\)
+
+on peut étudier le quotient :
+\(
+\frac{u_{n+1}}{u_n}.
+\)
+
+\begin{itemize}
+	\item Si :
+	\(
+	\frac{u_{n+1}}{u_n}\geq1,
+	\)
+	alors $\left(u_n\right)$ est croissante.
+	
+	\item Si :
+	\(
+	\frac{u_{n+1}}{u_n}\leq1,
+	\)
+	alors $\left(u_n\right)$ est décroissante.
+\end{itemize}
+
+\textbf{Remarque :} Cette méthode nécessite obligatoirement que
+$u_n>0$.
+
+
+%---------------------------------------------------------
+\subsubsection*{\textcolor{red}{c) Méthode par une fonction associée}}
+
+Si la suite est définie par :
+\(
+u_n=f(n),
+\)
+
+où $f$ est une fonction définie sur un intervalle contenant $\mathbb{N}$,
+on peut étudier les variations de $f$.
+
+\medskip
+
+Le sens de variation de la fonction $f$ permet alors de conclure sur
+celui de la suite $\left(u_n\right)$.
+
+
+%---------------------------------------------------------
+\subsubsection*{\textcolor{red}{d) Méthode par récurrence}}
+
+Dans certains cas, il est difficile d'étudier directement
+$u_{n+1}-u_n$.
+
+On peut alors démontrer par récurrence une propriété du type :
+
+\(
+u_{n+1}\geq u_n
+\)
+
+ou
+
+\(
+u_{n+1}\leq u_n.
+\)
+
+
+%---------------------------------------------------------
+\subsection*{\underline{\textbf{\textcolor{red}{3. Méthode pratique}}}}
+
+Pour étudier le sens de variation d'une suite, on choisit généralement :
+
+\begin{itemize}
+	\item \textbf{La différence} $u_{n+1}-u_n$ : méthode la plus utilisée ;
+	
+	\item \textbf{Le quotient} $\dfrac{u_{n+1}}{u_n}$ :
+	 lorsque les termes sont positifs ;
+	
+	\item \textbf{La fonction associée} :
+	 lorsque $u_n=f(n)$ ;
+	
+	\item \textbf{La récurrence} :
+	 lorsque la suite est définie par une relation de récurrence.
+\end{itemize}
+
+\exerciceapp
+
+On considère les suites $\left(u_n\right)$ définies pour tout entier naturel
+$n$ par :
+
+\begin{enumerate}
+    \item 
+    \[
+    u_n=n^2+3n+1
+    \]
+    
+    \begin{enumerate}
+        \item Étudier le sens de variation de la suite $\left(u_n\right)$ à l'aide de la différence $u_{n+1}-u_n$.
+        \item En déduire le minimum de la suite.
+    \end{enumerate}
+
+    \item 
+    \[
+    v_n=2^n
+    \]
+    
+    \begin{enumerate}
+        \item Étudier le sens de variation de la suite $\left(v_n\right)$ en utilisant la méthode du quotient.
+    \end{enumerate}
+
+    \item 
+    \[
+    w_n=\frac{n}{n+1}
+    \]
+    
+    \begin{enumerate}
+        \item Étudier le sens de variation de la suite $\left(w_n\right)$ à l'aide de la différence.
+    \end{enumerate}
+
+    \item 
+    Soit la suite $\left(t_n\right)$ définie par :
+    
+    \[
+    t_0=1,\qquad t_{n+1}=\frac{1}{2}(t_n+3)
+    \]
+    
+    \begin{enumerate}
+        \item Calculer les premiers termes de la suite.
+        \item Montrer que :
+        \[
+        t_{n+1}-t_n=\frac{1}{2}(3-t_n).
+        \]
+        \item En supposant que $t_n<3$ pour tout $n$, étudier le sens de variation de $\left(t_n\right)$.
+    \end{enumerate}
+\end{enumerate}
+
 
 \end{document}
