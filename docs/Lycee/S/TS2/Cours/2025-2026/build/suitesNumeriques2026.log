@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 14:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 JUL 2026 22:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1327,80 +1327,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-54.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 629--630
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 653--654
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--670
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 677--678
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 693--694
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 715--716
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 726--727
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 736--737
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 754--755
-
- []
-
-[6] [7] [8] [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 1546--1547
-
- []
-
-[12]
-Package mdframed Info: Not enough space on this page on input line 1636.
- [13] (build/suitesNumeriques2026.aux)
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [2] [3]
+(build/suitesNumeriques2026.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1409,27 +1337,25 @@ Package rerunfilecheck Info: File `suitesNumeriques2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41775 strings out of 467533
- 983850 string characters out of 5422138
- 1541039 words of memory out of 5000000
- 69869 multiletter control sequences out of 15000+600000
- 685952 words of font info for 106 fonts, out of 8000000 for 9000
+ 41672 strings out of 467533
+ 982596 string characters out of 5422138
+ 1539554 words of memory out of 5000000
+ 69840 multiletter control sequences out of 15000+600000
+ 682246 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,12n,121p,741b,1914s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,12n,121p,741b,1916s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-am10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on build/suitesNumeriques2026.pdf (13 pages, 179163 bytes).
+pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on build/suitesNumeriques2026.pdf (3 pages, 131978 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
- 100 named destinations out of 1000 (max. 500000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 30 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
