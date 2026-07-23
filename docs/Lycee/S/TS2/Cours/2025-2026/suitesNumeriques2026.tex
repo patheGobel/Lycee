@@ -1230,6 +1230,128 @@ On résout :
 \boxed{\lim_{n\to+\infty} u_n = 3}
 \)
 
+%=========================================================
+\section*{\underline{\textbf{\textcolor{red}{VI. Suites particulières}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Suites arithmétiques}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Définition}}}}
+Une suite $\left(u_{n}\right)$ est \textcolor{red}{arithmétique} si chaque terme s'obtient en ajoutant au précédent\\ un même nombre \textcolor{red}{$r$} appelé raison : 
+\textcolor{red}{$u_{n+1}=u_{n}+r.$} 
+\subsection*{\underline{\textbf{\textcolor{red}{b. Expression du terme général}}}}		
+
+ Si $(u_n)$ une suite arithmétique de raison $r$ et de premier terme $U_{p}$ alors on a : 
+\begin{mdframed}[linecolor=red] % Définit la couleur du cadre
+    \[
+    \color{red} u_{n} = u_{p} + (n-p)r
+    \]
+\end{mdframed}
+Avec $u_{p}$ le premier terme, p l'indice du premier terme et r la raison
+
+
+\subsection*{\underline{\textbf{\textcolor{red}{A retenir}}}}
+Pour montrer qu'une suite $(U_n)$ est arithmétique de raison $r$, il suffit de montrer que :
+\[ U_{n+1} - U_n = r \]
+
+\textbf{\underline{\exemple}}
+
+On considère la suite $(U_n)$ définie par :\[ U_n = 5n + 3 \]
+Montrer que $(U_n)$ est une suite arithmétique dont on précisera la raison et le premier terme.
+
+\textbf{\underline{\solution}}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{c. Somme des premiers termes }}}}	
+Soit (Un) une suite arithmétique.
+
+Pour tous entiers naturels n et p tels que $p \leq n$, on a :
+
+De façon général si la suite a pour premier terme $u_{p}$, alors la somme $S_{n}=u_{p}+u_{p+1}+\ldots+u_{n}$ vaut :
+
+\begin{mdframed}[linecolor=red] % Définit la couleur du cadre
+    \[
+    \color{red} S_{n}=\dfrac{(n-p+1)(u_{p}+u_{n})}{2}
+    \]
+\end{mdframed}
+
+\textbf{NB} la Somme $S_{n}=u_{0}+u_{1}+\ldots+u_{n}$ peut etre notée par $S_{n}=\sum_{k=0}^{n}u_{k}$.
+
+\textbf{Exemple de sommation:}\\
+
+$$\sum_{k=0}^{4}2k+7 = \cdots$$
+
+$$\sum_{k=0}^{10}5 = \cdots$$
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Suites géométriques}}}}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Définition}}}}
+Une suite $\left(u_{n}\right)$ est dite géométrie si chaque terme s'obtient en multipliant le précédent par un même nombre $q$ appelé raison : $u_{n+1}=u_{n}\times q.$
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Expression du terme général}}}}
+
+
+Si le premier terme est $u_{p}$, alors:
+\begin{mdframed}[linecolor=red] % Définit la couleur du cadre
+    \[
+    \color{red} u_{n}=u_{p}\times q^{n-p}
+    \]
+\end{mdframed}
+
+\subsection*{\underline{\textbf{\textcolor{red}{A retenir }}}}
+Pour montrer qu’une suite $u_{n}$ est géométrique de raison q, il suffit de montrer que :
+\begin{mdframed}[linecolor=red] % Définit la couleur du cadre
+    \[
+    \color{red} \dfrac{U_{n+1}}{U_{n}}=q
+    \]
+\end{mdframed}
+
+\textbf{\underline{\exemple}}
+
+Montrer que $(v_{n})$ est une suite géométrique dont on précisera
+la raison et le premier terme puis exprimer $(v_{n})$ en fonction de $n$.
+
+\begin{equation*} 
+    \begin{cases}
+        U_{0}=5 \\
+        U_{n + 1}=2U_{n}+3
+    \end{cases}
+    et\quad V_{n} = U_{n} + 3
+\end{equation*}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{c. Somme des premiers termes }}}}
+
+Pour toute suite géométrique, de raison $q\neq 1$, on a:
+
+$$S_{n}=u_{p}+u_{p+1}+\ldots+u_{n}=u_{p}\times\dfrac{1-q^{n-p+1}}{1-q}$$
+
+\begin{mdframed}[linecolor=red] % Définit la couleur du cadre
+    \[
+    \color{red} S_{n}=u_{p}\times\dfrac{1-q^{n-p+1}}{1-q}
+    \]
+\end{mdframed}
+\subsubsection*{\underline{\textbf{\textcolor{red}{d. Sens de variation}}}}
+    \begin{itemize}
+        \item Si $0 < q < 1$, la suite $\left(u_{n}\right)$ est décroissante.
+        \item Si $q > 1$, la suite $\left(u_{n}\right)$ est croissante.
+        \item Si $q=1$, la suite $\left(u_{n}\right)$ est constante.
+    \end{itemize}
+
+
+\underline{\textbf{\textcolor{red}{Remarque :}}}
+
+Soit $q$ un nombre réel.
+Soit \( q \) un nombre réel.
+
+\begin{itemize}
+    \item Si \( q > 1 \), alors
+    \[
+    \lim_{n \rightarrow +\infty} q^n = +\infty.
+    \]
+    
+    \item Si \( -1 < q < 1 \), alors
+    \[
+    \lim_{n \rightarrow +\infty} q^n = 0.
+    \]
+\end{itemize}
+
+
 
 
 
