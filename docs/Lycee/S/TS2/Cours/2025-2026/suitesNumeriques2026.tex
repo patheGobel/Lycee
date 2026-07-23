@@ -632,5 +632,129 @@ $n$ par :
     \end{enumerate}
 \end{enumerate}
 
+%=========================================================
+\section*{\underline{\textbf{\textcolor{red}{III. Démonstration par récurrence}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Principe de récurrence}}}}
+
+Le principe de récurrence s'apparente à une \textbf{chute de dominos en chaîne} :
+\begin{itemize}
+    \item On fait tomber le premier domino (\textit{initialisation}).
+    \item On s'assure que si un domino tombe, il fait forcément tomber le suivant (\textit{hérédité}).
+    \item Conclusion : tous les dominos tombent les uns après les autres.
+\end{itemize}
+
+\textbf{\textcolor{red}{Axiome du principe de récurrence :}} \\
+Soit $P(n)$ une propriété dépendant d'un entier naturel $n$, et soit $n_0 \in \mathbb{N}$. \\
+Si :
+\begin{enumerate}[label=\arabic*.]
+    \item $P(n_0)$ est vraie ;
+    \item Pour tout entier $n \ge n_0$, si $P(n)$ est vraie, alors $P(n+1)$ est vraie ;
+\end{enumerate}
+Alors la propriété $P(n)$ est vraie pour tout entier $n \ge n_0$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Méthode de démonstration}}}}
+
+Pour rédiger une démonstration par récurrence sur une propriété $P(n)$ à partir d'un rang $n_0$, on suit obligatoirement les 3 étapes suivantes :
+
+\begin{enumerate}[label=\textbf{Étape \arabic* :}]
+    \item \textbf{Initialisation} \\
+    On vérifie que la propriété est vraie pour le premier rang $n_0$ (c'est-à-dire que $P(n_0)$ est vraie).
+
+    \item \textbf{Hérédité} \\
+    Soit $n$ un entier naturel fixé tel que $n \ge n_0$. \\
+    On suppose que $P(n)$ est vraie (\textit{hypothèse de récurrence}). \\
+    On démontre alors que $P(n+1)$ est vraie.
+
+    \item \textbf{Conclusion} \\
+    On conclut : la propriété est initialisée et héréditaire, donc d'après le principe de récurrence, $P(n)$ est vraie pour tout entier $n \ge n_0$.
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Applications}}}}
+
+\textbf{\textcolor{red}{Exemple 1 : Démontrer une égalité (Somme des premiers entiers non nuls)}} \\
+Démontrer par récurrence que pour tout $n \in \mathbb{N}^*$ : 
+\( 1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2} \)
+
+\textit{Démonstration :} \\
+Pour tout $n \in \mathbb{N}^*$, notons $P(n)$ la propriété : $\displaystyle \sum_{k=1}^n k = \frac{n(n+1)}{2}$.
+
+\begin{itemize}
+    \item \textbf{Initialisation :} Pour $n = 1$ :
+    \[ \text{D'une part, le membre de gauche vaut } 1. \]
+    \[ \text{D'autre part, } \frac{1(1+1)}{2} = \frac{2}{2} = 1. \]
+    Donc $P(1)$ est vraie.
+
+    \item \textbf{Hérédité :} Soit $n \ge 1$ un entier fixé. Supposons $P(n)$ vraie, c'est-à-dire $1 + 2 + \dots + n = \frac{n(n+1)}{2}$. \\
+    Montrons que $P(n+1)$ est vraie, c'est-à-dire $1 + 2 + \dots + n + (n+1) = \frac{(n+1)(n+2)}{2}$.
+    
+    En utilisant l'hypothèse de récurrence :
+    \begin{align*}
+        1 + 2 + \dots + n + (n+1) &= \frac{n(n+1)}{2} + (n+1) \\
+        &= (n+1) \left( \frac{n}{2} + 1 \right) \\
+        &= (n+1) \left( \frac{n+2}{2} \right) \\
+        &= \frac{(n+1)(n+2)}{2}
+    \end{align*}
+    Donc $P(n+1)$ est vraie.
+
+    \item \textbf{Conclusion :} La propriété est vraie au rang 1 et est héréditaire. Donc, par récurrence, pour tout $n \in \mathbb{N}^*$, $1 + 2 + \dots + n = \frac{n(n+1)}{2}$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{\textcolor{red}{Exemple 2 : Démontrer une inégalité (Inégalité de Bernoulli)}} \\
+Soit $a > 0$. Démontrer que pour tout $n \in \mathbb{N}$, $(1+a)^n \ge 1 + na$.
+
+\textit{Démonstration :} \\
+Pour tout $n \in \mathbb{N}$, notons $P(n)$ la propriété : $(1+a)^n \ge 1 + na$.
+
+\begin{itemize}
+    \item \textbf{Initialisation :} Pour $n = 0$ :
+    \[ (1+a)^0 = 1 \quad \text{et} \quad 1 + 0 \cdot a = 1 \]
+    Puisque $1 \ge 1$, $P(0)$ est vraie.
+
+    \item \textbf{Hérédité :} Soit $n \in \mathbb{N}$ fixé. Supposons $(1+a)^n \ge 1 + na$. \\
+    Montrons que $(1+a)^{n+1} \ge 1 + (n+1)a$.
+
+    Comme $1+a > 0$, multiplions les deux membres de l'hypothèse par $(1+a)$ :
+    \begin{align*}
+        (1+a)^{n+1} &\ge (1 + na)(1 + a) \\
+        (1+a)^{n+1} &\ge 1 + a + na + na^2 \\
+        (1+a)^{n+1} &\ge 1 + (n+1)a + na^2
+    \end{align*}
+    Or, $n \ge 0$ et $a^2 > 0$, donc $na^2 \ge 0$. Par conséquent :
+    \[ 1 + (n+1)a + na^2 \ge 1 + (n+1)a \]
+    Par transitivité, $(1+a)^{n+1} \ge 1 + (n+1)a$. La propriété $P(n+1)$ est donc vraie.
+
+    \item \textbf{Conclusion :} Par récurrence, pour tout $n \in \mathbb{N}$, $(1+a)^n \ge 1 + na$.
+\end{itemize}
+
+\textbf{\underline{\exerciceapp}}
+
+Soit \( (u_n)_{n \in \mathbb{N}} \) la suite définie par :
+\[
+\begin{cases} 
+u_{n+1} = \frac{1}{3} u_n + \frac{5}{3}, & \forall n \in \mathbb{N}, \\ 
+u_0 = 1. & 
+\end{cases}
+\]
+
+Montrer que : \( \forall n \in \mathbb{N}, \; u_n < \frac{5}{2} \).
+
+
+Soit \( (u_n)_{n \in \mathbb{N}} \) la suite définie par :
+\[
+\begin{cases} 
+u_{n+1} = \sqrt{12 + u_n}, & \forall n \in \mathbb{N}, \\ 
+u_0 = 0. & 
+\end{cases}
+\]
+
+Montrer que : \( \forall n \in \mathbb{N}^*, \; 3 \leq u_n \leq 4 \).
+
+\textbf{\underline{\correction}}
+
+
+
 
 \end{document}
