@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  24 JUL 2026 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  24 JUL 2026 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1329,72 +1329,72 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [2]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
-31.
+35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 760--761
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--769
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--793
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 808--809
+Underfull \hbox (badness 10000) in paragraph at lines 812--813
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 816--817
+Underfull \hbox (badness 10000) in paragraph at lines 820--821
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 832--833
+Underfull \hbox (badness 10000) in paragraph at lines 836--837
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 854--855
+Underfull \hbox (badness 10000) in paragraph at lines 858--859
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 875--876
+Underfull \hbox (badness 10000) in paragraph at lines 879--880
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--887
+Underfull \hbox (badness 10000) in paragraph at lines 890--891
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 893--894
+Underfull \hbox (badness 10000) in paragraph at lines 897--898
 
  []
 
 [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1277
+Underfull \hbox (badness 10000) in paragraph at lines 1280--1281
 
  []
 
@@ -1407,8 +1407,8 @@ Package rerunfilecheck Info: File `suitesNumeriques2026.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41788 strings out of 467533
- 983925 string characters out of 5422138
+ 41790 strings out of 467533
+ 983939 string characters out of 5422138
  1539554 words of memory out of 5000000
  69868 multiletter control sequences out of 15000+600000
  685952 words of font info for 106 fonts, out of 8000000 for 9000
@@ -1423,10 +1423,10 @@ texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 /public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on build/suitesNumeriques2026.pdf (14 pages, 179397 bytes).
+Output written on build/suitesNumeriques2026.pdf (14 pages, 179472 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 232 compressed objects within 3 object streams
+ 116 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
