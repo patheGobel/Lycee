@@ -187,7 +187,7 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
     \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TS2}\\[-0.1cm]
     \textbf{Année scolaire : 2025 -- 2026}
 \end{center}
-
+%=========================================================
 \section*{\underline{\textbf{\textcolor{red}{I. Généralités}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Définition d'une suite}}}}
 On appelle \textit{suite numérique} toute fonction définie de $\mathbb{N}$ ou d'une partie $E$ de $\mathbb{N}$ vers $\mathbb{R}$.
@@ -361,27 +361,27 @@ Ainsi, pour tout $n\in\mathbb{N}, u_{n+1}=f(u_{n})$
 
 2.On trace la droite la d'équation $y=x$
 \begin{center}
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=1.2]
 
 % Axes
 \draw[->] (-0.2,0) -- (5,0) node[right] {$x$};
 \draw[->] (0,-0.2) -- (0,5) node[above] {$y$};
 
 % Courbe y = 2sqrt(x)
-\draw[domain=0:4.5,smooth,variable=\x,blue,thick]
-plot ({\x},{2*sqrt(\x)}) node[right] {$C_g$};
+\draw[domain=0:4.5,smooth,variable=\x,red,thick]
+plot ({\x},{2*sqrt(\x)}) node[right] {$\mathcal{C}_g$};
 
 % Bissectrice
 \draw[red,thick] (0,0) -- (4.5,4.5) node[right] {$y=x$};
 
 % Valeur initiale
-\def\u{2}
+\def\u{1.5} % Une valeur comme 1.5 donne un peu plus d'espace au départ
 
 % Point initial sur l'axe
 \filldraw[black] (\u,0) circle (1.5pt) node[below] {$u_0$};
 
-% Construction des 6 termes : u0 à u5
-\foreach \n in {1,2,3,4,5} {
+% Construction des 3 premiers termes (u0 à u3)
+\foreach \n in {1,2,3} {
 
     % Projection verticale vers la courbe
     \draw[dashed] (\u,0) -- (\u,{2*sqrt(\u)});
@@ -632,7 +632,6 @@ $n$ par :
     \end{enumerate}
 \end{enumerate}
 
-%=========================================================
 \section*{\underline{\textbf{\textcolor{red}{III. Démonstration par récurrence}}}}
 
 \subsection*{\underline{\textbf{\textcolor{red}{1. Principe de récurrence}}}}
@@ -754,7 +753,6 @@ Montrer que : \( \forall n \in \mathbb{N}^*, \; 3 \leq u_n \leq 4 \).
 
 \textbf{\underline{\correction}}
 
-%=========================================================
 \section*{\underline{\textbf{\textcolor{red}{IV. Suites bornées et convergence}}}}
 
 \subsection*{\underline{\textbf{\textcolor{red}{1. Suites minorées}}}}
@@ -1230,7 +1228,9 @@ On résout :
 \boxed{\lim_{n\to+\infty} u_n = 3}
 \)
 
+
 %=========================================================
+
 \section*{\underline{\textbf{\textcolor{red}{VI. Suites particulières}}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Suites arithmétiques}}}}
 \subsubsection*{\underline{\textbf{\textcolor{red}{a. Définition}}}}
@@ -1351,8 +1351,6 @@ Soit \( q \) un nombre réel.
     \]
 \end{itemize}
 
-
-%=========================================================
 \section*{\underline{\textbf{\textcolor{red}{VII. Étude complète d'une suite définie par récurrence}}}}
 \subsection*{\textcolor{red}{\underline{EXERCICE 3 } (BAC 2023) }}
 \[
@@ -1376,6 +1374,4 @@ U_{n+1}=\frac{1}{U_{n}}+\frac{3}{4}U_{n}, n\in\mathbb{N}
 \item[4)] Montrer que $(u_n)_{n \in \mathbb{N}}$ est convergente et déterminer sa limite.\hfill\textbf{(01pt)}
 
 \end{enumerate}
-
-
 \end{document}
