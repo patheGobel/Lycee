@@ -1,140 +1,301 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage{array,amsmath,amssymb,mathrsfs, makecell,tikz,times,pifont}
-\usepackage{enumitem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    CLASSE DU DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand\circitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\newcommand\boxitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
-\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-%%%::::::by chnini ameur :::::::%%%
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
+\documentclass[12pt,a4paper]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              ENCODAGE ET POLICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}     % Encodage UTF-8
+\usepackage[T1]{fontenc}        % Gestion correcte des caractères accentués
+\usepackage{lmodern}            % Police Latin Modern
+%\usepackage{times}              % Police Times (à utiliser à la place de lmodern)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  MATHEMATIQUES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}            % Commandes mathématiques avancées
+\usepackage{amsfonts}           % Polices mathématiques supplémentaires
+\usepackage{amssymb}            % Symboles mathématiques
+\usepackage{mathrsfs}           % Police calligraphique (\mathscr)
+\usepackage{tkz-tab}             % Tableaux de signes et variations
+\usepackage{systeme}             % Systèmes d'équations (si nécessaire)
+
+\everymath{\displaystyle}        % Affichage des formules en style centré
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   MISE EN PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+left=1cm,
+right=1cm,
+top=1cm,
+bottom=1.7cm
+]{geometry}                     % Gestion des marges
+
+\usepackage{float}               % Placement forcé des figures avec [H]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    TABLEAUX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{array}               % Colonnes personnalisées dans les tableaux
+\usepackage{multirow}            % Fusion de lignes dans les tableaux
+\usepackage{makecell}            % Cellules multilignes dans les tableaux
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  COULEURS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[dvipsnames,table]{xcolor}
+% Permet :
+% - d'utiliser des couleurs prédéfinies
+% - de colorer textes, tableaux et cadres
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 LISTES PERSONNALISEES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{enumitem}             % Personnalisation des listes enumerate/itemize
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  DESSINS TIKZ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}                 % Création de dessins vectoriels
+
+\usetikzlibrary{
+patterns,                         % Motifs de remplissage
+arrows,                           % Types de flèches
+fit                               % Ajustement de formes autour d'objets
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  BOITES COLOREES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage[most]{tcolorbox}
+% Création de boîtes colorées pour exemples, théorèmes...
+
+\tcbuselibrary{
+skins,
+hooks
+}
+
 \usepackage{varwidth}
-\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-%%%::::::by chnini ameur :::::::%%%
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-% varwidth boxed title*=-3cm,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
-%%%%%%%%%%%%%%%%%%%%%%%
+% Permet d'avoir des boîtes avec largeur automatique
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  LIENS INTERNET
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+citecolor=blue
+]{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              EN-TETE ET PIED DE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{fancyhdr}
-%\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
-% Commande pour ajouter du texte en arrière-plan
-\usepackage{tkz-tab}
-%\AddToShipoutPicture{
-   % \AtTextCenter{%
-      %  \makebox[0pt]{\rotatebox{35}{\textcolor[gray]{0.5}{\fontsize{1.5cm}{1.5cm}\selectfont DIONE@MATHS TL}}}
-%    }
-%}
 \usepackage{lastpage}
+
 \fancyhf{}
+
 \pagestyle{fancy}
+
 \renewcommand{\footrulewidth}{1pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footruleskip}{10pt}
+
+
 \fancyfoot[R]{
 \color{red}\ding{45}\ \textbf{TS, 2026}
 }
+
 \fancyfoot[L]{
 \color{black}\ding{45}\ \textbf{Prof : M. BA}
 }
-\cfoot{\bf
-\thepage /
-\pageref{LastPage}}
+
+\cfoot{
+\bfseries
+\thepage/\pageref{LastPage}
+}
 
 
-% Commande pour la couleur d'accentuation
-\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
-\newcommand\tab[1][1cm]{\hspace*{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    SYMBOLes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\usepackage[margin=2cm]{geometry}
-\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+\usepackage{pifont}
+% Symboles comme ✓, ✗, flèches...
 
-\usepackage{enumitem}
-\usepackage{makecell}
-%---------------------------------------
-% Définir un compteur pour les exemples
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 FILIGRANE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{eso-pic}
+% Ajout d'éléments sur toutes les pages
+
+
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              LISTES NUMEROTEES PERSONNALISEES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[
+circle,
+draw=gray,
+fill=red!55,
+minimum size=1.2em,
+inner sep=0
+](char){#1};}}
+
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[
+fill=cyan,
+minimum size=1.2em,
+inner sep=0
+](char){#1};}}
+
+
+\setlist[enumerate,1]{
+label=\protect\circitem{\arabic*}
+}
+
+\setlist[enumerate,2]{
+label=\protect\boxitem{\alph*}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  BOITE EXEMPLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newtcolorbox{exa}[2][]{
+enhanced,
+breakable,
+before skip=2mm,
+after skip=5mm,
+colback=yellow!20!white,
+colframe=black!20!blue,
+boxrule=0.5mm,
+fonttitle=\bfseries,
+title={#2},
+#1
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              COMMANDES PERSONNALISEES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{
+\setulcolor{#1}\ul{#2}\setulcolor{black}
+}
+
+
+% Tabulation
+\newcommand\tab[1][1cm]{
+\hspace*{#1}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                    COMPTEURS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \newcounter{exemple}
 
-% Définir la commande \exemple pour afficher un exemple numéroté
-\newcommand{\exemple}{%
-  \refstepcounter{exemple}% Incrémenter le compteur
-  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
+\newcommand{\exemple}{
+\refstepcounter{exemple}
+\textbf{\textcolor{orange}{Exemple \theexemple : }}
 }
-%---------------------------------------
+
+
 \newcounter{solution}
 
-% Définir la commande \solutione pour afficher un solution numéroté
-\newcommand{\solution}{%
-  \refstepcounter{solution}% Incrémenter le compteur
-  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
+\newcommand{\solution}{
+\refstepcounter{solution}
+\textbf{\textcolor{orange}{Solution \thesolution : }}
 }
-%---------------------------------------
-\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
 
-% Définir un compteur pour les exercices d'application
+
+
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
+
 \newcounter{exerciceapp}
 
-% Définir la commande pour afficher un exercice d'application numéroté
-\newcommand{\exerciceapp}{%
-  \refstepcounter{exerciceapp}%
-  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+\newcommand{\exerciceapp}{
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}
+{Exercice d'application \theexerciceapp :}}
 }
-%--------------------------------------
-% Définir un compteur pour les exercices d'application
+
+
+
 \newcounter{correction}
 
-% Définir la commande pour afficher un correction exercice d'application numéroté
-\newcommand{\correction}{%
-  \refstepcounter{correction}%
-  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+\newcommand{\correction}{
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}
+{Correction \thecorrection :}}
 }
-%--------------------------------------
-% Définir un compteur pour les remarque d'application
+
+
+
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+
+
 \newcounter{remarque}
 
-%----------------------------------------
-\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
-% Définir la commande pour afficher un remarque numéroté
-\newcommand{\remarque}{%
-  \refstepcounter{remarque}%
-  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
-}
-
-% Commande pour ajouter du texte en arrière-plan
-\AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.6}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
+\newcommand{\remarque}{
+\refstepcounter{remarque}
+\textbf{\textcolor{myorange1}
+{Remarque \theremarque :}}
 }
 
 \begin{document}
