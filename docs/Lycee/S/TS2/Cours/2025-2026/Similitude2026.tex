@@ -397,37 +397,58 @@ $k = a = -2 \quad , \quad z_A = -1 + i \quad , \quad b = (1 - a) z_A = (1 - (-2)
 
 
  \textbf{Soit $z' = a z + b$ , $a \in \mathbb{C}$ , $|a| = 1$ , $b \in \mathbb{C}$ l'écriture complexe de la rotation d'angle $\theta$ et de centre $\Omega$ alors $a = e^{i\theta}$ et $b = (1 - a) z_{\Omega}$.}
+\subsection*{Démonstration :}
+$$
+                \begin{aligned}
+                r(\Omega, \theta) : \boldsymbol{P} &\longrightarrow \boldsymbol{P}\\M(z) &\longmapsto
+                r(\Omega,\theta)(M) =
+                M'(z')
+                \end{aligned}
+                $$
 
-\subsection*{Démonstration : Écriture complexe d'une rotation}
+            $$
+                \begin{aligned}
+                r(\Omega, \theta)(M) = M' &\iff
+                \begin{cases}
+                \Omega M = \Omega M' \quad (1)\\
+                (\overrightarrow{\Omega M},\overrightarrow{\Omega M'}) = \theta \quad (2)
+                \end{cases}
+                \end{aligned}
+                $$
+            
 
-Soit $r$ une rotation de centre $\Omega$ d'affixe $z_{\Omega}$ et d'angle $\theta$. 
-Soit $M$ un point du plan d'affixe $z$ et $M'$ son image par $r$ d'affixe $z'$.
+            $$
+                \begin{aligned}
+                (1)\quad \Omega M = \Omega M' &\iff |z_M - z_{\Omega}| = |z_{M'} - z_{\Omega}|\\
+                &\iff \left| \frac{z_{M'} - z_{\Omega}}{z_M - z_{\Omega}} \right| = 1
+                \end{aligned}
+                $$
+            
 
-\subsection*{1. Définition géométrique}
-Par définition de la rotation $r(\Omega, \theta)$, le point $M'$ est l'image de $M$ si et seulement si :
-\begin{itemize}
-    \item $\Omega M' = \Omega M$ (conservation de la distance au centre)
-    \item $(\overrightarrow{\Omega M}, \overrightarrow{\Omega M'}) \equiv \theta \pmod{2\pi}$ (mesure de l'angle orienté)
-\end{itemize}
+            $$
+                \begin{aligned}
+                (2)\quad (\overrightarrow{\Omega M}, \overrightarrow{\Omega M'}) = \theta \iff \arg\left( \frac{z_{M'} -
+                z_{\Omega}}{z_M - z_{\Omega}} \right) = \theta
+                \end{aligned}
+                $$
 
-\subsection*{2. Traduction complexe}
-Ces deux conditions se traduisent avec les affixes par :
-\begin{enumerate}
-    \item $|z' - z_{\Omega}| = |z - z_{\Omega}|$ ce qui implique $\left| \frac{z' - z_{\Omega}}{z - z_{\Omega}} \right| = 1$
-    \item $\text{arg}\left( \frac{z' - z_{\Omega}}{z - z_{\Omega}} \right) \equiv \theta \pmod{2\pi}$
-\end{enumerate}
+            $$\text{D'après } (1) \text{ et } (2), \text{ on a :} \quad \frac{z_{M'} - z_{\Omega}}{z_M - z_{\Omega}}
+                = 1
+                \times e^{i\theta} = e^{i\theta}$$
 
-Le nombre complexe $\frac{z' - z_{\Omega}}{z - z_{\Omega}}$ a donc pour module $1$ et pour argument $\theta$. 
-D'après la forme exponentielle, nous avons :
-\[ \frac{z' - z_{\Omega}}{z - z_{\Omega}} = e^{i\theta} \]
+            $$
+                \begin{aligned}
+                \frac{z_{M'} - z_{\Omega}}{z_M - z_{\Omega}} = e^{i\theta} &\iff z_{M'} - z_{\Omega} = e^{i\theta}(z_M -
+                z_{\Omega})\\
+                &\iff z_{M'} - z_{\Omega} = e^{i\theta} z_M - e^{i\theta} z_{\Omega}
+                \end{aligned}
+                $$
 
-\subsection*{3. Passage à la forme $z' = az + b$}
-En isolant $z'$, on obtient successivement :
-\begin{itemize}
-    \item $z' - z_{\Omega} = e^{i\theta}(z - z_{\Omega})$
-    \item $z' = e^{i\theta} z - e^{i\theta} z_{\Omega} + z_{\Omega}$
-    \item $z' = e^{i\theta} z + (1 - e^{i\theta}) z_{\Omega}$
-\end{itemize}
+            $$\text{Or } z_{M'} = z', \ z_M = z.$$ $$\text{On obtient: } z' - z_{\Omega} = e^{i\theta} z -
+                e^{i\theta}
+                z_{\Omega}, \ z' = e^{i\theta} z + (1 - e^{i\theta}) z_{\Omega}$$
+
+            $$\text{On obtient : } z' = az + b, \ a = e^{i\theta} \quad \text{et} \quad b = (1 - a) z_{\Omega}.$$
 
 \subsection*{Conclusion}
 En posant $a = e^{i\theta}$ et $b = (1 - a) z_{\Omega}$, on retrouve bien la forme :
