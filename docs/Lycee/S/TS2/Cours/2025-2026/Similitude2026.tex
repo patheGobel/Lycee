@@ -1,127 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                 CLASSE DU DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          ENCODAGE ET POLICES DE CARACTÈRES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}     % Encodage UTF-8 (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}        % Encodage des caractères accentués
+\usepackage{lmodern}            % Police Latin Modern
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                 MATHÉMATIQUES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}            % Environnements mathématiques
+\usepackage{amsfonts}           % Polices mathématiques
+\usepackage{amssymb}            % Symboles mathématiques
+\usepackage{mathrsfs}           % Police calligraphique (\mathscr)
+\usepackage{systeme}            % Systèmes d'équations
+\usepackage{tkz-tab}            % Tableaux de signes et de variations
+
+\everymath{\displaystyle}       % Toutes les formules en mode Display
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%               MISE EN PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+left=1cm,
+right=1cm,
+top=1cm,
+bottom=1.7cm
+]{geometry}
+
+\usepackage{multicol}           % Texte sur plusieurs colonnes
+\usepackage{float}              % Placement précis des figures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  TABLEAUX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{array}              % Colonnes personnalisées
+\usepackage{multirow}           % Fusion de lignes
+\usepackage[table,dvipsnames]{xcolor} % Couleurs dans les tableaux
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             LISTES PERSONNALISÉES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{lmodern}
-\usepackage[table,dvipsnames]{xcolor} % Pour les couleurs dans le tableau
-\usepackage{array} % Pour un meilleur ajustement des colonnes
-\newcommand\circitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\newcommand\boxitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
-\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float}
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
 
-\usepackage{fancyhdr}
-\usepackage{eso-pic}
-\usepackage{tkz-tab}
-\AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
-}
 
-\usepackage{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           DESSINS ET GRAPHIQUES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{color,soul}
-
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{systeme}
-\usepackage{tkz-tab}
 \usepackage{tikz}
 
-\usepackage{titlesec}
-\usepackage{xcolor}
+\usetikzlibrary{
+arrows,
+patterns,
+fit,
+shapes.geometric
+}
 
-% Automatisation de la couleur rouge pour les sections
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             BOÎTES ET ENCADRÉS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+\usepackage{varwidth}
+\usepackage{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           COULEURS ET MISE EN VALEUR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{soul}               % Soulignement, surlignage
+\usepackage{color}              % Couleurs (compatibilité)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            PERSONNALISATION DES TITRES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+
 \titleformat{\section}
-{\color{red}\normalfont\Large\bfseries} % Format : Rouge, Large, Gras
+{\color{red}\Large\bfseries}
 {\thesection}{1em}{}
 
-% Automatisation de la couleur rouge pour les sous-sections
 \titleformat{\subsection}
-{\color{red}\normalfont\large\bfseries} % Format : Rouge, large, Gras
+{\color{red}\large\bfseries}
 {\thesubsection}{1em}{}
 
-\usetikzlibrary{arrows}
-\newcounter{exemple} % Compteur pour les questions
 
-% Définir la commande pour afficher une question numérotée
-\newcommand{\exemple}{%
-  \refstepcounter{exemple}%
-  \textbf{\textcolor{green}{Exemple \theexemple :}} \ignorespaces
-}
-%---------------------------------------
-\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                 HYPERLIENS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Définir un compteur pour les exercices d'application
-\newcounter{exerciceapp}
+\usepackage[
+colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+citecolor=blue
+]{hyperref}
 
-% Définir la commande pour afficher un exercice d'application numéroté
-\newcommand{\exerciceapp}{%
-  \refstepcounter{exerciceapp}%
-  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
-}
-%--------------------------------------
-% Définir un compteur pour les exercices d'application
-\newcounter{correction}
 
-% Définir la commande pour afficher un correction exercice d'application numéroté
-\newcommand{\correction}{%
-  \refstepcounter{correction}%
-  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
-}
-%--------------------------------------
-% Commande pour ajouter du texte en arrière-plan
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         EN-TÊTES, PIEDS ET FILIGRANES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{fancyhdr}
 \usepackage{eso-pic}
-%\usepackage{tkz-tab}
+
 \AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
+\AtTextCenter{
+\makebox[0pt]{
+\rotatebox{80}{
+\textcolor[gray]{0.7}{
+\fontsize{5cm}{5cm}\selectfont PGB
 }
-%This command takes a colour as an optional argument; the default colour is black.
-\usetikzlibrary{shapes.geometric,fit}
-\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+}
+}
+}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%            COMMANDES PERSONNALISÉES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation horizontale
 \newcommand\tab[1][1cm]{\hspace*{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      LISTES NUMÉROTÉES PERSONNALISÉES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[
+circle,
+draw=gray,
+fill=red!55,
+minimum size=1.2em,
+inner sep=0
+](char){#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[
+fill=cyan,
+minimum size=1.2em,
+inner sep=0
+](char){#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
 
 \begin{document}
 % En-tête personnalisée
@@ -137,14 +190,12 @@ middle color = tcbcolback!80!black]
 \subsection*{\underline{1) Fonction dans $\mathbb{C}$ associée à une transformation du plan}}
 
 \noindent
+
 \begin{minipage}{0.5\textwidth}
-    Soit $f : \mathbb{C} \to \mathbb{C}$
-    \[ z \to f(z) \]
+    Soit $\begin{aligned}f &: \mathbb{C} \to \mathbb{C}\\ &z \to f(z)\end{aligned}$
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-    \raggedleft
-    Soit $F : \mathcal{P} \to \mathcal{P}$ \hspace{3em}
-    \[ M(z) \to M'(z') \]
+   Soit $\begin{aligned}F &: \mathcal{P} \to \mathcal{P}\\ &M(z) \to M'(z')\end{aligned}$
 \end{minipage}
 
 \vspace{1em}
