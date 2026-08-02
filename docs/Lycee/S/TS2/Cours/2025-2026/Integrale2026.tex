@@ -1,111 +1,166 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc} % inutile avec XeLaTeX/LuaLaTeX
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{lmodern}
-\newcommand\circitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\newcommand\boxitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
-\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
-\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float}
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns, arrows.meta}
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
 
-\usepackage{fancyhdr}
-\usepackage{eso-pic}
-\usepackage{tkz-tab}
-\AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
+% ==========================================
+% 1. ENCODAGE ET POLICES (FONTS)
+% ==========================================
+\usepackage[utf8]{inputenc} % Encodage des caractères d'entrée (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}   % Encodage des polices de sortie pour la gestion des accents
+\usepackage{times}        % Police Times New Roman pour le texte
+\usepackage{lmodern}      % Police Latin Modern améliorée
+\usepackage{pifont}       % Symboles et caractères spéciaux (puces, coches, flèches)
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Configuration des marges
+\usepackage{fancyhdr}     % Personnalisation des en-têtes et pieds de page
+\usepackage{multicol}     % Gestion de la mise en page sur plusieurs colonnes
+
+% ==========================================
+% 3. MATHÉMATIQUES ET SYSTÈMES
+% ==========================================
+\usepackage{amsmath}     % Environnements et commandes mathématiques de base
+\usepackage{amsfonts}    % Polices et symboles mathématiques additionnels
+\usepackage{amssymb}     % Symboles mathématiques avancés
+\usepackage{mathrsfs}    % Police calligraphique mathématique (\mathscr)
+\usepackage{systeme}     % Alignement et mise en forme automatique des systèmes d'équations
+
+% Force l'affichage grand format (displaystyle) pour les formules intégrées au texte
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. COULEURS, TEXTE ET FORMATAGE
+% ==========================================
+\usepackage{color}       % Gestion des couleurs de base
+\usepackage{soul}        % Gestion du soulignement et de la mise en valeur du texte
+\usepackage{verbatim}    % Insertion de texte brut et blocs de commentaires
+
+% Définition d'une couleur personnalisée
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Commandes personnalisées pour le soulignement et l'espacement
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+% ==========================================
+% 5. TABLEAUX ET FIGURES
+% ==========================================
+\usepackage{array}       % Amélioration du traitement des tableaux
+\usepackage{multirow}    % Permet de fusionner des cellules sur plusieurs lignes
+\usepackage{diagbox}     % Séparation diagonale de cellules de tableau
+\usepackage{float}        % Contrôle avancé du placement des figures et tableaux
+\usepackage{varwidth}    % Ajustement automatique de la largeur des boîtes
+
+% ==========================================
+% 6. LISTES ET PUCES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}    % Personnalisation avancée des listes à puces et numérotées
+
+
+% Styles TikZ pour puces circulaires et carrées
+\newcommand\circitem[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0] (char) {#1};
+  }%
+}
+\newcommand\boxitem[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[fill=cyan, minimum size=1.2em, inner sep=0] (char) {#1};
+  }%
 }
 
-\usepackage{verbatim}
+% Application aux niveaux 1 et 2 des listes numérotées
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
 
-\usepackage{color,soul}
+% ==========================================
+% 7. GRAPHISMES, TIKZ ET TABLEAUX DE VARIATION
+% ==========================================
+\usepackage{tikz}        % Moteur de dessin vectoriel
+\usetikzlibrary{patterns, arrows, arrows.meta, shapes.geometric, fit} 
+% Extensions TikZ :
+% - patterns : motifs de hachures et remplissages
+% - arrows / arrows.meta : gestion et styles des flèches
+% - shapes.geometric : formes géométriques complexes
+% - fit : enveloppe et ajustement de nœuds
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{systeme}
-\usepackage{tkz-tab}
-\usepackage{tikz}
-\usetikzlibrary{arrows}
-\newcounter{exemple} % Compteur pour les questions
+\usepackage{tkz-tab}     % Tableaux de variations et de signes mathématiques
+\usepackage{istgame}     % Tracé d'arbres de décision et théorie des jeux
 
-% Définir la commande pour afficher une question numérotée
+% ==========================================
+% 8. BOÎTES ET ENCADRÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox} % Boîtes encadrées stylisées
+\tcbuselibrary{skins, hooks} % Extensions graphiques (skins) et accroches d'actions (hooks)
+
+% Environnement de boîte personnalisée pour les exemples
+\newtcolorbox{exa}[2][]{
+  enhanced, breakable,
+  before skip=2mm, after skip=5mm,
+  colback=yellow!20!white, colframe=black!20!blue, boxrule=0.5mm,
+  attach boxed title to top left={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+  fonttitle=\bfseries,
+  title={#2}, #1,
+  boxed title style={
+    frame code={
+      \path[fill=tcbcolback!30!black]
+        ([yshift=-1mm, xshift=-1mm]frame.north west)
+        arc[start angle=0, end angle=180, radius=1mm]
+        ([yshift=-1mm, xshift=1mm]frame.north east)
+        arc[start angle=180, end angle=0, radius=1mm];
+      \path[left color=tcbcolback!60!black, right color=tcbcolback!60!black, middle color=tcbcolback!80!black]
+        ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+        [rounded corners=1mm]-- ([xshift=1mm, yshift=-1mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=-1mm, yshift=-1mm]frame.north west)
+        [sharp corners]-- cycle;
+    },
+    interior engine=empty,
+  },
+  interior style={top color=yellow!5}
+}
+
+% ==========================================
+% 9. ARRIÈRE-PLAN ET FILIGRANE (WATERMARK)
+% ==========================================
+\usepackage{eso-pic}     % Ajout d'éléments en arrière-plan des pages
+
+% Filigrane "PGB" en arrière-plan au centre de chaque page
+\AddToShipoutPicture{
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+  }
+}
+
+% ==========================================
+% 10. COMPTEURS ET COMMANDES DE COURS
+% ==========================================
+% Compteur et commande pour les exemples
+\newcounter{exemple}
 \newcommand{\exemple}{%
   \refstepcounter{exemple}%
   \textbf{\textcolor{green}{Exemple \theexemple :}} \ignorespaces
 }
-%---------------------------------------
-\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
 
-% Définir un compteur pour les exercices d'application
+% Compteur et commande pour les exercices d'application
 \newcounter{exerciceapp}
-
-% Définir la commande pour afficher un exercice d'application numéroté
 \newcommand{\exerciceapp}{%
   \refstepcounter{exerciceapp}%
   \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
 }
-%--------------------------------------
-% Définir un compteur pour les exercices d'application
-\newcounter{correction}
 
-% Définir la commande pour afficher un correction exercice d'application numéroté
+% Compteur et commande pour les corrections
+\newcounter{correction}
 \newcommand{\correction}{%
   \refstepcounter{correction}%
   \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
 }
-%--------------------------------------
-% Commande pour ajouter du texte en arrière-plan
-\usepackage{fancyhdr}
-\usepackage{eso-pic}
-%\usepackage{tkz-tab}
-\AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
-}
-%This command takes a colour as an optional argument; the default colour is black.
-\usetikzlibrary{shapes.geometric,fit}
-\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
-\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+% ==========================================
+% 11. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Doit toujours être chargé en dernier pour éviter la rupture de macros d'autres paquets
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 
 \begin{document}
 % En-tête personnalisée
@@ -117,26 +172,100 @@ middle color = tcbcolback!80!black]
 
 \section*{\underline{\textbf{\textcolor{red}{I. Intégrale d'une fonction continue: }}}}
 \subsection*{\underline{\textbf{\textcolor{red}{1. Introduction :}}}}
+L’objectif de ce cours est de donner un sens précis à la notion d’aire sous une courbe, puis de montrer comment la calculer efficacement. Pour cela, nous allons emprunter deux chemins complètement différents, mais qui aboutiront au même résultat.
 
-Soit \( f \) une fonction continue sur un intervalle \( I \),\( F \) et \( G \) 2 primitives de \( f \) sur \( I \), \( a \) et \( b  \) deux éléments de I. On sait qu'il existe un nombre réel $c$ tel que :$\forall x\in I$, 
- \( G(x) = F(x) + c \)
+Considérons la fonction constante \(f(x)=3\) sur l'intervalle \([1\,;5]\).
 
-\underline{\( 
-\begin{cases}
-G(a) = F(a) + c\\
-G(b) = F(b) + c
-\end{cases}
-\)}
+\subsubsection*{\underline{\textbf{\textcolor{red}{Première méthode : une approche géométrique}}}}
+
+La courbe représentative de \(f\) est une droite horizontale. La région comprise entre cette courbe, l'axe des abscisses et les droites d'équations \(x=1\) et \(x=5\) est un rectangle.
 
 \(
-\quad G(b) - G(a) = F(b) - F(a)
+\text{Largeur}=5-1=4,
+\qquad
+\text{Hauteur}=3.
 \)
 
-Le nombre réel \( F(b) - F(a) \) est donc indépendant de la primitive \( f \) choisie
+Son aire est donc \(A=4\times3=12.\)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % Axes
+    \draw[->] (0,0)--(6.5,0) node[right]{$x$};
+    \draw[->] (0,0)--(0,4.5) node[above]{$y$};
+
+    % Fonction
+    \draw[thick,blue] (0,3)--(6,3) node[right]{$y=f(x)=3$};
+
+    % Bornes
+    \draw[dashed] (1,0)--(1,3);
+    \draw[dashed] (5,0)--(5,3);
+
+    % Aire
+    \fill[blue!20] (1,0) rectangle (5,3);
+
+    % Graduations
+    \foreach \x in {1,5}
+        \draw (\x,0.08)--(\x,-0.08) node[below]{\x};
+
+    \draw (0.08,3)--(-0.08,3) node[left]{3};
+\end{tikzpicture}
+\end{center}
+
+On obtient donc \(A=12.\)
+
+\vspace{0.4cm}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{ Deuxième méthode : une approche calculatoire }}}}
+
+Une primitive de la fonction \(f\) est \( F(x)=3x. \)\vspace{0.4cm}
+
+Calculons \( F(5)-F(1)
+=3\times5-3\times1
+=15-3
+=12. \)\vspace{0.4cm}
+
+On retrouve exactement la même valeur.
+
+\vspace{0.4cm}
+
+Nous avons donc calculé une même aire de deux façons différentes :
+
+\begin{itemize}
+    \item par une méthode géométrique ;
+    \item par un simple calcul utilisant une primitive.
+\end{itemize}
+
+Cette égalité n'est pas un hasard. Elle reste vraie pour toute fonction continue.
+
+\vspace{0.4cm}
+
+Soit \(f\) une fonction continue sur un intervalle \(I\), \(F\) et \(G\) deux primitives de \(f\) sur \(I\).
+
+Il existe une constante réelle \(c\) telle que \( G(x)=F(x)+c,\qquad \forall x\in I. \)\vspace{0.4cm}
+
+En particulier,
+\( \left\{
+\begin{aligned}
+G(a)&=F(a)+c,\\
+G(b)&=F(b)+c.
+\end{aligned}
+\right. \)
+
+En soustrayant les deux égalités, on obtient \( G(b)-G(a)=F(b)-F(a). \)
+
+Ainsi, la quantité \( F(b)-F(a) \)
+
+ne dépend pas de la primitive choisie.
+
+Cette quantité est donc bien définie. On la note \( \boxed{\int_a^b f(x)\,dx=F(b)-F(a)} \)
+
+et elle représente l'aire algébrique comprise entre la courbe représentative de \(f\), l'axe des abscisses et les droites d'équations \(x=a\) et \(x=b\).
 
 \subsection*{\underline{\textbf{\textcolor{red}{2. Définition :}}}}
 
 Soit \( f \) une fonction continue sur un intervalle \( I \).
+
 En appelle intégrale de \( a \) à \( b \) de \( f \) le nombre réel \( F(b) - F(a) \) où \( F \) est une primitive de \( f \) sur \( I \) on note :
 
 \(
@@ -150,7 +279,7 @@ F(b) - F(a) = \int_{a}^{b} f(x) \, dx = \left[ F(x) \right]_{a}^{b}
         \item Dans l'écriture \( \int_a^b f(x) \, dx \) On peut remplaçer \( x \) par toute autre lettre (sauf \( a \) et \( b \)) on écrit \( \int_a^b f(t) \, dt \) ou \( \int_a^b f(s) \, ds \) ; \( x \) est appelé variable muette.
 \end{itemize}
 
-\section*{\textbf{\textcolor{red}{Exemple 1}}}
+\subsubsection*{\textbf{\textcolor{red}{Exemple 1}}}
 
 \(
 f(x) = x^2, \quad F(x) = \frac{1}{3} x^3
@@ -167,7 +296,7 @@ f(x) = x^2, \quad F(x) = \frac{1}{3} x^3
 
 \( \boxed{\int_1^2 f(x) \, dx=\frac{7}{3}} \)
 
-\section*{\textbf{\textcolor{red}{Exemple 2}}}
+\subsubsection*{\textbf{\textcolor{red}{Exemple 2}}}
 
 \(
 f(x) = \cos x, \quad F(x) = \sin x
@@ -184,7 +313,7 @@ f(x) = \cos x, \quad F(x) = \sin x
 
 \( \boxed{\int_0^{\frac{\pi}{4}} \cos x \, dx = \frac{\sqrt{2}}{2}} \)
 
-\section*{\textbf{\textcolor{red}{Propriété 1 }}}
+\subsubsection*{\textbf{\textcolor{red}{Propriété 1 }}}
 Soit \( f \) une fonction continue sur un intervalle \( I \), \( a \) et \( b \) deux élément de \( I \). On a
 \[
 \int_a^a f(x) \, dx = 0 \quad;\quad \quad \int_a^b f(x) \, dx = - \int_b^a f(x) \, dx
@@ -200,7 +329,7 @@ En effet :
 \int_a^b f(x) \, dx = \left[ P(x) \right]_a^b = F(b) - F(a) = - \left( P(b) - P(a) \right)=-\int_b^a f(x) \, dx
 \]
 
-\subsection*{\underline{\textbf{\textcolor{red}{3. Intégrale et Primitive :}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{3. Intégrale et Primitive :}}}}
 
 Soit \( f \) une fonction continue sur \( I \) (intervalle), \( a \in I \), \( F \) primitive de \( f \) sur \( I \), telle que \( F'(x) = f(x) \), et \( F(a) = 0 \). \(F(x) = \int_a^x f(t) \, dt \)
 
@@ -284,7 +413,7 @@ A(D)=\int_a^b f(x) \, dx .u.a
 \end{center}
 \end{comment}
 
-\section*{\textbf{\textcolor{red}{Remarque}}}
+\subsubsection*{\textbf{\textcolor{red}{Remarque}}}
 \begin{itemize}
 \item[--] Si \( f \) une fonction continue et \textcolor{red}{négative} sur \([a,b]\). La symétrie orthogonale d'axe \( (OI) \) transforme la courbe \(\mathcal{C}_f\) en celle de \( \mathcal{C}'_{-f} \) de f.
 
@@ -356,7 +485,7 @@ Soit $f$ la fonction définie sur l'intervalle $[0, 3]$ par :
 
 \subsection*{2. Graphique illustratif}
 
-\begin{center}
+
 \begin{tikzpicture}[>=Stealth, scale=1.3]
 
     % --- 1. Grille de fond (style cahier) ---
@@ -411,7 +540,7 @@ Soit $f$ la fonction définie sur l'intervalle $[0, 3]$ par :
     \node[fill=white, inner sep=2pt, rounded corners=1pt, draw=cyan!80!blue] at (1.5,-1.0) {$\mathcal{D}$};
 
 \end{tikzpicture}
-\end{center}
+
 
 \subsection*{3. Solution détaillée}
 
@@ -536,7 +665,7 @@ En appliquant le théorème fondamental de l'analyse entre les bornes $0$ et $3$
 
 \end{itemize}
 
-\section*{Exercice d'application : Fonction changeant de signe}
+\subsubsection*{Exercice d'application : Fonction changeant de signe}
 
 \subsection*{1. Énoncé}
 Soit $f$ la fonction définie sur l'intervalle $[0, 2]$ par :
@@ -550,7 +679,6 @@ Soit $f$ la fonction définie sur l'intervalle $[0, 2]$ par :
 
 \subsection*{2. Graphique de l'exercice}
 
-\begin{center}
 \begin{tikzpicture}[>=Stealth, scale=1.3]
 
     % --- 1. Grille de fond (style cahier) ---
@@ -601,7 +729,6 @@ Soit $f$ la fonction définie sur l'intervalle $[0, 2]$ par :
     \node[fill=white, inner sep=2pt, rounded corners=1pt, draw=teal!50] at (1.6, 0.6) {$\mathcal{D}_2$};
 
 \end{tikzpicture}
-\end{center}
 
 \subsection*{3. Solution rédigée}
 
