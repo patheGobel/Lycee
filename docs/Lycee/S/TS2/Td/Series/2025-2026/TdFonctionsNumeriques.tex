@@ -1,59 +1,155 @@
-\documentclass[12pt]{article}
-\usepackage{lmodern} % Pour une police plus nette
-\usepackage{stmaryrd}
-\usepackage{graphicx} % Pour l'insertion d'images
-\usepackage{float}    % Pour contrôler précisément le placement
-\usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{hyperref}
-\usepackage{verbatim}
-\usepackage{color, soul}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18} % Version plus récente de pgfplots
-\usepackage{mathrsfs}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{tkz-tab}
-%\author{Destiné aux élèves de Terminale S\\Lycée de Dindéfelo\\Présenté par M. BA}
-%\title{\textbf{Rappels et compléments sur les fonctions numériques}}
-%\date{\today}
-\usepackage{tikz}
-\usetikzlibrary{arrows, shapes.geometric, fit}
-% Commande pour la couleur d'accentuation
-\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
-\newcommand\tab[1][1cm]{\hspace*{#1}}
-\usepackage[margin=2.5cm]{geometry} % Ajustement des marges
-\usepackage{eso-pic} % Pour ajouter des éléments en arrière-plan
+\documentclass[12pt,a4paper]{article}
 
-% Commande pour ajouter du texte en arrière-plan, centré au milieu de chaque page
-\AddToShipoutPicture{
-    \AtPageCenter{%
-        \makebox(0,0)[c]{\rotatebox{60}{\textcolor[gray]{0.9}{\fontsize{2cm}{2cm}\selectfont PGB}}}
-    }
+% ==========================================
+% 1. ENCODAGE ET POLICES (FONTS)
+% ==========================================
+\usepackage[T1]{fontenc}   % Encodage des polices de sortie pour la gestion des accents
+\usepackage{times}        % Police Times New Roman pour le texte
+\usepackage{lmodern}      % Police Latin Modern améliorée
+\usepackage{pifont}       % Symboles et caractères spéciaux (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES/PIEDS DE PAGE
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Configuration des marges
+\usepackage{fancyhdr}     % Personnalisation des en-têtes et pieds de page
+\usepackage{lastpage}     % Accès au numéro de la dernière page pour "page X/Y"
+\usepackage{multicol}     % Gestion de la mise en page sur plusieurs colonnes
+
+% Configuration du style des pieds de page
+\pagestyle{fancy}
+\fancyhf{} % Réinitialise les en-têtes et pieds de page
+\renewcommand{\headrulewidth}{0pt}  % Pas de ligne sous l'en-tête
+\renewcommand{\footrulewidth}{1pt}  % Ligne au-dessus du pied de page
+\renewcommand{\footruleskip}{10pt}  % Espacement de la ligne de pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof: M. BA}} % Pied de page gauche
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}        % Pied de page droit
+\cfoot{\bf\thepage\ / \pageref{LastPage}}                 % Numérotation centrale (X/Y)
+
+% ==========================================
+% 3. MATHÉMATIQUES ET SYSTÈMES
+% ==========================================
+\usepackage{amsmath}     % Environnements et commandes mathématiques de base
+\usepackage{amssymb}     % Symboles mathématiques avancés
+\usepackage{mathrsfs}    % Police calligraphique mathématique (\mathscr)
+
+% Force l'affichage grand format (displaystyle) pour les formules intégrées au texte
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. TABLEAUX ET FIGURES
+% ==========================================
+\usepackage{array}       % Amélioration du traitement des tableaux
+\usepackage{multirow}    % Fusion de cellules sur plusieurs lignes
+\usepackage{float}        % Contrôle avancé du placement des figures ([H])
+\usepackage{varwidth}    % Ajustement automatique de la largeur des boîtes
+
+% ==========================================
+% 5. LISTES ET PUCES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}    % Personnalisation avancée des listes à puces et numérotées
+
+% Styles TikZ pour puces circulaires et carrées
+\newcommand\circitem[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0] (char) {#1};
+  }%
+}
+\newcommand\boxitem[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[fill=cyan, minimum size=1.2em, inner sep=0] (char) {#1};
+  }%
 }
 
+% Application aux niveaux 1 et 2 des listes numérotées
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+% ==========================================
+% 6. GRAPHISMES, TIKZ ET TABLEAUX DE VARIATION
+% ==========================================
+\usepackage{tikz}        % Moteur de dessin vectoriel
+\usetikzlibrary{patterns, trees} % Extensions TikZ :
+                                 % - patterns : motifs de hachures et remplissages
+                                 % - trees : réalisation d'arbres de dénombrement/probabilités
+
+\usepackage{tkz-tab}     % Tableaux de variations et de signes mathématiques
+
+% ==========================================
+% 7. BOÎTES ET ENCADRÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox} % Boîtes encadrées stylisées
+\tcbuselibrary{skins, hooks} % Extensions graphiques (skins) et accroches d'actions (hooks)
+
+% Environnement de boîte personnalisée pour les exemples
+\newtcolorbox{exa}[2][]{
+  enhanced, breakable,
+  before skip=2mm, after skip=5mm,
+  colback=yellow!20!white, colframe=black!20!blue, boxrule=0.5mm,
+  attach boxed title to top left={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+  fonttitle=\bfseries,
+  title={#2}, #1,
+  boxed title style={
+    frame code={
+      \path[fill=tcbcolback!30!black]
+        ([yshift=-1mm, xshift=-1mm]frame.north west)
+        arc[start angle=0, end angle=180, radius=1mm]
+        ([yshift=-1mm, xshift=1mm]frame.north east)
+        arc[start angle=180, end angle=0, radius=1mm];
+      \path[left color=tcbcolback!60!black, right color=tcbcolback!60!black, middle color=tcbcolback!80!black]
+        ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+        [rounded corners=1mm]-- ([xshift=1mm, yshift=-1mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=-1mm, yshift=-1mm]frame.north west)
+        [sharp corners]-- cycle;
+    },
+    interior engine=empty,
+  },
+  interior style={top color=yellow!5}
+}
+
+% ==========================================
+% 8. ARRIÈRE-PLAN ET FILIGRANE (WATERMARK)
+% ==========================================
+\usepackage{eso-pic}     % Ajout d'éléments en arrière-plan des pages
+
+% Filigrane "PGB" centré sur chaque page
+\AddToShipoutPicture{
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+  }
+}
+
+% ==========================================
+% 9. COMPTEURS ET COMMANDES DE COURS
+% ==========================================
+% Compteur et commande pour la numérotation des exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ }
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Chargé en tout dernier pour éviter les conflits de redéfinition de commandes
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
 \begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 05/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Complexe}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
 
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-\raggedright
-\textbf{Ministère de l'Éducation Nationale}\\
-Inspection Académique de Kédougou\\
-Lycée Dindéfelo\\
-Cellule de Mathématiques
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-\raggedleft
-\textbf{Année scolaire 2025-2026}\\
-Date : 24/10/2025\\
-Classe : Terminale S2\\
-Professeur : M. BA
-\end{minipage}
-
-\vspace{1cm}
+\vspace{3cm}
 \section*{Exercice 1}
 
 1. Déterminer, si elles existent, les limites suivantes :
