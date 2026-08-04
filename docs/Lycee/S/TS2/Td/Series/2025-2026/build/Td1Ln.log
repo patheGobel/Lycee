@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  4 AUG 2026 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  4 AUG 2026 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,8 +1116,8 @@ Package rerunfilecheck Info: File `Td1Ln.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30325 strings out of 467533
- 607889 string characters out of 5422138
+ 30324 strings out of 467533
+ 607881 string characters out of 5422138
  1107341 words of memory out of 5000000
  58541 multiletter control sequences out of 15000+600000
  661051 words of font info for 102 fonts, out of 8000000 for 9000
@@ -1133,10 +1133,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/zapfding/uzdr.pfb>
-Output written on build/Td1Ln.pdf (4 pages, 112180 bytes).
+Output written on build/Td1Ln.pdf (4 pages, 112057 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 140 named destinations out of 1000 (max. 500000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 139 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
