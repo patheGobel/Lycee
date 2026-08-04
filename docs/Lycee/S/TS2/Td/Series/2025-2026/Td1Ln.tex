@@ -1,83 +1,137 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{lmodern}
-\usetikzlibrary{trees}
+
+% ==========================================
+% 1. POLICES ET ENCODAGE DE TEXTE
+% ==========================================
+\usepackage[T1]{fontenc}        % Encodage pour les caractères accentués
+\usepackage{mathptmx}          % Police Times harmonisée pour le texte et les formules mathématiques
+\usepackage{pifont}            % Symboles graphiques (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Marges du document
+\usepackage{fancyhdr}          % Gestion des en-têtes et pieds de page
+\usepackage{lastpage}          % Référence dynamique à la dernière page pour "Page X/Y"
+\usepackage{multicol}          % Support pour la mise en page multi-colonnes
+
+% --- Configuration de Fancyhdr ---
+\pagestyle{fancy}
+\fancyhf{} % Efface les configurations par défaut
+\renewcommand{\headrulewidth}{0pt} % Suppression de la ligne d'en-tête
+\renewcommand{\footrulewidth}{1pt} % Ligne de séparation de pied de page
+\renewcommand{\footruleskip}{10pt} % Espacement vertical au-dessus du pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof: M. BA}}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{\the\year}} % Mise à jour automatique de l'année
+\cfoot{\textbf{\thepage\ / \pageref{LastPage}}}
+
+% ==========================================
+% 3. MATHÉMATIQUES
+% ==========================================
+\usepackage{amsmath}           % Environnements et commandes mathématiques fondamentales
+\usepackage{amssymb}           % Symboles mathématiques avancés
+\usepackage{mathrsfs}          % Lettres calligraphiques via \mathscr{}
+
+% Passage automatique de toutes les formules en mode affiché (displaystyle)
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. GESTION DES TABLEAUX ET OBJETS FLOTTANTS
+% ==========================================
+\usepackage{array}             % Extensions des capacités des tableaux
+\usepackage{multirow}          % Fusion horizontale et verticale de cellules
+\usepackage{varwidth}          % Boîtes à largeur adaptable
+\usepackage{float}             % Placement strict des objets flottants via l'option [H]
+
+% ==========================================
+% 5. LISTES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}          % Personnalisation fine des environnements d'énumération
+
+% Définitions des puces personnalisées TikZ
 \newcommand\circitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
+  \tikz[baseline=(char.base)]{%
+    \node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0pt] (char) {#1};%
+  }%
+}
 \newcommand\boxitem[1]{%
-\tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
+  \tikz[baseline=(char.base)]{%
+    \node[fill=cyan, minimum size=1.2em, inner sep=0pt] (char) {#1};%
+  }%
+}
+
 \setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
 \setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-%%%::::::by chnini ameur :::::::%%%
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-%%%::::::by chnini ameur :::::::%%%
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
-fonttitle=\bfseries,
-title={#2},#1,
-% varwidth boxed title*=-3cm,
-boxed title style={frame code={
-\path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
-([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
--- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
-[sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
-%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{fancyhdr}
-\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
-% Commande pour ajouter du texte en arrière-plan
-\usepackage{tkz-tab}
-\AddToShipoutPicture{
-    \AtTextCenter{%
-        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
-    }
-}
-\usepackage{lastpage}
-\fancyhf{}
-\pagestyle{fancy}
-\renewcommand{\footrulewidth}{1pt}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footruleskip}{10pt}
-\fancyfoot[R]{
-\color{blue}\ding{45}\ \textbf{2025}
-}
-\fancyfoot[L]{
-\color{blue}\ding{45}\ \textbf{Prof:M. BA}
-}
-\cfoot{\bf
-\thepage /
-\pageref{LastPage}}
-% Création du compteur pour les exercices
-\newcounter{exercice}
-\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
 
-% Définir la commande \exo
-\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+% ==========================================
+% 6. GRAPHISMES ET TABLEAUX DE VARIATIONS
+% ==========================================
+\usepackage{tikz}
+\usetikzlibrary{patterns, trees, calc, babel} % Regroupement des extensions TikZ
+\usepackage{tkz-tab}           % Conception de tableaux de variations et de signes
+
+% ==========================================
+% 7. ENCADRÉS STYLISÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins, hooks}
+
+% Environnement d'encadré d'exemple
+\newtcolorbox{exa}[2][]{%
+  enhanced,
+  breakable,
+  before skip=2mm,
+  after skip=5mm,
+  colback=yellow!20!white,
+  colframe=black!20!blue,
+  boxrule=0.5mm,
+  attach boxed title to top left={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+  fonttitle=\bfseries,
+  title={#2},
+  #1,
+  boxed title style={%
+    frame code={%
+      \path[fill=tcbcolback!30!black]
+        ([yshift=-1mm,xshift=-1mm]frame.north west)
+        arc[start angle=0,end angle=180,radius=1mm]
+        ([yshift=-1mm,xshift=1mm]frame.north east)
+        arc[start angle=180,end angle=0,radius=1mm];
+      \path[left color=tcbcolback!60!black,right color=tcbcolback!60!black,middle color=tcbcolback!80!black]
+        ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+        [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+        [sharp corners]-- cycle;
+    },
+    interior engine=empty,
+  },
+  interior style={top color=yellow!5}
+}
+
+% ==========================================
+% 8. FILIGRANE (ARRIÈRE-PLAN)
+% ==========================================
+\usepackage{eso-pic}
+
+\AddToShipoutPicture{%
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}%
+  }%
+}
+
+% ==========================================
+% 9. COMPTEURS ET MACROS PEDAGOGIQUES
+% ==========================================
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ }
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Chargé en dernier pour prévenir les conflits de re-définition
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 \begin{document}
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
