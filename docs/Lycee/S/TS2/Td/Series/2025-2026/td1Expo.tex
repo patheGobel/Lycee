@@ -1,0 +1,331 @@
+\documentclass[12pt,a4paper]{article}
+
+% ==========================================
+% 1. POLICES ET ENCODAGE DE TEXTE
+% ==========================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}        % Encodage pour les caractères accentués
+\usepackage{mathptmx}          % Police Times harmonisée pour le texte et les formules mathématiques
+\usepackage{pifont}            % Symboles graphiques (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Marges du document
+\usepackage{fancyhdr}          % Gestion des en-têtes et pieds de page
+\usepackage{lastpage}          % Référence dynamique à la dernière page pour "Page X/Y"
+\usepackage{multicol}          % Support pour la mise en page multi-colonnes
+
+% --- Configuration de Fancyhdr ---
+\pagestyle{fancy}
+\fancyhf{} % Efface les configurations par défaut
+\renewcommand{\headrulewidth}{0pt} % Suppression de la ligne d'en-tête
+\renewcommand{\footrulewidth}{1pt} % Ligne de séparation de pied de page
+\renewcommand{\footruleskip}{10pt} % Espacement vertical au-dessus du pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof: M. BA}}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{\the\year}} % Mise à jour automatique de l'année
+\cfoot{\textbf{\thepage\ / \pageref{LastPage}}}
+
+% ==========================================
+% 3. MATHÉMATIQUES
+% ==========================================
+\usepackage{amsmath}           % Environnements et commandes mathématiques fondamentales
+\usepackage{amssymb}           % Symboles mathématiques avancés
+\usepackage{mathrsfs}          % Lettres calligraphiques via \mathscr{}
+
+% Passage automatique de toutes les formules en mode affiché (displaystyle)
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. GESTION DES TABLEAUX ET OBJETS FLOTTANTS
+% ==========================================
+\usepackage{array}             % Extensions des capacités des tableaux
+\usepackage{multirow}          % Fusion horizontale et verticale de cellules
+\usepackage{varwidth}          % Boîtes à largeur adaptable
+\usepackage{float}             % Placement strict des objets flottants via l'option [H]
+
+% ==========================================
+% 5. LISTES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}          % Personnalisation fine des environnements d'énumération
+
+% Définitions des puces personnalisées TikZ
+\newcommand\circitem[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0pt] (char) {#1};%
+  }%
+}
+\newcommand\boxitem[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[fill=cyan, minimum size=1.2em, inner sep=0pt] (char) {#1};%
+  }%
+}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+% ==========================================
+% 6. GRAPHISMES ET TABLEAUX DE VARIATIONS
+% ==========================================
+\usepackage{tikz}
+\usetikzlibrary{patterns, trees, calc, babel} % Regroupement des extensions TikZ
+\usepackage{tkz-tab}           % Conception de tableaux de variations et de signes
+
+% ==========================================
+% 7. ENCADRÉS STYLISÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins, hooks}
+
+% Environnement d'encadré d'exemple
+\newtcolorbox{exa}[2][]{%
+  enhanced,
+  breakable,
+  before skip=2mm,
+  after skip=5mm,
+  colback=yellow!20!white,
+  colframe=black!20!blue,
+  boxrule=0.5mm,
+  attach boxed title to top left={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+  fonttitle=\bfseries,
+  title={#2},
+  #1,
+  boxed title style={%
+    frame code={%
+      \path[fill=tcbcolback!30!black]
+        ([yshift=-1mm,xshift=-1mm]frame.north west)
+        arc[start angle=0,end angle=180,radius=1mm]
+        ([yshift=-1mm,xshift=1mm]frame.north east)
+        arc[start angle=180,end angle=0,radius=1mm];
+      \path[left color=tcbcolback!60!black,right color=tcbcolback!60!black,middle color=tcbcolback!80!black]
+        ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+        [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+        [sharp corners]-- cycle;
+    },
+    interior engine=empty,
+  },
+  interior style={top color=yellow!5}
+}
+
+% ==========================================
+% 8. FILIGRANE (ARRIÈRE-PLAN)
+% ==========================================
+\usepackage{eso-pic}
+\AddToShipoutPicture{
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+  }
+}
+
+% ==========================================
+% 9. COMPTEURS ET MACROS PEDAGOGIQUES
+% ==========================================
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ }
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                     & \textbf{Niveau : TS2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large TD : Fonction Exponentielle}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+% ==========================================
+% EXERCICE 1 : CALCUL DE LIMITES
+% ==========================================
+\begin{center}
+\fbox{\textbf{\exo}} Déterminer les limites suivantes :
+\end{center}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm}
+\begin{enumerate}
+\item $\lim_{x \to +\infty} e^{x+2}$
+\item $\lim_{x \to -\infty} e^{3x-1}$
+\item $\lim_{x \to +\infty} (e^x)^2$
+\item $\lim_{x \to -\infty} \frac{1}{e^x}$
+\item $\lim_{x \to +\infty} e^{x^2 + x + 1}$
+
+\item $\lim_{x \to -\infty} e^{x^2 + x + 1}$
+\item $\lim_{x \to +\infty} e^{\frac{x+1}{x^2 + x + 1}}$
+\item $\lim_{x \to -\infty} e^{\frac{2x+3}{x-1}}$
+\item $\lim_{x \to +\infty} \frac{e^{x+2}}{e^{x+1}}$
+\item $\lim_{x \to -\infty} \frac{e^x + 2}{e^x + 1}$
+
+\item $\lim_{x \to +\infty} \frac{e^x}{\sqrt{x}}$
+\item $\lim_{x \to +\infty} \frac{e^x}{x^2}$
+\item $\lim_{x \to +\infty} (e^x - \sqrt{x})$
+\item $\lim_{x \to -\infty} x^2 e^x$
+\item $\lim_{x \to -\infty} \sqrt{-x} \, e^x$
+
+\item $\lim_{x \to +\infty} (e^x - 2x)$
+\item $\lim_{x \to +\infty} \frac{e^{x^2 + 1}}{e^{x+1}}$
+\item $\lim_{x \to 0} \frac{e^{2x} - 1}{x}$
+\item $\lim_{x \to 0} \frac{e^{x^2} - 1}{x}$
+\item $\lim_{x \to 0} \frac{e^{3x} - 1}{2x}$
+
+\item $\lim_{x \to 0} \frac{e^{\sin x} - 1}{x}$
+\item $\lim_{x \to -\infty} \frac{e^x - 1}{x}$
+\item $\lim_{x \to +\infty} \frac{e^x - 1}{x}$
+\item $\lim_{x \to 0} \frac{e^{x^2} - 1}{3x}$
+\item $\lim_{x \to 0} \frac{e^{2x} - e^x}{x}$
+
+\item $\lim_{x \to -\infty} \frac{2e^x + 1}{e^x + 3}$
+\item $\lim_{x \to +\infty} \frac{2e^x + 1}{e^x + 3}$
+\item $\lim_{x \to -\infty} \frac{e^x - 1}{2x}$
+\item $\lim_{x \to +\infty} \frac{e^x - 1}{2x}$
+\item $\lim_{x \to 2} e^{\frac{1}{2-x}}$
+
+\item $\lim_{x \to +\infty} e^{x^2 - 2x}$
+\item $\lim_{x \to -\infty} e^{x^2 + 4x}$
+\item $\lim_{x \to 0} e^{\frac{2x - 1}{x - 2}}$
+\item $\lim_{x \to 0^+} e^{\frac{1 + x}{x}}$
+
+\item $\lim_{x \to +\infty} e^{\frac{1 - x}{-x - 1}}$
+\item $\lim_{x \to -\infty} e^{\frac{x^3 + x}{-2x^2 - 1}}$
+\item $\lim_{x \to 0} e^{|x^2 + x|}$
+\item $\lim_{x \to 1} e^{|x^2 - 1|}$
+
+\item $\lim_{x \to +\infty} e^{|x^2 - 1|}$
+\item $\lim_{x \to +\infty} \frac{2x - 1}{x e^x - x}$
+\item $\lim_{x \to -\infty} \frac{2x - 1}{x e^x + x}$
+\item $\lim_{x \to +\infty} \frac{-1}{x^2 e^x}$
+
+\item $\lim_{x \to -\infty} \frac{2e^x - 3}{3e^x + 1}$
+\item $\lim_{x \to +\infty} \frac{2e^x - 3}{3e^x + 1}$
+\item $\lim_{x \to -\infty} \frac{e^x - 3x}{2e^x + x}$
+\item $\lim_{x \to +\infty} \frac{e^x - 3x}{2e^x + x}$
+
+\item $\lim_{x \to +\infty} (x - e^x)$
+\item $\lim_{x \to +\infty} \frac{1 - e^x}{x}$
+\item $\lim_{x \to -\infty} \frac{1 - e^x}{x}$
+\item $\lim_{x \to -\infty} (x e^x - x)$
+
+\item $\lim_{x \to -\infty} x^n e^x \quad (n \in \mathbb{N}^*)$
+\item $\lim_{x \to -\infty} x(e^x - 1)$
+\item $\lim_{x \to +\infty} \frac{e^{2x}}{x}$
+\item $\lim_{x \to +\infty} \frac{(x - 1)e^x}{x}$
+
+\item $\lim_{x \to -\infty} \frac{(x - 1)e^x}{x}$
+\item $\lim_{x \to +\infty} x \left(e^{\frac{1}{x}} - 1\right)$
+\item $\lim_{x \to +\infty} x \left(e^{\frac{2}{x}} - 1\right)$
+\item $\lim_{x \to -\infty} \frac{e^{-x}}{x}$
+
+\item $\lim_{x \to -\infty} \left(e^x + \frac{1}{e^x}\right)$
+\item $\lim_{x \to +\infty} \left( \frac{x^2}{x-1} - e^x \right)$
+\item $\lim_{x \to -\infty} x^2 e^x$
+\item $\lim_{x \to 0} \frac{e^x - 1}{x^2 + x}$
+
+\item $\lim_{x \to 0} \frac{e^x - e^2}{x-2}$
+\item $\lim_{x \to 0} \frac{e^{a+x} - e^a}{x} \quad (a \in \mathbb{R})$
+\item $\lim_{x \to -\infty} \frac{e^x - 2}{e^x + 1}$
+\item $\lim_{x \to 0} \tan x \cdot e^{\frac{1}{x}}$
+
+\item $\lim_{x \to \frac{\pi}{4}} \frac{e^{\tan x} - e}{\sin x - \cos x}$
+\item $\lim_{x \to 0} \frac{e^{\cos x - 1} - 1}{x^2}$
+\item $\lim_{x \to +\infty} \frac{x e^x}{x+1}$
+\item $\lim_{x \to +\infty} \frac{e^{1+x}}{1+x^2}$
+
+\item $\lim_{x \to -\infty} \frac{e^x}{1 - e^x}$
+\item $\lim_{x \to +\infty} \frac{e^x}{1 - e^x}$
+\item $\lim_{x \to 0} \frac{e^{1-\cos x} - 1}{x^2}$
+\item $\lim_{x \to 1} \left( -x + e^{\frac{x}{x-1}} \right)$
+
+\item $\lim_{x \to -\infty} \left( -x + e^{\frac{x}{x-1}} \right)$
+\item $\lim_{x \to +\infty} \left( -x + e^{\frac{x}{x-1}} \right)$
+\item $\lim_{x \to +\infty} x \left( e^{\frac{x+1}{x-1}} - e \right)$
+\item $\lim_{x \to +\infty} \frac{e^{\sqrt{x^2 - 1}}}{x^2 - 1}$
+
+\item $\lim_{x \to 1} \frac{e^{(x-1)^2} - 1}{(x-1)^2}$
+\item $\lim_{x \to 0} \frac{e^{\sqrt{x+1}-1} - 1}{x}$
+\item $\lim_{x \to +\infty} \left( e^x + \frac{1}{e^x} \right)$
+\item $\lim_{x \to -\infty} \frac{e^x}{1+x^2}$
+
+\item $\lim_{x \to +\infty} \frac{e^x}{1+x^2}$
+\item $\lim_{x \to +\infty} \frac{x^3}{e^x}$
+\item $\lim_{x \to +\infty} \frac{e^{1+e^x}}{e^x}$
+\item $\lim_{x \to +\infty} (x e^x - e^x)$
+
+\item $\lim_{x \to +\infty} \sqrt{x} \, e^{-x}$
+\item $\lim_{x \to 0} \frac{x}{e^{\sin x} - 1}$
+\item $\lim_{x \to 0} \frac{e^{2x} - 1}{\tan x}$
+\item $\lim_{x \to +\infty} \frac{e^x}{x-1}$
+\item $\lim_{x \to 1} \frac{e^{x-1} - 1}{x-1}$
+\end{enumerate}
+\end{multicols}
+
+% ==========================================
+% EXERCICE 2 : ÉQUATIONS ET INÉQUATIONS
+% ==========================================
+\begin{center}
+\fbox{\textbf{\exo}} Équations et inéquations dans $\mathbb{R}$ :
+\end{center}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm}
+\textbf{1. Résoudre dans $\mathbb{R}$ les équations :}
+\begin{enumerate}
+\item $e^{2x} - 3e^x + 2 = 0$
+\item $e^x - 2e^{-x} - 1 = 0$
+\item $e^{3x-1} = 1$
+\item $e^{x^2 - 4} = e^{3x}$
+\item $\frac{e^x + 3}{e^x - 1} = 2$
+\item $e^{2x} + e^x - 6 = 0$
+\end{enumerate}
+
+\columnbreak
+
+\textbf{2. Résoudre dans $\mathbb{R}$ les inéquations :}
+\begin{enumerate}
+\item $e^{2x} - 4 > 0$
+\item $e^x + 1 - 2e^{-x} \le 0$
+\item $e^{x^2 - 1} < e^{x+1}$
+\item $\frac{e^x - 1}{e^x + 2} \ge 0$
+\item $e^{3x} - 2e^{2x} - e^x + 2 > 0$
+\item $\frac{2}{e^x - 1} < 1$
+\end{enumerate}
+\end{multicols}
+
+% ==========================================
+% EXERCICE 3 : ÉTUDE DE FONCTIONS EXPONENTIELLES
+% ==========================================
+\begin{center}
+\fbox{\textbf{\exo}} Étude de fonctions comportant la fonction exponentielle :
+\end{center}
+
+\begin{enumerate}[label=\arabic*.]
+\item Soit $f$ la fonction définie sur $\mathbb{R}$ par : $f(x) = (x-1)e^x + 1$.
+   \begin{enumerate}
+   \item Étudier les limites de $f$ en $-\infty$ et $+\infty$.
+   \item Étudier les variations de $f$ et dresser son tableau de variation.
+   \item Déduire le signe de $f(x)$ sur $\mathbb{R}$.
+   \end{enumerate}
+
+\item Soit $g$ la fonction définie par : $g(x) = \frac{e^x - 1}{e^x + 1}$.
+   \begin{enumerate}
+   \item Déterminer l'ensemble de définition $D_g$ de $g$.
+   \item Montrer que $g$ est une fonction impaire.
+   \item Calculer la limite de $g$ en $+\infty$ et interpréter géométriquement le résultat.
+   \item Calculer $g'(x)$ et dresser le tableau de variation de $g$.
+   \item Déterminer l'équation de la tangente $(T)$ à la courbe de $g$ au point d'abscisse $0$.
+   \end{enumerate}
+\end{enumerate}
+
+\end{document}
