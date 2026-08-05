@@ -1,83 +1,132 @@
 \documentclass[12pt,a4paper]{article}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{lmodern}
-\usetikzlibrary{trees}
+
+% ==========================================
+% 1. ENCODAGE ET POLICES (FONTS)
+% ==========================================
+\usepackage[T1]{fontenc}  % Encodage des caractères de sortie (indispensable pour les accents en français)
+\usepackage{times}       % Utilise la police Times New Roman pour le texte général
+\usepackage{lmodern}     % Complète et améliore le rendu des polices vectorielles
+\usepackage{pifont}      % Offre une collection de symboles et puces spéciales (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES / PIEDS DE PAGE
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Définition des marges du document
+\usepackage{multicol}    % Permet d'écrire du texte sur plusieurs colonnes (\begin{multicols})
+\usepackage{fancyhdr}    % Personnalisation avancée des en-têtes et pieds de page
+\usepackage{lastpage}    % Donne accès à la référence de la dernière page (\pageref{LastPage})
+
+% --- Configuration des pieds de page ---
+\pagestyle{fancy}
+\fancyhf{} % Efface toutes les configurations d'en-tête et pied de page par défaut
+\renewcommand{\headrulewidth}{0pt}  % Supprime le trait de séparation en haut de page
+\renewcommand{\footrulewidth}{1pt}  % Trait horizontal au-dessus du pied de page
+\renewcommand{\footruleskip}{10pt}  % Espacement entre le texte et le trait du pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof:M. BA}} % Pied de page à gauche
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}        % Pied de page à droite
+\cfoot{\textbf{\thepage\ / \pageref{LastPage}}}           % Numérotation centrale au format "X / Y"
+
+% ==========================================
+% 3. MATHÉMATIQUES
+% ==========================================
+\usepackage{amsmath}     % Environnements et commandes mathématiques de base (équations, matrices, etc.)
+\usepackage{amssymb}     % Extension des symboles mathématiques usuels (ex: \mathbb{R})
+\usepackage{mathrsfs}    % Ajoute la police calligraphique mathématique (\mathscr)
+
+% Forcer l'affichage grand format des symboles (fractions, sommes, limites) même dans le texte
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. TABLEAUX ET MISE EN PAGE DES OBJETS
+% ==========================================
+\usepackage{array}       % Améliore la gestion des colonnes de tableaux
+\usepackage{multirow}    % Permet de fusionner plusieurs lignes dans un tableau
+\usepackage{varwidth}    % Permet de créer des boîtes adaptatives en largeur
+\usepackage{float}       % Fournit l'option [H] pour forcer le placement des objets flottants (images/tableaux)
+
+% ==========================================
+% 5. GRAPHISMES, TIKZ ET TABLEAUX DE VARIATIONS
+% ==========================================
+\usepackage{tikz}        % Moteur principal de dessin vectoriel
+\usetikzlibrary{trees, patterns} % Extensions TikZ :
+                                 % - trees    : pour réaliser des arbres de dénombrement ou probabilités
+                                 % - patterns : pour le remplissage avec des motifs (hachures, etc.)
+
+\usepackage{tkz-tab}     % Paquet spécifique pour tracer des tableaux de variations et de signes
+
+% ==========================================
+% 6. LISTES ET PUCES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}    % Permet de personnaliser l'apparence des listes à puces et numérotées
+
+% Macro pour créer une puce numérotée dans un cercle rouge avec TikZ
 \newcommand\circitem[1]{%
 \tikz[baseline=(char.base)]{
-\node[circle,draw=gray, fill=red!55,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
+\node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0] (char) {#1};}}
+
+% Macro pour créer une puce alphabétique dans un carré cyan avec TikZ
 \newcommand\boxitem[1]{%
 \tikz[baseline=(char.base)]{
-\node[fill=cyan,
-minimum size=1.2em,inner sep=0] (char) {#1};}}
+\node[fill=cyan, minimum size=1.2em, inner sep=0] (char) {#1};}}
+
+% Configuration des styles de puces pour les listes d'énumération (niveaux 1 et 2)
 \setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
 \setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
-%%%::::::by chnini ameur :::::::%%%
-\everymath{\displaystyle}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
-\usepackage{array,multirow}
-\usepackage[most]{tcolorbox}
-\usepackage{varwidth}
-\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
-\tcbuselibrary{skins,hooks}
-\usetikzlibrary{patterns}
-%%%::::::by chnini ameur :::::::%%%
-\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
-colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
-attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+
+% ==========================================
+% 7. BOÎTES ET ENCADRÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox} % Moteur complet pour fabriquer des encadrés stylisés
+\tcbuselibrary{skins, hooks} % Extensions de tcolorbox :
+                             % - skins : styles graphiques avancés
+                             % - hooks : gestion fine du comportement interne de la boîte
+
+% Définition de l'environnement d'encadré personnalisé "exa" pour les exemples/exercices
+\newtcolorbox{exa}[2][]{enhanced, breakable, before skip=2mm, after skip=5mm,
+colback=yellow!20!white, colframe=black!20!blue, boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
 fonttitle=\bfseries,
-title={#2},#1,
-% varwidth boxed title*=-3cm,
+title={#2}, #1,
 boxed title style={frame code={
 \path[fill=tcbcolback!30!black]
-([yshift=-1mm,xshift=-1mm]frame.north west)
-arc[start angle=0,end angle=180,radius=1mm]
-([yshift=-1mm,xshift=1mm]frame.north east)
-arc[start angle=180,end angle=0,radius=1mm];
-\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
-middle color = tcbcolback!80!black]
+([yshift=-1mm, xshift=-1mm]frame.north west)
+arc[start angle=0, end angle=180, radius=1mm]
+([yshift=-1mm, xshift=1mm]frame.north east)
+arc[start angle=180, end angle=0, radius=1mm];
+\path[left color=tcbcolback!60!black, right color=tcbcolback!60!black, middle color=tcbcolback!80!black]
 ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
-[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm, yshift=-1mm]frame.north east)
 -- (frame.south east) -- (frame.south west)
--- ([xshift=-1mm,yshift=-1mm]frame.north west)
+-- ([xshift=-1mm, yshift=-1mm]frame.north west)
 [sharp corners]-- cycle;
-},interior engine=empty,
-},interior style={top color=yellow!5}}
-%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{fancyhdr}
-\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
-% Commande pour ajouter du texte en arrière-plan
-\usepackage{tkz-tab}
+}, interior engine=empty,
+}, interior style={top color=yellow!5}}
+
+% ==========================================
+% 8. ARRIÈRE-PLAN ET FILIGRANE (WATERMARK)
+% ==========================================
+\usepackage{eso-pic}     % Permet de superposer des éléments (images, texte) en arrière-plan des pages
+
+% Ajout du filigrane "PGB" en gris au centre de toutes les pages du document
 \AddToShipoutPicture{
     \AtTextCenter{%
         \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
     }
 }
-\usepackage{lastpage}
-\fancyhf{}
-\pagestyle{fancy}
-\renewcommand{\footrulewidth}{1pt}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footruleskip}{10pt}
-\fancyfoot[R]{
-\color{blue}\ding{45}\ \textbf{2025}
-}
-\fancyfoot[L]{
-\color{blue}\ding{45}\ \textbf{Prof:M. BA}
-}
-\cfoot{\bf
-\thepage /
-\pageref{LastPage}}
-% Création du compteur pour les exercices
-\newcounter{exercice}
-\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
 
-% Définir la commande \exo
-\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+% ==========================================
+% 9. COMPTEURS ET COMMANDES DU COURS
+% ==========================================
+\newcounter{exercice}                                   % Création du compteur personnalisé d'exercices
+\renewcommand{\theexercice}{\arabic{exercice}}         % Formatage du compteur en chiffres arabes (1, 2, 3...)
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ } % Commande \exo pour incrémenter et afficher "Exercice X"
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Toujours charger hyperref en TOUT DERNIER pour éviter les conflits de redéfinition avec d'autres packages
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref} % Gestion des liens cliquables
 \begin{document}
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\arrayrulewidth}{1.2pt}
