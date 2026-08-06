@@ -1,0 +1,292 @@
+\documentclass[12pt,a4paper]{article}
+
+% ==========================================
+% 1. ENCODAGE ET POLICES (FONTS)
+% ==========================================
+\usepackage[T1]{fontenc}  % Encodage des caractères de sortie (gestion des accents)
+\usepackage{times}       % Police Times New Roman pour le texte général
+\usepackage{lmodern}     % Amélioration et précision du rendu des polices vectorielles
+\usepackage{pifont}      % Collection de symboles spéciaux (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES / PIEDS DE PAGE
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Réglage des marges du document
+\usepackage{multicol}    % Permet de disposer le texte sur plusieurs colonnes
+\usepackage{fancyhdr}    % Personnalisation complète des en-têtes et pieds de page
+\usepackage{lastpage}    % Référence dynamique au nombre total de pages (\pageref{LastPage})
+
+% --- Configuration des pieds de page ---
+\pagestyle{fancy}
+\fancyhf{} % Efface toutes les configurations d'en-tête et pied de page par défaut
+\renewcommand{\headrulewidth}{0pt}  % Supprime la ligne d'en-tête
+\renewcommand{\footrulewidth}{1pt}  % Ligne horizontale au-dessus du pied de page
+\renewcommand{\footruleskip}{10pt}  % Espacement vertical au-dessus de la ligne de pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof:M. BA}} % Pied de page à gauche
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}        % Pied de page à droite
+\cfoot{\textbf{\thepage\ / \pageref{LastPage}}}           % Numérotation centrale au format "X / Y"
+
+% ==========================================
+% 3. MATHÉMATIQUES
+% ==========================================
+\usepackage{amsmath}     % Environnements et commandes mathématiques de base (équations, matrices)
+\usepackage{amssymb}     % Ensembles et symboles mathématiques avancés (ex: \mathbb{R})
+\usepackage{mathrsfs}    % Police calligraphique mathématique (\mathscr)
+
+% Forcer le grand format d'affichage (displaystyle) pour toutes les formules intégrées
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. TABLEAUX ET PLACEMENT D'OBJETS
+% ==========================================
+\usepackage{array}       % Amélioration du formatage et de l'alignement des colonnes de tableaux
+\usepackage{multirow}    % Fusion de plusieurs lignes dans un tableau
+\usepackage{varwidth}    % Création de boîtes à largeur variable ajustée au contenu
+\usepackage{float}       % Option [H] pour forcer le placement exact des figures/tableaux
+
+% ==========================================
+% 5. GRAPHISMES, TIKZ ET TABLEAUX DE VARIATIONS
+% ==========================================
+\usepackage{tikz}        % Moteur principal de dessin vectoriel
+\usetikzlibrary{trees, patterns} % Extensions TikZ :
+                                 % - trees    : réalisation d'arbres (probabilités, dénombrement)
+                                 % - patterns : remplissages avec motifs (hachures, grilles)
+
+\usepackage{tkz-tab}     % Package dédié au tracé des tableaux de signes et de variations
+
+% ==========================================
+% 6. LISTES ET PUCES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}    % Personnalisation avancée des environnements d'énumération
+
+% Macro TikZ pour créer une puce numérotée dans un cercle rouge
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0] (char) {#1};}}
+
+% Macro TikZ pour créer une puce alphabétique dans un carré cyan
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan, minimum size=1.2em, inner sep=0] (char) {#1};}}
+
+% Définition des puces personnalisées pour les listes numérotées (niveaux 1 et 2)
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+% ==========================================
+% 7. BOÎTES ET ENCADRÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox} % Moteur pour la création d'encadrés et de boîtes stylisées
+\tcbuselibrary{skins, hooks} % Extensions tcolorbox :
+                             % - skins : styles et décors graphiques avancés
+                             % - hooks : ancrages et comportements internes des boîtes
+
+% Environnement d'encadré personnalisé "exa" (exemples/remarques)
+\newtcolorbox{exa}[2][]{enhanced, breakable, before skip=2mm, after skip=5mm,
+colback=yellow!20!white, colframe=black!20!blue, boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2}, #1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm, xshift=-1mm]frame.north west)
+arc[start angle=0, end angle=180, radius=1mm]
+([yshift=-1mm, xshift=1mm]frame.north east)
+arc[start angle=180, end angle=0, radius=1mm];
+\path[left color=tcbcolback!60!black, right color=tcbcolback!60!black, middle color=tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm, yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm, yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+}, interior engine=empty,
+}, interior style={top color=yellow!5}}
+
+% ==========================================
+% 8. ARRIÈRE-PLAN ET FILIGRANE (WATERMARK)
+% ==========================================
+\usepackage{eso-pic}     % Ajout d'éléments graphiques ou textuels en arrière-plan des pages
+
+% Ajout du filigrane textuel "PGB" incliné et centré sur l'ensemble du document
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+% ==========================================
+% 9. COMPTEURS ET MACROS (PROBLÈMES)
+% ==========================================
+\newcounter{probleme}                                     % Création du compteur dédié aux problèmes
+\renewcommand{\theprobleme}{\arabic{probleme}}           % Formatage d'affichage en chiffres arabes (1, 2, 3...)
+\newcommand{\exo}{\refstepcounter{probleme}\textbf{Problème \theprobleme}\ } % Macro \exo mise à jour pour afficher "Problème X"
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Doit impérativement être chargé en dernier pour éviter les conflits de redéfinition de macros
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref} % Liens interactifs et cliquables
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 21/02/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Dénombrement }}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\section*{\underline{\textbf{\textcolor{red}{Exercice 1}}}}
+Combien de menus différents peut-on composer si on a le choix entre 3 entrées, 2 plats et 4 desserts ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 2}}}}
+Une femme a dans sa garde-robe 4 jupes, 5 chemisiers et 3 vestes. Elle choisit au hasard une jupe, un chemisier et une veste. De combien de façons différentes peut-elle s’habiller ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 3}}}}
+Deux équipes de hockeys de 12 et 15 joueurs échangent une poignée de main à la fin d’un match : chaque joueur d’une équipe serre la main de chaque joueur de l’autre équipe. Combien de poignées de main ont été échangées ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 4}}}}
+Un questionnaire à choix multiples, autorisant une seule réponse par question, comprend 15 questions. Pour chaque question, on propose 4 réponses possibles.
+De combien de façons peut-on répondre à ce questionnaire ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 5}}}}
+Raymond Queneau a écrit un ouvrage intitulé \textit{Cent mille milliards de poèmes}.\\
+Il est composé de 10 pages contenant chacune 14 vers
+Le lecteur peut composer son propre poème de 14 vers en
+prenant le premier vers de l’une des 10 pages puis le deuxième
+vers de l’une des 10 pages et ainsi de suite jusqu’au
+quatorzième vers. Justifier le titre de l’ouvrage
+\section*{\underline{\textbf{\textcolor{red}{Exercice 6}}}}
+En informatique, on utilise le système binaire pour coder les caractères.
+Un bit \textit{(binary digit : chiffre binaire)} est un élément qui prend la valeur 0 ou la valeur 1. Avec 8 chiffres binaires \textit{(un octet)}, combien de caractères peut-on coder ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 7}}}}
+Combien peut-on former de numéros de téléphone à 8 chiffres ?\\
+Combien peut-on former de numéros de téléphone à 8 chiffres ne comportant pas le chiffre 0 ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 8}}}}
+A l’occasion d’une compétition sportive groupant 18 athlètes, on attribue une médaille d’or, une d’argent, une de bronze.\\
+Combien y-a-t-il de distributions possibles (avant la compétition, bien sûr…) ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 9}}}}
+Un groupe d'élèves de terminale constitue le bureau de l'association\\ "L'association des Maitres de l'Absence".\\
+Ce bureau est composé d'un président, d'un secrétaire et d'un trésorier.\\
+Combien y a-t-il de bureaux possibles ? ( il y a 24 élèves dans la classe )
+\section*{\underline{\textbf{\textcolor{red}{Exercice 10}}}}
+Six personnes choisisent mentalement un nombre entier compris entre 1 et 6.\\
+1) Combien de résultats peut-on obtenir ?\\
+2) Combien de résultats ne comportant pas deux fois le même nombre peut-on obtenir ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 11}}}}
+Soit A l'ensemble des nombres de quatre chiffres, le premier étant non nul.\\
+1) Calculer le nombre d'éléments de A.\\
+2) Dénombrer les éléments de A :\\
+a) composés de quatre chiffres distincts\\
+b) composés d'au moins deux chiffres identiques\\
+c) composés de quatre chiffres distincts autres que 5 et 7\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 12}}}}
+Un clavier de 9 touches permet de composer le code d’entrée d’un\\ immeuble, à l’aide d’une lettre suivie d’un nombre de 3 chiffres distincts ou non.\\
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+1 & 2 & 3 \\
+\hline
+4 & 5 & 6 \\
+\hline
+A & B & C \\
+\hline
+\end{tabular}
+\end{table}\\
+1) Combien de codes différents peut-on former ?\\
+2) Combien y a-t-il de codes sans le chiffre 1 ?\\
+3) Combien y a-t-il de codes comportant au moins une fois le chiffre 1 ?\\
+4) Combien y a-t-il de codes comportant des chiffres distincts ?\\
+5) Combien y a-t-il de codes comportant au moins deux chiffres identiques ?\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 13}}}}
+Le groupe des élèves de Terminale doit s'inscrire au concours par\\ EAMAC. Il faut établir une liste de passage. Combien y a-t-il de manières de constituer cette liste ? ( il y a 24 élèves dans la classe )
+\section*{\underline{\textbf{\textcolor{red}{Exercice 14}}}}
+Les nombres 5, -1 et 3 constituent la solution d’un système de trois\\ équations à trois inconnues. Donner tous les triplets différents qui peuvent être la solution de ce système
+\section*{\underline{\textbf{\textcolor{red}{Exercice 15}}}}
+Combien y-a-t-il d’anagrammes du mot MATH ?\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 16}}}}
+1) Dénombrer les anagrammes du mot DIEYNABA\\
+2) Dans chacun des cas suivants, dénombrer les anagrammes du mot \\DIEYNABA :\\
+a) commençant et finissant par une consonne ;\\
+b) commençant et finissant par une voyelle ;\\
+c) commençant par une consonne et finissant par une voyelle\\
+d) commençant par une voyelle et finissant par une consonne\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 17}}}}
+Combien y-a-t-il d’anagrammes du mot TABLEAU ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 18}}}}
+1) Combien peut-on réaliser de mots de n lettres comportant k lettres se répétant $p_{1} ,p_{2},...,p_{k}$ fois ?\\
+2) Quel est le nombre d’anagrammes du mot « MATHEMATICIENNE » ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 19}}}}
+Dénombrer toutes les anagrammes possibles du mot PRISÉE\\
+1) En tenant compte de l’accent\\
+2) En ne tenant pas compte de l’accent sur le $\ll e \gg$ 
+\section*{\underline{\textbf{\textcolor{red}{Exercice 20}}}}
+Un groupe de 3 élèves de Terminale doit aller chercher des livres au CDI. De combien de manières peut-on former ce groupe ?\\ (il y a 24 élèves dans la classe )
+\section*{\underline{\textbf{\textcolor{red}{Exercice 21}}}}
+Un tournoi sportif compte 8 équipes engagées. \\Chaque équipe doit rencontrer toutes les autres une seule fois Combien\\ doit-on organiser de matchs ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 22}}}}
+Au loto, il y a 49 numéros. Une grille de loto est composée de 6 de ces numéros. Quel est le nombre de grilles
+différentes ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 23}}}}
+De combien de façons peut-on choisir 3 femmes et 2 hommes parmi 10 femmes et 5 hommes ?
+\section*{\underline{\textbf{\textcolor{red}{Exercice 24}}}}
+Dans une classe de 32 élèves, on compte 19 garçons et 13 filles. On doit élire deux délégués\\
+1) Quel est le nombre de choix possibles ?\\
+2) Quel est le nombre de choix si l’on impose un garçon et fille\\
+3) Quel est le nombre de choix si l’on impose 2 garçons ?\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 25}}}}
+Christian et Claude font partie d’un club de 18 personnes. On doit\\ former un groupe constitué de cinq d’entre elles pour représenter le club à un spectacle.\\
+1) Combien de groupes de 5 personnes peut-on constituer ?\\
+2) Dans combien de ces groupes peut figurer Christian ?\\
+3) Christian et Claude ne pouvant se supporter, combien de groupes de 5 personnes peut-on constituer de telle façon que Christian et Claude ne se retrouvent pas ensemble ?\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 26}}}}
+Au service du personnel, on compte 12 célibataires parmi les 30 employés. On désire faire un sondage : pour cela on choisit un échantillon de quatre personnes dans ce service.\\
+1) Quel est le nombre d’échantillons différents possibles ?\\
+2) Quel est le nombre d’échantillons ne contenant aucun célibataire ?\\
+3) Quel est le nombre d’échantillons contenant au moins un célibataire ?\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 27}}}}
+On constitue un groupe de 6 personnes choisies parmi 25 femmes et 32 hommes\\
+1) De combien de façons peut-on constituer ce groupe de 6 personnes ?\\
+2) Dans chacun des cas suivants, de combien de façons peut-on constituer ce groupe avec :\\
+a) uniquement des hommes ;\\
+b) des personnes de même sexe ;\\
+c) au moins une femme et au moins un homme\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 28}}}}
+On extrait simultanément 5 cartes d'un jeu de 32. Cet ensemble de 5 cartes est appelé une "main"\\
+1) Combien y a-t-il de mains différentes possibles ?\\
+2) Dénombrer les mains de 5 cartes contenant :\\
+a) un carré\\
+b) deux paires distinctes\\
+c) un full (trois cartes de même valeur, et deux autres de même valeurs. Exemple : 3 rois et 2 as)\\
+d) un brelan (trois cartes de même valeur, sans full ni carré\\
+e) une quinte (5 cartes de même couleur, se suivant dans l'ordre croissant)\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 29}}}}
+Un sac contient 5 jetons verts (numérotés de 1 à 5) et 4 jetons rouges (numérotés de 1 à 4).\\
+1) On tire successivement et au hasard 3 jetons du sac, sans remettre le jeton tiré. Calculer les probabilités :\\
+a) De ne tirer que 3 jetons verts ;\\
+b) De ne tirer aucun jeton vert\\
+c) De tirer au plus 2 jetons verts ;\\
+d) De tirer exactement 1 jeton vert.\\
+2) On tire simultanément et au hasard 3 jetons du sac.\\
+Reprendre alors les questions a), b), c) et d)
+\section*{\underline{\textbf{\textcolor{red}{Exercice 30}}}}
+Un portemanteau comporte 5 patères alignées.\\ 
+Combien a-t-on de dispositions distinctes (sans mettre deux manteaux l’un sur l’autre) :\\
+a) pour 3 manteaux sur ces 5 patères ?\\
+b) pour 5 manteaux ?\\
+c) pour 6 manteaux ?\\
+\section*{\underline{\textbf{\textcolor{red}{Exercice 31}}}}
+Quatre garçons et deux filles s’assoient sur un banc.\\
+1) Quel est le nombre de dispositions possibles ?\\
+2) Même question si les garçons sont d’un côté et les filles de l’autre.\\
+3) Même question si chaque fille est intercalée entre deux garçons.\\
+4) Même question si les filles veulent rester l’une à côté de l’autre.\\
+\newpage
+\begin{center}
+\section*{\underline{\textbf{\textcolor{red}{Correction}}}}
+Think first!!
+\end{center}
+
+\end{document}
