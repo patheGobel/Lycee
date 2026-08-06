@@ -1,0 +1,379 @@
+\documentclass[12pt,a4paper]{article}
+
+% ==========================================
+% 1. POLICES ET ENCODAGE DE TEXTE
+% ==========================================
+\usepackage[T1]{fontenc}        % Encodage pour les caractères accentués
+\usepackage{mathptmx}          % Police Times harmonisée pour le texte et les formules mathématiques
+\usepackage{pifont}            % Symboles graphiques (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Marges du document
+\usepackage{fancyhdr}          % Gestion des en-têtes et pieds de page
+\usepackage{lastpage}          % Référence dynamique à la dernière page pour "Page X/Y"
+\usepackage{multicol}          % Support pour la mise en page multi-colonnes
+
+% --- Configuration de Fancyhdr ---
+\pagestyle{fancy}
+\fancyhf{} % Efface les configurations par défaut
+\renewcommand{\headrulewidth}{0pt} % Suppression de la ligne d'en-tête
+\renewcommand{\footrulewidth}{1pt} % Ligne de séparation de pied de page
+\renewcommand{\footruleskip}{10pt} % Espacement vertical au-dessus du pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof: M. BA}}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{\the\year}} % Mise à jour automatique de l'année
+\cfoot{\textbf{\thepage\ / \pageref{LastPage}}}
+
+% ==========================================
+% 3. MATHÉMATIQUES
+% ==========================================
+\usepackage{amsmath}           % Environnements et commandes mathématiques fondamentales
+\usepackage{amssymb}           % Symboles mathématiques avancés
+\usepackage{mathrsfs}          % Lettres calligraphiques via \mathscr{}
+
+% Passage automatique de toutes les formules en mode affiché (displaystyle)
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. GESTION DES TABLEAUX ET OBJETS FLOTTANTS
+% ==========================================
+\usepackage{array}             % Extensions des capacités des tableaux
+\usepackage{multirow}          % Fusion horizontale et verticale de cellules
+\usepackage{varwidth}          % Boîtes à largeur adaptable
+\usepackage{float}             % Placement strict des objets flottants via l'option [H]
+
+% ==========================================
+% 5. LISTES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}          % Personnalisation fine des environnements d'énumération
+
+% Définitions des puces personnalisées TikZ
+\newcommand\circitem[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0pt] (char) {#1};%
+  }%
+}
+\newcommand\boxitem[1]{%
+  \tikz[baseline=(char.base)]{%
+    \node[fill=cyan, minimum size=1.2em, inner sep=0pt] (char) {#1};%
+  }%
+}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+% ==========================================
+% 6. GRAPHISMES ET TABLEAUX DE VARIATIONS
+% ==========================================
+\usepackage{tikz}
+\usetikzlibrary{patterns, trees, calc, babel} % Regroupement des extensions TikZ
+\usepackage{tkz-tab}           % Conception de tableaux de variations et de signes
+
+% ==========================================
+% 7. ENCADRÉS STYLISÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins, hooks}
+
+% Environnement d'encadré d'exemple
+\newtcolorbox{exa}[2][]{%
+  enhanced,
+  breakable,
+  before skip=2mm,
+  after skip=5mm,
+  colback=yellow!20!white,
+  colframe=black!20!blue,
+  boxrule=0.5mm,
+  attach boxed title to top left={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+  fonttitle=\bfseries,
+  title={#2},
+  #1,
+  boxed title style={%
+    frame code={%
+      \path[fill=tcbcolback!30!black]
+        ([yshift=-1mm,xshift=-1mm]frame.north west)
+        arc[start angle=0,end angle=180,radius=1mm]
+        ([yshift=-1mm,xshift=1mm]frame.north east)
+        arc[start angle=180,end angle=0,radius=1mm];
+      \path[left color=tcbcolback!60!black,right color=tcbcolback!60!black,middle color=tcbcolback!80!black]
+        ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+        [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+        [sharp corners]-- cycle;
+    },
+    interior engine=empty,
+  },
+  interior style={top color=yellow!5}
+}
+
+% ==========================================
+% 8. FILIGRANE (ARRIÈRE-PLAN)
+% ==========================================
+\usepackage{eso-pic}
+
+\AddToShipoutPicture{%
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}%
+  }%
+}
+
+% ==========================================
+% 9. COMPTEURS ET MACROS PEDAGOGIQUES
+% ==========================================
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ }
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Chargé en dernier pour prévenir les conflits de re-définition
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 29/12/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Td Limites ln}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\begin{center}
+\fbox{\textbf{\exo}} Déterminer les limites suivantes :
+\end{center}
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+\item $\lim_{x \to +\infty} \ln(x+2)$
+\item $ \lim_{x \to 0} (\ln x)^2 $
+\item $ \lim_{x \to 0} \frac{1}{\ln x} $
+\item $ \lim_{x \to +\infty} \ln(x^2 + x + 1) $ 
+\item $ \lim_{x \to -\infty} \ln(x^2 + x + 1) $
+
+
+
+\item $ \lim\limits_{x \to +\infty} \ln\left[ \frac{x+1}{x^2 + x + 1}\right]$
+\item $ \lim\limits_{x \to 1^+} \ln\left[ \frac{x+2}{x-1}\right]  $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(x+2)}{\ln(x+1)} $
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x+2}{\ln x+1} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{\sqrt{x}} $
+
+
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{x^2} $
+\item $ \lim\limits_{x \to +\infty} (\ln x - \sqrt{x}) $
+\item $ \lim\limits_{x \to 0^+} x^2 \ln x $
+\item $ \lim\limits_{x \to 0^+} \sqrt{x} \ln x $
+\item $ \lim\limits_{x \to +\infty} (\ln x - 2x) $
+
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(x^2 + 1)}{\ln(x+1)} $ 
+\item $ \lim\limits_{x \to 0} \frac{\ln(1 + 2x)}{x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1 + x^2)}{x} $
+\item $ \lim\limits_{x \to -\infty} \frac{\ln(1 + e^x)}{e^x} $
+\item $ \lim\limits_{x \to 0} e^x \ln x $
+
+ 
+\item $ \lim\limits_{x \to -\infty} \frac{\ln(1 + e^x)}{x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(1 + e^x)}{x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1 + x^2)}{3x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(e^x - 1)}{x} $
+\item $ \lim\limits_{x \to 0^+} \frac{2\ln^2 x}{x} $
+
+
+
+\item $\lim\limits_{x \to 0} \frac{2x + 1}{x} \ln x $
+\item $ \lim\limits_{x \to +\infty} \frac{2x + 1}{x} \ln x  $
+\item $ \lim\limits_{x \to 0} \frac{\ln x - 1}{2x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x - 1}{2x} $
+\item $ \lim\limits_{x \to 2^+} \ln(2 - x)$
+
+
+\item $ \lim\limits_{x \to +\infty} \ln(x^2 - 2x) $
+\item $ \lim\limits_{x \to -\infty} \ln(x^2 + 4x) $
+\item $ \lim\limits_{x \to 0} \ln\left(\frac{2x - 1}{x - 2}\right) $
+\item $ \lim\limits_{x \to 0^+} \ln\left(\frac{1 + x}{x}\right) $
+
+
+
+\item $ \lim\limits_{x \to +\infty} \ln\left(\frac{1 - x}{-x - 1}\right) $
+\item $ \lim\limits_{x \to -\infty} \ln\left(\frac{x^3 + x}{-2x^2 - 1}\right) $
+\item $ \lim\limits_{x \to 0^+} \ln|x^2 + x| $
+\item $ \lim\limits_{x \to 0^-} \ln|x^2 + x| $
+
+\item $ \lim\limits_{x \to 1} \ln|x^2 - 1| $
+\item $ \lim\limits_{x \to +\infty} \ln|x^2 - 1| $
+\item $ \lim\limits_{x \to +\infty} \frac{2x - 1}{x \ln x - x} $
+\item $ \lim\limits_{x \to 0^+} \frac{2x - 1}{x \ln x + x} $
+\item $ \lim\limits_{x \to +\infty} \frac{-1}{x^2 \ln x} $
+
+\item $ \lim\limits_{x \to 0^+} \frac{2\ln x - 3}{3\ln x + 1} $
+\item $ \lim\limits_{x \to +\infty} \frac{2\ln x - 3}{3\ln x + 1} $
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x - 3x}{2\ln x + x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x - 3x}{2\ln x + x} $
+\item $ \lim\limits_{x \to 0^+} \frac{-1}{x^2 \ln x} $
+
+
+\item $ \lim\limits_{x \to +\infty} x - \ln x $
+\item $ \lim\limits_{x \to +\infty} \frac{1 - \ln x}{x} $ 
+\item $ \lim\limits_{x \to 0^+} \frac{1 - \ln x}{x} $
+\item $ \lim\limits_{x \to +\infty} x \ln x - x $ 
+\item $ \lim\limits_{x \to 0} x \ln x - \ln x $
+
+\item $ \lim\limits_{x \to 0^+} x^n \ln^2 x $
+\item $ \lim\limits_{x \to 0^+} x (\ln x - 1) $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(x^2)}{x} $
+\item $ \lim\limits_{x \to +\infty} \frac{(x - 1) \ln x}{x} $
+\item $ \lim\limits_{x \to 0^+} \frac{(x - 1) \ln x}{x} $
+
+\item $ \lim\limits_{x \to +\infty} x \ln\left(\frac{x+1}{x-1}\right) $ 
+\item $ \lim\limits_{x \to +\infty} x \ln\left(\frac{2x+1}{2x+3}\right) $ 
+\item $ \lim\limits_{x \to -\infty} \frac{\ln(x^2)}{x} $
+\item $ \lim\limits_{x \to 0^+} \left(\ln x + \frac{1}{\ln x}\right) $
+
+
+\item $ \lim\limits_{x \to +\infty} \frac{x^2}{x-1} - \ln(x) $ 
+\item $ \lim\limits_{x \to 0^+} x \ln^2 x $ 
+\item $ \lim\limits_{x \to 0^+} \sqrt{x} \ln\left(\frac{x+1}{x}\right) $ 
+\item $ \lim\limits_{x \to 0^+} x^3 \ln x $
+
+
+\item $ \lim\limits_{x \to 0} \frac{\ln x - \ln 2}{x-2} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(a+x) - \ln a}{x} $
+\item $ \lim\limits_{x \to 0} \frac{\ln x - 2}{\ln x + 1} $ 
+\item $ \lim\limits_{x \to 0^+} \tan x \ln x $ 
+\item $ \lim\limits_{x \to \frac{\pi}{4}} \frac{\ln(\tan x)}{\sin x - \cos x} $
+
+\item $ \lim\limits_{x \to 0^+} \frac{\ln(\cos x)}{x^2} $
+\item $ \lim\limits_{x \to +\infty} \frac{x \ln x}{x+1} $ 
+\item $ \lim\limits_{x \to +\infty} x \ln\left(1 + \frac{1}{x}\right) $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(1+x)}{1+x^2} $
+\item $ \lim\limits_{x \to +\infty} \frac{x \ln x}{x+1} $
+
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x}{1 - \ln x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{1 - \ln x} $ 
+\item $ \lim\limits_{x \to 0^+} \frac{1}{x^2}\ln\left(\frac{1 - x^2}{\cos x}\right) $
+\item $ \lim\limits_{x \to 1} -x + \ln\left|\frac{x}{x-1}\right| $
+
+\item $ \lim\limits_{x \to 1} -x + \ln\left|\frac{x}{x-1}\right| $ 
+\item $ \lim\limits_{x \to -\infty} -x + \ln\left|\frac{x}{x-1}\right| $
+\item $ \lim\limits_{x \to +\infty} -x + \ln\left|\frac{x}{x-1}\right| $
+\item $ \lim\limits_{x \to +\infty} x \ln\left|\frac{x+1}{x-1}\right| $
+
+\item $ \lim\limits_{x \to -\infty} \frac{\ln\sqrt{x^2 - 1}}{x^2 - 1} $
+\item $ \lim\limits_{x \to 1} \frac{\ln(x^2 - 2x + 2)}{(x-1)^2} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1+\sqrt{x})}{1-\sqrt{x+1}} $ 
+\item $ \lim\limits_{x \to +\infty} \left(\ln x + \frac{1}{\ln x}\right) $
+
+\item $ \lim\limits_{x \to 0^+} \frac{\ln x}{1+x^2} $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{1+x^2} $
+\item $ \lim\limits_{x \to +\infty} \frac{x^3}{\ln x} $ 
+\item $ \lim\limits_{x \to +\infty} \frac{\ln(1+\ln x)}{x} $
+\item $ \lim\limits_{x \to +\infty} x \ln x - \ln x $
+ 
+
+\item $ \lim\limits_{x \to +\infty} \sqrt{x} \ln(x) $ 
+\item $ \lim\limits_{x \to 0} \frac{x}{\ln(1+\sin x)} $
+\item $ \lim\limits_{x \to 0} \frac{\ln(1+2x)}{\tan x} $
+\item $ \lim\limits_{x \to +\infty} \frac{\ln x}{x-1} $
+\item $ \lim\limits_{x \to 1} \frac{\ln x}{x-1} $
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{center}
+\fbox{\textbf{\exo}} Déterminer les limites suivantes :
+\end{center}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+
+% --- Comportement à l'infini ---
+\item $\displaystyle \lim_{x \to +\infty} e^x$
+\item $\displaystyle \lim_{x \to -\infty} e^x$
+
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^x}{x}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^x}{x^3}$
+
+\item $\displaystyle \lim_{x \to +\infty} x e^{-x}$
+\item $\displaystyle \lim_{x \to +\infty} x^2 e^{-x}$
+
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{2x}}{e^x + 1}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{3x} + e^x}{e^{3x} - 2}$
+
+\item $\displaystyle \lim_{x \to -\infty} e^{2x}$
+\item $\displaystyle \lim_{x \to -\infty} \frac{e^x}{1 + e^x}$
+
+
+% --- Comparaisons exponentielles ---
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{x+2}}{e^x}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^{2x}}{e^{x-1}}$
+
+\item $\displaystyle \lim_{x \to +\infty} \left(e^{x+1} - e^x\right)$
+\item $\displaystyle \lim_{x \to +\infty} \left(e^{2x} - e^x\right)$
+
+
+% --- Voisinage de 0 ---
+\item $\displaystyle \lim_{x \to 0} \frac{e^x - 1}{x}$
+\item $\displaystyle \lim_{x \to 0} \frac{e^{2x} - 1}{x}$
+
+\item $\displaystyle \lim_{x \to 0} \frac{e^x - e^{-x}}{x}$
+\item $\displaystyle \lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$
+
+\item $\displaystyle \lim_{x \to 0} \frac{e^{3x} - 1 - 3x}{x^2}$
+
+
+% --- Limites mixtes ---
+\item $\displaystyle \lim_{x \to +\infty} \frac{x + e^x}{e^x}$
+\item $\displaystyle \lim_{x \to +\infty} \frac{e^x - x}{e^x}$
+
+\item $\displaystyle \lim_{x \to -\infty} \left(x e^x\right)$
+\item $\displaystyle \lim_{x \to -\infty} \frac{x}{e^{-x}}$
+
+\end{enumerate}
+
+\end{multicols}
+
+\begin{center}
+\fbox{\textbf{\exo}}Calculer les limites suivantes :
+\end{center}
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+
+\begin{enumerate}
+\item $\displaystyle \lim_{x \to +\infty} \frac{\ln(1+e^x)}{x}$
+
+\item $\displaystyle \lim_{x \to +\infty} \ln\!\left(1 + e^{-x}\right)$
+
+\item $\displaystyle \lim_{x \to +\infty} \left(\ln(e^x + x) - x\right)$
+
+\item $\displaystyle \lim_{x \to 0^+} x \ln x$
+
+\item $\displaystyle \lim_{x \to 0} \frac{\ln(1+e^x) - \ln 2}{x}$
+
+\item $\displaystyle \lim_{x \to +\infty} \frac{\ln x}{e^x}$
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}} On considère la fonction
+\[
+f(x) = \ln(e^x + 1) - x.
+\]
+
+\begin{enumerate}
+\item Déterminer $\displaystyle \lim_{x \to +\infty} f(x)$.
+\item Déterminer $\displaystyle \lim_{x \to -\infty} f(x)$.
+\item Interpréter graphiquement ces résultats.
+\end{enumerate}
+
+\end{multicols}
+\end{document}
