@@ -1,0 +1,279 @@
+\documentclass[12pt,a4paper]{article}
+
+% ==========================================
+% 1. ENCODAGE ET POLICES (FONTS)
+% ==========================================
+\usepackage[T1]{fontenc}  % Encodage des caractères de sortie (gestion optimale des accents)
+\usepackage{times}       % Police principale Times New Roman
+\usepackage{lmodern}     % Polices vectorielles de haute précision
+\usepackage{pifont}      % Collection de symboles spéciaux (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES / PIEDS DE PAGE
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Configuration des marges
+\usepackage{multicol}    % Permet l'affichage du texte sur plusieurs colonnes
+\usepackage{fancyhdr}    % Personnalisation avancée des en-têtes et pieds de page
+\usepackage{lastpage}    % Référence dynamique au nombre total de pages (\pageref{LastPage})
+
+% --- Configuration des pieds de page ---
+\pagestyle{fancy}
+\fancyhf{} % Efface la configuration par défaut
+\renewcommand{\headrulewidth}{0pt}  % Supprime la ligne horizontale d'en-tête
+\renewcommand{\footrulewidth}{1pt}  % Ligne horizontale au-dessus du pied de page
+\renewcommand{\footruleskip}{10pt}  % Espacement sous le texte du pied de page
+
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof:M. BA}} % Pied de page à gauche
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2026}}        % Pied de page à droite
+\cfoot{\textbf{\thepage\ / \pageref{LastPage}}}           % Numérotation centrale X / Y
+
+% ==========================================
+% 3. MATHÉMATIQUES
+% ==========================================
+\usepackage{amsmath}     % Environnements et commandes mathématiques de base
+\usepackage{amssymb}     % Symboles et ensembles mathématiques étendus
+\usepackage{mathrsfs}    % Police calligraphique mathématique (\mathscr)
+
+% Force le grand format d'affichage (displaystyle) pour toutes les formules inline
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. TABLEAUX ET MISE EN PAGE DES OBJETS
+% ==========================================
+\usepackage{array}       % Contrôle avancé de la structure des colonnes dans les tableaux
+\usepackage{multirow}    % Fusion de plusieurs lignes au sein d'un tableau
+\usepackage{varwidth}    % Boîtes d'affichage à largeur variable adaptées au contenu
+\usepackage{float}       % Option [H] pour fixer l'emplacement exact des objets flottants
+
+% ==========================================
+% 5. GRAPHISMES, TIKZ ET TABLEAUX DE VARIATIONS
+% ==========================================
+\usepackage{tikz}        % Moteur principal de dessin vectoriel
+\usetikzlibrary{trees, patterns} % Extensions TikZ :
+                                 % - trees    : structures d'arbres (probabilités, dénombrement)
+                                 % - patterns : remplissages avec motifs (hachures, grilles)
+
+\usepackage{tkz-tab}     % Package dédié au tracé des tableaux de variations et de signes
+
+% ==========================================
+% 6. LISTES ET PUCES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}    % Personnalisation des environnements d'énumération
+
+% Macro TikZ pour puce numérotée (Cercle rouge)
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0] (char) {#1};}}
+
+% Macro TikZ pour puce alphabétique (Carré cyan)
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan, minimum size=1.2em, inner sep=0] (char) {#1};}}
+
+% Affectation des puces personnalisées aux niveaux 1 et 2 des listes numérotées
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+% ==========================================
+% 7. BOÎTES ET ENCADRÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox} % Moteur de création d'encadrés stylisés
+\tcbuselibrary{skins, hooks} % Extensions graphiques avancées pour tcolorbox
+
+% Environnement d'encadré personnalisé "exa" (exemples/remarques)
+\newtcolorbox{exa}[2][]{enhanced, breakable, before skip=2mm, after skip=5mm,
+colback=yellow!20!white, colframe=black!20!blue, boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2}, #1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm, xshift=-1mm]frame.north west)
+arc[start angle=0, end angle=180, radius=1mm]
+([yshift=-1mm, xshift=1mm]frame.north east)
+arc[start angle=180, end angle=0, radius=1mm];
+\path[left color=tcbcolback!60!black, right color=tcbcolback!60!black, middle color=tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm, yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm, yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+}, interior engine=empty,
+}, interior style={top color=yellow!5}}
+
+% ==========================================
+% 8. ARRIÈRE-PLAN ET FILIGRANE (WATERMARK)
+% ==========================================
+\usepackage{eso-pic}     % Ajout d'éléments graphiques ou textuels en arrière-plan
+
+% Filigrane textuel "PGB" centré et incliné sur l'ensemble du document
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+% ==========================================
+% 9. COMPTEURS ET COMMANDES PERSONNALISÉES
+% ==========================================
+\newcounter{exercice}                                   % Création du compteur d'exercices
+\renewcommand{\theexercice}{\arabic{exercice}}         % Formatage en chiffres arabes (1, 2, 3...)
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ } % Macro \exo pour l'affichage
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Chargé impérativement en tout dernier pour éviter les conflits de redéfinition
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref} % Liens cliquables
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2024/2025}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : T}\textbf{S2} & \textbf{Date: 21/02/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Equations Différentielles }}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+\section*{I. Généralités et équations du premier ordre}
+
+\subsection*{Exercice 1}
+Montrer que chacune des fonctions $f$ est solution de l'équation différentielle $(E)$ associée :
+\begin{enumerate}[label=\arabic*)]
+    \item $f(x) = \cos(2x+3) \quad \text{pour } (E) : y'' = -4y$
+    \item $f(x) = \sin(2x) \quad \text{pour } (E) : y'' + 3y = -2\sin x \cos x$
+    \item $f(x) = x\mathrm{e}^{x} \quad \text{pour } (E) : y' - y = \mathrm{e}^{x}$
+    \item $f(x) = \mathrm{e}^{x}\ln x \quad \text{pour } (E) : y'' - 2y' + y = -\dfrac{1}{x^{2}}\mathrm{e}^{x}$
+\end{enumerate}
+
+\subsection*{Exercice 2}
+Déterminer la solution $f$ de chacune des équations différentielles $(E)$ suivantes vérifiant la condition initiale $f(x_{0}) = y_{0}$ :
+\begin{enumerate}[label=\arabic*)]
+    \item $(E) : -3y' + 2y = 0 \quad \text{avec } x_{0} = 3 \text{ et } y_{0} = 1$
+    \item $(E) : 3y' + 6y = 0 \quad \text{avec } x_{0} = -4 \text{ et } y_{0} = 2$
+    \item $(E) : 5y' + y = 0 \quad \text{avec } x_{0} = -5 \text{ et } y_{0} = 1$
+    \item $(E) : 2y - 5y' = 0 \quad \text{avec } x_{0} = 1 \text{ et } y_{0} = -3$
+\end{enumerate}
+
+
+\section*{II. Équations du second ordre sans second membre}
+
+\subsection*{Exercice 3}
+Déterminer la solution $f$ de chacune des équations différentielles $(E)$ suivantes vérifiant les conditions $f(x_{0}) = y_{0}$ et $f'(x_{0}) = y'_{0}$ :
+\begin{enumerate}[label=\arabic*)]
+    \item $2y'' - 3y' - 2y = 0 \quad \text{avec } f(0) = 2 \text{ et } f'(0) = 3$
+    \item $y'' + y' + y = 0 \quad \text{avec } f(0) = 1 \text{ et } f'(0) = -1$
+    \item $4y'' - 4y' + y = 0 \quad \text{avec } f(0) = -3 \text{ et } f'(0) = 2$
+    \item $y'' - 5y' + 6y = 0 \quad \text{avec } f(0) = 0 \text{ et } f'(0) = 6$
+    \item $9y'' + 6y' + y = 0 \quad \text{avec } f(0) = 1 \text{ et } f'(0) = 2$
+    \item $y'' - 4y' + 5y = 0 \quad \text{avec } f(0) = -1 \text{ et } f'(0) = 3$
+\end{enumerate}
+
+\subsection*{Exercice 4}
+Soit $(E)$ l'équation différentielle du second ordre : $y'' - 3y' + 2y = 0.$
+\begin{enumerate}[label=\alph*)]
+    \item Quelles sont les solutions de $(E)$ ?
+    \item Quelle est la solution de $(E)$ dont la courbe représentative $\mathcal{C}$ admet au point d'abscisse $x=0$ la même tangente que la courbe $\mathcal{C'}$ d'équation $y=x$ ?
+    \item Préciser les positions relatives de $\mathcal{C}$ et $\mathcal{C'}$.
+\end{enumerate}
+
+\subsection*{Exercice 5}
+\begin{enumerate}
+    \item Résoudre l'équation différentielle : $y'' + 16y = 0.$
+    \item Trouver la solution $f$ de cette équation vérifiant : $f(0) = 1 \text{ et } f'(0) = 4.$
+    \item Trouver deux réels positifs $\omega$ et $\varphi$ tels que pour tout réel $t$, $f(t) = \sqrt{2} \cos(\omega t - \varphi)$.
+    \item Calculer la valeur moyenne de $f$ sur l'intervalle $\left[0\,;\ \dfrac{\pi}{8}\right]$.
+\end{enumerate}
+
+
+\section*{III. Équations linéaires du second ordre avec second membre}
+
+\subsection*{Exercice 6}
+On considère l'équation $(E) : y'' + my' + py = g(x)$ où $m$ et $p$ sont deux réels et $g$ une fonction continue sur $\mathbb{R}$.
+
+\subsubsection*{Partie A : Étude générale}
+On suppose qu'il existe une solution particulière $f_{1}$ de $(E)$.
+\begin{enumerate}
+    \item Prouver que si $f$ est solution de $(E)$, alors $f - f_{1}$ est solution de l'équation homogène associèe :
+    \[ (E_{0}) : y'' + my' + py = 0 \]
+    \item Prouver que si $h$ est solution de $(E_{0})$, alors $h + f_{1}$ est solution de $(E)$.
+    \item En déduire l'ensemble des solutions de $(E)$ dès qu'une solution particulière est connue.
+\end{enumerate}
+
+\subsubsection*{Partie B : Cas où $g$ est une fonction polynôme}
+\begin{enumerate}
+    \item On considère l'équation $(E) : y'' - 3y' + 2y = x + 1.$
+    \begin{enumerate}[label=\alph*)]
+        \item Déterminer les réels $a$ et $b$ tels que $f_{1} : x \mapsto ax + b$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item On considère l'équation $(E) : y'' - 3y' + 2y = x^{2} + 2x + 3.$
+    \begin{enumerate}[label=\alph*)]
+        \item Déterminer les réels $a, b$ et $c$ tels que $f_{1} : x \mapsto ax^{2} + bx + c$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item Résoudre de manière analogue :
+    \begin{enumerate}[label=\alph*)]
+        \item $y'' - 8y' + 17y = x^{2} - x + 2$
+        \item $y'' + 4y' + 4y = x^{2} + 1$
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Partie C : Cas où $g(x) = \alpha\cos(\omega x) + \beta\sin(\omega x)$}
+\begin{enumerate}
+    \item On considère l'équation $(E) : y'' + 4y' + 5y = 2\cos(3x) - \sin(3x).$
+    \begin{enumerate}[label=\alph*)]
+        \item Déterminer les réels $a$ et $b$ tels que $f_{1} : x \mapsto a\cos(3x) + b\sin(3x)$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item On considère l'équation $(E) : y'' + 4y' + 5y = \alpha\cos(3x) + \beta\sin(3x).$
+    \begin{enumerate}[label=\alph*)]
+        \item Déterminer les réels $a$ et $b$ tels que $f_{1} : x \mapsto a\cos(3x) + b\sin(3x)$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item Résoudre :
+    \begin{enumerate}[label=\alph*)]
+        \item $y'' - 6y' + 8y = \cos x + 2\sin x$
+        \item $y'' + 4y' + 4y = \sin(5x)$
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Partie D : Cas où $g(x) = \mathrm{e}^{ax}$}
+\begin{enumerate}
+    \item On considère l'équation $(E) : y'' - 4y' + 4y = \mathrm{e}^{-2x}.$
+    \begin{enumerate}[label=\alph*)]
+        \item Déterminer le réel $a$ tel que $f_{1} : x \mapsto a\mathrm{e}^{-2x}$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item On considère l'équation $(E) : y'' - 5y' + 6y = \mathrm{e}^{2x}.$
+    \begin{enumerate}[label=\alph*)]
+        \item Peut-on déterminer une solution particulière de la forme $x \mapsto a\mathrm{e}^{2x}$ ?
+        \item Déterminer les réels $a$ et $b$ tels que $f_{1} : x \mapsto (ax + b)\mathrm{e}^{2x}$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item On considère l'équation $(E) : y'' - 4y' + 4y = \mathrm{e}^{2x}.$
+    \begin{enumerate}[label=\alph*)]
+        \item Peut-on déterminer une solution particulière de la forme $x \mapsto a\mathrm{e}^{2x}$ ?
+        \item Peut-on en trouver une de la forme $x \mapsto (ax + b)\mathrm{e}^{2x}$ ?
+        \item Déterminer les réels $a, b$ et $c$ tels que $f_{1} : x \mapsto (ax^{2} + bx + c)\mathrm{e}^{2x}$ soit solution de $(E)$.
+        \item Résoudre $(E)$.
+    \end{enumerate}
+    \item Cas général pour $(E) : y'' + my' + py = \mathrm{e}^{ax}$ :
+    \begin{enumerate}[label=\alph*)]
+        \item Prouver que si $a$ n'est pas racine de $r^{2} + mr + p = 0$, il existe une solution de la forme $x \mapsto A\mathrm{e}^{ax}$.
+        \item Prouver que si $a$ est racine simple de $r^{2} + mr + p = 0$, il existe une solution de la forme $x \mapsto (Ax + B)\mathrm{e}^{ax}$.
+        \item Prouver que si $a$ est racine double de $r^{2} + mr + p = 0$, il existe une solution de la forme $x \mapsto (Ax^{2} + Bx + C)\mathrm{e}^{ax}$.
+        \item Résoudre :
+        \begin{enumerate}[label=\roman*)]
+            \item $y'' - 2y' + 2y = \mathrm{e}^{3x}$
+            \item $y'' + 2y' - 3y = \mathrm{e}^{x}$
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
