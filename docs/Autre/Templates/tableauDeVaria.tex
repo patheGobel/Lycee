@@ -3,6 +3,7 @@
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \begin{document}
 \begin{center}
@@ -65,6 +66,23 @@
 \node (B) at (7.2,-2.5) {$1$};
 
 \draw[dotted, thick] (A) -- (B);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5, espcl=2]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $0$, $1$, $+\infty$}
+
+  \tkzTabLine{ ,+,  d ,-, z , + }
+  \tkzTabVar{-/$-\infty$ , +/ $ $, -/ $1$ , +/ $+\infty$}
+
+  \node[above] at (4.8, -1.7) {\tiny\textcolor{red}{$0$}};
+  \node[above] at (5.3, -1.7) {\tiny\textcolor{red}{$\nexists$}};
+  
+  \node[above] at (4.7, -2.5) {\textcolor{black}{$0$}};
+  \node[above] at (5.5, -2.5) {\textcolor{black}{$+\infty$}};
 \end{tikzpicture}
 \end{center}
 
