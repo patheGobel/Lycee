@@ -1,0 +1,424 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\usepackage{comment}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2026}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+
+% Définition de l'encadré adaptatif avec fond jaune
+\newtcolorbox{resultbox}{
+    colback=red!30, % Fond rouge clair
+    colframe=black, % Bordure noire fine
+    sharp corners, % Coins nets
+    boxrule=0.5pt, % Contour léger
+    boxsep=2pt, % Espacement interne
+    left=5pt, right=5pt, top=2pt, bottom=2pt, % Marges internes
+}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+\node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+\hline
+\multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ }& \textbf{A.S. : 2024/2025} \\ \hline
+\textbf{Matière: Mathématiques}& \textbf{Niveau : T}\textbf{S2} &\textbf{Date: 18/05/2026} & \textbf{Durée : 4 heures} \\ \hline
+\multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+\textbf{{\Large\sffamily Correction du devoir n$ ^{\circ} $ 2 Du 1$ ^\text{\bf er} $ Semestre}}
+\end{center}}} \\ \hline
+\end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\underline{\textbf{\textcolor{red}{Correction de l'exercice 1}}}\\
+
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\underline{\textbf{\textcolor{red}{1. Donner $P_1$}}}\\
+L'énoncé précise que le premier Août 2020, il a plu. L'événement $A_1$ est donc certain.
+$ P_1 = 1 $
+
+\underline{\textbf{\textcolor{red}{2. Calculer $P_2$}}}\\
+D'après la formule des probabilités totales en utilisant le système complet d'événements $\{A_1, \overline{A_1}\}$ :
+$ P(A_2) = P(A_2 | A_1) \times P(A_1) + P(A_2 | \overline{A_1}) \times P(\overline{A_1}) $
+D'après l'énoncé :
+\begin{itemize}
+    \item $P(A_2 | A_1) = 1/3$ (probabilité qu'il pleuve s'il a plu la veille)
+    \item $P(A_1) = 1$ et donc $P(\overline{A_1}) = 0$
+\end{itemize}
+$ P_2 = \frac{1}{3} \times 1 + P(A_2 | \overline{A_1}) \times 0 = \frac{1}{3} $
+
+\underline{\textbf{\textcolor{red}{3. Montrer que $P_{n+1} = -\frac{4}{15} P_n + \frac{3}{5}$}}}\\
+Appliquons la formule des probabilités totales pour le jour $n+1$ :
+
+$ P_{n+1} = P(A_{n+1} | A_n) P(A_n) + P(A_{n+1} | \overline{A_n}) P(\overline{A_n}) $
+On sait que :
+\begin{itemize}
+    \item $P(A_{n+1} | A_n) = 1/3$
+    \item $P(\overline{A_{n+1}} | \overline{A_n}) = 2/5$, donc $P(A_{n+1} | \overline{A_n}) = 1 - 2/5 = 3/5$
+    \item $P(\overline{A_n}) = 1 - P_n$
+\end{itemize}
+En remplaçant :
+
+$
+ \begin{aligned}
+ P_{n+1} &= \dfrac{1}{3} P_n + \dfrac{3}{5} (1 - P_n)\\
+ &=\dfrac{1}{3} P_n + \dfrac{3}{5} - \dfrac{3}{5} P_n\\
+&=\left( \dfrac{5}{15} - \dfrac{9}{15} \right) P_n + \dfrac{3}{5}\\
+&=-\dfrac{4}{15} P_n + \dfrac{3}{5}
+\end{aligned}
+$
+
+\underline{\textbf{\textcolor{red}{4. Étude de la suite $(u_n)$}}}\\
+Soit $u_n = P_n - \dfrac{9}{19}$.
+
+\textbf{a) Montrer que $(u_n)$ est une suite géométrique :}
+
+$ u_{n+1} = P_{n+1} - \dfrac{9}{19} = \left( -\dfrac{4}{15} P_n + \dfrac{3}{5} \right) - \dfrac{9}{19} $
+
+En remplaçant $P_n$ par $u_n + \dfrac{9}{19}$ :
+
+$ u_{n+1} = -\dfrac{4}{15} \left( u_n + \dfrac{9}{19} \right) + \dfrac{3}{5} - \dfrac{9}{19} $
+
+$ u_{n+1} = -\dfrac{4}{15} u_n - \dfrac{36}{285} + \dfrac{171}{285} - \dfrac{135}{285} $
+
+$ u_{n+1} = -\dfrac{4}{15} u_n $
+
+$(u_n)$ est une suite géométrique de raison $q = -\dfrac{4}{15}$ et de premier terme $u_1 = P_1 - \frac{9}{19} = 1 - \dfrac{9}{19} = \dfrac{10}{19}$.
+
+\textbf{b) Exprimer $P_n$ en fonction de $n$ :}
+
+    On a $u_n = u_1 \times q^{n-1}$, soit :
+    $ u_n = \frac{10}{19} \left( -\frac{4}{15} \right)^{n-1} $
+    
+D'où :
+$ P_n = \frac{10}{19} \left( -\frac{4}{15} \right)^{n-1} + \frac{9}{19} $
+
+\underline{\textbf{\textcolor{red}{5. Probabilité qu'il pleuve le 5 Août}}}
+
+On calcule $P_5$ en posant $n=5$ :
+
+                        $
+                        \begin{aligned}
+                        P_5 &= \frac{10}{19} \left( -\frac{4}{15} \right)^4 + \frac{9}{19}\\
+                            &= \frac{10}{19} \times \frac{256}{50625} + \frac{9}{19}\\ 
+                            &\approx 0,4763
+                        \end{aligned}
+                        $
+
+La probabilité qu'il pleuve le 5 août est d'environ \textbf{0,476} (soit 47,6\%).
+
+\vspace{3cm}
+\underline{\textbf{\textcolor{red}{Correction de l'exercice 2}}}\\
+
+\subsection*{1. Calcul de $u_1$ et $u_2$}
+\begin{enumerate}
+    \item Pour $n = 0$ : 
+    \[ u_1 = \dfrac{1}{u_0} + \dfrac{3}{4}u_0 = \dfrac{1}{6} + \dfrac{3}{4} \times 6 = \dfrac{1}{6} + \dfrac{18}{4} = \dfrac{1}{6} + \dfrac{9}{2} = \dfrac{1 + 27}{6} = \dfrac{28}{6} = \dfrac{14}{3} \]
+    \item Pour $n = 1$ : 
+    \[ u_2 = \frac{1}{u_1} + \frac{3}{4}u_1 = \frac{3}{14} + \frac{3}{4} \times \frac{14}{3} = \frac{3}{14} + \frac{14}{4} = \frac{3}{14} + \frac{7}{2} = \frac{3 + 49}{14} = \frac{52}{14} = \frac{26}{7} \]
+\end{enumerate}
+\textbf{Conclusion :} $u_1 = \dfrac{14}{3}$ et $u_2 = \dfrac{26}{7}$.
+
+\subsection*{2. Démontrons par récurrence que : $\forall n \in \mathbb{N}, \quad u_n \ge \sqrt{3}$}
+Soit $\mathcal{P}(n)$ la propriété : « $u_n \ge \sqrt{3}$ ».
+\begin{enumerate}
+    \item \textbf{Initialisation :} 
+    
+    Pour $n = 0$, $u_0 = 6$. Or $6 \ge \sqrt{3}$ (car $36 \ge 3$). 
+    
+    Donc $\mathcal{P}(0)$ est vraie.
+    \item \textbf{Hérédité :} 
+    
+    Supposons que pour un entier $n \ge 0$ fixé, $\mathcal{P}(n)$ soit vraie, c'est-à-dire que $u_n \ge \sqrt{3}$. 
+    
+    Montrons que $\mathcal{P}(n+1)$ est vraie,
+    
+    soit $u_{n+1} \ge \sqrt{3}$.
+    
+    Considérons la différence $u_{n+1} - \sqrt{3}$ :
+    \[
+    \begin{aligned}
+       u_{n+1} - \sqrt{3} &= \dfrac{1}{u_n} + \dfrac{3}{4}u_n - \sqrt{3}\\
+        &= \frac{4 + 3u_n^2 - 4\sqrt{3}u_n}{4u_n}    
+    \end{aligned} 
+    \]
+    On reconnaît une identité remarquable au numérateur :
+    \[ 3u_n^2 - 4\sqrt{3}u_n + 4 = (\sqrt{3}u_n - 2)^2 \]
+    D'où :
+    \[ u_{n+1} - \sqrt{3} = \frac{(\sqrt{3}u_n - 2)^2}{4u_n} \]
+    Par hypothèse de récurrence, $u_n \ge \sqrt{3} > 0$, donc le dénominateur $4u_n$ est strictement positif. Le numérateur étant un carré parfait, il est positif ou nul. On en déduit que :
+    \[ u_{n+1} - \sqrt{3} \ge 0 \implies u_{n+1} \ge \sqrt{3} \]
+    La propriété est donc héréditaire.
+    \item \textbf{Conclusion :} Par le principe de récurrence, $\forall n \in \mathbb{N}, \quad u_n \ge \sqrt{3}$.
+\end{enumerate}
+
+\subsection*{3. Étude de la fonction $f$ sur $]0, +\infty[$}
+\subsubsection*{a) Sens de variations de $f$}
+La fonction $f$ est dérivable sur $]0, +\infty[$ comme somme de fonctions dérivables.
+\[ f'(x) = -\frac{1}{x^2} + \frac{3}{4} = \frac{3x^2 - 4}{4x^2} \]
+Le dénominateur $4x^2$ étant strictement positif sur $]0, +\infty[$, $f'(x)$ est du signe de $3x^2 - 4$.
+\[ 3x^2 - 4 = 0 \iff x^2 = \frac{4}{3} \iff x = \frac{2}{\sqrt{3}} = \frac{2\sqrt{3}}{3} \quad (\text{car } x > 0) \]
+\begin{enumerate}
+    \item Pour $x \in \left]0, \frac{2\sqrt{3}}{3}\right[$, $3x^2 - 4 < 0 \implies f'(x) < 0$, donc $f$ est strictement décroissante.
+    \item Pour $x \in \left]\frac{2\sqrt{3}}{3}, +\infty\right[$, $3x^2 - 4 > 0 \implies f'(x) > 0$, donc $f$ est strictement croissante.
+
+\end{enumerate}
+\textit{Remarque utile pour la suite :} Puisque $\sqrt{3} = \frac{3}{\sqrt{3}} > \frac{2}{\sqrt{3}}$, l'intervalle $[\sqrt{3}, +\infty[$ est inclus dans l'intervalle où $f$ est strictement croissante. Donc \textbf{$f$ est strictement croissante sur $[\sqrt{3}, +\infty[$}.
+
+\subsubsection*{b) Déduisons-en par récurrence que $(u_n)$ est strictement décroissante}
+Soit $\mathcal{Q}(n)$ la propriété : « $u_{n+1} < u_n$ ».
+\begin{enumerate}
+    \item \textbf{Initialisation :} Pour $n = 0$, $u_1 = \frac{14}{3} \approx 4,67$ et $u_0 = 6$. On a bien $u_1 < u_0$. Donc $\mathcal{Q}(0)$ est vraie.
+    \item \textbf{Hérédité :} Supposons que $\mathcal{Q}(n)$ soit vraie pour un entier $n \ge 0$, c'est-à-dire $u_{n+1} < u_n$.
+    
+    D'après la question 2, nous savons que $u_{n+1} \ge \sqrt{3}$ et $u_n \ge \sqrt{3}$. 
+    Comme la fonction $f$ est strictement croissante sur $[\sqrt{3}, +\infty[$, elle conserve l'ordre de l'inégalité :
+    \[ u_{n+1} < u_n \implies f(u_{n+1}) < f(u_n) \]
+    Par définition de la suite, $f(u_{n+1}) = u_{n+2}$ et $f(u_n) = u_{n+1}$. On obtient donc :
+    \[ u_{n+2} < u_{n+1} \]
+    La propriété est donc héréditaire.
+    \item \textbf{Conclusion :} Par le principe de récurrence, la suite $(u_n)_{n \in \mathbb{N}}$ est strictement décroissante.
+\end{enumerate}
+
+\subsection*{4. Convergence et limite de la suite $(u_n)$}
+\begin{enumerate}
+    \item \textbf{Convergence :} La suite $(u_n)$ est décroissante (question 3.b) et minorée par $\sqrt{3}$ (question 2). D'après le théorème de la convergence monotone, \textbf{la suite $(u_n)$ est convergente}. Soit $\ell$ sa limite.
+    \item \textbf{Détermination de la limite $\ell$ :} 
+    Puisque $\forall n \in \mathbb{N}, u_n \ge \sqrt{3}$, par passage à la limite on a $\ell \ge \sqrt{3}$.
+    La fonction $f$ étant continue sur $]0, +\infty[$, la limite $\ell$ est solution de l'équation $f(\ell) = \ell$ :
+    \[ \ell = \frac{1}{\ell} + \frac{3}{4}\ell \iff \ell - \frac{3}{4}\ell = \frac{1}{\ell} \iff \frac{1}{4}\ell = \frac{1}{\ell} \iff \ell^2 = 4 \]
+    Cette équation admet deux solutions réelles : $\ell = 2$ ou $\ell = -2$.
+    Comme $\ell \ge \sqrt{3}$ (et $\sqrt{3} \approx 1,732$), la seule valeur possible est $\ell = 2$.
+\end{enumerate}
+\textbf{Conclusion :} La suite $(u_n)_{n \in \mathbb{N}}$ converge vers $\ell = 2$.
+
+\section*{Correction du Problème}
+
+\subsection*{Partie A}
+
+\subsubsection*{1. Variations de $g$ et $h$}
+\begin{itemize}
+    \item \textbf{Pour la fonction $g$ sur $]0; +\infty[$ :}
+    $g$ est dérivable sur $]0; +\infty[$ comme somme de fonctions dérivables. 
+    \[ \forall x \in ]0; +\infty[, \quad g'(x) = 2x + 1 + \frac{2}{x} \]
+    Pour tout $x > 0$, $2x > 0$, $1 > 0$ et $\frac{2}{x} > 0$. Donc $g'(x) > 0$. \\
+    La fonction $g$ est donc \textbf{strictement croissante} sur $]0; +\infty[$.
+    
+    \item \textbf{Pour la fonction $h$ sur $]-\infty; 0]$ :}
+    $h$ est dérivable sur $]-\infty; 0[$. En posant $u(x) = (x+1)^2$, on a $u'(x) = 2(x+1)$.
+    \[ h'(x) = 0 - \left[ 2(x+1)e^x + (x+1)^2e^x \right] = -(x+1)e^x \left[ 2 + (x+1) \right] = -(x+1)(x+3)e^x \]
+    Le signe de $h'(x)$ dépend du trinôme $-(x+1)(x+3)$ car $e^x > 0$. Les racines sont $-3$ et $-1$.
+    \begin{itemize}
+        \item Sur $]-\infty; -3[$ et $]-1; 0]$, $h'(x) < 0$, donc $h$ est \textbf{strictement décroissante}.
+        \item Sur $]-3; -1[$, $h'(x) > 0$, donc $h$ est \textbf{strictement croissante}.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{2. Calcul de $g(1)$ et signe de $g$}
+$g(1) = 1^2 + 1 - 2 + 2\ln(1) = 0$. \\
+Puisque $g$ est strictement croissante sur $]0; +\infty[$ et s'annule en $1$ :
+\begin{itemize}
+    \item $\forall x \in ]0; 1[, \quad g(x) < 0$
+    \item $\forall x \in [1; +\infty[, \quad g(x) \ge 0$
+\end{itemize}
+
+\subsubsection*{3. Signe de $h$ sur $]-\infty; 0]$}
+Calculons les valeurs remarquables de $h$ : $h(-3) = 1 - 4e^{-3} \approx 0,8$ et $h(-1) = 1 - 0 = 1$. De plus, $h(0) = 1 - 1e^0 = 0$. \\
+Les limites aux bornes donnent : $\lim_{x \to -\infty} h(x) = 1$ (car $\lim_{x \to -\infty} (x+1)^2e^x = 0$ par croissances comparées). \\
+Le maximum absolu de $h$ est $1$ en $-1$ et son minimum sur $[1; 0]$ est $h(0) = 0$. Par conséquent, \textbf{$\forall x \in ]-\infty; 0]$, $h(x) \ge 0$}, la fonction ne s'annulant qu'en $0$.
+
+\subsection*{Partie B}
+
+\subsubsection*{1. Domaine de définition et limites}
+\begin{itemize}
+    \item $f$ est définie sur $]0; +\infty[$ par une expression continue, et sur $]-\infty; 0]$ par une autre. Le raccordement se fait en $0$. Donc $D_f = \mathbb{R}$.
+    \item \textbf{Limite en $-\infty$ :} $\lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \left[ x + 1 - (x^2+1)e^x \right]$. \\
+    Par croissances comparées, $\lim_{x \to -\infty} x^2e^x = 0$ et $\lim_{x \to -\infty} e^x = 0$. Donc $\lim_{x \to -\infty} f(x) = -\infty$.
+    \item \textbf{Limite en $+\infty$ :} $\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} \left[ x + \left(1 - \frac{2}{x}\right)\ln(x) \right]$. \\
+    $\lim_{x \to +\infty} \left(1 - \frac{2}{x}\right) = 1$ et $\lim_{x \to +\infty} \ln(x) = +\infty$, donc par somme et produit : $\lim_{x \to +\infty} f(x) = +\infty$.
+\end{itemize}
+
+\subsubsection*{2. Branches infinies}
+\begin{itemize}
+    \item \textbf{En $-\infty$ :} $\lim_{x \to -\infty} [f(x) - (x+1)] = \lim_{x \to -\infty} -(x^2+1)e^x = 0$. \\
+    La droite $(\Delta) : y = x + 1$ est donc une \textbf{asymptote oblique} à $(\mathcal{C}_f)$ en $-\infty$.
+    \item \textbf{En $+\infty$ :} $\lim_{x \to +\infty} \frac{f(x)}{x} = \lim_{x \to +\infty} \left[ 1 + \left(\frac{1}{x} - \frac{2}{x^2}\right)\ln(x) \right] = \lim_{x \to +\infty} \left[ 1 + \frac{\ln(x)}{x} - 2\frac{\ln(x)}{x^2} \right] = 1$. \\
+    Calculons maintenant $\lim_{x \to +\infty} [f(x) - x] = \lim_{x \to +\infty} \left(1 - \frac{2}{x}\right)\ln(x) = +\infty$. \\
+    $(\mathcal{C}_f)$ admet une \textbf{branche parabolique de direction la droite $y = x$} en $+\infty$.
+\end{itemize}
+
+\subsubsection*{3. Position de $(\mathcal{C}_f)$ par rapport à $(\Delta)$}
+On étudie le signe de $f(x) - (x+1) = -(x^2+1)e^x$. \\
+Pour tout $x \in ]-\infty; 0]$, $x^2+1 > 0$ et $e^x > 0$, donc $f(x) - (x+1) \le 0$. \\
+La courbe $(\mathcal{C}_f)$ est \textbf{en dessous} de l'asymptote $(\Delta)$.
+
+\subsubsection*{4. Continuité en $0$}
+\begin{itemize}
+    \item Valeur en $0$ : $f(0) = 0 + 1 - (0+1)e^0 = 0$.
+    \item Limite à gauche : $\lim_{x \to 0^-} f(x) = f(0) = 0$.
+    \item Limite à droite : $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} \left[ x + \ln(x) - \frac{2\ln(x)}{x} \right] = \lim_{x \to 0^+} \left[ x + \ln(x)\left(1 - \frac{2}{x}\right) \right]$. \\
+    Or $\lim_{x \to 0^+} \ln(x) = -\infty$ et $\lim_{x \to 0^+} \left(1 - \frac{2}{x}\right) = -\infty$, donc par produit la limite vaut $+\infty$.
+\end{itemize}
+Puisque $\lim_{x \to 0^+} f(x) = +\infty \neq f(0)$, la fonction $f$ \textbf{n'est pas continue à droite de $0$}. Elle n'est donc pas continue en $0$.
+
+\subsubsection*{5. Dérivabilité en $0$}
+\begin{itemize}
+    \item À droite de $0$ : Comme $f$ n'est pas continue à droite de $0$, elle n'y est \textbf{pas dérivable}.
+    \item À gauche de $0$ : Étudions le taux de variation en $0^-$ :
+    \[ \lim_{x \to 0^-} \frac{f(x) - f(0)}{x-0} = \lim_{x \to 0^-} \frac{x + 1 - (x^2+1)e^x}{x} = \lim_{x \to 0^-} \left[ 1 + \frac{1 - e^x}{x} - xe^x \right] \]
+    On sait que $\lim_{x \to 0^-} \frac{e^x - 1}{x} = 1$, donc $\lim_{x \to 0^-} \frac{1 - e^x}{x} = -1$. De plus $\lim_{x \to 0^-} xe^x = 0$. \\
+    La limite vaut donc : $1 - 1 - 0 = 0$. \\
+    $f$ est \textbf{dérivable à gauche de $0$} et $f'_g(0) = 0$. $(\mathcal{C}_f)$ admet une demi-tangente horizontale à gauche au point $(0,0)$.
+\end{itemize}
+
+\subsubsection*{6. Dérivée sur $]0; +\infty[$}
+Pour $x > 0$ :
+\[ f'(x) = 1 + \left(\frac{2}{x^2}\right)\ln(x) + \left(1 - \frac{2}{x}\right)\frac{1}{x} = 1 + \frac{2\ln(x)}{x^2} + \frac{1}{x} - \frac{2}{x^2} = \frac{x^2 + 2\ln(x) + x - 2}{x^2} = \frac{g(x)}{x^2} \]
+Le dénominateur $x^2$ étant strictement positif, $f'(x)$ a le même signe que $g(x)$ (étudié en Partie A.2) :
+\begin{itemize}
+    \item Sur $]0; 1[, \quad f'(x) < 0$ (fonction strictement décroissante).
+    \item Sur $[1; +\infty[, \quad f'(x) \ge 0$ (fonction strictement croissante).
+\end{itemize}
+
+\subsubsection*{7. Dérivée sur $]-\infty; 0[$}
+Pour $x < 0$ :
+\[ f'(x) = 1 + 0 - \left[ 2xe^x + (x^2+1)e^x \right] = 1 - (x^2 + 2x + 1)e^x = 1 - (x+1)^2e^x = h(x) \]
+D'après la question A.3, $h(x) \ge 0$ sur $]-\infty; 0]$. Donc $f'(x) \ge 0$ sur $]-\infty; 0[$. La fonction $f$ est \textbf{strictement croissante} sur cet intervalle.
+
+\subsubsection*{8. Tableau de variations et courbe}
+Le tableau de variations présente une double barre en $0$ à cause de la discontinuité et de la non-dérivabilité à droite.
+
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5, espcl=2]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $0$, $1$, $+\infty$}
+
+  \tkzTabLine{ ,+,  d ,-, z , + }
+  \tkzTabVar{-/$-\infty$ , +/ $ $, -/ $1$ , +/ $+\infty$}
+
+  \node[above] at (4.8, -1.7) {\tiny\textcolor{red}{$0$}};
+  \node[above] at (5.3, -1.7) {\tiny\textcolor{red}{$\nexists$}};
+  
+  \node[above] at (4.7, -2.5) {\textcolor{black}{$0$}};
+  \node[above] at (5.5, -2.5) {\textcolor{black}{$+\infty$}};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+    \item Sur $]-\infty; 0]$, $f$ croît de $-\infty$ à $0$.
+    \item En $0^+$, la courbe part de $+\infty$.
+    \item Sur $]0; 1]$, $f$ décroît de $+\infty$ jusqu'à $f(1) = 1$.
+    \item Sur $[1; +\infty[$, $f$ croît de $1$ à $+\infty$.
+\end{itemize}
+\textit{Pour le tracé de $(\mathcal{C}_f)$ :} Placer l'asymptote $y=x+1$ en $-\infty$, la demi-tangente horizontale à gauche de l'origine, la valeur interdite en $0$ à droite avec l'asymptote verticale d'équation $x=0$, et le minimum au point $(1,1)$.
+
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{CourbeDevoir32ndS}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/tdxpwzyn}{Clique ici pour voir la courbe sur géogébra}
+\end{center}  
+
+
+\subsection*{Partie C}
+
+\subsubsection*{1. Bijection de la restriction $k$}
+La restriction $k$ de $f$ à l'intervalle $I = ]1; +\infty[$ est continue et strictement croissante. Elle réalise donc une bijection de $I$ vers l'intervalle image $J = ]f(1); \lim_{x \to +\infty} f(x)[ \, = \mathbf{]1; +\infty[}$.
+
+\subsubsection*{2. Dérivabilité de $k^{-1}$}
+\begin{itemize}
+    \item On a $k(1) = 1$. La dérivabilité de $k^{-1}$ en $1$ dépend de la valeur de $k'(1)$. 
+    Or $k'(1) = f'(1) = \frac{g(1)}{1^2} = 0$. \\
+    Comme la dérivée s'annule, \textbf{$k^{-1}$ n'est pas dérivable en $1$} (la courbe présente une tangente verticale en ce point).
+    \item Sur $J \setminus \{1\} = ]1; +\infty[$, $k'$ ne s'annule pas, donc \textbf{$k^{-1}$ est dérivable sur $]1; +\infty[$}.
+\end{itemize}
+
+\subsubsection*{3. Tracé de $(\mathcal{C}_{k^{-1}})$}
+La courbe $(\mathcal{C}_{k^{-1}})$ s'obtient par \textbf{symétrie axiale} de la branche de $(\mathcal{C}_f)$ sur $]1; +\infty[$ par rapport à la première bissectrice (la droite d'équation $y = x$). 
+Elle part du point $(1,1)$ avec une demi-tangente verticale dirigée vers le haut et possède une branche parabolique de direction l'axe des ordonnées $(Oy)$ en $+\infty$.
+
+\begin{center}
+\begin{figure}[H]% Forcer l'image à cet endroit
+\centering
+\includegraphics[width=0.8\textwidth]{courbe22ndS}
+\caption{Courbe de (Cf)}
+\label{fig:monimage}
+\end{figure}
+\href{https://www.geogebra.org/classic/tdxpwzyn}{Clique ici pour voir la courbe sur géogébra}
+\end{center}  
+
+
+\end{document}
