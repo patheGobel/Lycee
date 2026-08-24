@@ -1,0 +1,883 @@
+\documentclass[12pt]{article}
+\usepackage{stmaryrd}
+\usepackage{graphicx} % Pour l'insertion d'images
+\usepackage{float}    % Pour contrôler précisément le placement
+\usepackage[utf8]{inputenc}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage{color, soul}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+\author{Destiné aux élèves de la 1er S2\\Lycée de Dindéfelo\\Présenté par M. BA}
+\title{\textbf{Equations-Inéquations-Systèmes}}
+\date{\today}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+% Commande pour la couleur d'accentuation
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage{enumitem}
+%---------------------------------------
+% Définir un compteur pour les exemples
+\newcounter{exemple}
+
+% Définir la commande \exemple pour afficher un exemple numéroté
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Exemple \theexemple : }} \ignorespaces
+}
+%---------------------------------------
+\newcounter{solution}
+
+% Définir la commande \solutione pour afficher un solution numéroté
+\newcommand{\solution}{%
+  \refstepcounter{solution}% Incrémenter le compteur
+  \textbf{\textcolor{orange}{Solution \thesolution : }} \ignorespaces
+}
+%---------------------------------------
+\definecolor{myorange}{rgb}{1.0, 0.8, 0.0}
+
+% Définir un compteur pour les exercices d'application
+\newcounter{exerciceapp}
+
+% Définir la commande pour afficher un exercice d'application numéroté
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les exercices d'application
+\newcounter{correction}
+
+% Définir la commande pour afficher un correction exercice d'application numéroté
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+%--------------------------------------
+% Définir un compteur pour les remarque d'application
+\newcounter{remarque}
+
+%----------------------------------------
+\definecolor{myorange1}{rgb}{1.0, 1.5, 0}
+% Définir la commande pour afficher un remarque numéroté
+\newcommand{\remarque}{%
+  \refstepcounter{remarque}%
+  \textbf{\textcolor{myorange1}{Remarque \theremarque :}} \ignorespaces
+}
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{45}{\textcolor[gray]{0.9}{\fontsize{5cm}{5cm}\selectfont Pathé Gobel BA}}}
+    }
+}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{\underline{\textbf{\textcolor{red}{I. Equations}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Compléments sur les trinômes du \( 2^{nd} \)degré}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{2. Equations irrationnelles}}}}
+\subsubsection*{\underline{\textbf{\textcolor{red}{a. Équations du type \( \sqrt{f(x)} = \sqrt{g(x)} \)}}}}
+
+\( \sqrt{x^{2}+3x-1} = \sqrt{x+2} \) est une équation irrationnelle du type \( \sqrt{f(x)} = \sqrt{g(x)} \) avec :
+
+\[ f(x) = x^{2}+3x-1 \quad \text{et} \quad g(x) = x+2. \]
+
+Pour résoudre une équation du type \( \sqrt{f(x)} = \sqrt{g(x)} \), on peut utiliser deux méthodes :
+
+\underline{\textbf{Méthode de Résolution}}
+
+\begin{itemize}
+    \item \textbf{1ère étape :} Vérification des conditions de validité.
+\end{itemize}
+
+On a les équivalences suivantes :
+
+\[
+\sqrt{ f(x)} = \sqrt{ g(x)} \Leftrightarrow \begin{cases}
+f(x) \geq 0 \\
+g(x) \geq 0 \\
+f(x) = g(x)
+\end{cases}
+\]
+
+**Explication :** Pour que les deux racines soient définies et égales, il faut que \( f(x) \) et \( g(x) \) soient toutes deux positives, d'où les conditions \( f(x) \geq 0 \) et \( g(x) \geq 0 \). Ensuite, il faut que les deux expressions soient égales, soit \( f(x) = g(x) \).
+
+En simplifiant ces conditions, on obtient :
+
+\[
+\Leftrightarrow \begin{cases}
+g(x) \geq 0 \\
+f(x) = g(x)
+\end{cases}
+\]
+
+**Explication :** Ici, on peut réduire les conditions en ne gardant que \( g(x) \geq 0 \), car l'égalité \( f(x) = g(x) \) implique automatiquement que \( f(x) \geq 0 \) lorsque \( g(x) \geq 0 \).
+
+Finalement, cela se résume à :
+
+\[
+\Leftrightarrow \begin{cases}
+f(x) \geq 0 \\
+f(x) = g(x)
+\end{cases}
+\]
+
+**Explication :** Cette équivalence montre que, pour que l'équation soit valide, il faut vérifier que \( f(x) \geq 0 \), tout en résolvant l'équation \( f(x) = g(x) \).
+
+ \textbf{\exemple}
+
+Résoudre l'équation:
+
+\[
+\sqrt{2x + 1} = \sqrt{x + 3} \quad \text{et} \quad \sqrt{x^2 + 3x - 1} = \sqrt{x + 2}
+\]
+
+\textbf{\solution}
+
+\[
+\sqrt{2x + 1} = \sqrt{x + 3}
+\]
+
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Conditions de validité $D_v$}
+    
+    Pour que les racines carrées existent, il faut que les expressions à l'intérieur des racines soient positives ou nulles :
+    \[
+    2x + 1 \geq 0 \implies x \geq -\frac{1}{2}
+    \]
+    \[
+    x + 3 \geq 0 \implies x \geq -3
+    \]
+    Donc, la condition de validité est :
+    \[
+    D_v = \left[-\frac{1}{2}; +\infty \right[
+    \]
+    
+    \item \textbf{Étape 2 : Résolution de l'équation}
+    
+    On élève les deux membres de l'équation au carré :
+    \[
+    (\sqrt{2x + 1})^2 = (\sqrt{x + 3})^2
+    \]
+    Ce qui donne :
+    \[
+    2x + 1 = x + 3
+    \]
+    
+    \item \textbf{Étape 3 : Simplification de l'équation}
+    
+    Isolons $x$ :
+    \[
+    2x + 1 = x + 3
+    \]
+    \[
+    2x - x = 3 - 1
+    \]
+    \[
+    x = 2
+    \]
+    
+    \item \textbf{Étape 4 : Vérification de la solution}
+    
+    Vérifions que $x = 2$ appartient bien à l'ensemble de validité $D_v$ :
+    
+    \begin{itemize}
+        \item $x = 2$ est bien dans $\left[-\frac{1}{2}; +\infty \right[$.
+        \item Vérification dans l'équation initiale :
+        \[
+        \sqrt{2 \times 2 + 1} = \sqrt{2 + 3}
+        \]
+        \[
+        \sqrt{5} = \sqrt{5}
+        \]
+    \end{itemize}
+    
+    La solution est donc correcte.
+    
+\end{itemize}
+
+\textbf{Conclusion :} La solution de l'équation est $x = 2$.
+
+\[
+\sqrt{x^2 + 3x - 1} = \sqrt{x + 2}
+\]
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Conditions de validité $D_v$}
+    
+    L'équation existe ssi $x^2 + 3x - 1 \geq 0$ et $x + 2 \geq 0$.\\
+    La deuxième condition nous donne $x \geq -2$.\\
+    Donc $D_v = [-2; +\infty[$.
+    
+    \item \textbf{Étape 2 : Résolution de l'équation}
+    
+    Élevons les deux membres de l'équation au carré :
+    \[
+    x^2 + 3x - 1 = x + 2
+    \]
+    Cela revient à résoudre l'équation :
+    \[
+    x^2 + 3x - 1 = x + 2 \implies x^2 + 3x - x - 2 = 0
+    \]
+    \[
+    x^2 + 2x - 3 = 0
+    \]
+    
+    \textbf{Conclusion :} La seule solution est $x = 1$.
+\end{itemize}
+
+\begin{itemize}
+    \item[•] \textbf{Étape 1 : Conditions de validité}
+\end{itemize}
+
+On doit vérifier que \( f(x) = x^2 + 3x - 1 \geq 0 \) et \( g(x) = x + 2 \geq 0 \). La deuxième condition nous donne \( x \geq -2 \).
+
+\begin{itemize}
+    \item[•] \textbf{Étape 2 : Résolution de l'équation}
+\end{itemize}
+
+Élevons les deux membres de l'équation au carré :
+
+\[
+x^2 + 3x - 1 = x + 2
+\]
+
+Cela revient à résoudre l'équation :
+
+\[
+x^2 + 3x - 1 = x + 2 \quad \Leftrightarrow \quad x^2 + 2x - 3 = 0
+\]
+
+\begin{itemize}
+    \item[•] \textbf{Étape 3 : Résolution de l'équation quadratique}
+\end{itemize}
+
+On résout \( x^2 + 2x - 3 = 0 \) par factorisation :
+
+\[
+(x - 1)(x + 3) = 0 \quad \Rightarrow \quad x = 1 \quad \text{ou} \quad x = -3
+\]
+
+\begin{itemize}
+    \item[•] \textbf{Étape 4 : Vérification des solutions}
+\end{itemize}
+
+- Pour \( x = 1 \) :
+
+\[
+f(1) = 1^2 + 3(1) - 1 = 3 \quad \text{et} \quad g(1) = 1 + 2 = 3
+\]
+
+Les deux fonctions sont positives et égales, donc \( x = 1 \) est une solution.
+
+- Pour \( x = -3 \) :
+
+\[
+f(-3) = (-3)^2 + 3(-3) - 1 = 9 - 9 - 1 = -1 \quad \text{et} \quad g(-3) = -3 + 2 = -1
+\]
+
+Les deux fonctions sont négatives, donc \( x = -3 \) n'est pas une solution.
+
+\textbf{Conclusion :} La seule solution est \( x = 1 \).
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Équations du type \( \sqrt{f(x)} = ax + b \)}}}}
+
+\underline{\textbf{Méthode de Résolution}}
+
+\[\text{On a les équivalences suivantes :}\]
+
+\[
+\sqrt{f(x)} = g(x) \Leftrightarrow \begin{cases} 
+f(x) \geq 0 \\
+g(x) \geq 0 \\
+f(x) = g(x)^{2} 
+\end{cases}
+\]
+
+**Explication :**
+  
+- \( f(x) \geq 0 \) : Pour que la racine carrée \( \sqrt{f(x)} \) soit définie, il est nécessaire que l'expression sous la racine soit positive ou nulle, d'où \( f(x) \geq 0 \).
+
+- \( g(x) \geq 0 \) : Comme la racine carrée d'un nombre est toujours positive, il faut également que \( g(x) \), qui représente l'autre membre de l'équation, soit positif ou nul.
+
+- \( f(x) = g(x)^2 \) : Une fois ces conditions vérifiées, on élève les deux membres de l'équation au carré afin d'éliminer la racine carrée, ce qui donne \( f(x) = g(x)^2 \).
+
+En simplifiant, on obtient :
+
+\[
+\Leftrightarrow \begin{cases}
+g(x) \geq 0 \\
+f(x) = g(x)^{2}
+\end{cases}
+\]
+
+**Explication :**
+  
+Dans certains cas, la condition \( f(x) \geq 0 \) devient redondante, car l'égalité \( f(x) = g(x)^2 \) implique que \( f(x) \) est nécessairement positive si \( g(x) \geq 0 \).
+
+ \textbf{\exemple}
+
+Résoudre l'équation:
+
+\( \sqrt{2x^{2}+4x-6} = 2x - 1 \)
+
+\textbf{\solution}
+
+\textbf{Étape 1 : Conditions de validité $D_v$}
+
+\[
+2x-1\geq 0
+\]
+
+\[
+\Longleftrightarrow x\geq \frac{1}{2}.
+\]
+
+
+Sous cette condition, on peut élever les deux membres au carré :
+
+\textbf{Étape 2 : Résolution de l'équation }
+\[
+\begin{aligned}
+2x^{2}+4x-6&=(2x-1)^2\\
+2x^{2}+4x-6&=4x^{2}-4x+1\\
+2x^{2}-8x+7&=0.
+\end{aligned}
+\]
+
+Calculons le discriminant :
+
+\[
+\Delta=(-8)^2-4(2)(7)=64-56=8.
+\]
+
+Ainsi,
+
+\[
+\begin{aligned}
+x_1&=\frac{8-\sqrt{8}}{4}
+=\frac{8-2\sqrt{2}}{4}
+=2-\frac{\sqrt{2}}{2},\\[2mm]
+x_2&=\frac{8+\sqrt{8}}{4}
+=\frac{8+2\sqrt{2}}{4}
+=2+\frac{\sqrt{2}}{2}.
+\end{aligned}
+\]
+
+\textbf{Étape 3 : Vérification de l'appartenance des solution dans $D_v$ }
+
+Les deux solutions vérifient la condition \(x\geq\frac12\).
+
+\[
+\boxed{
+S=
+\left\{
+2-\frac{\sqrt{2}}{2}\,;\,
+2+\frac{\sqrt{2}}{2}
+\right\}
+}
+\]
+
+\section*{\underline{\textbf{\textcolor{red}{II. Inéquations irrationnelles}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Inéquations du type \( \sqrt{f(x)} \leq ax+b \) }}}}
+
+\underline{\textbf{Méthode de Résolution}}
+
+\[\text{On a les équivalences suivantes :}\]
+
+\[
+\sqrt{f(x)} \leq g(x) \Leftrightarrow \begin{cases} 
+f(x) \geq 0 \\
+g(x) \geq 0 \\
+f(x) \leq g(x)^{2}
+\end{cases}
+\]
+
+**Explication :**  
+
+- **\( f(x) \geq 0 \)** : L'expression sous la racine carrée doit être positive ou nulle pour que la racine soit définie.
+
+- **\( g(x) \geq 0 \)** : Comme la racine carrée est toujours positive ou nulle, il est nécessaire que l'expression \( g(x) \), ici \( ax + b \), soit aussi positive ou nulle.
+
+- **\( f(x) \leq g(x)^2 \)** : On élève les deux membres de l'inéquation au carré pour éliminer la racine, ce qui donne l'inéquation \( f(x) \leq g(x)^2 \).
+
+
+\textbf{\exemple}
+
+Résolvons l'inéquation \( \sqrt{2x+1} \leq x+3 \).
+
+\textbf{\solution}
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Conditions de validité \( D_v \)}
+
+	$
+	\begin{aligned}
+		\begin{cases}
+	2x + 1 \geq 0\\
+	x + 3 \geq 0
+	\end{cases} &\implies
+	\begin{cases}
+	x \geq -\dfrac{1}{2}\\
+	x \geq -3
+	\end{cases}\\ &\implies
+		\begin{cases}
+	x \geq -\dfrac{1}{2}\\
+	x \geq -3
+	\end{cases}\\ &\implies
+		\begin{cases}
+	\left[-\dfrac{1}{2}; +\infty \right[\\[3mm]
+	\left[-3; +\infty \right[
+	\end{cases}
+	\end{aligned}
+	$    
+
+$D_v=\left[-\dfrac{1}{2}; +\infty \right[ \cap \left[-3; +\infty \right[$
+
+    \item \textbf{Étape 2 : Résolution de l'inéquation}
+    
+    On élève les deux membres de l'inéquation au carré :
+
+                                    $
+                                    \begin{aligned}
+                                    2x + 1 \leq (x + 3)^2 \quad &\Leftrightarrow \quad 2x + 1 \leq x^2 + 6x + 9\\
+                                    \quad &\Leftrightarrow \quad x^2 + 4x + 8 \geq 0
+                                    \end{aligned}
+                                    $
+
+Posons $x^2+4x+8=0$
+
+$\Delta=16-32=-16$
+
+Comme $\Delta<0,$ donc le signe de $x^2+4x+8$ du signe 1 qui est positif donc \( \mathbb{R} \)
+
+
+\textbf{Conclusion :} L'ensemble des solutions est 
+
+                                        $
+                                        \begin{aligned}
+                                        S&=D_v \cap \mathbb{R}\\
+                                        &=\left[-3; +\infty \right[ \cap \mathbb{R}\\
+                                        &=\left[-3; +\infty \right[
+                                        \end{aligned}
+                                        $
+                                        
+$\boxed{ S=\left[-3; +\infty \right[}$
+
+\end{itemize}
+
+
+\textbf{\exemple}
+
+Résolvons l'inéquation \( \sqrt{x^{2}+3x-1} \leq x+2 \).
+
+\textbf{\solution}
+
+\begin{itemize}
+    \item \textbf{Étape 1 : Conditions de validité \( D_v \)}
+\end{itemize}
+
+L'inéquation est définie si \( x^{2} + 3x - 1 \geq 0 \) et \( x + 2 \geq 0 \).
+
+- \( x + 2 \geq 0 \) donne \( x \geq -2 \).
+
+- Pour \( x^{2} + 3x - 1 \geq 0 \), on trouve les racines du polynôme : \( x = -3.41 \) et \( x = 0.41 \).
+
+Le domaine de validité est donc \( D_v = [-2; +\infty[ \).
+
+\begin{itemize}
+    \item \textbf{Étape 2 : Résolution de l'inéquation}
+\end{itemize}
+
+On élève les deux membres de l'inéquation au carré :
+
+\[
+x^{2} + 3x - 1 \leq (x + 2)^{2}
+\]
+
+Cela revient à résoudre l'inéquation :
+
+\[
+x^{2} + 3x - 1 \leq (x + 2)^{2} \quad \Leftrightarrow \quad x^{2} + 3x - 1 \leq x^{2} + 4x + 4.
+\]
+
+En simplifiant, on obtient :
+
+\[
+0 \leq x + 5.
+\]
+
+Cette inéquation est vérifiée pour tout \( x \geq -5 \).
+
+\textbf{Conclusion :} L'ensemble des solutions est \( S = [-2; +\infty[ \), car il faut tenir compte des conditions initiales.
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Inéquations du type \( \sqrt{f(x)} \geq ax+b \) }}}}
+
+\underline{\textbf{Méthode de Résolution}}
+
+\[
+\text{On a les équivalences suivantes :}
+\]
+
+\[
+\begin{aligned}
+\sqrt{f(x)} \geq g(x)
+&\Leftrightarrow
+\begin{cases}
+f(x) \geq 0\\
+g(x) \geq 0\\
+f(x) \geq g(x)^2
+\end{cases}
+\quad \textbf{ou} \quad
+\begin{cases}
+f(x) \geq 0\\
+g(x) \leq 0
+\end{cases}\\
+&\Leftrightarrow
+\boxed{
+\begin{cases}
+g(x) \geq 0\\
+f(x) \geq g(x)^2
+\end{cases}
+\quad \textbf{ou} \quad
+\begin{cases}
+f(x) \geq 0\\
+g(x) \leq 0
+\end{cases}}
+\end{aligned}
+\]
+
+\textbf{Explication :}
+
+\begin{itemize}
+    \item \textbf{\( f(x) \geq 0 \)} : Comme la racine carrée
+    \( \sqrt{f(x)} \) doit être définie, il est nécessaire que
+    l'expression sous la racine soit positive ou nulle.
+
+    \item \textbf{Premier cas : \( g(x) \geq 0 \)} :
+    Les deux membres sont alors positifs ou nuls. On peut donc
+    élever les deux membres au carré sans changer le sens de
+    l'inégalité :
+    \[
+    \sqrt{f(x)} \geq g(x)
+    \Leftrightarrow
+    f(x) \geq g(x)^2.
+    \]
+
+    \item \textbf{Deuxième cas : \( g(x) \leq 0 \)} :
+    Comme une racine carrée est toujours positive ou nulle, on a
+    automatiquement
+    \[
+    \sqrt{f(x)} \geq 0 \geq g(x).
+    \]
+    Ainsi, dans ce cas, il suffit d'avoir
+    \[
+    f(x) \geq 0.
+    \]
+\end{itemize}
+
+\textbf{En simplifiant, on obtient :}
+
+\[
+\boxed{
+\sqrt{f(x)} \geq g(x)
+\Leftrightarrow
+\left[
+\begin{array}{l}
+g(x)\geq0\\
+f(x)\geq g(x)^2
+\end{array}
+\right]
+\quad\textbf{ou}\quad
+\left[
+\begin{array}{l}
+f(x)\geq0\\
+g(x)\leq0
+\end{array}
+\right]
+}
+\]
+
+\textbf{Dans le cas particulier où \(g(x)=ax+b\), on résout donc
+séparément les deux systèmes :}
+
+\[
+\begin{cases}
+f(x)\geq0\\
+ax+b\leq0
+\end{cases}
+\]
+
+et
+
+\[
+\begin{cases}
+ax+b\geq0\\
+f(x)\geq(ax+b)^2.
+\end{cases}
+\]
+
+\textbf{L'ensemble solution de l'inéquation est l'union des
+solutions de ces deux systèmes.}
+
+
+\textbf{\exemple}
+
+Résolvons l'inéquation \( \sqrt{2x+1} \geq x+3 \).
+
+\textbf{\solution}
+
+
+   \[
+                                    \textbf{Posons }
+                                    S_{1}:
+                                    \begin{cases}
+                                    2x+1 \geq 0\\[3mm]
+                                    x+3 \leq 0
+                                    \end{cases}\qquad
+                                    \textbf{Posons }
+                                    S_{2}:
+                                    \begin{cases}
+                                    x+3 \geq 0\\[3mm]
+                                    2x+1 \geq (x+3)^2
+                                    \end{cases}
+                                    \]
+
+Ce qui correspond à :
+
+\[
+S_{1}:
+\begin{cases}
+2x + 1 \geq 0 \\ \\
+x + 3 \leq 0 
+\end{cases}
+\textbf{ et }
+S_{2}:
+\begin{cases} 
+x + 3 \geq 0 \\[3mm]
+x^2 + 4x + 8 \leq 0
+\end{cases}
+\]
+
+\[
+\textbf{Posons }
+S_{1}:
+\begin{cases}
+2x + 1 = 0 \\ \\
+x + 3 = 0 
+\end{cases}
+\textbf{Posons }
+S_{2}:
+\begin{cases} 
+x + 3 = 0 \\[3mm]
+x^2 + 4x + 8 = 0
+\end{cases}
+\]
+
+\underline{Résolvons \( S_1 \)} :
+
+\(
+\begin{cases}
+x = \dfrac{-1}{2} \\
+x =  -3 
+\end{cases} 
+\)
+
+
+
++++++++++++++++++++++++++
+
+ \( x + 3 \geq 0 \) :  
+   \( x \geq -3 \).
+
+ \( 2x + 1 \geq (x + 3)^2 \) :  
+   Développons \( (x + 3)^2 \) :  
+   \[
+   (x + 3)^2 = x^2 + 6x + 9.
+   \]
+   Nous obtenons l'inéquation suivante :  
+   \[
+   2x + 1 \geq x^2 + 6x + 9.
+   \]
+   Cela revient à résoudre :
+   \[
+   0 \geq x^2 + 4x + 8.
+   \]
+   Le discriminant de \( x^2 + 4x + 8 \) est :
+   \[
+   \Delta = 4^2 - 4 \times 1 \times 8 = 16 - 32 = -16.
+   \]
+   Comme le discriminant est négatif, cette équation n'a pas de solution réelle. Ainsi, il n'existe aucune valeur de \( x \) pour laquelle \( 2x + 1 \geq (x + 3)^2 \).
+
+\[
+S_1 = \varnothing.
+\]
+
+\underline{Résolvons \( S_2 \)} :
+
+1. \( 2x + 1 \geq 0 \) :  
+   \( x \geq -\frac{1}{2} \).
+
+2. \( x + 3 \leq 0 \) :  
+   \( x \leq -3 \).
+
+Les deux conditions \( x \geq -\frac{1}{2} \) et \( x \leq -3 \) sont contradictoires, donc :
+
+\[
+S_2 = \varnothing.
+\]
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
+On a : $\sqrt{f(x)}\leq\sqrt{g(x)}\;\Leftrightarrow\;\left\lbrace\begin{array}{lll} f(x) \geq 0 \\ g(x)\geq 0\\ f(x)\leq g(x)\end{array}\right.$
+
+\textbf{\exemple}
+
+Résoudre dans $\mathbb{R}\;\sqrt{x^{2}-4x}\leq\sqrt{x+7}$.
+
+\textbf{\solution}
+
+$\begin{array}{rcl} \sqrt{x^{2}-4x}\leq\sqrt{x+7} & \Leftrightarrow & \left\lbrace\begin{array}{rcl} x^{2}-4x&\geq&0 \\ x+7&\geq&0 \\ (\sqrt{x^{2}-4x})^{2}&\leq&(\sqrt{x+7})^{2} \end{array}\right. \\ \\ & \Leftrightarrow & \left\lbrace\begin{array}{rcl} x(x-4)&\geq&0 \\ x&\geq&-7 \\ x^{2}-4x&\leq&x+7 \end{array}\right. \\ \\ & \Leftrightarrow & \left\lbrace\begin{array}{lll} x\in\;(]-\infty\;;\ 0]\cup[4\;;\ +\infty[)\cap[-7\;;\ +\infty[ \\ x^{2}-5x-7\leq 0 \end{array}\right. \\ \\  & \Leftrightarrow & \left\lbrace\begin{array}{lll} x\in\;D_{E}=]-7\;;\ 0]\cup[4\;;\ +\infty[ \\ x^{2}-5x-7\leq 0 \end{array}\right. \end{array}$
+
+Soit l'équation $x^{2}-5x-7=0$
+
+On a : $\Delta=25+28=53\;\Rightarrow\;\sqrt{\Delta}=\sqrt{53}.$
+
+Soient $x_{1}$ et $x_{2}$ les solutions distinctes de $x^{2}-5x-7=0$.
+
+Alors, $x_{1}=\dfrac{5-\sqrt{53}}{2}\ $ et $\ x_{2}=\dfrac{5+\sqrt{53}}{2}$
+
+Ainsi, sans aucune contrainte, l'inéquation $x^{2}-5x-7\leq 0$ admettra comme solution $S_{1}=[x_{1}\;;\ x_{2}]$
+
+$$\begin{array}{|c|lclclclclcr|} \hline x & -7 & & x_{1} &  & 0 &  & 4 & & x_{2} & & +\infty \\ \hline x^{2}-4x & & + & | & + & 0 & - & 0 & + &|& + & \\ \hline x^{2}-5x-7 &  & + & 0 & - & | & - & | & - & 0 & + & \\ \hline S &  & + & 0 & (-) & | & + & |& (-) & 0 & + & \\ \hline \end{array}$$
+
+Donc en tenant compte des conditions initiales, l'ensemble des solutions du problème sera donné par $$S=S_{1}\cap D_{E}=[x_{1}\;;\ 0]\cup[4\;;\ x_{2}]$$
+
+$\centerdot\ \ \sqrt{f(x)}\geq g(x)$
+
+On a : $\sqrt{f(x)}\geq g(x)\;\Leftrightarrow\;\left\lbrace\begin{array}{lll} g(x)\geq 0\\ f(x)\geq (g(x))^{2} \end{array}\right.\quad\text{ou}\quad\left\lbrace\begin{array}{lll} f(x)\geq 0 \\ g(x)&lt; 0\end{array}\right.$
+
+Donc, on obtient deux solutions $S_{1}$ et $S_{2}.$
+
+Ainsi, la solution finale est donnée par $S=S_{1}\cup S_{2}.$
+
+
+\textbf{\exerciceapp}
+
+Résoudre dans \( \mathbb{R} \)
+
+\begin{itemize}
+\item \( \sqrt{x+3} \leq 5 \)
+\item \( \sqrt{-2x+1} \geq -3 \)
+\item \( \sqrt{x+3} \leq \sqrt{-2x+4} \)
+\item \( \sqrt{x^{2}-4} \leq x+1 \)
+\item \( \sqrt{x^{2}+2x -3} \leq x-2 \)
+\item \( \sqrt{x^{2}-6x}=\sqrt{x-6} \)
+\end{itemize}
+\textbf{\correction}
+\section*{\underline{\textbf{\textcolor{red}{III. Systèmes}}}}
+\subsection*{\underline{\textbf{\textcolor{red}{1. Systèmes de 3 équations linéaires à trois inconnues}}}}
+
+Le système 
+\[
+\begin{cases}
+a_1x + b_1y + c_1z = d_1 \\
+a_2x + b_2y + c_2z = d_2 \\
+a_3x + b_3y + c_3z = d_3
+\end{cases}
+\]
+est formé de trois équations. Chacune d’elle contient trois inconnues \(x\), \(y\) et \(z\) avec des exposants tous égaux à 1. On dit qu’on a un système de trois équations linéaires à trois inconnues \(x\), \(y\) et \(z\).
+
+Résoudre un tel système c’est trouver tous les triplets \((x, y, z)\) de nombres réels qui vérifient les trois équations du système.
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{ Exemple }}}}
+
+Exemple de système :
+
+\[
+\begin{cases}
+2x + y - z = 3 \\
+x - 2y + 3z = -4 \\
+3x + y + 2z = 7
+\end{cases}
+\]
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{Exemple de système triangulaire}}}}
+
+Un système triangulaire supérieur est un système d'équations où chaque équation contient une inconnue de moins que la précédente, formant un triangle.
+
+\[
+\begin{cases}
+2x + 3y - z = 5 \\
+0 \cdot x + y + 4z = -2 \\
+0 \cdot x + 0 \cdot y + z = 3
+\end{cases}
+\]
+
+Dans ce système, la dernière équation contient seulement \( z \), ce qui permet de le résoudre directement, puis de remonter en substituant dans les équations précédentes pour obtenir \( y \) et \( x \).
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{b. Méthode du pivot de Gauss }}}}
+
+a. Exemple 1
+
+	Résolvons le système suivant en utilisant la méthode du pivot de Gauss
+
+	$\left\lbrace\begin{array}{lcl}x+10y-3z& =&5\\2x-y+2z& = 2\\-x+y+z& =& -3\end{array}\right.$
+
+	Pour résoudre un tel système, on commence par désigner les $3$ équations respectivement par $L_{1}$ ; $L_{2}$ et $L_{3}$
+
+	$\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\2x-y+2z& =& 2\qquad\left(L_{2}\right)\\-x+y+z& =& -3\qquad\left(L_{3}\right)\end{array}\right.$
+
+	$1^{er}$ étape : 
+
+
+	On fixe l'équation $\left(L_{1}\right)$ puis on élimine l'inconnue $x$ dans $\left(L_{2}\right)$ en considérant le sous-système $-2\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\2x-y+2z& =& 2\qquad\left(L_{2}\right)\end{array}\right.$
+
+
+	$$\text{d'où }\left\lbrace\begin{array}{lcl}-2x-20y+6z& =& -10\\2x-y+2z& =& 2\end{array}\right.$$
+	
+	ainsi on a : $-21y+8z=-8\quad\left(L'_{2}\right)$
+
+$2^{ième}$ étape :
+
+	On fixe l'équation $\left(L_{1}\right)$ puis on élimine l'inconnue $x$ dans $\left(L_{3}\right)$ en considérant le sous-système $\left\lbrace\begin{array}{lcl}x+10y-3z&=&5\qquad\left(L_{1}\right)\\-x+y+z&=&-3\qquad\left(L_{3}\right)\end{array}\right.$
+
+	d'où ainsi on a : $11y-2z=2\quad\left(L'_{3}\right)$
+
+	Ainsi, on obtient le système équivalent suivant : $\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\-21y+8z& =& -8\qquad\left(L'_{2}\right)\\11y-2z& =& -3\qquad\left(L'_{3}\right)\end{array}\right.$
+
+$3^{ième}$ étape :
+
+	On fixe $\left(L'_{2}\right)$ puis on élimine $y$ dans $\left(L'_{3}\right)$ en considérant le sous-système $\left\lbrace\begin{array}{lcl}-21y+8z& =& -8\qquad\left(L'_{2}\right)\\11y-2z& =& 2\qquad\left(L'_{3}\right)\end{array}\right.$
+
+	Ainsi on a $46z=-46\left(L"_{3}\right)$
+
+	On obtient le système équivalent suivant dit système triangulaire
+
+	$\left\lbrace\begin{array}{lcl}x+10y-3z =& 5\qquad\left(L_{1}\right)\\-21y+8z& =& -8\qquad\left(L'_{2}\right)\\46z& =& -46\qquad\left(L"_{3}\right)\end{array}\right.$
+	
+$4^{ième}$ étape :
+
+	Pour terminer la résolution, on détermine $z$ dans $\left(L"_{3}\right)$, puis on remplace $z$ par cette valeur dans $\left(L'_{2}\right)$, on obtient la valeur de $y$ puis on obtient celle de $x$, en substituant à $y$ et $z$ par leurs valeurs respectives dans $\left(L'_{1}\right).$
+
+	Ainsi on a : $S=\left\lbrace(2\ ;\ 0\ ;\ -1)\right\rbrace$
+\end{document}
