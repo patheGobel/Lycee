@@ -735,8 +735,86 @@ x = -3 \\[3mm]
 
 $S_2 = \varnothing$
 
-\subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
+\subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq \sqrt{g(x)} \)}}}}
+
+
+\underline{\textbf{Méthode de résolution}}
+
 On a : $\sqrt{f(x)}\leq\sqrt{g(x)}\;\Leftrightarrow\;\left\lbrace\begin{array}{lll} f(x) \geq 0 \\ g(x)\geq 0\\ f(x)\leq g(x)\end{array}\right.$
+
+\textbf{\exemple}
+
+Résoudre dans \(\mathbb{R}\) l'inéquation :
+
+
+\[
+\sqrt{2x+3}\leq\sqrt{x+5}.
+\]
+
+\textbf{\solution}
+
+\textbf{1. Conditions d'existence}
+
+\[
+\left\{
+\begin{array}{l}
+2x+3\geq0\\
+x+5\geq0
+\end{array}
+\right.
+\]
+
+soit
+
+\[
+\left\{
+\begin{array}{l}
+x\geq-\dfrac{3}{2}\\
+x\geq-5.
+\end{array}
+\right.
+\]
+
+Ainsi,
+
+\[
+D=\left[-\frac{3}{2},+\infty\right[.
+\]
+
+\textbf{2. Résolution de l'inéquation}
+
+Sur \(D\), on peut comparer directement les radicandes :
+
+\[
+\sqrt{2x+3}\leq\sqrt{x+5}
+\Longleftrightarrow
+2x+3\leq x+5.
+\]
+
+Donc :
+
+\[
+x\leq2.
+\]
+
+\textbf{3. Intersection}
+
+On obtient :
+
+\[
+x\in
+\left[-\frac{3}{2},+\infty\right[
+\cap
+]-\infty,2].
+\]
+
+Par conséquent :
+
+\[
+\boxed{
+S=\left[-\frac{3}{2},2\right]
+}
+\]
 
 \textbf{\exemple}
 
@@ -813,13 +891,15 @@ x - 2y + 3z = -4 \\
 
 Un système triangulaire supérieur est un système d'équations où chaque équation contient une inconnue de moins que la précédente, formant un triangle.
 
-\[
-\begin{cases}
-2x + 3y - z = 5 \\
-0 \cdot x + y + 4z = -2 \\
-0 \cdot x + 0 \cdot y + z = 3
-\end{cases}
-\]
+$
+\left\{
+\begin{array}{rcc l}
+2x + 3y - z & = & 5 & (L_1) \\[2mm]
+y + 4z & = & -2 & (L_2) \\[2mm]
+y + z & = & 3 & (L_3)
+\end{array}
+\right.
+$
 
 Dans ce système, la dernière équation contient seulement \( z \), ce qui permet de le résoudre directement, puis de remonter en substituant dans les équations précédentes pour obtenir \( y \) et \( x \).
 
@@ -851,7 +931,16 @@ $2^{ième}$ étape :
 
 	d'où ainsi on a : $11y-2z=2\quad\left(L'_{3}\right)$
 
-	Ainsi, on obtient le système équivalent suivant : $\left\lbrace\begin{array}{lcl}x+10y-3z& =& 5\qquad\left(L_{1}\right)\\-21y+8z& =& -8\qquad\left(L'_{2}\right)\\11y-2z& =& -3\qquad\left(L'_{3}\right)\end{array}\right.$
+	Ainsi, on obtient le système équivalent suivant : 
+	$
+    \left\{
+    \begin{array}{rcc l}
+    x + 10y - 3z &=& 5 & (L_1) \\
+    -21y + 8z &=& -8 & (L'_2) \\
+    11y - 2z &=& 2 & (L'_3)
+    \end{array}
+    \right.
+    $
 
 $3^{ième}$ étape :
 
@@ -861,7 +950,13 @@ $3^{ième}$ étape :
 
 	On obtient le système équivalent suivant dit système triangulaire
 
-	$\left\lbrace\begin{array}{lcl}x+10y-3z =& 5\qquad\left(L_{1}\right)\\-21y+8z& =& -8\qquad\left(L'_{2}\right)\\46z& =& -46\qquad\left(L"_{3}\right)\end{array}\right.$
+												$ \left\{
+                                                \begin{array}{rcc l}
+                                                x + 10y - 3z & = & 5 & (L_1) \\
+                                                -21y + 8z & = & -8 & (L'_2) \\
+                                                46z & = & -46 & (L''_3)
+                                                \end{array}
+                                                \right.$
 	
 $4^{ième}$ étape :
 
