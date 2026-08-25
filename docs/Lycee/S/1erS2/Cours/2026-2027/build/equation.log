@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  25 AUG 2026 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  25 AUG 2026 22:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,24 +1011,23 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <142.26378> not available
 c/dvips/cm-super/cm-super-t1.enc}
 
 ] [2] [3] [4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [
-6] [7] [8] [9] [10] [11]
+6] [7] [8] [9] [10] [11] [12]
 
-LaTeX Warning: Command \` invalid in math mode on input line 928.
-
-Missing character: There is no è in font cmr8!
-
-LaTeX Warning: Command \` invalid in math mode on input line 945.
+LaTeX Warning: Command \` invalid in math mode on input line 1019.
 
 Missing character: There is no è in font cmr8!
 
-Overfull \hbox (38.13036pt too wide) in paragraph at lines 947--948
+LaTeX Warning: Command \` invalid in math mode on input line 1036.
+
+Missing character: There is no è in font cmr8!
+
+Overfull \hbox (38.13036pt too wide) in paragraph at lines 1038--1039
 []\T1/cmr/m/n/12 On fixe $[]$ puis on éli-mine $\OML/cmm/m/it/12 y$ \T1/cmr/m/n
 /12 dans $[]$ en consi-dé-rant le sous-système $[]$ 
  []
 
-[12]
 
-LaTeX Warning: Command \` invalid in math mode on input line 961.
+LaTeX Warning: Command \` invalid in math mode on input line 1052.
 
 Missing character: There is no è in font cmr8!
 [13] (build/equation.aux)
@@ -1045,10 +1044,10 @@ Package rerunfilecheck Info: File `equation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36173 strings out of 467533
- 823328 string characters out of 5422138
+ 36179 strings out of 467533
+ 823458 string characters out of 5422138
  1346597 words of memory out of 5000000
- 64453 multiletter control sequences out of 15000+600000
+ 64457 multiletter control sequences out of 15000+600000
  649778 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,118p,729b,761s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1057,20 +1056,22 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx120
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/tex
-mf/fonts/type1/public/cm-super/sfrm3583.pfb>
-Output written on build/equation.pdf (13 pages, 239754 bytes).
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfrm3583.pfb>
+Output written on build/equation.pdf (13 pages, 268854 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
