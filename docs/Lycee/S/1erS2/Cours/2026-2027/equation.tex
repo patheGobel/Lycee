@@ -704,48 +704,36 @@ x =  -3
 \)
 
 
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=1.75]{$x$/.5,$2x + 1$/.7,$ x + 3 $/.7}{$-\infty$,$-3$,$\frac{-1}{2}$,$+\infty$}
+        \tkzTabLine{,-,t,-,z,+, }
+        \tkzTabLine{,-,z,+,t,+, }
+    \end{tikzpicture}
+    
+$S_1 = \varnothing$
 
-+++++++++++++++++++++++++
-
- \( x + 3 \geq 0 \) :  
-   \( x \geq -3 \).
-
- \( 2x + 1 \geq (x + 3)^2 \) :  
-   Développons \( (x + 3)^2 \) :  
-   \[
-   (x + 3)^2 = x^2 + 6x + 9.
-   \]
-   Nous obtenons l'inéquation suivante :  
-   \[
-   2x + 1 \geq x^2 + 6x + 9.
-   \]
-   Cela revient à résoudre :
-   \[
-   0 \geq x^2 + 4x + 8.
-   \]
-   Le discriminant de \( x^2 + 4x + 8 \) est :
-   \[
-   \Delta = 4^2 - 4 \times 1 \times 8 = 16 - 32 = -16.
-   \]
-   Comme le discriminant est négatif, cette équation n'a pas de solution réelle. Ainsi, il n'existe aucune valeur de \( x \) pour laquelle \( 2x + 1 \geq (x + 3)^2 \).
-
-\[
-S_1 = \varnothing.
-\]
 
 \underline{Résolvons \( S_2 \)} :
 
-1. \( 2x + 1 \geq 0 \) :  
-   \( x \geq -\frac{1}{2} \).
+\(
+\begin{cases} 
+x + 3 = 0 \\[3mm]
+x^2 + 4x + 8 = 0
+\end{cases}
+\implies
+\begin{cases} 
+x = -3 \\[3mm]
+\text{Pas de Racine }
+\end{cases}
+\)
 
-2. \( x + 3 \leq 0 \) :  
-   \( x \leq -3 \).
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=2,lgt=3]{$x$/.5,$x + 3$/.7,$ x^2 + 4x + 8 $/.7}{$-\infty$,$-3$ ,$+\infty$}
+        \tkzTabLine{ ,-,z,+, }
+        \tkzTabLine{ ,+,t,+, }
+    \end{tikzpicture}
 
-Les deux conditions \( x \geq -\frac{1}{2} \) et \( x \leq -3 \) sont contradictoires, donc :
-
-\[
-S_2 = \varnothing.
-\]
+$S_2 = \varnothing$
 
 \subsection*{\underline{\textbf{\textcolor{red}{3. Inéquations du type \( \sqrt{f(x)} \leq  \sqrt{g(x)} \) }}}}
 On a : $\sqrt{f(x)}\leq\sqrt{g(x)}\;\Leftrightarrow\;\left\lbrace\begin{array}{lll} f(x) \geq 0 \\ g(x)\geq 0\\ f(x)\leq g(x)\end{array}\right.$

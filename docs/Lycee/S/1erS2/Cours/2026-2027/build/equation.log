@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  24 AUG 2026 23:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  25 AUG 2026 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -890,7 +890,10 @@ Package french3.ldf Info: Setting StandardEnumerateEnv=true for
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count372
 )
-No file equation.aux.
+(build/equation.aux
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 11.
+)
 \openout1 = `equation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -911,6 +914,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count373
@@ -933,10 +937,10 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 91.
 LaTeX Info: Redefining \degres on input line 91.
 Package hyperref Info: Link coloring OFF on input line 91.
+
+(build/equation.out) (build/equation.out)
 \@outlinefile=\write4
 \openout4 = `equation.out'.
 
@@ -1009,21 +1013,21 @@ c/dvips/cm-super/cm-super-t1.enc}
 ] [2] [3] [4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [
 6] [7] [8] [9] [10] [11]
 
-LaTeX Warning: Command \` invalid in math mode on input line 860.
+LaTeX Warning: Command \` invalid in math mode on input line 848.
 
 Missing character: There is no è in font cmr8!
 
-LaTeX Warning: Command \` invalid in math mode on input line 868.
+LaTeX Warning: Command \` invalid in math mode on input line 856.
 
 Missing character: There is no è in font cmr8!
 
-Overfull \hbox (38.13036pt too wide) in paragraph at lines 870--871
+Overfull \hbox (38.13036pt too wide) in paragraph at lines 858--859
 []\T1/cmr/m/n/12 On fixe $[]$ puis on éli-mine $\OML/cmm/m/it/12 y$ \T1/cmr/m/n
 /12 dans $[]$ en consi-dé-rant le sous-système $[]$ 
  []
 
 
-LaTeX Warning: Command \` invalid in math mode on input line 878.
+LaTeX Warning: Command \` invalid in math mode on input line 866.
 
 Missing character: There is no è in font cmr8!
 [12] (build/equation.aux)
@@ -1036,23 +1040,17 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 106.43378pt have occurred.
 
-
-Package rerunfilecheck Warning: File `equation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `equation.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `equation.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35593 strings out of 467533
- 813999 string characters out of 5422138
- 1338542 words of memory out of 5000000
- 63882 multiletter control sequences out of 15000+600000
+ 36170 strings out of 467533
+ 823302 string characters out of 5422138
+ 1348597 words of memory out of 5000000
+ 64453 multiletter control sequences out of 15000+600000
  649778 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,118p,729b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,118p,729b,761s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -1068,7 +1066,7 @@ xmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200
 .pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sfrm3583.pfb>
-Output written on build/equation.pdf (12 pages, 237563 bytes).
+Output written on build/equation.pdf (12 pages, 238048 bytes).
 PDF statistics:
  190 PDF objects out of 1000 (max. 8388607)
  139 compressed objects within 2 object streams
