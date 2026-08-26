@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  26 AUG 2026 23:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  26 AUG 2026 23:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1012,23 +1012,23 @@ c/dvips/cm-super/cm-super-t1.enc}
 
 ] [2] [3] [4] [5] [6] [7{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1
 .enc}] [8] [9] [10] [11] [12] [13] [14]
+[15]
 
-LaTeX Warning: Command \` invalid in math mode on input line 1165.
-
-Missing character: There is no è in font cmr8!
-
-LaTeX Warning: Command \` invalid in math mode on input line 1182.
+LaTeX Warning: Command \` invalid in math mode on input line 1181.
 
 Missing character: There is no è in font cmr8!
 
-Overfull \hbox (38.13036pt too wide) in paragraph at lines 1184--1185
+LaTeX Warning: Command \` invalid in math mode on input line 1198.
+
+Missing character: There is no è in font cmr8!
+
+Overfull \hbox (38.13036pt too wide) in paragraph at lines 1200--1201
 []\T1/cmr/m/n/12 On fixe $[]$ puis on éli-mine $\OML/cmm/m/it/12 y$ \T1/cmr/m/n
 /12 dans $[]$ en consi-dé-rant le sous-système $[]$ 
  []
 
-[15]
 
-LaTeX Warning: Command \` invalid in math mode on input line 1198.
+LaTeX Warning: Command \` invalid in math mode on input line 1214.
 
 Missing character: There is no è in font cmr8!
 [16] (build/equation.aux)
@@ -1045,9 +1045,9 @@ Package rerunfilecheck Info: File `equation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36194 strings out of 467533
- 823570 string characters out of 5422138
- 1346597 words of memory out of 5000000
+ 36202 strings out of 467533
+ 823630 string characters out of 5422138
+ 1347597 words of memory out of 5000000
  64457 multiletter control sequences out of 15000+600000
  649778 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1068,10 +1068,10 @@ f/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfrm3583.pfb>
-Output written on build/equation.pdf (16 pages, 268789 bytes).
+Output written on build/equation.pdf (16 pages, 270440 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 69 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
