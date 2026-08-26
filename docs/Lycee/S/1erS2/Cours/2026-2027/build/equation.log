@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  26 AUG 2026 16:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  26 AUG 2026 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,24 +1011,23 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <142.26378> not available
 c/dvips/cm-super/cm-super-t1.enc}
 
 ] [2] [3] [4] [5] [6{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}] [7] [8] [9] [10] [11] [12] [13]
+}] [7] [8] [9] [10] [11] [12] [13] [14]
 
-LaTeX Warning: Command \` invalid in math mode on input line 1119.
-
-Missing character: There is no è in font cmr8!
-
-LaTeX Warning: Command \` invalid in math mode on input line 1136.
+LaTeX Warning: Command \` invalid in math mode on input line 1147.
 
 Missing character: There is no è in font cmr8!
 
-Overfull \hbox (38.13036pt too wide) in paragraph at lines 1138--1139
+LaTeX Warning: Command \` invalid in math mode on input line 1164.
+
+Missing character: There is no è in font cmr8!
+
+Overfull \hbox (38.13036pt too wide) in paragraph at lines 1166--1167
 []\T1/cmr/m/n/12 On fixe $[]$ puis on éli-mine $\OML/cmm/m/it/12 y$ \T1/cmr/m/n
 /12 dans $[]$ en consi-dé-rant le sous-système $[]$ 
  []
 
-[14]
 
-LaTeX Warning: Command \` invalid in math mode on input line 1152.
+LaTeX Warning: Command \` invalid in math mode on input line 1180.
 
 Missing character: There is no è in font cmr8!
 [15] (build/equation.aux)
@@ -1047,7 +1046,7 @@ Package rerunfilecheck Info: File `equation.out' has not changed.
 Here is how much of TeX's memory you used:
  36192 strings out of 467533
  823552 string characters out of 5422138
- 1346597 words of memory out of 5000000
+ 1345597 words of memory out of 5000000
  64457 multiletter control sequences out of 15000+600000
  649778 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1069,7 +1068,7 @@ per/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfrm3583.pfb>
-Output written on build/equation.pdf (15 pages, 274472 bytes).
+Output written on build/equation.pdf (15 pages, 276258 bytes).
 PDF statistics:
  231 PDF objects out of 1000 (max. 8388607)
  173 compressed objects within 2 object streams
