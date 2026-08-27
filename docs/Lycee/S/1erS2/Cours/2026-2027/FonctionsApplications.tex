@@ -446,4 +446,280 @@ f(d) &= 3.
 
 Cependant, un élément de $B$ peut avoir plusieurs antécédents dans $A$,
 ou même n'avoir aucun antécédent.
+
+\subsubsection*{\textbf{c) Contre-exemple :}}
+
+$f$ est une application car tout élément de départ est inclus dans son
+ensemble de définition.
+
+À chaque élément de $A$ on associe un et un seul élément de $B$.
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % --- DIAGRAMME : g ---
+
+    % Ensembles A et B
+    \node[text=darkred, font=\bfseries] at (0,2.3) {A};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {B};
+
+    % Flèche indiquant la relation
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$g$} (2.1,2.3);
+
+    % Patates A et B
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.7cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.45cm and 1.3cm);
+
+    % Éléments de A
+    \node (a) at (0,1.1) {$a$};
+    \node (b) at (0,0.55) {$b$};
+    \node (c) at (-0.05,0.0) {$5$};
+    \node (d) at (-0.05,-0.65) {$3$};
+    \node (m) at (0.25,-0.65) {$m$};
+
+    % Éléments de B
+    \node (e1) at (2.5,1.0) {$1$};
+    \node (e2) at (2.5,0.35) {$7$};
+    \node (e3) at (2.5,-0.35) {$n$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (e1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (e1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (e2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (m) -- (e3);
+
+\end{tikzpicture}
+
+\end{center}
+
+$g$ n'est pas une application car $3$ n'a pas d'image.
+
+
+\bigskip
+
+\noindent
+\underline{\textbf{Remarque :}}
+
+Toute \textcolor{darkred}{\textbf{application}} est une fonction mais la
+réciproque n'est pas toujours vraie.
+
+La restriction d'une fonction à son ensemble de définition est une
+\textcolor{darkred}{\textbf{application}}.
+
+
+\subsection*{\underline{\textbf{\textcolor{darkgreen}{2. Application
+bijective ou bijection}}}}
+
+\subsubsection*{\textbf{a) Définition :}}
+
+Une application définie de $A$ vers $B$ est \textcolor{darkred}{\textbf{bijective}}
+si tout élément de $B$ admet un et un seul antécédent dans $A$.
+
+Ainsi,
+\[
+\forall y\in B,\quad \exists! x\in A\mid f(x)=y.
+\]
+
+C'est-à-dire que pour tout $y\in B$, l'équation
+\[
+f(x)=y
+\]
+admet une unique solution.
+
+\subsubsection*{\textbf{b) Exemple :}}
+
+\textbf{Illustration graphique :}
+
+\begin{center}
+
+% =========================================================
+% DIAGRAMME 1 : f : A \longrightarrow B
+% =========================================================
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles A et B
+    \node[text=darkred, font=\bfseries] at (0,2.3) {A};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {B};
+
+    % Flèche de l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$f$} (2.1,2.3);
+
+    % Patates A et B
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.5cm and 1.4cm);
+
+    % Éléments de A
+    \node (a) at (0,1.0) {$a$};
+    \node (b) at (0,0.5) {$b$};
+    \node (d) at (0,0.0) {$d$};
+    \node (c) at (0,-0.6) {$c$};
+    \node (e) at (0,-1.0) {$e$};
+
+    % Éléments de B
+    \node (b1) at (2.5,1.0) {$1$};
+    \node (b2) at (2.5,0.5) {$2$};
+    \node (b3) at (2.5,0.0) {$3$};
+    \node (b4) at (2.5,-0.5) {$4$};
+    \node (b5) at (2.5,-1.0) {$5$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (b3);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (b4);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (d) -- (b1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (b2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (e) -- (b5);
+
+\end{tikzpicture}
+
+\end{center}
+
+Chaque élément de $B$ a un et un seul antécédent par $f$ dans $A$.
+Donc $f$ est une application bijective ou une bijection.
+
+
+\bigskip
+
+
+% =========================================================
+% DIAGRAMME 2 : g : E \longrightarrow F
+% =========================================================
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles E et F
+    \node[text=darkred, font=\bfseries] at (0,2.3) {E};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {F};
+
+    % Flèche de l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$g$} (2.1,2.3);
+
+    % Patates E et F
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.65cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.45cm and 1.4cm);
+
+    % Éléments de E
+    \node (a) at (0,1.0) {$a$};
+    \node (b) at (0,0.5) {$b$};
+    \node (c) at (0,0.0) {$c$};
+    \node (d) at (0,-0.5) {$d$};
+    \node (e) at (0,-1.0) {$e$};
+
+    % Éléments de F
+    \node (f1) at (2.5,1.0) {$1$};
+    \node (f2) at (2.5,0.5) {$2$};
+    \node (f3) at (2.5,0.0) {$3$};
+    \node (f4) at (2.5,-0.7) {$4$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (f1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (f2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (f3);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (d) -- (f2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (e) -- (f4);
+
+\end{tikzpicture}
+
+\end{center}
+
+$2$ admet deux antécédents donc $g$ n'est pas une application bijective.
+
+
+\bigskip
+
+
+% =========================================================
+% DIAGRAMME 3 : h : M \longrightarrow N
+% =========================================================
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles M et N
+    \node[text=darkred, font=\bfseries] at (0,2.3) {M};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {N};
+
+    % Flèche de l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$h$} (2.1,2.3);
+
+    % Patates M et N
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.5cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.45cm and 1.3cm);
+
+    % Éléments de M
+    \node (m) at (0,1.0) {$m$};
+    \node (n) at (0,0.5) {$n$};
+    \node (o) at (0,0.0) {$o$};
+    \node (p) at (0,-0.6) {$p$};
+
+    % Éléments de N
+    \node (alpha) at (2.5,1.0) {$\alpha$};
+    \node (beta) at (2.5,0.4) {$\beta$};
+    \node (gamma) at (2.5,-0.2) {$\gamma$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (m) -- (alpha);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (n) -- (beta);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (o) -- (gamma);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (p) -- (gamma);
+
+\end{tikzpicture}
+
+\end{center}
+
+$\gamma$ n'a pas d'antécédent par $h$.
+
+Donc, $h$ n'est pas une bijection.
 \end{document}
