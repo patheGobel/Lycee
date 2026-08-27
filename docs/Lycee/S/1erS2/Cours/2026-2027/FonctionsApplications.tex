@@ -837,6 +837,80 @@ x                 & \longmapsto      & f(x)=x^2
 		\end{aligned}        
         $
 
+$
+\text{Posons} \Delta=0
+$\\
+
+$
+12+4y=0
+\quad\Longrightarrow\quad
+y=-3
+$
+
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        espcl=1.75
+    ]{$x$/.5,$4x+12$/.7}
+    {$-\infty$,$-3$,$+\infty$}
+    \tkzTabLine{,h,z,+,}
+\end{tikzpicture}
+
+$
+\text{car } y\in[-3\,;\,+\infty[
+$
+
+Comme $\Delta>0$, l'équation $\ell(x)=y$ admet 2 solutions.
+
+\bigskip
+
+\underline{\textbf{Si $y=3$}} alors $\Delta=0$ ;
+$
+x_0=\dfrac{-4}{2}=-2.
+$
+
+\bigskip
+
+\underline{\textbf{Si $y>-3$}}
+
+$
+x_1=
+\dfrac{-4-\sqrt{12+4y}}{2}
+=
+\dfrac{-4-\sqrt{4(3+y)}}{2}
+=
+-2-\sqrt{3+y}
+<-2
+$
+
+$
+x_2=-2+\sqrt{3+y}>-2
+\qquad \text{alors}
+$
+
+$
+x_2\notin]-\infty\,;\,-2].
+$
+
+\[
+\boxed{x_1=-2-\sqrt{3+y}\in]-\infty\,;\,-2]}
+\]
+
+\bigskip
+
+\underline{\textbf{Conclusion :}}
+
+\[
+\forall y\in]-3\,;\,+\infty[,
+\quad
+\text{l'équation }\ell(x)=y
+\text{ admet une unique solution}
+\]
+
+\[
+\text{dans }]-\infty\,;\,-2].
+\]
+
+Donc, $\ell$ est une \textcolor{darkred}{application bijective}.
     \end{enumerate}
 
 \end{enumerate}
