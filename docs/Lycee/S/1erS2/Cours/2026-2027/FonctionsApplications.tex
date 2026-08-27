@@ -722,4 +722,122 @@ $2$ admet deux antécédents donc $g$ n'est pas une application bijective.
 $\gamma$ n'a pas d'antécédent par $h$.
 
 Donc, $h$ n'est pas une bijection.
+
+\section*{\underline{\textbf{Applications}}}
+
+\begin{enumerate}
+
+    \item Soit $f$ l'application  définie par
+    
+\[
+\begin{array}{rcl}
+f:[0\,;\,+\infty[ & \longrightarrow & [0\,;\,+\infty[\\
+x                 & \longmapsto      & f(x)=x^2
+\end{array}
+\]
+
+    $f$ est-elle bijective ?
+
+    Soit $y\in[0\,;\,+\infty[$, résolvons l'équation $f(x)=y$.
+
+    \[
+    f(x)=y
+    \Longrightarrow x^2=y
+    \Longrightarrow x=\sqrt{y}\in[0\,;\,+\infty[\quad \text{ou}\quad x=-\sqrt{y}\notin[0\,;\,+\infty[
+    \]
+
+    Donc l'équation $f(x)=y$ admet une unique solution $x=\sqrt{y}.$
+
+    Par conséquent, $f$ est une \textcolor{darkred}{bijection}.
+
+
+    \item Soit $\ell$ la relation définie par :
+    \[
+	\begin{array}{rcl}
+	\ell:]-\infty\,;\,-2] & \longrightarrow & [-3\,;\,+\infty[\\
+		x                 & \longmapsto      & \ell(x)=x^2+4x+1
+	\end{array}
+	\]
+
+    \begin{enumerate}
+        \item $\ell$ est-elle une application ?
+
+        \item Si oui, est-elle bijective ?
+    \end{enumerate}
+
+
+    \begin{enumerate}
+
+        \item Soit $x\in]-\infty\,;\,-2]$, il est clair que
+        $x^2+4x+1$ est unique car $ x^2+4x+1=(x+2)^2-3. $
+
+        De plus,
+        $
+            (x+2)^2\geq 0
+            \Longrightarrow
+            (x+2)^2-3\geq -3.
+        $
+
+        Ce qui donne
+        $
+            \ell(x)\geq -3
+            \Longrightarrow
+            \ell(x)\in[-3\,;\,+\infty[.
+        $
+
+        Par conséquent, $\ell$ est une \textcolor{darkred}{application}.
+
+
+        \bigskip
+
+        \begin{center}
+            \underline{\textbf{\textcolor{darkred}{OU}}}
+        \end{center}
+
+        Soit $x\in]-\infty\,;\,-2]$, il est clair que
+        $x^2+4x+1$ est unique.
+
+        Vérifions que si $\ell(x)\geq -3$.
+
+        Pour cela, évaluons $\ell(x)+3$.
+
+        $
+          \begin{aligned}
+          \ell(x)+3&=x^2+4x+1+3\\
+          		&=x^2+4x+4
+          \end{aligned}
+        $
+
+        $
+            \ell(x)+3=(x+2)^2\geq 0
+        $
+
+        $
+            \ell(x)+3\geq 0
+            \Longrightarrow
+            \ell(x)\geq -3
+       $
+
+        Donc,
+        $
+            	\ell(x)\in[-3\,;\,+\infty[.
+        $
+
+        Par conséquent, $\ell$ est une \textcolor{darkred}{application}.
+
+
+        \item Soit $y\in[-3\,;\,+\infty[$, résolvons $\ell(x)=y$.
+        
+        $
+		\begin{aligned}
+		x^2+4x+1=y &\Longrightarrow x^2+4x+1-y=0\\
+		                     &\Delta=16-4(1)(1-y)\\
+		                     &\Delta=16-4+4y\\
+		                     &\Delta=12+4y		                     
+		\end{aligned}        
+        $
+
+    \end{enumerate}
+
+\end{enumerate}
 \end{document}
