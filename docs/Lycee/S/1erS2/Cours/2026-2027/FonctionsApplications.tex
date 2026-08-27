@@ -363,4 +363,87 @@ x - 1 \text{ si } x > 1 \\
 \end{cases} 
 \implies \boxed{\left. f(x) \right|_{]1 ; +\infty[} = x - 1}
 $$
+
+\section*{\underline{\textbf{\textcolor{darkred}{I. Notion d'application}}}}
+\subsection*{\underline{\textbf{\textcolor{darkgreen}{1. Définition et exemples}}}}
+
+\paragraph{\color{darkred}a) Définition :}~\\
+
+
+On appelle \textcolor{darkred}{\textbf{application}} d'un ensemble $A$ vers un ensemble $B$
+toute relation de $A$ vers $B$ telle que \textcolor{darkgreen}{\textbf{à tout élément de $A$,
+on associe un et un seul élément de $B$}}.
+
+Autrement dit, chaque élément de $A$ possède une unique image dans $B$.
+
+
+\paragraph{\color{darkred}b) Exemple :}~\\
+
+La relation qui à chaque élève de la $1^{\text{ère}}$ S$_2$ du lycée
+associe son âge est une \textcolor{darkred}{\textbf{application}}.
+
+En effet, un élève ne peut avoir qu'un seul et unique âge.
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % --- DIAGRAMME : f ---
+
+    % Ensembles A et B
+    \node[text=darkred, font=\bfseries] at (0,2.3) {A};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {B};
+
+    % Flèche indiquant l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$f$} (2.1,2.3);
+
+    % Patates A et B
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.4cm and 1.3cm);
+
+    % Éléments de A
+    \node (a) at (0,1.1) {$a$};
+    \node (b) at (0,0.5) {$b$};
+    \node (c) at (0,-0.1) {$c$};
+    \node (d) at (0,-0.7) {$d$};
+
+    % Éléments de B
+    \node (e1) at (2.5,1.0) {$1$};
+    \node (e2) at (2.5,0.3) {$2$};
+    \node (e3) at (2.5,-0.4) {$3$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (e1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (e1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (e2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (d) -- (e3);
+
+\end{tikzpicture}
+
+\end{center}
+
+On a :
+
+\[
+\begin{aligned}
+f(a) &= 1,\\
+f(b) &= 1,\\
+f(c) &= 2,\\
+f(d) &= 3.
+\end{aligned}
+\]
+
+Cependant, un élément de $B$ peut avoir plusieurs antécédents dans $A$,
+ou même n'avoir aucun antécédent.
 \end{document}
