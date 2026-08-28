@@ -722,7 +722,7 @@ $\gamma$ n'a pas d'antécédent par $h$.
 
 Donc, $h$ n'est pas une bijection.
 
-\section*{\underline{\textbf{Applications}}}
+\subsubsection*{\underline{\textbf{Applications}}}
 
 \begin{enumerate}
 
@@ -913,9 +913,9 @@ Donc, $\ell$ est une \textcolor{darkred}{application bijective}.
 
 \end{enumerate}
 
-\paragraph{\color{darkred}c) Bijections réciproques :}~\\
+\subsubsection*{\textbf{c) Bijections réciproques :}}
 
-\subsubsection*{\underline{\textbf{\textcolor{darkred}{Définition :}}}}
+\paragraph{\color{darkred} Définition :}~\\
 
 $f$ étant une bijection d'un ensemble $A$ dans un ensemble $B$, on appelle
 \textcolor{darkred}{\textbf{bijection réciproque de $f$}}, l'application
@@ -925,12 +925,12 @@ unique antécédent par $f$ dans $A$.
 L'application réciproque est définie de l'ensemble d'arrivée $B$ vers
 l'ensemble de départ $A$.
 
-\subsubsection*{\underline{\textbf{Propriété :}}}
+\paragraph{\color{darkred} Propriété :}~\\
 
 Si $f^{-1}$ est l'application de $f$, alors $f$ est aussi l'application
 réciproque de $f^{-1}$.
 
-\subsubsection*{\textbf{\textcolor{darkred}{Ex :}}}
+\paragraph{\color{darkred} Ex :}~\\
 
 On donne :
 \[
@@ -945,11 +945,56 @@ x & \longmapsto &
 Montrer que $f$ est une bijection puis déterminer sa bijection
 réciproque.
 
-\subsubsection*{\underline{\textbf{\textcolor{darkred}{Résolution :}}}}
+\paragraph{\color{darkred} Résolution :}~\\
 
 Montrons que $f$ est une bijection puis déterminons sa bijection
 réciproque.
 
 Soit $y\in\mathbb{R}\setminus\{2\}$, résolvons $f(x)=y$.
+
+\[
+\begin{aligned}
+f(x)=y &\Longrightarrow \frac{2x+1}{x+3}=y\\
+       &\Longrightarrow 2x+1=yx+3y \\
+       &\Longrightarrow 2x-xy=3y-1\\
+       &\Longrightarrow x(2-y)=3y-1\\
+       &\Longrightarrow x=\frac{3y-1}{2-y}
+\end{aligned}
+\]
+
+Comme $y\neq2$ donc $x=\frac{3y-1}{2-y}$ existe et est unique.
+
+Montrons que $ x\in\mathbb{R}\setminus\{-3\}, $
+pour cela on pose
+
+\[
+\begin{aligned}
+\frac{3y-1}{2-y}=-3 &\Longrightarrow 3y-1=-6+3y\\
+       &\Longrightarrow -1=-6 \\
+       &\Longrightarrow \text{absurde !!}
+\end{aligned}
+\]
+
+Par conséquent,$ \frac{3y-1}{2-y}\neq-3 $
+
+Ce qui donne l'équation $f(x)=y$ admet une unique solution
+\[
+x=\frac{3y-1}{2-y}\in\mathbb{R}\setminus\{-3\}.
+\]
+
+D'où $f$ est une \textcolor{darkred}{bijection} et admet donc
+une bijection réciproque notée :
+
+\[ 
+\begin{array}{rcl}
+f^{-1}:\mathbb{R}\setminus\{2\} & \longrightarrow & \mathbb{R}\setminus\{-3\}\\
+y & \longmapsto & f^{-1}(y)=\frac{3y-1}{2-y}
+\end{array}
+\]
+
+
+Comme la variable est muette, $\boxed{
+f^{-1}(x)=\frac{3x-1}{2-x}
+}$
 
 \end{document}
