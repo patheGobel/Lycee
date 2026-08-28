@@ -1265,4 +1265,136 @@ On a résolu
 \(
 x^2-4x+3=3.
 \)
+
+\subsection*{\underline{\textbf{\textcolor{darkgreen}{4) Application surjective ou surjection}}}}
+
+\subsubsection*{\underline{\textbf{a) Définition :}}}
+
+Une application $f$ définie de $A$ vers $B$ est dite
+\textcolor{darkred}{\textbf{surjective}} (on dit que $f$ est une surjection)
+si chaque élément de $B$ est l'image au moins par $f$ d'un élément de $A$.
+
+C'est-à-dire pour tout $y\in B$, l'équation $f(x)=y$ admet au moins une solution.
+
+
+\subsubsection*{\textbf{b) Propriété :}}
+
+Pour montrer que l'application $f$ n'est pas surjective, il suffit de trouver
+un $y\in B$ qui n'a pas d'antécédent dans $A$.
+
+
+\begin{center}
+
+% =========================================================
+% DIAGRAMME 1 : f : A -> B
+% =========================================================
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles A et B
+    \node[text=darkred, font=\bfseries] at (0,2.3) {A};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {B};
+
+    % Flèche de l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$f$} (2.1,2.3);
+
+    % Patates A et B
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.4cm and 1.3cm);
+
+    % Éléments de A
+    \node (a) at (0,1.0) {$x$};
+    \node (b) at (0,0.5) {$p$};
+    \node (c) at (0,0.0) {$t$};
+    \node (d) at (0,-0.5) {$u$};
+    \node (e) at (0,-1.0) {$v$};
+
+    % Éléments de B
+    \node (b1) at (2.5,1.0) {$1$};
+    \node (b2) at (2.5,0.4) {$2$};
+    \node (b3) at (2.5,-0.2) {$3$};
+    \node (b4) at (2.5,-0.8) {$4$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (b1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (b2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (b3);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (d) -- (b4);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (e) -- (b4);
+
+\end{tikzpicture}
+
+\end{center}
+
+Chaque élément de $B$ admet au moins un antécédent dans $A$.
+
+Donc $f$ est une \textcolor{darkred}{surjection}.
+
+
+\bigskip
+
+\begin{center}
+
+% =========================================================
+% DIAGRAMME 2 : g : D -> C
+% =========================================================
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles D et C
+    \node[text=darkred, font=\bfseries] at (0,2.3) {D};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {C};
+
+    % Flèche de l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$g$} (2.1,2.3);
+
+    % Patates D et C
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.3cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.4cm and 1.5cm);
+
+    % Éléments de D
+    \node (a) at (0,0.7) {$a$};
+    \node (b) at (0,0.0) {$b$};
+    \node (c) at (0,-0.7) {$c$};
+
+    % Éléments de C
+    \node (c5) at (2.5,1.0) {$5$};
+    \node (c6) at (2.5,0.4) {$6$};
+    \node (c7) at (2.5,-0.2) {$7$};
+    \node (c8) at (2.5,-0.8) {$8$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (c5);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (c6);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (c8);
+
+\end{tikzpicture}
+
+\end{center}
+
+$7$ n'a pas d'antécédent dans $D$ par $g$.
+
+Par conséquent, $g$ n'est pas une \textcolor{darkred}{surjection}.
 \end{document}
