@@ -1197,4 +1197,72 @@ x'=x
 \]
 
 Par conséquent $f$ est une injection.
+
+\textbf{A2 :}
+
+$f$ est-elle une injection ?
+
+\underline{\textbf{\textcolor{darkred}{1\textsuperscript{ère} manière}}}
+
+Soit $y\in\mathbb{R}$.
+
+\(
+f(x)=y
+\Longrightarrow
+x^2-4x+3-y=0
+\)
+
+\(
+\Delta=16-4(3-y)=4+4y
+\)
+
+
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+
+    \tkzTabInit[
+        espcl=1.75
+    ]{$y$/.5,$\Delta$/.7}
+    {$-\infty$,$-1$,$+\infty$}
+
+    \tkzTabLine{,-,z,+,}
+
+\end{tikzpicture}
+
+
+Les réels supérieurs à $-1$ ont $2$ antécédents par $f$ dans
+$\mathbb{R}$.
+
+Donc $f$ n'est pas une injection.
+
+
+\underline{\textbf{\textcolor{darkred}{Autrement :}}}
+
+\(
+f(1)=f(3)=0
+\qquad\text{et}\qquad
+1\neq3
+\)
+
+Donc, $f$ n'est pas injective.
+
+On a résolu
+\(
+x^2-4x+3=0.
+\)
+
+
+\underline{\textbf{\textcolor{darkred}{Autrement :}}}
+
+\(
+f(x)=3
+\Longrightarrow
+x=0\quad\text{ou}\quad x=4
+\)
+
+Donc, $f$ n'est pas injective.
+
+On a résolu
+\(
+x^2-4x+3=3.
+\)
 \end{document}
