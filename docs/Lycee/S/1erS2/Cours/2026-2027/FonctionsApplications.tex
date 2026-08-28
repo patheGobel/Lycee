@@ -1413,5 +1413,45 @@ Les réels négatifs n'ont pas d'antécédent par $f$.
 Donc $f$ n'est pas surjective.
 
 
+\section*{\underline{\textbf{\textcolor{darkred}{III. Composée de fonctions}}}}
 
+\subsection*{\underline{\textbf{\textcolor{darkgreen}{1) Définition}}}}
+
+Soient $E$, $F$, $G$ 3 parties non vides de $\mathbb{R}$,
+$f:E\longrightarrow F$ et $g:F\longrightarrow G$,
+avec domaine de définition $D_f$ et $g$ avec domaine de définition $D_g$.
+
+On appelle \textcolor{darkred}{\textbf{composée de $f$ suivie de $g$}},
+la fonction qui à $x$ associe $g(f(x))$ notée
+\textcolor{darkred}{\textbf{$g\circ f$}} (on lit « $g$ rond $f$ »).
+
+\(
+\begin{array}{rcl}
+g\circ f:E & \longrightarrow & G\\
+x & \longmapsto & g\circ f(x)=g(f(x))
+\end{array}
+\)
+
+
+\subsection*{\underline{\textbf{\textcolor{darkgreen}{2) Domaine de définition}}}}
+
+La composée $g\circ f(x)$ n'a de sens que si $x\in D_f$ et
+$f(x)\in D_g$. De même que $f\circ g(x)$ n'a de sens que si
+$x\in D_g$ et $g(x)\in D_f$.
+
+On note :
+
+\(
+\boxed{
+D_{g\circ f}=\{x\in D_f\mid f(x)\in D_g\}
+}
+\)
+
+De même :
+
+\(
+\boxed{
+D_{f\circ g}=\{x\in D_g\mid g(x)\in D_f\}
+}
+\)
 \end{document}
