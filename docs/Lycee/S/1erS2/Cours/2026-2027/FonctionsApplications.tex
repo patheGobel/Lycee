@@ -1020,4 +1020,114 @@ C'est-à-dire pour tout $y\in B$, l'équation $f(x)=y$ admet au plus une solutio
         \qquad\text{et}\qquad
         f(x)=f(x').$
 \end{itemize}
+
+\subsubsection*{\underline{\textbf{\textcolor{darkred}{Illustration graphique}}}}
+
+\begin{center}
+
+% --- DIAGRAMME 1 : h ---
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles E et F
+    \node[text=darkred, font=\bfseries] at (0,2.3) {E};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {F};
+
+    % Flèche indiquant l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$h$} (2.1,2.3);
+
+    % Patates E et F
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.4cm and 1.5cm);
+
+    % Éléments de E
+    \node (a) at (0,1.0) {$a$};
+    \node (b) at (0,0.5) {$b$};
+    \node (c) at (0,0.0) {$c$};
+    \node (d) at (0,-0.6) {$d$};
+
+    % Éléments de F
+    \node (f1) at (2.5,1.0) {$1$};
+    \node (f2) at (2.5,0.5) {$2$};
+    \node (f3) at (2.5,0.0) {$3$};
+    \node (f4) at (2.5,-0.5) {$4$};
+    \node (f5) at (2.5,-1.0) {$5$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (f1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (f2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (f4);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (d) -- (f3);
+
+\end{tikzpicture}
+
+\end{center}
+
+On constate que chaque élément de $F$ est l'image au plus d'un élément de $E$.
+Par suite, $h$ est une injection.
+
+
+\bigskip
+
+\begin{center}
+
+% --- DIAGRAMME 2 : f ---
+
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.9}]
+
+    % Ensembles A et B
+    \node[text=darkred, font=\bfseries] at (0,2.3) {A};
+    \node[text=darkred, font=\bfseries] at (2.5,2.3) {B};
+
+    % Flèche indiquant l'application
+    \draw[->, >=stealth, color=darkred, thick]
+        (0.4,2.3) -- node[above] {$f$} (2.1,2.3);
+
+    % Patates A et B
+    \draw[thick, color=gray]
+        (0,0) ellipse (0.6cm and 1.6cm);
+
+    \draw[thick, color=gray]
+        (2.5,0.2) ellipse (0.4cm and 1.3cm);
+
+    % Éléments de A
+    \node (a) at (0,1.0) {$a$};
+    \node (b) at (0,0.5) {$b$};
+    \node (c) at (0,0.0) {$c$};
+    \node (d) at (0,-0.6) {$d$};
+
+    % Éléments de B
+    \node (b1) at (2.5,0.8) {$1$};
+    \node (b2) at (2.5,0.2) {$2$};
+    \node (b3) at (2.5,-0.5) {$3$};
+
+    % Flèches
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (a) -- (b1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (b) -- (b2);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (c) -- (b1);
+
+    \draw[->, >=stealth, color=darkgreen, thick]
+        (d) -- (b3);
+
+\end{tikzpicture}
+
+\end{center}
+
+Comme $f(a)=f(c)=1$, donc $f$ n'est pas une injection.
 \end{document}
