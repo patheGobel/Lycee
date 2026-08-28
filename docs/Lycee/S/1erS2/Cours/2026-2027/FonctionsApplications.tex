@@ -1636,7 +1636,7 @@ Soit $f$ une fonction définie de $E\longrightarrow F$, d'ensemble de définitio
 $D_f$ et $A$ une partie de $E$.
 
 On appelle \textcolor{darkred}{\textbf{image directe}} (image de $A$ par $f$)
-notée $f(A)$, l'ensemble des images par $f$ de tous les éléments de $A$.
+notée $f(A)$, l'ensemble des images par $f$ de tous les éléments de $D_f \cap A$.
 
 \[
 \boxed{
@@ -1647,5 +1647,77 @@ f(A)=\{y\in F\mid \exists x\in A\mid y=f(x)\}
 \[
 \Longrightarrow
 f(A)=\{f(x)\mid x\in A\}
+\]
+
+\subsubsection*{\textbf{b) Exemple :}}
+
+Soit
+\[
+\begin{array}{rcl}
+f:\mathbb{R} & \longrightarrow & \mathbb{R}\\
+x & \longmapsto & \dfrac{1}{x+1}
+\end{array}
+\]
+
+Trouver les images par $f$ de chacun des deux intervalles de $\mathbb{R}$ suivants :
+
+\[
+A=]-1\,;\,4]
+\qquad;\qquad
+B=[-5\,;\,3].
+\]
+
+$f$ existe ssi $x\neq -1$, $\quad D_f=\mathbb{R}\setminus\{-1\}$
+
+\[
+\ast \forall x\in A,\quad x\in D_f,\quad \text{calculons } f(A).
+\]
+
+\[
+\begin{aligned}
+x\in A
+&\Longrightarrow -1<x\leq4\\
+&\Longrightarrow 0<x+1\leq5\\
+&\Longrightarrow \frac{1}{5}\leq\frac{1}{x+1}\\
+&\Longrightarrow \frac{1}{5}\leq f(x)
+\end{aligned}
+\]
+
+\[
+\boxed{
+f(A)=\left[\frac{1}{5}\,;\,+\infty\right[
+}
+\]
+
+\bigskip
+
+\[
+\ast \forall x\in B\cap D_f
+\Longrightarrow
+x\in[-5\,;\,-1[\cup]-1\,;\,3]
+\]
+
+\[
+\begin{aligned}
+x\in[-5\,;\,-1[
+&\quad\text{ou}\quad x\in]-1\,;\,3]\\
+-5\leq x<-1
+&\quad\text{ou}\quad -1<x\leq3\\
+-4\leq x+1<0
+&\quad\text{ou}\quad 0<x+1\leq4\\
+-\frac{1}{4}\geq\frac{1}{x+1}
+&\quad\text{ou}\quad \frac{1}{4}\leq\frac{1}{x+1}\\
+f(x)\leq-\frac{1}{4}
+&\quad\text{ou}\quad f(x)\geq\frac{1}{4}
+\end{aligned}
+\]
+
+\[
+\boxed{
+f(B)=
+\left]-\infty\,;\,-\frac{1}{4}\right]
+\cup
+\left[\frac{1}{4}\,;\,+\infty\right[
+}
 \]
 \end{document}
