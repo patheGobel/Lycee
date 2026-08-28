@@ -1522,4 +1522,65 @@ D_{f\circ g}
 [-1\,;\,0[\cup]0\,;\,+\infty[
 }
 \]
+
+\textbf{* $D_{g\circ f}$ :}
+
+\[
+\begin{aligned}
+D_{g\circ f}
+&=
+\{x\in\mathbb{R}\setminus\{1\}\mid f(x)\in[-1\,;\,+\infty[\}\\
+&=
+\left\{x\neq1\mid
+\frac{2x-5}{x-1}\geq-1\right\}
+\end{aligned}
+\]
+
+
+\[\textbf{Or }
+\begin{aligned}
+\dfrac{2x-5}{x-1}\geq-1
+&\Longrightarrow
+\dfrac{2x-5}{x-1}+1\geq0\\
+&\Longrightarrow
+\dfrac{3x-6}{x-1}\geq0
+\end{aligned}
+\]
+
+Posons $3x-6=0\Longrightarrow x=2$
+et $x\neq1$.
+
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+
+    \tkzTabInit[
+        espcl=1.75
+    ]{$x$/.5,$3x-6$/.7,$x-1$/.7,
+    $\dfrac{3x-6}{x-1}$/.9}
+    {$-\infty$,$1$,$2$,$+\infty$}
+
+    \tkzTabLine{,-,t,-,z,+,}
+    \tkzTabLine{,-,z,+,t,+,}
+    \tkzTabLine{,+,d,-,z,+,}
+
+\end{tikzpicture}
+\end{center}
+
+\[
+\text{Ce qui donne }x\in]-\infty\,;\,1[\cup[2\,;\,+\infty[
+\]
+
+\[
+D_{g\circ f}
+=
+\{x\neq1\text{ et }x\in]-\infty\,;\,1[\cup[2\,;\,+\infty[\}
+\]
+
+\[
+\boxed{
+D_{g\circ f}
+=
+]-\infty\,;\,1[\cup[2\,;\,+\infty[
+}
+\]
 \end{document}
