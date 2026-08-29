@@ -581,8 +581,8 @@ $
 
 \subsubsection*{\underline{\textcolor{darkred}{ b. Propriété }}}
 
+Pour tout réel $a$, on a :
 \[
-\text{Pour tout réel $a$, on a :}
 \lim_{x \to a^+} \frac{1}{x - a} = +\infty \quad ; \quad \lim_{x \to a^-} \frac{1}{x - a} = -\infty
 \]
 
@@ -590,9 +590,25 @@ $
 \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
         \tkzTabInit[espcl=2,lgt=3]{$x$/.5,$x - a$/.7}{$-\infty$,$a$ ,$+\infty$}
         \tkzTabLine{ ,-,z,+, }
-    \end{tikzpicture}
-\end{center}    
+\end{tikzpicture}
+\end{center}
 
+\paragraph{\underline{Explication :}}
+Le tableau de signes de l'expression $x - a$ permet de déterminer si le dénominateur tend vers $0$ par valeurs positives ($0^+$) ou par valeurs négatives ($0^-$) :
+
+\begin{itemize}
+    \item \textbf{Limite à droite ($x \to a^+$) :} 
+    Lorsque $x > a$ (à droite de $a$), le tableau indique que $x - a$ est \textbf{positif} ($+$). Le dénominateur tend donc vers $0$ par valeurs supérieures, soit $0^+$.
+    \[
+    \text{Par règle des signes : } \lim_{x \to a^+} \frac{1}{x - a} = \frac{1}{0^+} = +\infty
+    \]
+
+    \item \textbf{Limite à gauche ($x \to a^-$) :} 
+    Lorsque $x < a$ (à gauche de $a$), le tableau indique que $x - a$ est \textbf{négatif} ($-$). Le dénominateur tend donc vers $0$ par valeurs inférieures, soit $0^-$.
+    \[
+    \text{Par règle des signes : } \lim_{x \to a^-} \frac{1}{x - a} = \frac{1}{0^-} = -\infty
+    \]
+\end{itemize}
 \subsubsection*{\underline{\textcolor{darkred}{ Exemple }}}    
     \begin{multicols}{4}
 \noindent
