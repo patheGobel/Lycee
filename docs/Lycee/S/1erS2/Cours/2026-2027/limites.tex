@@ -922,5 +922,26 @@ Calculer les limites suivantes :
     \boxed{\lim_{x \to +\infty} (x^2 + 3x - 1) = +\infty}
     \]
 \end{enumerate}
+
 \subsubsection*{\underline{\textcolor{darkred}{ 2. Limite du produit de deux fonctions }}}
+\subsubsection*{\underline{\textcolor{darkred}{ a. Propriété }}}
+
+Soit $x_0 \in \mathbb{R}$, $f$ et $g$ deux fonctions dont chacune admet une limite en $x_0$. Le tableau suivant donne les limites en $x_0$ de la fonction $fg$
+
+\vspace{0.4cm}
+
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    $\displaystyle \lim_{x \to x_0} f(x)$ & $l$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ & $+\infty$ & $\infty$ \\
+    \hline
+    $\displaystyle \lim_{x \to x_0} g(x)$ & $l'$ & $l' \neq 0$ & $l' \neq 0$ & $-\infty$ & $+\infty$ & $-\infty$ & $0$ \\
+    \hline
+    $\displaystyle \lim_{x \to x_0} f(x)g(x)$ & $ll'$ & 
+    $\begin{array}{ccc} +\infty & \text{\textit{si}} & l' > 0 \\ -\infty & \text{\textit{si}} & l' < 0 \end{array}$ & 
+    $\begin{array}{ccc} -\infty & \text{\textit{si}} & l' > 0 \\ +\infty & \text{\textit{si}} & l' < 0 \end{array}$ & 
+    $+\infty$ & $+\infty$ & $-\infty$ & $F.I$ \\
+    \hline
+\end{tabular}
 \end{document}
