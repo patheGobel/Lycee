@@ -1234,4 +1234,98 @@ Soit $x_0 \in \mathbb{R}$, $f$ et $g$ deux fonctions dont chacune admet une limi
     \]
 
 \end{enumerate}
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exercice }}} 
+Calculer les limites suivantes :
+
+\begin{enumerate}
+    \item \textit{Calculons $\displaystyle \lim_{x \to 1} \frac{x^2 - 1}{x^2 + 2x - 3}$ :}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to 1} \frac{x^2 - 1}{x^2 + 2x - 3} :
+    \begin{cases}
+    \displaystyle \lim_{x \to 1} (x^2 - 1) = 0 \\
+    & \text{Par quotient (F.I)} \\
+    \displaystyle \lim_{x \to 1} (x^2 + 2x - 3) = 0
+    \end{cases}
+    \]
+    
+    \vspace{0.2cm}
+    \textit{C'est une Forme Indéterminée (F.I) ; on ne peut pas conclure directement.}
+
+    \vspace{0.4cm}
+
+    \item \textit{Calculons $\displaystyle \lim_{x \to 1^+} \frac{x - 3}{x - 1}$ :}
+    
+    \vspace{0.2cm}
+    
+    \textit{Étudions le signe de $x - 1$.} \\
+    $x - 1 = 0 \implies x = 1$
+    
+    \vspace{0.2cm}
+    
+    \begin{center}
+    \begin{tabular}{|c|ccccc|}
+        \hline
+        $x$ & $-\infty$ & & $1$ & & $+\infty$ \\
+        \hline
+        $x - 1$ & & $-$ & $0$ & $+$ & \\
+        \hline
+    \end{tabular}
+    \end{center}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to 1^+} \frac{x - 3}{x - 1} :
+    \begin{cases}
+    \displaystyle \lim_{x \to 1^+} (x - 3) = -2 \\
+    & \text{Par quotient} \\
+    \displaystyle \lim_{x \to 1^+} (x - 1) = 0^+
+    \end{cases}
+    \]
+    
+    \[
+    \boxed{\lim_{x \to 1^+} \frac{x - 3}{x - 1} = -\infty}
+    \]
+
+    \vspace{0.4cm}
+
+    \item \textit{Calculons $\displaystyle \lim_{x \to +\infty} \frac{x + 1}{x - 1}$ :}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to +\infty} \frac{x + 1}{x - 1} :
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (x + 1) = +\infty \\
+    & \text{Par quotient (F.I)} \\
+    \displaystyle \lim_{x \to +\infty} (x - 1) = +\infty
+    \end{cases}
+    \]
+    
+    \vspace{0.2cm}
+    \textit{C'est une Forme Indéterminée (F.I) ; on ne peut pas conclure directement.}
+
+    \vspace{0.4cm}
+
+    \item \textit{Calculons $\displaystyle \lim_{x \to 1} \frac{x^2 + 1}{x - 3}$ :}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to 1} \frac{x^2 + 1}{x - 3} :
+    \begin{cases}
+    \displaystyle \lim_{x \to 1} (x^2 + 1) = 2 \\
+    & \text{Par quotient} \\
+    \displaystyle \lim_{x \to 1} (x - 3) = -2
+    \end{cases}
+    \]
+    
+    \[
+    \boxed{\lim_{x \to 1} \frac{x^2 + 1}{x - 3} = -1}
+    \]
+\end{enumerate}
 \end{document}
