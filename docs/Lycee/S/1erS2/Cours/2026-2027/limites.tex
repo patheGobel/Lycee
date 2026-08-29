@@ -578,4 +578,39 @@ $
     
     $ \boxed{\lim_{x \to 1^+} f(x) = 1}$
 \end{itemize}
+
+\subsubsection*{\underline{\textcolor{darkred}{ b. Propriété }}}
+
+\[
+\text{Pour tout réel $a$, on a :}
+\lim_{x \to a^+} \frac{1}{x - a} = +\infty \quad ; \quad \lim_{x \to a^-} \frac{1}{x - a} = -\infty
+\]
+
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+        \tkzTabInit[espcl=2,lgt=3]{$x$/.5,$x - a$/.7}{$-\infty$,$a$ ,$+\infty$}
+        \tkzTabLine{ ,-,z,+, }
+    \end{tikzpicture}
+\end{center}    
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple }}}    
+    \begin{multicols}{4}
+\noindent
+$\displaystyle \lim_{x \to 0^+} \frac{1}{x} = +\infty$
+
+\columnbreak
+
+\noindent
+$\displaystyle \lim_{x \to 2^+} \frac{1}{x - 2} = +\infty$
+
+\columnbreak
+
+\noindent
+$\displaystyle \lim_{x \to 0^-} \frac{1}{x} = -\infty$
+
+\columnbreak
+
+\noindent
+$\displaystyle \lim_{x \to 2^-} \frac{1}{x - 2} = -\infty$
+\end{multicols}
 \end{document}
