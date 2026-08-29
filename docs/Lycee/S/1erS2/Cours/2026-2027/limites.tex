@@ -665,10 +665,10 @@ Soit $f$ une fonction et $x_0 \in \mathbb{R}$. La fonction $f$ admet une limite 
 \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = l
 \]
 
-Pour déterminer si une fonction $f$ admet ou non une limite en un point $x_0$, on calcule la limite à gauche en $x_0$ et la limite à droite en $x_0$ de $f$, puis on compare les résultats.
-
 \vspace{0.3cm}
 \noindent{\Large\bfseries\color{darkred} Méthode :}
+
+Pour déterminer si une fonction $f$ admet ou non une limite en un point $x_0$, on calcule la limite à gauche en $x_0$ et la limite à droite en $x_0$ de $f$, puis on compare les résultats.
 \begin{itemize}
 \item Si $\displaystyle \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x)$, alors $f$ admet une limite $l$ en $x_0$ vérifiant :
 \[
@@ -679,4 +679,42 @@ l = \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x).
 \item Si $\displaystyle \lim_{x \to x_0^+} f(x) \neq \lim_{x \to x_0^-} f(x)$, alors $f$ n'admet pas de limite en $x_0$.
 \end{itemize}
 
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple }}}  
+
+\noindent 1. \textit{Soit $f$ la fonction définie par : } 
+$\begin{cases} f(x) = x - 1 & \text{\textit{si }} x > 0 \\ f(x) = x^2 + 1 & \text{\textit{si }} x \leq 0 \end{cases}.$
+
+\vspace{0.1cm}
+
+\noindent \textit{La fonction $f$ admet-elle une limite en $0$ ?} \\
+\textit{On a :}
+
+\begin{itemize}
+    \item $\displaystyle \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} x^2 + 1 = (0)^2 + 1 = 1$
+    \vspace{0.2cm}
+    \item $\displaystyle \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} x - 1 = (0) - 1 = -1$
+\end{itemize}
+
+\noindent \textit{Ainsi, $\displaystyle \lim_{x \to 0^+} f(x) \neq \lim_{x \to 0^-} f(x)$, donc $f$ n'admet pas de limite en $0$.}
+
+\vspace{0.6cm}
+
+\noindent 2. \textit{Soit $g$ la fonction définie par : } 
+$\begin{cases} g(x) = x - 1 & \text{\textit{si }} x > 1 \\ g(x) = x^2 + x - 2 & \text{\textit{si }} x \leq 1 \end{cases}.$
+
+\vspace{0.1cm}
+
+\noindent \textit{La fonction $g$ admet-elle une limite en $1$ ?} \\
+\textit{On a :}
+
+\begin{itemize}
+    \item $\displaystyle \lim_{x \to 1^-} g(x) = \lim_{x \to 1^-} x^2 + x - 2 = (1)^2 + (1) - 2 = 0$
+    \vspace{0.2cm}
+    \item $\displaystyle \lim_{x \to 1^+} g(x) = \lim_{x \to 1^+} x - 1 = (1) - 1 = 0$
+\end{itemize}
+
+\noindent \textit{Ainsi, $\displaystyle \lim_{x \to 1^+} g(x) = \lim_{x \to 1^-} g(x) = 0$, d'où $g$ admet une limite en $1$ et on a :}
+\[
+\lim_{x \to 1} g(x) = 0.
+\]
 \end{document}
