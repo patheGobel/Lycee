@@ -1105,5 +1105,133 @@ Soit $x_0 \in \mathbb{R}$, $f$ et $g$ deux fonctions dont chacune admet une limi
     $F.I$ & $F.I$ \\
     \hline
 \end{tabular}
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple }}} 
+\begin{enumerate}
 
+    \item Soit \(l\) la fonction définie par :
+    \[
+        l(x)=\frac{x^2-1}{x^2-x+2}.
+    \]
+    
+    Calculons \(\displaystyle\lim_{x\to1}l(x)\).
+
+    On a :
+    \[
+        \lim_{x\to1}\frac{x^2-1}{x^2-x+2}
+        =\left\langle\frac{0}{0}\right\rangle
+    \]
+    est une forme indéterminée ; on ne peut conclure directement.
+
+    \bigskip
+
+    \item Soit \(f\) la fonction définie par :
+    \[
+        f(x)=\frac{x+3}{x-1}.
+    \]
+    Calculons \(\displaystyle\lim_{x\to1^+}f(x)\).
+
+    On a :
+    \[
+        \lim_{x\to1^+}f(x)
+        =
+        \lim_{x\to1^+}\frac{x+3}{x-1}
+        =
+        \left\langle\frac{4}{0}\right\rangle.
+    \]
+
+    Étudions le signe de \(x-1\).
+
+    \[
+        x-1=0\quad\Longrightarrow\quad x=1
+    \]
+
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[espcl=1.5,lgt=2]{$x$/.5,$x - 1$/.7}{$-\infty$,$1$,$+\infty$}
+    \tkzTabLine{ ,-,z,+, }
+\end{tikzpicture}
+\end{center}
+
+    \(x-1\) est positif à droite de \(1\). Donc
+    \[
+        \lim_{x\to1^+}f(x)
+        =
+        \left\langle\frac{4}{0^+}\right\rangle
+        =+\infty.
+    \]
+
+    \[
+        \boxed{\displaystyle\lim_{x\to1^+}f(x)=+\infty}
+    \]
+
+    \bigskip
+
+    \item Soit \(g\) la fonction définie par :
+    \[
+        g(x)=\frac{x-5}{x^2-3x+2}.
+    \]
+    Calculons \(\displaystyle\lim_{x\to2^-}g(x)\).
+
+    On a :
+    \[
+        \lim_{x\to2^-}g(x)
+        =
+        \lim_{x\to2^-}\frac{x-5}{x^2-3x+2}
+        =
+        \left\langle\frac{-3}{0}\right\rangle.
+    \]
+
+    Étudions le signe de \(x^2-3x+2\).
+
+    \[
+        x^2-3x+2=0
+        \quad\Longrightarrow\quad
+        x=1\text{ ou }x=2
+    \]
+
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[espcl=1.5,lgt=3]{$x$/.5,$x^2-3x+2$/.7}
+    {$-\infty$,$1$,$2$,$+\infty$}
+    \tkzTabLine{ ,+,z,-,z,+, }
+\end{tikzpicture}
+\end{center}
+
+    \(x^2-3x+2\) est négatif à gauche de \(2\).
+    Donc,
+    \[
+        \lim_{x\to2^-}g(x)
+        =
+        \left\langle\frac{-3}{0^-}\right\rangle
+        =+\infty.
+    \]
+
+    \[
+        \boxed{\displaystyle\lim_{x\to2^-}g(x)=+\infty}
+    \]
+
+    \bigskip
+
+    \item Soit \(h\) la fonction définie par :
+    \[
+        h(x)=\frac{5}{x-1}.
+    \]
+
+    Calculons \(\displaystyle\lim_{x\to-\infty}h(x)\).
+
+    On a :
+    \[
+        \lim_{x\to-\infty}h(x)
+        =
+        \lim_{x\to-\infty}\frac{5}{x-1}
+        =
+        \left\langle\frac{5}{-\infty}\right\rangle
+        =0.
+    \]
+
+    \[
+        \boxed{\displaystyle\lim_{x\to-\infty}h(x)=0}
+    \]
+
+\end{enumerate}
 \end{document}
