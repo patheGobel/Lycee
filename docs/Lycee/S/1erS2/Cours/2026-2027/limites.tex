@@ -659,4 +659,24 @@ Le tableau de signes de l'expression $x - a$ permet de déterminer si le dénomi
 \end{multicols}
 
 \subsection*{\underline{\textcolor{darkred}{ 6. Existence de limite d’une fonction en un point $x_{0}$ }}}
+\subsubsection*{\underline{\textcolor{darkred}{ b. Propriété }}}
+Soit $f$ une fonction et $x_0 \in \mathbb{R}$. La fonction $f$ admet une limite $l$ en $x_0$ si et seulement si on a :
+\[
+\lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x) = l
+\]
+
+Pour déterminer si une fonction $f$ admet ou non une limite en un point $x_0$, on calcule la limite à gauche en $x_0$ et la limite à droite en $x_0$ de $f$, puis on compare les résultats.
+
+\vspace{0.3cm}
+\noindent{\Large\bfseries\color{darkred} Méthode :}
+\begin{itemize}
+\item Si $\displaystyle \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x)$, alors $f$ admet une limite $l$ en $x_0$ vérifiant :
+\[
+l = \lim_{x \to x_0^+} f(x) = \lim_{x \to x_0^-} f(x).
+\]
+
+\vspace{0.2cm}
+\item Si $\displaystyle \lim_{x \to x_0^+} f(x) \neq \lim_{x \to x_0^-} f(x)$, alors $f$ n'admet pas de limite en $x_0$.
+\end{itemize}
+
 \end{document}
