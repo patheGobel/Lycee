@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  29 AUG 2026 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  29 AUG 2026 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1379,8 +1379,8 @@ Package rerunfilecheck Info: File `limites.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36400 strings out of 467533
- 757321 string characters out of 5422138
+ 36401 strings out of 467533
+ 757331 string characters out of 5422138
  1244439 words of memory out of 5000000
  64602 multiletter control sequences out of 15000+600000
  703616 words of font info for 107 fonts, out of 8000000 for 9000
@@ -1395,10 +1395,10 @@ lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on build/limites.pdf (2 pages, 167920 bytes).
+Output written on build/limites.pdf (2 pages, 169113 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
