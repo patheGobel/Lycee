@@ -944,4 +944,65 @@ Soit $x_0 \in \mathbb{R}$, $f$ et $g$ deux fonctions dont chacune admet une limi
     $+\infty$ & $+\infty$ & $-\infty$ & $F.I$ \\
     \hline
 \end{tabular}
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple }}} 
+
+\begin{itemize}
+    \item \textit{Soit $f$ la fonction définie par : $f(x) = -2x^2$.} \\
+    \textit{Calculons $\displaystyle \lim_{x \to +\infty} f(x)$.}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to +\infty} (-2x^2) :
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} -2 = -2 \\
+    & \text{Par produit} \\
+    \displaystyle \lim_{x \to +\infty} x^2 = +\infty
+    \end{cases}
+    \]
+    
+    \[
+    \boxed{\lim_{x \to +\infty} f(x) = -\infty}
+    \]
+
+    \vspace{0.4cm}
+
+    \item \textit{Soit $g$ la fonction définie par : $g(x) = x \left(-3 + \dfrac{1}{x}\right)$.} \\
+    \textit{Calculons $\displaystyle \lim_{x \to -\infty} g(x)$.}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to -\infty} x \left(-3 + \frac{1}{x}\right) :
+    \begin{cases}
+    \displaystyle \lim_{x \to -\infty} x = -\infty \\
+    & \text{Par produit} \\
+    \displaystyle \lim_{x \to -\infty} \left(-3 + \frac{1}{x}\right) = -3
+    \end{cases}
+    \]
+    
+    \[
+    \boxed{\lim_{x \to -\infty} g(x) = +\infty}
+    \]
+
+    \vspace{0.4cm}
+
+    \item \textit{Soit $h$ la fonction définie par : $h(x) = (x - 1) \left(1 + \dfrac{1}{x - 1}\right)$.} \\
+    \textit{Calculons $\displaystyle \lim_{x \to 1^-} h(x)$.}
+    
+    \vspace{0.2cm}
+    
+    \[
+    \lim_{x \to 1^-} (x - 1) \left(1 + \frac{1}{x - 1}\right) :
+    \begin{cases}
+    \displaystyle \lim_{x \to 1^-} (x - 1) = 0 \\
+    & \text{Par produit (F.I)} \\
+    \displaystyle \lim_{x \to 1^-} \left(1 + \frac{1}{x - 1}\right) = -\infty
+    \end{cases}
+    \]
+    
+    \vspace{0.2cm}
+    \textit{C'est une Forme Indéterminée (F.I) ; on ne peut pas conclure directement.}
+\end{itemize}
 \end{document}
