@@ -610,23 +610,51 @@ Le tableau de signes de l'expression $x - a$ permet de déterminer si le dénomi
     \]
 \end{itemize}
 \subsubsection*{\underline{\textcolor{darkred}{ Exemple }}}    
-    \begin{multicols}{4}
+
 \noindent
-$\displaystyle \lim_{x \to 0^+} \frac{1}{x} = +\infty$
+\begin{multicols}{2}
+
+\noindent \textbf{1. Limites de $\dfrac{1}{x}$ en $0$ :}
+
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[espcl=1.5,lgt=2]{$x$/.5,$x$/.7}{$-\infty$,$0$,$+\infty$}
+    \tkzTabLine{ ,-,z,+, }
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{À droite ($x \to 0^+$) :} d'après le tableau, pour $x > 0$, le dénominateur est positif ($+$). Donc $x \to 0^+$.
+    \[
+    \lim_{x \to 0^+} \frac{1}{x} = \frac{1}{0^+} = +\infty
+    \]
+    \item \textbf{À gauche ($x \to 0^-$) :} d'après le tableau, pour $x < 0$, le dénominateur est négatif ($-$). Donc $x \to 0^-$.
+    \[
+    \lim_{x \to 0^-} \frac{1}{x} = \frac{1}{0^-} = -\infty
+    \]
+\end{itemize}
 
 \columnbreak
 
-\noindent
-$\displaystyle \lim_{x \to 2^+} \frac{1}{x - 2} = +\infty$
+\noindent \textbf{2. Limites de $\dfrac{1}{x - 2}$ en $2$ :}
 
-\columnbreak
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[espcl=1.5,lgt=2]{$x$/.5,$x - 2$/.7}{$-\infty$,$2$,$+\infty$}
+    \tkzTabLine{ ,-,z,+, }
+\end{tikzpicture}
+\end{center}
 
-\noindent
-$\displaystyle \lim_{x \to 0^-} \frac{1}{x} = -\infty$
+\begin{itemize}
+    \item \textbf{À droite ($x \to 2^+$) :} d'après le tableau, pour $x > 2$, l'expression $x - 2$ est positive ($+$). Le dénominateur tend vers $0^+$.
+    \[
+    \lim_{x \to 2^+} \frac{1}{x - 2} = \frac{1}{0^+} = +\infty
+    \]
+    \item \textbf{À gauche ($x \to 2^-$) :} d'après le tableau, pour $x < 2$, l'expression $x - 2$ est négative ($-$). Le dénominateur tend vers $0^-$.
+    \[
+    \lim_{x \to 2^-} \frac{1}{x - 2} = \frac{1}{0^-} = -\infty
+    \]
+\end{itemize}
 
-\columnbreak
-
-\noindent
-$\displaystyle \lim_{x \to 2^-} \frac{1}{x - 2} = -\infty$
 \end{multicols}
 \end{document}
