@@ -2158,4 +2158,128 @@ Soit $f$ une fonction du type : $\dfrac{u(x)}{v(x)}$, avec $u$ et $v$ des foncti
     
     \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} f(x) = \frac{2}{3}}
 \end{enumerate}
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exercice : }}}
+
+Calculer les limites suivantes :
+
+
+\begin{enumerate}
+    \item 
+    $
+    \displaystyle \lim_{x \to -\infty} \frac{x + \sqrt{4x^2 + 1}}{x - 1}:
+    \begin{cases}
+    \displaystyle \lim_{x \to -\infty} (x + \sqrt{4x^2 + 1}) = \text{F.I.}\\[3mm]
+    &\textit{donc le quotient est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to -\infty} (x - 1) = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to -\infty} \frac{x + \sqrt{4x^2 + 1}}{x - 1} &= \lim_{x \to -\infty} \frac{x + |x|\sqrt{4 + \dfrac{1}{x^2}}}{x\left(1 - \dfrac{1}{x}\right)} \\
+        &= \lim_{x \to -\infty} \frac{x - x\sqrt{4 + \dfrac{1}{x^2}}}{x\left(1 - \dfrac{1}{x}\right)} \quad (|x| = -x \text{ car } x < 0) \\
+        &= \lim_{x \to -\infty} \frac{x\left(1 - \sqrt{4 + \dfrac{1}{x^2}}\right)}{x\left(1 - \dfrac{1}{x}\right)} \\
+        &= \lim_{x \to -\infty} \frac{1 - \sqrt{4 + \dfrac{1}{x^2}}}{1 - \dfrac{1}{x}} \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to -\infty} \left(1 - \sqrt{4 + \frac{1}{x^2}}\right) = 1 - 2 = -1 \\[3mm]
+    &\text{ Par quotient }\\
+    \displaystyle \lim_{x \to -\infty} \left(1 - \frac{1}{x}\right) = 1
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to -\infty} \frac{x + \sqrt{4x^2 + 1}}{x - 1} = -1}
+
+    \vspace{0.6cm}
+
+    \item 
+    $
+    \displaystyle \lim_{x \to +\infty} \frac{x + 1 - \sqrt{x^2 + 2x + 1}}{x}:
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (x + 1 - \sqrt{x^2 + 2x + 1}) = \text{F.I.}\\[3mm]
+    &\textit{donc le quotient est une FI.}\\
+    \displaystyle \lim_{x \to +\infty} x = +\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \frac{x + 1 - \sqrt{x^2 + 2x + 1}}{x} &= \lim_{x \to +\infty} \frac{(x + 1 - \sqrt{x^2 + 2x + 1})(x + 1 + \sqrt{x^2 + 2x + 1})}{x(x + 1 + \sqrt{x^2 + 2x + 1})} \\
+        &= \lim_{x \to +\infty} \frac{(x + 1)^2 - (x^2 + 2x + 1)}{x(x + 1 + \sqrt{x^2 + 2x + 1})} \\
+        &= \lim_{x \to +\infty} \frac{0}{x(x + 1 + \sqrt{x^2 + 2x + 1})} \\
+        &= 0
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} \frac{x + 1 - \sqrt{x^2 + 2x + 1}}{x} = 0}
+
+    \vspace{0.6cm}
+
+    \item 
+    $
+    \displaystyle \lim_{x \to +\infty} \frac{\sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1}}{x - \sqrt{4x^2 - 1}}:
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (\sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1}) = -\infty\\[3mm]
+    &\textit{donc le quotient est une FI.}\\
+    \displaystyle \lim_{x \to +\infty} (x - \sqrt{4x^2 - 1}) = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \frac{\sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1}}{x - \sqrt{4x^2 - 1}} &= \lim_{x \to +\infty} \frac{|x|\sqrt{1 + \dfrac{1}{x^2}} - |x|\sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}}}{x - |x|\sqrt{4 - \dfrac{1}{x^2}}} \\
+        &= \lim_{x \to +\infty} \frac{x\sqrt{1 + \dfrac{1}{x^2}} - x\sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}}}{x - x\sqrt{4 - \dfrac{1}{x^2}}} \quad (|x| = x \text{ car } x > 0) \\
+        &= \lim_{x \to +\infty} \frac{x\left(\sqrt{1 + \dfrac{1}{x^2}} - \sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}}\right)}{x\left(1 - \sqrt{4 - \dfrac{1}{x^2}}\right)} \\
+        &= \lim_{x \to +\infty} \frac{\sqrt{1 + \dfrac{1}{x^2}} - \sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}}}{1 - \sqrt{4 - \dfrac{1}{x^2}}} \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \left(\sqrt{1 + \frac{1}{x^2}} - \sqrt{4 + \frac{1}{x} - \frac{1}{x^2}}\right) = 1 - 2 = -1 \\[3mm]
+    &\text{ Par quotient }\\
+    \displaystyle \lim_{x \to +\infty} \left(1 - \sqrt{4 - \frac{1}{x^2}}\right) = 1 - 2 = -1
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} \frac{\sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1}}{x - \sqrt{4x^2 - 1}} = 1}
+
+    \vspace{0.6cm}
+
+    \item 
+    $
+    \displaystyle \lim_{x \to +\infty} \frac{\sqrt{x^2 + 1} + \sqrt{x^2 + 2x + 3}}{\sqrt{x^2 - 1} + \sqrt{x^2 + x - 1}}:
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (\sqrt{x^2 + 1} + \sqrt{x^2 + 2x + 3}) = +\infty\\[3mm]
+    &\textit{donc le quotient est une FI.}\\
+    \displaystyle \lim_{x \to +\infty} (\sqrt{x^2 - 1} + \sqrt{x^2 + x - 1}) = +\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \frac{\sqrt{x^2 + 1} + \sqrt{x^2 + 2x + 3}}{\sqrt{x^2 - 1} + \sqrt{x^2 + x - 1}} &= \lim_{x \to +\infty} \frac{|x|\sqrt{1 + \dfrac{1}{x^2}} + |x|\sqrt{1 + \dfrac{2}{x} + \dfrac{3}{x^2}}}{|x|\sqrt{1 - \dfrac{1}{x^2}} + |x|\sqrt{1 + \dfrac{1}{x} - \dfrac{1}{x^2}}} \\
+        &= \lim_{x \to +\infty} \frac{x\sqrt{1 + \dfrac{1}{x^2}} + x\sqrt{1 + \dfrac{2}{x} + \dfrac{3}{x^2}}}{x\sqrt{1 - \dfrac{1}{x^2}} + x\sqrt{1 + \dfrac{1}{x} - \dfrac{1}{x^2}}} \quad (|x| = x \text{ car } x > 0) \\
+        &= \lim_{x \to +\infty} \frac{x\left(\sqrt{1 + \dfrac{1}{x^2}} + \sqrt{1 + \dfrac{2}{x} + \dfrac{3}{x^2}}\right)}{x\left(\sqrt{1 - \dfrac{1}{x^2}} + \sqrt{1 + \dfrac{1}{x} - \dfrac{1}{x^2}}\right)} \\
+        &= \lim_{x \to +\infty} \frac{\sqrt{1 + \dfrac{1}{x^2}} + \sqrt{1 + \dfrac{2}{x} + \dfrac{3}{x^2}}}{\sqrt{1 - \dfrac{1}{x^2}} + \sqrt{1 + \dfrac{1}{x} - \dfrac{1}{x^2}}} \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \left(\sqrt{1 + \frac{1}{x^2}} + \sqrt{1 + \frac{2}{x} + \frac{3}{x^2}}\right) = 1 + 1 = 2 \\[3mm]
+    &\text{ Par quotient }\\
+    \displaystyle \lim_{x \to +\infty} \left(\sqrt{1 - \frac{1}{x^2}} + \sqrt{1 + \frac{1}{x} - \frac{1}{x^2}}\right) = 1 + 1 = 2
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} \frac{\sqrt{x^2 + 1} + \sqrt{x^2 + 2x + 3}}{\sqrt{x^2 - 1} + \sqrt{x^2 + x - 1}} = 1}
+\end{enumerate}
 \end{document}
