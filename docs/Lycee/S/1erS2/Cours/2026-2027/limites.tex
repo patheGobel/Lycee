@@ -2091,7 +2091,7 @@ Soit $f$ une fonction du type : $\dfrac{u(x)}{v(x)}$, avec $u$ et $v$ des foncti
 \end{itemize}
 
 \subsubsection*{\underline{\textcolor{darkred}{ Exemple : }}}
-\begin{itemize}
+\begin{enumerate}
 \item \textit{Soit $g$ la fonction définie par $g(x) = \dfrac{x + \sqrt{x^2 + 4}}{2x + \sqrt{x^2 + 1}}$. Calculons $\displaystyle \lim_{x \to +\infty} g(x)$.}
     
     \vspace{0.1cm}
@@ -2123,5 +2123,39 @@ Soit $f$ une fonction du type : $\dfrac{u(x)}{v(x)}$, avec $u$ et $v$ des foncti
     \vspace{0.2cm}
     
     \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} g(x) = \frac{2}{3}}
-\end{itemize}
+    
+    \item \textit{Soit $f$ la fonction définie par $f(x) = \dfrac{x - \sqrt{x^2 + x + 1}}{2x - \sqrt{4x^2 + 3x + 1}}$. Calculons $\displaystyle \lim_{x \to +\infty} f(x)$.}
+    
+    \vspace{0.1cm}
+    
+    $
+    \displaystyle \lim_{x \to +\infty} f(x):
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (x - \sqrt{x^2 + x + 1}) = \text{F.I.}\\[3mm]
+    &\textit{donc le quotient est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to +\infty} (2x - \sqrt{4x^2 + 3x + 1}) = \text{F.I.}
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \frac{x - \sqrt{x^2 + x + 1}}{2x - \sqrt{4x^2 + 3x + 1}} &= \lim_{x \to +\infty} \frac{\left(x - \sqrt{x^2 + x + 1}\right)\left(x + \sqrt{x^2 + x + 1}\right)\left(2x + \sqrt{4x^2 + 3x + 1}\right)}{\left(2x - \sqrt{4x^2 + 3x + 1}\right)\left(2x + \sqrt{4x^2 + 3x + 1}\right)\left(x + \sqrt{x^2 + x + 1}\right)} \\
+        &= \lim_{x \to +\infty} \frac{\left[x^2 - (x^2 + x + 1)\right]\left(2x + \sqrt{4x^2 + 3x + 1}\right)}{\left[4x^2 - (4x^2 + 3x + 1)\right]\left(x + \sqrt{x^2 + x + 1}\right)} \\
+        &= \lim_{x \to +\infty} \frac{(-x - 1)\left(2x + \sqrt{4x^2 + 3x + 1}\right)}{(-3x - 1)\left(x + \sqrt{x^2 + x + 1}\right)} \\
+        &= \lim_{x \to +\infty} \frac{x\left(-1 - \dfrac{1}{x}\right) \cdot x\left(2 + \sqrt{4 + \dfrac{3}{x} + \dfrac{1}{x^2}}\right)}{x\left(-3 - \dfrac{1}{x}\right) \cdot x\left(1 + \sqrt{1 + \dfrac{1}{x} + \dfrac{1}{x^2}}\right)} \quad (|x| = x \text{ car } x > 0) \\
+        &= \lim_{x \to +\infty} \frac{x^2\left(-1 - \dfrac{1}{x}\right)\left(2 + \sqrt{4 + \dfrac{3}{x} + \dfrac{1}{x^2}}\right)}{x^2\left(-3 - \dfrac{1}{x}\right)\left(1 + \sqrt{1 + \dfrac{1}{x} + \dfrac{1}{x^2}}\right)} \\
+        &= \lim_{x \to +\infty} \frac{\left(-1 - \dfrac{1}{x}\right)\left(2 + \sqrt{4 + \dfrac{3}{x} + \dfrac{1}{x^2}}\right)}{\left(-3 - \dfrac{1}{x}\right)\left(1 + \sqrt{1 + \dfrac{1}{x} + \dfrac{1}{x^2}}\right)} \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \left(-1 - \frac{1}{x}\right)\left(2 + \sqrt{4 + \frac{3}{x} + \frac{1}{x^2}}\right) = (-1)(2 + 2) = -4 \\[3mm]
+    &\text{ Par quotient }\\
+    \displaystyle \lim_{x \to +\infty} \left(-3 - \frac{1}{x}\right)\left(1 + \sqrt{1 + \frac{1}{x} + \frac{1}{x^2}}\right) = (-3)(1 + 1) = -6
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} f(x) = \frac{2}{3}}
+\end{enumerate}
 \end{document}
