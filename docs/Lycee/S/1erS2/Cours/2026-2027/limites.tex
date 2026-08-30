@@ -1934,6 +1934,39 @@ Soit $f$ une fonction du type : $f = \sqrt{p} + q$, avec $p$ et $q$ des fonction
     \vspace{0.2cm}
     
     \text{\textit{Donc, }} \boxed{\lim_{x \to -\infty} f(x) = +\infty}
+    
+    \item \textit{Soit $g$ la fonction définie par $g(x) = \sqrt{x^2 + 1} - x - 1$. Calculons $\displaystyle \lim_{x \to +\infty} g(x)$.}
+    
+    \vspace{0.1cm}
+    
+    $
+    \displaystyle \lim_{x \to +\infty} g(x):
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} = +\infty\\[3mm]
+    &\textit{donc la somme est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to +\infty} (-x - 1) = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} - x - 1 &= \lim_{x \to +\infty} \frac{(\sqrt{x^2 + 1} - (x + 1))(\sqrt{x^2 + 1} + (x + 1))}{\sqrt{x^2 + 1} + x + 1} \\
+        &= \lim_{x \to +\infty} \frac{(\sqrt{x^2 + 1})^2 - (x + 1)^2}{\sqrt{x^2 + 1} + x + 1} \\
+        &= \lim_{x \to +\infty} \frac{-2x}{\sqrt{x^2 + 1} + x + 1} \\
+        &= \lim_{x \to +\infty} \frac{-2x}{x \left( \sqrt{1 + \dfrac{1}{x^2}} + 1 + \dfrac{1}{x} \right)} \quad (|x| = x \text{ car } x > 0) \\
+        &= \lim_{x \to +\infty} \frac{-2}{\sqrt{1 + \dfrac{1}{x^2}} + 1 + \dfrac{1}{x}} \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to +\infty} -2 = -2 \\[3mm]
+    &\text{ Par quotient }\\
+    \displaystyle \lim_{x \to +\infty} \left( \sqrt{1 + \frac{1}{x^2}} + 1 + \frac{1}{x} \right) = 2
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} g(x) = -1}
 \end{enumerate}
 
 \end{document}
