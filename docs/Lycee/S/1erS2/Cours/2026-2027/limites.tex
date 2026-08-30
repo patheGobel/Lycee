@@ -2320,4 +2320,18 @@ Si pour tout $x \in I$, on a : $g(x) \le f(x) \le h(x)$ et que $\displaystyle \l
 Soient $f$ et $g$ deux fonctions définies sur un intervalle ouvert $I$ et $x_0 \in I$.
 
 Si pour tout $x \in I$, on a : $|f(x) - l| \le g(x)$ et $\displaystyle \lim_{x \to x_0} g(x) = 0$, alors $\displaystyle \lim_{x \to x_0} f(x) = l$
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple }}}
+
+Soit $f(x) = \dfrac{\cos 2x}{x^2}$. Calculons : $\displaystyle \lim_{x \to +\infty} f(x)$.
+\vspace{0.2cm}
+
+\textit{Soit $x \in ]0 \,;\, +\infty[$, on a :}
+\begin{align*}
+    |\cos 2x| \le 1 &\implies \frac{|\cos 2x|}{x^2} \le \frac{1}{x^2} \implies \left|\frac{\cos 2x}{x^2}\right| \le \frac{1}{x^2} \implies |f(x)| \le \frac{1}{x^2}.
+\end{align*}
+
+\vspace{0.1cm}
+
+\textit{Or, } $\displaystyle \lim_{x \to +\infty} \frac{1}{x^2} = 0$. \textit{Donc d'après le théorème des majoration, } $\displaystyle \lim_{x \to +\infty} f(x) = 0$
 \end{document}
