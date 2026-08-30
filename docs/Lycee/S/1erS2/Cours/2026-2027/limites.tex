@@ -1429,6 +1429,19 @@ Calculer les limites suivantes :
 \section*{\underline{\textcolor{darkred}{ III. Calculs de limites de certaines fonctions}}}
 \subsection*{\underline{\textcolor{darkred}{ 1. Limites à l’infini des fonctions polynômes }}}
 \subsubsection*{\underline{\textcolor{darkred}{ a. Propriété }}}
-La limite à l’infini d’une fonction polynôme est égale à la limite de son monôme du plus
-haut degré
+
+La limite à l'infini d'une fonction polynôme est égale à la limite de son monôme du plus haut degré.
+
+\vspace{0.3cm}
+
+\noindent En effet, on a $f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0$, avec $a_n$, $a_{n-1}$, \dots, $a_0$ des réels tels que $a_n \neq 0$.
+
+\begin{align*}
+\lim_{x \to \pm\infty} f(x) &= \lim_{x \to \pm\infty} (a_n x^n + a_{n-1} x^{n-1} + \dots + a_0) \\
+&= \lim_{x \to \pm\infty} a_n x^n \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) \\
+&= \lim_{x \to \pm\infty} a_n x^n \times \lim_{x \to \pm\infty} \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) \\
+&= \lim_{x \to \pm\infty} a_n x^n \quad \text{car} \quad \lim_{x \to \pm\infty} \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) = 1
+\end{align*}
+
+\noindent Donc $\displaystyle \lim_{x \to \pm\infty} f(x) = \lim_{x \to \pm\infty} a_n x^n$.
 \end{document}
