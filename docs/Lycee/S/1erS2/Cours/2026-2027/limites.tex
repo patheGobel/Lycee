@@ -1901,4 +1901,39 @@ Soit $f$ une fonction du type : $f = \sqrt{p} + q$, avec $p$ et $q$ des fonction
     $f(x) = \dfrac{(\sqrt{p} + q)(\sqrt{p} - q)}{\sqrt{p} - q}$, ensuite mettre $x$ en facteur au numérateur et au dénominateur, puis simplifier $x$, si nécessaire, avant de calculer la limite du quotient obtenu.
 \end{itemize}
 
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple : }}}
+
+\begin{enumerate}
+    \item \textit{Soit $f$ la fonction définie par $f(x) = \sqrt{4x^2 - 3x + 1} + x + 2$. Calculons $\displaystyle \lim_{x \to -\infty} f(x)$.}
+    
+    \vspace{0.1cm}
+    
+    $
+    \displaystyle \lim_{x \to -\infty} f(x):
+    \begin{cases}
+    \displaystyle \lim_{x \to -\infty} \sqrt{4x^2 - 3x + 1} = +\infty\\[3mm]
+    &\textit{donc la somme est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to -\infty} (x + 2) = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to -\infty} \sqrt{4x^2 - 3x + 1} + x + 2 &= \lim_{x \to -\infty} |x|\sqrt{4 - \frac{3}{x} + \dfrac{1}{x^2}} + x + 2 \\
+        &=\lim_{x \to -\infty} -x\sqrt{4 - \frac{3}{x} + \frac{1}{x^2}} + x + 2 \quad (|x| = -x \text{ car } x < 0) \\
+        &=\lim_{x \to -\infty} x \left( -\sqrt{4 - \dfrac{3}{x} + \dfrac{1}{x^2}} + 1 + \dfrac{2}{x} \right)\\
+        &=\begin{cases}
+    \displaystyle \lim_{x \to -\infty} x = -\infty \\[3mm]
+    &\text{ Par produit }\\
+    \displaystyle \lim_{x \to -\infty} \left( -\sqrt{4 - \frac{3}{x} + \frac{1}{x^2}} + 1 + \frac{2}{x} \right) = -1
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to -\infty} f(x) = +\infty}
+\end{enumerate}
+
 \end{document}
