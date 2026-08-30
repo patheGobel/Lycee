@@ -2080,11 +2080,48 @@ Calculer les limites suivantes :
 \end{enumerate}
 
 \subsection*{\textcolor{darkred}{\underline{5. Limites à l'infini des fonctions du type : $f(x) = \frac{u(x)}{v(x)}$,} \\[0.15cm] \underline{où $u$ et $v$ comportent des radicaux}}}
+
 \subsubsection*{\underline{\textcolor{darkred}{ Méthode : }}}
+
 Soit $f$ une fonction du type : $\dfrac{u(x)}{v(x)}$, avec $u$ et $v$ des fonctions comportant des radicaux.
 \begin{itemize}
     \item Si le calcul direct de la limite de $f$ donne une forme indéterminée, alors on peut chercher à factoriser $x$ au numérateur et au dénominateur, puis simplifier $f(x)$.\\
     Ensuite, on recalcule la limite avec l'expression simplifiée de $f(x)$.
     \item Si on voit qu'en mettant $x$ en facteur, le calcul de la limite du quotient donnerait une forme indéterminée, alors on peut réécrire $f(x)$ en utilisant les expressions conjuguées de $u(x)$ et $v(x)$ avant de mettre $x$ en facteur au numérateur et au dénominateur et de recalculer la limite du quotient obtenu.
+\end{itemize}
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple : }}}
+\begin{itemize}
+\item \textit{Soit $g$ la fonction définie par $g(x) = \dfrac{x + \sqrt{x^2 + 4}}{2x + \sqrt{x^2 + 1}}$. Calculons $\displaystyle \lim_{x \to +\infty} g(x)$.}
+    
+    \vspace{0.1cm}
+    
+    $
+    \displaystyle \lim_{x \to +\infty} g(x):
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (x + \sqrt{x^2 + 4}) = +\infty\\[3mm]
+    &\textit{donc le quotient est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to +\infty} (2x + \sqrt{x^2 + 1}) = +\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \frac{x + \sqrt{x^2 + 4}}{2x + \sqrt{x^2 + 1}} &= \lim_{x \to +\infty} \frac{x + |x|\sqrt{1 + \dfrac{4}{x^2}}}{2x + |x|\sqrt{1 + \dfrac{1}{x^2}}} \\
+        &= \lim_{x \to +\infty} \frac{x + x\sqrt{1 + \dfrac{4}{x^2}}}{2x + x\sqrt{1 + \dfrac{1}{x^2}}} \quad (|x| = x \text{ car } x > 0) \\
+        &= \lim_{x \to +\infty} \frac{x \left( 1 + \sqrt{1 + \dfrac{4}{x^2}} \right)}{x \left( 2 + \sqrt{1 + \dfrac{1}{x^2}} \right)} \\
+        &= \lim_{x \to +\infty} \frac{1 + \sqrt{1 + \dfrac{4}{x^2}}}{2 + \sqrt{1 + \dfrac{1}{x^2}}} \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \left( 1 + \sqrt{1 + \frac{4}{x^2}} \right) = 2 \\[3mm]
+    &\text{ Par quotient }\\
+    \displaystyle \lim_{x \to +\infty} \left( 2 + \sqrt{1 + \frac{1}{x^2}} \right) = 3
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} g(x) = \frac{2}{3}}
 \end{itemize}
 \end{document}
