@@ -1969,4 +1969,114 @@ Soit $f$ une fonction du type : $f = \sqrt{p} + q$, avec $p$ et $q$ des fonction
     \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} g(x) = -1}
 \end{enumerate}
 
+\subsubsection*{\underline{\textcolor{darkred}{ Exercice : }}}
+
+\begin{enumerate}
+    \item 
+    $
+    \displaystyle \lim_{x \to -\infty} x + \sqrt{4x^2 + 1}:
+    \begin{cases}
+    \displaystyle \lim_{x \to -\infty} \sqrt{4x^2 + 1} = +\infty\\[3mm]
+    &\textit{donc la somme est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to -\infty} x = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to -\infty} x + \sqrt{4x^2 + 1} &= \lim_{x \to -\infty} x + |x|\sqrt{4 + \dfrac{1}{x^2}} \\
+        &= \lim_{x \to -\infty} x - x\sqrt{4 + \dfrac{1}{x^2}} \quad (|x| = -x \text{ car } x < 0) \\
+        &= \lim_{x \to -\infty} x \left( 1 - \sqrt{4 + \dfrac{1}{x^2}} \right) \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to -\infty} x = -\infty \\[3mm]
+    &\text{ Par produit }\\
+    \displaystyle \lim_{x \to -\infty} \left( 1 - \sqrt{4 + \frac{1}{x^2}} \right) = 1 - 2 = -1
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to -\infty} (x + \sqrt{4x^2 + 1}) = +\infty}
+
+    \vspace{0.6cm}
+
+    \item 
+    $
+    \displaystyle \lim_{x \to +\infty} x + 1 - \sqrt{x^2 + 2x + 1}:
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} (x + 1) = +\infty\\[3mm]
+    &\textit{donc la somme est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to +\infty} -\sqrt{x^2 + 2x + 1} = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} x + 1 - \sqrt{x^2 + 2x + 1} &= \lim_{x \to +\infty} \frac{((x + 1) - \sqrt{x^2 + 2x + 1})((x + 1) + \sqrt{x^2 + 2x + 1})}{x + 1 + \sqrt{x^2 + 2x + 1}} \\
+        &= \lim_{x \to +\infty} \frac{(x + 1)^2 - (x^2 + 2x + 1)}{x + 1 + \sqrt{x^2 + 2x + 1}} \\
+        &= \lim_{x \to +\infty} \frac{0}{x + 1 + \sqrt{x^2 + 2x + 1}} \\
+        &= 0
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} (x + 1 - \sqrt{x^2 + 2x + 1}) = 0}
+
+    \vspace{0.6cm}
+
+    \item 
+    $
+    \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1}:
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} = +\infty\\[3mm]
+    &\textit{donc la somme est une forme indéterminée.}\\
+    \displaystyle \lim_{x \to +\infty} -\sqrt{4x^2 + x - 1} = -\infty
+    \end{cases}
+    $
+
+    \textit{Levons l'indétermination :}
+    
+    \textit{On a :}
+    \begin{align*}
+        \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1} &= \lim_{x \to +\infty} |x|\sqrt{1 + \dfrac{1}{x^2}} - |x|\sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}} \\
+        &= \lim_{x \to +\infty} x\sqrt{1 + \dfrac{1}{x^2}} - x\sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}} \quad (|x| = x \text{ car } x > 0) \\
+        &= \lim_{x \to +\infty} x \left( \sqrt{1 + \dfrac{1}{x^2}} - \sqrt{4 + \dfrac{1}{x} - \dfrac{1}{x^2}} \right) \\
+        &= \begin{cases}
+    \displaystyle \lim_{x \to +\infty} x = +\infty \\[3mm]
+    &\text{ Par produit }\\
+    \displaystyle \lim_{x \to +\infty} \left( \sqrt{1 + \frac{1}{x^2}} - \sqrt{4 + \frac{1}{x} - \frac{1}{x^2}} \right) = 1 - 2 = -1
+    \end{cases}
+    \end{align*}
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} (\sqrt{x^2 + 1} - \sqrt{4x^2 + x - 1}) = -\infty}
+
+    \vspace{0.6cm}
+
+    \item 
+    $
+    \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} + \sqrt{x^2 + 2x + 3}
+    $
+
+    \textit{Calcul direct (pas de forme indéterminée) :}
+    
+    \textit{On a :}
+    \[
+    \begin{cases}
+    \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 1} = +\infty \\[3mm]
+    &\text{ Par somme }\\
+    \displaystyle \lim_{x \to +\infty} \sqrt{x^2 + 2x + 3} = +\infty
+    \end{cases}
+    \]
+    
+    \vspace{0.2cm}
+    
+    \text{\textit{Donc, }} \boxed{\lim_{x \to +\infty} (\sqrt{x^2 + 1} + \sqrt{x^2 + 2x + 3}) = +\infty}
+\end{enumerate}
+
 \end{document}
