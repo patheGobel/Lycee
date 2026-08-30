@@ -2287,4 +2287,31 @@ Calculer les limites suivantes :
 Soient $f$, $g$ et $h$ des fonctions définies sur un intervalle ouvert $I$ et $x_0 \in I$.
 
 Si pour tout $x \in I$, on a : $g(x) \le f(x) \le h(x)$ et que $\displaystyle \lim_{x \to x_0} g(x) = \lim_{x \to x_0} h(x) = l$, alors $\displaystyle \lim_{x \to x_0} f(x) = l$
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple }}}
+\begin{enumerate}
+    \item \textit{Soit $f(x) = \dfrac{\sin 3x + 4}{x}$. Calculons : $\displaystyle \lim_{x \to +\infty} f(x)$.}
+    
+    \textit{Soit $x \in ]0 \,;\, +\infty[$, on a :}
+    \begin{align*}
+        -1 \le \sin 3x \le 1 &\implies 3 \le \sin 3x + 4 \le 5 \implies \frac{3}{x} \le \frac{\sin 3x + 4}{x} \le \frac{5}{x} \\
+        &\implies \frac{3}{x} \le f(x) \le \frac{5}{x}.
+    \end{align*}
+
+    \textit{Or, } $\displaystyle \lim_{x \to +\infty} \frac{3}{x} = \lim_{x \to +\infty} \frac{5}{x} = 0$.
+
+    \textit{Donc d'après le théorème des gendarmes, } $\displaystyle \lim_{x \to +\infty} f(x) = 0$
+
+    \vspace{0.6cm}
+
+    \item \textit{Soit $g(x) = \dfrac{E(x)}{x}$. Calculons : $\displaystyle \lim_{x \to +\infty} g(x)$.}
+
+    \textit{Soit $x \in ]0 \,;\, +\infty[$, on a :}
+    \begin{align*}
+        E(x) \le x < E(x) + 1 &\implies x - 1 < E(x) \le x \implies \frac{x - 1}{x} < \frac{E(x)}{x} \le 1 \\
+        &\implies \frac{x - 1}{x} < g(x) \le 1.
+    \end{align*}
+
+    \textit{Or, } $\displaystyle \lim_{x \to +\infty} \frac{x - 1}{x} = 1$. \textit{Donc d'après le théorème de gendarme } $\displaystyle \lim_{x \to +\infty} g(x) = 1$.
+\end{enumerate}
 \end{document}
