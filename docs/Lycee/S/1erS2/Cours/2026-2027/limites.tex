@@ -1558,4 +1558,54 @@ La limite à l'infini d'une fonction rationnelle est égale à la limite du quot
 \end{align*}
 
 \noindent Or $\displaystyle \lim_{x \to \pm\infty} \left( \frac{1 + \dfrac{a_{n-1}}{a_n x} + \dots + \dfrac{a_0}{a_n x^n}}{1 + \dfrac{b_{m-1}}{b_m x} + \dots + \dfrac{b_0}{b_m x^m}} \right) = 1$ donc $\displaystyle \lim_{x \to \pm\infty} f(x) = \lim_{x \to \pm\infty} \frac{a_n x^n}{b_m x^m}$.
+
+\subsubsection*{\underline{\textcolor{darkred}{ Méthode : }}}
+Pour calculer la limite à l'infini d'une fonction rationnelle, il suffit de calculer la limite du quotient des monômes du plus haut degré du numérateur et du dénominateur.
+
+\vspace{0.4cm}
+
+\subsubsection*{\underline{\textcolor{darkred}{ Exemple : }}}
+Calculons les limites suivantes
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+    \item 
+    $\begin{aligned}[t]
+        \lim_{x \to -\infty} \frac{-2x^3 + x - 1}{x^2 - x + 2} &= \lim_{x \to -\infty} \frac{-2x^3}{x^2} \\
+        &= \lim_{x \to -\infty} -2x \\
+        &= -2(-\infty) \\
+        &= +\infty
+    \end{aligned}$
+    
+    \vspace{0.2cm}
+    \boxed{\lim_{x \to -\infty} \frac{-2x^3 + x - 1}{x^2 - x + 2} = +\infty}
+
+    \vspace{0.6cm}
+
+    \item 
+    $\begin{aligned}[t]
+        \lim_{x \to +\infty} \frac{x^3 + 4x^2 + 6x - 1}{2x^5 - 6x + 2} &= \lim_{x \to +\infty} \frac{x^3}{2x^5} \\
+        &= \lim_{x \to +\infty} \frac{1}{2x^2} \\
+        &= 0
+    \end{aligned}$
+    
+    \vspace{0.2cm}
+    \boxed{\lim_{x \to +\infty} \frac{x^3 + 4x^2 + 6x - 1}{2x^5 - 6x + 2} = 0}
+
+    \vspace{0.6cm}
+
+    \item 
+    $\begin{aligned}[t]
+        \lim_{x \to +\infty} \frac{4x^2 - 2x - 3}{2x^2 - x - 5} &= \lim_{x \to +\infty} \frac{4x^2}{2x^2} \\
+        &= 2
+    \end{aligned}$
+    
+    \vspace{0.2cm}
+    \boxed{\lim_{x \to +\infty} \frac{4x^2 - 2x - 3}{2x^2 - x - 5} = 2}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+
 \end{document}
