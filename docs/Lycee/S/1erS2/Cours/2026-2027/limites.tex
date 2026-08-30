@@ -1540,4 +1540,22 @@ Calculer les limites suivantes :
 
 \subsection*{\underline{\textcolor{darkred}{ 2. Limites à l’infini des fonctions rationnelles }}}
 \subsubsection*{\underline{\textcolor{darkred}{ Propriété }}}
+
+La limite à l'infini d'une fonction rationnelle est égale à la limite du quotient des monômes du plus haut degré du numérateur et du dénominateur.
+
+
+\vspace{0.3cm}
+
+\noindent En effet :
+
+\noindent Soit $f$ une fonction rationnelle définie par : $f(x) = \dfrac{a_n x^n + a_{n-1} x^{n-1} + \dots + a_0}{b_m x^m + b_{m-1} x^{m-1} + \dots + b_0}$ avec $a_n \neq 0$ et $b_m \neq 0$. On a :
+
+\begin{align*}
+\lim_{x \to \pm\infty} f(x) &= \lim_{x \to \pm\infty} \frac{a_n x^n + a_{n-1} x^{n-1} + \dots + a_0}{b_m x^m + b_{m-1} x^{m-1} + \dots + b_0} \\
+&= \lim_{x \to \pm\infty} \frac{a_n x^n \left(1 + \dfrac{a_{n-1}}{a_n x} + \dots + \dfrac{a_0}{a_n x^n}\right)}{b_m x^m \left(1 + \dfrac{b_{m-1}}{b_m x} + \dots + \dfrac{b_0}{b_m x^m}\right)} \\
+&= \lim_{x \to \pm\infty} \frac{a_n x^n}{b_m x^m} \left( \frac{1 + \dfrac{a_{n-1}}{a_n x} + \dots + \dfrac{a_0}{a_n x^n}}{1 + \dfrac{b_{m-1}}{b_m x} + \dots + \dfrac{b_0}{b_m x^m}} \right) \\
+&= \lim_{x \to \pm\infty} \frac{a_n x^n}{b_m x^m} \times \lim_{x \to \pm\infty} \left( \frac{1 + \dfrac{a_{n-1}}{a_n x} + \dots + \dfrac{a_0}{a_n x^n}}{1 + \dfrac{b_{m-1}}{b_m x} + \dots + \dfrac{b_0}{b_m x^m}} \right)
+\end{align*}
+
+\noindent Or $\displaystyle \lim_{x \to \pm\infty} \left( \frac{1 + \dfrac{a_{n-1}}{a_n x} + \dots + \dfrac{a_0}{a_n x^n}}{1 + \dfrac{b_{m-1}}{b_m x} + \dots + \dfrac{b_0}{b_m x^m}} \right) = 1$ donc $\displaystyle \lim_{x \to \pm\infty} f(x) = \lim_{x \to \pm\infty} \frac{a_n x^n}{b_m x^m}$.
 \end{document}
