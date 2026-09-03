@@ -113,7 +113,13 @@ middle color = tcbcolback!80!black]
 \usetikzlibrary{shapes.geometric,fit}
 \newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
 
+% Définition de couleurs plus lumineuses et lisibles
+\definecolor{primary}{RGB}{30, 100, 200}   % Bleu royal clair pour la bordure
+\definecolor{titlebg}{RGB}{50, 120, 220}   % Bleu vif pour le bandeau de titre
+\definecolor{boxbg}{RGB}{240, 245, 255}    % Fond bleu pastel très 
 \begin{document}
 % En-tête personnalisée
 \begin{center}
@@ -1355,14 +1361,6 @@ Soit $u$ une fonction positive et $x_0$ un réel.
     \]
 \end{enumerate}
 
-\vspace{0.3cm}
-\hrule height 1.5pt
-\vspace{0.3cm}
-
-\noindent{\bfseries 0 \quad Calculs de limites de certaines fonctions}
-
-\vspace{0.4cm}
-
 \begin{enumerate}
     \setcounter{enumi}{1}
     \item \textit{Soit $f$ la fonction définie par : $f(x) = \sqrt{x + 1}$. Calculons $\displaystyle \lim_{x \to +\infty} f(x)$.}
@@ -1376,7 +1374,7 @@ Soit $u$ une fonction positive et $x_0$ un réel.
     \]
 \end{enumerate}
 
-\subsubsection*{\underline{\textcolor{darkred}{ b. Propriété }}}
+\subsubsection*{\underline{\textcolor{darkred}{ Exercice }}}
 Calculer les limites suivantes :
 \begin{enumerate}
     \item \textit{Calculons $\displaystyle \lim_{x \to -\infty} \sqrt{x^2 + 1}$ :}
@@ -1440,7 +1438,8 @@ La limite à l'infini d'une fonction polynôme est égale à la limite de son mo
 \lim_{x \to \pm\infty} f(x) &= \lim_{x \to \pm\infty} (a_n x^n + a_{n-1} x^{n-1} + \dots + a_0) \\
 &= \lim_{x \to \pm\infty} a_n x^n \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) \\
 &= \lim_{x \to \pm\infty} a_n x^n \times \lim_{x \to \pm\infty} \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) \\
-&= \lim_{x \to \pm\infty} a_n x^n \quad \text{car} \quad \lim_{x \to \pm\infty} \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) = 1
+&= \lim_{x \to \pm\infty} a_n x^n \quad \text{car} \quad \lim_{x \to \pm\infty} \left(1 + \frac{a_{n-1}}{a_n x} + \dots + \frac{a_0}{a_n x^n}\right) \\
+&= 1
 \end{align*}
 
 \noindent Donc $\displaystyle \lim_{x \to \pm\infty} f(x) = \lim_{x \to \pm\infty} a_n x^n$.
@@ -2394,4 +2393,200 @@ En effet,
 
     \hfil \boxed{\lim_{x \to +\infty} \frac{1}{x} E\left(\frac{1}{x}\right) = 0} \hfil
 \end{enumerate}
+
+\section*{\underline{\textcolor{darkred}{ IV. Continuité d'une fonction }}}
+\subsection*{\underline{\textcolor{darkred}{ 1. Notion intuitive de continuité }}}
+
+Intuitivement, une fonction $f$ est continue sur un intervalle si l'on peut tracer sa représentation graphique « sans lever le crayon », c'est-à-dire sans saut ni interruption.
+
+\subsubsection*{Activité}
+Soient les fonctions $f$ et $g$ définies sur $\mathbb{R}$ par :
+\[
+f(x) = x^2 \quad \text{et} \quad g(x) = \begin{cases} x + 1 & \text{si } x \ge 0 \\ x - 1 & \text{si } x < 0 \end{cases}
+\]
+\begin{enumerate}[label=\arabic*.]
+    \item Calculer $\displaystyle\lim_{x \to 0} f(x)$ et $f(0)$.
+    \item Calculer $\displaystyle\lim_{x \to 0^+} g(x)$, $\displaystyle\lim_{x \to 0^-} g(x)$ et $g(0)$.
+    \item Que remarque-t-on graphiquement au point d'abscisse $x_0 = 0$ pour chacune de ces fonctions ?
+\end{enumerate}
+
+\subsubsection*{Interprétation graphique}
+\begin{itemize}
+    \item Pour $f$, la courbe $(\mathcal{C}_f)$ ne présente aucune rupture en $x_0 = 0$.
+    \item Pour $g$, la courbe $(\mathcal{C}_g)$ subit un « saut » en $x_0 = 0$ : il y a une interruption du tracé.
+\end{itemize}
+
+\subsubsection*{Exemple}
+La fonction $h : x \mapsto |x|$ est continue sur $\mathbb{R}$. Son graphe est formé de deux demi-droites qui se rejoignent en l'origine $(0,0)$ sans rupture.
+
+\vspace{0.5cm}
+\subsection{Continuité en un point}
+
+\begin{tcolorbox}[
+    colframe=primary,
+    colback=boxbg,
+    coltitle=white,
+    colbacktitle=titlebg,
+    fonttitle=\bfseries,
+    title=Définition,
+    arc=3mm,
+    boxrule=1pt
+]
+Soit $f$ une fonction définie sur un ensemble $D_f$ et $x_0 \in D_f$.\\
+On dit que $f$ est \textbf{continue en $x_0$} si :
+\[
+\lim_{x \to x_0} f(x) = f(x_0)
+\]
+\end{tcolorbox}
+
+\noindent\textbf{Remarque :} Cela implique que $f$ doit être définie en $x_0$ et que les limites à gauche et à droite en $x_0$ existent et sont égales à $f(x_0)$ :
+\[
+\lim_{x \to x_0^-} f(x) = \lim_{x \to x_0^+} f(x) = f(x_0)
+\]
+
+\subsubsection*{Interprétation}
+Lorsque $x$ se rapproche de $x_0$, l'image $f(x)$ se rapproche de $f(x_0)$. Le point de la courbe de coordonnées $(x_0, f(x_0))$ raccordement parfaitement les parties gauche et droite du graphe.
+
+\subsubsection*{Exemple}
+Soit la fonction $f$ définie par $f(x) = \dfrac{x^2 - 1}{x - 1}$ pour $x \neq 1$ et $f(1) = 2$.
+\begin{itemize}
+    \item Pour $x \neq 1$, $f(x) = \dfrac{(x-1)(x+1)}{x-1} = x + 1$.
+    \item $\displaystyle\lim_{x \to 1} f(x) = \lim_{x \to 1} (x+1) = 2$.
+    \item Comme $\displaystyle\lim_{x \to 1} f(x) = f(1) = 2$, la fonction $f$ est continue en $1$.
+\end{itemize}
+
+\subsubsection*{Contre-exemple}
+Soit la fonction partie entière $f(x) = E(x)$ au point $x_0 = 2$.
+\begin{itemize}
+    \item $f(2) = 2$
+    \item $\displaystyle\lim_{x \to 2^+} E(x) = 2$ \quad et \quad $\displaystyle\lim_{x \to 2^-} E(x) = 1$
+\end{itemize}
+Puisque $\displaystyle\lim_{x \to 2^-} E(x) \neq \lim_{x \to 2^+} E(x)$, $f$ n'admet pas de limite en $2$. La fonction $E$ n'est pas continue en $2$.
+
+\subsubsection*{Exercice}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par :
+\[
+f(x) = \begin{cases} \dfrac{x^2 - 4}{x - 2} & \text{si } x \neq 2 \\[8pt] k & \text{si } x = 2 \end{cases}
+\]
+Déterminer la valeur du réel $k$ pour que $f$ soit continue en $x_0 = 2$.
+
+\vspace{0.5cm}
+\subsection{Continuité sur un intervalle}
+
+\begin{tcolorbox}[
+    colframe=primary,
+    colback=boxbg,
+    coltitle=white,
+    colbacktitle=titlebg,
+    fonttitle=\bfseries,
+    title=Définition,
+    arc=3mm,
+    boxrule=1pt
+]
+Soit $I$ un intervalle de $\mathbb{R}$.\\
+Une fonction $f$ est dite \textbf{continue sur l'intervalle $I$} si elle est continue en tout point de $I$.
+\end{tcolorbox}
+
+\subsubsection*{Interprétation graphique}
+La courbe représentative de $f$ sur l'intervalle $I$ se trace d'un seul tenant, sans lever le crayon.
+
+\subsubsection*{Exemple}
+La fonction $f : x \mapsto \sqrt{x}$ est continue sur $[0, +\infty[$.
+
+\subsubsection*{Exercice}
+Justifier la continuité de la fonction $f(x) = 2x^3 - 5x + 1$ sur $\mathbb{R}$.
+
+\vspace{0.5cm}
+\subsection{Opérations sur les fonctions continues}
+
+\begin{tcolorbox}[
+    colframe=primary,
+    colback=boxbg,
+    coltitle=white,
+    colbacktitle=titlebg,
+    fonttitle=\bfseries,
+    title=Propriété,
+    arc=3mm,
+    boxrule=1pt
+]
+Soient $f$ et $g$ deux fonctions continues sur un intervalle $I$, et $k \in \mathbb{R}$.
+\begin{enumerate}[label=\arabic*.]
+    \item Les fonctions $f + g$, $f \times g$ et $k \cdot f$ sont continues sur $I$.
+    \item Si $g$ ne s'annule pas sur $I$ ($g(x) \neq 0$), alors $\dfrac{1}{g}$ et $\dfrac{f}{g}$ sont continues sur $I$.
+    \item Si $f$ est strictement positive sur $I$, alors $\sqrt{f}$ est continue sur $I$.
+\end{enumerate}
+\end{tcolorbox}
+
+\subsubsection*{Exemple}
+La fonction $h(x) = \dfrac{x^2 + 3}{x - 1}$ est continue sur $]-\infty, 1[$ et sur $]1, +\infty[$ comme quotient de deux fonctions polynômes continues dont le dénominateur ne s'annule pas.
+
+\subsubsection*{Exercice}
+Étudier la continuité de $f(x) = \sqrt{x^2 - 4}$ sur son domaine de définition.
+
+\vspace{0.5cm}
+\subsection{Fonctions usuelles continues}
+
+\begin{tcolorbox}[
+    colframe=primary,
+    colback=boxbg,
+    coltitle=white,
+    colbacktitle=titlebg,
+    fonttitle=\bfseries,
+    title=Propriété,
+    arc=3mm,
+    boxrule=1pt
+]
+\begin{itemize}
+    \item Toute fonction \textbf{polynôme} est continue sur $\mathbb{R}$.
+    \item Toute fonction \textbf{rationnelle} (quotient de deux polynômes) est continue sur tout intervalle contenu dans son ensemble de définition.
+    \item La fonction \textbf{racine carrée} $x \mapsto \sqrt{x}$ est continue sur $[0, +\infty[$.
+    \item Les fonctions \textbf{valeur absolue} ($x \mapsto |x|$), \textbf{sinus} ($x \mapsto \sin x$) et \textbf{cosinus} ($x \mapsto \cos x$) sont continues sur $\mathbb{R}$.
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection*{Exemple}
+$f(x) = 3x^4 - 2x + 7$ est une fonction polynôme, elle est donc continue sur $\mathbb{R}$.
+
+\subsubsection*{Exercice}
+Déterminer les intervalles de continuité de la fonction $g(x) = \dfrac{\cos(x)}{x^2 - 9}$.
+
+\vspace{0.5cm}
+\subsection{Théorème des valeurs intermédiaires (TVI)}
+
+\begin{tcolorbox}[
+    colframe=primary,
+    colback=boxbg,
+    coltitle=white,
+    colbacktitle=titlebg,
+    fonttitle=\bfseries,
+    title=Énoncé du TVI,
+    arc=3mm,
+    boxrule=1pt
+]
+Soit $f$ une fonction continue sur un intervalle $[a, b]$.\\
+Pour tout réel $k$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
+\[
+f(c) = k
+\]
+\end{tcolorbox}
+
+\noindent\textbf{Corollaire (Existence d'une racine) :} Si $f$ est continue sur $[a, b]$ et si $f(a) \times f(b) < 0$, alors l'équation $f(x) = 0$ admet au moins une solution $c \in ]a, b[$.
+
+\subsubsection*{Interprétation graphique}
+La courbe $(\mathcal{C}_f)$ reliant le point $(a, f(a))$ au point $(b, f(b))$ sans rupture coupe obligatoirement la droite horizontale d'équation $y = k$ en au moins un point.
+
+\subsubsection*{Exemple}
+Soit $f(x) = x^3 + x - 1$ sur $[0, 1]$.
+\begin{itemize}
+    \item $f$ est continue sur $[0, 1]$ (fonction polynôme).
+    \item $f(0) = -1$ et $f(1) = 1$.
+    \item $0$ est compris entre $f(0)$ et $f(1)$ (car $f(0) \times f(1) < 0$).
+\end{itemize}
+D'après le TVI, l'équation $x^3 + x - 1 = 0$ admet au moins une solution $c \in ]0, 1[$.
+
+\subsubsection*{Application à la résolution d'équations}
+Le TVI permet de prouver l'\textbf{existence} de solutions pour des équations de la forme $f(x) = k$, notamment lorsque l'équation ne peut pas être résolue explicitement par calcul algébrique direct.
+
+\subsubsection*{Exercice}
+Montrer que l'équation $x^5 - 3x - 1 = 0$ admet au moins une solution réelle dans l'intervalle $[1, 2]$.
 \end{document}
