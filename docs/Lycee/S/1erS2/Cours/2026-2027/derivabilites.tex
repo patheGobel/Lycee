@@ -161,4 +161,181 @@ Soit $f$ et $a$ un nombre réel :
 
 \end{tcolorbox}
 
+% -------------------------------------------------
+% Théorème
+% -------------------------------------------------
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Théorème :},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+\begin{itemize}
+
+    \item Si $f'_g(a)=f'_d(a)$ alors $f$ est dérivable en $a$.
+
+    \item Si $f'_g(a)\neq f'_d(a)$ alors $f$ n'est pas dérivable en $a$.
+
+    \item Si
+    \(
+    \lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}=\infty
+    \)
+    alors $f$ n'est pas dérivable en $a$.
+
+\end{itemize}
+
+\end{tcolorbox}
+
+\textbf{Exemple :}
+
+Soit
+\[
+f(x)=
+\begin{cases}
+x^2-1 & \text{si } x<1,\\[1mm]
+\dfrac{x-1}{x+1} & \text{si } x\geq 1.
+\end{cases}
+\quad
+\text{. Étudier la dérivabilité de } f \text{ en } 1.
+\]
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Interprétation graphique},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+\begin{itemize}
+
+    \item Si $f$ est dérivable à gauche de $a$ alors $\mathcal{C}_f$
+    admet une demi-tangente à gauche de $a$ d'équation
+    $(T_g):\ y=f'_g(a)(x-a)+f(a)$ au point $A(a;f(a))$.
+
+    \item Si $f$ est dérivable à droite de $a$ alors $\mathcal{C}_f$
+    admet une demi-tangente à droite de $a$ d'équation
+    $(T_d):\ y=f'_d(a)(x-a)+f(a)$ au point $A(a;f(a))$.
+
+\end{itemize}
+
+\end{tcolorbox}
+
+\textbf{Exemple :}
+
+Soit
+\[
+f(x)=
+\begin{cases}
+x^2-1 & \text{si } x<1,\\[1mm]
+\dfrac{x-1}{x+1} & \text{si } x\geq 1.
+\end{cases}
+\quad \text{. Étudier la dérivabilité de } f \text{ en } 1
+\text{ puis interpréter graphiquement les résultats.}
+\]
+
+\textbf{Solution :} Puisque $f'_g(1)\neq f'_d(1)$, alors $\mathcal{C}_f$
+admet deux demi-tangentes d'équations respectives :
+
+\[
+\begin{aligned}
+(T_g):\quad y
+&= f'_g(1)(x-1)+f(1)
+&&\Longrightarrow&
+(T_g):\quad y &= 2x-2
+\\[2mm]
+(T_d):\quad y
+&= f'_d(1)(x-1)+f(1)
+&&\Longrightarrow&
+(T_d):\quad y &= \frac{1}{2}x-\frac{1}{2}
+\end{aligned}
+\]
+
+\textbf{Tableaux de valeurs pour tracer les demi-tangentes :}
+
+\[
+\begin{array}{c@{\qquad\qquad}c}
+(T_g):\ y=2x-2
+&
+(T_d):\ y=\dfrac{1}{2}x-\dfrac{1}{2}
+\\[2mm]
+\begin{array}{|c|c|c|}
+\hline
+x & 0 & 1\\
+\hline
+y & -2 & 0\\
+\hline
+\end{array}
+&
+\begin{array}{|c|c|c|}
+\hline
+x & 0 & 1\\
+\hline
+y & -\dfrac{1}{2} & 0\\
+\hline
+\end{array}
+\end{array}
+\]
+
+\vspace{0.3cm}
+
+\textbf{Tableaux de valeurs pour les courbes :}
+
+\[
+\begin{array}{c@{\qquad\qquad}c}
+\begin{array}{c}
+x^2-1
+\\[1mm]
+\begin{array}{|c|c|c|c|c|}
+\hline
+x & -2 & -1 & 0 & 1\\
+\hline
+f(x) & 3 & 0 & -1 & 0\\
+\hline
+\end{array}
+\end{array}
+&
+\begin{array}{c}
+\dfrac{x-1}{x+1}
+\\[1mm]
+\begin{array}{|c|c|c|c|c|}
+\hline
+x & 0 & 1 & 2 & 3\\
+\hline
+f(x) & -1 & 0 & \dfrac{1}{3} & \dfrac{1}{2}\\
+\hline
+\end{array}
+\end{array}
+\end{array}
+\]
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Remarque :},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+\begin{align*}
+\text{---}\quad
+&\lim_{x\to a^\pm}\frac{f(x)-f(a)}{x-a}
+=\pm\infty
+\quad \text{alors } \mathcal{C}_f \text{ admet une demi-tangente verticale}\\
+&\hspace{1.2cm}\text{dirigée vers le haut.}
+\\[1mm]
+\text{---}\quad
+&\lim_{x\to a^\pm}\frac{f(x)-f(a)}{x-a}
+=+\infty
+\quad \text{alors } \mathcal{C}_f \text{ admet une demi-tangente verticale}\\
+&\hspace{1.2cm}\text{dirigée vers le bas.}
+\end{align*}
+
+\end{tcolorbox}
 \end{document}
