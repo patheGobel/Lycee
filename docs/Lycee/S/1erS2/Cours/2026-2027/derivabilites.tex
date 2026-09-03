@@ -857,4 +857,196 @@ $u'\cos(u)$
     \]
 
 \end{enumerate}
+
+% =========================================================
+% III - Application de la dérivation
+% =========================================================
+
+\section*{III - Application de la dérivation}
+
+% ---------------------------------------------------------
+% 1 - Sens de variation
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{1 - Sens de variation},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $f$ une fonction numérique dérivable sur un intervalle $I$.
+
+\vspace{2mm}
+
+\textbf{$\star$ Théorème :}
+
+\begin{itemize}
+
+    \item[$\text{---}$] Si $f'(x)\geq 0$ alors $f$ est croissante sur $I$.
+
+    \item[$\text{---}$] Si $f'(x)\leq 0$ alors $f$ est décroissante sur $I$.
+
+    \item[$\text{---}$] Si $f'(x)>0$ alors $f$ est strictement croissante sur $I$.
+
+    \item[$\text{---}$] Si $f'(x)<0$ alors $f$ est strictement décroissante sur $I$.
+
+    \item[$\text{---}$] Si $f$ est dérivable sur $I$ et
+    $\exists x_0\in I/f'(x_0)=0$ en changement de signe alors on dit
+    que $f$ admet un extremum.
+
+\end{itemize}
+
+\end{tcolorbox}
+
+% =========================================================
+% Remarque
+% =========================================================
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Remarque :},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+\[
+\begin{aligned}
+\text{---}\quad &\text{Si on passe de $+$ en $-$, alors on obtient un maximum relatif.}
+\\[2mm]
+\text{---}\quad &\text{Si on passe de $-$ en $+$, alors on obtient un minimum relatif.}
+\end{aligned}
+\]
+
+\textbf{NB :} Étudier la monotonie d'une fonction numérique c'est
+déterminer son sens de variation. La monotonie s'étudie uniquement
+sur un intervalle mais pas sur une réunion d'intervalles.
+
+\end{tcolorbox}
+
+
+% =========================================================
+% Exemples
+% =========================================================
+
+\textbf{Exemples :}
+
+Étudier le sens de variation des fonctions suivantes sur leurs domaines :
+
+\begin{enumerate}
+    \item $f(x)=2x^3-6x+1$
+    
+    \item $g(x)=\sqrt{x^2-x+1}$
+    
+    \item $h(x)=\dfrac{3x-1}{2x+3}$
+\end{enumerate}
+
+
+% =========================================================
+% 2 - Tableau de variation
+% =========================================================
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{2 - Tableau de variation},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Un tableau de variation c'est un tableau ayant trois lignes dont chaque ligne a des caractéristiques bien définies :
+
+\[
+\begin{aligned}
+\text{---}\quad &\text{La 1\textsuperscript{re} ligne est constituée par :
+Le domaine de définition et les valeurs qui annulent}\\
+&\hspace{1.1cm}\text{la dérivée.}
+\\[2mm]
+\text{---}\quad &\text{La 2\textsuperscript{e} ligne est constituée du signe de la dérivée.}
+\\[2mm]
+\text{---}\quad &\text{La 3\textsuperscript{e} ligne est constituée des :
+limite aux bornes, les extremums et les variations.}
+\end{aligned}
+\]
+\end{tcolorbox}
+
+\textbf{Exemple :}
+
+Soit
+\[
+f(x)=\dfrac{2x^2-1}{x+1}.
+\]
+Dresser le tableau de variation de $f$.
+
+
+% =========================================================
+% 3 - Dérivée et bijection
+% =========================================================
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{3 - Dérivée et bijection},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $f$ une fonction numérique définie sur un intervalle $I$.
+Si $f$ est continue et dérivable sur l'intervalle $I$ et que $f$
+y est monotone alors $f$ réalise une bijection ou admet une
+bijection réciproque $f^{-1}$ définie de $J=f(I)$ vers $I$.
+C'est-à-dire :
+
+\[
+\begin{aligned}
+f &: I \longrightarrow J=f(I)
+\\
+f^{-1} &: J=f(I) \longrightarrow I
+\end{aligned}
+\]
+
+\end{tcolorbox}
+
+
+% =========================================================
+% Remarque
+% =========================================================
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Remarque :},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+$f$ et $f^{-1}$ ont même sens de monotonie.
+
+\end{tcolorbox}
+
+
+% =========================================================
+% Théorème
+% =========================================================
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Théorème :},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Si $f$ admet une bijection réciproque $f^{-1}$ sur $I$ et que
+$f$ s'annule sur $I$ alors l'équation $f(x)=0$ admet une unique
+solution $\alpha$ tel que $0\in f(I)=J$.
+
+\end{tcolorbox}
 \end{document}
