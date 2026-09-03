@@ -338,4 +338,151 @@ f(x) & -1 & 0 & \dfrac{1}{3} & \dfrac{1}{2}\\
 \end{align*}
 
 \end{tcolorbox}
+
+% =========================================================
+% Résumé
+% =========================================================
+
+\tcbset{
+    mybox/.style={
+        colback=green!5!white,
+        colframe=green!60!black,
+        fonttitle=\bfseries,
+        coltitle=white,
+        colbacktitle=green!60!black,
+        enhanced,
+        attach boxed title to top left={xshift=0mm, yshift=0mm},
+        boxed title style={sharp corners, frame code={}},
+        sharp corners,
+        boxrule=1pt,
+        top=15pt, bottom=15pt, left=10pt, right=10pt
+    }
+}
+
+\tikzset{
+    redbox/.style={
+        draw=purple!80!black,
+        inner sep=4pt,
+        align=center,
+        font=\small
+    },
+    arrow/.style={
+        -stealth,
+        thin
+    }
+}
+
+\begin{tcolorbox}[mybox, title={Resumé}]
+
+\hrule height 0.8pt
+\vspace{0.5cm}
+
+% ---------------- Block 1 ----------------
+\begin{center}
+\begin{tikzpicture}
+
+% Colonne 3 (Droite) - Positionnée d'abord pour calculer l'espacement
+\node[redbox] (R1) {($\mathcal{C}_f$) admet une tangente au point\\$(x_0; f(x_0))$ de coefficient directeur $a$};
+\node[redbox, below=0.3cm of R1] (R2) {($\mathcal{C}_f$) admet une tangente ho-\\rizontale au point $(x_0; f(x_0))$};
+
+% Colonne 2 (Milieu)
+\node[redbox, left=1.2cm of R1] (A1) {$a \in \mathbb{R}^*$};
+\node[redbox, left=1.2cm of R2] (A2) {$0$};
+
+% Colonne 1 (Gauche)
+\coordinate (centerA) at ($(A1.west)!0.5!(A2.west)$);
+\node[redbox, left=2cm of centerA] (L1) {$\displaystyle \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0}$};
+
+% Lignes de jonction
+\coordinate (fork1) at ($(L1.east) + (0.8cm,0)$);
+
+\draw (L1.east) -- (fork1);
+\draw (fork1) |- (A1.west);
+\draw (fork1) |- (A2.west);
+
+\draw[arrow] (A1) -- (R1);
+\draw[arrow] (A2) -- (R2);
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.8cm}
+
+% ---------------- Block 2 ----------------
+\begin{center}
+\begin{tikzpicture}
+
+% Colonne 3 (Droite)
+\node[redbox] (S1) {($\mathcal{C}_f$) admet une demi-tangente\\à droite au point $(x_0; f(x_0))$\\de coefficient directeur $a$};
+\node[redbox, below=0.3cm of S1] (S2) {($\mathcal{C}_f$) admet une demi-tangente hori-\\zontale à droite au point $(x_0; f(x_0))$};
+\node[redbox, below=0.3cm of S2] (S3) {($\mathcal{C}_f$) admet une demi-tangente\\verticale à droite au point\\$(x_0; f(x_0))$ dirigée vers le haut};
+\node[redbox, below=0.3cm of S3] (S4) {($\mathcal{C}_f$) admet une demi-tangente\\verticale à droite au point\\$(x_0; f(x_0))$ dirigée vers le bas};
+
+% Colonne 2 (Milieu)
+\node[redbox, left=1.2cm of S1] (B1) {$a \in \mathbb{R}^*$};
+\node[redbox, left=1.2cm of S2] (B2) {$0$};
+\node[redbox, left=1.2cm of S3] (B3) {$+\infty$};
+\node[redbox, left=1.2cm of S4] (B4) {$-\infty$};
+
+% Colonne 1 (Gauche)
+\coordinate (centerB) at ($(B1.west)!0.5!(B4.west)$);
+\node[redbox, left=2cm of centerB] (L2) {$\displaystyle \lim_{x \to x_0^+} \frac{f(x)-f(x_0)}{x-x_0}$};
+
+% Lignes de jonction
+\coordinate (fork2) at ($(L2.east) + (0.8cm,0)$);
+
+\draw (L2.east) -- (fork2);
+\draw (fork2) |- (B1.west);
+\draw (fork2) |- (B2.west);
+\draw (fork2) |- (B3.west);
+\draw (fork2) |- (B4.west);
+
+\draw[arrow] (B1) -- (S1);
+\draw[arrow] (B2) -- (S2);
+\draw[arrow] (B3) -- (S3);
+\draw[arrow] (B4) -- (S4);
+
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.8cm}
+
+% ---------------- Block 3 ----------------
+\begin{center}
+\begin{tikzpicture}
+
+% Colonne 3 (Droite)
+\node[redbox] (T1) {($\mathcal{C}_f$) admet une demi-tangente\\à gauche au point $(x_0; f(x_0))$\\de coefficient directeur $a$};
+\node[redbox, below=0.3cm of T1] (T2) {($\mathcal{C}_f$) admet une demi-tangente hori-\\zontale à gauche au point $(x_0; f(x_0))$};
+\node[redbox, below=0.3cm of T2] (T3) {($\mathcal{C}_f$) admet une demi-tangente\\verticale à gauche au point\\$(x_0; f(x_0))$ dirigée vers le bas};
+\node[redbox, below=0.3cm of T3] (T4) {($\mathcal{C}_f$) admet une demi-tangente\\verticale à gauche au point\\$(x_0; f(x_0))$ dirigée vers le haut.};
+
+% Colonne 2 (Milieu)
+\node[redbox, left=1.2cm of T1] (C1) {$a \in \mathbb{R}^*$};
+\node[redbox, left=1.2cm of T2] (C2) {$0$};
+\node[redbox, left=1.2cm of T3] (C3) {$+\infty$};
+\node[redbox, left=1.2cm of T4] (C4) {$-\infty$};
+
+% Colonne 1 (Gauche)
+\coordinate (centerC) at ($(C1.west)!0.5!(C4.west)$);
+\node[redbox, left=2cm of centerC] (L3) {$\displaystyle \lim_{x \to x_0^-} \frac{f(x)-f(x_0)}{x-x_0}$};
+
+% Lignes de jonction
+\coordinate (fork3) at ($(L3.east) + (0.8cm,0)$);
+
+\draw (L3.east) -- (fork3);
+\draw (fork3) |- (C1.west);
+\draw (fork3) |- (C2.west);
+\draw (fork3) |- (C3.west);
+\draw (fork3) |- (C4.west);
+
+\draw[arrow] (C1) -- (T1);
+\draw[arrow] (C2) -- (T2);
+\draw[arrow] (C3) -- (T3);
+\draw[arrow] (C4) -- (T4);
+
+\end{tikzpicture}
+\end{center}
+
+\end{tcolorbox}
 \end{document}
