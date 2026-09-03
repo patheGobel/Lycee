@@ -84,4 +84,81 @@ la continuité.
 
 \end{enumerate}
 
+% -------------------------------------------------
+% 3. Interprétation graphique
+% -------------------------------------------------
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{3. Interprétation graphique},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $f$ une fonction numérique dérivable en un réel $a$.
+La courbe représentative de la fonction $f$ admet une tangente
+d'équation :
+
+\[
+(T):\quad y=f'(a)(x-a)+f(a)
+\quad \text{au point } A(a;f(a))
+\]
+
+Le coefficient directeur de $(T)$ est $f'(a)$.
+
+\end{tcolorbox}
+
+\textbf{Exemples :}
+
+\begin{enumerate}
+
+    \item $f(x)=x^2-3x-1,\qquad x_0=-2$
+
+    \item $f(x)=\dfrac{2-3x}{x-2},\qquad x_0=0$
+
+    \item $f(x)=\sqrt{2x-3},\qquad x_0=2$
+
+\end{enumerate}
+
+% -------------------------------------------------
+% 4. Dérivée à gauche et dérivée à droite
+% -------------------------------------------------
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{4. Dérivée à gauche et dérivée à droite},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $f$ et $a$ un nombre réel :
+
+\begin{itemize}
+
+    \item Si
+    \(
+    \lim\limits_{x\to a^-}\frac{f(x)-f(a)}{x-a}
+    =\ell\in\mathbb{R}
+    \)
+    alors on dit que $f$ est dérivable à gauche de $a$ et le réel
+    $\ell$ est appelé nombre dérivé de $f$ à gauche de $a$ que l'on
+    note $f'_g(a)=\ell$.
+
+    \item Si
+    \(
+    \lim\limits_{x\to a^+}\frac{f(x)-f(a)}{x-a}
+    =\ell'\in\mathbb{R}
+    \)
+    alors on dit que $f$ est dérivable à droite de $a$ et que
+    $\ell'$ est le nombre dérivé de $f$ à droite de $a$ que l'on
+    note $f'_d(a)=\ell'$.
+
+\end{itemize}
+
+\end{tcolorbox}
+
 \end{document}
