@@ -485,4 +485,376 @@ f(x) & -1 & 0 & \dfrac{1}{3} & \dfrac{1}{2}\\
 \end{center}
 
 \end{tcolorbox}
+
+% =========================================================
+% II. Fonction dérivée
+% =========================================================
+
+\section*{II. Fonction dérivée}
+
+% ---------------------------------------------------------
+% 1. Dérivée sur un intervalle
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{1. Dérivé sur un intervalle},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $f$ une fonction numérique et $I$ un intervalle
+$I=]a,b[$ tel que $f$ y est définie.
+
+On dit que $f$ est dérivable sur $I$ si $f$ est dérivable en
+chaque point appartenant à $I$.
+
+Si $f$ est définie sur un intervalle $J=[a,b]$ alors on dit que
+$f$ est dérivable sur $J$ si $f$ est dérivable en chaque point
+appartenant à $J$ et de plus $f$ dérivable à gauche de $b$ et à
+droite de $a$.
+
+Si $f$ est dérivable sur un intervalle $I$ alors la fonction
+définie sur $I$ par $f'$ qui à tout réel $x\in I$ associe $f'(x)$
+le nombre dérivé de $f$ en $x$. On dit que $f'$ est la dérivée
+(dérivée) de $f$ en $x$.
+
+\end{tcolorbox}
+
+% ---------------------------------------------------------
+% 2. Dérivée des fonctions usuelles
+% ---------------------------------------------------------
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{2. Dérivée des fonctions usuelles},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Le tableau ci-dessous nous donne la dérivée de fonctions usuelles.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Fonct\textsuperscript{o} définie par $f$}
+&
+\textbf{Fonct\textsuperscript{o} dérivée $f'(x)$}
+&
+\textbf{Ensemble de dérivabilité}
+\\[1.2mm]
+\hline
+
+$f(x)=k\quad (k\in\mathbb{R})$
+&
+$f'(x)=0$
+&
+$\mathbb{R}$
+\\[1.2mm]
+\hline
+
+$f(x)=ax+b$
+&
+$f'(x)=a$
+&
+$\mathbb{R}$
+\\[1.2mm]
+\hline
+
+$f(x)=x^n\quad (n\in\mathbb{N})$
+&
+$f'(x)=nx^{n-1}$
+&
+$\mathbb{R}$
+\\[1.2mm]
+\hline
+
+$f(x)=\dfrac{1}{x}$
+&
+$f'(x)=-\dfrac{1}{x^2}$
+&
+$\mathbb{R}^*$
+\\[1.2mm]
+\hline
+
+$f(x)=\sqrt{x}$
+&
+$f'(x)=\dfrac{1}{2\sqrt{x}}$
+&
+$\mathbb{R}_+^*$
+\\[1.2mm]
+\hline
+
+$f(x)=\cos x$
+&
+$f'(x)=-\sin x$
+&
+$\mathbb{R}$
+\\[1.2mm]
+\hline
+
+$f(x)=\sin x$
+&
+$f'(x)=\cos x$
+&
+$\mathbb{R}$
+\\[1.2mm]
+\hline
+
+\end{tabular}
+
+\end{center}
+
+\end{tcolorbox}
+
+\textbf{Exemples :}
+
+\begin{itemize}
+
+    \item $f(x)=\sqrt{2}
+    \quad\Longrightarrow\quad
+    f'(x)=0$
+
+    \item $f(x)=2x+3
+    \quad\Longrightarrow\quad
+    f'(x)=2$
+
+    \item $f(x)=x^3
+    \quad\Longrightarrow\quad
+    f'(x)=3x^2$
+
+    \item $f(x)=\dfrac{3}{4}x^5+x^2
+    \quad\Longrightarrow\quad
+    f'(x)=\dfrac{3}{4}\times5x^4+2x
+    =\dfrac{15}{4}x^4+2x$
+
+    \item $f(x)=-5x
+    \quad\Longrightarrow\quad
+    f'(x)=-5$
+
+    \item $f(x)=-5x^4+9
+    \quad\Longrightarrow\quad
+    f'(x)=-20x^3$
+
+\end{itemize}
+
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{Remarque :},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Les fonctions numériques sont dérivables sur l'ouvert de leur
+ensemble de définition.
+
+\end{tcolorbox}
+
+\textbf{Exemple :}
+
+\[
+\begin{aligned}
+f(x)&=\sqrt{x}
+&\quad\Longrightarrow\quad&
+f\text{ existe ssi }x\geq0
+&\quad\Longrightarrow\quad&
+D_f=[0,+\infty[
+\\[2mm]
+f(x)&=\sqrt{x}
+&\quad\Longrightarrow\quad&
+f'(x)=\dfrac{1}{2\sqrt{x}}
+&\quad&
+f'\text{ existe ssi }x>0
+&\quad\Longrightarrow\quad&
+\boxed{D_{f'}=]0,+\infty[}
+\end{aligned}
+\]
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{3 - Opérations sur les dérivées},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $u$ et $v$ deux fonctions numériques dérivables sur un intervalle
+$I$. Pour obtenir la dérivée de la somme, du produit, du quotient et
+de la composée, on se réfère au tableau suivant :
+
+\vspace{3mm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& 1 & 2 & 3 & 4 & 5
+\\
+\hline
+
+$f$ définie par
+&
+$ku\;(k\in\mathbb{R}^*)$
+&
+$u+v$
+&
+$u\cdot v$
+&
+$\dfrac{u}{v}$
+&
+$\dfrac{1}{v}$
+\\
+\hline
+
+dérivée de $f$
+&
+$ku'$
+&
+$u'+v'$
+&
+$u'v+v'u$
+&
+$\dfrac{u'v- v'u}{v^2}$
+&
+$-\dfrac{v'}{v^2}$
+\\
+\hline
+
+\end{tabular}
+
+\vspace{6mm}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& 6 & 7 & 8 & 9 & 10
+\\
+\hline
+
+&
+$\sqrt{u}$
+&
+$u^n$
+&
+$u\circ v$
+&
+$\cos(u)$
+&
+$\sin(u)$
+\\
+\hline
+
+&
+$\dfrac{u'}{2\sqrt{u}}$
+&
+$nu'u^{n-1}$
+&
+$v'\times u'\circ v$
+&
+$-u'\sin(u)$
+&
+$u'\cos(u)$
+\\
+\hline
+
+\end{tabular}
+
+\end{center}
+
+\end{tcolorbox}
+
+\textbf{Exemples :}
+
+\begin{enumerate}
+
+    \item $f(x)=2(x^2-3x+1)
+    \quad\Longrightarrow\quad
+    f'(x)=2(2x-3)$
+
+    \item $f(x)=(4x^2+5x)+(7x-9)
+    \quad\Longrightarrow\quad
+    f'(x)=(8x+5)+7=8x+12$
+
+    \item $f(x)=(3x-5)(x^2-1)
+    \quad\Longrightarrow\quad
+    \begin{aligned}[t]
+    f'(x)
+    &=3(x^2-1)+2x(3x-5)\\
+    &=3x^2-3+6x^2-10x\\
+    &=9x^2-10x-3
+    \end{aligned}$
+
+    \item $f(x)=\dfrac{2x^2-1}{x+1}
+    \quad\Longrightarrow\quad
+    f'(x)=
+    \dfrac{4x(x+1)-1(2x^2-1)}{(x+1)^2}
+    =\dfrac{2x^2+4x+1}{(x+1)^2}$
+
+    \item $f(x)=\dfrac{1}{2x-3}
+    \quad\Longrightarrow\quad
+    f'(x)=-\dfrac{2}{(2x-3)^2}$
+
+    \item $f(x)=\sqrt{3x+1}
+    \quad\Longrightarrow\quad
+    f'(x)=\dfrac{3}{2\sqrt{3x+1}}$
+
+    \item $f(x)=(x^2-1)^3
+    \quad\Longrightarrow\quad
+    f'(x)=3(2x)(x^2-1)^2
+    =6x(x^2-1)^2$
+
+    \item
+    \[
+    f(x)=\sqrt{(x-1)^3}
+    \quad\Longrightarrow\quad
+    \begin{cases}
+        u=\sqrt{x} \quad\Longrightarrow\quad
+        u'=\dfrac{1}{2\sqrt{x}},\\[2mm]
+        v=(x-1)^3 \quad\Longrightarrow\quad
+        v'=3(x-1)^2.
+    \end{cases}
+    \]
+
+    \[
+    f'(x)=3(x-1)^2\times
+    \dfrac{1}{2\sqrt{(x-1)^3}}
+    \]
+
+    \item
+    \[
+    \begin{aligned}
+    f(x)&=\cos x
+    \quad\Longrightarrow\quad
+    f'(x)=-1\sin x=-(x)'\sin x
+    \\[2mm]
+    f(2x-3)&=\cos(2x-3)
+    \quad\Longrightarrow\quad
+    f'(2x-3)=-2\sin(2x-3)
+    \end{aligned}
+    \]
+
+    \item
+    \[
+    \begin{aligned}
+    f(x)&=\sin x
+    \quad\Longrightarrow\quad
+    f'(x)=1\cos x=(x)'\cos x
+    \\[2mm]
+    f(3x^2-5x+4)&=\sin(3x^2-5x+4)
+    \quad\Longrightarrow\quad
+    f'(v)=(6x-5)\cos(3x^2-5x+4)
+    \end{aligned}
+    \]
+
+\end{enumerate}
 \end{document}
