@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper]{article}
+
+% -------------------------------------------------
+% Packages
+% -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc}
+
+% -------------------------------------------------
+% Document
+% -------------------------------------------------
+\begin{document}
+
+\section*{I. Fonction dérivable en un point}
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=1. Définition du nombre dérivé,
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Soit $f$ une fonction numérique et $a$ un nombre réel tel que $f$
+est définie sur un intervalle $I$ contenant $a$. On dit que $f$
+est dérivable en $a$ si :
+
+\[
+\lim_{x\to a}\frac{f(x)-f(a)}{x-a}=\ell\in\mathbb{R}
+\]
+
+$\ell$ est appelé nombre dérivé de $f$ en $a$ que l'on note
+$f'(a)=\ell$.
+
+\end{tcolorbox}
+
+\textbf{Exemples :} Les fonctions suivantes sont-elles dérivables
+aux points indiqués ?
+
+\[
+f(x)=x^2 \quad \text{en } a=-1
+\qquad\qquad
+g(x)=2x^3-1 \quad \text{en } a=2
+\]
+
+\textbf{Contre exemple :} $f(x)=|x-1|$ et $f(1)=0$.
+$f$ est-elle dérivable en $1$ ?
+
+\begin{tcolorbox}[
+    colback=green!5,
+    colframe=green!60!black,
+    colbacktitle=green!60!black,
+    title=\textbf{2. Théorème},
+    fonttitle=\bfseries,
+    boxrule=0.8pt
+]
+
+Si une fonction $f$ est dérivable en un réel $a$, alors $f$ est
+continue en $a$. C'est-à-dire que la dérivabilité entraîne
+la continuité.
+
+\textbf{NB :} La réciproque n'est pas toujours vraie.
+
+\end{tcolorbox}
+
+\textbf{Exemple :}
+
+\begin{enumerate}
+
+    \item Soit
+    \[
+    g(x)=\frac{f(x)-f(1)}{x-1}
+    \]
+    avec $f(x)=|x-1|$. $g$ est-elle continue en $1$ ?
+
+    \item Soit $f(x)=|x|$. $f$ est-elle dérivable en $0$ ?
+
+\end{enumerate}
+
+\end{document}
