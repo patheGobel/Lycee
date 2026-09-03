@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  3 SEP 2026 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  3 SEP 2026 21:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,42 +794,42 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@posthook=\toks45
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-2.
+4.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-2.
+4.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-32.
+34.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-32.
+34.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 32.
+(Font)              <12> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 32.
+(Font)              <8> on input line 34.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 32.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+(Font)              <6> on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -838,21 +838,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athsy.enc}]
-Overfull \hbox (69.9164pt too wide) detected at line 241
+re/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
+lm-rm.enc}]
+Overfull \hbox (69.9164pt too wide) detected at line 288
 \OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 x\OT1/lmr/m/n/12 ) = []  []
 \OML/lmm/m/it/12 f[]\OT1/lmr/m/n/12 1[]
  []
 
-<derivabilite1erS2.png, id=56, 466.74374pt x 396.48125pt>
+[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+<derivabilite1erS2.png, id=60, 466.74374pt x 396.48125pt>
 File: derivabilite1erS2.png Graphic file (type png)
 <use derivabilite1erS2.png>
-Package pdftex.def Info: derivabilite1erS2.png  used on input line 320.
+Package pdftex.def Info: derivabilite1erS2.png  used on input line 367.
 (pdftex.def)             Requested size: 241.84843pt x 205.4394pt.
-[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 392.
+(Font)              <10.95> on input line 439.
  [3 <build/derivabilite1erS2.png>] [4] [5] [6] [7] [8] (build/derivabilites.aux
 )
  ***********
@@ -861,10 +861,10 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23680 strings out of 467533
- 502051 string characters out of 5422138
- 937242 words of memory out of 5000000
- 52169 multiletter control sequences out of 15000+600000
+ 23686 strings out of 467533
+ 502187 string characters out of 5422138
+ 941250 words of memory out of 5000000
+ 52175 multiletter control sequences out of 15000+600000
  678806 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,17n,121p,445b,1331s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -878,7 +878,7 @@ f/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/derivabilites.pdf (8 pages, 254398 bytes).
+Output written on build/derivabilites.pdf (8 pages, 256537 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  92 compressed objects within 1 object stream

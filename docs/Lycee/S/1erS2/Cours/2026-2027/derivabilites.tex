@@ -18,6 +18,53 @@
 % -------------------------------------------------
 \begin{document}
 
+% Configuration d'une boîte style "Activité"
+\newtcolorbox{activiteintro}{
+    colback=white,
+    colframe=green!50!black,
+    boxrule=0.8pt,
+    leftrule=4pt, % Bordure gauche plus épaisse
+    arc=2pt,
+    top=10pt, bottom=10pt, left=12pt, right=12pt
+}
+
+
+\begin{activiteintro}
+
+Considérons une fonction $f$ représentée par sa courbe graphique $\mathcal{C}_f$, et deux points distincts de la courbe : $A(a ; f(a))$ et $M(x ; f(x))$.
+
+\vspace{0.3cm}
+
+\textbf{Considérons la fonction $f$ représentée ci-dessus et posons-nous les questions suivantes :}
+
+\begin{itemize}
+    \item Quel est le coefficient directeur (la pente) de la droite sécante $(AM)$ ?
+    \item Que devient cette droite sécante lorsque le point $M$ se rapproche de plus en plus du point $A$ (c'est-à-dire lorsque $x$ tend vers $a$) ?
+\end{itemize}
+
+\vspace{0.2cm}
+
+C'est en étudiant cette variation locale que la notion de \textbf{nombre dérivé} et de \textbf{tangente} a été définie.
+
+\vspace{0.2cm}
+
+Le coefficient directeur de la sécante $(AM)$ est donné par le taux d'accroissement :
+\[
+\frac{f(x) - f(a)}{x - a}
+\]
+
+Lorsque le point $M$ se rapproche infiniment du point $A$ (lorsque $x \to a$), la droite sécante $(AM)$ se rapproche d'une position limite appelée \textbf{la tangente} à la courbe en $A$.
+
+\vspace{0.2cm}
+
+Ainsi, si la limite $\displaystyle \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$ existe et est un nombre réel $\ell$, on dit que la fonction $f$ est \textbf{dérivable en $a$}.
+
+\vspace{0.2cm}
+
+Ce nombre réel $\ell$ représente le coefficient directeur de la tangente au point d'abscisse $a$ ; on l'appelle le \textbf{nombre dérivé} de $f$ en $a$ et on le note $f'(a)$.
+
+\end{activiteintro}
+
 \section*{I. Fonction dérivable en un point}
 
 \begin{tcolorbox}[
