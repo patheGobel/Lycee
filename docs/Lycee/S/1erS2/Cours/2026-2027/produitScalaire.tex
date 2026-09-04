@@ -600,4 +600,40 @@ MA^2 + MB^2 = 2MI^2 + \frac{AB^2}{2}
 
 \subsection*{\underline{\textbf{\textcolor{red}{Remarque :}}}}
 Connaissant les trois côtés d'un triangle $ABC$, on est désormais en mesure de calculer les trois longueurs des médianes.
+
+\subsection*{\underline{\textbf{\textcolor{red}{b) Théorème d'Al-Kashi ou théorème de Pythagore généralisé :}}}}
+
+Si $ABC$ est un triangle tel que $AB = c$, $AC = b$ et $BC = a$
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Points du triangle
+    \coordinate (A) at (1.5,2.5);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (4,0);
+
+    % Dessin du triangle
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+    % Labels des sommets
+    \node[above] at (A) {$A$};
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+
+    % Labels des côtés
+    \node[left] at (0.75,1.25) {$c$};
+    \node[right] at (2.75,1.25) {$b$};
+    \node[below] at (2,0) {$a$};
+\end{tikzpicture}
+\end{center}
+
+\noindent alors :
+\begin{align*}
+a^2 &= b^2 + c^2 - 2bc \cos \widehat{A} \\
+b^2 &= a^2 + c^2 - 2ac \cos \widehat{B} \\
+c^2 &= a^2 + b^2 - 2ab \cos \widehat{C}
+\end{align*}
+
 \end{document}
