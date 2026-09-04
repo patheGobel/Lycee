@@ -1088,4 +1088,96 @@ Alors, il existe un unique point $H$ de la droite $(D)$ vérifiant $\vec{u} \cdo
 L'ensemble $E_k$ des points $M$ du plan tel que $\vec{u} \cdot \overrightarrow{AM} = k$ est la droite passant par $H$ et perpendiculaire à la droite $(D)$.
 
 \vspace{0.5cm}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Application}}}}
+
+Soient $A$ et $B$ deux points du plan tels que $AB = 6\text{ cm}$. \\
+Détermine et construis l'ensemble $E_{24}$ des points $M$ du plan vérifiant $\overrightarrow{AB} \cdot \overrightarrow{AM} = 24$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Résolution :}}}}
+
+\[
+E_{24} = \left\{ M \in \mathcal{P} \big/ \overrightarrow{AB} \cdot \overrightarrow{AM} = 24 \right\}
+\]
+
+Soit $H \in (AB)$ et $H \in E_{24} \iff \overrightarrow{AB} \cdot \overrightarrow{AH} = 24$ \\
+$\overrightarrow{AB}$ et $\overrightarrow{AH}$ sont colinéaires et de même sens
+
+\[
+AB \times AH = 24 \iff AH = \frac{24}{AB} = \frac{24}{6} = 4
+\]
+
+\[
+\overrightarrow{AB} \cdot \overrightarrow{AH} = 24 = \overrightarrow{AB} \cdot \overrightarrow{AM} \iff \overrightarrow{AB} \cdot \overrightarrow{AH} = \overrightarrow{AB} \cdot \overrightarrow{AM}
+\]
+\[
+\overrightarrow{AB} \cdot \overrightarrow{HM} = 0
+\]
+
+$E_{24}$ est la droite passant par $H$ et perpendiculaire à $(AB)$.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    % Segment [AB]
+    \draw[thick] (-2,0) -- (4,0);
+    
+    % Points A, H, B
+    \draw[thick] (-1.5, -0.1) -- (-1.5, 0.1) node[below=3pt] {$A$};
+    \draw[thick] (1, -0.1) -- (1, 0.1) node[above left] {$H$};
+    \draw[thick] (3.5, -0.1) -- (3.5, 0.1) node[below=3pt] {$B$};
+
+    % Droite E_{24} perpendiculaire passant par H
+    \draw[thick] (1,-2.5) -- (1,2.5) node[below right] {$(E_{24})$};
+
+    % Symbole d'angle droit
+    \draw (1,0) ++(-0.2,0) -- ++(0,0.2) -- ++(0.2,0);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{\underline{\textbf{\textcolor{red}{4) Ligne de niveau du type $\overrightarrow{MA} \cdot \overrightarrow{MB} = k$}}}}
+
+\textbf{\underline{\textcolor{red}{Activité :}}} \\
+Soient $A$ et $B$ deux points du plan, $I$ milieu de $[AB]$ et $k$ un réel donné. \\
+On se propose de déterminer l'ensemble
+\[
+E_k = \left\{ M \in \mathcal{P} \big/ \overrightarrow{MA} \cdot \overrightarrow{MB} = k \right\}
+\]
+
+\begin{enumerate}
+    \item Établis que $\overrightarrow{MA} \cdot \overrightarrow{MB} = MI^2 - \frac{AB^2}{4}$
+    \item Déterminer $E_k$
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Résolution :}}}}
+
+\begin{enumerate}
+    \item 
+    \begin{align*}
+    \overrightarrow{MA} \cdot \overrightarrow{MB} &= (\overrightarrow{MI} + \overrightarrow{IA}) \cdot (\overrightarrow{MI} + \overrightarrow{IB}) \\
+    &= (\overrightarrow{MI} + \overrightarrow{IA}) \cdot (\overrightarrow{MI} - \overrightarrow{IA}) \\
+    &= MI^2 - IA^2 \quad \text{or } IA = \frac{AB}{2} \\
+    \overrightarrow{MA} \cdot \overrightarrow{MB} &= MI^2 - \frac{AB^2}{4}
+    \end{align*}
+
+    \item \textbf{\underline{Établissons $E_k$ :}}
+    \begin{align*}
+    \overrightarrow{MA} \cdot \overrightarrow{MB} = k &\iff MI^2 - \frac{AB^2}{4} = k \\
+    &\iff MI^2 = k + \frac{AB^2}{4}
+    \end{align*}
+
+    \begin{itemize}
+        \item Si $k + \frac{AB^2}{4} = 0$, c'est-à-dire $k = -\frac{AB^2}{4}$, alors $MI^2 = 0 \iff M = I$.
+        \[
+        E_k = \{I\}
+        \]
+
+        \item Si $k + \frac{AB^2}{4} < 0$, c'est-à-dire $k < -\frac{AB^2}{4}$, alors $E_k = \emptyset$.
+
+        \item Si $k + \frac{AB^2}{4} > 0$, alors $MI^2 = k + \frac{AB^2}{4} \iff MI = \sqrt{k + \frac{AB^2}{4}}$. \\
+        $E_k$ est le cercle de centre $I$ et de rayon $\sqrt{k + \frac{AB^2}{4}}$.
+    \end{itemize}
+\end{enumerate}
+
 \end{document}
