@@ -916,4 +916,49 @@ x^2 - 3x + y^2 - 2y + 1 &= 0 \\
 \[
 \mathcal{C}\left( \Omega \begin{pmatrix} 3/2 \\ 1 \end{pmatrix} \,;\, \frac{3}{2} \right)
 \]
+
+\subsection*{\underline{\textbf{\textcolor{red}{Propriété :}}}}
+
+Le cercle de diamètre $[AB]$ est l'ensemble des points $M$ du plan tel que $\overrightarrow{MA} \cdot \overrightarrow{MB} = 0$.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Cercle de diamètre [AB]
+    \coordinate (A) at (-1.5,-0.5);
+    \coordinate (B) at (0.8,0.9);
+    
+    % Centre du cercle
+    \coordinate (O) at ($ (A)!0.5!(B) $);
+    % Calcul du rayon
+    \path (A); \pgfgetlastxy{\ax}{\ay}
+    \path (B); \pgfgetlastxy{\bx}{\by}
+    
+    % Dessin du cercle
+    \draw[thick] (O) circle (1.41cm);
+
+    % Point M sur le cercle formant un angle droit
+    \coordinate (M) at (0.8,-0.95);
+
+    % Diamètre [AB]
+    \draw[thick] (A) -- (B);
+    
+    % Triangle AMB
+    \draw[thick] (A) -- (M) -- (B);
+
+    % Mark milieu sur le diamètre
+    \draw[thick] ($ (A)!0.5!(O) $) +(-0.05,0.08) -- +(0.05,-0.08);
+    \draw[thick] ($ (O)!0.5!(B) $) +(-0.05,0.08) -- +(0.05,-0.08);
+
+    % Symbole de l'angle droit en M
+    \draw (M) ++(-0.2,0) -- ++(0,0.2) -- ++(0.2,0);
+
+    % Labels des points
+    \node[left] at (A) {$A$};
+    \node[right] at (B) {$B$};
+    \node[below right] at (M) {$M$};
+\end{tikzpicture}
+\end{center}
+
 \end{document}
