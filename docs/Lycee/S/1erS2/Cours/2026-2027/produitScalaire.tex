@@ -345,4 +345,64 @@ C'est-à-dire que :
 
 Donc, $EDF$ n'est pas rectangle en $E$.
 
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Identités remarquables : }}}}
+
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs du plan.
+
+\[
+I_1 : (\vec{u} + \vec{v})^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 + 2(\vec{u} \cdot \vec{v})
+\]
+\[
+\iff \|\vec{u} + \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 + 2\|\vec{u}\|\|\vec{v}\| \cos(\theta)
+\]
+
+\[
+I_2 : (\vec{u} - \vec{v})^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 - 2(\vec{u} \cdot \vec{v})
+\]
+\[
+\iff \|\vec{u} - \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2 - 2\|\vec{u}\|\|\vec{v}\| \cos(\theta)
+\]
+
+\[
+I_3 : (\vec{u} + \vec{v})(\vec{u} - \vec{v}) = \|\vec{u}\|^2 - \|\vec{v}\|^2
+\]
+
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque :}}}}
+Ces identités remarquables fournissent d'autres expressions du produit scalaire.
+
+\[
+\overrightarrow{u} \cdot \overrightarrow{v} = \frac{1}{2} \left[ \|\overrightarrow{u} + \overrightarrow{v}\|^2 - \|\overrightarrow{u}\|^2 - \|\overrightarrow{v}\|^2 \right]
+\]
+
+\[
+\overrightarrow{u} \cdot \overrightarrow{v} = \frac{1}{2} \left[ \|\overrightarrow{u}\|^2 + \|\overrightarrow{v}\|^2 - \|\overrightarrow{u} - \overrightarrow{v}\|^2 \right]
+\]
+
+On peut donc calculer le produit scalaire uniquement avec les distances.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple :}}}}
+On donne $A$, $B$ et $C$ trois points du plan tels que 
+\[
+AB = 4\text{ cm}, \quad AC = 5\text{ cm}, \quad BC = 6\text{ cm}
+\]
+Calcule $\overrightarrow{AB} \cdot \overrightarrow{AC}$.
+
+\[
+\overrightarrow{BC} = \overrightarrow{BA} + \overrightarrow{AC} = \overrightarrow{AC} - \overrightarrow{AB}
+\]
+
+\[
+BC^2 = (\overrightarrow{AC} - \overrightarrow{AB})^2 = AC^2 + AB^2 - 2\overrightarrow{AC} \cdot \overrightarrow{AB}
+\]
+
+\[
+2\overrightarrow{AC} \cdot \overrightarrow{AB} = AC^2 + AB^2 - BC^2
+\]
+
+\begin{align*}
+\overrightarrow{AC} \cdot \overrightarrow{AB} &= \frac{1}{2} \left[ AC^2 + AB^2 - BC^2 \right] \\
+&= \frac{1}{2} \left[ 25 + 16 - 36 \right] \\
+&= \overrightarrow{AC} \cdot \overrightarrow{AB} = \frac{5}{2}
+\end{align*}
 \end{document}
