@@ -515,4 +515,53 @@ Soit $A, B, M, N$ 4 points du plan dont trois d'entre eux ne sont pas alignés.
     \node[right] at (7.5,1) {alors $\overrightarrow{AB} \cdot \overrightarrow{MN} = \overrightarrow{AB} \cdot \overrightarrow{M'N'}$};
 \end{tikzpicture}
 \end{center}
+
+\section*{\underline{\textbf{\textcolor{red}{II - Application du produit scalaire}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1) Application aux problèmes métriques}}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{a) Théorème de la médiane :}}}}
+
+Soient $A$ et $B$ deux points du plan et $I$ milieu du segment $[AB]$. Pour tout point $M$ du plan, on a :
+
+\[
+MA^2 + MB^2 = 2MI^2 + \frac{AB^2}{2}
+\]
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Points du triangle et milieu
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (5,0);
+    \coordinate (I) at (2.5,0);
+    \coordinate (M) at (2,3.5);
+
+    % Lignes du triangle et médiane
+    \draw[thick] (A) -- (B) -- (M) -- cycle;
+    \draw[thick] (M) -- (I);
+
+    % Codage du milieu (traits d'égalité sur AI et IB)
+    \draw[thick] (1.15,-0.15) -- (1.35,0.15);
+    \draw[thick] (1.25,-0.15) -- (1.45,0.15);
+    
+    \draw[thick] (3.65,-0.15) -- (3.85,0.15);
+    \draw[thick] (3.75,-0.15) -- (3.95,0.15);
+
+    % Labels des points
+    \node[below left] at (A) {$A$};
+    \node[below right] at (B) {$B$};
+    \node[below] at (I) {$I$};
+    \node[above] at (M) {$M$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item $MA^2 + MB^2 = 2MI^2 + \dfrac{AB^2}{2}$
+    \item $MA^2 - MB^2 = 2\overrightarrow{MI} \cdot \overrightarrow{BA}$
+    \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = MI^2 - \dfrac{AB^2}{4}$
+\end{enumerate}
 \end{document}
