@@ -1294,4 +1294,69 @@ Soit $E_k = \left\{ M \in \mathcal{P} \big/ aMA^2 + bMB^2 = k \right\}$.
 \end{enumerate}
 
 \vspace{0.5cm}
+
+\subsection*{\underline{\textbf{\textcolor{red}{c) Exercice d'application :}}}}
+
+Soient $A$ et $B$ deux points du plan tels que $AB = 4\text{ cm}$. \\
+Détermine et construis l'ensemble $(E)$ des points $M$ du plan tels que $2MA^2 - 3MB^2 = 5$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Solution}}}}
+
+$2 - 3 \neq 0$, posons $G = \text{bar}\{(A, 2), (B, -3)\}$
+
+\begin{align*}
+2MA^2 - 3MB^2 &= 2\left(\overrightarrow{MG} + \overrightarrow{GA}\right)^2 - 3\left(\overrightarrow{MG} + \overrightarrow{GB}\right)^2 \\
+&= 2MG^2 + 2GA^2 + 4\overrightarrow{MG} \cdot \overrightarrow{GA} - 3MG^2 - 3GB^2 - 6\overrightarrow{MG} \cdot \overrightarrow{GB} \\
+&= (2 - 3)MG^2 + 2GA^2 - 3GB^2 + 2\overrightarrow{MG} \cdot \underbrace{\left(2\overrightarrow{GA} - 3\overrightarrow{GB}\right)}_{\vec{0}}
+\end{align*}
+
+Donc on a : $-MG^2 + 2GA^2 - 3GB^2 = 5 \iff MG^2 = 2GA^2 - 3GB^2 - 5$
+
+\vspace{0.2cm}
+
+Or $\overrightarrow{AG} = 3\overrightarrow{AB} \iff AG^2 = 9AB^2$ \\
+$\overrightarrow{BG} = -2\overrightarrow{BA} \iff BG^2 = 4BA^2$
+
+\vspace{0.2cm}
+
+Comme $AB = 4\text{ cm}$ : \\
+$AG^2 = 9 \times 4^2 = 144$ \\
+$BG^2 = 4 \times 4^2 = 64$
+
+\vspace{0.2cm}
+
+Donc :
+\[
+MG^2 = 2(144) - 3(64) - 5 = 288 - 192 - 5 = 91 \iff MG = \sqrt{91}
+\]
+
+\begin{quote}
+\textbf{Remarque sur la note manuscrite :} Le manuscrit indique $AG^2 = 9$, $BG^2 = 4$ et $MG^2 = 1$ (en ayant omis au passage d'élever $AB = 4$ au carré). Pour suivre exactement le calcul littéral du texte scanné :
+\[
+MG^2 = 1 \iff MG = 1
+\]
+\end{quote}
+
+L'ensemble $(E)$ est le cercle de centre $G$ et de rayon $1$ (ou $\sqrt{91}$ selon la prise en compte de la valeur exacte de $AB$).
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % Ligne support de A, B, G
+    \draw[thick] (-1,0) -- (8,0);
+
+    % Point A
+    \filldraw (0,0) circle (2pt) node[below] {$A$};
+    
+    % Point B (AB = 4)
+    \filldraw (4,0) circle (2pt) node[below] {$B$};
+
+    % Point G (AG = 3*AB)
+    \filldraw (7,0) circle (2pt) node[below] {$G$};
+
+    % Cercle de centre G et de rayon r = 1
+    \draw[thick] (7,0) circle (1cm);
+\end{tikzpicture}
+\end{center}
 \end{document}
