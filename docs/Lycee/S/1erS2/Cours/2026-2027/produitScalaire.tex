@@ -1023,4 +1023,62 @@ On pose $\textcolor{red}{E_k = \left\{ M \in \mathcal{P} \big/ \vec{u} \cdot \ov
     \item Démontre que $M \in E_k$ si et seulement si $\vec{u} \cdot \overrightarrow{HM} = 0$.
     \item En déduire l'ensemble $E_k$.
 \end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Résolution :}}}}
+\begin{enumerate}
+\item 
+$H \in E_k \iff \vec{u} \cdot \overrightarrow{AH} = k$ \\
+$H \in (D)$ de vecteur directeur $\vec{u}$ \\
+$\vec{u}$ et $\overrightarrow{AH}$ sont colinéaires.
+
+\begin{itemize}
+    \item Si $k = 0$ alors $\vec{u} \cdot \overrightarrow{AH} = 0$ \\
+    ce qui signifie que $\overrightarrow{AH} = \vec{0}$ donc $H = A$
+
+    \item Si $k \neq 0$ alors $\vec{u} \cdot \overrightarrow{AH} = \|\vec{u}\| \times \|\overrightarrow{AH}\| \times \cos(\vec{u}, \overrightarrow{AH})$ \\
+    $H \in E_k \iff \|\vec{u}\| \times \|\overrightarrow{AH}\| \times \cos(\vec{u}, \overrightarrow{AH}) = k$ \\
+    Si $k > 0$ alors les vecteurs $\vec{u}$ et $\overrightarrow{AH}$ sont colinéaires et de même sens, ce qui signifie $\cos(\vec{u}, \overrightarrow{AH}) = 1$ \\
+    Donc $\|\vec{u}\| \times \|\overrightarrow{AH}\| = k \iff AH = \frac{k}{\|\vec{u}\|}$
+
+    \item Si $k < 0$ alors les vecteurs $\vec{u}$ et $\overrightarrow{AH}$ sont colinéaires et de sens contraires ce qui signifie que $\cos(\vec{u}, \overrightarrow{AH}) = -1$ \\
+
+    
+\begin{align*}
+\text{Donc } \vec{u} \cdot \overrightarrow{AM} &= \vec{u} \cdot \overrightarrow{AH} \\
+\vec{u} \cdot \overrightarrow{AM} - \vec{u} \cdot \overrightarrow{AH} &= 0 \\
+\vec{u} \cdot \left(\overrightarrow{AM} - \overrightarrow{AH}\right) &= 0 \\
+\vec{u} \cdot \overrightarrow{HM} &= 0 \quad \text{ce qu'il fallait démontrer.}
+\end{align*}
+
+\end{itemize}
+\item $M \in E_k \iff \vec{u} \cdot \overrightarrow{HM} = 0$
+ 
+M $\in E_k \iff \vec{u} \cdot \overrightarrow{AM} = k$ \\
+H $\in E_k \iff \vec{u} \cdot \overrightarrow{AH} = k$\\
+
+    Donc $\|\vec{u}\| \times \|\overrightarrow{AH}\| \times (-1) = k \iff AH = -\frac{k}{\|\vec{u}\|}$
+
+\item \textbf{\underline{Déduisons $E_k$ :}} \\
+    $\vec{u} \cdot \overrightarrow{HM} = 0 \iff$ les vecteurs $\vec{u}$ et $\overrightarrow{HM}$ sont orthogonaux.
+
+L'ensemble $E_k$ est la droite passant par $H$ et perpendiculaire à la droite $(D)$.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Droite (D) - Correction du placement du nœud
+    \draw[thick] (-2, -0.5) -- (3, 1) node[above, pos=0.8] {$(D)$};
+
+    % Point A sur la droite (D)
+    \coordinate (A) at (-1, -0.2);
+    \node at (A) {$\times$};
+    \node[above left] at (A) {$A$};
+
+    % Vecteur u sous la droite
+    \draw[thick, ->] (-1, -1) -- (1, -0.4) node[midway, below] {$\vec{u}$};
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+
 \end{document}
