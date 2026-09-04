@@ -735,4 +735,125 @@ Soit $ABC$ un triangle tel que $AB = c$, $AC = b$ et $BC = a$, d'aire $S$ et $R$
     
     \item $\dfrac{a}{\sin \widehat{A}} = \dfrac{b}{\sin \widehat{B}} = \dfrac{c}{\sin \widehat{C}} = \dfrac{abc}{2S} = 2R$
 \end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Démonstration :}}}}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Cercle circonscrit (Centre O, rayon R = 2cm)
+    \coordinate (O) at (0,0);
+    \draw[thick] (O) circle (2cm);
+
+    % Points du triangle ABC inscrit dans le cercle
+    \coordinate (A) at (90:2cm);
+    \coordinate (B) at (210:2cm);
+    \coordinate (C) at (330:2cm);
+
+    % Point B' diamétralement opposé à B
+    \coordinate (Bprime) at (30:2cm);
+
+    % Pied de la hauteur H sur [BC]
+    \coordinate (H) at (A |- B);
+
+    % Triangle ABC
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+    % Hauteur [AH]
+    \draw[dashed, thick] (A) -- (H);
+    \draw (H) ++(0,0.2) -- ++(0.2,0) -- ++(0,-0.2); % Angle droit
+
+    % Diamètre [BB'] et segment [B'C]
+    \draw[dashed] (B) -- (Bprime);
+    \draw[dashed] (Bprime) -- (C);
+
+    % Arcs d'angles identiques B et B'
+    \draw (B) ++(0.4,0.15) arc (20:60:0.4cm);
+    \draw (Bprime) ++(-0.35,-0.15) arc (200:240:0.4cm);
+
+    % Points et labels
+    \node[above] at (A) {$A$};
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+    \node[below] at (H) {$H$};
+    \node[above right] at (O) {$O$};
+    \node[right] at (Bprime) {$B'$};
+
+    % Côtés a, b, c
+    \node[below] at (0,-1.73) {$a$};
+    \node[left] at (-0.9,0.5) {$c$};
+    \node[right] at (0.9,0.5) {$b$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+\begin{enumerate}
+\item
+$
+\text{Aire }(ABC) = S = \dfrac{BC \times AH}{2}
+$
+
+\[
+\sin \widehat{B} = \frac{AH}{AB} \iff AH = AB \sin \widehat{B}
+\]
+
+\begin{align*}
+\text{Aire }(ABC) = S &= \frac{BC \times AH}{2} \\
+\sin \widehat{B} = \frac{AH}{AB} &\iff AH = AB \sin \widehat{B}
+\end{align*}
+
+\[
+\text{Donc } S = \frac{BC \times AB \times \sin \widehat{B}}{2}
+\]
+
+\[
+S = \frac{1}{2} ac \sin \widehat{B}
+\]
+
+Par analogie, on démontre que :
+\[
+S = \frac{1}{2} ab \sin \widehat{C} = \frac{1}{2} bc \sin \widehat{A}
+\]
+
+\[
+\text{D'où } S = \frac{1}{2} ab \sin \widehat{C} = \frac{1}{2} bc \sin \widehat{A} = \frac{1}{2} ac \sin \widehat{B}
+\]
+
+    \item 
+    $
+    S = \dfrac{1}{2} ab \sin \widehat{C} = \dfrac{1}{2} bc \sin \widehat{A} = \dfrac{1}{2} ac \sin \widehat{B}
+    $
+
+    \[
+    2S = ab \sin \widehat{C} = bc \sin \widehat{A} = ac \sin \widehat{B}
+    \]
+
+    \[
+    \frac{1}{2S} = \frac{1}{ab \sin \widehat{C}} = \frac{1}{bc \sin \widehat{A}} = \frac{1}{ac \sin \widehat{B}}
+    \]
+
+    \[
+    \frac{abc}{2S} = \frac{abc}{ab \sin \widehat{C}} = \frac{abc}{bc \sin \widehat{A}} = \frac{abc}{ac \sin \widehat{B}}
+    \]
+
+    \[
+    \frac{abc}{2S} = \frac{c}{\sin \widehat{C}} = \frac{a}{\sin \widehat{A}} = \frac{b}{\sin \widehat{B}}
+    \]
+
+    \[
+\sin \widehat{B'} = \frac{AB}{BB'} = \frac{c}{2R}
+\]
+
+Or $\widehat{BB'A}$ et $\widehat{BCA}$ sont deux angles inscrits interceptant le même arc $\widehat{AB}$, donc ils ont la même mesure.
+
+\begin{align*}
+\sin \widehat{C} = \sin \widehat{B'} = \frac{c}{2R} &\iff \sin \widehat{C} = \frac{c}{2R} \\
+&\iff 2R = \frac{c}{\sin \widehat{C}}
+\end{align*}
+
+\[
+\text{Or } \frac{c}{\sin \widehat{C}} = \frac{a}{\sin \widehat{A}} = \frac{b}{\sin \widehat{B}} \iff \frac{abc}{2S} = \frac{a}{\sin \widehat{A}} = \frac{b}{\sin \widehat{B}} = \frac{c}{\sin \widehat{C}} = 2R
+\]
+\end{enumerate}
 \end{document}
