@@ -961,4 +961,22 @@ Le cercle de diamètre $[AB]$ est l'ensemble des points $M$ du plan tel que $\ov
 \end{tikzpicture}
 \end{center}
 
+\subsection*{\underline{\textbf{\textcolor{red}{Remarque :}}}}
+
+On peut déterminer l'équation d'un cercle sans connaître son centre ni son rayon en utilisant uniquement $\overrightarrow{MA} \cdot \overrightarrow{MB} = 0$.
+
+\[
+M\begin{pmatrix} x \\ y \end{pmatrix} \quad A\begin{pmatrix} x_A \\ y_A \end{pmatrix} \quad B\begin{pmatrix} x_B \\ y_B \end{pmatrix}
+\]
+
+\[
+\overrightarrow{MA}\begin{pmatrix} x_A - x \\ y_A - y \end{pmatrix} \quad \overrightarrow{MB}\begin{pmatrix} x_B - x \\ y_B - y \end{pmatrix}
+\]
+
+\begin{align*}
+\overrightarrow{MA} \cdot \overrightarrow{MB} &= (x_A - x)(x_B - x) + (y_A - y)(y_B - y) = 0 \\
+&= x_A x_B - x_A x - x_B x + x^2 + y_A y_B - y_B y - y_A y + y^2 = 0 \\
+&= x^2 + y^2 - (x_A + x_B)x - (y_A + y_B)y + x_A x_B + y_A y_B = 0
+\end{align*}
+
 \end{document}
