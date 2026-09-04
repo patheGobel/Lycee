@@ -698,4 +698,29 @@ Soit $ABC$ un triangle tel que $AB = 4\text{ cm}$, $AC = 5\text{ cm}$, $BC = 7\t
 \end{tikzpicture}
 \end{center}
 
+\subsection*{\underline{\textbf{\textcolor{red}{Résolution :}}}}
+
+\begin{enumerate}
+    \item \textbf{Déterminons $[CI]$} \\
+    $A$ et $B$ étant deux points du plan et $I$ milieu de $[AB]$, d'après le Théorème relatif à la médiane :
+    Pour tout point $M$ du plan on a :
+\[
+MA^2 + MB^2 = 2MI^2 + \frac{AB^2}{2}
+\]
+
+en particulier pour $M = C$ :
+\begin{align*}
+CA^2 + CB^2 = 2CI^2 + \frac{AB^2}{2} &\implies CI^2 = \frac{1}{2} \left[ CA^2 + CB^2 - \frac{AB^2}{2} \right] \\
+&\implies CI^2 = \frac{1}{2} \left[ 25 + 49 - 8 \right] \\
+&\implies \boxed{CI^2 = 33 \implies CI = \sqrt{33} \text{ cm}}
+\end{align*}
+\item $ABC$ est un triangle, d'après le Théorème d'Al Kashi on a :
+    \begin{align*}
+    BC^2 &= AB^2 + AC^2 - 2AB \cdot AC \cos \widehat{BAC} \\
+    \cos \widehat{BAC} &= \frac{AB^2 + AC^2 - BC^2}{2AB \times AC} \\
+    \cos \widehat{BAC} &= \frac{16 + 25 - 49}{2 \times 4 \times 5} \\
+    &= \frac{41 - 49}{40} \\
+    \cos \widehat{BAC} &= -\frac{1}{5} \implies \text{mes}\widehat{BAC} \simeq 102^\circ
+    \end{align*}
+\end{enumerate}
 \end{document}
