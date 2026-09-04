@@ -405,4 +405,114 @@ BC^2 = (\overrightarrow{AC} - \overrightarrow{AB})^2 = AC^2 + AB^2 - 2\overright
 &= \frac{1}{2} \left[ 25 + 16 - 36 \right] \\
 &= \overrightarrow{AC} \cdot \overrightarrow{AB} = \frac{5}{2}
 \end{align*}
+
+\subsection*{\underline{\textbf{\textcolor{red}{4) Produit scalaire et projection orthogonale}}}}
+
+Si $A$, $B$, $C$ sont trois points du plan distincts deux à deux,
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{cc}
+
+% --- Cas 1 : H est sur le segment [AB] (même sens) ---
+\begin{tikzpicture}[scale=0.9]
+    % Points
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4,0);
+    \coordinate (H) at (1.5,0);
+    \coordinate (C) at (1.5,2.5);
+
+    % Triangles et lignes
+    \draw[thick] (A) -- (B);
+    \draw[thick] (A) -- (C) -- (B);
+    \draw[dashed, thick] (C) -- (H);
+
+    % Angle droit à H
+    \draw (1.5,0.3) -- (1.8,0.3) -- (1.8,0);
+
+    % Labels des points
+    \node[below left] at (A) {$A$};
+    \node[below right] at (B) {$B$};
+    \node[below] at (H) {$H$};
+    \node[above] at (C) {$C$};
+\end{tikzpicture}
+&
+% --- Cas 2 : H est à l'extérieur du segment [AB] (sens contraire) ---
+\begin{tikzpicture}[scale=0.9]
+    % Points
+    \coordinate (H) at (0,0);
+    \coordinate (A) at (1.2,0);
+    \coordinate (B) at (3.5,0);
+    \coordinate (C) at (0,2.5);
+
+    % Triangles et lignes
+    \draw[dashed, thick] (H) -- (A);
+    \draw[thick] (A) -- (B);
+    \draw[thick] (A) -- (C) -- (B);
+    \draw[dashed, thick] (C) -- (H);
+
+    % Angle droit à H
+    \draw (0,0.3) -- (0.3,0.3) -- (0.3,0);
+
+    % Labels des points
+    \node[below] at (H) {$H$};
+    \node[below] at (A) {$A$};
+    \node[below right] at (B) {$B$};
+    \node[above] at (C) {$C$};
+\end{tikzpicture}
+\\
+\vspace{0.3cm} \\
+% Formule Cas 1
+alors $\overrightarrow{AB} \cdot \overrightarrow{AC} = \overrightarrow{AB} \cdot \overrightarrow{AH} = AB \times AH$
+&
+% Formule Cas 2
+\begin{tabular}{l}
+alors $\overrightarrow{AB} \cdot \overrightarrow{AC} = \overrightarrow{AB} \cdot \overrightarrow{AH}$ \\
+\hspace{2.2cm} $= -AB \times AH$
+\end{tabular}
+
+\end{tabular}
+\end{center}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Plus généralement :}}}}
+
+Soit $A, B, M, N$ 4 points du plan dont trois d'entre eux ne sont pas alignés.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Ligne droite de base
+    \draw[thick] (-0.5,0) -- (6.5,0);
+
+    % Points sur la droite
+    \coordinate (A) at (0,0);
+    \coordinate (Mprime) at (1.2,0);
+    \coordinate (Nprime) at (4.8,0);
+    \coordinate (B) at (6,0);
+
+    % Points projetés
+    \coordinate (M) at (1.2,2);
+    \coordinate (N) at (4.8,2.4);
+
+    % Projections (lignes pointillées rouges)
+    \draw[dashed, red, thick] (M) -- (Mprime);
+    \draw[dashed, red, thick] (N) -- (Nprime);
+
+    % Segment MN
+    \draw[thick] (M) -- (N);
+
+    % Labels
+    \node[below] at (A) {$A$};
+    \node[below, red] at (Mprime) {$M'$};
+    \node[below, red] at (Nprime) {$N'$};
+    \node[below] at (B) {$B$};
+    \node[above left] at (M) {$M$};
+    \node[above right] at (N) {$N$};
+
+    % Formule à droite
+    \node[right] at (7.5,1) {alors $\overrightarrow{AB} \cdot \overrightarrow{MN} = \overrightarrow{AB} \cdot \overrightarrow{M'N'}$};
+\end{tikzpicture}
+\end{center}
 \end{document}
