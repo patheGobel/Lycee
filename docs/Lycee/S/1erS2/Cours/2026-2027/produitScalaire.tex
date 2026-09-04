@@ -268,4 +268,81 @@ dans un repère orthonormé, alors :
     \vec{u} \cdot \vec{v} = x_C \cdot x_B + y_C \cdot y_B, \quad AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}.
     \]
 \end{itemize}
+
+\subsection*{Exerice d'application}
+
+Soient $A(-2, -3)$, $B(1, 1)$, $C(-3, -1)$, $D(4, 2)$, $E(-4, -3)$ et $E(2, -1)$ dans un repère orthonormé.
+
+En utilisant deux méthodes différentes (une méthode par triangle), montrer que le triangle $ABC$ est un triangle rectangle en $C$, mais que $FDE$ ne l'est pas en $E$.
+\subsection*{Correction}
+\textbf{Calculons $AB$, $AC$ et $BC$ :}
+
+\[
+AB = \sqrt{(1 + 2)^2 + (1 + 3)^2}
+\]
+\[
+AB = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = 5
+\]
+
+\[
+AC = \sqrt{(-3 + 2)^2 + (-1 + 3)^2}
+\]
+\[
+AC = \sqrt{(-1)^2 + 2^2} = \sqrt{1 + 4} = \sqrt{5}
+\]
+
+\[
+BC = \sqrt{(-3 - 1)^2 + (-1 - 1)^2}
+\]
+\[
+BC = \sqrt{16 + 4} = \sqrt{20}
+\]
+\[
+BC = 2\sqrt{5}
+\]
+
+\textbf{Calculons} $AB^2$ :
+\[
+AB^2 = 5^2 = 25
+\]
+
+\textbf{Calculons} $AC^2 + BC^2$ :
+\[
+AC^2 + BC^2 = (\sqrt{5})^2 + (2\sqrt{5})^2
+\]
+\[
+AC^2 + BC^2 = 5 + 20 = 25
+\]
+
+Ainsi, on a :
+\[
+AB^2 = AC^2 + BC^2
+\]
+
+Comme $AB^2 = AC^2 + BC^2$, d'après la réciproque du théorème de Pythagore, le triangle $ABC$ est rectangle en $C$.
+
+Le triangle $EDF$ n'est pas rectangle en $E$ si et seulement si :
+\[
+\widehat{FED} \neq 90^\circ
+\]
+C'est-à-dire que :
+\[
+\vec{EF} \cdot \vec{ED} \neq 0
+\]
+
+\textbf{les coordonnées des vecteurs $\vec{EF}$ et $\vec{ED}$ :}
+
+\[
+\vec{EF}(3, 2) \quad \text{et} \quad \vec{ED}(-3, 5)
+\]
+
+\[
+\vec{EF} \cdot \vec{ED} = (3 \times -3) + (2 \times 5)
+\]
+\[
+\vec{EF} \cdot \vec{ED} = 1 = 36 \neq 0
+\]
+
+Donc, $EDF$ n'est pas rectangle en $E$.
+
 \end{document}
