@@ -1359,4 +1359,48 @@ L'ensemble $(E)$ est le cercle de centre $G$ et de rayon $1$ (ou $\sqrt{91}$ sel
     \draw[thick] (7,0) circle (1cm);
 \end{tikzpicture}
 \end{center}
+
+\subsection*{\underline{\textbf{\textcolor{red}{5) Ligne de niveau du type $\frac{MA}{MB} = k$}}}}
+
+Soit $E_k = \left\{ M \in \mathcal{P} \big/ \frac{MA}{MB} = k \right\}$.
+
+\begin{itemize}
+    \item Si $k = 1$, $MA = MB$, \textcolor{red}{$E_k$ est la médiatrice de $[AB]$}.
+    \item Si $k < 0$, $E_k = \emptyset$.
+    \item Si $k > 0$ et $k \neq 1$, $\frac{MA}{MB} = k \iff \frac{MA^2}{MB^2} = k^2$.
+\end{itemize}
+
+Ce qui donne :
+\begin{align*}
+MA^2 = k^2 MB^2 &\iff MA^2 - k^2 MB^2 = 0 \\
+&\iff \left(\overrightarrow{MA} - k\overrightarrow{MB}\right) \cdot \left(\overrightarrow{MA} + k\overrightarrow{MB}\right) = 0
+\end{align*}
+
+Posons $G_1 = \text{bar}\{(A, 1), (B, -k)\}$ et $G_2 = \text{bar}\{(A, 1), (B, k)\}$.
+
+Donc :
+\begin{align*}
+MA^2 - k^2 MB^2 &= \left[(1 - k)\overrightarrow{MG_1}\right] \cdot \left[(1 + k)\overrightarrow{MG_2}\right] \\
+&= (1 - k^2)\overrightarrow{MG_1} \cdot \overrightarrow{MG_2} = 0 \quad \text{or } 1 - k^2 \neq 0
+\end{align*}
+
+\vspace{0.5cm}
+
+D'où $\overrightarrow{MG_1} \cdot \overrightarrow{MG_2} = 0$.
+
+$E_k$ est alors le cercle de diamètre $[G_1 G_2]$.
+
+\vspace{0.3cm}
+
+\textbf{\underline{\textcolor{red}{Autrement :}}}
+
+\[
+MA^2 - k^2 MB^2 = 0 \quad, \quad G = \text{bar}\{(A, 1), (B, -k^2)\}
+\]
+
+Or $MA^2 - k^2 MB^2 = (1 - k^2)MG^2 + GA^2 - k^2 GB^2 = 0$
+
+\[
+MG^2 = \frac{k^2 GB^2 - GA^2}{1 - k^2}
+\]
 \end{document}
