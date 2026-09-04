@@ -564,4 +564,37 @@ MA^2 + MB^2 = 2MI^2 + \frac{AB^2}{2}
     \item $MA^2 - MB^2 = 2\overrightarrow{MI} \cdot \overrightarrow{BA}$
     \item $\overrightarrow{MA} \cdot \overrightarrow{MB} = MI^2 - \dfrac{AB^2}{4}$
 \end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Démonstration :}}}}
+
+\begin{enumerate}
+    \item 
+    \begin{align*}
+        MA^2 + MB^2 &= \overrightarrow{MA}^2 + \overrightarrow{MB}^2 \\
+        &= (\overrightarrow{MI} + \overrightarrow{IA})^2 + (\overrightarrow{MI} + \overrightarrow{IB})^2 \\
+        &= MI^2 + IA^2 + 2\overrightarrow{MI} \cdot \overrightarrow{IA} + MI^2 + IB^2 + 2\overrightarrow{MI} \cdot \overrightarrow{IB} \\
+        &= 2MI^2 + IA^2 + IB^2 + 2\overrightarrow{MI} \cdot (\overrightarrow{IA} + \overrightarrow{IB}) \quad \text{or } IA = IB \\
+        &= 2MI^2 + 2IA^2 \quad \text{or } IA = \frac{AB}{2} \Rightarrow IA^2 = \frac{AB^2}{4}
+    \end{align*}
+    \[
+\text{Donc } MA^2 + MB^2 = 2MI^2 + \frac{AB^2}{2}
+\]
+
+    \item 
+    \begin{align*}
+        MA^2 - MB^2 &= (\overrightarrow{MI} + \overrightarrow{IA})^2 - (\overrightarrow{MI} + \overrightarrow{IB})^2 \\
+        &= MI^2 + IA^2 + 2\overrightarrow{MI} \cdot \overrightarrow{IA} - MI^2 - IB^2 - 2\overrightarrow{MI} \cdot \overrightarrow{IB} \\
+        &= 2\overrightarrow{MI} \cdot (\overrightarrow{IA} - \overrightarrow{IB}) \\
+        &= 2\overrightarrow{MI} \cdot (\overrightarrow{BI} + \overrightarrow{IA}) \\
+        MA^2 - MB^2 &= 2\overrightarrow{MI} \cdot \overrightarrow{BA}
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        \overrightarrow{MA} \cdot \overrightarrow{MB} &= (\overrightarrow{MI} + \overrightarrow{IA}) \cdot (\overrightarrow{MI} + \overrightarrow{IB}) \\
+        &= (\overrightarrow{MI} + \overrightarrow{IA}) \cdot (\overrightarrow{MI} - \overrightarrow{IA}) \\
+        &= MI^2 - IA^2 \\
+        \overrightarrow{MA} \cdot \overrightarrow{MB} &= MI^2 - \frac{AB^2}{4}
+    \end{align*}
+\end{enumerate}
 \end{document}
