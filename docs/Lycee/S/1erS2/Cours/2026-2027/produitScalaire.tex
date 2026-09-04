@@ -652,4 +652,50 @@ De manière analogue, on démontre que :
 \textcolor{red}{b^2 = c^2 + a^2 - 2ac \cos \widehat{B} \quad \text{et} \quad c^2 = a^2 + b^2 - 2ab \cos \widehat{C}}
 \]
 
+
+\subsection*{\underline{\textbf{\textcolor{red}{Application :}}}}
+
+Soit $ABC$ un triangle tel que $AB = 4\text{ cm}$, $AC = 5\text{ cm}$, $BC = 7\text{ cm}$ et $I$ le milieu de $[AB]$.
+\begin{enumerate}
+    \item Détermine la longueur de $[CI]$.
+    \item Donne la mesure en degré de $\widehat{BAC}$ à l'unité près.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    % Points du triangle
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4,0);
+    \coordinate (I) at (2,0);
+    \coordinate (C) at (0.8,4.2);
+
+    % Triangles et médiane
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+    \draw[thick] (C) -- (I);
+
+    % Codage du milieu (double barre sur AI et IB)
+    \draw[thick] (0.9,-0.15) -- (1.1,0.15);
+    \draw[thick] (1.0,-0.15) -- (1.2,0.15);
+    
+    \draw[thick] (2.9,-0.15) -- (3.1,0.15);
+    \draw[thick] (3.0,-0.15) -- (3.2,0.15);
+
+    % Arc de compas au-dessus de C
+    \draw[thin] (0.2,4.5) arc (120:50:1.2);
+
+    % Labels des points
+    \node[below left] at (A) {$A$};
+    \node[below right] at (B) {$B$};
+    \node[below] at (I) {$I$};
+    \node[above left] at (C) {$C$};
+
+    % Labels des côtés
+    \node[left] at (0.4,2.1) {$b$};
+    \node[right] at (2.4,2.3) {$a$};
+    \node[below] at (2,-0.3) {$c$};
+\end{tikzpicture}
+\end{center}
+
 \end{document}
