@@ -1184,4 +1184,97 @@ E_k = \left\{ M \in \mathcal{P} \big/ \overrightarrow{MA} \cdot \overrightarrow{
 
 Soient $A$ et $B$, deux points du plan tels que $AB = 4\text{ cm}$, $I$ le milieu du segment $[AB]$. \\
 Déterminer et construire l'ensemble $E_k = \left\{ M \in \mathcal{P} \big/ \overrightarrow{MA} \cdot \overrightarrow{MB} = k \right\}$ pour $k = 0$, $k = -4$, $k = 5$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{4) Ligne de niveau du type $aMA^2 + bMB^2 = k$}}}}
+
+\textbf{\underline{\textcolor{red}{Activité :}}} \\
+Soient $A$ et $B$ deux points du plan, $a$ et $b$ deux réels non nuls et $k$ un réel donné. \\
+On pose $E_k = \left\{ M \in \mathcal{P} \big/ aMA^2 + bMB^2 = k \right\}$
+
+\begin{enumerate}
+    \item On suppose que $a + b = 0$. Soit $I$ milieu de $[AB]$.
+    \begin{enumerate}
+        \item Montrer que $M \in E_k$ si et seulement si $\overrightarrow{IM} \cdot \overrightarrow{AB} = \frac{k}{2a}$
+        \item En déduire $E_k$.
+    \end{enumerate}
+
+    \item On suppose maintenant que $a + b \neq 0$. Soit $G = \text{bary}\{(A, a), (B, b)\}$.
+    \begin{enumerate}
+        \item Montrer que pour tout point $M$ du plan, on a :
+        \[
+        aMA^2 + bMB^2 = (a+b)MG^2 + aGA^2 + bGB^2
+        \]
+        \item En déduire $E_k$.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Résolution}}}}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+    \item On a $a + b = 0 \iff b = -a$
+    \begin{align*}
+    a MA^2 + b MB^2 &= a MA^2 - a MB^2 \\
+    &= a \left( MA^2 - MB^2 \right)
+    \end{align*}
+    donc $a \left( MA^2 - MB^2 \right) = k \iff MA^2 - MB^2 = \frac{k}{a}$
+
+    \begin{align*}
+    \left(\overrightarrow{MA} - \overrightarrow{MB}\right) \cdot \left(\overrightarrow{MA} + \overrightarrow{MB}\right) &= \frac{k}{a} \\
+    \left(\overrightarrow{MA} + \overrightarrow{BM}\right) \cdot \left(\overrightarrow{MI} + \overrightarrow{IA} + \overrightarrow{MI} + \overrightarrow{IB}\right) &= \frac{k}{a} \\
+    \overrightarrow{BA} \cdot \left(2\overrightarrow{MI}\right) = \frac{k}{a} \iff \overrightarrow{BA} \cdot \overrightarrow{MI} &= \frac{k}{2a} \\
+    \iff \left(-\overrightarrow{AB}\right) \cdot \left(-\overrightarrow{IM}\right) &= \frac{k}{2a} \\
+    \iff \overrightarrow{AB} \cdot \overrightarrow{IM} &= \frac{k}{2a}
+    \end{align*}
+
+\[
+\text{Donc } \overrightarrow{IM} \cdot \overrightarrow{AB} = \frac{k}{2a}
+\]  
+    \item \textbf{\underline{Déduisons-en $E_k$}} \\
+    $\overrightarrow{IM} \cdot \overrightarrow{AB} = \frac{k}{2a}$, soit $H \in (AB)$
+    \[
+    H \in E_k \iff \overrightarrow{IH} \cdot \overrightarrow{AB} = \frac{k}{2a} = \overrightarrow{IM} \cdot \overrightarrow{AB}
+    \]
+    Donc $\overrightarrow{IH} \cdot \overrightarrow{AB} = \overrightarrow{IM} \cdot \overrightarrow{AB}$ \\
+    Ce qui donne $\overrightarrow{IM} \cdot \overrightarrow{AB} - \overrightarrow{IH} \cdot \overrightarrow{AB} = 0$
+    \begin{align*}
+    \overrightarrow{AB} \cdot \left(\overrightarrow{IM} - \overrightarrow{IH}\right) &= 0 \\
+    \overrightarrow{AB} \cdot \overrightarrow{HM} &= 0
+    \end{align*}
+    D'où $E_k$ est la droite passant par $H$ et perpendiculaire à $(AB)$.
+\end{enumerate}
+    \item On suppose $a + b \neq 0$, $G = \text{bar}\{(A, a), (B, b)\}$
+    \begin{enumerate}
+    \item 
+    \begin{align*}
+    a MA^2 + b MB^2 &= a \left(\overrightarrow{MG} + \overrightarrow{GA}\right)^2 + b \left(\overrightarrow{MG} + \overrightarrow{GB}\right)^2 \\
+    &= a \left(MG^2 + GA^2 + 2\overrightarrow{MG} \cdot \overrightarrow{GA}\right) + b \left(MG^2 + GB^2 + 2\overrightarrow{MG} \cdot \overrightarrow{GB}\right) \\
+    &= a MG^2 + a GA^2 + 2a \overrightarrow{MG} \cdot \overrightarrow{GA} + b MG^2 + b GB^2 + 2b \overrightarrow{MG} \cdot \overrightarrow{GB} \\
+    &= (a + b) MG^2 + a GA^2 + b GB^2 + 2\overrightarrow{MG} \cdot \underbrace{\left(a \overrightarrow{GA} + b \overrightarrow{GB}\right)}_{\vec{0}} \\
+    a MA^2 + b MB^2 &= (a + b) MG^2 + a GA^2 + b GB^2 \quad \text{ce qu'il fallait démontrer.}
+    \end{align*}
+
+    \item \textbf{\underline{Déduis-en $E_k$}}
+    \[
+    E_k = \left\{ M \in \mathcal{P} \big/ a MA^2 + b MB^2 = k \right\}
+    \]
+    On a $a MA^2 + b MB^2 = (a + b) MG^2 + a GA^2 + b GB^2$. \\
+    Ce qui donne $(a + b) MG^2 + a GA^2 + b GB^2 = k$ \\
+    Donc $(a + b) MG^2 = k - a GA^2 - b GB^2 \iff MG^2 = \frac{k - a GA^2 - b GB^2}{a + b}$
+    En posant $r = \frac{k - a GA^2 - b GB^2}{a + b}$ :
+
+\begin{itemize}
+    \item \textcolor{red}{Si $r < 0$ alors $MG^2 < 0$ (absurde), $E_k = \emptyset$}
+    \item \textcolor{red}{Si $r = 0$ alors $MG^2 = 0 \iff M = G$, $E_k = \{G\}$}
+\end{itemize}
+
+\vspace{0.3cm}
+
+\begin{itemize}
+    \item \textcolor{red}{Si $r > 0$ alors $MG = \sqrt{r}$.} \\
+    \textcolor{red}{$E_k$ est le cercle de centre $G$ et de rayon $\sqrt{r}$.}
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
 \end{document}
