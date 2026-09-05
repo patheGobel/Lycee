@@ -208,4 +208,95 @@ Soit $\vec{u}$ et $\vec{v}$ deux vecteurs non nuls du plan.\\
 Si $\theta$ est une mesure de l'angle orienté $(\vec{u}, \vec{v})$ alors les autres mesures des autres angles sont de la forme $\theta + 2k\pi$ ou $\theta[2\pi]$ avec $k \in \mathbb{Z}$.
 \subsubsection*{\underline{\textbf{\textcolor{red}{c. Mesure principale }}}}
 Parmi toutes les mesures de l'angle orienté $(\vec{u}, \vec{v})$ un et un seul angle $\in ]-\pi, \pi]$ ainsi la mesure principale de l'angle $(\vec{u}, \vec{v})$ est noté $\alpha / \alpha \in ]-\pi, \pi]$ d'où $(\vec{u}, \vec{v}) = \alpha + 2k\pi = \alpha[2\pi] / \alpha \in ]-\pi, \pi]$ avec $k \in \mathbb{Z}$.
+
+Si deux angles orientés ont même mesure alors ils se différencient d'un multiple de $2\pi$ ainsi on a $\theta' = \theta + 2k\pi$ ou $\theta' = \theta[2\pi]$.
+
+\paragraph{\underline{\textcolor{red}{\textbf{Exemple :}}}}
+Dans chacun des cas suivants, détermine la mesure principale de l'angle $(\vec{u}, \vec{v})$.
+\[
+\alpha = \frac{89\pi}{7} \quad ; \quad \beta = \frac{229\pi}{12}
+\]
+
+\vspace{0.5cm}
+
+\subsubsection*{\textcolor{red}{Correction :}}
+
+\paragraph{\underline{\textcolor{red}{\textbf{1) Méthode algébrique}}}}
+
+$\alpha = \dfrac{89\pi}{7}$, la mesure principale de $\alpha$ est de la forme $\alpha + 2k\pi$, $k \in \mathbb{Z}$ et $-\pi < \alpha + 2k\pi \le \pi$.
+
+\begin{align*}
+-\pi < \frac{89\pi}{7} + 2k\pi \le \pi &\iff -1 < \frac{89}{7} + 2k \le 1 \\
+&\iff -1 - \frac{89}{7} < 2k \le 1 - \frac{89}{7} \\
+&\iff -\frac{96}{7} < 2k \le -\frac{82}{7} \\
+&\iff -\frac{48}{7} < k \le -\frac{41}{7} \\
+&\iff -6{,}85 < k \le -5{,}85
+\end{align*}
+
+Comme $k \in \mathbb{Z}$, on obtient $k = -6$.
+
+\vspace{0.3cm}
+
+\textbf{Calcul de la mesure principale :}
+\[
+\alpha_{\text{principale}} = \frac{89\pi}{7} + 2(-6)\pi = \frac{89\pi}{7} - 12\pi = \frac{89\pi - 84\pi}{7} = \frac{5\pi}{7}
+\]
+
+\paragraph{\underline{\textcolor{red}{\textbf{2) Méthode pratique (facile, rigoureuse et pratique)}}}}
+
+On effectue la division euclidienne du numérateur par le dénominateur :
+
+\begin{center}
+\begin{tabular}{r|l}
+$89$ & $7$ \\
+\cline{2-2}
+$19$ & $12$ \\
+$5$ & 
+\end{tabular}
+\end{center}
+
+D'où :
+\[
+\frac{89\pi}{7} = 12\pi + \frac{5\pi}{7}
+\]
+
+Comme $12\pi$ est un nombre pair de $\pi$, donc $\dfrac{5\pi}{7}$ est la mesure principale de $\dfrac{89\pi}{7}$.
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Pour $\alpha = \dfrac{89\pi}{7}$ :}
+    
+    On cherche $k \in \mathbb{Z}$ tel que $\alpha - 2k\pi \in ]-\pi, \pi]$.
+    \[
+    \frac{89}{7} \approx 12{,}71
+    \]
+    Le nombre entier pair le plus proche de $12{,}71$ est $12$ (ou $14$).
+    
+    Décomposons $\alpha$ :
+    \[
+    \alpha = \frac{89\pi}{7} = \frac{84\pi + 5\pi}{7} = \frac{84\pi}{7} + \frac{5\pi}{7} = 12\pi + \frac{5\pi}{7}
+    \]
+    Comme $12\pi = 2 \times 6\pi$ (multiple entier de $2\pi$) et que $\left.\left.\dfrac{5\pi}{7} \in \right]-\pi, \pi\right]$, la mesure principale de $\alpha$ est :
+    \[
+    \text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = \frac{5\pi}{7}
+    \]
+
+    \vspace{0.3cm}
+
+    \item \textbf{Pour $\beta = \dfrac{229\pi}{12}$ :}
+    
+    On calcule :
+    \[
+    \frac{229}{12} \approx 19{,}08
+    \]
+    Le nombre entier pair le plus proche de $19{,}08$ est $20$ (ou $18$).
+    
+    Décomposons $\beta$ :
+    \[
+    \beta = \frac{229\pi}{12} = \frac{240\pi - 11\pi}{12} = \frac{240\pi}{12} - \frac{11\pi}{12} = 20\pi - \frac{11\pi}{12}
+    \]
+    Comme $20\pi = 2 \times 10\pi$ et que $\left.\left.-\dfrac{11\pi}{12} \in \right]-\pi, \pi\right]$, la mesure principale de $\beta$ est :
+    \[
+    \text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = -\frac{11\pi}{12}
+    \]
+\end{enumerate}
 \end{document}
