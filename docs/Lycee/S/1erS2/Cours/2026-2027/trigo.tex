@@ -157,7 +157,10 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
 
 %---------- Remarques ----------
 \definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+\usepackage{enumitem}
 
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
 \newcounter{remarque}
 
 \newcommand{\remarque}{%
@@ -211,22 +214,27 @@ Parmi toutes les mesures de l'angle orienté $(\vec{u}, \vec{v})$ un et un seul 
 
 Si deux angles orientés ont même mesure alors ils se différencient d'un multiple de $2\pi$ ainsi on a $\theta' = \theta + 2k\pi$ ou $\theta' = \theta[2\pi]$.
 
-\paragraph{\underline{\textcolor{red}{\textbf{Exemple :}}}}
+\paragraph{\underline{\textcolor{myred}{\textbf{Exemple :}}}}
 Dans chacun des cas suivants, détermine la mesure principale de l'angle $(\vec{u}, \vec{v})$.
 \[
 \alpha = \frac{89\pi}{7} \quad ; \quad \beta = \frac{229\pi}{12}
 \]
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
-\subsubsection*{\textcolor{red}{Correction :}}
+\subsubsection*{\textcolor{myred}{Correction :}}
 
-\paragraph{\underline{\textcolor{red}{\textbf{1) Méthode algébrique}}}}
+% --------------------------------------------------
+% CAS 1 : alpha
+% --------------------------------------------------
+\subsection*{\textcolor{myblue}{1. Pour $\alpha = \dfrac{89\pi}{7}$ :}}
 
-$\alpha = \dfrac{89\pi}{7}$, la mesure principale de $\alpha$ est de la forme $\alpha + 2k\pi$, $k \in \mathbb{Z}$ et $-\pi < \alpha + 2k\pi \le \pi$.
+\paragraph{\underline{\textcolor{myred}{Méthode 1 : Méthode algébrique (Encadrement)}}}
+La mesure principale est de la forme $\alpha + 2k\pi$ avec $k \in \mathbb{Z}$ telle que $-\pi < \alpha + 2k\pi \le \pi$.
 
 \begin{align*}
--\pi < \frac{89\pi}{7} + 2k\pi \le \pi &\iff -1 < \frac{89}{7} + 2k \le 1 \\
+-\pi < \frac{89\pi}{7} + 2k\pi \le \pi 
+&\iff -1 < \frac{89}{7} + 2k \le 1 \\
 &\iff -1 - \frac{89}{7} < 2k \le 1 - \frac{89}{7} \\
 &\iff -\frac{96}{7} < 2k \le -\frac{82}{7} \\
 &\iff -\frac{48}{7} < k \le -\frac{41}{7} \\
@@ -235,16 +243,15 @@ $\alpha = \dfrac{89\pi}{7}$, la mesure principale de $\alpha$ est de la forme $\
 
 Comme $k \in \mathbb{Z}$, on obtient $k = -6$.
 
-\vspace{0.3cm}
-
 \textbf{Calcul de la mesure principale :}
 \[
-\alpha_{\text{principale}} = \frac{89\pi}{7} + 2(-6)\pi = \frac{89\pi}{7} - 12\pi = \frac{89\pi - 84\pi}{7} = \frac{5\pi}{7}
+\text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = \frac{89\pi}{7} + 2(-6)\pi = \frac{89\pi}{7} - 12\pi = \frac{89\pi - 84\pi}{7} = \frac{5\pi}{7}
 \]
 
-\paragraph{\underline{\textcolor{red}{\textbf{2) Méthode pratique (facile, rigoureuse et pratique)}}}}
+\vspace{0.3cm}
 
-On effectue la division euclidienne du numérateur par le dénominateur :
+\paragraph{\underline{\textcolor{myred}{Méthode 2 : Méthode pratique (Division euclidienne)}}}
+On effectue la division euclidienne de $89$ par $7$ :
 
 \begin{center}
 \begin{tabular}{r|l}
@@ -259,44 +266,40 @@ D'où :
 \[
 \frac{89\pi}{7} = 12\pi + \frac{5\pi}{7}
 \]
+Comme $12\pi$ est un nombre pair de $\pi$ (c'est-à-dire $2 \times 6\pi$) et que $\left.\left.\frac{5\pi}{7} \in \right]-\pi, \pi\right]$, la mesure principale est $\dfrac{5\pi}{7}$.
 
-Comme $12\pi$ est un nombre pair de $\pi$, donc $\dfrac{5\pi}{7}$ est la mesure principale de $\dfrac{89\pi}{7}$.
+\vspace{0.3cm}
 
-\begin{enumerate}[label=\arabic*.]
-    \item \textbf{Pour $\alpha = \dfrac{89\pi}{7}$ :}
-    
-    On cherche $k \in \mathbb{Z}$ tel que $\alpha - 2k\pi \in ]-\pi, \pi]$.
-    \[
-    \frac{89}{7} \approx 12{,}71
-    \]
-    Le nombre entier pair le plus proche de $12{,}71$ est $12$ (ou $14$).
-    
-    Décomposons $\alpha$ :
-    \[
-    \alpha = \frac{89\pi}{7} = \frac{84\pi + 5\pi}{7} = \frac{84\pi}{7} + \frac{5\pi}{7} = 12\pi + \frac{5\pi}{7}
-    \]
-    Comme $12\pi = 2 \times 6\pi$ (multiple entier de $2\pi$) et que $\left.\left.\dfrac{5\pi}{7} \in \right]-\pi, \pi\right]$, la mesure principale de $\alpha$ est :
-    \[
-    \text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = \frac{5\pi}{7}
-    \]
+\paragraph{\underline{\textcolor{myred}{Méthode 3 : Méthode arithmétique (Valeur approchée)}}}
+On calcule la valeur approchée :
+\[
+\frac{89}{7} \approx 12{,}71
+\]
+Le nombre entier pair le plus proche de $12{,}71$ est $12$. On décompose alors $\alpha$ :
+\[
+\alpha = \frac{89\pi}{7} = \frac{84\pi + 5\pi}{7} = \frac{84\pi}{7} + \frac{5\pi}{7} = 12\pi + \frac{5\pi}{7}
+\]
+D'où $\text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = \dfrac{5\pi}{7}$.
 
-    \vspace{0.3cm}
+\vspace{0.8cm}
 
-    \item \textbf{Pour $\beta = \dfrac{229\pi}{12}$ :}
-    
-    On calcule :
-    \[
-    \frac{229}{12} \approx 19{,}08
-    \]
-    Le nombre entier pair le plus proche de $19{,}08$ est $20$ (ou $18$).
-    
-    Décomposons $\beta$ :
-    \[
-    \beta = \frac{229\pi}{12} = \frac{240\pi - 11\pi}{12} = \frac{240\pi}{12} - \frac{11\pi}{12} = 20\pi - \frac{11\pi}{12}
-    \]
-    Comme $20\pi = 2 \times 10\pi$ et que $\left.\left.-\dfrac{11\pi}{12} \in \right]-\pi, \pi\right]$, la mesure principale de $\beta$ est :
-    \[
-    \text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = -\frac{11\pi}{12}
-    \]
-\end{enumerate}
+% --------------------------------------------------
+% CAS 2 : beta
+% --------------------------------------------------
+\subsection*{\textcolor{myblue}{2. Pour $\beta = \dfrac{229\pi}{12}$ :}}
+
+On calcule la valeur approchée :
+\[
+\frac{229}{12} \approx 19{,}08
+\]
+Le nombre entier pair le plus proche de $19{,}08$ est $20$.
+
+Décomposons $\beta$ :
+\[
+\beta = \frac{229\pi}{12} = \frac{240\pi - 11\pi}{12} = \frac{240\pi}{12} - \frac{11\pi}{12} = 20\pi - \frac{11\pi}{12}
+\]
+Comme $20\pi = 2 \times 10\pi$ et que $\left.\left.-\dfrac{11\pi}{12} \in \right]-\pi, \pi\right]$, la mesure principale de $(\vec{u}, \vec{v})$ est :
+\[
+\text{Mes}_{\text{principale}}(\vec{u}, \vec{v}) = -\frac{11\pi}{12}
+\]
 \end{document}
