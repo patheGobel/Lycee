@@ -580,4 +580,99 @@ x = -\frac{\pi}{6}
 \[
 S_{]-\pi, \pi]} = \left\{ -\frac{\pi}{6} \;;\; \frac{\pi}{6} \right\}
 \]
+
+\subsubsection*{\textbf{ $a_2$ : Équation du type : $\sin x = y$ }}
+
+\underline{Propriété :} \\
+- Si $|y| > 1$ alors il n'existe pas un angle correspondant dont le $\sin x = y$ d'où $S = \emptyset$. \\
+- Si $|y| \le 1$ alors $\exists x_0 \in ]-\pi, \pi]$ tel que $y = \sin x_0$. \\
+
+$
+\begin{aligned}
+\sin x = y &\iff \sin x = \sin x_0 \\
+           &\iff \begin{cases} 
+           x = x_0 + 2k\pi\\ 
+           \text{ ou }\\
+           x = \pi - x_0 + 2k\pi
+           \end{cases}
+\end{aligned}
+$
+
+$\boxed{S_k = \{x_0 + 2k\pi; \pi - x_0 + 2k\pi \text{ avec } k \in \mathbb{Z}\}}$
+
+\vspace{1cm}
+
+\noindent \textbf{Exemple :} Résoudre dans $\mathbb{R}$ puis dans $[0, 2\pi[$, $\sin x = -\dfrac{1}{2}$
+
+\vspace{0.3cm}
+
+\noindent $\sin x = -\dfrac{1}{2} = \sin\left(-\dfrac{\pi}{6}\right)$
+
+\vspace{0.2cm}
+
+\noindent $\sin x = \sin\left(-\dfrac{\pi}{6}\right) \iff \begin{cases} x = -\dfrac{\pi}{6} + 2k\pi \\ x = \dfrac{7\pi}{6} + 2k\pi \end{cases} \quad k \in \mathbb{Z}$
+
+\vspace{0.4cm}
+
+\[
+S_{\mathbb{R}} = \left\{ -\dfrac{\pi}{6} + 2k\pi \;;\; \dfrac{7\pi}{6} + 2k\pi \right\}
+\]
+
+\vspace{0.4cm}
+
+\noindent Dans $[0, 2\pi[$ : \hspace{1cm} $0 \le -\dfrac{\pi}{6} + 2k\pi < 2\pi \quad \text{①}$
+
+\vspace{0.2cm}
+
+\noindent \phantom{Dans $[0, 2\pi[$ : \hspace{1cm}} $0 \le -\dfrac{1}{6} + 2k < 2$
+
+\vspace{0.2cm}
+
+\noindent \phantom{Dans $[0, 2\pi[$ : \hspace{1cm}} $\dfrac{1}{6} \le 2k < \dfrac{13}{6}$
+
+\vspace{0.2cm}
+
+\noindent \phantom{Dans $[0, 2\pi[$ : \hspace{1cm}} $\dfrac{1}{12} \le k < \dfrac{13}{12}$
+
+\vspace{0.2cm}
+
+\noindent \phantom{Dans $[0, 2\pi[$ : \hspace{1cm}} $0{,}08 \le k < 1{,}08$
+
+\vspace{0.4cm}
+
+\noindent $k = 1 \implies x = -\dfrac{\pi}{6} + 2\pi = \dfrac{11\pi}{6}$
+
+\[
+0 \le \frac{7\pi}{6} + 2k\pi < 2\pi
+\]
+
+\[
+0 \le \frac{7}{6} + 2k < 2
+\]
+
+\[
+-\frac{7}{6} \le 2k < \frac{5}{6}
+\]
+
+\[
+-\frac{7}{12} \le k < \frac{5}{12}
+\]
+
+\[
+-0{,}58 \le k < 0{,}41
+\]
+
+\vspace{0.2cm}
+
+\noindent $k = 0 \implies x = \dfrac{7\pi}{6} + 2 \times 0 \times \pi$
+
+\[
+x = \frac{7\pi}{6}
+\]
+
+\vspace{0.3cm}
+
+\[
+S_{[0, 2\pi[} = \left\{ \frac{7\pi}{6} \;;\; \frac{11\pi}{6} \right\}
+\]
 \end{document}
