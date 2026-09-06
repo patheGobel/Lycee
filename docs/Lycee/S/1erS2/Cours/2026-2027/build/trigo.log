@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  6 SEP 2026 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  6 SEP 2026 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1377,7 +1377,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
-[3] [4] [5] (build/trigo.aux)
+[3] [4]
+Overfull \hbox (52.63678pt too wide) in paragraph at lines 445--447
+[]\T1/ptm/b/n/12 Factorisation de $\OML/lmm/m/it/12 A\OT1/lmr/m/n/12 (\OML/lmm/
+m/it/12 x\OT1/lmr/m/n/12 )$ \T1/ptm/b/n/12 : \T1/ptm/m/n/12 On re-groupe $[] \O
+ML/lmm/m/it/12 x \OT1/lmr/m/n/12 + [] 5\OML/lmm/m/it/12 x$ \T1/ptm/m/n/12 et on
+ ap-plique la for-mule $[] \OML/lmm/m/it/12 p \OT1/lmr/m/n/12 + [] \OML/lmm/m/i
+t/12 q \OT1/lmr/m/n/12 = 2 [] [] [] []$
+ []
+
+[5] [6] (build/trigo.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1386,8 +1395,8 @@ Package rerunfilecheck Info: File `trigo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41615 strings out of 467533
- 980344 string characters out of 5422138
+ 41623 strings out of 467533
+ 980398 string characters out of 5422138
  1556329 words of memory out of 5000000
  69764 multiletter control sequences out of 15000+600000
  680790 words of font info for 103 fonts, out of 8000000 for 9000
@@ -1400,10 +1409,10 @@ ic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb>
-Output written on build/trigo.pdf (5 pages, 122679 bytes).
+Output written on build/trigo.pdf (6 pages, 126540 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

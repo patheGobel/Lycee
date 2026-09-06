@@ -435,4 +435,72 @@ A(x) &= \sin x + \sin 5x + 2 \sin 3x & B(x) &= \cos 2x + \cos 4x - 3 \cos 3x \\
 C(x) &= 2 \sin x - \sin 3x & D(x) &= 2 \cos 3x \cos x \\
 E(x) &= 3 \sin x \sin(-3x) & F(x) &= 4 \sin x \cos(-5x)
 \end{align*}
+
+
+\vspace{0.5cm}
+
+\subsubsection*{\textcolor{myblue}{Correction détaillée :}}
+
+\begin{enumerate}
+    \item \textbf{Factorisation de $A(x)$ :}
+    On regroupe $\sin x + \sin 5x$ et on applique la formule $\sin p + \sin q = 2 \sin\left(\frac{p+q}{2}\right) \cos\left(\frac{p-q}{2}\right)$ :
+    \[
+    \sin 5x + \sin x = 2 \sin\left(\frac{5x+x}{2}\right) \cos\left(\frac{5x-x}{2}\right) = 2 \sin 3x \cos 2x
+    \]
+    D'où :
+    \[
+    A(x) = 2 \sin 3x \cos 2x + 2 \sin 3x = 2 \sin 3x (\cos 2x + 1)
+    \]
+    En utilisant $1 + \cos 2x = 2 \cos^2 x$, on obtient la forme produit maximale :
+    \[
+    A(x) = 2 \sin 3x \cdot (2 \cos^2 x) = 4 \sin 3x \cos^2 x
+    \]
+
+    \item \textbf{Factorisation de $B(x)$ :}
+    On regroupe $\cos 4x + \cos 2x$ en utilisant $\cos p + \cos q = 2 \cos\left(\frac{p+q}{2}\right) \cos\left(\frac{p-q}{2}\right)$ :
+    \[
+    \cos 4x + \cos 2x = 2 \cos\left(\frac{4x+2x}{2}\right) \cos\left(\frac{4x-2x}{2}\right) = 2 \cos 3x \cos x
+    \]
+    D'où :
+    \[
+    B(x) = 2 \cos 3x \cos x - 3 \cos 3x = \cos 3x (2 \cos x - 3)
+    \]
+
+    \item \textbf{Linearisation/Transformation de $C(x)$ :}
+    En utilisant la formule de triplication $\sin 3x = 3\sin x - 4\sin^3 x$ :
+    \[
+    C(x) = 2\sin x - (3\sin x - 4\sin^3 x) = 4\sin^3 x - \sin x = \sin x (4\sin^2 x - 1)
+    \]
+    Soit sous forme de produit de facteurs du premier degré :
+    \[
+    C(x) = \sin x (2\sin x - 1)(2\sin x + 1)
+    \]
+
+    \item \textbf{Transformation en somme (Linéarisation) de $D(x)$ :}
+    En utilisant la formule $2 \cos a \cos b = \cos(a+b) + \cos(a-b)$ :
+    \[
+    D(x) = 2 \cos 3x \cos x = \cos(3x+x) + \cos(3x-x) = \cos 4x + \cos 2x
+    \]
+
+    \item \textbf{Transformation en somme de $E(x)$ :}
+    Puisque $\sin(-3x) = -\sin 3x$, on a $E(x) = -3 \sin x \sin 3x$. \\
+    Utilisons $2 \sin a \sin b = \cos(a-b) - \cos(a+b)$ :
+    \[
+    E(x) = -\frac{3}{2} \Big(2 \sin 3x \sin x\Big) = -\frac{3}{2} \Big(\cos(3x-x) - \cos(3x+x)\Big) = -\frac{3}{2} (\cos 2x - \cos 4x)
+    \]
+    \[
+    E(x) = \frac{3}{2} (\cos 4x - \cos 2x)
+    \]
+
+    \item \textbf{Transformation en somme de $F(x)$ :}
+    Puisque $\cos(-5x) = \cos 5x$, on a $F(x) = 4 \sin x \cos 5x = 2 (2 \sin x \cos 5x)$. \\
+    Utilisons $2 \sin a \cos b = \sin(a+b) + \sin(a-b)$ :
+    \[
+    F(x) = 2 \Big(\sin(x+5x) + \sin(x-5x)\Big) = 2 \Big(\sin 6x + \sin(-4x)\Big)
+    \]
+    Comme $\sin(-4x) = -\sin 4x$, on obtient :
+    \[
+    F(x) = 2 (\sin 6x - \sin 4x)
+    \]
+\end{enumerate}
 \end{document}
