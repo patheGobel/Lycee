@@ -87,6 +87,9 @@
 %=========================================================
 \usepackage{pifont}            % Symboles (✓, ✗, etc.)
 
+\DeclareUnicodeCharacter{2460}{\text{\ding{172}}} % Pour ①
+\DeclareUnicodeCharacter{2461}{\text{\ding{173}}} % Pour ②
+
 %=========================================================
 %      PERSONNALISATION DES LISTES NUMÉROTÉES
 %=========================================================
@@ -503,4 +506,78 @@ E(x) &= 3 \sin x \sin(-3x) & F(x) &= 4 \sin x \cos(-5x)
     F(x) = 2 (\sin 6x - \sin 4x)
     \]
 \end{enumerate}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{4. Résolution d'équat et d'inéquation }}}}
+\subsubsection*{\textbf{a. Résolution d'équation}}
+
+\subsubsection*{\textbf{ $a_1$ : Équation du type : $\cos x = y$ }}
+
+\underline{Propriété :} \\
+- Si $|y| > 1$ alors il n'existe pas un angle correspondant dont le $\cos x = y$ d'où $S = \emptyset$. \\
+- Si $|y| \le 1$ alors il existe $x_0 \in ]-\pi, \pi]$ tel que $\cos x_0 = y$ \\
+
+$
+\begin{aligned}
+   \cos x = y &\iff \cos x = \cos x_0\\
+              &\iff \begin{cases}
+                   x = x_0 + 2k\pi\\
+                   \text{ ou }\\
+                    x = -x_0 + 2k\pi
+              \end{cases}
+\end{aligned}
+$
+
+$\boxed{S_k = \{x_0 + 2k\pi; -x_0 + 2k\pi \text{ avec } k \in \mathbb{Z}\}}$
+
+\vspace{1cm}
+
+\textbf{Exemples :} Résoudre dans $\mathbb{R}$ puis dans $]-\pi, \pi]$ les équations suivantes.
+
+\vspace{0.3cm}
+
+$\cos x = \dfrac{\sqrt{3}}{2}$ \quad et \quad $\cos x = -\dfrac{1}{2}$
+
+\vspace{0.3cm}
+
+$\cos x = \dfrac{\sqrt{3}}{2} = \cos \dfrac{\pi}{6}$
+
+$\cos x = \cos \dfrac{\pi}{6} \iff \begin{cases} x = \dfrac{\pi}{6} + 2k\pi \quad \text{①} \\ \text{ou} \\ x = -\dfrac{\pi}{6} + 2k\pi \quad \text{②} \end{cases}$
+
+\vspace{0.3cm}
+
+\[
+S_{\mathbb{R}} = \left\{ -\dfrac{\pi}{6} + 2k\pi \;;\; \dfrac{\pi}{6} + 2k\pi \;\middle|\; k \in \mathbb{Z} \right\}
+\]
+
+\vspace{0.3cm}
+
+Dans $]-\pi, \pi]$ :
+
+\text{①} $\iff -\pi < \dfrac{\pi}{6} + 2k\pi \le \pi$
+
+\phantom{\text{①}} $\iff -1 < \dfrac{1}{6} + 2k \le 1$
+
+\phantom{\text{①}} $\iff -\dfrac{7}{6} < 2k \le \dfrac{5}{6}$
+
+\phantom{\text{①}} $\iff -\dfrac{7}{12} < k \le \dfrac{5}{12}$
+
+\vspace{0.2cm}
+
+$k = 0$
+
+Donc $x = \dfrac{\pi}{6}$
+
+\vspace{0.3cm}
+
+De même :
+
+\text{②} \quad $-\pi < -\dfrac{\pi}{6} + 2k\pi \le \pi$
+
+\[
+x = -\frac{\pi}{6}
+\]
+
+\[
+S_{]-\pi, \pi]} = \left\{ -\frac{\pi}{6} \;;\; \frac{\pi}{6} \right\}
+\]
 \end{document}
