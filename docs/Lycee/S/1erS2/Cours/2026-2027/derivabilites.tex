@@ -1,22 +1,258 @@
 \documentclass[12pt,a4paper]{article}
 
-% -------------------------------------------------
-% Packages
-% -------------------------------------------------
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{lmodern}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage[a4paper,margin=2cm]{geometry}
-\usepackage[most]{tcolorbox}
-\usepackage{tikz}
-\usetikzlibrary{positioning, calc}
-\usepackage{graphicx}
+%=========================================================
+%               ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}    % Encodage UTF-8
+\usepackage[T1]{fontenc}       % Gestion des caractères accentués
+\usepackage[french]{babel}     % Langue française
+\usepackage{lmodern}           % Police Latin Modern
+% \usepackage{times}           % À activer uniquement si tu veux Times
+
+%=========================================================
+%                MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\everymath{\displaystyle}
+
+% Tableaux de signes et de variations
+\usepackage{tkz-tab}
+
+%=========================================================
+%                MISE EN PAGE
+%=========================================================
+\usepackage[
+    left=1cm,
+    right=1cm,
+    top=1cm,
+    bottom=1.7cm
+]{geometry}
+
+\usepackage{multicol}
 \usepackage{float}
-% -------------------------------------------------
-% Document
-% -------------------------------------------------
+
+%=========================================================
+%            TABLEAUX ET LISTES
+%=========================================================
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+%=========================================================
+%                  TIKZ
+%=========================================================
+\usepackage{tikz}
+
+\usetikzlibrary{
+    positioning,
+    calc,
+    angles,
+    quotes,
+    arrows.meta,
+    arrows,
+    shapes.geometric,
+    fit,
+    patterns
+}
+
+%=========================================================
+%             COULEURS ET BOÎTES
+%=========================================================
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+\usepackage{mdframed}
+\usepackage{varwidth}
+
+%=========================================================
+%             GRAPHIQUES
+%=========================================================
+\usepackage{graphicx}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+%=========================================================
+%              LIENS HYPERTEXTES
+%=========================================================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+%=========================================================
+%             ARRIÈRE-PLAN / FILIGRANE
+%=========================================================
+\usepackage{eso-pic}
+
+%=========================================================
+%                SYMBOLES DIVERS
+%=========================================================
+\usepackage{pifont}
+
+\DeclareUnicodeCharacter{2460}{\text{\ding{172}}} % ①
+\DeclareUnicodeCharacter{2461}{\text{\ding{173}}} % ②
+
+%=========================================================
+%       PERSONNALISATION DES LISTES NUMÉROTÉES
+%=========================================================
+
+% Numéro principal : cercle
+\newcommand{\circitem}[1]{%
+    \tikz[baseline=(char.base)]{
+        \node[
+            circle,
+            draw=gray,
+            fill=red!55,
+            minimum size=1.2em,
+            inner sep=0
+        ] (char) {#1};
+    }%
+}
+
+% Numéro secondaire : carré
+\newcommand{\boxitem}[1]{%
+    \tikz[baseline=(char.base)]{
+        \node[
+            fill=cyan,
+            minimum size=1.2em,
+            inner sep=0
+        ] (char) {#1};
+    }%
+}
+
+\setlist[enumerate,1]{
+    label=\protect\circitem{\arabic*}
+}
+
+\setlist[enumerate,2]{
+    label=\protect\boxitem{\alph*}
+}
+
+%=========================================================
+%             COMMANDES PERSONNALISÉES
+%=========================================================
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+    \setulcolor{#1}%
+    \ul{#2}%
+    \setulcolor{black}%
+}
+
+% Tabulation horizontale
+\newcommand{\tab}[1][1cm]{%
+    \hspace*{#1}%
+}
+
+%=========================================================
+%                 COULEURS PERSONNALISÉES
+%=========================================================
+
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+
+\definecolor{myred}{RGB}{180,40,40}
+\definecolor{myblue}{RGB}{20,50,120}
+
+%=========================================================
+%              COMPTEURS PERSONNALISÉS
+%=========================================================
+
+%---------- Exemple ----------
+\newcounter{exemple}
+
+\newcommand{\exemple}{%
+    \refstepcounter{exemple}%
+    \textbf{\textcolor{orange}{Exemple \theexemple : }}%
+    \ignorespaces
+}
+
+%---------- Solution ----------
+\newcounter{solution}
+
+\newcommand{\solution}{%
+    \refstepcounter{solution}%
+    \textbf{\textcolor{orange}{Solution \thesolution : }}%
+    \ignorespaces
+}
+
+%---------- Exercice d'application ----------
+\newcounter{exerciceapp}
+
+\newcommand{\exerciceapp}{%
+    \refstepcounter{exerciceapp}%
+    \textbf{\textcolor{myorange}
+    {Exercice d'application \theexerciceapp : }}%
+    \ignorespaces
+}
+
+%---------- Correction ----------
+\newcounter{correction}
+
+\newcommand{\correction}{%
+    \refstepcounter{correction}%
+    \textbf{\textcolor{myorange}
+    {Correction \thecorrection : }}%
+    \ignorespaces
+}
+
+%---------- Remarque ----------
+\newcounter{remarque}
+
+\newcommand{\remarque}{%
+    \refstepcounter{remarque}%
+    \textbf{\textcolor{myorange1}
+    {Remarque \theremarque : }}%
+    \ignorespaces
+}
+
+%=========================================================
+%                    FILIGRANE
+%=========================================================
+
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}
+                    \selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+%=========================================================
+%                    DOCUMENT
+%=========================================================
+
 \begin{document}
+
+%---------------------------------------------------------
+%                    EN-TÊTE
+%---------------------------------------------------------
+
+\begin{center}
+    \Large
+    \textbf{\underline{\textcolor{red}
+    {Dérivabilité}}}
+    \\[-0.1cm]
+
+    \normalsize
+    \textbf{Prof : M. BA}
+    \hfill
+    \textbf{Classe : 1erS2}
+    \\[-0.1cm]
+
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
 
 % Configuration d'une boîte style "Activité"
 \newtcolorbox{activiteintro}{
