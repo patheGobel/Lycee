@@ -213,4 +213,173 @@ où $a$, $b$ et $c$ sont des nombres réels, avec $a \neq 0$.
 On appelle \textbf{trinôme du second degré} l'expression $ax^2 + bx + c$.
 
 \subsection*{\color{myred} 2) Méthodes de résolutions}
+
+\subsubsection*{\color{myred} a) Équation du type $ax^2 + bx = 0$ où $a \neq 0$ et $b \neq 0$}
+On factorise par $x$ :
+\[
+ax^2 + bx = 0 \iff x(ax + b) = 0
+\]
+Un produit de facteurs est nul si et seulement si l'un des facteurs est nul, donc :
+\[
+x = 0 \quad \text{ou} \quad ax + b = 0 \iff x = -\frac{b}{a}
+\]
+\textbf{Conclusion :} Les solutions sont $S = \left\{0, -\dfrac{b}{a}\right\}$.
+
+\begin{itemize}
+    \item \textbf{Exemple :} Résoudre $2x^2 - 6x = 0$.
+    \[
+    2x^2 - 6x = 0 \iff 2x(x-3) = 0
+    \]
+    Donc $x=0$ ou $x=3$. \quad $S = \{0, 3\}$.
+\end{itemize}
+
+\subsubsection*{\color{myred} b) Équation du type $ax^2 + c = 0$ où $a \neq 0$ et $c \neq 0$}
+On isole $x^2$ :
+\[
+ax^2 + c = 0 \iff x^2 = -\frac{c}{a}
+\]
+Trois cas se présentent :
+\begin{itemize}
+    \item Si $-\dfrac{c}{a} > 0$, alors $x = \pm \sqrt{-\dfrac{c}{a}}$.
+    \item Si $-\dfrac{c}{a} = 0$, alors $x = 0$ (mais ce cas n'est pas possible ici car $c \neq 0$).
+    \item Si $-\dfrac{c}{a} < 0$, alors il n'y a pas de solution réelle.
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{enumerate}[label=\arabic*)]
+        \item $3x^2 - 12 = 0 \iff x^2 = 4 \iff x = \pm 2$. \quad $S = \{-2, 2\}$.
+        \item $2x^2 + 8 = 0 \iff x^2 = -4$ : pas de solution réelle. \quad $S = \emptyset$.
+    \end{enumerate}
+\end{itemize}
+
+\subsubsection*{\color{myred} c) Cas général : équation du type $ax^2 + bx + c = 0$ où $a \neq 0$}
+
+\paragraph*{\color{myred} Forme canonique du trinôme du second degré}
+Pour tout trinôme du second degré $ax^2 + bx + c$ (avec $a \neq 0$), il existe une forme dite \textbf{canonique} :
+\[
+ax^2 + bx + c = a\left(x + \dfrac{b}{2a}\right)^2 - \dfrac{b^2 - 4ac}{4a}
+\]
+Ou encore :
+\[
+ax^2 + bx + c = a\left(x + \dfrac{b}{2a}\right)^2 - \dfrac{\Delta}{4a}
+\]
+où l'on pose $\Delta = b^2 - 4ac$ (appelé \textbf{discriminant}).
+
+\begin{itemize}
+    \item \textbf{Exemple :} Mettre $2x^2 - 8x + 6$ sous forme canonique.
+    \[
+    2x^2 - 8x + 6 = 2(x^2 - 4x) + 6 = 2\left[(x-2)^2 - 4\right] + 6
+    = 2(x-2)^2 - 8 + 6 = 2(x-2)^2 - 2.
+    \]
+    On a bien $\Delta = (-8)^2 - 4 \times 2 \times 6 = 64 - 48 = 16$, et $-\dfrac{\Delta}{4a} = -\dfrac{16}{8} = -2$.
+\end{itemize}
+
+\paragraph*{\color{myred} Forme factorisée d'un trinôme du second degré}
+La forme factorisée d'un trinôme dépend du signe de $\Delta = b^2 - 4ac$ :
+
+\begin{itemize}
+    \item Si $\Delta > 0$ : le trinôme admet deux racines réelles distinctes
+    \[
+    x_1 = \dfrac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}
+    \]
+    et la factorisation est :
+    \[
+    ax^2 + bx + c = a(x - x_1)(x - x_2)
+    \]
+    
+    \item Si $\Delta = 0$ : le trinôme admet une racine double
+    \[
+    x_0 = -\dfrac{b}{2a}
+    \]
+    et la factorisation est :
+    \[
+    ax^2 + bx + c = a(x - x_0)^2
+    \]
+    
+    \item Si $\Delta < 0$ : le trinôme n'admet pas de racine réelle et ne se factorise pas dans $\mathbb{R}$.
+\end{itemize}
+
+\subsection*{\color{myred} 3) Résolution de l'équation $ax^2 + bx + c = 0$ où $a \neq 0$}
+Pour résoudre une équation du second degré, on procède comme suit :
+
+\begin{enumerate}
+    \item On calcule le discriminant $\Delta = b^2 - 4ac$.
+    \item On distingue trois cas :
+    \begin{itemize}
+        \item Si $\Delta > 0$ : deux solutions réelles :
+        \[
+        x_1 = \dfrac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}
+        \]
+        \item Si $\Delta = 0$ : une solution double :
+        \[
+        x_0 = -\dfrac{b}{2a}
+        \]
+        \item Si $\Delta < 0$ : aucune solution réelle ($S = \emptyset$).
+    \end{itemize}
+\end{enumerate}
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{enumerate}[label=\arabic*)]
+        \item Résoudre $x^2 - 5x + 6 = 0$.
+        
+        $\Delta = (-5)^2 - 4 \times 1 \times 6 = 25 - 24 = 1 > 0$.
+        \[
+        x_1 = \dfrac{5 - \sqrt{1}}{2} = \dfrac{5-1}{2} = 2, \quad
+        x_2 = \dfrac{5 + \sqrt{1}}{2} = \dfrac{5+1}{2} = 3
+        \]
+        $S = \{2, 3\}$.
+        
+        \item Résoudre $x^2 + 4x + 4 = 0$.
+        
+        $\Delta = 4^2 - 4 \times 1 \times 4 = 16 - 16 = 0$.
+        \[
+        x_0 = -\dfrac{4}{2} = -2
+        \]
+        $S = \{-2\}$.
+        
+        \item Résoudre $x^2 + x + 1 = 0$.
+        
+        $\Delta = 1^2 - 4 \times 1 \times 1 = 1 - 4 = -3 < 0$.
+        $S = \emptyset$.
+    \end{enumerate}
+\end{itemize}
+
+\subsection*{\color{myred} 4) Somme et Produit des racines}
+
+\subsubsection*{\color{myred} a) Propriété 1}
+Si le trinôme $ax^2 + bx + c$ admet deux racines $x_1$ et $x_2$ (éventuellement confondues si $\Delta = 0$), alors :
+\[
+S = x_1 + x_2 = -\dfrac{b}{a} \quad \text{(somme des racines)}
+\]
+et
+\[
+P = x_1 \times x_2 = \dfrac{c}{a} \quad \text{(produit des racines)}
+\]
+
+\begin{itemize}
+    \item \textbf{Exemple :} Pour l'équation $2x^2 - 6x + 4 = 0$, on a $\Delta = 4 > 0$, les racines sont $x_1 = 1$ et $x_2 = 2$.
+    \[
+    S = 1+2 = 3 = -\dfrac{-6}{2}, \quad P = 1 \times 2 = 2 = \dfrac{4}{2}.
+    \]
+\end{itemize}
+
+\subsubsection*{\color{myred} b) Propriété 2}
+Si deux réels $x$ et $y$ ont pour somme $S = x + y$ et pour produit $P = xy$, alors $x$ et $y$ sont les solutions de l'équation du second degré :
+\[
+X^2 - SX + P = 0
+\]
+où $X$ est l'inconnue.
+
+\begin{itemize}
+    \item \textbf{Exemple :} Trouver deux nombres dont la somme est 5 et le produit est 6.
+    
+    Ils sont solutions de $X^2 - 5X + 6 = 0$.
+    On a $\Delta = 25 - 24 = 1 > 0$, donc :
+    \[
+    X_1 = \dfrac{5 - 1}{2} = 2, \quad X_2 = \dfrac{5 + 1}{2} = 3.
+    \]
+    Les deux nombres sont 2 et 3.
+\end{itemize}
 \end{document}
