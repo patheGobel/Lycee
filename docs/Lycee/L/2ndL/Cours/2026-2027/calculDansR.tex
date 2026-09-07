@@ -1,0 +1,477 @@
+%=========================================================
+%               CLASSE DU DOCUMENT
+%=========================================================
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%         ENCODAGE ET POLICES DE CARACTÈRES
+%=========================================================
+\usepackage[utf8]{inputenc}    % Encodage UTF-8 (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}       % Meilleure gestion des caractères accentués
+\usepackage{lmodern}           % Police Latin Modern
+\usepackage{times}             % Police Times (à supprimer si tu préfères Latin Modern)
+
+%=========================================================
+%                MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath}           % Environnements mathématiques avancés
+\usepackage{amssymb}           % Symboles mathématiques supplémentaires
+\usepackage{amsfonts}          % Polices mathématiques
+\usepackage{mathrsfs}          % Police calligraphique (\mathscr)
+\usepackage{tkz-tab}           % Tableaux de signes et de variations
+\everymath{\displaystyle}      % Affiche toutes les formules en style "display"
+
+%=========================================================
+%               MISE EN PAGE
+%=========================================================
+\usepackage[
+    left=1cm,
+    right=1cm,
+    top=1cm,
+    bottom=1.7cm
+]{geometry}                    % Marges du document
+
+\usepackage{multicol}          % Texte sur plusieurs colonnes
+\usepackage{float}             % Placement précis des figures et tableaux
+
+%=========================================================
+%            TABLEAUX ET LISTES
+%=========================================================
+\usepackage{array}             % Colonnes de tableaux personnalisées
+\usepackage{multirow}          % Fusion de lignes dans les tableaux
+\usepackage{enumitem}          % Personnalisation des listes
+
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,arrows.meta}
+%=========================================================
+%            COULEURS ET BOÎTES
+%=========================================================
+\usepackage[most]{tcolorbox}   % Boîtes colorées très personnalisables
+\tcbuselibrary{skins,hooks}    % Bibliothèques supplémentaires de tcolorbox
+
+\usepackage{mdframed}          % Cadres autour de paragraphes
+\usepackage{varwidth}          % Largeur automatique des boîtes
+
+%=========================================================
+%                DESSINS ET GRAPHIQUES
+%=========================================================
+\usepackage{tikz}              % Dessins vectoriels
+\usetikzlibrary{calc}
+\usetikzlibrary{
+    arrows,
+    shapes.geometric,
+    fit,
+    patterns
+}
+
+\usepackage{pgfplots}          % Tracés de fonctions et graphiques
+\pgfplotsset{compat=1.15}
+
+%=========================================================
+%              LIENS HYPERTEXTES
+%=========================================================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+%=========================================================
+%          ÉLÉMENTS EN ARRIÈRE-PLAN
+%=========================================================
+\usepackage{eso-pic}           % Ajout de filigranes ou d'éléments sur chaque page
+
+%=========================================================
+%              SYMBOLES DIVERS
+%=========================================================
+\usepackage{pifont}            % Symboles (✓, ✗, etc.)
+
+\DeclareUnicodeCharacter{2460}{\text{\ding{172}}} % Pour ①
+\DeclareUnicodeCharacter{2461}{\text{\ding{173}}} % Pour ②
+%=========================================================
+%      PERSONNALISATION DES LISTES NUMÉROTÉES
+%=========================================================
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray,fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+%=========================================================
+%            COMMANDES PERSONNALISÉES
+%=========================================================
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation horizontale
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%=========================================================
+%             COMPTEURS PERSONNALISÉS
+%=========================================================
+
+%---------- Exemple ----------
+\newcounter{exemple}
+
+\newcommand{\exemple}{%
+\refstepcounter{exemple}
+\textbf{\textcolor{orange}{Exemple \theexemple : }}
+\ignorespaces}
+
+%---------- Solution ----------
+\newcounter{solution}
+
+\newcommand{\solution}{%
+\refstepcounter{solution}
+\textbf{\textcolor{orange}{Solution \thesolution : }}
+\ignorespaces}
+
+%---------- Exercices ----------
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
+\newcounter{exerciceapp}
+
+\newcommand{\exerciceapp}{%
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}
+{Exercice d'application \theexerciceapp : }}
+\ignorespaces}
+
+%---------- Corrections ----------
+\newcounter{correction}
+
+\newcommand{\correction}{%
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}
+{Correction \thecorrection : }}
+\ignorespaces}
+
+%---------- Remarques ----------
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+\usepackage{enumitem}
+
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\newcounter{remarque}
+
+\newcommand{\remarque}{%
+\refstepcounter{remarque}
+\textbf{\textcolor{myorange1}
+{Remarque \theremarque : }}
+\ignorespaces}
+
+%=========================================================
+%                 FILIGRANE
+%=========================================================
+
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+\Large\textbf{\underline{\textcolor{red}{CALCUL DANS $\mathbb{R}$}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 2ndL}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+%=========================================================
+
+% --- I) CALCULS SUR LES QUOTIENTS ---
+\section*{\color{myred} I) CALCULS SUR LES QUOTIENTS}
+
+\subsection*{\color{myred} 1) Règles de calculs}
+
+\subsubsection*{\color{myred} a) Quotient de deux réels}
+Soient $a$ et $b$ deux réels, avec $b \neq 0$. Le quotient de $a$ par $b$, noté $\dfrac{a}{b}$, est le nombre réel qui, multiplié par $b$, donne $a$. Autrement dit :
+\[
+\dfrac{a}{b} = a \times \dfrac{1}{b}
+\]
+
+\subsubsection*{\color{myred} b) Propriétés}
+Pour tous réels $a$, $b$, $c$ et $d$ (avec $b \neq 0$ et $d \neq 0$), on a les propriétés suivantes :
+\begin{itemize}
+    \item \textbf{Égalité des quotients :} $\dfrac{a}{b} = \dfrac{c}{d} \iff a \times d = b \times c$ (produit en croix).
+    \item \textbf{Simplification :} $\dfrac{a \times c}{b \times c} = \dfrac{a}{b}$ pour $c \neq 0$.
+    \item \textbf{Addition/Soustraction :} $\dfrac{a}{b} \pm \dfrac{c}{d} = \dfrac{a \times d \pm b \times c}{b \times d}$ (mettre au même dénominateur).
+    \item \textbf{Multiplication :} $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{a \times c}{b \times d}$.
+    \item \textbf{Division :} $\dfrac{\dfrac{a}{b}}{\dfrac{c}{d}} = \dfrac{a}{b} \times \dfrac{d}{c} = \dfrac{a \times d}{b \times c}$ pour $c \neq 0$.
+\end{itemize}
+
+\subsubsection*{\color{myred} c) Application}
+Simplifier au maximum l'expression suivante :
+\[
+A = \frac{3}{4} + \frac{5}{6} - \frac{7}{12}
+\]
+On met tout sur le même dénominateur (12 est le PPCM de 4, 6 et 12) :
+\[
+A = \frac{3 \times 3}{4 \times 3} + \frac{5 \times 2}{6 \times 2} - \frac{7}{12}
+= \frac{9}{12} + \frac{10}{12} - \frac{7}{12}
+= \frac{9+10-7}{12} = \frac{12}{12} = 1
+\]
+
+\subsection*{\color{myred} 2) IDENTITES REMARQUABLES}
+
+\subsubsection*{\color{myred} a) Rappels}
+Pour tous réels $a$ et $b$, on a les trois identités remarquables fondamentales :
+\begin{enumerate}
+    \item $(a+b)^2 = a^2 + 2ab + b^2$ (carré d'une somme).
+    \item $(a-b)^2 = a^2 - 2ab + b^2$ (carré d'une différence).
+    \item $(a-b)(a+b) = a^2 - b^2$ (produit de la somme par la différence).
+\end{enumerate}
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{itemize}
+        \item Développer $(2x+3)^2 = (2x)^2 + 2 \times (2x) \times 3 + 3^2 = 4x^2 + 12x + 9$.
+        \item Factoriser $x^2 - 16 = x^2 - 4^2 = (x-4)(x+4)$.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{\color{myred} b) Autres identités remarquables}
+On généralise aux cubes et aux puissances $n$ :
+\begin{itemize}
+    \item $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+    \item $(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$.
+    \item $a^3 + b^3 = (a+b)(a^2 - ab + b^2)$.
+    \item $a^3 - b^3 = (a-b)(a^2 + ab + b^2)$.
+    \item Pour $n$ entier naturel non nul : $a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + \cdots + ab^{n-2} + b^{n-1})$.
+\end{itemize}
+
+\subsubsection*{\color{myred} c) Application}
+Factoriser l'expression $B = 8x^3 - 27$.
+On reconnaît une différence de cubes : $8x^3 = (2x)^3$ et $27 = 3^3$.
+Donc
+\[
+B = (2x)^3 - 3^3 = (2x-3)\left((2x)^2 + (2x)\times 3 + 3^2\right) = (2x-3)(4x^2 + 6x + 9).
+\]
+
+
+% --- II) PUISSANCE D'UN REEL ---
+\section*{\color{myred} II) PUISSANCE D'UN REEL}
+
+\subsection*{\color{myred} 1) Définition}
+Soit $a$ un réel et $n$ un entier naturel non nul. La puissance $n$-ième de $a$, notée $a^n$, est le produit de $n$ facteurs tous égaux à $a$ :
+\[
+a^n = \underbrace{a \times a \times \cdots \times a}_{n \text{ facteurs}}
+\]
+Par convention : $a^0 = 1$ (pour $a \neq 0$). Pour $a \neq 0$, on définit les puissances négatives : $a^{-n} = \dfrac{1}{a^n}$.
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{itemize}
+        \item $2^3 = 2 \times 2 \times 2 = 8$.
+        \item $(-3)^2 = (-3) \times (-3) = 9$.
+        \item $5^{-2} = \dfrac{1}{5^2} = \dfrac{1}{25}$.
+        \item $10^0 = 1$.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{\color{myred} 2) Propriétés}
+Pour tous réels $a$ et $b$ non nuls, et pour tous entiers relatifs $m$ et $n$, on a :
+\begin{itemize}
+    \item $a^m \times a^n = a^{m+n}$.
+    \item $\dfrac{a^m}{a^n} = a^{m-n}$.
+    \item $(a^m)^n = a^{m \times n}$.
+    \item $(a \times b)^n = a^n \times b^n$.
+    \item $\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}$.
+\end{itemize}
+
+\subsection*{\color{myred} 3) Application}
+Simplifier l'expression suivante en une seule puissance :
+\[
+C = \frac{3^5 \times (3^{-2})^4}{3^{-3} \times 3^2}
+\]
+On applique les règles :
+\[
+C = \frac{3^{5} \times 3^{-8}}{3^{-1}} = \frac{3^{5-8}}{3^{-1}} = \frac{3^{-3}}{3^{-1}} = 3^{-3 - (-1)} = 3^{-2} = \frac{1}{9}.
+\]
+
+
+% --- III) CALCULS SUR LES RADICAUX ---
+\section*{\color{myred} III) CALCULS SUR LES RADICAUX}
+
+\subsection*{\color{myred} 1) Définition}
+Soit $a$ un réel positif. La racine carrée de $a$, notée $\sqrt{a}$, est le nombre réel positif dont le carré est égal à $a$ :
+\[
+(\sqrt{a})^2 = a \quad \text{et} \quad \sqrt{a} \geq 0.
+\]
+De manière générale, pour $n$ entier naturel non nul, la racine $n$-ième de $a$ (avec $a \geq 0$) est le nombre positif dont la puissance $n$-ième vaut $a$.
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{itemize}
+        \item $\sqrt{16} = 4$ car $4^2 = 16$.
+        \item $\sqrt[3]{8} = 2$ car $2^3 = 8$.
+        \item $\sqrt{2} \approx 1.414$.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{\color{myred} 2) Propriétés}
+Pour $a \geq 0$ et $b \geq 0$, on a :
+\begin{itemize}
+    \item $\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$.
+    \item $\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}$ pour $b > 0$.
+    \item $\sqrt{a^2} = |a|$ (valeur absolue de $a$).
+    \item Pour les racines $n$-ièmes : $\sqrt[n]{a^n} = a$ si $a \geq 0$, et pour $n$ impair, $\sqrt[n]{a^n} = a$ pour tout $a$ réel.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{Remarque :} On ne peut pas simplifier $\sqrt{a+b}$ en $\sqrt{a} + \sqrt{b}$ en général. Par exemple, $\sqrt{9+16} = \sqrt{25} = 5$, alors que $\sqrt{9} + \sqrt{16} = 3+4 = 7$.
+\end{itemize}
+
+\subsection*{\color{myred} 3) Application}
+Simplifier l'expression $D = \sqrt{50} - 3\sqrt{18} + 2\sqrt{8}$.
+On commence par décomposer les radicandes en produits de carrés parfaits :
+\[
+\sqrt{50} = \sqrt{25 \times 2} = 5\sqrt{2}, \quad
+\sqrt{18} = \sqrt{9 \times 2} = 3\sqrt{2}, \quad
+\sqrt{8} = \sqrt{4 \times 2} = 2\sqrt{2}.
+\]
+Donc
+\[
+D = 5\sqrt{2} - 3 \times 3\sqrt{2} + 2 \times 2\sqrt{2}
+= 5\sqrt{2} - 9\sqrt{2} + 4\sqrt{2} = (5-9+4)\sqrt{2} = 0.
+\]
+
+
+% --- IV) INTERVALLES DANS R ---
+\section*{\color{myred} IV) INTERVALLES DANS $\mathbb{R}$}
+
+\subsection*{\color{myred} 1) Définition}
+Un intervalle de $\mathbb{R}$ est un ensemble de nombres réels compris entre deux bornes (éventuellement infinies). On distingue les intervalles ouverts (bornes exclues), fermés (bornes incluses), ou semi-ouverts.
+
+\subsection*{\color{myred} 2) Présentation des différents types d'intervalles}
+
+\subsubsection*{\color{myred} a) Intervalles bornés}
+Soient $a$ et $b$ deux réels avec $a < b$.
+\begin{itemize}
+    \item $[a, b] = \{ x \in \mathbb{R} \mid a \leq x \leq b \}$ (fermé).
+    \item $]a, b[ = \{ x \in \mathbb{R} \mid a < x < b \}$ (ouvert).
+    \item $[a, b[ = \{ x \in \mathbb{R} \mid a \leq x < b \}$ (fermé à gauche, ouvert à droite).
+    \item $]a, b] = \{ x \in \mathbb{R} \mid a < x \leq b \}$ (ouvert à gauche, fermé à droite).
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{itemize}
+        \item $[2, 5]$ contient tous les nombres de 2 à 5 inclus.
+        \item $]-3, 1]$ contient les nombres strictement plus grands que -3 et inférieurs ou égaux à 1.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{\color{myred} b) Intervalles non bornés}
+\begin{itemize}
+    \item $[a, +\infty[ = \{ x \in \mathbb{R} \mid x \geq a \}$.
+    \item $]a, +\infty[ = \{ x \in \mathbb{R} \mid x > a \}$.
+    \item $]-\infty, b] = \{ x \in \mathbb{R} \mid x \leq b \}$.
+    \item $]-\infty, b[ = \{ x \in \mathbb{R} \mid x < b \}$.
+    \item $]-\infty, +\infty[ = \mathbb{R}$.
+\end{itemize}
+
+\subsection*{\color{myred} 3) Intersection et réunion de deux intervalles}
+
+\subsubsection*{\color{myred} a) Intersection de deux intervalles}
+L'intersection de deux intervalles $I$ et $J$, notée $I \cap J$, est l'ensemble des réels qui appartiennent à la fois à $I$ et à $J$.
+
+\begin{itemize}
+    \item \textbf{Définition et Exemples :}
+    \begin{itemize}
+        \item $[1, 4] \cap [2, 6] = [2, 4]$.
+        \item $]-\infty, 3] \cap ]0, +\infty[ = ]0, 3]$.
+        \item $[1, 2] \cap [3, 4] = \emptyset$ (ensemble vide, car aucun réel commun).
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{\color{myred} b) Réunion de deux intervalles}
+La réunion de deux intervalles $I$ et $J$, notée $I \cup J$, est l'ensemble des réels qui appartiennent à $I$ ou à $J$ (ou aux deux).
+
+\begin{itemize}
+    \item \textbf{Définition et Exemples :}
+    \begin{itemize}
+        \item $[1, 4] \cup [2, 6] = [1, 6]$ (car ils se chevauchent).
+        \item $]-\infty, 1] \cup [3, +\infty[ = ]-\infty, 1] \cup [3, +\infty[$ (pas d'écriture plus simple car il y a un "trou" entre 1 et 3).
+        \item $[1, 2] \cup [3, 4] = [1, 2] \cup [3, 4]$ (pas d'intervalle unique).
+    \end{itemize}
+\end{itemize}
+
+
+% --- V) VALEUR ABSOLUE ---
+\section*{\color{myred} V) VALEUR ABSOLUE}
+
+\subsection*{\color{myred} 1) Définition et Exemples}
+La valeur absolue d'un réel $x$, notée $|x|$, est la distance de $x$ à 0 sur la droite réelle. Elle est toujours positive ou nulle.
+\[
+|x| =
+\begin{cases}
+x & \text{si } x \geq 0, \\
+-x & \text{si } x < 0.
+\end{cases}
+\]
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{itemize}
+        \item $|5| = 5$ ; $|-3| = 3$ ; $|0| = 0$.
+        \item $|x| = 2$ signifie $x = 2$ ou $x = -2$.
+        \item $|x-1|$ représente la distance entre $x$ et 1.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{\color{myred} 2) Propriétés permettant de résoudre les équations et les inéquations du $1^{\text{ère}}$ degré}
+
+Pour tout réel $a \geq 0$ et tout réel $x$ :
+
+\begin{itemize}
+    \item $|x| = a \iff x = a \text{ ou } x = -a$.
+    \item $|x| \leq a \iff -a \leq x \leq a$.
+    \item $|x| \geq a \iff x \leq -a \text{ ou } x \geq a$.
+    \item Plus généralement : $|x - c| \leq a \iff c - a \leq x \leq c + a$ (cercle de centre $c$ et de rayon $a$ sur la droite réelle).
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{itemize}
+        \item Résoudre $|2x-1| = 3$ :
+        \[
+        2x-1 = 3 \quad \text{ou} \quad 2x-1 = -3
+        \]
+        Donc $2x = 4 \implies x=2$ ou $2x = -2 \implies x=-1$. Les solutions sont $S = \{-1, 2\}$.
+        \item Résoudre $|x+2| \leq 1$ :
+        \[
+        -1 \leq x+2 \leq 1 \implies -3 \leq x \leq -1.
+        \]
+        Donc $S = [-3, -1]$.
+        \item Résoudre $|3x-6| > 2$ :
+        \[
+        3x-6 < -2 \quad \text{ou} \quad 3x-6 > 2
+        \]
+        \[
+        3x < 4 \implies x < \frac{4}{3} \quad \text{ou} \quad 3x > 8 \implies x > \frac{8}{3}.
+        \]
+        Donc $S = \left]-\infty, \dfrac{4}{3}\right[ \cup \left]\dfrac{8}{3}, +\infty\right[$.
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.5em}
+\noindent \textbf{Remarque :} La valeur absolue est très utile pour exprimer des distances, des tolérances (erreurs), et intervient dans de nombreux domaines des mathématiques.
+
+\end{document}
