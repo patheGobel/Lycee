@@ -382,4 +382,176 @@ où $X$ est l'inconnue.
     \]
     Les deux nombres sont 2 et 3.
 \end{itemize}
+
+% ========================================================================
+% PARTIE II : INÉQUATIONS DU SECOND DEGRÉ
+% ========================================================================
+\section*{\color{myred} II) Inéquation Du Second Dégré}
+
+\subsection*{\color{myred} 1) Définition}
+Une inéquation du second degré à une inconnue $x$ est une inéquation qui peut se mettre sous l'une des formes suivantes :
+\[
+ax^2 + bx + c \geq 0, \quad ax^2 + bx + c > 0, \quad ax^2 + bx + c \leq 0, \quad ax^2 + bx + c < 0
+\]
+où $a \neq 0$.
+
+Résoudre une inéquation du second degré, c'est déterminer l'ensemble des réels $x$ pour lesquels l'inégalité est vraie.
+
+\subsection*{\color{myred} 2) Signe d'un trinôme du second degré}
+Le signe du trinôme $ax^2 + bx + c$ (avec $a \neq 0$) dépend du signe de $\Delta = b^2 - 4ac$ et du signe de $a$.
+
+\paragraph*{\color{myred} Règle de signe :}
+
+\begin{enumerate}
+    \item \textbf{Si $\Delta < 0$ :} 
+    Le trinôme est toujours du signe de $a$ (pour tout $x \in \mathbb{R}$).
+     
+\begin{center}
+\begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$ax^2 + bx + c$/.7}
+    {$-\infty$ , $+\infty$}
+    \tkzTabLine{,\text{signe(a)},}
+\end{tikzpicture}
+\end{center}
+
+    \item \textbf{Si $\Delta = 0$ :}
+    Le trinôme est du signe de $a$ pour tout $x \neq -\dfrac{b}{2a}$ et s'annule en $x_0 = -\dfrac{b}{2a}$.
+    
+    \begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$ax^2 + bx + c$/.7}
+    {$-\infty$,$x_0$,$+\infty$}
+    \tkzTabLine{,\text{signe(a)},z,\text{signe(a)},}
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Si $\Delta > 0$ :}
+    Le trinôme est du signe de $a$ à l'extérieur des racines (c'est-à-dire pour $x < x_1$ et $x > x_2$) et du signe de $-a$ entre les racines (pour $x_1 < x < x_2$).
+    \begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$ax^2 + bx + c$/.7}
+    {$-\infty$,$x_1$,$x_2$,$+\infty$}
+    \tkzTabLine{,\text{signe(a)},z,-\text{signe(a)},z,\text{signe(a)},}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+\subsection*{\color{myred} 3) Résolution d'une inéquation du second degré à une inconnue $x$}
+Pour résoudre une inéquation du second degré, on procède comme suit :
+\begin{enumerate}
+    \item On se ramène à la forme $ax^2 + bx + c \geq 0$ (ou $>0$, $\leq 0$, $<0$).
+    \item On calcule le discriminant $\Delta$.
+    \item On détermine les racines (si elles existent).
+    \item On construit le tableau de signe du trinôme.
+    \item On lit l'ensemble des solutions selon l'inégalité.
+\end{enumerate}
+
+\begin{itemize}
+    \item \textbf{Exemples :}
+    \begin{enumerate}[label=\arabic*)]
+        \item Résoudre $x^2 - 5x + 6 \geq 0$.
+        
+        On a $\Delta = 1 > 0$, $a = 1 > 0$. Les racines sont $x_1 = 2$ et $x_2 = 3$.
+        
+        \textbf{Tableau de signe :}
+
+    \begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$x^2 - 5x + 6$/.7}
+    {$-\infty$,$2$,$3$,$+\infty$}
+    \tkzTabLine{,+,z,-,z,+,}
+    \end{tikzpicture}
+    \end{center}
+        
+        Donc $S = ]-\infty, 2] \cup [3, +\infty[$.
+        
+        \item Résoudre $-2x^2 + 8x - 6 > 0$.
+        
+        On multiplie par $-1$ (en changeant le sens de l'inégalité) : $2x^2 - 8x + 6 < 0$.
+        On a $\Delta = 16 > 0$, $a = 2 > 0$. Les racines sont $x_1 = 1$ et $x_2 = 3$.
+        
+        \textbf{Tableau de signe de $2x^2 - 8x + 6$ :}
+
+    \begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$-2x^2 + 8x - 6$/.7}
+    {$-\infty$,$1$,$3$,$+\infty$}
+    \tkzTabLine{,-,z,+,z,-,}
+    \end{tikzpicture}
+    \end{center}
+        
+        On veut $2x^2 - 8x + 6 < 0$, donc $S = ]1, 3[$.
+        
+        \item Résoudre $x^2 + x + 1 < 0$.
+        
+        $\Delta = -3 < 0$ et $a = 1 > 0$, donc le trinôme est toujours $> 0$.
+        L'inéquation $< 0$ n'a pas de solution : $S = \emptyset$.
+        
+        \item Résoudre $x^2 - 4x + 4 \leq 0$.
+        
+        $\Delta = 0$, $a = 1 > 0$. La racine double est $x_0 = 2$.
+        
+        \textbf{Tableau de signe :}
+    \begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$x^2 - 4x + 4$/.7}
+    {$-\infty$,$2$,$+\infty$}
+    \tkzTabLine{,+,z,+,}
+    \end{tikzpicture}
+    \end{center}
+        
+        Le trinôme est $> 0$ pour $x \neq 2$ et s'annule en $2$.
+        Donc $S = \{2\}$.
+    \end{enumerate}
+\end{itemize}
+
+% ========================================================================
+% RÉSUMÉ
+% ========================================================================
+\newpage
+\section*{\color{myred} RÉSUMÉ DES CAS POSSIBLES}
+
+\subsection*{\color{myred} Tableau récapitulatif :}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\Delta$ & $a$ & $ax^2+bx+c=0$ & $ax^2+bx+c>0$ & $ax^2+bx+c<0$ \\
+\hline
+$\Delta > 0$ & $a>0$ & $\{x_1, x_2\}$ & $]-\infty, x_1[ \cup ]x_2, +\infty[$ & $]x_1, x_2[$ \\
+\hline
+$\Delta > 0$ & $a<0$ & $\{x_1, x_2\}$ & $]x_1, x_2[$ & $]-\infty, x_1[ \cup ]x_2, +\infty[$ \\
+\hline
+$\Delta = 0$ & $a>0$ & $\{x_0\}$ & $\mathbb{R} \setminus \{x_0\}$ & $\emptyset$ \\
+\hline
+$\Delta = 0$ & $a<0$ & $\{x_0\}$ & $\emptyset$ & $\mathbb{R} \setminus \{x_0\}$ \\
+\hline
+$\Delta < 0$ & $a>0$ & $\emptyset$ & $\mathbb{R}$ & $\emptyset$ \\
+\hline
+$\Delta < 0$ & $a<0$ & $\emptyset$ & $\emptyset$ & $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\noindent \textbf{Remarque :} Pour les inéquations avec $\geq$ ou $\leq$, on inclut les racines (si elles existent) dans les intervalles de solutions.
 \end{document}
