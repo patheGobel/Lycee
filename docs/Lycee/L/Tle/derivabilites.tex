@@ -108,7 +108,6 @@ Pour tout $x \in I$ tel que $x \neq x_0$, le \textbf{taux d'accroissement} (ou t
 \paragraph{Interprétation géométrique :} 
 Le taux d'accroissement représente le \textbf{coefficient directeur} de la sécante $(AM)$ passant par $A(x_0 \,;\, f(x_0))$ et $M(x \,;\, f(x))$.
 
-
 \subsection*{\color{myred}2. Définition de la dérivabilité en un point}
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition : Nombre dérivé}]
@@ -155,7 +154,7 @@ Soit la fonction $f(x) = |x|$ définie sur $\mathbb{R}$. Étudions sa dérivabil
 
 \textbf{Conclusion :} Les dérivées à gauche et à droite existent mais sont différentes ($f'_g(0) = -1 \neq 1 = f'_d(0)$). La fonction $f(x) = |x|$ \textbf{n'est donc pas dérivable en $0$}. Sa courbe possède un point anguleux à l'origine.
 
-\subsection*{\color{myred}Exemples d'étude de la dérivabilité}
+\section*{\color{myred}Exemples d'étude de la dérivabilité}
 
 \subsection*{\color{myred}Exemple 1 : Fonction classique dérivable}
 Soit la fonction $f$ définie sur $\mathbb{R}$ par :
@@ -249,7 +248,6 @@ On a $k(0) = 3(0) = 0$. Étudions les dérivées unilatérales en $0$ :
 \end{itemize}
 Les dérivées à gauche et à droite existent mais sont différentes ($k'_g(0) = 0 \neq 3 = k'_d(0)$). La fonction $k$ \textbf{n'est donc pas dérivable en $0$}. Sa courbe présente un point anguleux en $0$.
 
-
 \subsection*{\color{myred}4. Équation de la tangente}
 
 \begin{tcolorbox}[colback=gray!10!white,colframe=black,title=\textbf{Propriété : Équation de la tangente}]
@@ -338,6 +336,54 @@ Soit $I$ un intervalle et $f$ une fonction dérivable sur $I$.
     \item Si pour tout $x \in I$, $f'(x) = 0$, alors $f$ est \textbf{constante} sur $I$.
 \end{itemize}
 
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 5 : Étude d'une fonction polynôme du second degré}
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par :
+\[
+f(x) = -x^2 + 4x - 1
+\]
+
+\paragraph{1. Calcul de la fonction dérivée :}
+La fonction $f$ est une fonction polynôme, elle est donc dérivable sur $\mathbb{R}$.\\
+Pour tout $x \in \mathbb{R}$ :
+\[
+f'(x) = -2x + 4
+\]
+
+\paragraph{2. Étude du signe de la dérivée :}
+Résolvons l'inéquation $f'(x) \ge 0$ :
+\[
+-2x + 4 \ge 0 \iff -2x \ge -4 \iff x \le 2
+\]
+\begin{itemize}
+    \item Pour $x \in ]-\infty \,;\, 2[$, $f'(x) > 0$.
+    \item Pour $x = 2$, $f'(2) = 0$.
+    \item Pour $x \in ]2 \,;\, +\infty[$, $f'(x) < 0$.
+\end{itemize}
+
+\paragraph{3. Maximum local :}
+Pour $x = 2$, la fonction atteint son maximum :
+\[
+f(2) = -(2)^2 + 4(2) - 1 = -4 + 8 - 1 = 3
+\]
+
+\paragraph{4. Tableau de variations :}
+
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5, espcl=2.5]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $2$, $+\infty$}
+
+  \tkzTabLine{ , + , z , - , }
+  \tkzTabVar{-/$-\infty$ , +/ $3$ , -/ $-\infty$}
+\end{tikzpicture}
+\end{center}
+
 \subsection*{\color{myred}2. Extrémums locaux}
 Si $f'$ s'annule en un réel $a \in I$ en \textbf{changeant de signe}, alors $f$ admet un \textbf{extrémum local} en $a$. La valeur de cet extrémum est le réel $f(a)$.
 
@@ -346,4 +392,61 @@ Si $f'$ s'annule en un réel $a \in I$ en \textbf{changeant de signe}, alors $f$
     \item Si $f'$ passe du signe $-$ au signe $+$, $f(a)$ est un \textbf{minimum local}.
 \end{itemize}
 
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 5 : Étude des variations d'une fonction rationnelle}
+
+Soit $f$ la fonction définie sur $\mathbb{R} \setminus \{1\}$ par :
+\[
+f(x) = \frac{x^2 - 3x + 6}{x - 1}
+\]
+
+\paragraph{1. Dérivabilité et calcul de la dérivée :}
+La fonction $f$ est une fonction rationnelle, elle est donc dérivable sur son ensemble de définition $\mathcal{D}_f = ]-\infty \,;\, 1[ \;\cup\; ]1 \,;\, +\infty[$.
+
+En utilisant la formule du quotient $\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}$ avec :
+\begin{itemize}
+    \item $u(x) = x^2 - 3x + 6 \implies u'(x) = 2x - 3$
+    \item $v(x) = x - 1 \implies v'(x) = 1$
+\end{itemize}
+
+Pour tout $x \in \mathbb{R} \setminus \{1\}$ :
+\[
+f'(x) = \frac{(2x - 3)(x - 1) - (x^2 - 3x + 6)(1)}{(x - 1)^2} = \frac{(2x^2 - 2x - 3x + 3) - (x^2 - 3x + 6)}{(x - 1)^2}
+\]
+\[
+f'(x) = \frac{x^2 - 2x - 3}{(x - 1)^2}
+\]
+
+\paragraph{2. Étude du signe de la dérivée :}
+Le dénominateur $(x - 1)^2$ étant strictement positif pour tout $x \neq 1$, le signe de $f'(x)$ dépend uniquement du numérateur $P(x) = x^2 - 2x - 3$.
+
+Résolvons l'équation $x^2 - 2x - 3 = 0$ :
+\begin{itemize}
+    \item Discriminant : $\Delta = (-2)^2 - 4(1)(-3) = 4 + 12 = 16 > 0$
+    \item Racines : $x_1 = \dfrac{2 - 4}{2} = -1 \quad \text{et} \quad x_2 = \dfrac{2 + 4}{2} = 3$
+\end{itemize}
+
+$P(x)$ est positif à l'extérieur des racines ($]- \infty \,;\, -1]$ et $[3 \,;\, +\infty[$) et négatif à l'intérieur ($[-1 \,;\, 3]$).
+
+\paragraph{3. Extrémums locaux :}
+\begin{itemize}
+    \item Maximum local en $x = -1$ : $f(-1) = \dfrac{(-1)^2 - 3(-1) + 6}{-1 - 1} = \dfrac{1 + 3 + 6}{-2} = -5$
+    \item Minimum local en $x = 3$ : $f(3) = \dfrac{3^2 - 3(3) + 6}{3 - 1} = \dfrac{9 - 9 + 6}{2} = 3$
+\end{itemize}
+
+\paragraph{4. Tableau de variations :}
+
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2.5, espcl=2.5]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $-1$, $1$, $3$, $+\infty$}
+
+  \tkzTabLine{ , + , z , - , d , - , z , + , }
+  \tkzTabVar{-/$-\infty$ , +/ $-5$ , +D-/$+\infty$/$-\infty$ , -/ $3$ , +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
 \end{document}
