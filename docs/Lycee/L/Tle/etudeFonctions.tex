@@ -370,4 +370,69 @@ Donc $I(0,2)$ est bien le centre de symétrie de $\mathcal{C}_f$.
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 2 : Fonction rationnelle avec asymptote oblique}
+
+Soit $g$ la fonction définie par $g(x) = \frac{x^2 - x + 1}{x - 1}$.
+
+\paragraph{1. Ensemble de définition :} $D_g = \mathbb{R} \setminus \{1\} = ]-\infty \,;\, 1[ \;\cup\; ]1 \,;\, +\infty[$.
+
+\paragraph{2. Forme réduite et Asymptotes :}
+En effectuant la division : $g(x) = x + \frac{1}{x - 1}$.
+\begin{itemize}
+    \item $\lim_{x \to 1^-} g(x) = -\infty$ et $\lim_{x \to 1^+} g(x) = +\infty \implies$ La droite $\mathbf{x = 1}$ est une **asymptote verticale**.
+    \item $\lim_{x \to \pm\infty} [g(x) - x] = \lim_{x \to \pm\infty} \frac{1}{x - 1} = 0 \implies$ La droite $(\mathcal{D}) : \mathbf{y = x}$ est une **asymptote oblique** en $\pm\infty$.
+\end{itemize}
+
+\paragraph{3. Dérivée et variations :}
+Pour tout $x \in D_g$ :
+\[
+g'(x) = 1 - \frac{1}{(x - 1)^2} = \frac{(x - 1)^2 - 1}{(x - 1)^2} = \frac{x^2 - 2x}{(x - 1)^2} = \frac{x(x - 2)}{(x - 1)^2}
+\]
+$g'(x) = 0 \iff x = 0$ ou $x = 2$.
+\begin{itemize}
+    \item $g(0) = -1$ (Maximum local)
+    \item $g(2) = 3$ (Minimum local)
+\end{itemize}
+
+\paragraph{4. Tableau de variations :}
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2, espcl=2.2]
+    {$x$/1, $g'(x)$/1, $g$/2}
+    {$-\infty$, $0$, $1$, $2$, $+\infty$}
+  \tkzTabLine{ , + , z , - , d , - , z , + , }
+  \tkzTabVar{-/$-\infty$ , +/ $-1$ , +D-/$+\infty$/$-\infty$ , -/ $3$ , +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+\paragraph{5. Courbe représentative $\mathcal{C}_g$ :}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-3.5, xmax=4.5,
+    ymin=-5.5, ymax=6.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=10cm, height=8cm
+]
+    % Courbe
+    \addplot[domain=-3.5:0.85, samples=100, color=myblue, ultra thick] {(x^2 - x + 1)/(x - 1)};
+    \addplot[domain=1.15:4.5, samples=100, color=myblue, ultra thick] {(x^2 - x + 1)/(x - 1)};
+    
+    % Asymptotes
+    \draw[dashed, ultra thick, color=myred] (axis cs:1,-5.5) -- (axis cs:1,6.5) node[pos=0.9, right] {$x=1$};
+    \addplot[domain=-3.5:4.5, color=mygreen, thick] {x};
+    \node[color=mygreen] at (axis cs: 3.5, 4.2) {$y=x$};
+
+    % Extrémums
+    \filldraw[color=myred] (axis cs:0,-1) circle (2pt);
+    \filldraw[color=myred] (axis cs:2,3) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{center}
 \end{document}
