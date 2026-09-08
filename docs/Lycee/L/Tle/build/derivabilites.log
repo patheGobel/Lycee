@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  8 SEP 2026 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  8 SEP 2026 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,10 +1287,10 @@ Package rerunfilecheck Info: File `derivabilites.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42392 strings out of 467533
- 994386 string characters out of 5422138
+ 42395 strings out of 467533
+ 994431 string characters out of 5422138
  1556657 words of memory out of 5000000
- 70578 multiletter control sequences out of 15000+600000
+ 70580 multiletter control sequences out of 15000+600000
  680594 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,734b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1303,10 +1303,10 @@ lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on build/derivabilites.pdf (3 pages, 183147 bytes).
+Output written on build/derivabilites.pdf (3 pages, 184715 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 23 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
