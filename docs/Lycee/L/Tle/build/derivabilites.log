@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  8 SEP 2026 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  8 SEP 2026 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1281,21 +1281,23 @@ Package rerunfilecheck Info: File `derivabilites.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42328 strings out of 467533
- 993175 string characters out of 5422138
- 1543657 words of memory out of 5000000
- 70533 multiletter control sequences out of 15000+600000
+ 42332 strings out of 467533
+ 993229 string characters out of 5422138
+ 1548657 words of memory out of 5000000
+ 70535 multiletter control sequences out of 15000+600000
  677604 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,11n,121p,734b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on build/derivabilites.pdf (1 page, 108076 bytes).
+pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lms
+y10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on build/derivabilites.pdf (1 page, 135058 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
+ 111 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
