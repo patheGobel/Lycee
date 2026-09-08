@@ -132,4 +132,58 @@ On dit qu'une fonction $f$ est \textbf{impaire} si :
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
+
+\subsection*{\color{myred}2. Éléments de symétrie}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Propriété 1 : Axe de symétrie}]
+La droite $(\mathcal{D}) : x = a$ est un \textbf{axe de symétrie} de la courbe $\mathcal{C}_f$ si et seulement si pour tout $x \in D_f$ :
+\[
+(2a - x) \in D_f \quad \text{et} \quad f(2a - x) = f(x)
+\]
+\end{tcolorbox}
+
+\paragraph{Exemple 2 : Démontrer qu'une droite est axe de symétrie}
+Soit $f(x) = x^2 - 4x + 5$ définie sur $D_f = \mathbb{R}$. Montrons que la droite $(\mathcal{D}) : x = 2$ est axe de symétrie de $\mathcal{C}_f$.
+
+\paragraph{Résolution :}
+Ici $a = 2$. Pour tout $x \in \mathbb{R}$, $(2a - x) = (4 - x) \in \mathbb{R}$.
+Calculons $f(4 - x)$ :
+\[
+f(4 - x) = (4 - x)^2 - 4(4 - x) + 5
+\]
+\[
+f(4 - x) = (16 - 8x + x^2) - 16 + 4x + 5
+\]
+\[
+f(4 - x) = x^2 - 4x + 5 = f(x)
+\]
+Puisque $f(4 - x) = f(x)$, la droite d'équation $x = 2$ est bien un **axe de symétrie** pour $\mathcal{C}_f$.
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Propriété 2 : Centre de symétrie}]
+Le point $I(a, b)$ est un \textbf{centre de symétrie} de la courbe $\mathcal{C}_f$ si et seulement si pour tout $x \in D_f$ :
+\[
+(2a - x) \in D_f \quad \text{et} \quad f(2a - x) + f(x) = 2b
+\]
+\end{tcolorbox}
+
+\paragraph{Exemple 3 : Démontrer qu'un point est centre de symétrie}
+Soit $g(x) = \dfrac{2x + 1}{x - 1}$ définie sur $D_g = \mathbb{R} \setminus \{1\}$. Montrons que $I(1, 2)$ est centre de symétrie de $\mathcal{C}_g$.
+
+\paragraph{Résolution :}
+Ici $a = 1$ et $b = 2$.
+\begin{enumerate}
+    \item Si $x \in D_g \iff x \neq 1 \iff -x \neq -1 \iff 2 - x \neq 1$. Donc $(2a - x) \in D_g$.
+    \item Calculons $g(2a - x) + g(x) = g(2 - x) + g(x)$ :
+    \[
+    g(2 - x) = \frac{2(2 - x) + 1}{(2 - x) - 1} = \frac{4 - 2x + 1}{1 - x} = \frac{5 - 2x}{1 - x} = \frac{2x - 5}{x - 1}
+    \]
+    Additionnons les deux expressions :
+    \[
+    g(2 - x) + g(x) = \frac{2x - 5}{x - 1} + \frac{2x + 1}{x - 1} = \frac{(2x - 5) + (2x + 1)}{x - 1} = \frac{4x - 4}{x - 1} = \frac{4(x - 1)}{x - 1} = 4
+    \]
+    Comme $2b = 2(2) = 4$, on a bien $g(2 - x) + g(x) = 2b$.
+\end{enumerate}
+Le point $I(1, 2)$ est donc bien le **centre de symétrie** de la courbe $\mathcal{C}_g$.
 \end{document}
