@@ -502,4 +502,30 @@ x^2 + 1 & \text{si } x > 0
     \item Mais \( f(0) = 2 \neq 1 \)
 \end{itemize}
 Donc \( f \) n'est pas continue en 0 (les limites à gauche et à droite existent et sont égales, mais elles ne valent pas \( f(0) \)).
+
+\subsection*{\color{myred}5. Prolongement par continuité}
+
+Soit \( f \) une fonction définie sur \( I \setminus \{a\} \). Si \( \lim\limits_{x \to a} f(x) = L \) (limite finie), alors on peut \textbf{prolonger} \( f \) par continuité en \( a \) en posant :
+\[
+f(a) = L
+\]
+
+\paragraph{Exemple :}
+Soit \( f(x) = \frac{x^2 - 1}{x - 1} \) définie sur \( \mathbb{R} \setminus \{1\} \).
+
+On a :
+\[
+\frac{x^2 - 1}{x - 1} = \frac{(x-1)(x+1)}{x-1} = x+1 \quad (x \neq 1)
+\]
+Donc :
+\[
+\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = \lim_{x \to 1} (x+1) = 2
+\]
+
+On prolonge \( f \) par continuité en 1 en posant :
+\[
+f(1) = 2
+\]
+
+Ainsi, la nouvelle fonction est continue sur \( \mathbb{R} \).
 \end{document}
