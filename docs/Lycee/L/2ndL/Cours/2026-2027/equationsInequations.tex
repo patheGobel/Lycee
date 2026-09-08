@@ -195,13 +195,141 @@ minimum size=1.2em,inner sep=0] (char) {#1};}}
     \textbf{Année scolaire : 2025 -- 2026}
 \end{center}
 %=========================================================
+% ========================================================================
+\vspace{1em}
+% PARTIE I : Trinome DU SECOND DEGRÉ
+% ========================================================================
+\section*{\color{myred} I) Trinôme Du second Degré}
+
+\subsection*{\color{myred} 1) Définition}
+Un trinôme du second degré est de la forme $p(x) = ax^2 + bx + c$ 
+
+avec $a \in \mathbb{R}^*$, $b \in \mathbb{R}$, $c \in \mathbb{R}$ 
+
+et $\deg p = 2$
+
+\noindent\textbf{Exple :}
+
+$p(x) = 2x^2 + 5x - 1$ de coef $a = 2$, $b = 5$ et $c = -1$
+
+$g(x) = -4x^2 - 3$ est un trinôme du second degré avec $a = -4$, $b = 0$ et $c = -3$
+
+$h(x) = x^2$ est un trinôme du second degré avec $a = 1$, $b = 0$, $c = 0$
+
+\subsection*{\color{myred} 2) Forme canonique}
+
+\begin{equation*}
+\begin{aligned}
+p(x) &= ax^2 + bx + c\\
+&= a \left[ x^2 + \frac{b}{a}x + \frac{c}{a} \right] \\
+&= a \left[ x^2 + \frac{2 \times x \times b}{2 \times a} + \left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a} \right] \\
+&= a \left[ x^2 + 2 \times x \times \frac{b}{2a} + \left(\frac{b}{2a}\right)^2 - \frac{b^2}{4a^2} + \frac{c}{a} \right] \\
+&= a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a^2} + \frac{4ac}{4a^2} \right] \\
+&= a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{b^2 - 4ac}{4a^2} \right]
+\end{aligned}
+\end{equation*}
+
+Posons $\Delta = b^2 - 4ac$ : discriminant du trinôme.
+
+Par conséquent :
+\begin{equation*}
+p(x) = a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} \right]
+\end{equation*}
+
+\subsection*{Exemple}
+
+Mettons le trinôme $p(x) = 2x^2 + 5x - 1$ sous sa forme canonique :
+
+\begin{equation*}
+\begin{aligned}
+p(x) &= 2 \left[ x^2 + \frac{5}{2}x - \frac{1}{2} \right] \\
+&= 2 \left[ x^2 + 2 \times x \times \frac{5}{4} + \left(\frac{5}{4}\right)^2 - \left(\frac{5}{4}\right)^2 - \frac{1}{2} \right] \\
+&= 2 \left[ \left(x + \frac{5}{4}\right)^2 - \frac{25}{16} - \frac{8}{16} \right] \\
+&= 2 \left[ \left(x + \frac{5}{4}\right)^2 - \frac{33}{16} \right]
+\end{aligned}
+\end{equation*}
+
+En développant le facteur $2$, on retrouve :
+\[
+p(x) = 2\left(x + \frac{5}{4}\right)^2 - \frac{33}{8}
+\]
+
+\subsection*{Exemple d'application direct avec $\Delta$}
+
+Soit le trinôme $p(x) = 3x^2 - 12x + 5$.
+
+\begin{enumerate}
+    \item \textbf{Identification des coefficients :}
+    \[
+    a = 3, \quad b = -12, \quad c = 5
+    \]
+
+    \item \textbf{Calcul du discriminant $\Delta$ :}
+    \begin{equation*}
+    \begin{aligned}
+    \Delta &= b^2 - 4ac \\
+    &= (-12)^2 - 4 \times 3 \times 5 \\
+    &= 144 - 60 \\
+    &= 84
+    \end{aligned}
+    \end{equation*}
+
+    \item \textbf{Forme canonique :}
+    
+    En utilisant la formule $p(x) = a \left[ \left(x + \dfrac{b}{2a}\right)^2 - \dfrac{\Delta}{4a^2} \right]$ :
+
+    Calculons d'abord les termes :
+    \begin{itemize}
+        \item $\dfrac{b}{2a} = \dfrac{-12}{2 \times 3} = \dfrac{-12}{6} = -2$
+        \item $\dfrac{\Delta}{4a^2} = \dfrac{84}{4 \times 3^2} = \dfrac{84}{36} = \dfrac{7}{3}$
+    \end{itemize}
+
+    D'où la forme canonique :
+    \[
+    p(x) = 3 \left[ (x - 2)^2 - \frac{7}{3} \right]
+    \]
+    
+    Ou sous la forme $a(x - \alpha)^2 + \beta$ (en distribuant $a$) :
+    \[
+    p(x) = 3(x - 2)^2 - 7
+    \]
+\end{enumerate}
+
+
+\subsection*{\color{myred} 3) Factorisation de la forme canonique}
+
+Soit un trinôme du $2^{nd}$ degré :
+\[
+p(x) = ax^2 + bx + c \quad \text{et} \quad \Delta = b^2 - 4ac
+\]
+et de F.C : $p(x) = a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} \right]$
+
+\begin{itemize}
+    \item \textbf{Si $\Delta > 0$ alors :}
+    \begin{equation*}
+    \begin{aligned}
+    p(x) &= a \left[ \left(x + \frac{b}{2a}\right)^2 - \left(\frac{\sqrt{\Delta}}{2a}\right)^2 \right] \\
+    &= a \left[ \left(x + \frac{b}{2a} - \frac{\sqrt{\Delta}}{2a}\right) \left(x + \frac{b}{2a} + \frac{\sqrt{\Delta}}{2a}\right) \right]
+    \end{aligned}
+    \end{equation*}
+
+    \begin{equation*}
+    p(x) = a \left( x - \frac{-b + \sqrt{\Delta}}{2a} \right) \left( x + \frac{b + \sqrt{\Delta}}{2a} \right) \quad \text{c.q.f.d.}
+    \end{equation*}
+
+    \item \textbf{Si $\Delta = 0$ alors :}
+    \[
+    p(x) = a \left( x + \frac{b}{2a} \right)^2
+    \]
+
+    \item \textbf{Si $\Delta < 0$ :} donc le trinôme n'est pas factorisable par la F.C.
+\end{itemize}
 
 \vspace{1em}
-
 % ========================================================================
 % PARTIE I : ÉQUATIONS DU SECOND DEGRÉ
 % ========================================================================
-\section*{\color{myred} I) Equations du second degré}
+\section*{\color{myred} II) ÉQUATIONS DU SECOND DEGRÉ}
 
 \subsection*{\color{myred} 1) Définition}
 Une équation du second degré à une inconnue $x$ est une équation qui peut se mettre sous la forme :
@@ -251,53 +379,6 @@ Trois cas se présentent :
         \item $3x^2 - 12 = 0 \iff x^2 = 4 \iff x = \pm 2$. \quad $S = \{-2, 2\}$.
         \item $2x^2 + 8 = 0 \iff x^2 = -4$ : pas de solution réelle. \quad $S = \emptyset$.
     \end{enumerate}
-\end{itemize}
-
-\subsubsection*{\color{myred} c) Cas général : équation du type $ax^2 + bx + c = 0$ où $a \neq 0$}
-
-\paragraph*{\color{myred} Forme canonique du trinôme du second degré}
-Pour tout trinôme du second degré $ax^2 + bx + c$ (avec $a \neq 0$), il existe une forme dite \textbf{canonique} :
-\[
-ax^2 + bx + c = a\left(x + \dfrac{b}{2a}\right)^2 - \dfrac{b^2 - 4ac}{4a}
-\]
-Ou encore :
-\[
-ax^2 + bx + c = a\left(x + \dfrac{b}{2a}\right)^2 - \dfrac{\Delta}{4a}
-\]
-où l'on pose $\Delta = b^2 - 4ac$ (appelé \textbf{discriminant}).
-
-\begin{itemize}
-    \item \textbf{Exemple :} Mettre $2x^2 - 8x + 6$ sous forme canonique.
-    \[
-    2x^2 - 8x + 6 = 2(x^2 - 4x) + 6 = 2\left[(x-2)^2 - 4\right] + 6
-    = 2(x-2)^2 - 8 + 6 = 2(x-2)^2 - 2.
-    \]
-    On a bien $\Delta = (-8)^2 - 4 \times 2 \times 6 = 64 - 48 = 16$, et $-\dfrac{\Delta}{4a} = -\dfrac{16}{8} = -2$.
-\end{itemize}
-
-\paragraph*{\color{myred} Forme factorisée d'un trinôme du second degré}
-La forme factorisée d'un trinôme dépend du signe de $\Delta = b^2 - 4ac$ :
-
-\begin{itemize}
-    \item Si $\Delta > 0$ : le trinôme admet deux racines réelles distinctes
-    \[
-    x_1 = \dfrac{-b - \sqrt{\Delta}}{2a} \quad \text{et} \quad x_2 = \dfrac{-b + \sqrt{\Delta}}{2a}
-    \]
-    et la factorisation est :
-    \[
-    ax^2 + bx + c = a(x - x_1)(x - x_2)
-    \]
-    
-    \item Si $\Delta = 0$ : le trinôme admet une racine double
-    \[
-    x_0 = -\dfrac{b}{2a}
-    \]
-    et la factorisation est :
-    \[
-    ax^2 + bx + c = a(x - x_0)^2
-    \]
-    
-    \item Si $\Delta < 0$ : le trinôme n'admet pas de racine réelle et ne se factorise pas dans $\mathbb{R}$.
 \end{itemize}
 
 \subsection*{\color{myred} 3) Résolution de l'équation $ax^2 + bx + c = 0$ où $a \neq 0$}
@@ -383,10 +464,11 @@ où $X$ est l'inconnue.
     Les deux nombres sont 2 et 3.
 \end{itemize}
 
+
 % ========================================================================
 % PARTIE II : INÉQUATIONS DU SECOND DEGRÉ
 % ========================================================================
-\section*{\color{myred} II) Inéquation Du Second Dégré}
+\section*{\color{myred} III) INÉQUATIONS DU SECOND DEGRÉ}
 
 \subsection*{\color{myred} 1) Définition}
 Une inéquation du second degré à une inconnue $x$ est une inéquation qui peut se mettre sous l'une des formes suivantes :
@@ -600,4 +682,6 @@ Un rectangle a pour longueur $x+3$ et pour largeur $x-1$ (où $x > 1$).
     \item Pour quelles valeurs de $x$ l'aire est-elle égale à $15$ ?
     \item Pour quelles valeurs de $x$ l'aire est-elle strictement supérieure à $8$ ?
 \end{enumerate}
+
+
 \end{document}
