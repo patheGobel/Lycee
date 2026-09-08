@@ -309,4 +309,65 @@ Soit $g(x) = \sqrt{x}$ définie sur $[0 \,;\, +\infty[$.
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 1 : Fonction polynôme du 3\textsuperscript{e} degré}
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x) = x^3 - 3x + 2$.
+
+\paragraph{1. Ensemble de définition :} $D_f = \mathbb{R} = ]-\infty \,;\, +\infty[$.
+
+\paragraph{2. Limites aux bornes :}
+\[
+\lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} x^3 = -\infty \quad \text{et} \quad \lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} x^3 = +\infty
+\]
+
+\paragraph{3. Dérivée et sens de variation :}
+$f$ est dérivable sur $\mathbb{R}$ : $f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x - 1)(x + 1)$.\\
+$f'(x) = 0 \iff x = -1$ ou $x = 1$.
+\begin{itemize}
+    \item $f(-1) = (-1)^3 - 3(-1) + 2 = -1 + 3 + 2 = 4$ (Maximum local).
+    \item $f(1) = 1^3 - 3(1) + 2 = 0$ (Minimum local).
+\end{itemize}
+
+\paragraph{4. Tableau de variations :}
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2, espcl=2.5]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $-1$, $1$, $+\infty$}
+  \tkzTabLine{ , + , z , - , z , + , }
+  \tkzTabVar{-/$-\infty$ , +/ $4$ , -/ $0$ , +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+\paragraph{5. Centre de symétrie :}
+Montrons que $I(0, 2)$ est centre de symétrie.\\
+$f(2(0) - x) + f(x) = f(-x) + f(x) = ((-x)^3 - 3(-x) + 2) + (x^3 - 3x + 2) = -x^3 + 3x + 2 + x^3 - 3x + 2 = 4 = 2(2)$.\\
+Donc $I(0,2)$ est bien le centre de symétrie de $\mathcal{C}_f$.
+
+\paragraph{6. Courbe représentative $\mathcal{C}_f$ :}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-2.5, xmax=2.5,
+    ymin=-1.5, ymax=5.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=9cm, height=7cm
+]
+    \addplot[domain=-2.2:2.1, samples=100, color=myblue, ultra thick] {x^3 - 3*x + 2};
+    \filldraw[color=myred] (axis cs:-1,4) circle (2pt) node[above] {$Max(-1,4)$};
+    \filldraw[color=myred] (axis cs:1,0) circle (2pt) node[below right] {$Min(1,0)$};
+    \filldraw[color=mygreen] (axis cs:0,2) circle (2pt) node[above right] {$I(0,2)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
 \end{document}
