@@ -357,4 +357,38 @@ Alors le trinôme a deux racines distinctes \(x_1\) et \(x_2\) (avec \(x_1 < x_2
     \item Vérifier que 1 est racine de \( x^3 - 7x + 6 \).
     \item Factoriser ce polynôme en utilisant la méthode d'identification.
 \end{enumerate}
+
+\subsection*{c. Par la méthode de Horner}
+
+\paragraph{Exemple :} Soit le polynôme \( x^3 - 2x^2 - 5x + 6 \)
+\begin{enumerate}
+    \item Vérifier que \(-2\) est racine de \( x^3 - 2x^2 - 5x + 6 \).
+    \item Factoriser \( x^3 - 2x^2 - 5x + 6 \) en utilisant la méthode de Horner.
+\end{enumerate}
+
+\[
+\begin{array}{c|cccc}
+\text{Coefficients de } P(x) \text{ dans l'ordre décroissant des puissances} & 1 & -2 & -5 & 6 \\
+\hline
+\text{Racine : } (-2) & & & & \\
+\text{Coefficients de } Q(x) \text{ dans l'ordre décroissant des puissances} & & & & \\
+\hline
+ & 1 & -4 & 3 & 0
+\end{array}
+\]
+
+\[
+x^3 - 2x^2 - 5x + 6 = (x + 2)(x^2 - 4x + 3) + 0
+\]
+
+On remarque que \( x^2 - 4x + 3 = (x - 1)(x - 3) \). Par suite :
+\[
+x^3 - 2x^2 - 5x + 6 = (x + 2)(x - 1)(x - 3)
+\]
+
+\paragraph{Exercice d'application :}
+\begin{enumerate}
+    \item Vérifier que 1 est racine de \( x^3 - 7x + 6 \).
+    \item Factoriser ce polynôme en utilisant la méthode de Horner.
+\end{enumerate}
 \end{document}
