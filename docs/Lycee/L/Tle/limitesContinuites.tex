@@ -541,5 +541,44 @@ Ainsi, la nouvelle fonction est continue sur \( \mathbb{R} \).
 \end{itemize}
 \end{tcolorbox}
 
+\subsection*{\color{myred}7. Synthèse}
 
+\begin{tcolorbox}[colback=gray!5!white, colframe=black!75!black]
+\begin{itemize}
+    \item Une fonction est continue si on peut tracer sa courbe "sans lever le crayon".
+    \item Les fonctions polynômes, rationnelles (sur leur domaine), racine carrée et valeur absolue sont continues.
+    \item On peut prolonger une fonction par continuité lorsque la limite existe et est finie.
+    \item Pour vérifier la continuité d'une fonction définie par morceaux, on étudie les limites à gauche et à droite.
+\end{itemize}
+\end{tcolorbox}
+
+\paragraph{Exercices d'application :}
+
+\begin{enumerate}
+    \item Soit \( f(x) = \frac{x^2 - 4}{x - 2} \). Déterminer le domaine de définition de \( f \), puis prolonger \( f \) par continuité si possible.
+    
+    \item Soit \( f \) définie par :
+    \[
+    f(x) = 
+    \begin{cases}
+        x^2 - 1 & \text{si } x \leq 1 \\
+        2x - 2 & \text{si } x > 1
+    \end{cases}
+    \]
+    \begin{enumerate}
+        \item Calculer \( \lim\limits_{x \to 1^-} f(x) \) et \( \lim\limits_{x \to 1^+} f(x) \).
+        \item La fonction est-elle continue en 1 ? Justifier.
+    \end{enumerate}
+
+    \item Étudier la continuité de la fonction \( f \) définie par :
+    \[
+    f(x) = 
+    \begin{cases}
+        \frac{x^2 - 9}{x - 3} & \text{si } x \neq 3 \\
+        5 & \text{si } x = 3
+    \end{cases}
+    \]
+    
+    \item Soit \( f(x) = \frac{2x^2 - 3x + 1}{x^2 - 4} \). Sur quels intervalles \( f \) est-elle continue ? Justifier.
+\end{enumerate}
 \end{document}
