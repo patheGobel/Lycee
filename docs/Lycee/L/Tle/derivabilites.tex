@@ -1,0 +1,349 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,arrows.meta,calc,shapes.geometric,fit,patterns}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+\usepackage{pifont}
+
+%=========================================================
+%          PERSONNALISATION DES LISTES ET NUMÉROS
+%=========================================================
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray,fill=red!20,minimum size=1.2em,inner sep=0] (char) {\small #1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan!20,minimum size=1.2em,inner sep=0] (char) {\small #1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{myorange}{rgb}{0.9, 0.4, 0.0}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.9}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{Dérivabilité}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : TL}\\[0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+\hrule
+\vspace{0.5cm}
+
+%=========================================================
+%      I. DÉRIVABILITÉ EN UN POINT
+%=========================================================
+
+\section*{\color{myred}I. Dérivabilité en un point}
+
+\subsection*{\color{myred}1. Taux d'accroissement}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Définition : Taux d'accroissement}]
+Soit $f$ une fonction définie sur un intervalle $I$ et $x_0 \in I$.\\
+Pour tout $x \in I$ tel que $x \neq x_0$, le \textbf{taux d'accroissement} (ou taux de variation) de $f$ entre $x_0$ et $x$ est défini par :
+\[
+\tau(x) = \frac{f(x) - f(x_0)}{x - x_0} \quad \text{ou en posant } x = x_0 + h \ (h \neq 0) : \quad \tau(h) = \frac{f(x_0 + h) - f(x_0)}{h}
+\]
+\end{tcolorbox}
+
+\paragraph{Interprétation géométrique :} 
+Le taux d'accroissement représente le \textbf{coefficient directeur} de la sécante $(AM)$ passant par $A(x_0 \,;\, f(x_0))$ et $M(x \,;\, f(x))$.
+
+\begin{comment}
+\subsection*{\color{myred}2. Définition de la dérivabilité en un point}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition : Nombre dérivé}]
+Soit $f$ une fonction définie sur un intervalle $I$ contenant $x_0$.\\
+On dit que $f$ est \textbf{dérivable en $x_0$} s'il existe un nombre réel $L$ tel que :
+\[
+\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = L \quad \text{ou} \quad \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h} = L
+\]
+Ce réel $L$ est appelé le \textbf{nombre dérivé} de $f$ en $x_0$ et est noté $f'(x_0)$.
+\end{tcolorbox}
+
+\paragraph{Remarque :} Si la limite est infinie ($\pm \infty$), la fonction \textbf{n'est pas dérivable} en $x_0$ (la courbe admet une tangente verticale).
+
+\subsection*{\color{myred}3. Dérivabilité à gauche et à droite (Demi-tangentes)}
+
+Dans certains cas, la limite du taux d'accroissement dépend du côté où l'on s'approche de $x_0$ :
+\begin{itemize}
+    \item \textbf{Dérivabilité à gauche :} $f'_g(x_0) = \lim_{x \to x_0^-} \dfrac{f(x) - f(x_0)}{x - x_0}$
+    \item \textbf{Dérivabilité à droite :} $f'_d(x_0) = \lim_{x \to x_0^+} \dfrac{f(x) - f(x_0)}{x - x_0}$
+\end{itemize}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Théorème : Condition de dérivabilité en $x_0$}]
+Une fonction $f$ est dérivable en $x_0$ si et seulement si elle est dérivable à gauche et à droite en $x_0$ \textbf{et} que ces deux nombres dérivés sont égaux :
+\[
+f'_g(x_0) = f'_d(x_0) = f'(x_0)
+\]
+Si $f'_g(x_0) \neq f'_d(x_0)$, la courbe présente un \textbf{point anguleux} en $x_0$.
+\end{tcolorbox}
+
+\subsubsection*{\color{myred}Contre-exemple classique : La fonction valeur absolue en $0$}
+
+Soit la fonction $f(x) = |x|$ définie sur $\mathbb{R}$. Étudions sa dérivabilité en $x_0 = 0$.
+
+\begin{enumerate}
+    \item \textbf{À droite ($x > 0$) :} Pour $x > 0$, $f(x) = x$ et $f(0) = 0$.
+    \[
+    \lim_{x \to 0^+} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0^+} \frac{x}{x} = 1 \implies f'_d(0) = 1
+    \]
+    \item \textbf{À gauche ($x < 0$) :} Pour $x < 0$, $f(x) = -x$ et $f(0) = 0$.
+    \[
+    \lim_{x \to 0^-} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0^-} \frac{-x}{x} = -1 \implies f'_g(0) = -1
+    \]
+\end{enumerate}
+
+\textbf{Conclusion :} Les dérivées à gauche et à droite existent mais sont différentes ($f'_g(0) = -1 \neq 1 = f'_d(0)$). La fonction $f(x) = |x|$ \textbf{n'est donc pas dérivable en $0$}. Sa courbe possède un point anguleux à l'origine.
+
+\section*{\color{myred}Exemples d'étude de la dérivabilité}
+
+\subsection*{\color{myred}Exemple 1 : Fonction classique dérivable}
+Soit la fonction $f$ définie sur $\mathbb{R}$ par :
+\[
+f(x) = x^2 + 3x - 1
+\]
+Étudions la dérivabilité de $f$ au point $x_0 = 1$.
+
+\paragraph{Résolution :}
+Calculons le taux d'accroissement de $f$ en $1$ pour $h \neq 0$ :
+\[
+\tau(h) = \frac{f(1+h) - f(1)}{h} = \frac{\left((1+h)^2 + 3(1+h) - 1\right) - (3)}{h} = \frac{1 + 2h + h^2 + 3 + 3h - 1 - 3}{h} = \frac{h^2 + 5h}{h} = h + 5
+\]
+Calculons la limite lorsque $h \to 0$ :
+\[
+\lim_{h \to 0} \tau(h) = \lim_{h \to 0} (h + 5) = 5
+\]
+La limite est réelle et finie, donc $f$ est \textbf{dérivable en $1$} et son nombre dérivé est $f'(1) = 5$.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 2 : Fonction définie par morceaux et DÉRIVABLE}
+Soit la fonction $g$ définie sur $\mathbb{R}$ par :
+\[
+g(x) = \begin{cases} 
+x^2 & \text{si } x \le 1 \\ 
+2x - 1 & \text{si } x > 1 
+\end{cases}
+\]
+Étudions la dérivabilité de $g$ au point de raccordement $x_0 = 1$.
+
+\paragraph{Résolution :}
+On remarque que $g(1) = 1^2 = 1$. Étudions les limites à gauche et à droite du taux d'accroissement :
+\begin{itemize}
+    \item \textbf{À gauche ($x < 1$) :}
+    \[
+    \lim_{x \to 1^-} \frac{g(x) - g(1)}{x - 1} = \lim_{x \to 1^-} \frac{x^2 - 1}{x - 1} = \lim_{x \to 1^-} \frac{(x-1)(x+1)}{x - 1} = \lim_{x \to 1^-} (x + 1) = 2 \implies g'_g(1) = 2
+    \]
+    \item \textbf{À droite ($x > 1$) :}
+    \[
+    \lim_{x \to 1^+} \frac{g(x) - g(1)}{x - 1} = \lim_{x \to 1^+} \frac{(2x - 1) - 1}{x - 1} = \lim_{x \to 1^+} \frac{2x - 2}{x - 1} = \lim_{x \to 1^+} \frac{2(x - 1)}{x - 1} = 2 \implies g'_d(1) = 2
+    \]
+\end{itemize}
+Puisque $g'_g(1) = g'_d(1) = 2$, la fonction $g$ est \textbf{dérivable en $1$} et $g'(1) = 2$.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 3 : Fonction NON DÉRIVABLE (Tangente verticale)}
+Soit la fonction $h$ définie sur $[0\,;\,+\infty[$ par :
+\[
+h(x) = \sqrt{x}
+\]
+Étudions la dérivabilité de $h$ au point $x_0 = 0$.
+
+\paragraph{Résolution :}
+Calculons la limite à droite du taux d'accroissement en $0$ pour $x > 0$ :
+\[
+\lim_{x \to 0^+} \frac{h(x) - h(0)}{x - 0} = \lim_{x \to 0^+} \frac{\sqrt{x} - 0}{x} = \lim_{x \to 0^+} \frac{\sqrt{x}}{(\sqrt{x})^2} = \lim_{x \to 0^+} \frac{1}{\sqrt{x}} = +\infty
+\]
+La limite est infinie ($+\infty$), donc la fonction $h$ \textbf{n'est pas dérivable en $0$}. La courbe de $h$ admet une demi-tangente verticale au point d'origine.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 4 : Fonction définie par morceaux et NON DÉRIVABLE (Point anguleux)}
+Soit la fonction $k$ définie sur $\mathbb{R}$ par :
+\[
+k(x) = \begin{cases} 
+x^2 & \text{si } x < 0 \\ 
+3x & \text{si } x \ge 0 
+\end{cases}
+\]
+Étudions la dérivabilité de $k$ au point $x_0 = 0$.
+
+\paragraph{Résolution :}
+On a $k(0) = 3(0) = 0$. Étudions les dérivées unilatérales en $0$ :
+\begin{itemize}
+    \item \textbf{À gauche ($x < 0$) :}
+    \[
+    \lim_{x \to 0^-} \frac{k(x) - k(0)}{x - 0} = \lim_{x \to 0^-} \frac{x^2}{x} = \lim_{x \to 0^-} x = 0 \implies k'_g(0) = 0
+    \]
+    \item \textbf{À droite ($x > 0$) :}
+    \[
+    \lim_{x \to 0^+} \frac{k(x) - k(0)}{x - 0} = \lim_{x \to 0^+} \frac{3x}{x} = 3 \implies k'_d(0) = 3
+    \]
+\end{itemize}
+Les dérivées à gauche et à droite existent mais sont différentes ($k'_g(0) = 0 \neq 3 = k'_d(0)$). La fonction $k$ \textbf{n'est donc pas dérivable en $0$}. Sa courbe présente un point anguleux en $0$.
+
+\subsection*{\color{myred}4. Équation de la tangente}
+
+\begin{tcolorbox}[colback=gray!10!white,colframe=black,title=\textbf{Propriété : Équation de la tangente}]
+Si $f$ est dérivable en $x_0$, la courbe $\mathcal{C}_f$ admet au point $A(x_0 \,;\, f(x_0))$ une tangente $(\mathcal{T})$ d'équation :
+\[
+(\mathcal{T}) : y = f'(x_0)(x - x_0) + f(x_0)
+\]
+\end{tcolorbox}
+
+%=========================================================
+%      II. DÉRIVABILITÉ SUR UN INTERVALLE ET FONCTION DÉRIVÉE
+%=========================================================
+
+\section*{\color{myred}II. Dérivabilité sur un intervalle}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Définition : Dérivabilité sur un intervalle}]
+\begin{itemize}
+    \item On dit qu'une fonction $f$ est \textbf{dérivable sur un intervalle ouvert} $I = ]a \,;\, b[$ si elle est dérivable en tout point $x_0$ de cet intervalle $I$.
+    \item On dit que $f$ est \textbf{dérivable sur l'intervalle fermé} $[a \,;\, b]$ si elle est dérivable sur $]a \,;\, b[$, dérivable à droite en $a$ et dérivable à gauche en $b$.
+\end{itemize}
+\end{tcolorbox}
+
+\paragraph{Fonction dérivée :}
+Soit $f$ une fonction dérivable sur un intervalle $I$. La fonction qui à tout réel $x \in I$ associe son nombre dérivé $f'(x)$ est appelée la \textbf{fonction dérivée} de $f$, notée $f'$.
+
+\subsection*{\color{myred}1. Dérivées des fonctions usuelles}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Fonction } $f(x)$ & \textbf{Dérivée } $f'(x)$ & \textbf{Ensemble de dérivabilité} \\
+\hline
+$c \; (c \in \mathbb{R})$ & $0$ & $\mathbb{R}$ \\
+\hline
+$ax + b$ & $a$ & $\mathbb{R}$ \\
+\hline
+$x^n \; (n \in \mathbb{N}^*)$ & $n x^{n-1}$ & $\mathbb{R}$ \\
+\hline
+$\dfrac{1}{x}$ & $-\dfrac{1}{x^2}$ & $\mathbb{R}^* = ]-\infty\,;\,0[\, \cup\, ]0\,;\,+\infty[$ \\
+\hline
+$\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ & $]0 \,;\, +\infty[$ \\
+\hline
+$\sqrt{ax + b}$ & $\dfrac{a}{2\sqrt{ax + b}}$ & Intervalle où $ax + b > 0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{\color{myred}2. Opérations sur les fonctions dérivées}
+
+Soient $u$ et $v$ deux fonctions dérivables sur un intervalle $I$, $\alpha \in \mathbb{R}$ et $n \in \mathbb{N}^*$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Opération} & \textbf{Formule de dérivation} \\
+\hline
+Somme & $(u + v)' = u' + v'$ \\
+\hline
+Multiplication par un scalaire & $(\alpha u)' = \alpha u'$ \\
+\hline
+Produit & $(u \times v)' = u'v + uv'$ \\
+\hline
+Puissance & $(u^n)' = n u' u^{n-1}$ \\
+\hline
+Inverse & $\left(\dfrac{1}{u}\right)' = -\dfrac{u'}{u^2} \quad \text{où } u(x) \neq 0$ \\
+\hline
+Quotient & $\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2} \quad \text{où } v(x) \neq 0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+%=========================================================
+%             III. SENS DE VARIATION D'UNE FONCTION
+%=========================================================
+
+\section*{\color{myred}III. Sens de variation et extrémums}
+
+Soit $I$ un intervalle et $f$ une fonction dérivable sur $I$.
+
+\subsection*{\color{myred}1. Théorème fondamental}
+\begin{itemize}
+    \item Si pour tout $x \in I$, $f'(x) \geq 0$, alors $f$ est \textbf{croissante} sur $I$.
+    \item Si pour tout $x \in I$, $f'(x) \leq 0$, alors $f$ est \textbf{décroissante} sur $I$.
+    \item Si pour tout $x \in I$, $f'(x) = 0$, alors $f$ est \textbf{constante} sur $I$.
+\end{itemize}
+
+\subsection*{\color{myred}2. Extrémums locaux}
+Si $f'$ s'annule en un réel $a \in I$ en \textbf{changeant de signe}, alors $f$ admet un \textbf{extrémum local} en $a$. La valeur de cet extrémum est le réel $f(a)$.
+
+\begin{itemize}
+    \item Si $f'$ passe du signe $+$ au signe $-$, $f(a)$ est un \textbf{maximum local}.
+    \item Si $f'$ passe du signe $-$ au signe $+$, $f(a)$ est un \textbf{minimum local}.
+\end{itemize}
+\end{comment}
+
+\end{document}
