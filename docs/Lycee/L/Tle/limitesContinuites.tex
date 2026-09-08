@@ -470,4 +470,36 @@ On dit que \( f \) est \textbf{continue sur un intervalle \( I \)} si elle est c
 
 \paragraph{Exemple :}
 La fonction \( f(x) = \frac{2x^2 - 3x + 1}{x - 5} \) est continue sur \( ]-\infty; 5[ \) et sur \( ]5; +\infty[ \) car c'est un quotient de deux polynômes, et le dénominateur \( x - 5 \) s'annule en 5.
+
+\subsection*{\color{myred}4. Continuité à gauche et à droite}
+
+\begin{itemize}
+    \item \( f \) est \textbf{continue à gauche} en \( a \) si :
+    \[
+    \lim_{x \to a^-} f(x) = f(a)
+    \]
+    \item \( f \) est \textbf{continue à droite} en \( a \) si :
+    \[
+    \lim_{x \to a^+} f(x) = f(a)
+    \]
+\end{itemize}
+
+La fonction est continue en \( a \) si et seulement si elle est continue à gauche \textbf{et} à droite en \( a \).
+
+\paragraph{Exemple :}
+Soit \( f \) définie par :
+\[
+f(x) = 
+\begin{cases}
+x + 1 & \text{si } x < 0 \\
+2 & \text{si } x = 0 \\
+x^2 + 1 & \text{si } x > 0
+\end{cases}
+\]
+\begin{itemize}
+    \item À gauche en 0 : \( \lim\limits_{x \to 0^-} f(x) = \lim\limits_{x \to 0^-} (x+1) = 1 \)
+    \item À droite en 0 : \( \lim\limits_{x \to 0^+} f(x) = \lim\limits_{x \to 0^+} (x^2+1) = 1 \)
+    \item Mais \( f(0) = 2 \neq 1 \)
+\end{itemize}
+Donc \( f \) n'est pas continue en 0 (les limites à gauche et à droite existent et sont égales, mais elles ne valent pas \( f(0) \)).
 \end{document}
