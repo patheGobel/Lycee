@@ -88,4 +88,48 @@ Soit $f$ une fonction numérique définie sur un ensemble $D_f$ et $\mathcal{C}_
 
 \subsection*{\color{myred}1. Parité d'une fonction}
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition 1 : Fonction paire}]
+On dit qu'une fonction $f$ est \textbf{paire} si :
+\begin{enumerate}
+    \item Pour tout $x \in D_f$, $-x \in D_f$ ($D_f$ est centré en $0$).
+    \item Pour tout $x \in D_f$, $f(-x) = f(x)$.
+\end{enumerate}
+\textbf{Interprétation géométrique :} L'axe des ordonnées $(Oy)$ est un \textbf{axe de symétrie} pour la courbe $\mathcal{C}_f$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Définition 2 : Fonction impaire}]
+On dit qu'une fonction $f$ est \textbf{impaire} si :
+\begin{enumerate}
+    \item Pour tout $x \in D_f$, $-x \in D_f$.
+    \item Pour tout $x \in D_f$, $f(-x) = -f(x)$.
+\end{enumerate}
+\textbf{Interprétation géométrique :} L'origine du repère $O(0,0)$ est un \textbf{centre de symétrie} pour la courbe $\mathcal{C}_f$.
+\end{tcolorbox}
+
+\paragraph{Exemple 1 : Étude de la parité}
+\begin{itemize}
+    \item \textbf{Cas d'une fonction paire :} Soit $f(x) = x^4 - 2x^2 + 1$ définie sur $D_f = \mathbb{R}$.
+    \begin{enumerate}
+        \item $D_f = \mathbb{R}$ est symétrique par rapport à $0$.
+        \item Pour tout $x \in \mathbb{R}$ :
+        \[
+        f(-x) = (-x)^4 - 2(-x)^2 + 1 = x^4 - 2x^2 + 1 = f(x)
+        \]
+        Donc $f$ est **paire**, et $(Oy)$ est axe de symétrie de $\mathcal{C}_f$.
+    \end{enumerate}
+
+    \item \textbf{Cas d'une fonction impaire :} Soit $g(x) = \dfrac{2x}{x^2 + 1}$ définie sur $D_g = \mathbb{R}$.
+    \begin{enumerate}
+        \item $D_g = \mathbb{R}$ est symétrique par rapport à $0$.
+        \item Pour tout $x \in \mathbb{R}$ :
+        \[
+        g(-x) = \frac{2(-x)}{(-x)^2 + 1} = \frac{-2x}{x^2 + 1} = -g(x)
+        \]
+        Donc $g$ est **impaire**, et l'origine $O(0,0)$ est centre de symétrie de $\mathcal{C}_g$.
+    \end{enumerate}
+\end{itemize}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
 \end{document}
