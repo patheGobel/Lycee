@@ -1421,9 +1421,9 @@ Package rerunfilecheck Info: File `limitesContinuites.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 43446 strings out of 467533
- 1015419 string characters out of 5422138
- 1584877 words of memory out of 5000000
+ 43450 strings out of 467533
+ 1015463 string characters out of 5422138
+ 1587877 words of memory out of 5000000
  71569 multiletter control sequences out of 15000+600000
  675194 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1436,10 +1436,10 @@ texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb>
-Output written on build/limitesContinuites.pdf (3 pages, 118218 bytes).
+Output written on build/limitesContinuites.pdf (3 pages, 120188 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
