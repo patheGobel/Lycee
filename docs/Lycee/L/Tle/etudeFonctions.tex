@@ -255,4 +255,39 @@ Montrons que la droite $(\mathcal{D}) : y = 2x - 1$ est asymptote oblique à $\m
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
+
+\subsection*{\color{myred}2. Branches paraboliques}
+
+Lorsque $\lim_{x \to \pm\infty} f(x) = \pm\infty$, la courbe ne possède pas d'asymptote horizontale. On étudie alors la limite du rapport $\dfrac{f(x)}{x}$ :
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Définitions : Les deux directions paraboliques}]
+\begin{itemize}
+    \item \textbf{Branche parabolique de direction $(Oy)$ :}
+    Si $\lim_{x \to \pm\infty} \frac{f(x)}{x} = \pm\infty$, la courbe $\mathcal{C}_f$ admet une branche parabolique dont la direction asymptotique est l'axe des ordonnées $(Oy)$.
+    \item \textbf{Branche parabolique de direction $(Ox)$ :}
+    Si $\lim_{x \to \pm\infty} \frac{f(x)}{x} = 0$, la courbe $\mathcal{C}_f$ admet une branche parabolique dont la direction asymptotique est l'axe des abscisses $(Ox)$.
+\end{itemize}
+\end{tcolorbox}
+
+\paragraph{Exemple 4 : Branche parabolique de direction $(Oy)$}
+Soit $f(x) = x^2 - 3x$ définie sur $\mathbb{R}$.
+\begin{enumerate}
+    \item $\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} x^2 = +\infty$.
+    \item Calculons la limite de $\dfrac{f(x)}{x}$ :
+    \[
+    \lim_{x \to +\infty} \frac{f(x)}{x} = \lim_{x \to +\infty} \frac{x^2 - 3x}{x} = \lim_{x \to +\infty} (x - 3) = +\infty
+    \]
+\end{enumerate}
+\textbf{Conclusion :} $\mathcal{C}_f$ admet une branche parabolique de direction $(Oy)$ en $+\infty$.
+
+\paragraph{Exemple 5 : Branche parabolique de direction $(Ox)$}
+Soit $g(x) = \sqrt{x}$ définie sur $[0 \,;\, +\infty[$.
+\begin{enumerate}
+    \item $\lim_{x \to +\infty} g(x) = +\infty$.
+    \item Calculons la limite de $\dfrac{g(x)}{x}$ :
+    \[
+    \lim_{x \to +\infty} \frac{g(x)}{x} = \lim_{x \to +\infty} \frac{\sqrt{x}}{x} = \lim_{x \to +\infty} \frac{1}{\sqrt{x}} = 0
+    \]
+\end{enumerate}
+\textbf{Conclusion :} $\mathcal{C}_g$ admet une branche parabolique de direction $(Ox)$ en $+\infty$.
 \end{document}
