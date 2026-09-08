@@ -1,0 +1,278 @@
+%=========================================================
+%               CLASSE DU DOCUMENT
+%=========================================================
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%         ENCODAGE ET POLICES DE CARACTÈRES
+%=========================================================
+\usepackage[utf8]{inputenc}    % Encodage UTF-8 (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}       % Meilleure gestion des caractères accentués
+\usepackage[french]{babel} % <--- Ce package fournit \og et \fg{}
+\usepackage{lmodern}           % Police Latin Modern
+\usepackage{times}             % Police Times (à supprimer si tu préfères Latin Modern)
+
+%=========================================================
+%                MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath}           % Environnements mathématiques avancés
+\usepackage{amssymb}           % Symboles mathématiques supplémentaires
+\usepackage{amsfonts}          % Polices mathématiques
+\usepackage{mathrsfs}          % Police calligraphique (\mathscr)
+\usepackage{tkz-tab}           % Tableaux de signes et de variations
+\everymath{\displaystyle}      % Affiche toutes les formules en style "display"
+
+%=========================================================
+%               MISE EN PAGE
+%=========================================================
+\usepackage[
+    left=1cm,
+    right=1cm,
+    top=1cm,
+    bottom=1.7cm
+]{geometry}                    % Marges du document
+
+\usepackage{multicol}          % Texte sur plusieurs colonnes
+\usepackage{float}             % Placement précis des figures et tableaux
+
+%=========================================================
+%            TABLEAUX ET LISTES
+%=========================================================
+\usepackage{array}             % Colonnes de tableaux personnalisées
+\usepackage{multirow}          % Fusion de lignes dans les tableaux
+\usepackage{enumitem}          % Personnalisation des listes
+
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,arrows.meta}
+%=========================================================
+%            COULEURS ET BOÎTES
+%=========================================================
+\usepackage[most]{tcolorbox}   % Boîtes colorées très personnalisables
+\tcbuselibrary{skins,hooks}    % Bibliothèques supplémentaires de tcolorbox
+
+\usepackage{mdframed}          % Cadres autour de paragraphes
+\usepackage{varwidth}          % Largeur automatique des boîtes
+
+%=========================================================
+%                DESSINS ET GRAPHIQUES
+%=========================================================
+\usepackage{tikz}              % Dessins vectoriels
+\usetikzlibrary{calc}
+\usetikzlibrary{
+    arrows,
+    shapes.geometric,
+    fit,
+    patterns
+}
+
+\usepackage{pgfplots}          % Tracés de fonctions et graphiques
+\pgfplotsset{compat=1.15}
+
+%=========================================================
+%              LIENS HYPERTEXTES
+%=========================================================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+%=========================================================
+%          ÉLÉMENTS EN ARRIÈRE-PLAN
+%=========================================================
+\usepackage{eso-pic}           % Ajout de filigranes ou d'éléments sur chaque page
+
+%=========================================================
+%              SYMBOLES DIVERS
+%=========================================================
+\usepackage{pifont}            % Symboles (✓, ✗, etc.)
+
+\DeclareUnicodeCharacter{2460}{\text{\ding{172}}} % Pour ①
+\DeclareUnicodeCharacter{2461}{\text{\ding{173}}} % Pour ②
+%=========================================================
+%      PERSONNALISATION DES LISTES NUMÉROTÉES
+%=========================================================
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray,fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+%=========================================================
+%            COMMANDES PERSONNALISÉES
+%=========================================================
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation horizontale
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%=========================================================
+%             COMPTEURS PERSONNALISÉS
+%=========================================================
+
+%---------- Exemple ----------
+\newcounter{exemple}
+
+\newcommand{\exemple}{%
+\refstepcounter{exemple}
+\textbf{\textcolor{orange}{Exemple \theexemple : }}
+\ignorespaces}
+
+%---------- Solution ----------
+\newcounter{solution}
+
+\newcommand{\solution}{%
+\refstepcounter{solution}
+\textbf{\textcolor{orange}{Solution \thesolution : }}
+\ignorespaces}
+
+%---------- Exercices ----------
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
+\newcounter{exerciceapp}
+
+\newcommand{\exerciceapp}{%
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}
+{Exercice d'application \theexerciceapp : }}
+\ignorespaces}
+
+%---------- Corrections ----------
+\newcounter{correction}
+
+\newcommand{\correction}{%
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}
+{Correction \thecorrection : }}
+\ignorespaces}
+
+%---------- Remarques ----------
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+\usepackage{enumitem}
+
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\newcounter{remarque}
+
+\newcommand{\remarque}{%
+\refstepcounter{remarque}
+\textbf{\textcolor{myorange1}
+{Remarque \theremarque : }}
+\ignorespaces}
+
+%=========================================================
+%                 FILIGRANE
+%=========================================================
+
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Polynômes}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 1erS2}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\section*{Objectifs spécifiques}
+\begin{itemize}[label=$\checkmark$]
+    \item Diviser un polynôme \( P(x) \) par \( x - a \) lorsque \( P(a) = 0 \);
+    \item Diviser un polynôme \( P(x) \) par \( x - a \), puis le quotient \( Q(x) \) par \( x - b \) lorsque \( P(a) = P(b) = 0 \);
+    \item Factoriser un polynôme;
+    \item Étudier le signe d'un polynôme;
+    \item Étudier le signe d'une fraction rationnelle.
+\end{itemize}
+
+\section*{Prérequis}
+\begin{itemize}[label=$\checkmark$]
+    \item Factorisation de polynômes de degré \( \leq 4 \) par identification et division euclidienne;
+    \item Résolution d'inéquations de degré \( \leq 4 \).
+\end{itemize}
+
+\section*{Supports didactiques}
+\begin{itemize}[label=$\checkmark$]
+    \item Collection Hachettes classiques \( 1^{\text{ère}} A_1 \) et \( B \);
+    \item CIAM littéraire \( 1^{\text{ère}} \);
+    \item Ordinateur.
+\end{itemize}
+
+\section*{Plan du chapitre}
+\begin{enumerate}
+    \item \textbf{Rappels}
+    \begin{enumerate}
+        \item Factorisation d'un trinôme du second degré
+        \item Signe d'un trinôme du second degré
+    \end{enumerate}
+    \item \textbf{Factorisation d'un polynôme de degré \( n \geq 3 \) connaissant une racine}
+    \begin{enumerate}
+        \item Par la division euclidienne
+        \item Par la méthode d'identification
+        \item Par la méthode de Horner
+        \begin{enumerate}
+            \item Exemple
+            \item Exercice d'application
+        \end{enumerate}
+    \end{enumerate}
+    \item \textbf{Signe d'un polynôme et résolution d'inéquations}
+    \begin{enumerate}
+        \item Exemple
+        \item Exercice d'application
+    \end{enumerate}
+    \item \textbf{Fraction rationnelle}
+    \begin{enumerate}
+        \item Définition et exemples
+        \item Signe d'une fraction rationnelle
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\section*{I. Rappels}
+
+\subsection*{1. Factorisation d'un trinôme du second degré}
+
+Le tableau suivant permet de factoriser un trinôme du second degré \(ax^2 + bx + c\).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Signe du discriminant} \(\Delta = b^2 - 4ac\) & \textbf{Factorisation du trinôme} \(ax^2 + bx + c\) \\
+\hline
+\(\Delta < 0\) & \(ax^2 + bx + c\) ne peut pas se factoriser. \\
+\hline
+\(\Delta = 0\) & \(ax^2 + bx + c = a(x - x_0)^2\) où \(x_0 = -\dfrac{b}{2a}\) \\
+\hline
+\(\Delta > 0\) & \(ax^2 + bx + c = a(x - x_1)(x - x_2)\) \\
+ & où \(x_1 = \dfrac{-b + \sqrt{\Delta}}{2a}\) et \(x_2 = \dfrac{-b - \sqrt{\Delta}}{2a}\) \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Exemples :} Factorisons les trinômes du second degré suivants :
+\[
+f(x) = x^2 - 2x + 3 \quad;\quad g(x) = -9x^2 + 6x - 1 \quad;\quad h(x) = x^2 - x - 6
+\]
+\end{document}
