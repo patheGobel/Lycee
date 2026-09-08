@@ -275,4 +275,54 @@ Le tableau suivant permet de factoriser un trinôme du second degré \(ax^2 + bx
 \[
 f(x) = x^2 - 2x + 3 \quad;\quad g(x) = -9x^2 + 6x - 1 \quad;\quad h(x) = x^2 - x - 6
 \]
+
+\subsection*{2. Signe d'un trinôme du second degré}
+
+Le signe d'un trinôme du second degré s'obtient généralement à l'aide d'un tableau de signe.
+
+\subsubsection*{Si \(\Delta < 0\)}
+Alors le trinôme n'a pas de racine et son tableau de signe est le suivant :
+
+\begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$ax^2 + bx + c$/.7}
+    {$-\infty$,$+\infty$}
+    \tkzTabLine{,\text{signe(a)},}
+    \end{tikzpicture}
+\end{center}
+
+\paragraph{Exemple :} Étudions le signe de \(-x^2 + x - 2\).
+
+\subsubsection*{Si \(\Delta = 0\)}
+Alors le trinôme a une seule racine dite racine double $x_0$ et son tableau de signe est le suivant :
+
+\begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$ax^2 + bx + c$/.7}
+    {$-\infty$,$x_0$,$+\infty$}
+    \tkzTabLine{,\text{signe(a)},z,\text{signe(a)},}
+    \end{tikzpicture}
+\end{center}
+
+\paragraph{Exemple :} Étudions le signe de \(9x^2 - 6x + 1\).
+
+\subsubsection*{Si \(\Delta > 0\)}
+Alors le trinôme a deux racines distinctes \(x_1\) et \(x_2\) (avec \(x_1 < x_2\)) et son tableau de signe est le suivant :
+
+\begin{center}
+    \begin{tikzpicture}[node style/.style={fill opacity=0,text opacity=1}]
+    \tkzTabInit[
+        lgt=3.5,
+        espcl=2.5
+    ]{$x$/.5,$ax^2 + bx + c$/.7}
+    {$-\infty$,$x_1$,$x_2$,$+\infty$}
+    \tkzTabLine{,\text{signe(a)},z,-\text{signe(a)},z,\text{signe(a)},}
+    \end{tikzpicture}
+\end{center}
 \end{document}
