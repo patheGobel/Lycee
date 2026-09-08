@@ -1,0 +1,254 @@
+%=========================================================
+%               CLASSE DU DOCUMENT
+%=========================================================
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%         ENCODAGE ET POLICES DE CARACTÈRES
+%=========================================================
+\usepackage[utf8]{inputenc}    % Encodage UTF-8 (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}       % Meilleure gestion des caractères accentués
+\usepackage[french]{babel} % <--- Ce package fournit \og et \fg{}
+\usepackage{lmodern}           % Police Latin Modern
+\usepackage{times}             % Police Times (à supprimer si tu préfères Latin Modern)
+
+%=========================================================
+%                MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath}           % Environnements mathématiques avancés
+\usepackage{amssymb}           % Symboles mathématiques supplémentaires
+\usepackage{amsfonts}          % Polices mathématiques
+\usepackage{mathrsfs}          % Police calligraphique (\mathscr)
+\usepackage{tkz-tab}           % Tableaux de signes et de variations
+\everymath{\displaystyle}      % Affiche toutes les formules en style "display"
+
+%=========================================================
+%               MISE EN PAGE
+%=========================================================
+\usepackage[
+    left=1cm,
+    right=1cm,
+    top=1cm,
+    bottom=1.7cm
+]{geometry}                    % Marges du document
+
+\usepackage{multicol}          % Texte sur plusieurs colonnes
+\usepackage{float}             % Placement précis des figures et tableaux
+
+%=========================================================
+%            TABLEAUX ET LISTES
+%=========================================================
+\usepackage{array}             % Colonnes de tableaux personnalisées
+\usepackage{multirow}          % Fusion de lignes dans les tableaux
+\usepackage{enumitem}          % Personnalisation des listes
+
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,arrows.meta}
+%=========================================================
+%            COULEURS ET BOÎTES
+%=========================================================
+\usepackage[most]{tcolorbox}   % Boîtes colorées très personnalisables
+\tcbuselibrary{skins,hooks}    % Bibliothèques supplémentaires de tcolorbox
+
+\usepackage{mdframed}          % Cadres autour de paragraphes
+\usepackage{varwidth}          % Largeur automatique des boîtes
+
+%=========================================================
+%                DESSINS ET GRAPHIQUES
+%=========================================================
+\usepackage{tikz}              % Dessins vectoriels
+\usetikzlibrary{calc}
+\usetikzlibrary{
+    arrows,
+    shapes.geometric,
+    fit,
+    patterns
+}
+
+\usepackage{pgfplots}          % Tracés de fonctions et graphiques
+\pgfplotsset{compat=1.15}
+
+%=========================================================
+%              LIENS HYPERTEXTES
+%=========================================================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+%=========================================================
+%          ÉLÉMENTS EN ARRIÈRE-PLAN
+%=========================================================
+\usepackage{eso-pic}           % Ajout de filigranes ou d'éléments sur chaque page
+
+%=========================================================
+%              SYMBOLES DIVERS
+%=========================================================
+\usepackage{pifont}            % Symboles (✓, ✗, etc.)
+
+\DeclareUnicodeCharacter{2460}{\text{\ding{172}}} % Pour ①
+\DeclareUnicodeCharacter{2461}{\text{\ding{173}}} % Pour ②
+%=========================================================
+%      PERSONNALISATION DES LISTES NUMÉROTÉES
+%=========================================================
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray,fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+%=========================================================
+%            COMMANDES PERSONNALISÉES
+%=========================================================
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation horizontale
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%=========================================================
+%             COMPTEURS PERSONNALISÉS
+%=========================================================
+
+%---------- Exemple ----------
+\newcounter{exemple}
+
+\newcommand{\exemple}{%
+\refstepcounter{exemple}
+\textbf{\textcolor{orange}{Exemple \theexemple : }}
+\ignorespaces}
+
+%---------- Solution ----------
+\newcounter{solution}
+
+\newcommand{\solution}{%
+\refstepcounter{solution}
+\textbf{\textcolor{orange}{Solution \thesolution : }}
+\ignorespaces}
+
+%---------- Exercices ----------
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
+\newcounter{exerciceapp}
+
+\newcommand{\exerciceapp}{%
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}
+{Exercice d'application \theexerciceapp : }}
+\ignorespaces}
+
+%---------- Corrections ----------
+\newcounter{correction}
+
+\newcommand{\correction}{%
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}
+{Correction \thecorrection : }}
+\ignorespaces}
+
+%---------- Remarques ----------
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+\usepackage{enumitem}
+
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\newcounter{remarque}
+
+\newcommand{\remarque}{%
+\refstepcounter{remarque}
+\textbf{\textcolor{myorange1}
+{Remarque \theremarque : }}
+\ignorespaces}
+
+%=========================================================
+%                 FILIGRANE
+%=========================================================
+
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Limite et Continuité}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 1erS2}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\section*{Objectifs spécifiques}
+\begin{itemize}[label=$\checkmark$]
+    \item Calculer des limites
+\end{itemize}
+
+\section*{Prérequis}
+\begin{itemize}[label=$\checkmark$]
+    \item Limites (vues en 1ère)
+\end{itemize}
+
+\section*{Supports didactiques}
+\begin{itemize}[label=$\checkmark$]
+    \item Cours limite et continuité de Bousso TS2;
+    \item Mon cours de limite et continuité de TS2;
+    \item CIAM 1ère L;
+    \item Dimathème Terminale A1 et A2.
+\end{itemize}
+
+\section*{Plan du chapitre}
+\begin{enumerate}[label=\Roman*.]
+    \item \textbf{Limites de fonctions usuelles}
+    \begin{enumerate}
+        \item Théorème 1
+        \item Théorème 2
+        \item Théorème 3
+    \end{enumerate}
+    \item \textbf{Opérations sur les limites}
+    \begin{enumerate}
+        \item Limite d'une somme
+        \item Limite d'un produit
+        \begin{enumerate}
+            \item Limite à l'infini d'un polynôme
+        \end{enumerate}
+        \item Limite d'un quotient
+        \begin{enumerate}
+            \item Limite à l'infini d'une fraction rationnelle
+            \item Exemples de calculs de limites à gauche et à droite en un réel
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{\color{myred} I. Limites de fonctions usuelles }
+\subsection*{\color{myred} 1. Théorème 1 }
+
+Soit \( a \) un réel constant ou \( a = \pm \infty \) et \( c \) est un réel constant. On a alors :
+$
+\lim_{x \to a} c = c
+$
+
+\paragraph{Exemples :}
+$
+\lim\limits_{x \to 2} 3 = 3 \quad \text{et} \quad \lim\limits_{x \to +\infty} -5 = -5
+$
+
+\end{document}
