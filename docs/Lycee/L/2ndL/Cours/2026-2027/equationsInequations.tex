@@ -298,32 +298,36 @@ Soit le trinôme $p(x) = 3x^2 - 12x + 5$.
 
 \subsection*{\color{myred} 3) Factorisation de la forme canonique}
 
-Soit un trinôme du $2^{nd}$ degré :
+Pour factoriser un trinôme du second degré, on utilise son discriminant \( \Delta \) :
 \[
-p(x) = ax^2 + bx + c \quad \text{et} \quad \Delta = b^2 - 4ac
+\Delta = b^2 - 4ac.
 \]
-et de F.C : $p(x) = a \left[ \left(x + \frac{b}{2a}\right)^2 - \frac{\Delta}{4a^2} \right]$
+On distingue trois cas :
 
-\begin{itemize}
-    \item \textbf{Si $\Delta > 0$ alors :}
-    \begin{equation*}
-    \begin{aligned}
-    p(x) &= a \left[ \left(x + \frac{b}{2a}\right)^2 - \left(\frac{\sqrt{\Delta}}{2a}\right)^2 \right] \\
-    &= a \left[ \left(x + \frac{b}{2a} - \frac{\sqrt{\Delta}}{2a}\right) \left(x + \frac{b}{2a} + \frac{\sqrt{\Delta}}{2a}\right) \right]
-    \end{aligned}
-    \end{equation*}
-
-    \begin{equation*}
-    p(x) = a \left( x - \frac{-b + \sqrt{\Delta}}{2a} \right) \left( x + \frac{b + \sqrt{\Delta}}{2a} \right) \quad \text{c.q.f.d.}
-    \end{equation*}
-
-    \item \textbf{Si $\Delta = 0$ alors :}
+\begin{enumerate}
+    \item \textbf{Si \( \Delta > 0 \) :}  
+    Le trinôme admet deux solutions réelles distinctes :
     \[
-    p(x) = a \left( x + \frac{b}{2a} \right)^2
+    x_1 = \frac{-b - \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}.
+    \]
+    La forme factorisée est alors :
+    \[
+    ax^2 + bx + c = a(x - x_1)(x - x_2).
     \]
 
-    \item \textbf{Si $\Delta < 0$ :} donc le trinôme n'est pas factorisable par la F.C.
-\end{itemize}
+    \item \textbf{Si \( \Delta = 0 \) :}  
+    Le trinôme admet une solution réelle double :
+    \[
+    x_0 = -\frac{b}{2a}.
+    \]
+    La forme factorisée est :
+    \[
+    ax^2 + bx + c = a(x - x_0)^2.
+    \]
+
+    \item \textbf{Si \( \Delta < 0 \) :}  
+    Le trinôme n’admet pas de solution réelle et ne peut pas être factorisé dans l’ensemble des réels.
+\end{enumerate}
 
 \vspace{1em}
 % ========================================================================
