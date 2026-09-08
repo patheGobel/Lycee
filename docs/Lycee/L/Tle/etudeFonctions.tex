@@ -226,4 +226,33 @@ alors la droite d'équation $\mathbf{y = L}$ est une \textbf{asymptote horizonta
 \lim_{x \to +\infty} g(x) = \lim_{x \to +\infty} \frac{2x^2}{x^2} = 2 \quad \text{et} \quad \lim_{x \to -\infty} g(x) = 2
 \]
 \textbf{Conclusion :} La droite d'équation $y = 2$ est une asymptote horizontale à la courbe $\mathcal{C}_g$ en $+\infty$ et en $-\infty$.
+
+\subsubsection*{\color{myred}c. Asymptote oblique :}
+
+\begin{center}
+    \begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition : Asymptote oblique}]
+La droite $(\mathcal{D}) : y = ax + b$ (avec $a \neq 0$) est une \textbf{asymptote oblique} à la courbe $\mathcal{C}_f$ en $\pm\infty$ si et seulement si :
+\[
+\lim_{x \to \pm\infty} [f(x) - (ax + b)] = 0
+\]
+\end{tcolorbox}
+\end{center}
+
+\paragraph{Exemple 3 :} Soit $h(x) = \dfrac{2x^2 - 3x + 5}{x - 1}$ définie sur $\mathbb{R} \setminus \{1\}$.
+Montrons que la droite $(\mathcal{D}) : y = 2x - 1$ est asymptote oblique à $\mathcal{C}_h$ en $+\infty$.
+\begin{enumerate}
+    \item Calculons la différence $h(x) - (2x - 1)$ :
+    \[
+    h(x) - (2x - 1) = \frac{2x^2 - 3x + 5}{x - 1} - \frac{(2x - 1)(x - 1)}{x - 1} = \frac{(2x^2 - 3x + 5) - (2x^2 - 3x + 1)}{x - 1} = \frac{4}{x - 1}
+    \]
+    \item Calculons la limite de la différence :
+    \[
+    \lim_{x \to +\infty} [h(x) - (2x - 1)] = \lim_{x \to +\infty} \frac{4}{x - 1} = 0
+    \]
+\end{enumerate}
+\textbf{Conclusion :} La droite d'équation $y = 2x - 1$ est une asymptote oblique à $\mathcal{C}_h$ en $+\infty$ (et de même en $-\infty$).
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
 \end{document}
