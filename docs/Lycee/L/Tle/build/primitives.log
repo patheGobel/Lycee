@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  8 SEP 2026 22:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  9 SEP 2026 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**etudeFonctions.tex
-(./etudeFonctions.tex
+**primitives.tex
+(./primitives.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1090,11 +1090,11 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count392
 )
-(build/etudeFonctions.aux
+(build/primitives.aux
 Package babel Info: 'french' activates 'french' shorthands.
 (babel)             Reported on input line 11.
 )
-\openout1 = `etudeFonctions.aux'.
+\openout1 = `primitives.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
@@ -1177,9 +1177,9 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
 \c@lstlisting=\count399
 Package hyperref Info: Link coloring ON on input line 66.
-(build/etudeFonctions.out) (build/etudeFonctions.out)
+(build/primitives.out) (build/primitives.out)
 \@outlinefile=\write4
-\openout4 = `etudeFonctions.out'.
+\openout4 = `primitives.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
 0.
@@ -1230,48 +1230,41 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 70
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 87.
+(Font)              <8> on input line 86.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 87.
+(Font)              <6> on input line 86.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/e
 nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
-[2] [3] [4]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 313.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 313.
- [5] [6] [7] (build/etudeFonctions.aux)
+[2] (build/primitives.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `etudeFonctions.out' has not changed.
+Package rerunfilecheck Info: File `primitives.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42890 strings out of 467533
- 1001198 string characters out of 5422138
- 1611637 words of memory out of 5000000
- 71055 multiletter control sequences out of 15000+600000
- 705938 words of font info for 101 fonts, out of 8000000 for 9000
+ 41696 strings out of 467533
+ 977281 string characters out of 5422138
+ 1526431 words of memory out of 5000000
+ 69922 multiletter control sequences out of 15000+600000
+ 676914 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,12n,121p,735b,2077s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-
-Output written on build/etudeFonctions.pdf (7 pages, 186536 bytes).
+ 117i,11n,121p,731b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
+Output written on build/primitives.pdf (2 pages, 134253 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
- 156 compressed objects within 2 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
