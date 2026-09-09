@@ -95,4 +95,27 @@ Soit $f(x) = 2x$ définie sur $\mathbb{R}$.\\
 Si on pose $F(x) = x^2$, on remarque que $F'(x) = 2x = f(x)$.\\
 La fonction $F(x) = x^2$ est donc une primitive de $f(x) = 2x$ sur $\mathbb{R}$.
 
+\subsection*{\color{myred}2. Ensemble des primitives et condition initiale}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Propriétés}]
+\begin{enumerate}[label=\arabic*.]
+    \item Si $F$ est une primitive de $f$ sur $I$, alors toutes les autres primitives de $f$ sont de la forme :
+    \[
+    x \mapsto F(x) + k \quad \text{où } k \in \mathbb{R} \text{ est une constante réelle.}
+    \]
+    \item Il existe une \textbf{unique primitive} $F$ de $f$ qui prend une valeur donnée $y_0$ en un point $x_0$ ($F(x_0) = y_0$).
+\end{enumerate}
+\end{tcolorbox}
+
+\paragraph{Exemple :}
+Pour la fonction $f(x) = 2x$, toutes les primitives sont de la forme $F(x) = x^2 + k$.\\
+Trouvons la primitive $F$ telle que $F(1) = 5$ :
+\[
+F(1) = 5 \iff 1^2 + k = 5 \iff 1 + k = 5 \iff k = 4
+\]
+La primitive unique cherchée est donc $F(x) = x^2 + 4$.
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
 \end{document}
