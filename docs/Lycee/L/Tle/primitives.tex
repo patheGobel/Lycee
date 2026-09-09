@@ -205,4 +205,35 @@ Comme $x > 0$, $|x| = x$. D'où :
 \[
 G(x) = \mathbf{\frac{1}{2}x^2 + x + 2\ln(x) + k} \quad (k \in \mathbb{R})
 \]
+
+\paragraph{b) Utilisation de la forme $\dfrac{u'(x)}{u(x)}$ (primitive en $\ln(u)$) :}
+
+\begin{center}
+    \begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Formule clé pour la série L}]
+Une primitive de la forme $\dfrac{u'(x)}{u(x)}$ sur un intervalle où $u(x) > 0$ est $\mathbf{\ln(u(x))}$.
+\end{tcolorbox}
+\end{center}
+
+\paragraph{Exemple 5 :} Déterminer une primitive de $h(x) = \dfrac{2x + 1}{x^2 + x + 3}$ sur $\mathbb{R}$.
+\paragraph{Résolution :}
+Posons $u(x) = x^2 + x + 3$. On remarque que $u'(x) = 2x + 1$.\\
+La fonction $h$ est donc de la forme $\dfrac{u'(x)}{u(x)}$.\\
+Une primitive de $h$ est : $\mathbf{H(x) = \ln(x^2 + x + 3)}$.
+
+\subsection*{\color{myred}3. Cas des expressions avec racine carrée}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Formule clé}]
+Une primitive de la forme $\dfrac{u'(x)}{2\sqrt{u(x)}}$ sur un intervalle où $u(x) > 0$ est $\mathbf{\sqrt{u(x)}}$.
+\end{tcolorbox}
+
+\paragraph{Exemple 6 :} Déterminer une primitive de $f(x) = 1 + \dfrac{1}{\sqrt{x}}$ sur $]0 \,;\, +\infty[$.
+\paragraph{Résolution :}
+On sait que la primitive de $1$ est $x$ et la primitive de $\dfrac{1}{\sqrt{x}}$ est $2\sqrt{x}$.\\
+D'où : $\mathbf{F(x) = x + 2\sqrt{x}}$.
+
+\paragraph{Exemple 7 :} Déterminer une primitive de $g(x) = \dfrac{1}{2\sqrt{x + 2}}$ sur $]-2 \,;\, +\infty[$.
+\paragraph{Résolution :}
+En posant $u(x) = x + 2$, on a $u'(x) = 1$.\\
+La fonction est de la forme $\dfrac{u'(x)}{2\sqrt{u(x)}}$.\\
+Une primitive de $g$ est donc : $\mathbf{G(x) = \sqrt{x + 2}}$.
 \end{document}
