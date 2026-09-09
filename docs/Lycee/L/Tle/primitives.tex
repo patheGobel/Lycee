@@ -55,7 +55,7 @@
     \AtTextCenter{
         \makebox[0pt]{
             \rotatebox{45}{
-                \textcolor[gray]{0.92}{
+                \textcolor[gray]{0.6}{
                     \fontsize{5cm}{5cm}\selectfont PGB
                 }
             }
@@ -97,6 +97,23 @@ La fonction $F(x) = x^2$ est donc une primitive de $f(x) = 2x$ sur $\mathbb{R}$.
 
 \subsection*{\color{myred}2. Ensemble des primitives et condition initiale}
 
+\paragraph{Activité préparatoire :}
+Considérons les trois fonctions polynômes suivantes définies sur $\mathbb{R}$ :
+\[
+F_1(x) = x^2, \quad F_2(x) = x^2 + 3 \quad \text{et} \quad F_3(x) = x^2 - 5
+\]
+Calculons la dérivée de chacune de ces fonctions :
+\begin{itemize}
+    \item $F_1'(x) = (x^2)' = 2x$
+    \item $F_2'(x) = (x^2 + 3)' = 2x + 0 = 2x$
+    \item $F_3'(x) = (x^2 - 5)' = 2x - 0 = 2x$
+\end{itemize}
+
+\textbf{Constat :} Bien que les constantes soient différentes ($0$, $3$ et $-5$), la dérivée de ces trois polynômes donne exactement le même polynôme $f(x) = 2x$.\\
+Ainsi, $F_1$, $F_2$ et $F_3$ sont toutes des primitives de la même fonction $f$. De manière générale, ajouter une constante réelle $k$ ne modifie pas la dérivée car $(k)' = 0$.
+
+\vspace{0.2cm}
+
 \begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Propriétés}]
 \begin{enumerate}[label=\arabic*.]
     \item Si $F$ est une primitive de $f$ sur $I$, alors toutes les autres primitives de $f$ sont de la forme :
@@ -118,7 +135,6 @@ La primitive unique cherchée est donc $F(x) = x^2 + 4$.
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
-
 %=========================================================
 %   II. TABLEAU DES PRIMITIVES USUELLES
 %=========================================================
