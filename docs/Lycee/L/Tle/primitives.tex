@@ -156,4 +156,37 @@ Si $F$ est une primitive de $f$ et $G$ est une primitive de $g$, alors :
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
+
+
+%=========================================================
+%   III. APLICATIONS PAR TYPE DE FONCTIONS (SÉRIE L)
+%=========================================================
+
+\section*{\color{myred}III. Calcul de primitives par cas simples}
+
+\subsection*{\color{myred}1. Cas des fonctions polynômes}
+
+Pour trouver la primitive d'un polynôme, on intègre terme à terme en utilisant la formule $\dfrac{x^{n+1}}{n+1}$.
+
+\paragraph{Exemple 1 :} Déterminer une primitive $F$ de $f(x) = 3x^2 - 4x + 5$ sur $\mathbb{R}$.
+\paragraph{Résolution :}
+\begin{itemize}
+    \item La primitive de $3x^2$ est $3 \times \dfrac{x^3}{3} = x^3$.
+    \item La primitive de $-4x$ est $-4 \times \dfrac{x^2}{2} = -2x^2$.
+    \item La primitive de $5$ est $5x$.
+\end{itemize}
+Ainsi, une primitive de $f$ est : $\mathbf{F(x) = x^3 - 2x^2 + 5x}$.
+
+\paragraph{Exemple 2 :} Déterminer la primitive $G$ de $g(x) = x^3 + 2x - 1$ sur $\mathbb{R}$ telle que $G(0) = 3$.
+\paragraph{Résolution :}
+Toutes les primitives de $g$ s'écrivent :
+\[
+G(x) = \frac{x^4}{4} + x^2 - x + k
+\]
+Utilisons la condition $G(0) = 3$ :
+\[
+G(0) = \frac{0^4}{4} + 0^2 - 0 + k = 3 \implies k = 3
+\]
+D'où : $\mathbf{G(x) = \frac{x^4}{4} + x^2 - x + 3}$.
+
 \end{document}
