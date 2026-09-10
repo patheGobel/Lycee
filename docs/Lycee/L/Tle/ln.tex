@@ -270,4 +270,100 @@ Résoudre dans $\mathbb{R}$ l'inéquation $(I_1) : \ln(x - 2) \le 0$.
 \vspace{0.3cm}
 \hrule
 \vspace{0.3cm}
+
+\subsection*{\color{myred}Exercice d'application : Équations et inéquations}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Exercice d'application}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $\ln x = 0$
+    \item $\ln x < 0$
+    \item $\ln(x + 3) = 0$
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction détaillée}]
+
+\paragraph{1. Résolution de $\ln x = 0$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} 
+    
+    L'expression $\ln x$ est définie sur $D = ]0 \,;\, +\infty[$.
+    \item \textbf{Résolution :}
+    
+    $
+    \begin{aligned}
+    \ln x = 0 &\iff \ln x = \ln({\color{red}1})\\[3mm]
+            &\iff x = \mathbf{1}
+    \end{aligned}
+    $
+    \item \textbf{Conclusion :} 
+    
+    Comme $1 \in ]0 \,;\, +\infty[$, l'ensemble des solutions est $\mathbf{S_1 = \{1\}}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Résolution de $\ln x < 0$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} 
+    
+    L'expression $\ln x$ exige $x > 0$, donc $D = ]0 \,;\, +\infty[$.
+    \item \textbf{Résolution :} 
+    
+    La fonction logarithme népérien étant strictement croissante sur $]0 \,;\, +\infty[$ :
+    
+    $
+    \begin{aligned}
+    \ln x < 0 &\iff \ln x < \ln({\color{red}1})\\[3mm]
+              &\iff x < 1
+    \end{aligned}
+    $
+    \item \textbf{Conclusion :} En tenant compte de la condition d'existence $x > 0$, on cherche les $x$ tels que $0 < x < 1$. 
+    
+    L'ensemble des solutions est $\mathbf{S_2 = ]0 \,;\, 1[}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{3. Résolution de $\ln(x + 3) = 0$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} 
+    
+    L'expression est définie si $x + 3 > 0 \iff x > -3$. 
+    
+    Le domaine de définition est $D = ]-3 \,;\, +\infty[$.
+    
+    \item \textbf{Résolution :}
+    
+    $
+    \begin{aligned}
+    \ln(x + 3) = 0 &\iff \ln(x + 3) = \ln({\color{red}1})\\[3mm]
+                   &\iff x + 3 = 1\\[3mm]
+                   &\iff x = 1 - 3\\[3mm]
+                   &\iff x = \mathbf{-2}
+    \end{aligned}
+    $
+    \item \textbf{Conclusion :} 
+    
+    La valeur $-2$ appartient bien à $]-3 \,;\, +\infty[$. 
+    
+    L'ensemble des solutions est $\mathbf{S_3 = \{-2\}}$.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Devoir à la maison : Équations et inéquations logarithmiques}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $\ln(2x - 1) = 0$
+    \item $2\ln x - 3\ln 2 \le 0$
+    \item $\ln(x - 4) = \ln(2x - 3)$
+    \item $\ln(x^2 + 5x + 6) \ge 0$
+    \item $3(\ln x)^2 - 2\ln x - 1 = 0$
+    \item $\ln(2x - 1) - \ln(1 + x) < \ln 3$
+\end{enumerate}
+\end{tcolorbox}
 \end{document}
