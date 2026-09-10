@@ -215,4 +215,38 @@ Grâce à la stricte croissance de la fonction $\ln$ sur $]0\,;\,+\infty[$, pour
     \item $\ln(x) > 0 \iff x > 1$
     \item $\ln(x) < 0 \iff 0 < x < 1$
 \end{itemize}
+
+\subsection*{\color{myred}1. Équations}
+
+\paragraph{Exemple 1 : Équation du type $\ln(A) = \ln(B)$}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_1) : \ln(2x - 3) = \ln(x + 1)$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\
+    $D_E = \{x \in \mathbb{R} \mid 2x - 3 > 0 \text{ et } x + 1 > 0\} = ] \frac{3}{2} \,;\, +\infty[\; \cap \; ]-1 \,;\, +\infty[ = ]\frac{3}{2} \,;\, +\infty[$.
+    \item \textbf{Résolution :}\\
+    Pour $x \in D_E$ :
+    \[
+    \ln(2x - 3) = \ln(x + 1) \iff 2x - 3 = x + 1 \iff x = 4
+    \]
+    \item \textbf{Conclusion :}\\ $4 \in ]\frac{3}{2} \,;\, +\infty[$, donc $\mathbf{S = \{4\}}$.
+\end{itemize}
+
+\paragraph{Exemple 2 : Équation se ramenant au second degré}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_2) : (\ln x)^2 - 3\ln x + 2 = 0$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\ $D_E = ]0 \,;\, +\infty[$.
+    \item \textbf{Changement de variable :}\\ Posons $X = \ln x$. L'équation devient :
+    \[
+    X^2 - 3X + 2 = 0
+    \]
+    $\Delta = (-3)^2 - 4(1)(2) = 1 > 0 \implies X_1 = 1 \quad \text{et} \quad X_2 = 2$.
+    \item \textbf{Retour à $x$ :}
+    \begin{itemize}
+        \item $\ln x = 1 \iff x = e$
+        \item $\ln x = 2 \iff x = e^2$
+    \end{itemize}
+    \item \textbf{Conclusion :} $e \in D_E$ et $e^2 \in D_E$, donc $\mathbf{S = \{e \,;\, e^2\}}$.
+\end{itemize}
 \end{document}
