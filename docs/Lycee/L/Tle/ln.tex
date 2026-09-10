@@ -603,4 +603,117 @@ La forme est indéterminée ($+\infty - \infty$). On factorise par $x$ :
 \]
 
 \end{tcolorbox}
+
+\section*{\color{myred}IV. Etude de la Fonction $\ln$}
+
+\subsection*{\color{myred}2. Tableau de variations et représentation graphique}
+
+\paragraph{Limites aux bornes :}
+\[
+\lim_{x \to 0^+} \ln(x) = -\infty \quad \text{et} \quad \lim_{x \to +\infty} \ln(x) = +\infty
+\]
+
+\paragraph{Tableau de variations :}
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ /1, $(\ln x)'$ /1, $\ln$ /1.5}
+   {$0$ , $1$, $+\infty$}
+   \tkzTabLine{d, +, t, +}
+   \tkzTabVar{D-/$-\infty$, R/, +/$+\infty$}
+   \tkzTabIma{1}{3}{2}{$0$}
+
+\node (A) at (7.2,-0.7) {$e$};
+\node (B) at (7.2,-2.5) {$1$};
+
+\draw[dotted, thick] (A) -- (B);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Représentation graphique de $f(x) = \ln(x)$ :}
+La courbe admet l'axe des ordonnées ($x = 0$) comme asymptote verticale et une branche parabolique de direction $(Ox)$ en $+\infty$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-0.5, xmax=5.5,
+    ymin=-3.5, ymax=2.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=9.5cm, height=6.5cm
+]
+    \addplot[domain=0.05:5.2, samples=200, color=myblue, ultra thick] {ln(x)};
+    
+    % Points particuliers
+    \filldraw[color=myred] (axis cs:1,0) circle (2pt) node[above left] {$(1,0)$};
+    \filldraw[color=myred] (axis cs:2.718,1) circle (2pt) node[above left] {$e$};
+    \draw[dashed, color=gray] (axis cs:2.718,0) -- (axis cs:2.718,1) -- (axis cs:0,1);
+    
+    % Asymptote
+    \draw[ultra thick, color=myred, ->, >=Stealth] (axis cs:0,-3) -- (axis cs:0,-0.5);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\paragraph{Exemple complet d'étude de fonction (type Terminale L) :}
+Soit la fonction $f$ définie sur $]0\,;\,+\infty[$ par $f(x) = x - \ln(x)$.
+
+\begin{enumerate}
+    \item \textbf{Limites aux bornes :}
+    \begin{itemize}
+        \item En $0^+$ : $\lim_{x \to 0^+} x = 0$ et $\lim_{x \to 0^+} \ln(x) = -\infty \implies \lim_{x \to 0^+} f(x) = +\infty$. (Asymptote verticale $x = 0$).
+        \item En $+\infty$ : Forme indéterminée "$\infty - \infty$". On met $x$ en facteur :
+        \[
+        f(x) = x \left(1 - \frac{\ln x}{x}\right)
+        \]
+        Comme $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$, on a $\lim_{x \to +\infty} \left(1 - \frac{\ln x}{x}\right) = 1$, d'où $\lim_{x \to +\infty} f(x) = +\infty$.
+    \end{itemize}
+
+    \item \textbf{Dérivée et variations :}
+    Pour tout $x > 0$ :
+    \[
+    f'(x) = 1 - \frac{1}{x} = \frac{x - 1}{x}
+    \]
+    Le signe de $f'(x)$ dépend du numérateur $(x - 1)$ car $x > 0$ :
+    \begin{itemize}
+        \item Pour $x \in ]0 \,;\, 1[$, $f'(x) < 0 \implies f$ est strictement décroissante.
+        \item Pour $x \in ]1 \,;\, +\infty[$, $f'(x) > 0 \implies f$ est strictement croissante.
+        \item Minimum local en $x = 1$ : $f(1) = 1 - \ln(1) = 1$.
+    \end{itemize}
+
+    \item \textbf{Tableau de variations :}
+    \begin{center}
+    \begin{tikzpicture}
+      \tkzTabInit[lgt=2, espcl=2.5]
+        {$x$/1, $f'(x)$/1, $f$/2}
+        {$0$, $1$, $+\infty$}
+      \tkzTabLine{d, - , z , + , }
+      \tkzTabVar{D+/$+\infty$ , -/ $1$ , +/ $+\infty$}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+
+\underline{\textbf{Application }}
+
+\vspace{0.3cm}
+
+On pose $f(x) = \ln\left(\dfrac{x - 2}{x + 2}\right)$.
+
+\begin{enumerate}
+    \item Déterminer $D_f$.
+    \item Calculer les limites aux bornes de $D_f$.
+    \item Étudier la parité de $f$.
+    \item Calculer $f'(x)$ puis dresser le tableau de variation de $f$.
+    \item Déterminer les points d'intersection entre $\mathcal{C}_f$ et les axes de coordonnées.
+    \item Déterminer l'équation de la tangente au point d'abscisse $x = 3$.
+    \item Dresser un tableau de valeurs puis tracer $\mathcal{C}_f$.
+\end{enumerate}
 \end{document}
