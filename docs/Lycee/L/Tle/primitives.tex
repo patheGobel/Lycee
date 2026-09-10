@@ -41,6 +41,7 @@
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
 \usepackage{eso-pic}
 
+\usepackage{xcolor} % À ajouter dans votre préambule si ce n'est pas déjà fait
 %=========================================================
 %                   COULEURS ET STYLES
 %=========================================================
@@ -171,7 +172,18 @@ Si $F$ est une primitive de $f$ et $G$ est une primitive de $g$, alors :
 \hrule
 \vspace{0.3cm}
 
+\paragraph{1. Fonction polynôme :}
+Pour $f(x) = 4x^3 - 6x^2 + 2x - 7$ sur $\mathbb{R}$ :
 
+$
+\begin{aligned}
+f(x) &= 4x^{3} - 6x^{2} + 2x - 7\\[4mm]
+     &= 4 \times x^{\color{red}3} - 6 \times x^{\color{blue}2} + 2 \times x^{\color{myred}1} - 7 \times x^{\color{green}0}\\[4mm]
+F_{1}(x) &= 4 \times \dfrac{1}{{\color{red}3}+1} x^{{\color{red}3}+1} - 6 \times \dfrac{1}{{\color{blue}2}+1} x^{{\color{blue}2}+1} + 2 \times \dfrac{1}{1+1} x^{{\color{myred}1}+1} - 7 \times x^{{\color{green}0}+1} + C\\[4mm]
+F_1(x) &= 4 \times \frac{x^4}{{\color{red}4}} - 6 \times \frac{x^3}{{\color{blue}3}} + 2 \times \frac{x^2}{2} - 7x + C\\[4mm]
+F_1(x) &= \mathbf{x^4 - 2x^3 + x^2 - 7x + C}
+\end{aligned}
+$
 %=========================================================
 %   III. APLICATIONS PAR TYPE DE FONCTIONS (SÉRIE L)
 %=========================================================
@@ -223,13 +235,7 @@ Dans chacun des cas suivants, déterminer une primitive $F$ de la fonction $f$ s
 
 \begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction détaillée}]
 
-\paragraph{1. Fonction polynôme :}
-Pour $f(x) = 4x^3 - 6x^2 + 2x - 7$ sur $\mathbb{R}$ :
-\[
-F_1(x) = 4 \times \frac{x^4}{4} - 6 \times \frac{x^3}{3} + 2 \times \frac{x^2}{2} - 7x = \mathbf{x^4 - 2x^3 + x^2 - 7x + C}
-\]
-
-\paragraph{2. Combinaison de formes usuelles :}
+\paragraph{1. Combinaison de formes usuelles :}
 Pour $f(x) = 3 + \dfrac{2}{x^2} - \dfrac{1}{\sqrt{x}}$ sur $]0 \,;\, +\infty[$ :
 \begin{itemize}
     \item La primitive de $3$ est $3x$.
@@ -238,7 +244,7 @@ Pour $f(x) = 3 + \dfrac{2}{x^2} - \dfrac{1}{\sqrt{x}}$ sur $]0 \,;\, +\infty[$ :
 \end{itemize}
 D'où : $\mathbf{F_2(x) = 3x - \frac{2}{x} - 2\sqrt{x} + C}$.
 
-\paragraph{3. Forme $\dfrac{u'(x)}{u(x)}$ :}
+\paragraph{2. Forme $\dfrac{u'(x)}{u(x)}$ :}
 Pour $f(x) = \dfrac{6x - 2}{3x^2 - 2x + 5}$ sur $\mathbb{R}$ :
 \begin{itemize}
     \item Posons $u(x) = 3x^2 - 2x + 5$.
@@ -247,7 +253,7 @@ Pour $f(x) = \dfrac{6x - 2}{3x^2 - 2x + 5}$ sur $\mathbb{R}$ :
 \end{itemize}
 D'où : $\mathbf{F_3(x) = \ln(3x^2 - 2x + 5) + C}$.
 
-\paragraph{4. Forme $\dfrac{u'(x)}{\sqrt{u(x)}}$ :}
+\paragraph{3. Forme $\dfrac{u'(x)}{\sqrt{u(x)}}$ :}
 Pour $f(x) = \dfrac{1}{\sqrt{2x + 1}}$ sur $]-\frac{1}{2} \,;\, +\infty[$ :
 \begin{itemize}
     \item Posons $u(x) = 2x + 1$, d'où $u'(x) = 2$.
@@ -261,7 +267,7 @@ Pour $f(x) = \dfrac{1}{\sqrt{2x + 1}}$ sur $]-\frac{1}{2} \,;\, +\infty[$ :
     \]
 \end{itemize}
 
-\paragraph{5. Recherche d'une primitive particulière (Condition initiale) :}
+\paragraph{4. Recherche d'une primitive particulière (Condition initiale) :}
 Pour $g(x) = 3x^2 - 2x + 1$ :
 \begin{enumerate}
     \item Primitive générale : $G(x) = 3 \times \dfrac{x^3}{3} - 2 \times \dfrac{x^2}{2} + x + C = x^3 - x^2 + x + C$.
