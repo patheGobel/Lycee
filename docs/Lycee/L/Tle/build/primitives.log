@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  10 SEP 2026 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  10 SEP 2026 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,7 +1238,7 @@ nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
-[2] [3] [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+[2] [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [4] [5]
 (build/primitives.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1248,9 +1248,9 @@ Package rerunfilecheck Info: File `primitives.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41727 strings out of 467533
- 977635 string characters out of 5422138
- 1531442 words of memory out of 5000000
+ 41733 strings out of 467533
+ 977696 string characters out of 5422138
+ 1532443 words of memory out of 5000000
  69931 multiletter control sequences out of 15000+600000
  685742 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1263,10 +1263,10 @@ blic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share
 lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on build/primitives.pdf (4 pages, 172043 bytes).
+Output written on build/primitives.pdf (5 pages, 177532 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
