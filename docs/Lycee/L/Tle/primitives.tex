@@ -221,14 +221,15 @@ $
 
 \vspace{0.3cm}
 
-\paragraph{Exemple 4 : Forme avec $\dfrac{1}{x^2}$}
-Soit $f(x) = 3 - \dfrac{5}{x^2}$ sur $]0 \,;\, +\infty[$.
+\paragraph{Exemple 4 : Forme avec $\dfrac{1}{x^n}$}
+Soit $f(x) = 3 - \dfrac{5}{x^{\color{orange}2}}$ sur $]0 \,;\, +\infty[$.
 
 $
 \begin{aligned}
-f(x) &= 3 \times x^{\color{green}0} - 5 \times \frac{1}{x^2}\\[4mm]
-F(x) &= 3 \times \dfrac{1}{{\color{green}0}+1} x^{{\color{green}0}+1} - 5 \times \left(-\frac{1}{x}\right) + C\\[4mm]
-F(x) &= 3 \times \frac{x^1}{{\color{green}1}} + \frac{5}{x} + C\\[4mm]
+f(x) &= 3 \times x^{\color{green}0} - 5 \times \frac{1}{x^{\color{orange}2}}\\[4mm]
+F(x) &= 3 \times \dfrac{1}{{\color{green}0}+1} x^{{\color{green}0}+1} - 5 \times \left(-\dfrac{1}{({\color{orange}2}-1)x^{{\color{orange}2}-1}}\right) + C\\[4mm]
+F(x) &= 3 \times \frac{x^1}{{\color{green}1}} - 5 \times \left(-\frac{1}{1x^1}\right) + C\\[4mm]
+F(x) &= 3x + \frac{5}{x} + C\\[4mm]
 F(x) &= \mathbf{3x + \frac{5}{x} + C}
 \end{aligned}
 $
@@ -240,9 +241,10 @@ Soit $f(x) = 2x^{\color{myred}1} + \dfrac{3}{\sqrt{x}}$ sur $]0 \,;\, +\infty[$.
 
 $
 \begin{aligned}
-f(x) &= 2 \times x^{\color{myred}1} + 3 \times \frac{1}{\sqrt{x}}\\[3mm]
-F(x) &= 2 \times \dfrac{1}{{\color{myred}1}+1} x^{{\color{myred}1}+1} + 3 \times \left(2\sqrt{x}\right) + C\\[3mm]
-F(x) &= 2 \times \frac{x^2}{{\color{myred}2}} + 6\sqrt{x} + C\\[3mm]
+f(x) &= 2 \times x^{\color{myred}1} + 3 \times \frac{1}{\sqrt{x}}\\[4mm]
+F(x) &= 2 \times \dfrac{1}{{\color{myred}1}+1} x^{{\color{myred}1}+1} + 3 \times \left({\color{teal}2\sqrt{x}}\right) + C\\[4mm]
+F(x) &= 2 \times \frac{x^2}{{\color{myred}2}} + 3 \times {\color{teal}2\sqrt{x}} + C\\[4mm]
+F(x) &= 1x^2 + 6\sqrt{x} + C\\[4mm]
 F(x) &= \mathbf{x^2 + 6\sqrt{x} + C}
 \end{aligned}
 $
