@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  11 SEP 2026 13:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  11 SEP 2026 13:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,7 +1090,10 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count392
 )
-No file expo.aux.
+(build/expo.aux
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 11.
+)
 \openout1 = `expo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -1111,9 +1114,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
-Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 66.
 LaTeX Info: Redefining \degres on input line 66.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count393
@@ -1175,12 +1177,13 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
 \c@lstlisting=\count399
 Package hyperref Info: Link coloring ON on input line 66.
+(build/expo.out) (build/expo.out)
 \@outlinefile=\write4
 \openout4 = `expo.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
 0.
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
@@ -1229,38 +1232,40 @@ Overfull \hbox (46.44298pt too wide) in paragraph at lines 70--70
  []$ 
  []
 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 84.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 84.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}
 
-] (build/expo.aux)
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}] (build/
+expo.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-Package rerunfilecheck Warning: File `expo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `expo.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `expo.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41593 strings out of 467533
- 975250 string characters out of 5422138
- 1512350 words of memory out of 5000000
- 69849 multiletter control sequences out of 15000+600000
- 656589 words of font info for 66 fonts, out of 8000000 for 9000
+ 41631 strings out of 467533
+ 975716 string characters out of 5422138
+ 1517395 words of memory out of 5000000
+ 69867 multiletter control sequences out of 15000+600000
+ 664937 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,11n,121p,725b,464s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on build/expo.pdf (1 page, 68630 bytes).
+pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on build/expo.pdf (1 page, 114623 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
