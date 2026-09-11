@@ -330,4 +330,21 @@ Une population de bactéries compte $1\,000$ individus au début de l'expérienc
     \item Exprimer $u_{n+1}$ en fonction de $u_n$.
     \item En déduire la nature de la suite $(u_n)$ et exprimer $u_n$ en fonction de $n$.
 \end{enumerate}
+
+\subsection*{\color{myred}2. Somme des termes consécutifs ($q \neq 1$)}
+Pour une suite géométrique de raison $q \neq 1$, la somme $S_n = u_p + u_{p+1} + \dots + u_n$ vaut :
+\begin{tcolorbox}[colback=red!5!white,colframe=myred]
+\[
+S_n = \text{Premier terme} \times \dfrac{1 - q^{\text{Nombre de termes}}}{1 - q} = \mathbf{u_p \times \dfrac{1 - q^{n - p + 1}}{1 - q}}
+\]
+\end{tcolorbox}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exercice d'application 2 :}}}}
+Soit $(u_n)$ la suite géométrique de premier terme $u_0 = 3$ et de raison $q = 2$.
+\begin{enumerate}
+    \item Calculer $u_1$, $u_2$ et $u_{10}$.
+    \item Exprimer $u_n$ en fonction de $n$.
+    \item Calculer la somme : $S_n = u_0 + u_1 + \dots + u_n$.
+    \item En déduire la somme $S = u_1 + u_2 + \dots + u_{10}$.
+\end{enumerate}
 \end{document}
