@@ -201,4 +201,61 @@ u_{n+1} - u_n = \dfrac{n+3}{2n+3} - \dfrac{n+2}{2n+1} = \dfrac{(n+3)(2n+1) - (n+
 \]
 Comme $n \ge 0$, le dénominateur est strictement positif et le numérateur est $-3 < 0$. 
 Ainsi, $u_{n+1} - u_n < 0$ : la suite $(u_n)$ est \textbf{strictement décroissante}.
+
+%=========================================================
+%    II. Suites Arithmétiques
+%=========================================================
+\section*{\color{myred}II. Suites Arithmétiques}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Définition}]
+Une suite $(u_n)$ est \textbf{arithmétique} s'il existe un nombre réel $r$, appelé \textbf{raison}, tel que pour tout $n \in \mathbb{N}$ :
+\[
+u_{n+1} = u_n + r
+\]
+\end{tcolorbox}
+
+\subsection*{\color{myred}1. Expression du terme général}
+\begin{itemize}[label=$\bullet$]
+    \item Si le premier terme est $u_0$ : $\mathbf{u_n = u_0 + nr}$
+    \item Si le premier terme est $u_1$ : $\mathbf{u_n = u_1 + (n-1)r}$
+    \item De manière générale, pour tout premier terme $u_p$ :
+    \[
+    \mathbf{u_n = u_p + (n-p)r}
+    \]
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=mygreen,title=\textbf{Méthode : Démontrer la nature d'une suite}]
+\begin{itemize}
+    \item **Pour prouver qu'une suite est arithmétique :** On calcule la différence $u_{n+1} - u_n$. Si le résultat est une constante $r$ (indépendante de $n$), alors la suite est arithmétique de raison $r$.
+    \item **Pour prouver qu'une suite N'EST PAS arithmétique :** Il suffit de vérifier que $u_1 - u_0 \neq u_2 - u_1$.
+\end{itemize}
+\end{tcolorbox}
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple :}}}}
+On considère la suite $(U_n)$ définie par :$ u_n = 5n + 3 $
+
+Montrer que $(U_n)$ est une suite arithmétique dont on précisera la raison et le premier terme.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Contre Exemple :}}}}
+Soit la suite $(U_n)$ définie par : $U_{n}=\frac{n}{n+1}$
+
+Montrer que $(U_n)$ n’est pas une suite arithmétique.
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{Exercie :}}}}
+Dans chacun des cas suivants, donner le terme général de la suite.
+\begin{itemize}
+\item[1.]$(u_n)$ est une suite arithmétique de raison $r = 3$ et de premier terme $u_{0}= 7$.
+\item[2.]$(u_n)$ est une suite arithmétique de raison $r=-\frac{3}{4}$ et de premier terme 
+$u_{1}=\frac{-7}{4}$.
+\item[3.] $(U_n)$ est une suite arithmétique de raison $r$ et de premier terme $U_{0}$ tels que $U_{50} = 406$ et $U_{100} = 806$.
+\end{itemize}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{Exercie d'application  :}}}}
+
+Dans une ville, le prix du transport augmente de $100\text{ F}$ chaque année. En $2019$, le prix était de $600\text{ FCFA}$.
+On pose $u_0 = 600$ (prix en $2019$) et $u_n$ le prix en $2019 + n$.
+\begin{enumerate}
+    \item Calculer le prix du transport en $2020$ ($u_1$), $2021$ ($u_2$) et $2022$ ($u_3$).
+    \item Exprimer $u_{n+1}$ en fonction de $u_n$.
+    \item En déduire la nature de la suite $(u_n)$ et exprimer $u_n$ en fonction de $n$.
+\end{enumerate}
 \end{document}
