@@ -229,4 +229,91 @@ Résoudre dans $\mathbb{R}$ l'équation $(E_2) : e^{2x} - 3e^x + 2 = 0$.
     \end{itemize}
     \item \textbf{Conclusion :} $\mathbf{S = \{0 \,;\, \ln(2)\}}$.
 \end{itemize}
+
+\subsection*{\color{myred}2. Inéquations}
+
+\paragraph{Exemple 3 :}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'inéquation $(I_1) : e^{3x - 1} \le 1$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\mbox{}\\[2mm] $D_I = \mathbb{R}$.
+    \item \textbf{Résolution :}\mbox{}\\[2mm]
+    Comme $1 = e^0$, l'inéquation s'écrit :
+    \[
+    e^{3x - 1} \le e^0 \iff 3x - 1 \le 0 \iff 3x \le 1 \iff x \le \frac{1}{3}
+    \]
+    \item \textbf{Conclusion :}\mbox{}\\[2mm] $\mathbf{S = \Big]-\infty \,;\, \frac{1}{3}\Big]}$.
+\end{itemize}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exercice d'application : Équations et inéquations}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Exercice d'application}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $e^x = 1$
+    \item $e^x < 2$
+    \item $e^{x + 3} = 5$
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction détaillée}]
+
+\paragraph{1. Résolution de $e^x = 1$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} $D = \mathbb{R}$.
+    \item \textbf{Résolution :}
+    \[
+    e^x = 1 \iff e^x = e^{\color{red}0} \iff x = \mathbf{0}
+    \]
+    \item \textbf{Conclusion :} L'ensemble des solutions est $\mathbf{S_1 = \{0\}}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Résolution de $e^x < 2$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} $D = \mathbb{R}$.
+    \item \textbf{Résolution :}
+    
+    La fonction exponentielle étant strictement croissante sur $\mathbb{R}$ :
+    \[
+    e^x < 2 \iff \ln(e^x) < \ln(2) \iff x < \mathbf{\ln(2)}
+    \]
+    \item \textbf{Conclusion :} L'ensemble des solutions est $\mathbf{S_2 = ]-\infty \,;\, \ln(2)[}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{3. Résolution de $e^{x + 3} = 5$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} $D = \mathbb{R}$.
+    \item \textbf{Résolution :}
+    \[
+    \begin{aligned}
+    e^{x + 3} = 5 &\iff x + 3 = \ln(5)\\[3mm]
+                  &\iff x = \mathbf{\ln(5) - 3}
+    \end{aligned}
+    \]
+    \item \textbf{Conclusion :} L'ensemble des solutions est $\mathbf{S_3 = \{\ln(5) - 3\}}$.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Devoir à la maison : Équations et inéquations exponentielles}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $e^{2x - 1} = 1$
+    \item $2e^x - 3 \le 0$
+    \item $e^{x - 4} = e^{2x - 3}$
+    \item $e^{2x} + e^x - 2 \ge 0$
+    \item $3(e^x)^2 - 2e^x - 1 = 0$
+    \item $\dfrac{e^{2x - 1}}{e^{1 + x}} < e^3$
+\end{enumerate}
+\end{tcolorbox}
 \end{document}
