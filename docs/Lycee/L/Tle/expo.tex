@@ -125,4 +125,62 @@ Pour tout réel $x$ et pour tout réel $y > 0$ :
     \item $\ln(e^x) = x \quad (\text{pour tout } x \in \mathbb{R})$
     \item $e^{\ln(y)} = y \quad (\text{pour tout } y > 0)$
 \end{itemize}
+
+\subsection*{\color{myred}3. Propriétés algébriques}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Propriété fondamentale (Produit)}]
+Pour tous réels $a$ et $b$ :
+\[
+e^{a + b} = e^a \times e^b
+\]
+\end{tcolorbox}
+
+\paragraph{Conséquences des propriétés :}
+Pour tous réels $a$ et $b$, et pour tout $n \in \mathbb{Z}$ :
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Inverse :} $e^{-a} = \dfrac{1}{e^a}$
+    \item \textbf{Quotient :} $e^{a - b} = \dfrac{e^a}{e^b}$
+    \item \textbf{Puissance :} $(e^a)^n = e^{n \cdot a}$
+    \item \textbf{Racine carrée :} $e^{\frac{1}{2}a} = \sqrt{e^a}$
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple :}
+Simplifier l'expression $A = \dfrac{e^5 \times e^{-2}}{e^1} + (e^2)^3$.
+
+\subsection*{\color{myred}Solution :}
+$A = \dfrac{e^{5 - 2}}{e^1} + e^{2 \times 3} = \dfrac{e^3}{e^1} + e^6 = e^{3 - 1} + e^6 = e^2 + e^6$
+
+\subsection*{\color{myred}Application :}
+\begin{enumerate}
+    \item Écrire $A = \dfrac{e^3 \times e^{-5}}{e^2}$ sous la forme $e^k$ où $k \in \mathbb{Z}$.
+    \item Simplifier $B = (e^x + e^{-x})^2 - (e^x - e^{-x})^2$.
+    \item Simplifier $C = \dfrac{e^{2x} - 1}{e^x + 1}$.
+\end{enumerate}
+
+\subsection*{\color{myred}Correction :}
+\begin{enumerate}
+\item Écrivons\\ $
+\begin{aligned}
+A &= \dfrac{e^3 \times e^{-5}}{e^2} \\[3mm]
+  &= \dfrac{e^{3 - 5}}{e^2} = \dfrac{e^{-2}}{e^2} = e^{-2 - 2} = \mathbf{e^{-4}}
+\end{aligned}
+$
+    \item Simplifions\\ $
+\begin{aligned}
+B &= (e^x + e^{-x})^2 - (e^x - e^{-x})^2\\[3mm]
+  &= \left((e^x)^2 + 2e^x e^{-x} + (e^{-x})^2\right) - \left((e^x)^2 - 2e^x e^{-x} + (e^{-x})^2\right)\\[3mm]
+  &= (e^{2x} + 2e^0 + e^{-2x}) - (e^{2x} - 2e^0 + e^{-2x})\\[3mm]
+  &= e^{2x} + 2 + e^{-2x} - e^{2x} + 2 - e^{-2x} = \mathbf{4}
+\end{aligned}
+$
+
+\item Simplifions\\ $
+\begin{aligned}
+C &= \dfrac{e^{2x} - 1}{e^x + 1} = \dfrac{(e^x)^2 - 1^2}{e^x + 1}\\[4mm]
+  &= \dfrac{(e^x - 1)(e^x + 1)}{e^x + 1} = \mathbf{e^x - 1}
+\end{aligned}
+$
+\end{enumerate}
 \end{document}
