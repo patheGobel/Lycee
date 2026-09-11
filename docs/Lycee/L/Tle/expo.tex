@@ -444,4 +444,82 @@ Déterminer $D_f$ et $f'(x)$ pour chacune des fonctions suivantes :
     \dotfill
 \end{enumerate}
 
+%++++++++++++++++++
+%    2. Limites
+%++++++++++++++++++
+\subsection*{\color{myred}2. Limites}
+
+\textbf{\color{myred} Limites usuelles (Croissances comparées)}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Formules des limites usuelles à retenir}]
+\[
+\begin{array}{rcccl}
+1) & \lim_{x \to -\infty} e^x = 0 & \quad & 2) & \lim_{x \to +\infty} e^x = +\infty \\[0.3cm]
+3) & \lim_{x \to -\infty} x e^x = 0 & \quad & 4) & \lim_{x \to +\infty} \frac{e^x}{x} = +\infty \\[0.3cm]
+5) & \lim_{x \to 0} \frac{e^x - 1}{x} = 1 & \quad & 6) & \lim_{x \to -\infty} x^n e^x = 0 \quad (n \in \mathbb{N}^*)\\[0.3cm]
+7) & \lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \quad (n \in \mathbb{N}^*)
+\end{array}
+\]
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Exemples d'application}]
+
+\paragraph{Exemple 1 : Calcul de $\lim_{x \to +\infty} (2x - 3 + e^x)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to +\infty} (2x - 3) = +\infty \\[2mm]
+\lim_{x \to +\infty} e^x = +\infty \quad (\text{Formule 2})
+\end{array}
+\right\} 
+&\implies \lim_{x \to +\infty} (2x - 3 + e^x) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 2 : Calcul de $\lim_{x \to -\infty} (x^2 - 5e^x)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to -\infty} x^2 = +\infty \\[2mm]
+\lim_{x \to -\infty} e^x = 0 \implies \lim_{x \to -\infty} (-5e^x) = 0 \quad (\text{Formule 1})
+\end{array}
+\right\} 
+&\implies \lim_{x \to -\infty} (x^2 - 5e^x) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 3 : Levée de forme indéterminée pour $\lim_{x \to +\infty} (e^x - x)$}
+La forme est indéterminée ("$+\infty - \infty$"). On factorise par $x$ :
+\[
+\begin{aligned}
+\lim_{x \to +\infty} (e^x - x) &= \lim_{x \to +\infty} x \left(\frac{e^x}{x} - 1\right) \\[2mm]
+\text{Or }, \lim_{x \to +\infty} \frac{e^x}{x} = +\infty \quad (\text{Formule 4}) &\implies \lim_{x \to +\infty} \left(\frac{e^x}{x} - 1\right) = +\infty \\[2mm]
+\text{Par produit, } &\implies \lim_{x \to +\infty} x \left(\frac{e^x}{x} - 1\right) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 4 : Utilisation de la croissance comparée $\lim_{x \to -\infty} (3x e^x + 2)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to -\infty} x e^x = 0 \quad (\text{Formule 3}) \implies \lim_{x \to -\infty} 3x e^x = 0 \\[2mm]
+\lim_{x \to -\infty} 2 = 2
+\end{array}
+\right\} 
+&\implies \lim_{x \to -\infty} (3x e^x + 2) = 2
+\end{aligned}
+\]
+
+\end{tcolorbox}
 \end{document}
