@@ -522,4 +522,120 @@ La forme est indéterminée ("$+\infty - \infty$"). On factorise par $x$ :
 \]
 
 \end{tcolorbox}
+
+%=========================================================
+%    IV. Etude de la Fonction Exponentielle
+%=========================================================
+
+\section*{\color{myred}IV. Étude de la Fonction $x \mapsto e^x$}
+
+\subsection*{\color{myred} Tableau de variations et représentation graphique}
+
+\paragraph{Limites aux bornes :}
+\[
+\lim_{x \to -\infty} e^x = 0 \quad \text{et} \quad \lim_{x \to +\infty} e^x = +\infty
+\]
+
+\paragraph{Tableau de variations :}
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ /1, $(e^x)'$ /1, $e^x$ /1.5}
+   {$-\infty$ , $0$, $+\infty$}
+   \tkzTabLine{, +, t, +}
+   \tkzTabVar{-/$0$, R/, +/$+\infty$}
+   \tkzTabIma{1}{3}{2}{$1$}
+
+\node (A) at (7.2,-0.7) {$1$};
+\node (B) at (7.2,-2.5) {$e$};
+
+\draw[dotted, thick] (A) -- (B);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Représentation graphique de $f(x) = e^x$ :}
+La courbe admet l'axe des abscisses ($y = 0$) comme asymptote horizontale en $-\infty$ et une branche parabolique de direction $(Oy)$ en $+\infty$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-3.5, xmax=3.5,
+    ymin=-0.5, ymax=4.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=9.5cm, height=6.5cm
+]
+    \addplot[domain=-3.2:1.5, samples=200, color=myblue, ultra thick] {exp(x)};
+    
+    % Points particuliers
+    \filldraw[color=myred] (axis cs:0,1) circle (2pt) node[above left] {$(0,1)$};
+    \filldraw[color=myred] (axis cs:1,2.718) circle (2pt) node[left] {$e$};
+    \draw[dashed, color=gray] (axis cs:1,0) -- (axis cs:1,2.718) -- (axis cs:0,2.718);
+    
+    % Asymptote horizontale
+    \draw[ultra thick, color=myred, ->, >=Stealth] (axis cs:-3,0) -- (axis cs:-0.5,0);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+
+\hrule
+\vspace{0.3cm}
+
+\paragraph{Exemple complet d'étude de fonction (type Terminale L) :}
+Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x) = (x - 1)e^x$.
+
+\begin{enumerate}
+    \item \textbf{Limites aux bornes :}
+    \begin{itemize}
+        \item En $-\infty$ : $f(x) = x e^x - e^x$. 
+        Comme $\lim_{x \to -\infty} x e^x = 0$ et $\lim_{x \to -\infty} e^x = 0$, on a $\lim_{x \to -\infty} f(x) = 0$. (Asymptote horizontale $y = 0$).
+        \item En $+\infty$ : $\lim_{x \to +\infty} (x - 1) = +\infty$ et $\lim_{x \to +\infty} e^x = +\infty \implies \lim_{x \to +\infty} f(x) = +\infty$.
+    \end{itemize}
+
+    \item \textbf{Dérivée et variations :}
+    Pour tout $x \in \mathbb{R}$ (forme $u \cdot v$) :
+    \[
+    f'(x) = 1 \cdot e^x + (x - 1)e^x = e^x(1 + x - 1) = x e^x
+    \]
+    Comme $e^x > 0$ pour tout $x \in \mathbb{R}$, le signe de $f'(x)$ est celui de $x$ :
+    \begin{itemize}
+        \item Pour $x \in ]-\infty \,;\, 0[$, $f'(x) < 0 \implies f$ est strictement décroissante.
+        \item Pour $x \in ]0 \,;\, +\infty[$, $f'(x) > 0 \implies f$ est strictement croissante.
+        \item Minimum local en $x = 0$ : $f(0) = (0 - 1)e^0 = -1$.
+    \end{itemize}
+
+    \item \textbf{Tableau de variations :}
+    \begin{center}
+    \begin{tikzpicture}
+      \tkzTabInit[lgt=2, espcl=2.5]
+        {$x$/1, $f'(x)$/1, $f$/2}
+        {$-\infty$, $0$, $+\infty$}
+      \tkzTabLine{, - , z , + , }
+      \tkzTabVar{+/$0$ , -/ $-1$ , +/ $+\infty$}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\underline{\textbf{Application}}
+
+\vspace{0.3cm}
+
+On pose $f(x) = \dfrac{e^x - 1}{e^x + 1}$.
+
+\begin{enumerate}
+    \item Déterminer $D_f$.
+    \item Calculer les limites aux bornes de $D_f$.
+    \item Étudier la parité de $f$.
+    \item Calculer $f'(x)$ puis dresser le tableau de variation de $f$.
+    \item Déterminer les points d'intersection entre $\mathcal{C}_f$ et les axes de coordonnées.
+    \item Déterminer l'équation de la tangente au point d'abscisse $x = 0$.
+    \item Dresser un tableau de valeurs puis tracer $\mathcal{C}_f$.
+\end{enumerate}
 \end{document}
