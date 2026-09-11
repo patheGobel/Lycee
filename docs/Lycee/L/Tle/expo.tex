@@ -342,4 +342,63 @@ Soit $u$ une fonction dérivable sur un intervalle $I$, la fonction $f(x) = e^{u
 (e^{u(x)})' = u'(x) \cdot e^{u(x)}
 \]
 \end{tcolorbox}
+
+\underline{\textbf{Exemple 3}}
+
+\vspace{0.3cm}
+
+Déterminons $D_f$ et $f'(x)$ pour chacune des fonctions suivantes :
+
+\begin{enumerate}
+    \item $f(x) = e^{-3x + 1}$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = e^{\sqrt{2x - 1}}$
+    
+    \dotfill
+    
+    \dotfill
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction de l'Exemple 3}]
+
+Déterminons $D_f$ et $f'(x)$ pour chacune des fonctions :
+
+\paragraph{1. Pour $f(x) = e^{-3x + 1}$ :}
+\begin{itemize}
+    \item \textbf{Ensemble de définition $D_f$ :}
+    
+    La fonction $u(x) = -3x + 1$ est un polynôme donc définie sur $\mathbb{R}$.
+    Ainsi, $\mathbf{D_f = \mathbb{R} = ]-\infty \,;\, +\infty[}$.
+
+    \item \textbf{Fonction dérivée $f'(x)$ :}
+    
+    En posant $u(x) = -3x + 1$, on a $u'(x) = -3$.
+    
+    En utilisant la formule $(e^{u(x)})' = u'(x)e^{u(x)}$, on obtient :
+    $$\mathbf{f'(x) = -3e^{-3x + 1}}$$
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Pour $f(x) = e^{\sqrt{2x - 1}}$ :}
+\begin{itemize}
+    \item \textbf{Ensemble de définition $D_f$ :}
+    
+    $f(x)$ est définie si et seulement si la racine est définie, soit $2x - 1 \ge 0 \iff x \ge \frac{1}{2}$.
+    Ainsi, $\mathbf{D_f = \Big[\frac{1}{2} \,;\, +\infty\Big[}$.
+
+    \item \textbf{Fonction dérivée $f'(x)$ :}
+    
+    On pose $u(x) = \sqrt{2x - 1}$, d'où $u'(x) = \dfrac{2}{2\sqrt{2x - 1}} = \dfrac{1}{\sqrt{2x - 1}}$.
+    
+    $$\mathbf{f'(x) = \frac{1}{\sqrt{2x - 1}} e^{\sqrt{2x - 1}}}$$
+\end{itemize}
+
+\end{tcolorbox}
 \end{document}
