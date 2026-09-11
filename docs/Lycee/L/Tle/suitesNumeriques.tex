@@ -355,4 +355,33 @@ Soit $(u_n)$ une suite géométrique de premier terme $u_0 > 0$ et de raison $q 
     \item Si $0 < q < 1$, la suite est **strictement décroissante**.
     \item Si $q = 1$, la suite est **constante**.
 \end{itemize}
+
+%=========================================================
+%    IV. Limites d'une suite
+%=========================================================
+\section*{\color{myred}IV. Limites d'une suite}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Théorème 1 : Limites de référence}]
+\[
+\begin{array}{rcccl}
+\lim_{n \to +\infty} \sqrt{n} = +\infty & \quad & \lim_{n \to +\infty} n^2 = +\infty & \quad & \lim_{n \to +\infty} n^3 = +\infty \\[0.3cm]
+\lim_{n \to +\infty} \dfrac{1}{\sqrt{n}} = 0 & \quad & \lim_{n \to +\infty} \dfrac{1}{n} = 0 & \quad & \lim_{n \to +\infty} \dfrac{1}{n^2} = 0
+\end{array}
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Théorème 2 : Limite de $q^n$}]
+Soit $q$ un nombre réel :
+\begin{itemize}
+    \item Si $q > 1$, alors $\lim_{n \to +\infty} q^n = +\infty$.
+    \item Si $-1 < q < 1$, alors $\lim_{n \to +\infty} q^n = 0$.
+    \item Si $q \le -1$, la suite $q^n$ n'admet pas de limite.
+\end{itemize}
+\end{tcolorbox}
+
+\paragraph{Exemple d'application :}
+Calculer la limite de la suite $u_n = \dfrac{3n^3 - 5n^2 + 1}{2n^3 + 1}$.
+\[
+\lim_{n \to +\infty} u_n = \lim_{n \to +\infty} \dfrac{3n^3}{2n^3} = \mathbf{\dfrac{3}{2}}
+\]
 \end{document}
