@@ -176,4 +176,29 @@ Dans chacun des cas suivants, calculer les $6$ premiers termes de la suite $(u_n
     \item $u_n = \dfrac{3n - 5}{n + 2}$
 \end{enumerate}
 \end{tcolorbox}
+
+\subsection*{\color{myred}4. Sens de variation d'une suite}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définitions}]
+Une suite $(u_n)$ est dite :
+\begin{itemize}
+    \item \textbf{Croissante} si pour tout $n \in \mathbb{N}$, $u_{n+1} \ge u_n \iff u_{n+1} - u_n \ge 0$.
+    \item \textbf{Décroissante} si pour tout $n \in \mathbb{N}$, $u_{n+1} \le u_n \iff u_{n+1} - u_n \le 0$.
+    \item \textbf{Monotone} si elle est soit uniquement croissante, soit uniquement décroissante.
+    \item \textbf{Constante} si pour tout $n \in \mathbb{N}$, $u_{n+1} = u_n$.
+\end{itemize}
+\end{tcolorbox}
+
+\paragraph{Règle générale :} Pour étudier le sens de variation d'une suite $(u_n)$, on étudie le signe de la différence $u_{n+1} - u_n$.
+
+\paragraph{Exemple :}
+Soit $u_n = \dfrac{n+2}{2n+1}$. Étudions le signe de $u_{n+1} - u_n$ :
+\[
+u_{n+1} = \dfrac{(n+1)+2}{2(n+1)+1} = \dfrac{n+3}{2n+3}
+\]
+\[
+u_{n+1} - u_n = \dfrac{n+3}{2n+3} - \dfrac{n+2}{2n+1} = \dfrac{(n+3)(2n+1) - (n+2)(2n+3)}{(2n+1)(2n+3)} = \dfrac{-3}{(2n+1)(2n+3)}
+\]
+Comme $n \ge 0$, le dénominateur est strictement positif et le numérateur est $-3 < 0$. 
+Ainsi, $u_{n+1} - u_n < 0$ : la suite $(u_n)$ est \textbf{strictement décroissante}.
 \end{document}
