@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  11 SEP 2026 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  11 SEP 2026 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1228,20 +1228,16 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 70
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Overfull \hbox (46.44298pt too wide) in paragraph at lines 70--70
- []$ 
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 84.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 84.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}] [2{/usr
-/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3]
+s/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
+[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3]
 Underfull \hbox (badness 10000) in paragraph at lines 267--269
 
  []
@@ -1290,7 +1286,7 @@ nts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on build/expo.pdf (9 pages, 225919 bytes).
+Output written on build/expo.pdf (9 pages, 225927 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams
