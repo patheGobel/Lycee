@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  11 SEP 2026 14:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  11 SEP 2026 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1265,10 +1265,10 @@ Package rerunfilecheck Info: File `expo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41746 strings out of 467533
- 977701 string characters out of 5422138
+ 41751 strings out of 467533
+ 977772 string characters out of 5422138
  1529395 words of memory out of 5000000
- 69933 multiletter control sequences out of 15000+600000
+ 69936 multiletter control sequences out of 15000+600000
  685742 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,11n,121p,725b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1281,10 +1281,10 @@ lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on build/expo.pdf (5 pages, 193130 bytes).
+Output written on build/expo.pdf (5 pages, 195311 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
+ 194 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
