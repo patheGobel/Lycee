@@ -133,4 +133,47 @@ u : & \mathbb{N} & \to & \mathbb{R} \\
 \]
 Le réel $u_n$ est appelé \textbf{terme général} ou \textbf{terme d'indice $n$}. La suite est notée $(u_n)_{n \in \mathbb{N}}$ ou simplement $(u_n)$.
 \end{tcolorbox}
+
+\subsection*{\color{myred}3. Modes de définition d'une suite}
+
+\subsubsection*{\color{myblue}3.1. Suite explicite}
+Lorsqu'une suite $(u_n)$ est exprimée directement en fonction de $n$, on dit qu'elle est définie par une \textbf{formule explicite} : $u_n = f(n)$.
+
+\paragraph{Exemple :}
+Soit la suite $(u_n)$ définie par $u_n = n^2 - 5n + 3$.
+\begin{itemize}[label=$\bullet$]
+    \item $u_0 = 0^2 - 5(0) + 3 = 3$
+    \item $u_1 = 1^2 - 5(1) + 3 = -1$
+    \item $u_2 = 2^2 - 5(2) + 3 = -3$
+    \item $u_{10} = 10^2 - 5(10) + 3 = 53$
+    \item $u_{50} = 50^2 - 5(50) + 3 = 2253$
+\end{itemize}
+
+\subsubsection*{\color{myblue}3.2. Suite définie par récurrence}
+Lorsqu'un terme de la suite se calcule à partir du terme précédent, la suite est définie par une \textbf{relation de récurrence} : $u_{n+1} = f(u_n)$ avec la donnée du premier terme.
+
+\paragraph{Exemple 1 :}
+Soit la suite $(u_n)$ définie par $u_0 = 2$ et $u_{n+1} = \dfrac{2u_n + 3}{u_n + 1}$.
+Calculons les premiers termes :
+\begin{itemize}[label=$\bullet$]
+    \item $u_1 = \dfrac{2u_0 + 3}{u_0 + 1} = \dfrac{2(2) + 3}{2 + 1} = \dfrac{7}{3}$
+    \item $u_2 = \dfrac{2u_1 + 3}{u_1 + 1} = \dfrac{2(7/3) + 3}{7/3 + 1} = \dfrac{23/3}{10/3} = \dfrac{23}{10}$
+\end{itemize}
+
+\paragraph{Exemple 2 :}
+Soit la suite $(u_n)$ définie par $u_0 = -1$ et $u_{n+1} = 2u_n + 3$.
+\begin{itemize}[label=$\bullet$]
+    \item $u_1 = 2u_0 + 3 = 2(-1) + 3 = 1$
+    \item $u_2 = 2u_1 + 3 = 2(1) + 3 = 5$
+    \item $u_3 = 2u_2 + 3 = 2(5) + 3 = 13$
+\end{itemize}
+\textit{Remarque :} Pour calculer $u_{50}$ avec une suite récurrente, il faut calculer successivement tous les termes précédents.
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Exercice d'application}]
+Dans chacun des cas suivants, calculer les $6$ premiers termes de la suite $(u_n)_{n \in \mathbb{N}}$ :
+\begin{enumerate}
+    \item $u_n = 7n^2 - 5n + 2$
+    \item $u_n = \dfrac{3n - 5}{n + 2}$
+\end{enumerate}
+\end{tcolorbox}
 \end{document}
