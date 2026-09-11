@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{Suites Numériques}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : Terminale L}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%    I. Généralités
+%=========================================================
+\section*{\color{myred}I. Généralités}
+
+\subsection*{\color{myred}1. Activité introductive}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Activité : Découverte de la notion de suite}]
+On considère la liste de nombres réels suivants : $-10 \,;\, 5 \,;\, 3 \,;\, 4 \quad \text{et} \quad -8$.
+
+\begin{enumerate}
+    \item Ranger ces $5$ nombres dans l'ordre \textbf{décroissant}.
+    \item En attribuant le **rang $0$** au plus grand nombre, donner le rang de chacun des autres nombres de la liste ordonnée.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.2cm}
+
+\paragraph{\color{mygreen}Correction de l'activité :}
+\begin{enumerate}
+    \item L'ordre décroissant des $5$ nombres est : $5 \,;\, 4 \,;\, 3 \,;\, -8 \,;\, -10$.
+    \item Attribution des rangs :
+    \begin{itemize}[label=$\bullet$]
+        \item Le rang de $5$ est : \textbf{0}
+        \item Le rang de $4$ est : \textbf{1}
+        \item Le rang de $3$ est : \textbf{2}
+        \item Le rang de $-8$ est : \textbf{3}
+        \item Le rang de $-10$ est : \textbf{4}
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.3cm}
+
+
+\end{document}
