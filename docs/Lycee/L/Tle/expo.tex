@@ -197,5 +197,36 @@ Grâce à la stricte croissance de la fonction exponentielle sur $\mathbb{R}$, p
     \item $e^x \le 0 \implies \text{Impossible (pas de solution)}$
 \end{itemize}
 
+\subsection*{\color{myred}1. Équations}
 
+\paragraph{Exemple 1 : Équation du type $e^{A(x)} = e^{B(x)}$}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_1) : e^{2x - 3} = e^{x + 1}$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\ $D_E = \mathbb{R}$.
+    \item \textbf{Résolution :}\\
+    Pour tout $x \in \mathbb{R}$ :
+    \[
+    e^{2x - 3} = e^{x + 1} \iff 2x - 3 = x + 1 \iff x = 4
+    \]
+    \item \textbf{Conclusion :}\\ $\mathbf{S = \{4\}}$.
+\end{itemize}
+
+\paragraph{Exemple 2 : Équation se ramenant au second degré}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_2) : e^{2x} - 3e^x + 2 = 0$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\ $D_E = \mathbb{R}$.
+    \item \textbf{Changement de variable :}\\ Comme $e^{2x} = (e^x)^2$, posons $X = e^x$ avec $\mathbf{X > 0}$. L'équation devient :
+    \[
+    X^2 - 3X + 2 = 0
+    \]
+    $\Delta = (-3)^2 - 4(1)(2) = 1 > 0 \implies X_1 = 1 \quad \text{et} \quad X_2 = 2$.
+    \item \textbf{Retour à $x$ :}
+    \begin{itemize}
+        \item $e^x = 1 \iff x = \ln(1) = 0$
+        \item $e^x = 2 \iff x = \ln(2)$
+    \end{itemize}
+    \item \textbf{Conclusion :} $\mathbf{S = \{0 \,;\, \ln(2)\}}$.
+\end{itemize}
 \end{document}
