@@ -275,4 +275,59 @@ Soit $\left(u_{n}\right)$ la suite définie par : $u_{n}=2n+7$
 \item[3.] Calculer la somme : $S_{n} = u_{0} + u_{1} + \cdots+ u_{n}.$
 \item[4.] En déduire le somme $S = u_{1} + u_{2} +\cdots+ u_{2024}.$
 \end{itemize}
+
+%=========================================================
+%    III. Suites Géométriques
+%=========================================================
+\section*{\color{myred}III. Suites Géométriques}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Définition}]
+Une suite $(u_n)$ est \textbf{géométrique} s'il existe un nombre réel non nul $q$, appelé \textbf{raison}, tel que pour tout $n \in \mathbb{N}$ :
+\[
+u_{n+1} = u_n \times q
+\]
+\end{tcolorbox}
+
+\subsection*{\color{myred}1. Expression du terme général}
+\begin{itemize}[label=$\bullet$]
+    \item Si le premier terme est $u_0$ : $\mathbf{u_n = u_0 \times q^n}$
+    \item Si le premier terme est $u_1$ : $\mathbf{u_n = u_1 \times q^{n-1}}$
+    \item De manière générale, pour tout premier terme $u_p$ :
+    \[
+    \mathbf{u_n = u_p \times q^{n-p}}
+    \]
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=mygreen,title=\textbf{Méthode : Démontrer la nature d'une suite}]
+\begin{itemize}
+    \item \textbf{Pour prouver qu'une suite est géométrique :} Pour tout $u_n \neq 0$, on calcule le quotient $\dfrac{u_{n+1}}{u_n}$. Si le résultat est une constante $q$ (indépendante de $n$), alors la suite est géométrique de raison $q$.
+    \item \textbf{Pour prouver qu'une suite N'EST PAS géométrique :} Il suffit de vérifier que $\dfrac{u_1}{u_0} \neq \dfrac{u_2}{u_1}$.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection*{\underline{\textbf{\textcolor{red}{Exemple :}}}}
+On considère la suite $(u_n)$ définie pour tout $n \in \mathbb{N}$ par : $u_n = 3 \times 2^n$.
+
+Montrer que $(u_n)$ est une suite géométrique dont on précisera la raison $q$ et le premier terme $u_0$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{Contre-Exemple :}}}}
+Soit la suite $(u_n)$ définie pour tout $n \in \mathbb{N}$ par : $u_n = n^2 + 1$.
+
+Montrer que $(u_n)$ n'est pas une suite géométrique.
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{Exercice :}}}}
+Dans chacun des cas suivants, donner le terme général de la suite.
+\begin{itemize}
+\item[1.] $(u_n)$ est une suite géométrique de raison $q = 3$ et de premier terme $u_0 = 5$.
+\item[2.] $(u_n)$ est une suite géométrique de raison $q = \dfrac{1}{2}$ et de premier terme $u_1 = 8$.
+\item[3.] $(u_n)$ est une suite géométrique à termes positifs, de raison $q$ et de premier terme $u_0$, tels que $u_2 = 12$ et $u_4 = 48$.
+\end{itemize}
+
+\subsubsection*{\underline{\textbf{\textcolor{red}{Exercice d'application 1 :}}}}
+Une population de bactéries compte $1\,000$ individus au début de l'expérience (en $2024$). Chaque année, cette population augmente de $10\%$. On note $u_0 = 1\,000$ la population initiale et $u_n$ la population en $2024 + n$.
+\begin{enumerate}
+    \item Calculer la population en $2025$ ($u_1$), $2026$ ($u_2$) et $2027$ ($u_3$).
+    \item Exprimer $u_{n+1}$ en fonction de $u_n$.
+    \item En déduire la nature de la suite $(u_n)$ et exprimer $u_n$ en fonction de $n$.
+\end{enumerate}
 \end{document}
