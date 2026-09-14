@@ -81,64 +81,106 @@
 \section*{\color{myred}I. La racine carrée d'un nombre réel positif}
 
 \subsection*{\color{myred} Activité 1}
-1. Trouver un nombre réel positif dont le carré est égal à $9$.\\
-2. Trouver un nombre réel positif dont le carré est égal à $25$.\\
-3. Existe-t-il un nombre réel dont le carré est égal à $-16$ ? Justifier.
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Écrire sous forme d'une puissance les nombres suivants :
+    \[
+    \mathbf{4 \quad ; \quad 9 \quad ; \quad 25 \quad ; \quad 36 \quad ; \quad 81}
+    \]
 
-\subsection*{\color{myred} Définition}
-Soit $a$ un nombre réel positif ($a \geqslant 0$).\\
-On appelle \textbf{racine carrée} de $a$, et on note $\sqrt{a}$, l'unique nombre réel **positif** dont le carré est égal à $a$.
-\[
-\sqrt{a} \geqslant 0 \quad \text{et} \quad \left(\sqrt{a}\right)^2 = a
-\]
+    \item Compléter le tableau suivant en utilisant la calculatrice :
+    
+    \vspace{0.3cm}
+    \begin{center}
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Le nombre $a$ & 4 & 9 & 25 & 36 & 81 \\ \hline
+        $a = \square^2$ & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} & \hspace{1cm} \\ \hline
+        $\sqrt{a}$ & & & & & \\ \hline
+    \end{tabular}
+    \end{center}
+    \vspace{0.3cm}
 
-\subsection*{\color{myred} Exemple 1}
-\begin{itemize}[label=$\bullet$]
-    \item $\sqrt{9} = 3$ car $3 \geqslant 0$ et $3^2 = 9$.
-    \item $\sqrt{0} = 0$ et $\sqrt{1} = 1$.
-    \item $\sqrt{0{,}25} = 0{,}5$ car $0{,}5^2 = 0{,}25$.
-\end{itemize}
-
-\subsection*{\color{myred} Propriété}
-Soient $a$ et $b$ deux réels positifs.
-\begin{enumerate}
-    \item Pour tout réel $a \geqslant 0$, $\sqrt{a^2} = a$.
-    \item Pour tout réel $a$, $\sqrt{a^2} = |a|$.
-    \item $a = b \iff \sqrt{a} = \sqrt{b}$.
+    \item Que remarquez-vous ?
 \end{enumerate}
 
+\subsection*{\color{myred} Définition}
+Soit $a$ un nombre réel positif. La \textbf{racine carrée} de $a$, notée $\sqrt{a}$, est le nombre positif dont le carré est $a$.
+\subsection*{\color{myred} Exemple 1}
+$4$ est le carré de $\mathbf{2}$, donc : $\mathbf{\sqrt{4} = 2}$ \\[0.2cm]
+$\mathbf{25}$ est le carré de $\mathbf{5}$, donc : $\mathbf{\sqrt{25} = 5}$ \\[0.2cm]
+$\mathbf{\sqrt{64} = 8 \quad ; \quad \sqrt{81} = 9 \quad ; \quad \sqrt{0} = 0 \quad ; \quad \sqrt{1} = 1}$
+\subsection*{\color{myred} Propriété}
+Pour tout nombre réel positif $a$, on a :
+\[
+\mathbf{(\sqrt{a})^2 = a \quad ; \quad \sqrt{a^2} = a \quad ; \quad \sqrt{(-a)^2} = a}
+\]
 \subsection*{\color{myred} Exemple 2}
-\begin{itemize}[label=$\bullet$]
-    \item $\sqrt{7^2} = 7$.
-    \item $\sqrt{(-5)^2} = |-5| = 5$.
-\end{itemize}
-
+\[
+\mathbf{(\sqrt{13})^2 = 13 \quad ; \quad \sqrt{21^2} = 21 \quad ; \quad \sqrt{(-33)^2} = 33}
+\]
 \subsection*{\color{myred} Remarque}
-La racine carrée d'un nombre négatif **n'existe pas** dans les nombres réels $\mathbb{R}$. L'expression $\sqrt{a}$ n'a de sens que si $a \geqslant 0$.
+\noindent
+La racine carrée d'un nombre négatif n'existe pas : la calculatrice affiche un message d'erreur.
 
+\vspace{0.3cm}
+\begin{center}
+\fbox{%
+  \parbox{6cm}{%
+    \vspace{0.2cm}
+    $\mathbf{\sqrt{-9}}$
+    \rightline{\textcolor{red!70!black}{\textbf{\textsf{Math ERROR}}}}
+    \vspace{0.1cm}
+  }%
+}
+\end{center}
 \subsection*{\color{myred} Application 1}
-Calculer les nombres suivants : 
+\noindent
+Calculer la racine carrée des nombres suivants :
 \[
-A = \sqrt{49}, \quad B = \sqrt{(-11)^2}, \quad C = \left(\sqrt{13}\right)^2
+\mathbf{\sqrt{4} \ ; \ \sqrt{9} \ ; \ \sqrt{16} \ ; \ \sqrt{25} \ ; \ \sqrt{36} \ ; \ \sqrt{49} \ ; \ \sqrt{64} \ ; \ \sqrt{81} \ ; \ \sqrt{100} \ ; \ \sqrt{121} \ ; \ \sqrt{144}}
 \]
-
 \subsection*{\color{myred} Correction }
-\begin{itemize}[label=$\bullet$]
-    \item $A = \sqrt{49} = \sqrt{7^2} = 7$
-    \item $B = \sqrt{(-11)^2} = |-11| = 11$
-    \item $C = \left(\sqrt{13}\right)^2 = 13$
-\end{itemize}
-
-\subsection*{\color{myred} Application 2 }
-Déterminer la valeur exacte du réel $D = \sqrt{(\sqrt{3}-2)^2}$.
-
-\subsection*{\color{myred} Solution : }
-On a $D = |\sqrt{3}-2|$.\\
-Or $1,732 \approx \sqrt{3} < 2$, donc $\sqrt{3} - 2 < 0$.\\
-Puisque la valeur absolue d'un nombre négatif est son opposé :
 \[
-D = -(\sqrt{3}-2) = 2 - \sqrt{3}
+\mathbf{\sqrt{4} = 2 \quad ; \quad \sqrt{9} = 3 \quad ; \quad \sqrt{16} = 4 \quad ; \quad \sqrt{25} = 5 \quad ; \quad \sqrt{36} = 6 \quad ; \quad \sqrt{49} = 7}
 \]
+\[
+\mathbf{\sqrt{64} = 8 \quad ; \quad \sqrt{81} = 9 \quad ; \quad \sqrt{100} = 10 \quad ; \quad \sqrt{121} = 11 \quad ; \quad \sqrt{144} = 12}
+\]
+\subsection*{\color{myred} Application 2 }
+Calculer les expressions suivantes :
+\begin{align*}
+\boldsymbol{A = \left(\sqrt{2}\right)^2} \qquad \qquad \boldsymbol{B = \left(3\sqrt{3}\right)^2} \qquad \qquad \boldsymbol{C = \sqrt{(-11)^2} + \left(\sqrt{11}\right)^2} \\[0.3cm]
+\boldsymbol{D = \left(1 + \sqrt{2}\right)^2} \hspace{7cm}
+\end{align*}
+\subsection*{\color{myred} Solution }
+
+\vspace{0.3cm}
+\begin{multicols}{2}
+\noindent
+$\boldsymbol{A = \left(\sqrt{2}\right)^2 = 2}$
+
+\vspace{0.4cm}
+\noindent
+$\boldsymbol{B = \left(3\sqrt{3}\right)^2 = 3^2 \times \left(\sqrt{3}\right)^2}$
+\\[0.1cm]
+$\mathbf{= 9 \times 3 = 27}$
+
+\columnbreak
+
+\noindent
+$\boldsymbol{C = \sqrt{(-11)^2} + \left(\sqrt{11}\right)^2}$
+\\[0.1cm]
+$\mathbf{= 11 + 11 = 22}$
+
+\vspace{0.4cm}
+\noindent
+$\boldsymbol{D = \left(1 + \sqrt{2}\right)^2}$
+\\[0.1cm]
+$\mathbf{= 1^2 + 2 \times 1 \times \sqrt{2} + \left(\sqrt{2}\right)^2}$
+\\[0.1cm]
+$\mathbf{= 1 + 2\sqrt{2} + 2 = 3 + 2\sqrt{2}}$
+\end{multicols}
 
 %=========================================================
 %    II. Racines Carrées Et Opérations
@@ -146,140 +188,76 @@ D = -(\sqrt{3}-2) = 2 - \sqrt{3}
 \section*{\color{myred}II. Racines Carrées Et Opérations}
 
 \subsection*{\color{myred} Activité 2 }
-1. Calculer $\sqrt{16 \times 9}$ et $\sqrt{16} \times \sqrt{9}$. Que constate-t-on ?\\
-2. Calculer $\sqrt{\frac{100}{25}}$ et $\frac{\sqrt{100}}{\sqrt{25}}$. Que constate-t-on ?\\
-3. Calculer $\sqrt{9 + 16}$ et $\sqrt{9} + \sqrt{16}$. Comparer les deux résultats.
 
 \subsection*{\color{myred} 1. Produit de deux racines carrées }
 
-\subsection*{\color{myred} Propriété }
-Pour tous réels positifs $a$ et $b$ ($a \geqslant 0$ et $b \geqslant 0$) :
-\[
-\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}
-\]
+\subsubsection*{\color{myred} Propriété }
 
-\subsection*{\color{myred} Exemple }
-\begin{itemize}[label=$\bullet$]
-    \item $\sqrt{4 \times 25} = \sqrt{4} \times \sqrt{25} = 2 \times 5 = 10$.
-    \item Écrire $\sqrt{72}$ sous la forme $a\sqrt{b}$ où $a$ et $b$ sont des entiers avec $b$ le plus petit possible :
-    \[
-    \sqrt{72} = \sqrt{36 \times 2} = \sqrt{36} \times \sqrt{2} = 6\sqrt{2}
-    \]
-\end{itemize}
+\subsubsection*{\color{myred} Exemple }
 
 \subsection*{\color{myred} 2. Quotient de deux racines carrées }
 
-\subsection*{\color{myred} Propriété}
-Pour tout réel $a \geqslant 0$ et tout réel $b > 0$ :
-\[
-\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}
-\]
+\subsubsection*{\color{myred} Propriété}
 
-\subsection*{\color{myred} Exemple }
-\[
-\sqrt{\frac{49}{81}} = \frac{\sqrt{49}}{\sqrt{81}} = \frac{7}{9}
-\]
+\subsubsection*{\color{myred} Exemple }
 
 \subsection*{\color{myred} Application 1}
-Simplifier les expressions suivantes :
-\[
-E = \sqrt{50} - 3\sqrt{18} + 2\sqrt{8} \quad \text{et} \quad F = \sqrt{27} \times \sqrt{3}
-\]
 
 \subsection*{\color{myred} Correction }
-\begin{itemize}[label=$\bullet$]
-    \item $E = \sqrt{25 \times 2} - 3\sqrt{9 \times 2} + 2\sqrt{4 \times 2} = 5\sqrt{2} - 3(3\sqrt{2}) + 2(2\sqrt{2}) = (5 - 9 + 4)\sqrt{2} = 0\sqrt{2} = 0$
-    \item $F = \sqrt{27 \times 3} = \sqrt{81} = 9$
-\end{itemize}
 
 %=========================================================
 %    III. Rendre Rationnel Le Dénominateur D'un Quotient
 %=========================================================
-
 \section*{\color{myred}III. Rendre Rationnel Le Dénominateur D'un Quotient}
 
 \subsection*{\color{myred} Activité 3 }
-Soit le nombre $X = \frac{6}{\sqrt{3}}$.\\
-En multipliant le numérateur et le dénominateur par $\sqrt{3}$, écrire $X$ sans radical au dénominateur.
 
 \subsection*{\color{myred} 1. Premier cas : le dénominateur est de la forme $\sqrt{a}$ }
 
-\subsection*{\color{myred} Propriété }
-Pour transformer un quotient de la forme $\frac{A}{\sqrt{a}}$ ($a > 0$) en un quotient sans radical au dénominateur, on multiplie le numérateur et le dénominateur par $\sqrt{a}$ :
-\[
-\frac{A}{\sqrt{a}} = \frac{A \times \sqrt{a}}{\sqrt{a} \times \sqrt{a}} = \frac{A\sqrt{a}}{a}
-\]
+\subsubsection*{\color{myred} Propriété }
 
-\subsection*{\color{myred} Exemple }
-\[
-\frac{5}{\sqrt{2}} = \frac{5 \times \sqrt{2}}{\sqrt{2} \times \sqrt{2}} = \frac{5\sqrt{2}}{2}
-\]
+\subsubsection*{\color{myred} Exemple }
 
 \subsection*{\color{myred} 2. Deuxième cas : le dénominateur contient une somme }
 
-\subsection*{\color{myred} Définition}
-Les expressions $(a + \sqrt{b})$ et $(a - \sqrt{b})$ sont dites \textbf{expressions conjuguées} l'une de l'autre.\\
-Leur produit supprime le radical grâce à l'identité remarquable $(x-y)(x+y) = x^2 - y^2$ :
-\[
-(a + \sqrt{b})(a - \sqrt{b}) = a^2 - (\sqrt{b})^2 = a^2 - b
-\]
+\subsubsection*{\color{myred} Définition}
 
-\subsection*{\color{myred} Exemple 1}
-L'expression conjuguée de $2 + \sqrt{3}$ est $2 - \sqrt{3}$.\\
-Leur produit vaut : $(2 + \sqrt{3})(2 - \sqrt{3}) = 2^2 - (\sqrt{3})^2 = 4 - 3 = 1$.
+\subsubsection*{\color{myred} Exemple 1}
 
-\subsection*{\color{myred} Remarque }
-De même, l'expression conjuguée de $\sqrt{a} + \sqrt{b}$ est $\sqrt{a} - \sqrt{b}$.
+\subsubsection*{\color{myred} Remarque }
 
-\subsection*{\color{myred} Exemple 2}
-Rendre rationnel le dénominateur de $G = \frac{2}{3 + \sqrt{5}}$ :
-\[
-G = \frac{2(3 - \sqrt{5})}{(3 + \sqrt{5})(3 - \sqrt{5})} = \frac{2(3 - \sqrt{5})}{3^2 - (\sqrt{5})^2} = \frac{2(3 - \sqrt{5})}{9 - 5} = \frac{2(3 - \sqrt{5})}{4} = \frac{3 - \sqrt{5}}{2}
-\]
+\subsubsection*{\color{myred} Exemple 2}
 
-\subsection*{\color{myred} Exemple 3}
-Rendre rationnel le dénominateur de $H = \frac{1}{\sqrt{7} - \sqrt{2}}$ :
-\[
-H = \frac{1(\sqrt{7} + \sqrt{2})}{(\sqrt{7} - \sqrt{2})(\sqrt{7} + \sqrt{2})} = \frac{\sqrt{7} + \sqrt{2}}{7 - 2} = \frac{\sqrt{7} + \sqrt{2}}{5}
-\]
+\subsubsection*{\color{myred} Exemple 3}
 
 \subsection*{\color{myred} Application }
-Écrire les nombres suivants sans radical au dénominateur :
-\[
-K = \frac{3}{\sqrt{6}} \quad \text{et} \quad L = \frac{4}{\sqrt{5} - 1}
-\]
 
 \subsection*{\color{myred} Correction }
-\begin{itemize}[label=$\bullet$]
-    \item $K = \frac{3\sqrt{6}}{\sqrt{6} \times \sqrt{6}} = \frac{3\sqrt{6}}{6} = \frac{\sqrt{6}}{2}$
-    \item $L = \frac{4(\sqrt{5} + 1)}{(\sqrt{5} - 1)(\sqrt{5} + 1)} = \frac{4(\sqrt{5} + 1)}{5 - 1} = \frac{4(\sqrt{5} + 1)}{4} = \sqrt{5} + 1$
-\end{itemize}
 
 %=========================================================
 %    IV. Résolution de l'équation $x^{2}=a$
 %=========================================================
-
 \section*{\color{myred}IV. Résolution de l'équation $x^{2}=a$}
 
 \subsection*{\color{myred} Activité 4 }
-Résoudre dans $\mathbb{R}$ les équations suivantes :
-1. $x^2 = 16$\\
-2. $x^2 = 0$\\
-3. $x^2 = -9$
 
-\subsection*{\color{myred} Propriété et Synthèse}
-Soit $a$ un nombre réel. Pour résoudre l'équation $x^2 = a$ dans $\mathbb{R}$ :
-\begin{itemize}[label=$\bullet$]
-    \item Si $a > 0$, l'équation admet **deux solutions réelles distinctes** : $S = \{-\sqrt{a} ; \sqrt{a}\}$.
-    \item Si $a = 0$, l'équation admet **une unique solution** : $S = \{0\}$.
-    \item Si $a < 0$, l'équation n'admet **aucune solution réelle** : $S = \emptyset$.
-\end{itemize}
+\subsection*{\color{myred} Propriété }
 
-\subsection*{\color{myred} Exemples}
-\begin{enumerate}
-    \item $x^2 = 25 \implies x = \sqrt{25}$ ou $x = -\sqrt{25}$, soit $S = \{-5 ; 5\}$.
-    \item $x^2 = 7 \implies x = \sqrt{7}$ ou $x = -\sqrt{7}$, soit $S = \{-\sqrt{7} ; \sqrt{7}\}$.
-    \item $x^2 = -4 \implies S = \emptyset$ (un carré ne peut pas être négatif dans $\mathbb{R}$).
-\end{enumerate}
+\subsubsection*{\color{myred} Exemple 1}
 
+\subsubsection*{\color{myred} Exemple 2}
+
+\subsubsection*{\color{myred} Exemple 3}
+
+\subsection*{\color{myred} Application }
+
+\subsection*{\color{myred} Correction }
+
+\subsubsection*{\color{myred} Exercice 1}
+
+\subsubsection*{\color{myred} Exercice 2}
+
+\subsubsection*{\color{myred} Exercice 3}
+
+\subsubsection*{\color{myred} Exercice 1}
 \end{document}
