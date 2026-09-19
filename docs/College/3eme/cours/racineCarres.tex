@@ -309,19 +309,57 @@ Soient $a$ et $b$ deux nombres réels positifs tels que $b \neq 0$. On a :
 \subsection*{\color{myred} 2. Deuxième cas : le dénominateur contient une somme }
 
 \subsubsection*{\color{myred} Définition}
+\textit{Soient $\boldsymbol{a}$ et $\boldsymbol{b}$ deux nombres réels.}
 
+\vspace{0.2cm}
+\begin{itemize}
+    \item[\small$\blacktriangleright$] \textit{Le \textbf{conjugué} de $\mathbf{(a + b)}$ est $\mathbf{(a - b)}$.}
+    \item[\small$\blacktriangleright$] \textit{Le \textbf{conjugué} de $\mathbf{(a - b)}$ est $\mathbf{(a + b)}$.}
+\end{itemize}
 \subsubsection*{\color{myred} Exemple 1}
-
+\begin{itemize}[label=\textcolor{teal}{$\blacktriangleright$}]
+    \item Le conjugué de $2 + \sqrt{5}$ est $2 - \sqrt{5}$.
+    \item Le conjugué de $\sqrt{3} - \sqrt{7}$ est $\sqrt{3} + \sqrt{7}$.
+\end{itemize}
 \subsubsection*{\color{myred} Remarque }
-
+Pour éliminer la racine carrée du dénominateur, on multiplie le numérateur et le dénominateur par
+le conjugué du dénominateur.
 \subsubsection*{\color{myred} Exemple 2}
-
+\[
+\begin{aligned}
+A &= \frac{2}{5 - \sqrt{3}}\\ 
+&= \frac{2 \times \left(5 + \sqrt{3}\right)}{\left(5 - \sqrt{3}\right) \times \left(5 + \sqrt{3}\right)}\\ 
+&= \frac{2 \left(5 + \sqrt{3}\right)}{5^2 - \left(\sqrt{3}\right)^2} \\
+&= \frac{2 \left(5 + \sqrt{3}\right)}{25 - 3}\\ &= \frac{2 \left(5 + \sqrt{3}\right)}{22}\\ 
+&= \frac{5 + \sqrt{3}}{11}
+\end{aligned}
+\]
 \subsubsection*{\color{myred} Exemple 3}
-
+\[
+\begin{aligned}
+B &= \frac{6}{\sqrt{8} - \sqrt{2}}\\ &= \frac{6 \times \left(\sqrt{8} + \sqrt{2}\right)}{\left(\sqrt{8} - \sqrt{2}\right) \times \left(\sqrt{8} + \sqrt{2}\right)}\\ &= \frac{6 \left(\sqrt{8} + \sqrt{2}\right)}{\left(\sqrt{8}\right)^2 - \left(\sqrt{2}\right)^2} \\
+&= \frac{6 \left(\sqrt{8} + \sqrt{2}\right)}{8 - 2}\\ &= \frac{6 \left(\sqrt{8} + \sqrt{2}\right)}{6}\\ &= \sqrt{8} + \sqrt{2}\\ &= 2\sqrt{2} + \sqrt{2}\\ &= 3\sqrt{2}
+\end{aligned}
+\]
 \subsection*{\color{myred} Application }
-
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Application}]
+Éliminer le radical du dénominateur des fractions suivantes :
+\[
+A = \frac{3}{\sqrt{11}} \quad;\quad B = \frac{9}{2\sqrt{5}} \quad;\quad C = \frac{2}{\sqrt{3} - 4} \quad;\quad D = \frac{2\sqrt{7}}{\sqrt{7} - 2}
+\]
+\end{tcolorbox}
 \subsection*{\color{myred} Correction }
-
+\begin{align*}
+A &= \frac{3}{\sqrt{11}} & C &= \frac{2}{\sqrt{3} - 4} \\
+&= \frac{3 \times \sqrt{11}}{\sqrt{11} \times \sqrt{11}} & &= \frac{2 \times \left(\sqrt{3} + 4\right)}{\left(\sqrt{3} - 4\right)\left(\sqrt{3} + 4\right)} \\
+&= \frac{3\sqrt{11}}{11} & &= \frac{2\left(\sqrt{3} + 4\right)}{3 - 16} \\
+& & &= \frac{2\left(\sqrt{3} + 4\right)}{-13} \\
+& & &= -\frac{2\sqrt{3} + 8}{13} \\[1.5em]
+B &= \frac{9}{2\sqrt{5}} & D &= \frac{2\sqrt{7}}{\sqrt{7} - 2} \\
+&= \frac{9 \times \sqrt{5}}{2\sqrt{5} \times \sqrt{5}} & &= \frac{2\sqrt{7}\left(\sqrt{7} + 2\right)}{\left(\sqrt{7} - 2\right)\left(\sqrt{7} + 2\right)} \\
+&= \frac{9\sqrt{5}}{2 \times 5} & &= \frac{2 \times 7 + 4\sqrt{7}}{7 - 4} \\
+&= \frac{9\sqrt{5}}{10} & &= \frac{14 + 4\sqrt{7}}{3}
+\end{align*}
 %=========================================================
 %    IV. Résolution de l'équation $x^{2}=a$
 %=========================================================
