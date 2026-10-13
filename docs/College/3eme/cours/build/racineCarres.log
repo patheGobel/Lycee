@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  13 OCT 2026 09:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  13 OCT 2026 09:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1294,8 +1294,8 @@ Package rerunfilecheck Info: File `racineCarres.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42109 strings out of 467533
- 983600 string characters out of 5422138
+ 42114 strings out of 467533
+ 983635 string characters out of 5422138
  1537530 words of memory out of 5000000
  70249 multiletter control sequences out of 15000+600000
  723611 words of font info for 117 fonts, out of 8000000 for 9000
@@ -1312,10 +1312,10 @@ i12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/
 fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on build/racineCarres.pdf (7 pages, 234855 bytes).
+Output written on build/racineCarres.pdf (7 pages, 235778 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 246 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
+ 72 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
