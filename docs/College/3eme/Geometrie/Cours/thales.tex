@@ -80,7 +80,51 @@
 %=========================================================
 \section*{\color{myred}I. Le théorème de Thalès direct}
 \subsubsection*{\color{myred} Activité 1}
-
+\begin{enumerate}
+    \item Tracer un triangle \textbf{ABCG}.
+    \begin{itemize}
+        \item[\textbullet] Placer un point \textbf{M} sur la droite \textbf{(AB)}, n'appartenant pas à la demi-droite \textbf{[AB)}.
+        \item[\textbullet] Construire la parallèle à la droite \textbf{(BC)} passant par \textbf{M} : elle coupe la droite \textbf{(AC)} en \textbf{N}.
+    \end{itemize}
+    
+    \item Mesurer les segments \textbf{AN}, \textbf{AM}, \textbf{AB}, \textbf{AC}, \textbf{MN} et \textbf{BC}.
+    
+    \item Comparer les quotients : $\dfrac{AB}{AM}$, $\dfrac{AC}{AN}$ et $\dfrac{BC}{MN}$.
+    
+    \item Construire une figure semblable avec d'autres dimensions et calculer à nouveau les quotients de la question 3. Que peux-tu conjecturer ?
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Coordonnées des points
+    \coordinate (M) at (-2,1.5);
+    \coordinate (N) at (2,1.5);
+    \coordinate (C) at (-2,-1.5);
+    \coordinate (B) at (2,-1.5);
+    
+    % Point d'intersection A (légèrement décalé à droite comme sur l'image)
+    \coordinate (A) at (0.2,0);
+    
+    % Tracé des droites horizontales (en marron/rouge)
+    \draw[red!60!black, thick] (-2.6, 1.5) -- (2.6, 1.5);
+    \draw[red!60!black, thick] (-2.6, -1.5) -- (2.6, -1.5);
+    
+    % Tracé des segments M-B et C-N
+    \draw[thick] (M) -- (B);
+    \draw[thick] (C) -- (N);
+    
+    % Dessin des points M, N, C, B sous forme de cercles blancs cerclés
+    \foreach \p in {M, N, C, B} {
+        \draw[thick, fill=white] (\p) circle (2pt);
+    }
+    
+    % Étiquettes des points
+    \node[above left] at (M) {$M$};
+    \node[above right] at (N) {$N$};
+    \node[below left] at (C) {$C$};
+    \node[below right] at (B) {$B$};
+    \node[right=2pt] at (A) {$A$};
+\end{tikzpicture}
+\end{center}
 \subsection*{\color{myred}1. Énoncé du théorème}
 
 \subsection*{\color{myred}Remarque}
