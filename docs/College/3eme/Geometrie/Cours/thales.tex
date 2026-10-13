@@ -132,7 +132,59 @@ Si la droite $(MN)$ est parallèle à la droite $(BC)$, alors on a l'égalité d
 
 $$\frac{AM}{AB} = \frac{AN}{AC} = \frac{MN}{BC}$$
 \subsection*{\color{myred}Remarque}
+\noindent Trois configurations illustrent ce théorème.
 
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={font=\large}]
+
+% Figure 1
+\begin{scope}
+\draw (0,0) -- (2,4);
+\draw (2,4) -- (4,0);
+\draw[red!60!black] (0.5,2) -- (3.5,2);
+\draw[red!60!black] (-0.3,0) -- (4.3,0);
+
+\node[above right] at (2,4) {$A$};
+\node[left] at (1,2) {$M$};
+\node[right] at (3,2) {$N$};
+\node[left] at (0,0) {$B$};
+\node[right] at (4,0) {$C$};
+
+\end{scope}
+
+% Figure 2
+\begin{scope}[xshift=5.5cm]
+\draw (0,4) -- (2,0);
+\draw (3,4) -- (1,0);
+\draw[red!60!black] (-0.2,3.5) -- (3.2,3.5);
+\draw[red!60!black] (0.5,2) -- (2.5,2);
+
+\node[above right] at (0.25,3.5) {$M$};
+\node[above left] at (2.75,3.5) {$N$};
+\node[left] at (1,2) {$B$};
+\node[right] at (2,2) {$C$};
+\node[right] at (1.5,1) {$A$};
+
+\end{scope}
+
+% Figure 3
+\begin{scope}[xshift=10cm]
+\draw (-0.5,4) -- (3.5,0);
+\draw (-0.5,0) -- (3.5,4);
+\draw[red!60!black] (-0.3,3.5) -- (3.3,3.5);
+\draw[red!60!black] (-0.3,0.5) -- (3.3,0.5);
+
+\node[above right] at (0,3.5) {$M$};
+\node[above left] at (3,3.5) {$N$};
+\node[right] at (1.5,2) {$A$};
+\node[below left] at (0,0.5) {$C$};
+\node[below right] at (3,0.5) {$B$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
 \subsection*{\color{myred} 2. Calcul d'une longueur}
 \subsubsection*{\color{myred} Exemple 1}
 \subsection*{\color{myred} Application 1}
