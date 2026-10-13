@@ -246,8 +246,78 @@ $$AN = \frac{2 \times 7}{5} = \frac{14}{5} = 2{,}8\text{ cm}$$
 \end{center}
 
 \subsection*{\color{myred} Application 1}
-\subsection*{\color{myred} Correction 1}
+Les points $F$, $G$, $H$ sont alignés et les points $D$, $G$, $E$ le sont également. Les droites $(EF)$ et $(HD)$ sont parallèles.
 
+On sait que : $GH = 15\text{ cm}$ ; $GF = 6\text{ cm}$ ; $GD = 14{,}2\text{ cm}$ et $HD = 7{,}3\text{ cm}$.
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % --- Définition des coordonnées ---
+    % G est le centre d'intersection.
+    \coordinate (G) at (0, 0);
+    
+    % Points du premier segment sécant : E (haut-gauche) - D (bas-droite)
+    \coordinate (E) at (-1.5, 1.0); % Ajusté pour l'angle visuel
+    \coordinate (D) at (2.25, -1.5); 
+    
+    % Points du deuxième segment sécant : F (haut-droite) - H (bas-gauche)
+    \coordinate (F) at (1.5, 1.2); 
+    \coordinate (H) at (-2.25, -1.8);
+    
+    % Intersection G est implicite à l'origine (0,0) où les lignes se croisent.
+    
+    % --- Tracé des deux segments sécants noirs (ED et FH) ---
+    \draw[thick] (E) -- (D);
+    \draw[thick] (F) -- (H);
+    
+    % --- Tracé des segments horizontaux marron/rouge (parallèles EF et HD) ---
+    \draw[red!60!black, thick] (E) -- (F); % Segment du haut
+    \draw[red!60!black, thick] (H) -- (D); % Segment du bas
+    
+    % --- Points sous forme de cercles blancs cerclés de noir ---
+    \foreach \p in {E, D, F, H} {
+        \draw[thick, fill=white] (\p) circle (2pt);
+    }
+    
+    % --- Étiquettes des points ---
+    \node[above left] at (E) {$E$};
+    \node[right] at (D) {$D$};
+    \node[above right] at (F) {$F$};
+    \node[below left] at (H) {$H$};
+    % G est l'intersection, label décalé pour lisibilité
+    \node[below left=2pt] at (0.2, 0) {$G$};
+    
+\end{tikzpicture}
+\end{center}
+Calculer les longueurs $EF$ et $EG$.
+\subsection*{\color{myred} Correction 1}
+\textbf{Rappel des données :}
+\begin{itemize}
+    \item Les points $F, G, H$ sont alignés et les points $D, G, E$ sont alignés.
+    \item Les droites $(EF)$ et $(HD)$ sont parallèles.
+    \item $GH = 15\text{ cm}$ ; $GF = 6\text{ cm}$ ; $GD = 14{,}2\text{ cm}$ et $HD = 7{,}3\text{ cm}$.
+\end{itemize}
+
+\textbf{Calcul de la longueur $EF$ :}
+\begin{enumerate}
+    \item Les droites $(FH)$ et $(ED)$ sont sécantes en $G$.
+    \item Les droites $(EF)$ et $(HD)$ sont parallèles.
+    \item D'après le théorème de Thalès (dans sa configuration croisée), on a l'égalité des quotients :
+    $$\frac{GE}{GD} = \frac{GF}{GH} = \frac{EF}{HD}$$
+\end{enumerate}
+
+En utilisant les quotients $\frac{GF}{GH} = \frac{EF}{HD}$ et en remplaçant par les valeurs numériques connues :
+$$\frac{6}{15} = \frac{EF}{7{,}3}$$
+
+Par un produit en croix, on obtient :
+$$EF = \frac{6 \times 7{,}3}{15} = \frac{43{,}8}{15} = 2{,}92\text{ cm}$$
+
+\vspace{0.3cm}
+\textbf{Calcul de la longueur $EG$ :}
+En utilisant cette fois les quotients $\frac{GE}{GD} = \frac{GF}{GH}$ :
+$$\frac{GE}{14{,}2} = \frac{6}{15}$$
+
+Par un produit en croix :
+$$GE = \frac{14{,}2 \times 6}{15} = \frac{85{,}2}{15} = 5{,}68\text{ cm}$$
 \subsection*{\color{myred} 3. Montrer que deux droites ne sont pas parallèles}
 \subsubsection*{\color{myred} Exemple 2}
 \subsection*{\color{myred} Application 2}
