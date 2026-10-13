@@ -1270,7 +1270,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvi
-ps/lm/lm-mathit.enc}] [2] (build/thales.aux)
+ps/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [2] (build
+/thales.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1279,9 +1280,9 @@ Package rerunfilecheck Info: File `thales.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42047 strings out of 467533
- 982876 string characters out of 5422138
- 1530494 words of memory out of 5000000
+ 42048 strings out of 467533
+ 982885 string characters out of 5422138
+ 1532494 words of memory out of 5000000
  70244 multiletter control sequences out of 15000+600000
  671622 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1289,10 +1290,10 @@ Here is how much of TeX's memory you used:
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr17.pfb>
-Output written on build/thales.pdf (2 pages, 91380 bytes).
+Output written on build/thales.pdf (2 pages, 93525 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  28 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
