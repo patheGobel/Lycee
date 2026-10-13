@@ -1,0 +1,192 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{color, soul}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{LE THÉORÈME DE THALÈS}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 3 ème}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%    I. La racine carrée d'un nombre réel positif
+%=========================================================
+\section*{\color{myred}I. Le théorème de Thalès direct}
+
+\subsection*{\color{myred} Activité 1}
+
+\begin{enumerate}
+    \item Tracer un triangle \textbf{ABCG}.
+    \begin{itemize}
+        \item[\textbullet] Placer un point \textbf{M} sur la droite \textbf{(AB)}, n'appartenant pas à la demi-droite \textbf{[AB)}.
+        \item[\textbullet] Construire la parallèle à la droite \textbf{(BC)} passant par \textbf{M} : elle coupe la droite \textbf{(AC)} en \textbf{N}.
+    \end{itemize}
+    
+    \item Mesurer les segments \textbf{AN}, \textbf{AM}, \textbf{AB}, \textbf{AC}, \textbf{MN} et \textbf{BC}.
+    
+    \item Comparer les quotients : $\dfrac{AB}{AM}$, $\dfrac{AC}{AN}$ et $\dfrac{BC}{MN}$.
+    
+    \item Construire une figure semblable avec d'autres dimensions et calculer à nouveau les quotients de la question 3. Que peux-tu conjecturer ?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Coordonnées des points
+    \coordinate (M) at (-2,1.5);
+    \coordinate (N) at (2,1.5);
+    \coordinate (C) at (-2,-1.5);
+    \coordinate (B) at (2,-1.5);
+    
+    % Point d'intersection A (légèrement décalé à droite comme sur l'image)
+    \coordinate (A) at (0.2,0);
+    
+    % Tracé des droites horizontales (en marron/rouge)
+    \draw[red!60!black, thick] (-2.6, 1.5) -- (2.6, 1.5);
+    \draw[red!60!black, thick] (-2.6, -1.5) -- (2.6, -1.5);
+    
+    % Tracé des segments M-B et C-N
+    \draw[thick] (M) -- (B);
+    \draw[thick] (C) -- (N);
+    
+    % Dessin des points M, N, C, B sous forme de cercles blancs cerclés
+    \foreach \p in {M, N, C, B} {
+        \draw[thick, fill=white] (\p) circle (2pt);
+    }
+    
+    % Étiquettes des points
+    \node[above left] at (M) {$M$};
+    \node[above right] at (N) {$N$};
+    \node[below left] at (C) {$C$};
+    \node[below right] at (B) {$B$};
+    \node[right=2pt] at (A) {$A$};
+\end{tikzpicture}
+\end{center}
+\subsection*{\color{myred}1. Énoncé du théorème}
+Soit deux droites $(BM)$ et $(CN)$ sécantes en un point $A$. 
+
+Si la droite $(MN)$ est parallèle à la droite $(BC)$, alors on a l'égalité des quotients suivante :
+
+$$\frac{AM}{AB} = \frac{AN}{AC} = \frac{MN}{BC}$$
+
+\subsection*{\color{myred}Remarque}
+\noindent Trois configurations illustrent ce théorème.
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={font=\large}]
+
+% Figure 1
+\begin{scope}
+\draw (0,0) -- (2,4);
+\draw (2,4) -- (4,0);
+\draw[red!60!black] (0.5,2) -- (3.5,2);
+\draw[red!60!black] (-0.3,0) -- (4.3,0);
+
+\node[above right] at (2,4) {$A$};
+\node[left] at (1,2) {$M$};
+\node[right] at (3,2) {$N$};
+\node[left] at (0,0) {$B$};
+\node[right] at (4,0) {$C$};
+
+\end{scope}
+
+% Figure 2
+\begin{scope}[xshift=5.5cm]
+\draw (0,4) -- (2,0);
+\draw (3,4) -- (1,0);
+\draw[red!60!black] (-0.2,3.5) -- (3.2,3.5);
+\draw[red!60!black] (0.5,2) -- (2.5,2);
+
+\node[above right] at (0.25,3.5) {$M$};
+\node[above left] at (2.75,3.5) {$N$};
+\node[left] at (1,2) {$B$};
+\node[right] at (2,2) {$C$};
+\node[right] at (1.5,1) {$A$};
+
+\end{scope}
+
+% Figure 3
+\begin{scope}[xshift=10cm]
+\draw (-0.5,4) -- (3.5,0);
+\draw (-0.5,0) -- (3.5,4);
+\draw[red!60!black] (-0.3,3.5) -- (3.3,3.5);
+\draw[red!60!black] (-0.3,0.5) -- (3.3,0.5);
+
+\node[above right] at (0,3.5) {$M$};
+\node[above left] at (3,3.5) {$N$};
+\node[right] at (1.5,2) {$A$};
+\node[below left] at (0,0.5) {$C$};
+\node[below right] at (3,0.5) {$B$};
+
+\end{scope}
+
+\end{tikzpicture}
+\end{center}
+\end{document}
