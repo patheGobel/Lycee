@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  14 OCT 2026 22:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  14 OCT 2026 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1284,8 +1284,8 @@ Package rerunfilecheck Info: File `thales.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42131 strings out of 467533
- 983838 string characters out of 5422138
+ 42132 strings out of 467533
+ 983849 string characters out of 5422138
  1539494 words of memory out of 5000000
  70307 multiletter control sequences out of 15000+600000
  685969 words of font info for 96 fonts, out of 8000000 for 9000
@@ -1295,10 +1295,10 @@ Here is how much of TeX's memory you used:
 pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmsy10.pfb>
-Output written on build/thales.pdf (5 pages, 112855 bytes).
+Output written on build/thales.pdf (5 pages, 113449 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -221,19 +221,6 @@ Pour calculer une longueur :
 Soit un triangle $ABC$ tel que $AM = 2$~cm, $AB = 5$~cm et $AC = 7$~cm. 
 
 La droite $(MN)$ est parallèle à $(BC)$. Calculer $AN$.
-\subsubsection*{\color{myred} Solution 1}
-\begin{itemize}
-    \item Les droites $(AB)$ et $(AC)$ sont sécantes en $A$.
-    \item Les droites $(MN)$ et $(BC)$ sont parallèles.
-\end{itemize}
-D'après le théorème de Thalès, on a :
-$$\frac{AM}{AB} = \frac{AN}{AC}$$
-
-En remplaçant par les valeurs :
-$$\frac{2}{5} = \frac{AN}{7}$$
-
-On calcule $AN$ avec le produit en croix :
-$$AN = \frac{2 \times 7}{5} = \frac{14}{5} = 2{,}8\text{ cm}$$
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -263,10 +250,52 @@ $$AN = \frac{2 \times 7}{5} = \frac{14}{5} = 2{,}8\text{ cm}$$
     }
 \end{tikzpicture}
 \end{center}
+\subsubsection*{\color{myred} Solution 1}
+\begin{itemize}
+    \item Les droites $(AB)$ et $(AC)$ sont sécantes en $A$.
+    \item Les droites $(MN)$ et $(BC)$ sont parallèles.
+\end{itemize}
+D'après le théorème de Thalès, on a :
+$$\frac{AM}{AB} = \frac{AN}{AC}$$
+
+En remplaçant par les valeurs :
+$$\frac{2}{5} = \frac{AN}{7}$$
+
+On calcule $AN$ avec le produit en croix :
+$$AN = \frac{2 \times 7}{5} = \frac{14}{5} = 2{,}8\text{ cm}$$
+
 \subsubsection*{\color{myred} Exemple 2}
 Soit un triangle $ABC$ tel que $AM = 2$~cm, $AB = 5$~cm, $AC = 7$~cm et $BC = 6$~cm. 
 La droite $(MN)$ est parallèle à $(BC)$. Calculer la longueur $MN$.
-
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Définition des coordonnées
+    \coordinate (A) at (0,4);
+    \coordinate (B) at (-2,0);
+    \coordinate (C) at (2,0);
+    \coordinate (M) at (-1,2);
+    \coordinate (N) at (1,2);
+    
+    % Tracé du grand triangle ABC
+    \draw[thick] (B) -- (A) -- (C) -- cycle;
+    
+    % Tracé du segment MN (parallèle à BC)
+    \draw[thick, red!60!black] (M) -- (N);
+    
+    % Étiquettes des sommets et points
+    \node[above] at (A) {$A$};
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+    \node[left] at (M) {$M$};
+    \node[right] at (N) {$N$};
+    
+    % Optionnel : petits cercles blancs aux intersections
+    \foreach \p in {A,B,C,M,N} {
+        \draw[thick, fill=white] (\p) circle (1.5pt);
+    }
+\end{tikzpicture}
+\end{center}
+\subsubsection*{\color{myred} Solution 2}
 \begin{itemize}
     \item Les droites $(AB)$ et $(AC)$ sont sécantes en $A$.
     \item Les droites $(MN)$ et $(BC)$ sont parallèles.
