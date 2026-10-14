@@ -398,6 +398,98 @@ Pour démontrer que deux droites sont parallèles à l'aide de la réciproque du
 \subsubsection*{\color{myred}Attention}
 Il est impératif de bien vérifier que les points sont alignés dans le \textbf{même ordre} sur les deux droites sécantes avant d'appliquer la réciproque.
 
+\section*{Configuration}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Figure 1: Triangle ABC avec (MN) parallèle à (BC) - Sommet A en haut, M sur [AB], N sur [AC]
+    \begin{scope}[shift={(0,0)}]
+        \coordinate (A) at (2,4);
+        \coordinate (B) at (0.5,0.5);
+        \coordinate (C) at (3.5,0.5);
+        \coordinate (M) at (1.25, 2.25);
+        \coordinate (N) at (2.75, 2.25);
+
+        \draw (A) -- (B) -- (C) -- cycle;
+        \draw (M) -- (N);
+
+        \node[above] at (A) {$A$};
+        \node[below left] at (B) {$B$};
+        \node[below right] at (C) {$C$};
+        \node[left] at (M) {$M$};
+        \node[right] at (N) {$N$};
+    \end{scope}
+
+    % Figure 2: Configuration 2 (A en haut, B sur [AM], C sur [AN], (BC) // (MN))
+    \begin{scope}[shift={(5,0)}]
+        \coordinate (A) at (2,4);
+        \coordinate (B) at (1.25,2.25);
+        \coordinate (C) at (2.75,2.25);
+        \coordinate (M) at (0.5,0.5);
+        \coordinate (N) at (3.5,0.5);
+
+        \draw (A) -- (M) -- (N) -- cycle;
+        \draw (B) -- (C);
+
+        \node[above] at (A) {$A$};
+        \node[above left] at (B) {$B$};
+        \node[above right] at (C) {$C$};
+        \node[below left] at (M) {$M$};
+        \node[below right] at (N) {$N$};
+    \end{scope}
+
+    % Figure 3: Papillon (Triangles AMN et ABC opposés par le sommet A)
+    \begin{scope}[shift={(10,0)}]
+        \coordinate (C) at (1.25,4);
+        \coordinate (B) at (2.75,4);
+        \coordinate (A) at (2,3);
+        \coordinate (M) at (0.5,0.5);
+        \coordinate (N) at (3.5,0.5);
+
+        \draw (C) -- (B);
+        \draw (M) -- (N);
+        \draw (C) -- (N);
+        \draw (B) -- (M);
+
+        \node[above left] at (C) {$C$};
+        \node[above right] at (B) {$B$};
+        \node[below left] at (M) {$M$};
+        \node[below right] at (N) {$N$};
+        \node[left] at (A) {$A$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\vspace{1cm}
+
+\section*{Déductogramme}
+
+\begin{center}
+\begin{tikzpicture}[box/.style={draw, rectangle, align=center, inner sep=6pt, font=\small}]
+
+    % --- Boîtes de la prémisse (Si) avec coordonnées absolues ---
+    \node[box] (box1) at (0,0) {$ABC$ et $AMN$ sont\\deux triangles};
+    \node[box] (box2) at (5.2,0) {$A, M, B$ alignés dans le\\même ordre que $A, N, C$};
+    \node[box] (box3) at (10.2,0) {$\dfrac{AM}{AB} = \dfrac{AN}{AC}$};
+
+    % --- Étiquette "Si" ---
+    \node[font=\bfseries] at (-3,0) {Si};
+
+    % --- Boîte de la conclusion (Alors) ---
+    \node[box] (box4) at (5.2,-2.2) {$(MN) \parallel (BC)$};
+
+    % --- Étiquette "Alors" ---
+    \node[font=\bfseries] at (2.4,-2.2) {Alors};
+
+    % --- Connexions ---
+    \draw (box1.south) -- (box4.north);
+    \draw (box2.south) -- (box4.north);
+    \draw (box3.south) -- (box4.north);
+
+\end{tikzpicture}
+\end{center}
+
+
 \subsubsection*{\color{myred}Exemple}
 Soit un triangle $ABC$ tel que $AM = 2$~cm, $AB = 5$~cm, $AN = 2{,}8$~cm et $AC = 7$~cm. Les droites $(MN)$ et $(BC)$ sont-elles parallèles ?
 
