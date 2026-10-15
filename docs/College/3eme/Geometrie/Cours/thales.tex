@@ -514,4 +514,120 @@ Sur une figure, on donne $AE = 3$~cm, $AB = 7$~cm, $AF = 4{,}5$~cm et $AC = 10{,
 \end{enumerate}
 D'après la réciproque du théorème de Thalès, les droites \textbf{$(EF)$ et $(BC)$ sont parallèles}.
 
+\section*{\color{myred}III. Le théorème de Thalès dans le cas du Trapèze}
+
+\noindent
+Soit $ABCD$ un trapèze et $M$ un point de $(AD)$, $N$ un point de $(BC)$ :\\
+Si $(AB) \parallel (MN) \parallel (DC)$, alors on a :
+\[
+\dfrac{AM}{AD} = \dfrac{BN}{BC} \quad ; \quad \dfrac{AM}{MD} = \dfrac{BN}{NC} \quad ; \quad \dfrac{DM}{DA} = \dfrac{CN}{CB}
+\]
+
+\vspace{0.5cm}
+\section*{Trapèzes en configuration de Thalès}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+
+    % --- Premier trapèze ---
+    \begin{scope}[shift={(0,0)}]
+        % Sommets du trapèze ABCD
+        \coordinate (A) at (0,3);
+        \coordinate (B) at (3,3);
+        \coordinate (C) at (4,0);
+        \coordinate (D) at (-1,0);
+        
+        % Points M sur [AD] et N sur [BC]
+        \coordinate (M) at (-0.5, 1.5);
+        \coordinate (N) at (3.5, 1.5);
+        
+        % Tracés
+        \draw (A) -- (B) -- (C) -- (D) -- cycle;
+        \draw (M) -- (N);
+        
+        % Étiquettes
+        \node[above left] at (A) {$A$};
+        \node[above right] at (B) {$B$};
+        \node[below right] at (C) {$C$};
+        \node[below left] at (D) {$D$};
+        \node[left] at (M) {$M$};
+        \node[right] at (N) {$N$};
+    \end{scope}
+
+    % --- Deuxième trapèze ---
+    \begin{scope}[shift={(6.5,0)}]
+        % Sommets du trapèze MNCelui-ci : M et N en haut, D et C en bas
+        \coordinate (M_top) at (0,3);
+        \coordinate (N_top) at (3,3);
+        \coordinate (C_bot) at (4,0);
+        \coordinate (D_bot) at (-1,0);
+        
+        % Points A sur [MD] et B sur [NC]
+        \coordinate (A_pt) at (-0.5, 1.5);
+        \coordinate (B_pt) at (3.5, 1.5);
+        
+        % Tracés
+        \draw (M_top) -- (N_top) -- (C_bot) -- (D_bot) -- cycle;
+        \draw (A_pt) -- (B_pt);
+        
+        % Étiquettes
+        \node[above left] at (M_top) {$M$};
+        \node[above right] at (N_top) {$N$};
+        \node[below right] at (C_bot) {$C$};
+        \node[below left] at (D_bot) {$D$};
+        \node[left] at (A_pt) {$A$};
+        \node[right] at (B_pt) {$B$};
+    \end{scope}
+
+    % --- Troisième trapèze ---
+    \begin{scope}[shift={(13,0)}]
+        % Sommets A et B en haut, M et N en bas
+        \coordinate (A_top) at (0,3);
+        \coordinate (B_top) at (3,3);
+        \coordinate (N_bot) at (4,0);
+        \coordinate (M_bot) at (-1,0);
+        
+        % Points D sur [AM] et C sur [BN]
+        \coordinate (D_pt) at (-0.5, 1.5);
+        \coordinate (C_pt) at (3.5, 1.5);
+        
+        % Tracés
+        \draw (A_top) -- (B_top) -- (N_bot) -- (M_bot) -- cycle;
+        \draw (D_pt) -- (C_pt);
+        
+        % Étiquettes
+        \node[above left] at (A_top) {$A$};
+        \node[above right] at (B_top) {$B$};
+        \node[below right] at (N_bot) {$N$};
+        \node[below left] at (M_bot) {$M$};
+        \node[left] at (D_pt) {$D$};
+        \node[right] at (C_pt) {$C$};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+\subsection*{\color{myred}Application}
+Soit $ABCD$ un trapèze de bases $[AB]$ et $[DC]$ tel que $AB = 5\text{ cm}$ et $DC = 10\text{ cm}$. 
+Soit $M$ un point du segment $[AD]$ tel que $AM = 2\text{ cm}$ et $AD = 6\text{ cm}$.
+La droite parallèle à $(AB)$ passant par $M$ coupe le segment $[BC]$ en un point $N$.
+
+\begin{enumerate}
+    \item Justifier que $(AB) \parallel (MN) \parallel (DC)$.
+    \item Calculer la longueur du segment $[BN]$, sachant que $BC = 9\text{ cm}$.
+    \item En déduire la longueur $NC$.
+\end{enumerate}
+
+\subsection*{\color{myred}Correction}
+\begin{enumerate}
+    \item Par construction, $(MN)$ est parallèle à $(AB)$. Comme $ABCD$ est un trapèze de bases $[AB]$ et $[DC]$, on a $(AB) \parallel (DC)$. Par transitivité, les trois droites sont parallèles : 
+    \[(AB) \parallel (MN) \parallel (DC)\]
+    
+    \item Dans le trapèze $ABCD$, d'après le théorème de Thalès :
+    \[\dfrac{AM}{AD} = \dfrac{BN}{BC}\]
+    En remplaçant par les valeurs :
+    \[\dfrac{2}{6} = \dfrac{BN}{9} \implies BN = \dfrac{2 \times 9}{6} = 3\text{ cm}\]
+    
+    \item Puisque $N \in [BC]$ :
+    \[NC = BC - BN = 9 - 3 = 6\text{ cm}\]
+\end{enumerate}
 \end{document}
