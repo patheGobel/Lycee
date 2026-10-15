@@ -1,31 +1,49 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{lmodern}
-\usepackage{amsmath,amssymb}
-\usepackage{geometry}
-\geometry{margin=2cm}
-\usepackage{fancyhdr}
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\textbf{Collège} --- Mathématiques}
-\rhead{Niveaux : 6ème, 5ème, 4ème}
-\cfoot{Page \thepage}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb, mathrsfs}
+
+\newcounter{correction}
+
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection\ (1 point) :}} \ignorespaces
+}
+
+% Filigrane
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
 
 \begin{document}
 
+\hrule
 \begin{center}
-    {\Large \textbf{Évaluation : Enchaînements d'opérations et Règles de signes}} \\[0.3cm]
-    \textit{Nom : ........................................................ \quad Prénom : ........................................................ \quad Classe : ........}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} 
+        Lycée Dindéfélo & \quad\quad Test 1 & 00 Mois 2026 \\
+    \end{tabular}
+    \\[-0.01cm]
+    \hrule
 \end{center}
 
-\vspace{0.5cm}
+\begin{center}
+    \textbf{\Large Calcul Numérique} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : Terminale S2} \\[0.2cm]
+    \textbf{\small Durée : 30 minutes}\\[0.2cm]
+    \textbf{\small Note : \quad /5}
+\end{center}
 
-\noindent \textbf{Consignes générales :} Le soin et la rédaction seront pris en compte dans la notation. Les étapes intermédiaires doivent apparaître clairement. L'utilisation de la calculatrice est interdite.
-
----
+\textbf{\small Nom de l'élève :} \underline{\hspace{8cm}} \\[0.7cm]
 
 \section*{Exercice 1 : Ordre de priorité (Niveau 6ème)}
 \textit{Calculer les expressions suivantes en soulignant à chaque étape le calcul prioritaire.}
