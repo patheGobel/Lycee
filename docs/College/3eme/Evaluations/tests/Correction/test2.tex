@@ -1,0 +1,149 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=0cm, bottom=2cm, left=2cm, right=2cm]{geometry} % Ajuste les marges
+\usepackage{xcolor} % Pour ajouter des couleurs
+\usepackage{hyperref} % Pour avoir des références colorées si nécessaire
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tkz-tab}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+\newcounter{correction} % Compteur pour les questions
+
+% Définir la commande pour afficher une question numérotée
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection :}} \ignorespaces
+}
+% Commande pour ajouter du texte en arrière-plan
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+\begin{document}
+\hrule % Barre horizontale
+% En-tête
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}} % 3 colonnes avec largeurs fixées
+        Lycée Dindéfélo & \quad\quad\quad Correction Test 2 & ... Octobre 2026 \\
+    \end{tabular}
+    \\[-0.01cm] % Ajuster l'espace vertical entre le tableau et la barre
+    \hrule % Barre horizontale
+\end{center}
+\begin{center}
+    \textbf{\Large Correction - Calcul Littéral } \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : 3 M1} \\[0.2cm]
+\end{center}
+
+\question (3 points)\\
+\[
+\begin{aligned}
+A&=-2-6+2+6\\
+&=-2+2-6+6\\
+&=0+0\\
+&=0\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+B&=-12+11-8+12\\
+&=-12+12+11-8\\
+&=0+3\\
+&=3\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+C&=-9-15+9-21\\
+&=-9+9-15-21\\
+&=0-36\\
+&=-36\\
+\end{aligned}
+\]
+\[
+\begin{aligned}
+D&= 12 + 3 \times 5\\
+&= 12 + 15\\
+&= 27\\
+&\\
+&\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+E&= 40 - (8 + 3 \times 2)\\
+&= 40 - (8 + 6)\\
+&= 40 - 14\\
+&= 26\\
+&\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+F&= 40 - [8 + 3 \times (2 -  12 + 3) \times 5]\\
+&= 40 - [8 + 3 \times (-7) \times 5]\\
+&= 40 - [8 - 105]\\
+&= 40 - (-97)\\
+&= 137\\
+\end{aligned}
+\]
+\\[1cm]
+\question (1,5 points)\\
+\[
+\begin{aligned}
+G&=(-2)\times(-7)+5\\
+&=14+5\\
+&=19\\
+&\\
+&\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+H&=-15-(5)\times(-9)+9\\
+&=-15-(-45)+9\\
+&=-15+45+9\\
+&=30+9\\
+&=39\\
+\end{aligned}
+\quad\quad
+\begin{aligned}
+I&=2-(-11)\times(7)-15+2-(-10)\times(4)\\
+&=2-(-77)-15+2-(-40)\\
+&=2+77-15+2+40\\
+&=79-15+2+40\\
+&=106\\
+\end{aligned}
+\]
+\\[1cm]
+\question (1,5 points)\\
+\[\begin{aligned}
+J &= -\frac{7}{5} + \frac{9}{10} - \frac{12}{5} + \frac{4}{10} \\
+   &= \left(-\frac{7}{5} - \frac{12}{5}\right) + \left(\frac{9}{10} + \frac{4}{10}\right) \\
+   &= -\frac{19}{5} + \frac{13}{10} \\
+   &= -\frac{38}{10} + \frac{13}{10} \\
+   &= -\frac{25}{10} = -\frac{5}{2} \\
+\end{aligned} 
+\quad\quad\quad 
+\begin{aligned}
+K &= -\frac{7}{3} \times \frac{5}{2} + \frac{35}{4} \times \frac{4}{6} \\
+   &= -\frac{35}{6} + \frac{35 \times 4}{4 \times 6} \\
+   &= -\frac{35}{6} + \frac{35}{6} \\
+   &= 0 \\
+   &= \\
+\end{aligned}
+\quad\quad\quad 
+\begin{aligned}
+L &= \frac{7}{3} \times \frac{5}{2} - \frac{35}{4} \times \frac{4}{6} \\
+   &= \frac{35}{6} - \frac{35 \times 4}{4 \times 6} \\
+   &= \frac{35}{6} - \frac{35}{6} \\
+   &= 0 \\
+   &= \\
+\end{aligned}
+\]
+
+\end{document}
