@@ -214,67 +214,6 @@ $$\sqrt{a + b} \neq \sqrt{a} + \sqrt{b} \quad \text{et} \quad \sqrt{a - b} \neq 
 \textit{Contre-exemple :} $\sqrt{9 + 16} = \sqrt{25} = 5$, alors que $\sqrt{9} + \sqrt{16} = 3 + 4 = 7$. Or $5 \neq 7$.
 \end{tcolorbox}
 
-
-++++++++++++++++++++++++++++++++++++++
-
-%=========================================================
-%    IV. Calculs sur les radicaux
-%=========================================================
-\section*{\color{myred}IV. Calculs sur les radicaux}
-
-\subsubsection*{\color{myred} 3) Méthode}
-Pour rendre rationnel le dénominateur d'un quotient comportant un ou plusieurs radicaux, on multiplie le numérateur et le dénominateur de ce quotient par l'expression conjuguée du dénominateur.
-
-\noindent \textbf{Remarque :} $\frac{1}{\sqrt{a}} = \frac{\sqrt{a}}{a}$ (On a multiplié le numérateur et le dénominateur par $\sqrt{a}$).
-
-\subsubsection*{\color{myred} Exemple}
-Soit à rendre rationnels les dénominateurs des rationnels suivants :
-\[
-I = \frac{2 - \sqrt{3}}{4 + \sqrt{7}} \quad ; \quad J = \frac{1 + \sqrt{5}}{\sqrt{3} - 6} \quad ; \quad K = \frac{7}{\sqrt{6} - \sqrt{5}}
-\]
-
-\subsection*{C. Comparaison de réels comportant des radicaux}
-
-\subsubsection*{\color{myred} 1) Activité}
-On donne $x = \sqrt{11}$ et $y = \sqrt{13}$.
-\begin{enumerate}[label=\alph*)]
-    \item Calcule $x^2$ et $y^2$.
-    \item En utilisant une calculatrice, donne une valeur approchée à $\frac{1}{100}$ près par défaut de $x$ et $y$.
-    \item Recopie et complète par le symbole $<$ ou $>$ qui convient : $x^2 \ \dots \ y^2$ \quad ; \quad $x \ \dots \ y$.
-\end{enumerate}
-
-\subsubsection*{\color{myred} 2) Propriétés}
-\begin{itemize}
-    \item \textbf{Deux nombres positifs sont rangés dans le même ordre que leurs carrés.}
-    \[
-    \text{Si } x \in \mathbb{R}_+, y \in \mathbb{R}_+ \text{ et } x^2 > y^2, \text{ alors } x > y.
-    \]
-    \[
-    \text{Si } x \in \mathbb{R}_+, y \in \mathbb{R}_+ \text{ et } x^2 < y^2, \text{ alors } x < y.
-    \]
-\end{itemize}
-
-\noindent \textbf{Exemple :} Soit à comparer $2\sqrt{3}$ et $\sqrt{11}$.
-
-\begin{itemize}
-    \item \textbf{Deux nombres négatifs sont rangés dans l'ordre contraire de celui de leurs carrés.}
-    \[
-    \text{Si } x \in \mathbb{R}_-, y \in \mathbb{R}_- \text{ et } x^2 < y^2, \text{ alors } x > y.
-    \]
-    \[
-    \text{Si } x \in \mathbb{R}_-, y \in \mathbb{R}_- \text{ et } x^2 > y^2, \text{ alors } x < y.
-    \]
-\end{itemize}
-
-\noindent \textbf{Exemple :} Soit à comparer $-3\sqrt{5}$ et $-4\sqrt{2}$.
-
-\noindent \textbf{Remarque :}
-Pour comparer des nombres réels comportant des radicaux, on peut utiliser un encadrement de ces nombres ou une calculatrice pour obtenir leurs valeurs approchées.
-
-\noindent \textbf{Exemple :} Soit à comparer les nombres suivants : $17 - 3\sqrt{2}$ et $7 + \sqrt{5}$ (On utilise une calculatrice, puis on encadre).
-
-++++++++++++++++++++++++++++++++++++++
-
 %=========================================================
 %    IV. Calculs sur les radicaux
 %=========================================================
@@ -360,7 +299,11 @@ Pour rendre rationnel un dénominateur comportant une somme ou une différence d
 \[
 \frac{2}{\sqrt{3} - 1} = \frac{2(\sqrt{3} + 1)}{(\sqrt{3} - 1)(\sqrt{3} + 1)} = \frac{2(\sqrt{3} + 1)}{(\sqrt{3})^2 - 1^2} = \frac{2(\sqrt{3} + 1)}{3 - 1} = \sqrt{3} + 1
 \]
-
+\subsubsection*{\color{myred} Application}
+Soit à rendre rationnels les dénominateurs des rationnels suivants :
+\[
+I = \frac{2 - \sqrt{3}}{4 + \sqrt{7}} \quad ; \quad J = \frac{1 + \sqrt{5}}{\sqrt{3} - 6} \quad ; \quad K = \frac{7}{\sqrt{6} - \sqrt{5}}
+\]
 \subsection*{C. Comparaison de réels comportant des radicaux}
 \subsubsection*{\color{myred} 1) Activité}
 Comparer $2\sqrt{3}$ et $3\sqrt{2}$ en comparant leurs carrés.
@@ -370,17 +313,17 @@ Pour tous nombres réels positifs $a$ et $b$ :
 \[
 a < b \iff a^2 < b^2 \iff \sqrt{a} < \sqrt{b}
 \]
-\textit{Exemple :} $(2\sqrt{3})^2 = 4 \times 3 = 12$ et $(3\sqrt{2})^2 = 9 \times 2 = 18$. Comme $12 < 18$, alors $2\sqrt{3} < 3\sqrt{2}$.
+\textit{Exemple :} 
 
-\subsection*{D. Intervalles dans $\mathbb{R}$}
-On utilise les intervalles de $\mathbb{R}$ pour exprimer des ensembles de nombres (ex : encadrements de solutions d'inéquations ou de racines).
-* Intervalle fermé : $[a, b] = \{x \in \mathbb{R} \mid a \le x \le b\}$
-* Intervalle ouvert : $]a, b[ = \{x \in \mathbb{R} \mid a < x < b\}$
+$(2\sqrt{3})^2 = 4 \times 3 = 12$ et $(3\sqrt{2})^2 = 9 \times 2 = 18$. 
 
-\subsection*{E. Exercice d’application}
+Comme $12 < 18$, alors $2\sqrt{3} < 3\sqrt{2}$.
+
+\subsubsection*{\color{myred} Exemple}
+
 Simplifier et ranger par ordre croissant : 
 $A = 3\sqrt{8}$ ; $B = 2\sqrt{18}$ ; $C = 5\sqrt{2}$.
-\subsection*{E. Exercice d’application}
+\subsubsection*{\color{myred} Exercice d’application}
 Soient : $a = 7 + 2\sqrt{2}$ \quad et \quad $b = 7 - 2\sqrt{2}$.
 \begin{enumerate}[label=\textbf{\arabic*)}]
     \item Calcule $\frac{a}{b}$.
