@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  17 OCT 2026 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  17 OCT 2026 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1267,7 +1267,7 @@ nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
-[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4] [5] [6]
+[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4] [5] [6] [7]
 (build/racineCarresNew.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1277,8 +1277,8 @@ Package rerunfilecheck Info: File `racineCarresNew.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42028 strings out of 467533
- 982295 string characters out of 5422138
+ 42031 strings out of 467533
+ 982323 string characters out of 5422138
  1535548 words of memory out of 5000000
  70185 multiletter control sequences out of 15000+600000
  696209 words of font info for 89 fonts, out of 8000000 for 9000
@@ -1293,10 +1293,10 @@ lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on build/racineCarresNew.pdf (6 pages, 198329 bytes).
+Output written on build/racineCarresNew.pdf (7 pages, 201311 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 66 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
