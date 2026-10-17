@@ -1,0 +1,432 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{color, soul}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{Racine Carrée et Nombres Réels}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 3 ème}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2026 -- 2027}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%    I. Définitions et notations, valeur exacte et valeur approchée
+%=========================================================
+\section*{\color{myred}I. Définitions et notations, valeur exacte et valeur approchée}
+
+\subsection*{\color{myred} 1) Activité}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item Compléter le tableau suivant en utilisant les carrés parfaits :
+    \vspace{0.2cm}
+    \begin{center}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Nombre $a$ & 4 & 9 & 25 & 36 & 81 \\ \hline
+        Nombre positif dont le carré est $a$ & & & & & \\ \hline
+    \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \item À l'aide de la calculatrice, donner la valeur affichée pour $\sqrt{2}$ et $\sqrt{5}$. Que remarquez-vous sur l'écriture de ces nombres ?
+\end{enumerate}
+
+\subsection*{\color{myred} 2) Définitions et notations}
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=]
+Soit $a$ un nombre rationnel positif ou nul ($a \ge 0$). La \textbf{racine carrée} de $a$, notée $\mathbf{\sqrt{a}}$, est le nombre positif dont le carré est égal à $a$.\\
+L'ensemble des nombres réels est noté $\mathbb{R}$.
+\end{tcolorbox}
+
+\noindent \textbf{Conséquence immédiate de la définition :}
+Pour tout nombre réel $a \ge 0$, on a : 
+\[
+(\sqrt{a})^2 = a \quad \text{et} \quad \sqrt{a^2} = a
+\]
+
+\noindent \textbf{NB :} 
+Le symbole $\sqrt{\phantom{a}}$ est appelé \textit{radical}. La racine carrée d'un nombre négatif n'existe pas dans $\mathbb{R}$ (ex: $\sqrt{-4}$ est impossible).
+
+\subsection*{\color{myred} 3) Valeur exacte et valeur approchée}
+\begin{itemize}
+    \item \textbf{Valeur exacte :} Soit la racine carrée de $7$, elle se note $\sqrt{7}$. La valeur exacte de ce nombre est égale à $\sqrt{7}$.(ex : $\sqrt{2}$, $\sqrt{3}$, $\frac{2\sqrt{5}}{3}$).
+    \item \textbf{Valeur approchée :} $\sqrt{7} = 2{,}64575131\dots$\\ $2{,}645$ est la valeur approchée à $0{,}001$ ($10^{-3}$) près par défaut et $2{,}646$ est la valeur approchée par excès.
+\end{itemize}
+\subsection*{\color{myred} Exercices d'application}
+
+\noindent \textbf{Exercice 1 :} Soit $B = \sqrt{11}$.
+\begin{enumerate}[label=\alph*)]
+    \item Calcule $B^2$.
+    \item Donne la valeur exacte de $B$.
+    \item Détermine la valeur approchée de $B$ à deux unités près par défaut.
+    \item Donne la valeur approchée de $B$ à $0{,}01$ près par excès.
+    \item Encadre $B$ à $10^{-2}$ près.
+\end{enumerate}
+
+\noindent \textbf{Exercice 2 :} Calculer ou simplifier si possible : 
+\[
+A = \sqrt{121} \quad ; \quad C = (\sqrt{15})^2 \quad ; \quad D = \sqrt{(-7)^2} \quad ; \quad E = \sqrt{-25}
+\]
+
+\vspace{0.4cm}
+\hrule
+\vspace{0.4cm}
+
+\subsection*{\color{myred} Correction des Exercices}
+
+\noindent \textbf{Correction de l'Exercice 1 :}
+\begin{enumerate}[label=\alph*)]
+    \item $B^2 = (\sqrt{11})^2 = 11$.
+    \item La valeur exacte de $B$ est $\mathbf{\sqrt{11}}$.
+    \item Sachant que $\sqrt{11} \approx 3{,}3166\dots$, sa valeur approchée à deux unités près par défaut est $\mathbf{3}$.
+    \item La valeur approchée de $B$ à $0{,}01$ près par excès est $\mathbf{3{,}32}$.
+    \item L'encadrement de $B$ à $10^{-2}$ près ($0{,}01$ près) est : $\mathbf{3{,}31 < \sqrt{11} < 3{,}32}$.
+\end{enumerate}
+
+\vspace{0.3cm}
+\noindent \textbf{Correction de l'Exercice 2 :}
+\begin{itemize}
+    \item $\mathbf{A = \sqrt{121} = 11}$ (car $11^2 = 121$).
+    \item $\mathbf{C = (\sqrt{15})^2 = 15}$ (par définition, $(\sqrt{a})^2 = a$ pour $a \ge 0$).
+    \item $\mathbf{D = \sqrt{(-7)^2} = |-7| = 7}$ (la racine carrée d'un carré est toujours positive, égale à la valeur absolue).
+    \item $\mathbf{E = \sqrt{-25}}$ : \textbf{Impossible} (ou n'a pas de sens dans $\mathbb{R}$), car le radicande est négatif ($-25 < 0$).
+\end{itemize}
+
+%=========================================================
+%    II. Nombres irrationnels : ensemble IR des nombres réels
+%=========================================================
+\section*{\color{myred}II. Nombres irrationnels : ensemble $\mathbb{R}$ des nombres réels}
+
+\subsection*{\color{myred} 1) Activité}
+\begin{enumerate}
+    \item A l’aide d’une calculatrice, détermine : $\sqrt{3}$, $\sqrt{29}$, $\sqrt{2}$,$\pi$,$\sqrt{196}$
+    \item Parmi ces nombres, quels sont ceux qui ne sont pas des nombres rationnels ?
+Ceux qui sont des nombres rationnels ?
+\end{enumerate} 
+
+\subsection*{\color{myred} 2) Définitions et notations}
+\begin{itemize}
+    \item \textbf{Nombres rationnels ($\mathbb{Q}$)} Nombres pouvant s'écrire sous forme de fraction $\frac{p}{q}$ (avec $p \in \mathbb{Z}$ et $q \in \mathbb{N}^*$).
+    \item \textbf{Nombres irrationnels :} Nombres qui ne peuvent pas s'écrire sous forme de fraction (leurs écritures décimales sont infinies et non périodiques, ex : $\sqrt{2}$, $\pi$).
+    \item \textbf{Ensemble des nombres réels ($\mathbb{R}$) :} L'ensemble qui regroupe tous les nombres rationnels et irrationnels.
+\end{itemize}
+
+\noindent \textbf{Relation d'inclusion :}
+$
+\mathbb{N} \subset \mathbb{Z} \subset \mathbb{D} \subset \mathbb{Q} \subset \mathbb{R}
+$
+
+\subsection*{\color{myred} 3) Exercice d’application}
+Parmi les nombres suivants, indiquez ceux qui appartiennent à $\mathbb{Q}$ et ceux qui appartiennent aux irrationnels :
+\[
+-3 \quad ; \quad \frac{5}{2} \quad ; \quad \sqrt{9} \quad ; \quad \sqrt{7} \quad ; \quad \pi
+\]
+
+%=========================================================
+%    III. Propriétés de la racine carrée
+%=========================================================
+\section*{\color{myred}III. Propriétés de la racine carrée}
+
+\subsection*{\color{myred} 1) Activité}
+Calculer et comparer :
+\begin{itemize}
+    \item $\sqrt{9} \times \sqrt{16}$ et $\sqrt{9 \times 16}$
+   \item $\frac{\sqrt{36}}{\sqrt{4}}$ et $\sqrt{\frac{36}{4}}$
+\end{itemize}
+
+\subsection*{\color{myred} 2) Propriétés}
+\begin{itemize}
+    \item \textbf{Produit :}La racine carrée du produit de deux nombres réels positifs est égale au produit des racines de ces deux réels. 
+  $$\sqrt{a \times b} = \sqrt{a} \times \sqrt{b} \quad (\text{pour } a \ge 0, b \ge 0)$$
+  \textit{Exemple :} $\sqrt{50} = \sqrt{25 \times 2} = \sqrt{25} \times \sqrt{2} = 5\sqrt{2}$.
+    \item \textbf{Quotient :}Le quotient des racines carrées de deux nombres réels positifs est égal à la racine carrée du quotient de ces deux réels. Autrement dit, si $a \in \mathbb{R}_+$ et $b \in \mathbb{R}_*^+$, alors :
+  $$\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$$
+  \textit{Exemples :} $\sqrt{\frac{9}{16}} = \frac{\sqrt{9}}{\sqrt{16}} = \frac{3}{4}$.
+\end{itemize}
+
+\begin{tcolorbox}[colback=red!10!white,colframe=myred,title=\textbf{Attention / Erreur fréquente}]
+\textbf{La somme et la différence ne se distribuent pas !}
+$$\sqrt{a + b} \neq \sqrt{a} + \sqrt{b} \quad \text{et} \quad \sqrt{a - b} \neq \sqrt{a} - \sqrt{b}$$
+\textit{Contre-exemple :} $\sqrt{9 + 16} = \sqrt{25} = 5$, alors que $\sqrt{9} + \sqrt{16} = 3 + 4 = 7$. Or $5 \neq 7$.
+\end{tcolorbox}
+
+
+++++++++++++++++++++++++++++++++++++++
+
+%=========================================================
+%    IV. Calculs sur les radicaux
+%=========================================================
+\section*{\color{myred}IV. Calculs sur les radicaux}
+
+\subsection*{B. Expressions conjuguées ; rendre rationnel le dénominateur d’un quotient}
+
+\subsubsection*{\color{myred} 1) Activité}
+Soient les nombres :
+\[
+F = \frac{5}{\sqrt{2}} \quad ; \quad G = \frac{4}{3\sqrt{7}} \quad ; \quad H = \frac{1}{\sqrt{6} - 2}
+\]
+Multiplie chacun de ces nombres par le nombre qui convient pour obtenir un dénominateur sans radical.
+
+\subsubsection*{\color{myred} 2) Vocabulaire}
+Soient $a$ un réel et $b$ un réel positif :
+\begin{itemize}
+    \item L'expression conjuguée de $(a + \sqrt{b})$ est $(a - \sqrt{b})$.
+    \item L'expression conjuguée de $(a - \sqrt{b})$ est $(a + \sqrt{b})$.
+\end{itemize}
+
+\noindent \textbf{Exemples :}
+\begin{itemize}
+    \item L'expression conjuguée de $7 + \sqrt{5}$ est $7 - \sqrt{5}$.
+    \item L'expression conjuguée de $\sqrt{3} - \sqrt{2}$ est $\sqrt{3} + \sqrt{2}$.
+\end{itemize}
+
+\subsubsection*{\color{myred} 3) Méthode}
+Pour rendre rationnel le dénominateur d'un quotient comportant un ou plusieurs radicaux, on multiplie le numérateur et le dénominateur de ce quotient par l'expression conjuguée du dénominateur.
+
+\noindent \textbf{Remarque :} $\frac{1}{\sqrt{a}} = \frac{\sqrt{a}}{a}$ (On a multiplié le numérateur et le dénominateur par $\sqrt{a}$).
+
+\subsubsection*{\color{myred} Exemple}
+Soit à rendre rationnels les dénominateurs des rationnels suivants :
+\[
+I = \frac{2 - \sqrt{3}}{4 + \sqrt{7}} \quad ; \quad J = \frac{1 + \sqrt{5}}{\sqrt{3} - 6} \quad ; \quad K = \frac{7}{\sqrt{6} - \sqrt{5}}
+\]
+
+\subsection*{C. Comparaison de réels comportant des radicaux}
+
+\subsubsection*{\color{myred} 1) Activité}
+On donne $x = \sqrt{11}$ et $y = \sqrt{13}$.
+\begin{enumerate}[label=\alph*)]
+    \item Calcule $x^2$ et $y^2$.
+    \item En utilisant une calculatrice, donne une valeur approchée à $\frac{1}{100}$ près par défaut de $x$ et $y$.
+    \item Recopie et complète par le symbole $<$ ou $>$ qui convient : $x^2 \ \dots \ y^2$ \quad ; \quad $x \ \dots \ y$.
+\end{enumerate}
+
+\subsubsection*{\color{myred} 2) Propriétés}
+\begin{itemize}
+    \item \textbf{Deux nombres positifs sont rangés dans le même ordre que leurs carrés.}
+    \[
+    \text{Si } x \in \mathbb{R}_+, y \in \mathbb{R}_+ \text{ et } x^2 > y^2, \text{ alors } x > y.
+    \]
+    \[
+    \text{Si } x \in \mathbb{R}_+, y \in \mathbb{R}_+ \text{ et } x^2 < y^2, \text{ alors } x < y.
+    \]
+\end{itemize}
+
+\noindent \textbf{Exemple :} Soit à comparer $2\sqrt{3}$ et $\sqrt{11}$.
+
+\begin{itemize}
+    \item \textbf{Deux nombres négatifs sont rangés dans l'ordre contraire de celui de leurs carrés.}
+    \[
+    \text{Si } x \in \mathbb{R}_-, y \in \mathbb{R}_- \text{ et } x^2 < y^2, \text{ alors } x > y.
+    \]
+    \[
+    \text{Si } x \in \mathbb{R}_-, y \in \mathbb{R}_- \text{ et } x^2 > y^2, \text{ alors } x < y.
+    \]
+\end{itemize}
+
+\noindent \textbf{Exemple :} Soit à comparer $-3\sqrt{5}$ et $-4\sqrt{2}$.
+
+\noindent \textbf{Remarque :}
+Pour comparer des nombres réels comportant des radicaux, on peut utiliser un encadrement de ces nombres ou une calculatrice pour obtenir leurs valeurs approchées.
+
+\noindent \textbf{Exemple :} Soit à comparer les nombres suivants : $17 - 3\sqrt{2}$ et $7 + \sqrt{5}$ (On utilise une calculatrice, puis on encadre).
+
+++++++++++++++++++++++++++++++++++++++
+
+%=========================================================
+%    IV. Calculs sur les radicaux
+%=========================================================
+\section*{\color{myred}IV. Calculs sur les radicaux}
+
+\subsection*{A. Sommes algébriques}
+
+\subsubsection*{\color{myred} 1) Activité}
+\begin{enumerate}[label=\alph*)]
+    \item Écris les radicaux suivants sous la forme $a\sqrt{b}$ avec $a \in \mathbb{N}$ et $b \in \mathbb{N}$ :
+    \[
+    \sqrt{18} \quad ; \quad \sqrt{50} \quad ; \quad \sqrt{32} \quad ; \quad \sqrt{48}
+    \]
+    \item Déduis-en une écriture simplifiée des sommes algébriques suivantes :
+    \[
+    C = \sqrt{18} + 2\sqrt{50} + 3\sqrt{32} \qquad \text{et} \qquad D = \sqrt{50} - \sqrt{32} + \sqrt{48}
+    \]
+\end{enumerate}
+\subsubsection*{\color{myred} 2) Propriétés}
+\begin{itemize}
+    \item Quels que soient les réels $b$ et $c$ et le réel positif $a$, on a :
+    \[
+    b\sqrt{a} + c\sqrt{a} = (b+c)\sqrt{a} \qquad \text{et} \qquad b\sqrt{a} - c\sqrt{a} = (b-c)\sqrt{a}
+    \]
+\item Si $p \in \mathbb{N}$ et $a \ge 0$, alors :
+\begin{itemize}
+    \item Pour une puissance paire :
+    \[
+    \sqrt{a^{2p}} = \sqrt{(a^p)^2} = a^p
+    \]
+    \item Pour une puissance impaire :
+    \[
+    \sqrt{a^{2p+1}} = \sqrt{a^{2p} \times a} = \sqrt{a^{2p}} \times \sqrt{a} = a^p\sqrt{a}
+    \]
+\end{itemize}
+\end{itemize}
+\subsubsection*{\color{myred} Exemple}
+$B = \sqrt{45} - 2\sqrt{5} + \sqrt{20} = 3\sqrt{5} - 2\sqrt{5} + 2\sqrt{5} = 3\sqrt{5}$.
+
+$
+E = \sqrt{5} + \sqrt{20} - \sqrt{80} = \sqrt{5} + 2\sqrt{5} - 4\sqrt{5} = (1 + 2 - 4)\sqrt{5} = -\sqrt{5}
+$
+\subsubsection*{\color{myred} Exemples}
+Calculer et simplifier les expressions suivantes :
+\[
+B = \sqrt{3^{8}} \quad ; \quad C = \sqrt{3^{5}} \quad ; \quad D = \sqrt{3^{11}}
+\]
+
+\noindent \textbf{Correction :}
+\begin{itemize}
+    \item $B = \sqrt{3^{8}} = \sqrt{3^{2 \times 4}} = 3^4 = 81$
+    \item $C = \sqrt{3^{5}} = \sqrt{3^{2 \times 2 + 1}} = 3^2\sqrt{3} = 9\sqrt{3}$
+    \item $D = \sqrt{3^{11}} = \sqrt{3^{2 \times 5 + 1}} = 3^5\sqrt{3} = 243\sqrt{3}$
+\end{itemize}
+\subsection*{B. Expressions conjuguées ; rendre rationnel le dénominateur}
+\subsubsection*{\color{myred} 1) Activité}
+Développer le produit $(a - b)(a + b)$. Quel est l'intérêt pour éliminer des racines au dénominateur ?
+
+\subsubsection*{\color{myred} 2) Vocabulaire}
+* Le conjugué de $(a + \sqrt{b})$ est $(a - \sqrt{b})$.
+* Le conjugué de $(\sqrt{a} - \sqrt{b})$ est $(\sqrt{a} + \sqrt{b})$.
+
+\subsubsection*{\color{myred} 3) Méthode et Exemple}
+Pour rendre rationnel un dénominateur comportant une somme ou une différence de radicaux, on multiplie le numérateur et le dénominateur par l'expression conjuguée du dénominateur.
+
+\noindent \textit{Exemple :}
+\[
+\frac{2}{\sqrt{3} - 1} = \frac{2(\sqrt{3} + 1)}{(\sqrt{3} - 1)(\sqrt{3} + 1)} = \frac{2(\sqrt{3} + 1)}{(\sqrt{3})^2 - 1^2} = \frac{2(\sqrt{3} + 1)}{3 - 1} = \sqrt{3} + 1
+\]
+
+\subsection*{C. Comparaison de réels comportant des radicaux}
+\subsubsection*{\color{myred} 1) Activité}
+Comparer $2\sqrt{3}$ et $3\sqrt{2}$ en comparant leurs carrés.
+
+\subsubsection*{\color{myred} 2) Propriété et Exemple}
+Pour tous nombres réels positifs $a$ et $b$ : 
+\[
+a < b \iff a^2 < b^2 \iff \sqrt{a} < \sqrt{b}
+\]
+\textit{Exemple :} $(2\sqrt{3})^2 = 4 \times 3 = 12$ et $(3\sqrt{2})^2 = 9 \times 2 = 18$. Comme $12 < 18$, alors $2\sqrt{3} < 3\sqrt{2}$.
+
+\subsection*{D. Intervalles dans $\mathbb{R}$}
+On utilise les intervalles de $\mathbb{R}$ pour exprimer des ensembles de nombres (ex : encadrements de solutions d'inéquations ou de racines).
+* Intervalle fermé : $[a, b] = \{x \in \mathbb{R} \mid a \le x \le b\}$
+* Intervalle ouvert : $]a, b[ = \{x \in \mathbb{R} \mid a < x < b\}$
+
+\subsection*{E. Exercice d’application}
+Simplifier et ranger par ordre croissant : 
+$A = 3\sqrt{8}$ ; $B = 2\sqrt{18}$ ; $C = 5\sqrt{2}$.
+\subsection*{E. Exercice d’application}
+Soient : $a = 7 + 2\sqrt{2}$ \quad et \quad $b = 7 - 2\sqrt{2}$.
+\begin{enumerate}[label=\textbf{\arabic*)}]
+    \item Calcule $\frac{a}{b}$.
+    \item Sachant que $1{,}414 < \sqrt{2} < 1{,}415$, encadre $\frac{a}{b}$.
+    \item Montre que $a + b$ et $a^2 + b^2$ sont des entiers.
+\end{enumerate}
+%=========================================================
+%    V. Valeur absolue d’un réel
+%=========================================================
+\section*{\color{myred}V. Valeur absolue d’un réel}
+
+\subsection*{\color{myred} 1) Activité}
+Quelle est la distance entre $0$ et $5$ sur une droite graduée ? Entre $0$ et $-5$ ?
+
+\subsection*{\color{myred} 2) Propriété}
+La valeur absolue d'un nombre réel $x$, notée $|x|$, représente sa distance à zéro. Elle est toujours positive.
+\[
+|x| = \begin{cases} x & \text{si } x \ge 0 \\ -x & \text{si } x < 0 \end{cases}
+\]
+\textit{Exemples :} $|-7| = 7$ ; $|\sqrt{3} - 2| = 2 - \sqrt{3}$ (car $\sqrt{3} < 2$).
+
+%=========================================================
+%    VI. Racine carrée du carré d’un réel
+%=========================================================
+\section*{\color{myred}VI. Racine carrée du carré d’un réel}
+
+\subsection*{\color{myred} 1) Activité}
+Calculer $\sqrt{5^2}$ et $\sqrt{(-5)^2}$. Que constate-t-on ?
+
+\subsection*{\color{myred} 2) Propriété}
+Pour tout nombre réel $x$, on a :
+\[
+\sqrt{x^2} = |x|
+\]
+\textbf{Remarques :} 
+* Si $x \ge 0$, alors $\sqrt{x^2} = x$.
+* Si $x < 0$, alors $\sqrt{x^2} = -x$ (qui est un nombre positif).
+
+\noindent \textit{Exemple type d'examen :}
+Simplifier $E = \sqrt{(1 - \sqrt{2})^2}$.
+\textbf{Solution :} $\sqrt{(1 - \sqrt{2})^2} = |1 - \sqrt{2}|$. Comme $1 < \sqrt{2}$, $1 - \sqrt{2} < 0$, donc $|1 - \sqrt{2}| = -(1 - \sqrt{2}) = \mathbf{\sqrt{2} - 1}$.
+
+\end{document}
