@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  17 OCT 2026 14:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  17 OCT 2026 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1119,7 +1119,10 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count396
 )
-No file racineCarresNew.aux.
+(build/racineCarresNew.aux
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 11.
+)
 \openout1 = `racineCarresNew.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -1140,9 +1143,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
-Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 67.
 LaTeX Info: Redefining \degres on input line 67.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count397
@@ -1204,11 +1206,13 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
 \c@lstlisting=\count403
 Package hyperref Info: Link coloring ON on input line 67.
+(build/racineCarresNew.out) (build/racineCarresNew.out)
 \@outlinefile=\write4
 \openout4 = `racineCarresNew.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
 1.
+
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1265,33 +1269,26 @@ nc/dvips/lm/lm-ec.enc}
 dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
 [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4] [5]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 381.
+(Font)              <14.4> on input line 375.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 381.
+(Font)              <7> on input line 375.
  [6] [7]
 (build/racineCarresNew.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-Package rerunfilecheck Warning: File `racineCarresNew.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `racineCarresNew.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `racineCarresNew.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42052 strings out of 467533
- 982445 string characters out of 5422138
- 1535481 words of memory out of 5000000
- 70199 multiletter control sequences out of 15000+600000
+ 42059 strings out of 467533
+ 982648 string characters out of 5422138
+ 1535548 words of memory out of 5000000
+ 70201 multiletter control sequences out of 15000+600000
  710464 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,12n,121p,736b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,12n,121p,736b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/pu
@@ -1301,10 +1298,10 @@ lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on build/racineCarresNew.pdf (7 pages, 203326 bytes).
+Output written on build/racineCarresNew.pdf (7 pages, 202895 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 74 named destinations out of 1000 (max. 500000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 73 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
