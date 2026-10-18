@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 OCT 2026 21:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 OCT 2026 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1234,8 +1234,17 @@ File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 enc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [2{/usr
-/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (5.01738pt too wide) in paragraph at lines 259--261
+[]$\OMS/lmsy/m/n/12 j ^^@ \OT1/lmr/m/n/12 2[] \OMS/lmsy/m/n/12 ^^@ \OT1/lmr/m/n
+/12 7[]\OMS/lmsy/m/n/12 j   []$ 
+ []
+
+
+Overfull \vbox (39.03664pt too high) has occurred while \output is active []
+
+
+[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [3]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/racineCarre.aux)
@@ -1247,11 +1256,11 @@ Package rerunfilecheck Info: File `racineCarre.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53041 strings out of 467533
- 1295988 string characters out of 5422138
- 2024211 words of memory out of 5000000
- 81276 multiletter control sequences out of 15000+600000
- 657005 words of font info for 68 fonts, out of 8000000 for 9000
+ 53077 strings out of 467533
+ 1296273 string characters out of 5422138
+ 2044211 words of memory out of 5000000
+ 81278 multiletter control sequences out of 15000+600000
+ 662985 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,429b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
@@ -1260,10 +1269,10 @@ sr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/racineCarre.pdf (2 pages, 157801 bytes).
+Output written on build/racineCarre.pdf (3 pages, 165946 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 78 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
