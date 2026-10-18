@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 OCT 2026 21:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  18 OCT 2026 21:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1248,7 +1248,7 @@ Package rerunfilecheck Info: File `racineCarre.out' has not changed.
 Here is how much of TeX's memory you used:
  53026 strings out of 467533
  1295866 string characters out of 5422138
- 2016211 words of memory out of 5000000
+ 2020211 words of memory out of 5000000
  81276 multiletter control sequences out of 15000+600000
  657005 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1259,7 +1259,7 @@ r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/zapfding/uzdr.pfb>
-Output written on build/racineCarre.pdf (1 page, 147405 bytes).
+Output written on build/racineCarre.pdf (1 page, 149182 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  91 compressed objects within 1 object stream
