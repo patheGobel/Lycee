@@ -124,19 +124,20 @@ est formé de trois équations. Chacune d'elle contient trois inconnues $x$ ; $y
 Résoudre un tel système c'est trouver tous les triplets $(x, y, z)$ de nombres réels qui vérifient les trois équations du système.
 
 \subsection*{\underline{\textbf{\textcolor{red}{2. Résolution avec la méthode du pivot de Gauss}}}} 
+
 \underline{\exemple}
 
 \underline{\textbf{\textcolor{red}{Résolvons le système suivant en utilisant la méthode du pivot de Gauss}}}
 
-$
+\[
 \begin{cases}
 x + 10y - 3z = 5 \\
 2x - y + 2z = 2 \\
 -x + y + z = -3
 \end{cases}
-$
+\]
 
-Pour résoudre un tel système, on commence par désigner les 3 équations respectivement par $L_1 ; L_2$ et $L_3$
+Pour résoudre un tel système, on commence par désigner les 3 équations respectivement par $L_1$, $L_2$ et $L_3$ :
 \[
 \begin{cases}
 x + 10y - 3z = 5 & (L_1) \\
@@ -145,34 +146,25 @@ x + 10y - 3z = 5 & (L_1) \\
 \end{cases}
 \]
 
-\textbf{1\textsuperscript{ère} étape :} On fixe l'équation ($L_1$) puis on élimine l'inconnue x dans ($L_2$) en considérant le
+\textbf{1\textsuperscript{ère} étape :} On fixe l'équation ($L_1$) puis on élimine l'inconnue $x$ dans ($L_2$) en effectuant $L_2 \leftarrow L_2 - 2L_1$ :
 \[
-\text{sous-système } -2
-\begin{cases}
-x + 10y - 3z = 5 & (L_1) \\
-2x - y + 2z = 2 & (L_2)
-\end{cases}
-\text{ d'où }
 \begin{cases}
 -2x - 20y + 6z = -10 \\
 \quad \ 2x - y + 2z = 2
 \end{cases}
-\text{ ainsi on a :}
+\implies -21y + 8z = -8 \quad (L_2')
 \]
-$-21y + 8z = -8 \quad (L_2')$
 
 \vspace{0.5cm}
 
-\textbf{2\textsuperscript{ème} étape :} On fixe l'équation ($L_1$) puis on élimine l'inconnue x dans ($L_3$) en considérant le
+\textbf{2\textsuperscript{ème} étape :} On fixe l'équation ($L_1$) puis on élimine l'inconnue $x$ dans ($L_3$) en effectuant $L_3 \leftarrow L_3 + L_1$ :
 \[
-\text{sous-système }
 \begin{cases}
 x + 10y - 3z = 5 & (L_1) \\
 -x + y + z = -3 & (L_3)
 \end{cases}
-\text{ d'où ainsi on a :}
+\implies 11y - 2z = 2 \quad (L_3')
 \]
-$11y - 2z = 2 \quad (L_3')$
 
 \vspace{0.5cm}
 
@@ -181,20 +173,20 @@ Ainsi, on obtient le système équivalent suivant :
 \begin{cases}
 x + 10y - 3z = 5 & (L_1) \\
 -21y + 8z = -8 & (L_2') \\
-\quad 11y - 2z = -3 & (L_3')
+11y - 2z = 2 & (L_3')
 \end{cases}
 \]
 
-\noindent \textbf{3\textsuperscript{ème} étape :} On fixe $(L_2')$ puis on élimine y dans $(L_3')$ en considérant le sous-système
+\noindent \textbf{3\textsuperscript{ème} étape :} On fixe $(L_2')$ puis on élimine $y$ dans $(L_3')$ en effectuant $L_3'' \leftarrow 11L_2' + 21L_3'$ :
 \[
 \begin{cases}
--21y + 8z = -8 & (L_2') \\
-\ \ 11y - 2z = 2 & (L_3')
+-231y + 88z = -88 \\
+\ \ 231y - 42z = 42
 \end{cases}
-\quad \text{Ainsi on a } 46z = -46 \ (L_3'')
+\implies 46z = -46 \quad (L_3'')
 \]
 
-On obtient le système équivalent suivant dit système triangulaire
+On obtient le système équivalent triangulaire suivant :
 \[
 \begin{cases}
 x + 10y - 3z = 5 & (L_1) \\
@@ -205,11 +197,18 @@ x + 10y - 3z = 5 & (L_1) \\
 
 \vspace{0.5cm}
 
-\noindent \textbf{4\textsuperscript{ème} étape :} Pour terminer la résolution, on détermine z dans $(L_3'')$, puis on remplace z par cette valeur dans $(L_2')$, on obtient la valeur de y puis on obtient celle de x, en substituant à y et z par leurs valeurs respectives dans $(L_1')$.
+\noindent \textbf{4\textsuperscript{ème} étape :} Pour terminer la résolution :
+\begin{itemize}
+    \item De $(L_3'')$, on tire $z = \dfrac{-46}{46} = -1$.
+    \item En remplaçant $z$ dans $(L_2')$ : $-21y + 8(-1) = -8 \implies -21y = 0 \implies y = 0$.
+    \item En remplaçant $y$ et $z$ dans $(L_1)$ : $x + 10(0) - 3(-1) = 5 \implies x + 3 = 5 \implies x = 2$.
+\end{itemize}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
-Ainsi on a : $S = \{(2; 0; -1)\}$
+Ainsi, l'ensemble des solutions est : $S = \{(2; 0; -1)\}$.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 \underline{\exemple}
 
