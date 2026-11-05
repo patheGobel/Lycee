@@ -1,0 +1,266 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\usepackage{tikz}
+\usepackage[siunitx, european, RPvoltages]{circuitikz}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2026}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2026/2027}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1$^{er}$}\textbf{S} & \textbf{Date: 18/10/2026} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Equations-Inéquations Irrationnelles et Système}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{4cm}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+\item Résoudre dans \( \mathbb{R} \) les équations et inéquations suivantes :
+
+\[ \text{a)} \sqrt{2x-1}-\sqrt{x-5} = 0    \quad\quad;\quad\quad   \text{b)} \sqrt{4x^{2}+x+5}=2x+1 \]
+
+\[ \text{c)} \sqrt{-x^{2}+x+1} \leq x-2    \quad\quad;\quad\quad   \text{d)} \sqrt{x^{2}+6x+6} \geq 2x+1 \]
+
+\[ \text{e)} \sqrt{2x^{2}-3x-2} = 2x-4    \quad\quad;\quad\quad   \text{f)} \sqrt{4-x} = \sqrt{x^{2}+2x-6} \]
+
+\[ \text{g)} \sqrt{x^{2}+4x} < \sqrt{x^{2}-5x+4}    \quad\quad;\quad\quad   \text{h)} \sqrt{x^{2}-x-2} > x-1 \]
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+\item Soit \( m \) un nombre réel. On considère l’équation d’inconnue \( x \) :
+
+\( (E) \) \( (m+3)x^{2} +2mx + m + 5 = 0\)
+\item[a)] Discuter suivant les valeurs de \( m \), l’existence, le nombre et le signe des racines de \( (E) \) 
+
+Dans le cas où \( (E) \) admet deux racines distinctes \( x_{2} \) et \( x_{2} \) , peut-on déterminer \( m \) pour que:
+
+\( ( 2x_{1} - 1 ) (2x_{2}-1) = 6 \) puis \( x_{1}^{2} + x_{2}^{2} = 2 \)
+
+\item[b)]Trouver une relation indépendante de \( m \) entre\( x_{2} \) et \( x_{2} \)
+\item[c)]Utiliser cette relation pour trouver les racines doubles de \( (E) \), lorsqu’elles existent
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}[label=\Roman*.]
+    \item Soit l'équation $(E) : x^2 - (2m + 1)x + m^2 - 2 = 0$
+    \begin{enumerate}[label=\arabic*.]
+        \item Discuter valeurs de $m$, les solutions de l'équation $(E)$
+        \item Dans le cas où $(E)$ admet deux solutions $x'$ et $x''$, déterminer $m$ tel que :
+        \begin{enumerate}[label=\alph*.]
+            \item $x' + x'' = 35$
+            \item $|x' - x''| = 5$
+        \end{enumerate}
+    \end{enumerate}
+    
+    \item On considère l'équation $(E_m) : 3(-m + 2)x^2 + (3m + 9)x + 9m + 3 = 0$.
+    \begin{enumerate}[label=\arabic*.]
+        \item Déterminer $m$ pour que $-1$ soit racine de $(E_m)$.
+        \item Résoudre $(E_m)$ pour $m = 2$.
+        \item On suppose que $m \neq 2$.
+        \begin{enumerate}[label=\alph*.]
+            \item Montrer que le discriminant $\Delta = 9(13m^2 - 14m + 1)$
+            \item Pour quelles valeurs de $m$ l'équation n'admet pas de solutions.
+            \item Pour quelles valeurs de $m$ l'équation admet des solutions distinguées.
+            \item Dans le cas où les racines existent.
+            \begin{enumerate}[label=\roman*.]
+                \item Trouver une relation indépendante de $m$ entre les racines.
+                \item Trouver alors les racines doubles de $(E_m)$.
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+\item Résoudre dans \( \mathbb{R}^{3} \) par le pivot de Gauss le système \( \begin{cases} 27x + 9y + 3z = -18\\ -x + y -z = 2\\ x + y + z = -8 \end{cases}\)
+
+\item Résoudre dans \( \mathbb{R}^{3} \) par le pivot de Gauss le système \( \begin{cases} 4x - 2y + z = 6\\ 8x + 6y -3z = 22\\ 2x + 4y + 7z = 44 \end{cases}\)
+\item En déduire la résolution dans \( \mathbb{R}^{3} \) du système \( \begin{cases} \frac{4}{x+3} - \frac{2}{y-2} + \frac{1}{z} = 6\\ \frac{8}{x+3} + \frac{6}{y-2} -\frac{3}{z} = 22\\ \frac{2}{x+3} + \frac{4}{y-2} + \frac{7}{z} = 44 \end{cases}\)
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+\item Soit le polynôme de degré 3 tel que \( P(0) = 8 \) ; \( P(1) = 0 \) ; \( P(3) = -10 \) et \( P(-1) = 10 \).
+\begin{enumerate}
+\item Montrer que \( P(x) = x^{3} - 3x^{2} - 6x + 8 \).
+\item Résoudre dans \( \mathbb{R} \) \( P(x) = 0 \).
+\item Résoudre dans \( \mathbb{R} \) \( P(\sqrt{x+3}-x) = 0\).
+\end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Résoudre dans $ \mathbb{R} $, les équations suivantes :
+    \begin{enumerate}
+        \item $\sqrt{x^2 - 5x} = x$
+        \item $\sqrt{x^2 - 5x + 6} \geq x - 2$
+        \item $\sqrt{2x^2 - x} < 2x - 3$
+    \end{enumerate}
+    
+    \item 
+    \begin{enumerate}
+        \item[a)] Résoudre dans $\mathbb{R}$, l'équation suivante : $2x^2 - 4x - 30 = 0$
+        \item[b)] En déduire l’ensemble des solutions de l’équation : $2(x^2 - 1)^2 - 4|x^2 - 1| - 30 = 0$
+    \end{enumerate}
+    
+    \item Résoudre le système suivant par la méthode du pivot de Gauss :
+    \[
+    \begin{cases}
+        5x - 4y - z = 3 \\
+        -x + 2y - 3z = 7 \\
+        x - 3y + 2z = 5
+    \end{cases}
+    \]
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit l'équation $(E_m) : (m - 2)x^2 + (2m + 2)x + 10m - 14 = 0 ; m \in \mathbb{R}$
+
+\begin{enumerate}
+    \item Discuter suivant les valeurs de $m$ le nombre de racines de $(E_m)$
+    \item Pour quelle(s) valeur(s) de $m$, les solutions $x_1$ et $x_2$ de $(E_m)$ :
+    \begin{enumerate}
+        \item sont de signes contraires ?
+        \item sont strictement positives ?
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item Résoudre dans $\mathbb{R}$ les équations suivantes.
+    \begin{enumerate}
+        \item $\sqrt{-x^2 + 5x + 9} = \sqrt{x - 3}$
+        \item $\sqrt{x^2 - x - 2} = x + 1$
+    \end{enumerate}
+    
+    \item Résoudre dans $\mathbb{R}$ les inéquations suivantes.
+    \begin{enumerate}
+        \item $\sqrt{(x + 3)(x - 1)} \leq x - 3$
+        \item $\sqrt{-5x + 1} \geq \sqrt{x^2 - 3x + 2}$
+        \item $x^4 + x^2 - 12 \leq 0$
+    \end{enumerate}
+    
+    \item Résoudre dans $\mathbb{R}^2$ le système suivant
+    \[
+    \begin{cases}
+        x^3 + y^3 = 9 \\
+        \frac{x}{y} + \frac{y}{x} = \frac{5}{2}
+    \end{cases}
+    \]
+    
+    \item Résoudre dans $\mathbb{R}^3$ par la méthode du Pivot de Gauss le système
+    \[
+    \begin{cases}
+        x - 2y + z = 6 \\
+        -2x + y - z = -6 \\
+        3x - y - 2z = -2
+    \end{cases}
+    \]
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+On donne \( P(x) = 2x^3 + ax^2 + bx - 6 \) où \( a \) et \( b \) sont des réels.
+\begin{enumerate}
+    \item Trouver les réels \( a \) et \( b \) pour que le polynôme \( P(x) \) soit divisible par \( x^2 - x - 2 \).
+    \item En déduire une factorisation de \( P(x) \).
+    \item Résoudre dans \( \mathbb{R} \) l'équation \( P(x) = 0 \).
+    \item En déduire les solutions de l'équation \( P(x^2 - 2) = 0 \).
+    \item Résoudre dans \( \mathbb{R} \) l'inéquation \( P(x) \leq 0 \).
+    \item En déduire les solutions de l'inéquation \( P(3 - 2x) \leq 0 \).
+    \item Résoudre dans \( \mathbb{R} \) l'inéquation \( \frac{2x^3 + x^2 - 7x - 6}{-x + 1} > 0 \).
+\end{enumerate}
+
+\end{document}
