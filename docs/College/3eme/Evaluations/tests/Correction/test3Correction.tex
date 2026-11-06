@@ -1,0 +1,114 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\newcounter{correction}
+
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection :}} \ignorespaces
+}
+
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+\hrule
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}}
+        Lycée Dindéfélo & \quad\quad\quad Test 2 & 21 Octobre 2026 \\
+    \end{tabular}
+    \\[-0.01cm]
+    \hrule
+\end{center}
+\begin{center}
+    \textbf{\Large Racine Carrée et Nombres Réels} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : 3 ème} \\[0.2cm]
+    \textbf{\small Durée : 15 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /6}
+\end{center}
+
+\textbf{\small Nom de l'élève :} \underline{\hspace{8cm}} \\[0.5cm]
+
+\question (2 points) Simplifier ou calculer les expressions suivantes :
+\[
+\begin{aligned}
+A&=\sqrt{144}\\
+&=\textcolor{red}{\sqrt{12^2}}\\
+&=\textcolor{red}{12}\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+B&=(\sqrt{13})^2\\
+&=\textcolor{red}{13}\\
+&\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+C&=\sqrt{(-9)^2}\\
+&=\textcolor{red}{|-9|}\\
+&=\textcolor{red}{9}\\
+\end{aligned}
+\quad\quad\quad
+\begin{aligned}
+D&=\sqrt{3^2 \times 5^2}\\
+&=\textcolor{red}{\sqrt{3^2}} \times \textcolor{red}{\sqrt{5^2}}\\
+&=\textcolor{red}{3 \times 5}\\
+&=\textcolor{red}{15}\\
+\end{aligned}
+\]
+
+\vspace{0.8cm}
+
+\question (2 points) Donner la valeur exacte, la valeur approchée et le cadre demandé pour $M = \sqrt{7}$ (sachant que $\sqrt{7} \approx 2,6457$) :
+\begin{enumerate}
+    \item[a)] Valeur exacte de $M =$ \textcolor{red}{$\sqrt{7}$}
+    \item[b)] Valeur approchée de $M$ au centième près par défaut : \textcolor{red}{$2,64$}
+    \item[c)] Valeur approchée de $M$ au centième près par excès : \textcolor{red}{$2,65$}
+    \item[d)] Encadrement de $M$ à $10^{-2}$ près : \textcolor{red}{$2,64$} $< \sqrt{7} <$ \textcolor{red}{$2,65$}
+\end{enumerate}
+
+\vspace{0.8cm}
+
+\question (2 points) Appliquer les propriétés des racines carrées pour calculer ou simplifier sous la forme d'un entier ou d'un quotient simple :
+\[
+\begin{aligned}
+E&=\sqrt{2} \times \sqrt{32}\\
+&=\textcolor{red}{\sqrt{2 \times 32}}\\
+&=\textcolor{red}{\sqrt{64}}\\
+&=\textcolor{red}{8}\\
+\end{aligned}
+\quad\quad\quad\quad\quad
+\begin{aligned}
+F&=\frac{\sqrt{75}}{\sqrt{3}}\\
+&=\textcolor{red}{\sqrt{\frac{75}{3}}}\\
+&=\textcolor{red}{\sqrt{25}}\\
+&=\textcolor{red}{5}\\
+\end{aligned}
+\quad\quad\quad\quad\quad
+\begin{aligned}
+G&=\sqrt{\frac{49}{81}}\\
+&=\textcolor{red}{\frac{\sqrt{49}}{\sqrt{81}}}\\
+&=\textcolor{red}{\frac{7}{9}}\\
+&\\
+\end{aligned}
+\]
+
+\end{document}
