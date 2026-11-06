@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, top=1cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes.geometric, fit}
+
+\newcounter{correction}
+
+\newcommand{\question}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{black}{Question \thecorrection :}} \ignorespaces
+}
+
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.6}{\fontsize{10cm}{10cm}\selectfont PGB}}}
+    }
+}
+
+\begin{document}
+\hrule
+\begin{center}
+    \begin{tabular}{@{} p{5cm} p{5cm} p{5cm} @{}}
+        Lycée Dindéfélo & \quad\quad\quad Test 3 & 21 Octobre 2026 \\
+    \end{tabular}
+    \\[-0.01cm]
+    \hrule
+\end{center}
+\begin{center}
+    \textbf{\Large Sommes Algébriques et Puissances de Radicaux} \\[0.2cm]
+    \textbf{\large Professeur : M. BA} \\[0.2cm]
+    \textbf{Classe : 3 ème} \\[0.2cm]
+    \textbf{\small Durée : 15 minutes} \\[0.2cm]
+    \textbf{\small Note :\quad\quad /5}
+\end{center}
+
+\textbf{\small Nom de l'élève :} \underline{\hspace{8cm}} \\[0.5cm]
+
+\question (1,5 point) Écrire les radicaux suivants sous la forme $a\sqrt{b}$ avec $a \in \mathbb{N}$ et $b \in \mathbb{N}$ le plus petit possible :
+\[
+\begin{aligned}
+\sqrt{27}&=\sqrt{\textcolor{red}{3^2} \times 3}\\
+&=\textcolor{red}{\sqrt{3^2}} \times \textcolor{red}{\sqrt{3}}\\
+&=\textcolor{red}{3\sqrt{3}}\\
+\end{aligned}
+\quad\quad\quad\quad\quad
+\begin{aligned}
+\sqrt{72}&=\sqrt{\textcolor{red}{2^2\times3^2} \times 2}\\
+&=\textcolor{red}{\sqrt{2^2}} \times \textcolor{red}{\sqrt{3^2}} \times \textcolor{red}{\sqrt{2}}\\
+&=\textcolor{red}{2} \times \textcolor{red}{3} \times \textcolor{red}{\sqrt{2}}\\
+&=\textcolor{red}{6\sqrt{2}}\\
+\end{aligned}
+\quad\quad\quad\quad\quad
+\begin{aligned}
+\sqrt{75}&=\sqrt{\textcolor{red}{5^2} \times 3}\\
+&=\textcolor{red}{\sqrt{5^2}} \times \textcolor{red}{\sqrt{3}}\\
+&=\textcolor{red}{5\sqrt{3}}\\
+\end{aligned}
+\]
+
+\vspace{0.8cm}
+
+\question (2 points) Simplifier les sommes algébriques suivantes :
+\[
+\begin{aligned}
+A&= 2\sqrt{27} - \sqrt{75}\\
+&=\textcolor{red}{2(3\sqrt{3}) - 5\sqrt{3}}\\
+&=\textcolor{red}{6\sqrt{3} - 5\sqrt{3}}\\
+&=\textcolor{red}{(6-5)\sqrt{3}}\\
+& =\textcolor{red}{ \sqrt{3} }	
+\end{aligned}
+\quad\quad\quad\quad\quad\quad\quad\quad
+\begin{aligned}
+B&= \sqrt{72} + 3\sqrt{18} - \sqrt{50}\\
+&=\textcolor{red}{6\sqrt{2} + 3(3\sqrt{2}) - 5\sqrt{2}}\\
+&=\textcolor{red}{6\sqrt{2} + 9\sqrt{2} - 5\sqrt{2}}\\
+&=\textcolor{red}{(6 + 9 - 5)\sqrt{2}}\\
+&=\textcolor{red}{ 10\sqrt{2} }
+\end{aligned}
+\]
+
+\vspace{0.8cm}
+
+\question (1,5 point) Simplifier les expressions suivantes comportant des puissances sous le radical :
+\[
+\begin{aligned}
+C&=\sqrt{5^6}\\
+&=\textcolor{red}{\sqrt{(5^3)^2}}\\
+&=\textcolor{red}{5^3}\\
+&=\textcolor{red}{125}\\
+\end{aligned}
+\quad\quad\quad\quad\quad\quad\quad\quad
+\begin{aligned}
+D&=\sqrt{2^7}\\
+&=\textcolor{red}{\sqrt{2^{3\times{2+1}}}}\\
+&=\textcolor{red}{2^3\sqrt{2}}\\
+&=\textcolor{red}{8\sqrt{2}}\\
+\end{aligned}
+\]
+
+\end{document}
