@@ -1,0 +1,641 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                    ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                      MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                      MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+
+%=========================================================
+%                 GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                    COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                        FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{CHAP 7 : FONCTION EXPONENTIELLE NÉPÉRIENNE}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : Terminale L}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%    I. Généralités
+%=========================================================
+
+\section*{\color{myred}I. Généralités}
+
+\paragraph{\underline{Activité 1}}
+À l'aide de la calculatrice, compléter le tableau suivant (donner les valeurs arrondies à $10^{-2}$ près) :
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & -2 & -1 & 0 & 0,5 & 1 & 2 & 3 \\
+\hline
+$e^x$ & \hspace*{0.8cm} & \hspace*{0.8cm} & \hspace*{0.8cm} & \hspace*{0.8cm} & \hspace*{0.8cm} & \hspace*{0.8cm} & \hspace*{0.8cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}1. Définition et notation}
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition}]
+La fonction logarithme népérien $\ln$ réalisant une bijection de $]0\,;\,+\infty[$ sur $\mathbb{R}$, elle admet une fonction réciproque définie sur $\mathbb{R}$ à valeurs dans $]0\,;\,+\infty[$. 
+
+Cette fonction réciproque est appelée \textbf{fonction exponentielle népérienne}, notée $\exp$ ou $x \mapsto e^x$.
+\[
+\text{Pour tout } x \in \mathbb{R} \text{ et pour tout } y \in ]0\,;\,+\infty[ : \quad e^x = y \iff x = \ln(y)
+\]
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}2. Remarques et Relations fondamentales}
+
+\paragraph{\underline{Remarque 1}}
+\begin{itemize}
+    \item La fonction $e^x$ est définie sur $\mathbb{R}$ tout entier ($D_{\exp} = \mathbb{R}$).
+    \item Pour tout réel $x$, $\mathbf{e^x > 0}$ (la fonction exponentielle est **strictement positive**).
+    \item Valeurs particulières : $e^0 = 1$ et $e^1 = e \approx 2{,}718$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\paragraph{\underline{Remarque 2 (Simplifications de réciprocité)}}
+Pour tout réel $x$ et pour tout réel $y > 0$ :
+\begin{itemize}
+    \item $\ln(e^x) = x \quad (\text{pour tout } x \in \mathbb{R})$
+    \item $e^{\ln(y)} = y \quad (\text{pour tout } y > 0)$
+\end{itemize}
+
+\subsection*{\color{myred}3. Propriétés algébriques}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Propriété fondamentale (Produit)}]
+Pour tous réels $a$ et $b$ :
+\[
+e^{a + b} = e^a \times e^b
+\]
+\end{tcolorbox}
+
+\paragraph{Conséquences des propriétés :}
+Pour tous réels $a$ et $b$, et pour tout $n \in \mathbb{Z}$ :
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Inverse :} $e^{-a} = \dfrac{1}{e^a}$
+    \item \textbf{Quotient :} $e^{a - b} = \dfrac{e^a}{e^b}$
+    \item \textbf{Puissance :} $(e^a)^n = e^{n \cdot a}$
+    \item \textbf{Racine carrée :} $e^{\frac{1}{2}a} = \sqrt{e^a}$
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple :}
+Simplifier l'expression $A = \dfrac{e^5 \times e^{-2}}{e^1} + (e^2)^3$.
+
+\subsection*{\color{myred}Solution :}
+$A = \dfrac{e^{5 - 2}}{e^1} + e^{2 \times 3} = \dfrac{e^3}{e^1} + e^6 = e^{3 - 1} + e^6 = e^2 + e^6$
+
+\subsection*{\color{myred}Application :}
+\begin{enumerate}
+    \item Écrire $A = \dfrac{e^3 \times e^{-5}}{e^2}$ sous la forme $e^k$ où $k \in \mathbb{Z}$.
+    \item Simplifier $B = (e^x + e^{-x})^2 - (e^x - e^{-x})^2$.
+    \item Simplifier $C = \dfrac{e^{2x} - 1}{e^x + 1}$.
+\end{enumerate}
+
+\subsection*{\color{myred}Correction :}
+\begin{enumerate}
+\item Écrivons\\ $
+\begin{aligned}
+A &= \dfrac{e^3 \times e^{-5}}{e^2} \\[3mm]
+  &= \dfrac{e^{3 - 5}}{e^2} = \dfrac{e^{-2}}{e^2} = e^{-2 - 2} = \mathbf{e^{-4}}
+\end{aligned}
+$
+    \item Simplifions\\ $
+\begin{aligned}
+B &= (e^x + e^{-x})^2 - (e^x - e^{-x})^2\\[3mm]
+  &= \left((e^x)^2 + 2e^x e^{-x} + (e^{-x})^2\right) - \left((e^x)^2 - 2e^x e^{-x} + (e^{-x})^2\right)\\[3mm]
+  &= (e^{2x} + 2e^0 + e^{-2x}) - (e^{2x} - 2e^0 + e^{-2x})\\[3mm]
+  &= e^{2x} + 2 + e^{-2x} - e^{2x} + 2 - e^{-2x} = \mathbf{4}
+\end{aligned}
+$
+
+\item Simplifions\\ $
+\begin{aligned}
+C &= \dfrac{e^{2x} - 1}{e^x + 1} = \dfrac{(e^x)^2 - 1^2}{e^x + 1}\\[4mm]
+  &= \dfrac{(e^x - 1)(e^x + 1)}{e^x + 1} = \mathbf{e^x - 1}
+\end{aligned}
+$
+\end{enumerate}
+
+%=========================================================
+%    II. ÉQUATIONS ET INÉQUATIONS FAISANT INTERVENIR EXP
+%=========================================================
+
+\section*{\color{myred}II. Équations-Inéquations}
+Grâce à la stricte croissance de la fonction exponentielle sur $\mathbb{R}$, pour tous réels $a$ et $b$ :
+\begin{itemize}
+    \item $e^a = e^b \iff a = b$
+    \item $e^a < e^b \iff a < b$
+    \item $e^x = k \iff x = \ln(k) \quad (\text{avec } k > 0)$
+    \item $e^x \le 0 \implies \text{Impossible (pas de solution)}$
+\end{itemize}
+
+\subsection*{\color{myred}1. Équations}
+
+\paragraph{Exemple 1 : Équation du type $e^{A(x)} = e^{B(x)}$}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_1) : e^{2x - 3} = e^{x + 1}$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\ $D_E = \mathbb{R}$.
+    \item \textbf{Résolution :}\\
+    Pour tout $x \in \mathbb{R}$ :
+    \[
+    e^{2x - 3} = e^{x + 1} \iff 2x - 3 = x + 1 \iff x = 4
+    \]
+    \item \textbf{Conclusion :}\\ $\mathbf{S = \{4\}}$.
+\end{itemize}
+
+\paragraph{Exemple 2 : Équation se ramenant au second degré}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_2) : e^{2x} - 3e^x + 2 = 0$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\ $D_E = \mathbb{R}$.
+    \item \textbf{Changement de variable :}\\ Comme $e^{2x} = (e^x)^2$, posons $X = e^x$ avec $\mathbf{X > 0}$. L'équation devient :
+    \[
+    X^2 - 3X + 2 = 0
+    \]
+    $\Delta = (-3)^2 - 4(1)(2) = 1 > 0 \implies X_1 = 1 \quad \text{et} \quad X_2 = 2$.
+    \item \textbf{Retour à $x$ :}
+    \begin{itemize}
+        \item $e^x = 1 \iff x = \ln(1) = 0$
+        \item $e^x = 2 \iff x = \ln(2)$
+    \end{itemize}
+    \item \textbf{Conclusion :} $\mathbf{S = \{0 \,;\, \ln(2)\}}$.
+\end{itemize}
+
+\subsection*{\color{myred}2. Inéquations}
+
+\paragraph{Exemple 3 :}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'inéquation $(I_1) : e^{3x - 1} \le 1$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\mbox{}\\[2mm] $D_I = \mathbb{R}$.
+    \item \textbf{Résolution :}\mbox{}\\[2mm]
+    Comme $1 = e^0$, l'inéquation s'écrit :
+    \[
+    e^{3x - 1} \le e^0 \iff 3x - 1 \le 0 \iff 3x \le 1 \iff x \le \frac{1}{3}
+    \]
+    \item \textbf{Conclusion :}\mbox{}\\[2mm] $\mathbf{S = \Big]-\infty \,;\, \frac{1}{3}\Big]}$.
+\end{itemize}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exercice d'application : Équations et inéquations}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Exercice d'application}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $e^x = 1$
+    \item $e^x < 2$
+    \item $e^{x + 3} = 5$
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction détaillée}]
+
+\paragraph{1. Résolution de $e^x = 1$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} $D = \mathbb{R}$.
+    \item \textbf{Résolution :}
+    \[
+    e^x = 1 \iff e^x = e^{\color{red}0} \iff x = \mathbf{0}
+    \]
+    \item \textbf{Conclusion :} L'ensemble des solutions est $\mathbf{S_1 = \{0\}}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Résolution de $e^x < 2$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} $D = \mathbb{R}$.
+    \item \textbf{Résolution :}
+    
+    La fonction exponentielle étant strictement croissante sur $\mathbb{R}$ :
+    \[
+    e^x < 2 \iff \ln(e^x) < \ln(2) \iff x < \mathbf{\ln(2)}
+    \]
+    \item \textbf{Conclusion :} L'ensemble des solutions est $\mathbf{S_2 = ]-\infty \,;\, \ln(2)[}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{3. Résolution de $e^{x + 3} = 5$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} $D = \mathbb{R}$.
+    \item \textbf{Résolution :}
+    \[
+    \begin{aligned}
+    e^{x + 3} = 5 &\iff x + 3 = \ln(5)\\[3mm]
+                  &\iff x = \mathbf{\ln(5) - 3}
+    \end{aligned}
+    \]
+    \item \textbf{Conclusion :} L'ensemble des solutions est $\mathbf{S_3 = \{\ln(5) - 3\}}$.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Devoir à la maison : Équations et inéquations exponentielles}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $e^{2x - 1} = 1$
+    \item $2e^x - 3 \le 0$
+    \item $e^{x - 4} = e^{2x - 3}$
+    \item $e^{2x} + e^x - 2 \ge 0$
+    \item $3(e^x)^2 - 2e^x - 1 = 0$
+    \item $\dfrac{e^{2x - 1}}{e^{1 + x}} < e^3$
+\end{enumerate}
+\end{tcolorbox}
+
+\section*{\color{myred}III. Domaine de Définition, Dérivée et Limites}
+
+%++++++++++++++++++++++++++++++++++++
+%    1. Domaine de Définition, Dérivée
+%+++++++++++++++++++++++++++++++++++
+
+\subsection*{\color{myred}1. Domaine de Définition, Dérivée}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Règle pour le domaine de définition}]
+Soit $u$ une fonction numérique.
+\begin{itemize}
+    \item La fonction $f(x) = e^{u(x)}$ est définie sur le même domaine de définition que la fonction $u(x)$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Formules de dérivation}]
+La fonction exponentielle est dérivable sur $\mathbb{R}$ et sa dérivée est elle-même :
+\[
+(e^x)' = e^x
+\]
+Soit $u$ une fonction dérivable sur un intervalle $I$, la fonction $f(x) = e^{u(x)}$ est dérivable sur $I$ et :
+\[
+(e^{u(x)})' = u'(x) \cdot e^{u(x)}
+\]
+\end{tcolorbox}
+
+\underline{\textbf{Exemple 3}}
+
+\vspace{0.3cm}
+
+Déterminons $D_f$ et $f'(x)$ pour chacune des fonctions suivantes :
+
+\begin{enumerate}
+    \item $f(x) = e^{-3x + 1}$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = e^{\sqrt{2x - 1}}$
+    
+    \dotfill
+    
+    \dotfill
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction de l'Exemple 3}]
+
+Déterminons $D_f$ et $f'(x)$ pour chacune des fonctions :
+
+\paragraph{1. Pour $f(x) = e^{-3x + 1}$ :}
+\begin{itemize}
+    \item \textbf{Ensemble de définition $D_f$ :}
+    
+    La fonction $u(x) = -3x + 1$ est un polynôme donc définie sur $\mathbb{R}$.
+    Ainsi, $\mathbf{D_f = \mathbb{R} = ]-\infty \,;\, +\infty[}$.
+
+    \item \textbf{Fonction dérivée $f'(x)$ :}
+    
+    En posant $u(x) = -3x + 1$, on a $u'(x) = -3$.
+    
+    En utilisant la formule $(e^{u(x)})' = u'(x)e^{u(x)}$, on obtient :
+    $$\mathbf{f'(x) = -3e^{-3x + 1}}$$
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Pour $f(x) = e^{\sqrt{2x - 1}}$ :}
+\begin{itemize}
+    \item \textbf{Ensemble de définition $D_f$ :}
+    
+    $f(x)$ est définie si et seulement si la racine est définie, soit $2x - 1 \ge 0 \iff x \ge \frac{1}{2}$.
+    Ainsi, $\mathbf{D_f = \Big[\frac{1}{2} \,;\, +\infty\Big[}$.
+
+    \item \textbf{Fonction dérivée $f'(x)$ :}
+    
+    On pose $u(x) = \sqrt{2x - 1}$, d'où $u'(x) = \dfrac{2}{2\sqrt{2x - 1}} = \dfrac{1}{\sqrt{2x - 1}}$.
+    
+    $$\mathbf{f'(x) = \frac{1}{\sqrt{2x - 1}} e^{\sqrt{2x - 1}}}$$
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{center}
+    \Large\bfseries Devoir à la Maison (DM) : Fonction Exponentielle
+\end{center}
+
+\vspace{0.5cm}
+
+Déterminer $D_f$ et $f'(x)$ pour chacune des fonctions suivantes :
+
+\begin{enumerate}
+    \item $f(x) = e^{x^2 - 3x + 2}$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = e^{\frac{x - 1}{x + 1}}$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = (x + 2)e^{-x}$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = \dfrac{e^x - 1}{e^x + 1}$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+\end{enumerate}
+
+%++++++++++++++++++
+%    2. Limites
+%++++++++++++++++++
+\subsection*{\color{myred}2. Limites}
+
+\textbf{\color{myred} Limites usuelles (Croissances comparées)}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Formules des limites usuelles à retenir}]
+\[
+\begin{array}{rcccl}
+1) & \lim_{x \to -\infty} e^x = 0 & \quad & 2) & \lim_{x \to +\infty} e^x = +\infty \\[0.3cm]
+3) & \lim_{x \to -\infty} x e^x = 0 & \quad & 4) & \lim_{x \to +\infty} \frac{e^x}{x} = +\infty \\[0.3cm]
+5) & \lim_{x \to 0} \frac{e^x - 1}{x} = 1 & \quad & 6) & \lim_{x \to -\infty} x^n e^x = 0 \quad (n \in \mathbb{N}^*)\\[0.3cm]
+7) & \lim_{x \to +\infty} \frac{e^x}{x^n} = +\infty \quad (n \in \mathbb{N}^*)
+\end{array}
+\]
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Exemples d'application}]
+
+\paragraph{Exemple 1 : Calcul de $\lim_{x \to +\infty} (2x - 3 + e^x)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to +\infty} (2x - 3) = +\infty \\[2mm]
+\lim_{x \to +\infty} e^x = +\infty \quad (\text{Formule 2})
+\end{array}
+\right\} 
+&\implies \lim_{x \to +\infty} (2x - 3 + e^x) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 2 : Calcul de $\lim_{x \to -\infty} (x^2 - 5e^x)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to -\infty} x^2 = +\infty \\[2mm]
+\lim_{x \to -\infty} e^x = 0 \implies \lim_{x \to -\infty} (-5e^x) = 0 \quad (\text{Formule 1})
+\end{array}
+\right\} 
+&\implies \lim_{x \to -\infty} (x^2 - 5e^x) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 3 : Levée de forme indéterminée pour $\lim_{x \to +\infty} (e^x - x)$}
+La forme est indéterminée ("$+\infty - \infty$"). On factorise par $x$ :
+\[
+\begin{aligned}
+\lim_{x \to +\infty} (e^x - x) &= \lim_{x \to +\infty} x \left(\frac{e^x}{x} - 1\right) \\[2mm]
+\text{Or }, \lim_{x \to +\infty} \frac{e^x}{x} = +\infty \quad (\text{Formule 4}) &\implies \lim_{x \to +\infty} \left(\frac{e^x}{x} - 1\right) = +\infty \\[2mm]
+\text{Par produit, } &\implies \lim_{x \to +\infty} x \left(\frac{e^x}{x} - 1\right) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 4 : Utilisation de la croissance comparée $\lim_{x \to -\infty} (3x e^x + 2)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to -\infty} x e^x = 0 \quad (\text{Formule 3}) \implies \lim_{x \to -\infty} 3x e^x = 0 \\[2mm]
+\lim_{x \to -\infty} 2 = 2
+\end{array}
+\right\} 
+&\implies \lim_{x \to -\infty} (3x e^x + 2) = 2
+\end{aligned}
+\]
+
+\end{tcolorbox}
+
+%=========================================================
+%    IV. Etude de la Fonction Exponentielle
+%=========================================================
+
+\section*{\color{myred}IV. Étude de la Fonction $x \mapsto e^x$}
+
+\subsection*{\color{myred} Tableau de variations et représentation graphique}
+
+\paragraph{Limites aux bornes :}
+\[
+\lim_{x \to -\infty} e^x = 0 \quad \text{et} \quad \lim_{x \to +\infty} e^x = +\infty
+\]
+
+\paragraph{Tableau de variations :}
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ /1, $(e^x)'$ /1, $e^x$ /1.5}
+   {$-\infty$ , $0$, $+\infty$}
+   \tkzTabLine{, +, t, +}
+   \tkzTabVar{-/$0$, R/, +/$+\infty$}
+   \tkzTabIma{1}{3}{2}{$1$}
+
+\node (A) at (7.2,-0.7) {$1$};
+\node (B) at (7.2,-2.5) {$e$};
+
+\draw[dotted, thick] (A) -- (B);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Représentation graphique de $f(x) = e^x$ :}
+La courbe admet l'axe des abscisses ($y = 0$) comme asymptote horizontale en $-\infty$ et une branche parabolique de direction $(Oy)$ en $+\infty$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-3.5, xmax=3.5,
+    ymin=-0.5, ymax=4.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=9.5cm, height=6.5cm
+]
+    \addplot[domain=-3.2:1.5, samples=200, color=myblue, ultra thick] {exp(x)};
+    
+    % Points particuliers
+    \filldraw[color=myred] (axis cs:0,1) circle (2pt) node[above left] {$(0,1)$};
+    \filldraw[color=myred] (axis cs:1,2.718) circle (2pt) node[left] {$e$};
+    \draw[dashed, color=gray] (axis cs:1,0) -- (axis cs:1,2.718) -- (axis cs:0,2.718);
+    
+    % Asymptote horizontale
+    \draw[ultra thick, color=myred, ->, >=Stealth] (axis cs:-3,0) -- (axis cs:-0.5,0);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+
+\hrule
+\vspace{0.3cm}
+
+\paragraph{Exemple complet d'étude de fonction (type Terminale L) :}
+Soit la fonction $f$ définie sur $\mathbb{R}$ par $f(x) = (x - 1)e^x$.
+
+\begin{enumerate}
+    \item \textbf{Limites aux bornes :}
+    \begin{itemize}
+        \item En $-\infty$ : $f(x) = x e^x - e^x$. 
+        Comme $\lim_{x \to -\infty} x e^x = 0$ et $\lim_{x \to -\infty} e^x = 0$, on a $\lim_{x \to -\infty} f(x) = 0$. (Asymptote horizontale $y = 0$).
+        \item En $+\infty$ : $\lim_{x \to +\infty} (x - 1) = +\infty$ et $\lim_{x \to +\infty} e^x = +\infty \implies \lim_{x \to +\infty} f(x) = +\infty$.
+    \end{itemize}
+
+    \item \textbf{Dérivée et variations :}
+    Pour tout $x \in \mathbb{R}$ (forme $u \cdot v$) :
+    \[
+    f'(x) = 1 \cdot e^x + (x - 1)e^x = e^x(1 + x - 1) = x e^x
+    \]
+    Comme $e^x > 0$ pour tout $x \in \mathbb{R}$, le signe de $f'(x)$ est celui de $x$ :
+    \begin{itemize}
+        \item Pour $x \in ]-\infty \,;\, 0[$, $f'(x) < 0 \implies f$ est strictement décroissante.
+        \item Pour $x \in ]0 \,;\, +\infty[$, $f'(x) > 0 \implies f$ est strictement croissante.
+        \item Minimum local en $x = 0$ : $f(0) = (0 - 1)e^0 = -1$.
+    \end{itemize}
+
+    \item \textbf{Tableau de variations :}
+    \begin{center}
+    \begin{tikzpicture}
+      \tkzTabInit[lgt=2, espcl=2.5]
+        {$x$/1, $f'(x)$/1, $f$/2}
+        {$-\infty$, $0$, $+\infty$}
+      \tkzTabLine{, - , z , + , }
+      \tkzTabVar{+/$0$ , -/ $-1$ , +/ $+\infty$}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\underline{\textbf{Application}}
+
+\vspace{0.3cm}
+
+On pose $f(x) = \dfrac{e^x - 1}{e^x + 1}$.
+
+\begin{enumerate}
+    \item Déterminer $D_f$.
+    \item Calculer les limites aux bornes de $D_f$.
+    \item Étudier la parité de $f$.
+    \item Calculer $f'(x)$ puis dresser le tableau de variation de $f$.
+    \item Déterminer les points d'intersection entre $\mathcal{C}_f$ et les axes de coordonnées.
+    \item Déterminer l'équation de la tangente au point d'abscisse $x = 0$.
+    \item Dresser un tableau de valeurs puis tracer $\mathcal{C}_f$.
+\end{enumerate}
+\end{document}

@@ -1,0 +1,438 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{CHAPITRE 5 : ÉTUDE DE FONCTIONS}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : Terminale L}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%      I. PARITÉ ET ÉLÉMENTS DE SYMÉTRIE
+%=========================================================
+
+%=========================================================
+%      I. PARITÉ ET ÉLÉMENTS DE SYMÉTRIE
+%=========================================================
+
+\section*{\color{myred}I. Parité et éléments de symétrie}
+
+Soit $f$ une fonction numérique définie sur un ensemble $D_f$ et $\mathcal{C}_f$ sa courbe représentative dans un repère orthogonal.
+
+\subsection*{\color{myred}1. Parité d'une fonction}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition 1 : Fonction paire}]
+On dit qu'une fonction $f$ est \textbf{paire} si :
+\begin{enumerate}
+    \item Pour tout $x \in D_f$, $-x \in D_f$ ($D_f$ est centré en $0$).
+    \item Pour tout $x \in D_f$, $f(-x) = f(x)$.
+\end{enumerate}
+\textbf{Interprétation géométrique :} L'axe des ordonnées $(Oy)$ est un \textbf{axe de symétrie} pour la courbe $\mathcal{C}_f$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Définition 2 : Fonction impaire}]
+On dit qu'une fonction $f$ est \textbf{impaire} si :
+\begin{enumerate}
+    \item Pour tout $x \in D_f$, $-x \in D_f$.
+    \item Pour tout $x \in D_f$, $f(-x) = -f(x)$.
+\end{enumerate}
+\textbf{Interprétation géométrique :} L'origine du repère $O(0,0)$ est un \textbf{centre de symétrie} pour la courbe $\mathcal{C}_f$.
+\end{tcolorbox}
+
+\paragraph{Exemple 1 : Étude de la parité}
+\begin{itemize}
+    \item \textbf{Cas d'une fonction paire :} Soit $f(x) = x^4 - 2x^2 + 1$ définie sur $D_f = \mathbb{R}$.
+    \begin{enumerate}
+        \item $D_f = \mathbb{R}$ est symétrique par rapport à $0$.
+        \item Pour tout $x \in \mathbb{R}$ :
+        \[
+        f(-x) = (-x)^4 - 2(-x)^2 + 1 = x^4 - 2x^2 + 1 = f(x)
+        \]
+        Donc $f$ est **paire**, et $(Oy)$ est axe de symétrie de $\mathcal{C}_f$.
+    \end{enumerate}
+
+    \item \textbf{Cas d'une fonction impaire :} Soit $g(x) = \dfrac{2x}{x^2 + 1}$ définie sur $D_g = \mathbb{R}$.
+    \begin{enumerate}
+        \item $D_g = \mathbb{R}$ est symétrique par rapport à $0$.
+        \item Pour tout $x \in \mathbb{R}$ :
+        \[
+        g(-x) = \frac{2(-x)}{(-x)^2 + 1} = \frac{-2x}{x^2 + 1} = -g(x)
+        \]
+        Donc $g$ est **impaire**, et l'origine $O(0,0)$ est centre de symétrie de $\mathcal{C}_g$.
+    \end{enumerate}
+\end{itemize}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}2. Éléments de symétrie}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Propriété 1 : Axe de symétrie}]
+La droite $(\mathcal{D}) : x = a$ est un \textbf{axe de symétrie} de la courbe $\mathcal{C}_f$ si et seulement si pour tout $x \in D_f$ :
+\[
+(2a - x) \in D_f \quad \text{et} \quad f(2a - x) = f(x)
+\]
+\end{tcolorbox}
+
+\paragraph{Exemple 2 : Démontrer qu'une droite est axe de symétrie}
+Soit $f(x) = x^2 - 4x + 5$ définie sur $D_f = \mathbb{R}$. Montrons que la droite $(\mathcal{D}) : x = 2$ est axe de symétrie de $\mathcal{C}_f$.
+
+\paragraph{Résolution :}
+Ici $a = 2$. Pour tout $x \in \mathbb{R}$, $(2a - x) = (4 - x) \in \mathbb{R}$.
+Calculons $f(4 - x)$ :
+\[
+f(4 - x) = (4 - x)^2 - 4(4 - x) + 5
+\]
+\[
+f(4 - x) = (16 - 8x + x^2) - 16 + 4x + 5
+\]
+\[
+f(4 - x) = x^2 - 4x + 5 = f(x)
+\]
+Puisque $f(4 - x) = f(x)$, la droite d'équation $x = 2$ est bien un **axe de symétrie** pour $\mathcal{C}_f$.
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Propriété 2 : Centre de symétrie}]
+Le point $I(a, b)$ est un \textbf{centre de symétrie} de la courbe $\mathcal{C}_f$ si et seulement si pour tout $x \in D_f$ :
+\[
+(2a - x) \in D_f \quad \text{et} \quad f(2a - x) + f(x) = 2b
+\]
+\end{tcolorbox}
+
+\paragraph{Exemple 3 : Démontrer qu'un point est centre de symétrie}
+Soit $g(x) = \dfrac{2x + 1}{x - 1}$ définie sur $D_g = \mathbb{R} \setminus \{1\}$. Montrons que $I(1, 2)$ est centre de symétrie de $\mathcal{C}_g$.
+
+\paragraph{Résolution :}
+Ici $a = 1$ et $b = 2$.
+\begin{enumerate}
+    \item Si $x \in D_g \iff x \neq 1 \iff -x \neq -1 \iff 2 - x \neq 1$. Donc $(2a - x) \in D_g$.
+    \item Calculons $g(2a - x) + g(x) = g(2 - x) + g(x)$ :
+    \[
+    g(2 - x) = \frac{2(2 - x) + 1}{(2 - x) - 1} = \frac{4 - 2x + 1}{1 - x} = \frac{5 - 2x}{1 - x} = \frac{2x - 5}{x - 1}
+    \]
+    Additionnons les deux expressions :
+    \[
+    g(2 - x) + g(x) = \frac{2x - 5}{x - 1} + \frac{2x + 1}{x - 1} = \frac{(2x - 5) + (2x + 1)}{x - 1} = \frac{4x - 4}{x - 1} = \frac{4(x - 1)}{x - 1} = 4
+    \]
+    Comme $2b = 2(2) = 4$, on a bien $g(2 - x) + g(x) = 2b$.
+\end{enumerate}
+Le point $I(1, 2)$ est donc bien le **centre de symétrie** de la courbe $\mathcal{C}_g$.
+
+\section*{\color{myred}II. Branches infinies}
+
+\subsection*{\color{myred}1. Asymptotes}
+
+\subsubsection*{\color{myred}a. Asymptote verticale :}
+
+\begin{center}
+    \begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition : Asymptote verticale}]
+Si la limite d'une fonction $f$ en un réel $a$ est infinie, c'est-à-dire :
+\[
+\lim_{x \to a^-} f(x) = \pm\infty \quad \text{ou} \quad \lim_{x \to a^+} f(x) = \pm\infty
+\]
+alors la droite d'équation $\mathbf{x = a}$ est une \textbf{asymptote verticale} à la courbe $\mathcal{C}_f$.
+\end{tcolorbox}
+\end{center}
+
+\paragraph{Exemple 1 :} Soit $f(x) = \dfrac{3x + 1}{x - 2}$ définie sur $\mathbb{R} \setminus \{2\}$.
+\[
+\lim_{x \to 2^-} f(x) = \frac{7}{0^-} = -\infty \quad \text{et} \quad \lim_{x \to 2^+} f(x) = \frac{7}{0^+} = +\infty
+\]
+\textbf{Conclusion :} La droite d'équation $x = 2$ est une asymptote verticale à la courbe $\mathcal{C}_f$.
+
+\subsubsection*{\color{myred}b. Asymptote horizontale :}
+
+\begin{center}
+    \begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition : Asymptote horizontale}]
+Si la limite d'une fonction $f$ en $+\infty$ ou en $-\infty$ est un nombre réel $L$, c'est-à-dire :
+\[
+\lim_{x \to \pm\infty} f(x) = L \quad (L \in \mathbb{R})
+\]
+alors la droite d'équation $\mathbf{y = L}$ est une \textbf{asymptote horizontale} à la courbe $\mathcal{C}_f$ en $\pm\infty$.
+\end{tcolorbox}
+\end{center}
+
+\paragraph{Exemple 2 :} Soit $g(x) = \dfrac{2x^2 - 1}{x^2 + 3}$ définie sur $\mathbb{R}$.
+\[
+\lim_{x \to +\infty} g(x) = \lim_{x \to +\infty} \frac{2x^2}{x^2} = 2 \quad \text{et} \quad \lim_{x \to -\infty} g(x) = 2
+\]
+\textbf{Conclusion :} La droite d'équation $y = 2$ est une asymptote horizontale à la courbe $\mathcal{C}_g$ en $+\infty$ et en $-\infty$.
+
+\subsubsection*{\color{myred}c. Asymptote oblique :}
+
+\begin{center}
+    \begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition : Asymptote oblique}]
+La droite $(\mathcal{D}) : y = ax + b$ (avec $a \neq 0$) est une \textbf{asymptote oblique} à la courbe $\mathcal{C}_f$ en $\pm\infty$ si et seulement si :
+\[
+\lim_{x \to \pm\infty} [f(x) - (ax + b)] = 0
+\]
+\end{tcolorbox}
+\end{center}
+
+\paragraph{Exemple 3 :} Soit $h(x) = \dfrac{2x^2 - 3x + 5}{x - 1}$ définie sur $\mathbb{R} \setminus \{1\}$.
+Montrons que la droite $(\mathcal{D}) : y = 2x - 1$ est asymptote oblique à $\mathcal{C}_h$ en $+\infty$.
+\begin{enumerate}
+    \item Calculons la différence $h(x) - (2x - 1)$ :
+    \[
+    h(x) - (2x - 1) = \frac{2x^2 - 3x + 5}{x - 1} - \frac{(2x - 1)(x - 1)}{x - 1} = \frac{(2x^2 - 3x + 5) - (2x^2 - 3x + 1)}{x - 1} = \frac{4}{x - 1}
+    \]
+    \item Calculons la limite de la différence :
+    \[
+    \lim_{x \to +\infty} [h(x) - (2x - 1)] = \lim_{x \to +\infty} \frac{4}{x - 1} = 0
+    \]
+\end{enumerate}
+\textbf{Conclusion :} La droite d'équation $y = 2x - 1$ est une asymptote oblique à $\mathcal{C}_h$ en $+\infty$ (et de même en $-\infty$).
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}2. Branches paraboliques}
+
+Lorsque $\lim_{x \to \pm\infty} f(x) = \pm\infty$, la courbe ne possède pas d'asymptote horizontale. On étudie alors la limite du rapport $\dfrac{f(x)}{x}$ :
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Définitions : Les deux directions paraboliques}]
+\begin{itemize}
+    \item \textbf{Branche parabolique de direction $(Oy)$ :}
+    Si $\lim_{x \to \pm\infty} \frac{f(x)}{x} = \pm\infty$, la courbe $\mathcal{C}_f$ admet une branche parabolique dont la direction asymptotique est l'axe des ordonnées $(Oy)$.
+    \item \textbf{Branche parabolique de direction $(Ox)$ :}
+    Si $\lim_{x \to \pm\infty} \frac{f(x)}{x} = 0$, la courbe $\mathcal{C}_f$ admet une branche parabolique dont la direction asymptotique est l'axe des abscisses $(Ox)$.
+\end{itemize}
+\end{tcolorbox}
+
+\paragraph{Exemple 4 : Branche parabolique de direction $(Oy)$}
+Soit $f(x) = x^2 - 3x$ définie sur $\mathbb{R}$.
+\begin{enumerate}
+    \item $\lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} x^2 = +\infty$.
+    \item Calculons la limite de $\dfrac{f(x)}{x}$ :
+    \[
+    \lim_{x \to +\infty} \frac{f(x)}{x} = \lim_{x \to +\infty} \frac{x^2 - 3x}{x} = \lim_{x \to +\infty} (x - 3) = +\infty
+    \]
+\end{enumerate}
+\textbf{Conclusion :} $\mathcal{C}_f$ admet une branche parabolique de direction $(Oy)$ en $+\infty$.
+
+\paragraph{Exemple 5 : Branche parabolique de direction $(Ox)$}
+Soit $g(x) = \sqrt{x}$ définie sur $[0 \,;\, +\infty[$.
+\begin{enumerate}
+    \item $\lim_{x \to +\infty} g(x) = +\infty$.
+    \item Calculons la limite de $\dfrac{g(x)}{x}$ :
+    \[
+    \lim_{x \to +\infty} \frac{g(x)}{x} = \lim_{x \to +\infty} \frac{\sqrt{x}}{x} = \lim_{x \to +\infty} \frac{1}{\sqrt{x}} = 0
+    \]
+\end{enumerate}
+\textbf{Conclusion :} $\mathcal{C}_g$ admet une branche parabolique de direction $(Ox)$ en $+\infty$.
+
+%=========================================================
+%      III. ÉTUDE ET REPRÉSENTATION GRAPHIQUE DE FONCTIONS
+%=========================================================
+
+\section*{\color{myred}III. Étude et représentation graphique de fonctions}
+
+\paragraph{Plan général d'étude d'une fonction :}
+\begin{enumerate}[label=\arabic*.]
+    \item Déterminer l'ensemble de définition $D_f$.
+    \item Étudier les limites aux bornes de $D_f$ et déterminer les asymptotes.
+    \item Calculer la dérivée $f'(x)$, étudier son signe et dresser le tableau de variations.
+    \item Déterminer les points d'intersection avec les axes du repère et les éléments de symétrie (si besoin).
+    \item Tracer les asymptotes, les tangentes/extrémums puis la courbe $\mathcal{C}_f$.
+\end{enumerate}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 1 : Fonction polynôme du 3\textsuperscript{e} degré}
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x) = x^3 - 3x + 2$.
+
+\paragraph{1. Ensemble de définition :} $D_f = \mathbb{R} = ]-\infty \,;\, +\infty[$.
+
+\paragraph{2. Limites aux bornes :}
+\[
+\lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} x^3 = -\infty \quad \text{et} \quad \lim_{x \to +\infty} f(x) = \lim_{x \to +\infty} x^3 = +\infty
+\]
+
+\paragraph{3. Dérivée et sens de variation :}
+$f$ est dérivable sur $\mathbb{R}$ : $f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x - 1)(x + 1)$.\\
+$f'(x) = 0 \iff x = -1$ ou $x = 1$.
+\begin{itemize}
+    \item $f(-1) = (-1)^3 - 3(-1) + 2 = -1 + 3 + 2 = 4$ (Maximum local).
+    \item $f(1) = 1^3 - 3(1) + 2 = 0$ (Minimum local).
+\end{itemize}
+
+\paragraph{4. Tableau de variations :}
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2, espcl=2.5]
+    {$x$/1, $f'(x)$/1, $f$/2}
+    {$-\infty$, $-1$, $1$, $+\infty$}
+  \tkzTabLine{ , + , z , - , z , + , }
+  \tkzTabVar{-/$-\infty$ , +/ $4$ , -/ $0$ , +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+\paragraph{5. Centre de symétrie :}
+Montrons que $I(0, 2)$ est centre de symétrie.\\
+$f(2(0) - x) + f(x) = f(-x) + f(x) = ((-x)^3 - 3(-x) + 2) + (x^3 - 3x + 2) = -x^3 + 3x + 2 + x^3 - 3x + 2 = 4 = 2(2)$.\\
+Donc $I(0,2)$ est bien le centre de symétrie de $\mathcal{C}_f$.
+
+\paragraph{6. Courbe représentative $\mathcal{C}_f$ :}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-2.5, xmax=2.5,
+    ymin=-1.5, ymax=5.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=9cm, height=7cm
+]
+    \addplot[domain=-2.2:2.1, samples=100, color=myblue, ultra thick] {x^3 - 3*x + 2};
+    \filldraw[color=myred] (axis cs:-1,4) circle (2pt) node[above] {$Max(-1,4)$};
+    \filldraw[color=myred] (axis cs:1,0) circle (2pt) node[below right] {$Min(1,0)$};
+    \filldraw[color=mygreen] (axis cs:0,2) circle (2pt) node[above right] {$I(0,2)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple 2 : Fonction rationnelle avec asymptote oblique}
+
+Soit $g$ la fonction définie par $g(x) = \frac{x^2 - x + 1}{x - 1}$.
+
+\paragraph{1. Ensemble de définition :} $D_g = \mathbb{R} \setminus \{1\} = ]-\infty \,;\, 1[ \;\cup\; ]1 \,;\, +\infty[$.
+
+\paragraph{2. Forme réduite et Asymptotes :}
+En effectuant la division : $g(x) = x + \frac{1}{x - 1}$.
+\begin{itemize}
+    \item $\lim_{x \to 1^-} g(x) = -\infty$ et $\lim_{x \to 1^+} g(x) = +\infty \implies$ La droite $\mathbf{x = 1}$ est une **asymptote verticale**.
+    \item $\lim_{x \to \pm\infty} [g(x) - x] = \lim_{x \to \pm\infty} \frac{1}{x - 1} = 0 \implies$ La droite $(\mathcal{D}) : \mathbf{y = x}$ est une **asymptote oblique** en $\pm\infty$.
+\end{itemize}
+
+\paragraph{3. Dérivée et variations :}
+Pour tout $x \in D_g$ :
+\[
+g'(x) = 1 - \frac{1}{(x - 1)^2} = \frac{(x - 1)^2 - 1}{(x - 1)^2} = \frac{x^2 - 2x}{(x - 1)^2} = \frac{x(x - 2)}{(x - 1)^2}
+\]
+$g'(x) = 0 \iff x = 0$ ou $x = 2$.
+\begin{itemize}
+    \item $g(0) = -1$ (Maximum local)
+    \item $g(2) = 3$ (Minimum local)
+\end{itemize}
+
+\paragraph{4. Tableau de variations :}
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=2, espcl=2.2]
+    {$x$/1, $g'(x)$/1, $g$/2}
+    {$-\infty$, $0$, $1$, $2$, $+\infty$}
+  \tkzTabLine{ , + , z , - , d , - , z , + , }
+  \tkzTabVar{-/$-\infty$ , +/ $-1$ , +D-/$+\infty$/$-\infty$ , -/ $3$ , +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+\paragraph{5. Courbe représentative $\mathcal{C}_g$ :}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-3.5, xmax=4.5,
+    ymin=-5.5, ymax=6.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=10cm, height=8cm
+]
+    % Courbe
+    \addplot[domain=-3.5:0.85, samples=100, color=myblue, ultra thick] {(x^2 - x + 1)/(x - 1)};
+    \addplot[domain=1.15:4.5, samples=100, color=myblue, ultra thick] {(x^2 - x + 1)/(x - 1)};
+    
+    % Asymptotes
+    \draw[dashed, ultra thick, color=myred] (axis cs:1,-5.5) -- (axis cs:1,6.5) node[pos=0.9, right] {$x=1$};
+    \addplot[domain=-3.5:4.5, color=mygreen, thick] {x};
+    \node[color=mygreen] at (axis cs: 3.5, 4.2) {$y=x$};
+
+    % Extrémums
+    \filldraw[color=myred] (axis cs:0,-1) circle (2pt);
+    \filldraw[color=myred] (axis cs:2,3) circle (2pt);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{document}

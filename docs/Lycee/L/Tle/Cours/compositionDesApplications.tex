@@ -1,0 +1,376 @@
+%=========================================================
+%               CLASSE DU DOCUMENT
+%=========================================================
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%         ENCODAGE ET POLICES DE CARACTÈRES
+%=========================================================
+\usepackage[utf8]{inputenc}    % Encodage UTF-8 (inutile avec XeLaTeX/LuaLaTeX)
+\usepackage[T1]{fontenc}       % Meilleure gestion des caractères accentués
+\usepackage[french]{babel} % <--- Ce package fournit \og et \fg{}
+\usepackage{lmodern}           % Police Latin Modern
+\usepackage{times}             % Police Times (à supprimer si tu préfères Latin Modern)
+
+%=========================================================
+%                MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath}           % Environnements mathématiques avancés
+\usepackage{amssymb}           % Symboles mathématiques supplémentaires
+\usepackage{amsfonts}          % Polices mathématiques
+\usepackage{mathrsfs}          % Police calligraphique (\mathscr)
+\usepackage{tkz-tab}           % Tableaux de signes et de variations
+\everymath{\displaystyle}      % Affiche toutes les formules en style "display"
+
+%=========================================================
+%               MISE EN PAGE
+%=========================================================
+\usepackage[
+    left=1cm,
+    right=1cm,
+    top=1cm,
+    bottom=1.7cm
+]{geometry}                    % Marges du document
+
+\usepackage{multicol}          % Texte sur plusieurs colonnes
+\usepackage{float}             % Placement précis des figures et tableaux
+
+%=========================================================
+%            TABLEAUX ET LISTES
+%=========================================================
+\usepackage{array}             % Colonnes de tableaux personnalisées
+\usepackage{multirow}          % Fusion de lignes dans les tableaux
+\usepackage{enumitem}          % Personnalisation des listes
+
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,arrows.meta}
+%=========================================================
+%            COULEURS ET BOÎTES
+%=========================================================
+\usepackage[most]{tcolorbox}   % Boîtes colorées très personnalisables
+\tcbuselibrary{skins,hooks}    % Bibliothèques supplémentaires de tcolorbox
+
+\usepackage{mdframed}          % Cadres autour de paragraphes
+\usepackage{varwidth}          % Largeur automatique des boîtes
+
+%=========================================================
+%                DESSINS ET GRAPHIQUES
+%=========================================================
+\usepackage{tikz}              % Dessins vectoriels
+\usetikzlibrary{calc}
+\usetikzlibrary{
+    arrows,
+    shapes.geometric,
+    fit,
+    patterns
+}
+
+\usepackage{pgfplots}          % Tracés de fonctions et graphiques
+\pgfplotsset{compat=1.15}
+
+%=========================================================
+%              LIENS HYPERTEXTES
+%=========================================================
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+]{hyperref}
+
+%=========================================================
+%          ÉLÉMENTS EN ARRIÈRE-PLAN
+%=========================================================
+\usepackage{eso-pic}           % Ajout de filigranes ou d'éléments sur chaque page
+
+%=========================================================
+%              SYMBOLES DIVERS
+%=========================================================
+\usepackage{pifont}            % Symboles (✓, ✗, etc.)
+
+\DeclareUnicodeCharacter{2460}{\text{\ding{172}}} % Pour ①
+\DeclareUnicodeCharacter{2461}{\text{\ding{173}}} % Pour ②
+%=========================================================
+%      PERSONNALISATION DES LISTES NUMÉROTÉES
+%=========================================================
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray,fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+%=========================================================
+%            COMMANDES PERSONNALISÉES
+%=========================================================
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{%
+\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation horizontale
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%=========================================================
+%             COMPTEURS PERSONNALISÉS
+%=========================================================
+
+%---------- Exemple ----------
+\newcounter{exemple}
+
+\newcommand{\exemple}{%
+\refstepcounter{exemple}
+\textbf{\textcolor{orange}{Exemple \theexemple : }}
+\ignorespaces}
+
+%---------- Solution ----------
+\newcounter{solution}
+
+\newcommand{\solution}{%
+\refstepcounter{solution}
+\textbf{\textcolor{orange}{Solution \thesolution : }}
+\ignorespaces}
+
+%---------- Exercices ----------
+\definecolor{myorange}{rgb}{1.0,0.8,0.0}
+
+\newcounter{exerciceapp}
+
+\newcommand{\exerciceapp}{%
+\refstepcounter{exerciceapp}
+\textbf{\textcolor{myorange}
+{Exercice d'application \theexerciceapp : }}
+\ignorespaces}
+
+%---------- Corrections ----------
+\newcounter{correction}
+
+\newcommand{\correction}{%
+\refstepcounter{correction}
+\textbf{\textcolor{myorange}
+{Correction \thecorrection : }}
+\ignorespaces}
+
+%---------- Remarques ----------
+\definecolor{myorange1}{rgb}{1.0,1.0,0.0}
+\usepackage{enumitem}
+
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\newcounter{remarque}
+
+\newcommand{\remarque}{%
+\refstepcounter{remarque}
+\textbf{\textcolor{myorange1}
+{Remarque \theremarque : }}
+\ignorespaces}
+
+%=========================================================
+%                 FILIGRANE
+%=========================================================
+
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.6}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+% En-tête personnalisée
+\begin{center}
+    \Large\textbf{\underline{\textcolor{red}{Équations et Inéquations Du second dégré}}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 1erS2}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+%=========================================================
+% ========================================================================
+\vspace{1em}
+% PARTIE I : Trinome DU SECOND DEGRÉ
+% ========================================================================
+
+\section*{Objectifs spécifiques}
+\begin{itemize}[label=$\checkmark$]
+    \item Calculer \( (g \circ f)(x) \).
+    \item Calculer \( (f \circ g)(x) \).
+    \item Comprendre la non-commutativité de la composition.
+\end{itemize}
+
+\section*{Prérequis}
+\begin{itemize}[label=$\checkmark$]
+    \item Calcul dans \(\mathbb{R}\) (fonctions affines, carrées, polynômes).
+    \item Notion de fonction (image, antécédent, ensemble de définition).
+\end{itemize}
+
+\section*{Supports didactiques}
+\begin{itemize}[label=$\checkmark$]
+    \item Collection N. Dimathème Terminale \( A_2 / A_3 \).
+    \item Ordinateur (visualisations avec GeoGebra ou tableur).
+\end{itemize}
+
+\section*{Plan du chapitre}
+\begin{enumerate}
+    \item \textbf{Calcul de \( (g \circ f)(x) \)}
+    \begin{enumerate}
+        \item Exemples
+        \begin{enumerate}
+            \item Exemple 1
+            \item Exemple 2
+        \end{enumerate}
+        \item Exercice d’application
+    \end{enumerate}
+    \item \textbf{Calcul de \( (f \circ g)(x) \)}
+    \begin{enumerate}
+        \item Exemples
+        \begin{enumerate}
+            \item Exemple 1
+            \item Exemple 2
+        \end{enumerate}
+        \item Exercice d’application
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\section*{Introduction}
+La \textbf{composition d'applications} consiste à appliquer successivement deux fonctions. 
+Si \( f \) transforme \( x \) en \( f(x) \) et \( g \) transforme \( y \) en \( g(y) \), alors \( g \circ f \) signifie \og on applique d'abord \( f \), puis \( g \) \fg{}.
+
+\medskip
+\noindent
+\textbf{Notation :} 
+\[
+(g \circ f)(x) = g\big(f(x)\big)
+\]
+
+\section*{\color{myred} I. Calcul de \( (g \circ f)(x) \) }
+
+\subsection*{\color{myred} 1. Exemples }
+\subsubsection*{\color{myred} a. Exemple 1 (fonctions affines) }
+Soit 
+\[
+f(x) = 2x + 1 \quad \text{et} \quad g(x) = 3x - 4.
+\]
+Calculons \( (g \circ f)(x) \) :
+\[
+(g \circ f)(x) = g(f(x)) = g(2x+1) = 3(2x+1) - 4 = 6x + 3 - 4 = 6x - 1.
+\]
+
+\subsubsection*{\color{myred} b. Exemple 2 (fonction carrée et racine carrée)}
+Soit 
+\[
+f(x) = x^2 \quad \text{et} \quad g(x) = \sqrt{x} \quad (x \ge 0).
+\]
+Alors :
+\[
+(g \circ f)(x) = g(f(x)) = g(x^2) = \sqrt{x^2} = |x|.
+\]
+\textbf{Attention :} le résultat est \( |x| \), pas \( x \) (sauf si \( x \ge 0 \)).
+
+\subsection*{\color{myred} 2. Exercice d’application }
+Calculer \( (g \circ f)(x) \) pour :
+\[
+f(x) = \frac{1}{x} \quad (x \neq 0) \quad \text{et} \quad g(x) = 2x + 3.
+\]
+\textbf{Réponse :}
+\[
+(g \circ f)(x) = g\left(\frac{1}{x}\right) = \frac{2}{x} + 3.
+\]
+
+\newpage
+
+\section*{\color{myred} II. Calcul de \( (f \circ g)(x) \) }
+
+\subsection*{\color{myred} 1. Exemples }
+
+\subsubsection*{\color{myred} a. Exemple 1 (mêmes fonctions) }
+Reprenons 
+\[
+f(x) = 2x + 1 \quad \text{et} \quad g(x) = 3x - 4.
+\]
+Calculons \( (f \circ g)(x) \) :
+\[
+(f \circ g)(x) = f(g(x)) = f(3x-4) = 2(3x-4) + 1 = 6x - 8 + 1 = 6x - 7.
+\]
+\textbf{Comparaison :}
+\[
+(g \circ f)(x) = 6x - 1 \quad \text{et} \quad (f \circ g)(x) = 6x - 7.
+\]
+Les deux expressions sont différentes. On en déduit que la composition \textbf{n'est pas commutative}.
+
+\subsubsection*{\color{myred} b. Exemple 2 (racine et carré) }
+Soit 
+\[
+f(x) = x^2 \quad \text{et} \quad g(x) = \sqrt{x} \quad (x \ge 0).
+\]
+Alors :
+\[
+(f \circ g)(x) = f(g(x)) = f(\sqrt{x}) = (\sqrt{x})^2 = x \quad (x \ge 0).
+\]
+
+\subsection*{\color{myred} 2. Exercice d’application }
+Calculer \( (f \circ g)(x) \) pour :
+\[
+f(x) = \frac{1}{x} \quad \text{et} \quad g(x) = 2x + 3 \quad \text{avec } x \neq -\frac{3}{2}.
+\]
+\textbf{Réponse :}
+\[
+(f \circ g)(x) = f(2x+3) = \frac{1}{2x+3}.
+\]
+
+\newpage
+
+\subsubsection*{Synthèse et comparaison}
+\begin{itemize}
+    \item En général, \( g \circ f \neq f \circ g \).
+    \item L'ordre de lecture est important : \( g \circ f \) se lit \og{} g rond f \fg{} et signifie \og on applique f puis g \fg.
+\end{itemize}
+
+\subsubsection*{Exercices de renforcement}
+\begin{enumerate}
+    \item Soit \( f(x) = x - 5 \) et \( g(x) = x^2 + 1 \). Calculer \( (g \circ f)(x) \) et \( (f \circ g)(x) \).
+    \item Soit \( f(x) = \dfrac{x+1}{x-1} \) et \( g(x) = \dfrac{1}{x} \). Calculer les deux compositions (préciser les domaines de définition).
+\item Choisir la bonne réponse et justifier le choix fait
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|m{7cm}|m{6cm}|}
+\hline
+ Si $f$ et $g$ sont les fonctions numériques définies respectivement par $f(x) = 2x^2 + 1$ et $g(x) = \dfrac{x-2}{x+1}$, alors, pour tout réel $x$, on a : 
+& 
+\begin{enumerate}
+    \item[a.] $(g \circ f)(0) = 9$.
+    \item[b.] $(g \circ f)(x) = 2\left(\dfrac{x-2}{x+1}\right)^2 + 1$.
+    \item[c.] $(g \circ f)(x) = \dfrac{2x^2 - 1}{2(x^2 + 1)}$.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\end{table}
+    
+\end{enumerate}
+
+\section*{Bilan}
+\begin{tcolorbox}[colback=gray!5!white, colframe=black!75!black]
+\begin{itemize}
+    \item La composition est une opération sur les fonctions.
+    \item Elle n'est pas commutative.
+    \item Pour calculer, on remplace la variable de la fonction extérieure par l'expression de la fonction intérieure.
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Évaluation formative (optionnelle)}
+Donner deux fonctions au choix et demander de calculer les deux compositions à l'oral ou par écrit.
+
+\end{document}

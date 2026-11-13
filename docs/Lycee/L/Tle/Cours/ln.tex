@@ -1,0 +1,719 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{CHAPITRE 6 : FONCTION LOGARITHME NÉPÉRIEN}}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : Terminale L}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%   I. Généralités
+%=========================================================
+
+\section*{\color{myred}I. Généralités}
+
+\paragraph{\underline{Activité 1}}
+Avec la calculatrice remplir le tableau suivant :
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$a$ & -2 & -1 & 0 & 0,25 & 0,5 & 0,75 & 1 & 2 & 5 \\
+\hline
+$\ln a$ & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} & \hspace*{0.6cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}1. Définition et notation}
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Définition}]
+On appelle \textbf{fonction logarithme népérien}, notée $\ln$, la primitive sur $]0\,;\,+\infty[$ de la fonction $x \mapsto \dfrac{1}{x}$ qui s'annule en $1$.
+\[
+\ln(1) = 0 \quad \text{et pour tout } x \in ]0\,;\,+\infty[, \quad (\ln x)' = \frac{1}{x}
+\]
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}2. Remarques}
+
+\paragraph{\underline{Remarque 1}}
+\begin{itemize}
+    \item La fonction $\ln x$ n'est définie que pour des nombres **strictement positifs** ($x > 0$).
+    \item Pour tout $x > 0$, $(\ln x)' = \dfrac{1}{x} > 0$, la fonction $\ln$ est donc **strictement croissante** sur $]0\,;\,+\infty[$.
+    \item Il existe un unique nombre réel noté $e$ (base du logarithme) tel que :
+    \[
+    \ln(e) = 1 \quad \text{avec } e \approx 2{,}718
+    \]
+\end{itemize}
+
+\vspace{0.3cm}
+
+\paragraph{\underline{Remarque 2}}
+\begin{itemize}
+    \item Si $a \in ]-\infty \,;\, 0]$ alors $\ln a$ n'existe pas.
+    \item Si $a \in ]0 \,;\, 1[$ \text{alors} $\ln a < 0$
+    \item Si $a \in ]1 \,;\, +\infty[$ \text{alors} $\ln a > 0$
+\end{itemize}
+
+\subsection*{\color{myred}3. Propriétés algébriques}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Propriété fondamentale (Produit)}]
+Pour tous réels $a > 0$ et $b > 0$ :
+\[
+\ln(a \times b) = \ln(a) + \ln(b)
+\]
+\end{tcolorbox}
+
+\paragraph{Conséquences des propriétés :}
+Pour tous réels $a > 0$ et $b > 0$, et pour tout $n \in \mathbb{Z}$ :
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Inverse :} $\ln\left(\dfrac{1}{a}\right) = -\ln(a)$
+    \item \textbf{Quotient :} $\ln\left(\dfrac{a}{b}\right) = \ln(a) - \ln(b)$
+    \item \textbf{Puissance :} $\ln(a^n) = n \ln(a)$
+    \item \textbf{Racine carrée :} $\ln(\sqrt{a}) = \dfrac{1}{2}\ln(a)$
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exemple :}
+Simplifier 
+
+$A = \ln(6) - \ln(2) + \ln(e^3)$ :
+
+\subsection*{\color{myred}Solution :}
+
+$
+A = \ln\left(\frac{6}{2}\right) + 3\ln(e) = \ln(3) + 3(1) = \ln(3) + 3$
+
+\subsection*{\color{myred}Application :}
+\begin{enumerate}
+    \item Écrire $A = \ln\left(\dfrac{3}{4}\right) - \ln 18 + \ln 9$ en fonction de $\ln 2$ et $\ln 3$.
+    \item Écrire $A = \ln\left(\dfrac{9}{2}\right) - \ln 16 + \ln \sqrt{3}$ en fonction de $\ln 2$ et $\ln 3$.
+      \item Écrire $A = \ln\left(\dfrac{1}{8}\right) + \ln 24 - \ln 81$ en fonction de $\ln 2$ et $\ln 3$.
+\end{enumerate}
+
+\subsection*{\color{myred}Correction :}
+\begin{enumerate}
+\item Ecrivons\\ $
+\begin{aligned}
+A &= \ln\left(\dfrac{3}{4}\right) - \ln 18 + \ln 9\\[4mm]
+  &= (\ln 3 - \ln 4) - \ln(2 \times 9) + \ln(3^{\color{blue}2})\\[4mm]
+  &= \ln 3 - \ln(2^{\color{red}2}) - (\ln 2 + \ln 9) + {\color{blue}2}\ln 3\\[4mm]
+  &= \ln 3 - {\color{red}2}\ln 2 - \ln 2 - \ln(3^{\color{blue}2}) + 2\ln 3\\[4mm]
+  &= \ln 3 - 2\ln 2 - \ln 2 - {\color{blue}2}\ln 3 + 2\ln 3\\[4mm]
+  &= (-2 - 1)\ln 2 + (1 - 2 + 2)\ln 3\\[4mm]
+  &= \mathbf{-3\ln 2 + \ln 3}
+\end{aligned}
+$
+    \item Ecrivons\\ $
+\begin{aligned}
+A &= \ln\left(\dfrac{9}{2}\right) - \ln 16 + \ln \sqrt{3}\\[4mm]
+  &= \left(\ln 9 - \ln 2\right) - \ln\left(2^{\color{red}4}\right) + \dfrac{1}{2}\ln 3\\[4mm]
+  &= \ln\left(3^{\color{blue}2}\right) - \ln 2 - {\color{red}4}\ln 2 + \dfrac{1}{2}\ln 3\\[4mm]
+  &= {\color{blue}2}\ln 3 - \ln 2 - 4\ln 2 + \dfrac{1}{2}\ln 3\\[4mm]
+  &= (-1 - 4)\ln 2 + \left(2 + \dfrac{1}{2}\right)\ln 3\\[4mm]
+  &= \mathbf{-5\ln 2 + \dfrac{5}{2}\ln 3}
+\end{aligned}
+$
+
+\item Ecrivons 
+
+$
+\begin{aligned}
+A &= \ln\left(\dfrac{1}{8}\right) + \ln 24 - \ln 81\\[4mm]
+  &= -\ln 8 + \ln(8 \times 3) - \ln(3^{\color{blue}4})\\[4mm]
+  &= -\ln(2^{\color{red}3}) + \left(\ln(2^{\color{red}3}) + \ln 3\right) - {\color{blue}4}\ln 3\\[4mm]
+  &= -{\color{red}3}\ln 2 + {\color{red}3}\ln 2 + \ln 3 - 4\ln 3\\[4mm]
+  &= (-3 + 3)\ln 2 + (1 - 4)\ln 3\\[4mm]
+  &= 0\ln 2 - 3\ln 3\\[4mm]
+  &= \mathbf{-3\ln 3}
+\end{aligned}
+$
+\end{enumerate}
+
+%=========================================================
+%   II. ÉQUATIONS ET INÉQUATIONS FAISANT INTERVENIR LN
+%=========================================================
+
+\section*{\color{myred}II. Équations-Inéquations}
+Grâce à la stricte croissance de la fonction $\ln$ sur $]0\,;\,+\infty[$, pour tous réels $a > 0$ et $b > 0$ :
+\begin{itemize}
+    \item $\ln(a) = \ln(b) \iff a = b$
+    \item $\ln(a) < \ln(b) \iff a < b$
+    \item $\ln(x) > 0 \iff x > 1$
+    \item $\ln(x) < 0 \iff 0 < x < 1$
+\end{itemize}
+
+\subsection*{\color{myred}1. Équations}
+
+\paragraph{Exemple 1 : Équation du type $\ln(A) = \ln(B)$}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_1) : \ln(2x - 3) = \ln(x + 1)$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\
+    $D_E = \{x \in \mathbb{R} \mid 2x - 3 > 0 \text{ et } x + 1 > 0\} = ] \frac{3}{2} \,;\, +\infty[\; \cap \; ]-1 \,;\, +\infty[ = ]\frac{3}{2} \,;\, +\infty[$.
+    \item \textbf{Résolution :}\\
+    Pour $x \in D_E$ :
+    \[
+    \ln(2x - 3) = \ln(x + 1) \iff 2x - 3 = x + 1 \iff x = 4
+    \]
+    \item \textbf{Conclusion :}\\ $4 \in ]\frac{3}{2} \,;\, +\infty[$, donc $\mathbf{S = \{4\}}$.
+\end{itemize}
+
+\paragraph{Exemple 2 : Équation se ramenant au second degré}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'équation $(E_2) : (\ln x)^2 - 3\ln x + 2 = 0$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\\ $D_E = ]0 \,;\, +\infty[$.
+    \item \textbf{Changement de variable :}\\ Posons $X = \ln x$. L'équation devient :
+    \[
+    X^2 - 3X + 2 = 0
+    \]
+    $\Delta = (-3)^2 - 4(1)(2) = 1 > 0 \implies X_1 = 1 \quad \text{et} \quad X_2 = 2$.
+    \item \textbf{Retour à $x$ :}
+    \begin{itemize}
+        \item $\ln x = 1 \iff x = e$
+        \item $\ln x = 2 \iff x = e^2$
+    \end{itemize}
+    \item \textbf{Conclusion :} $e \in D_E$ et $e^2 \in D_E$, donc $\mathbf{S = \{e \,;\, e^2\}}$.
+\end{itemize}
+
+\subsection*{\color{myred}2. Inéquations}
+
+\paragraph{Exemple 3 :}\mbox{}\\[2mm]
+Résoudre dans $\mathbb{R}$ l'inéquation $(I_1) : \ln(x - 2) \le 0$.
+
+\begin{itemize}
+    \item \textbf{Domaine de validité :}\mbox{}\\[2mm] $D_I = \{x \in \mathbb{R} \mid x - 2 > 0\} = ]2 \,;\, +\infty[$.
+    \item \textbf{Résolution :}\mbox{}\\[2mm]
+    Comme $0 = \ln(1)$, l'inéquation s'écrit :
+    
+    $
+    \ln(x - 2) \le \ln(1) \iff x - 2 \le 1 \iff x \le 3
+    $
+    \item \textbf{Intersection avec $D_I$ :}\mbox{}\\[2mm] $x \in ]2 \,;\, +\infty[$ et $x \in ]-\infty \,;\, 3] \implies x \in ]2 \,;\, 3]$.
+    \item \textbf{Conclusion :}\mbox{}\\[2mm] $\mathbf{S = ]2 \,;\, 3]}$.
+\end{itemize}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\subsection*{\color{myred}Exercice d'application : Équations et inéquations}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Exercice d'application}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $\ln x = 0$
+    \item $\ln x < 0$
+    \item $\ln(x + 3) = 0$
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction détaillée}]
+
+\paragraph{1. Résolution de $\ln x = 0$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} 
+    
+    L'expression $\ln x$ est définie sur $D = ]0 \,;\, +\infty[$.
+    \item \textbf{Résolution :}
+    
+    $
+    \begin{aligned}
+    \ln x = 0 &\iff \ln x = \ln({\color{red}1})\\[3mm]
+            &\iff x = \mathbf{1}
+    \end{aligned}
+    $
+    \item \textbf{Conclusion :} 
+    
+    Comme $1 \in ]0 \,;\, +\infty[$, l'ensemble des solutions est $\mathbf{S_1 = \{1\}}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Résolution de $\ln x < 0$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} 
+    
+    L'expression $\ln x$ exige $x > 0$, donc $D = ]0 \,;\, +\infty[$.
+    \item \textbf{Résolution :} 
+    
+    La fonction logarithme népérien étant strictement croissante sur $]0 \,;\, +\infty[$ :
+    
+    $
+    \begin{aligned}
+    \ln x < 0 &\iff \ln x < \ln({\color{red}1})\\[3mm]
+              &\iff x < 1
+    \end{aligned}
+    $
+    \item \textbf{Conclusion :} En tenant compte de la condition d'existence $x > 0$, on cherche les $x$ tels que $0 < x < 1$. 
+    
+    L'ensemble des solutions est $\mathbf{S_2 = ]0 \,;\, 1[}$.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{3. Résolution de $\ln(x + 3) = 0$ :}\leavevmode\\[2mm]
+\begin{itemize}
+    \item \textbf{Domaine de définition :} 
+    
+    L'expression est définie si $x + 3 > 0 \iff x > -3$. 
+    
+    Le domaine de définition est $D = ]-3 \,;\, +\infty[$.
+    
+    \item \textbf{Résolution :}
+    
+    $
+    \begin{aligned}
+    \ln(x + 3) = 0 &\iff \ln(x + 3) = \ln({\color{red}1})\\[3mm]
+                   &\iff x + 3 = 1\\[3mm]
+                   &\iff x = 1 - 3\\[3mm]
+                   &\iff x = \mathbf{-2}
+    \end{aligned}
+    $
+    \item \textbf{Conclusion :} 
+    
+    La valeur $-2$ appartient bien à $]-3 \,;\, +\infty[$. 
+    
+    L'ensemble des solutions est $\mathbf{S_3 = \{-2\}}$.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=myred,title=\textbf{Devoir à la maison : Équations et inéquations logarithmiques}]
+Résoudre dans $\mathbb{R}$ les équations et inéquations suivantes :
+\begin{enumerate}
+    \item $\ln(2x - 1) = 0$
+    \item $2\ln x - 3\ln 2 \le 0$
+    \item $\ln(x - 4) = \ln(2x - 3)$
+    \item $\ln(x^2 + 5x + 6) \ge 0$
+    \item $3(\ln x)^2 - 2\ln x - 1 = 0$
+    \item $\ln(2x - 1) - \ln(1 + x) < \ln 3$
+\end{enumerate}
+\end{tcolorbox}
+
+%=========================================================
+%   III. Domaine de Définition, Limites et Dérivée
+%=========================================================
+
+\section*{\color{myred}III. Domaine de Définition, Dérivée et Limites }
+
+%++++++++++++++++++++++++++++++++++++
+%   1. Domaine de Définition, Dérivée
+%+++++++++++++++++++++++++++++++++++
+
+\subsection*{\color{myred}1. Domaine de Définition, Dérivée }
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=black,title=\textbf{Règle pour le domaine de définition}]
+Soit $u$ une fonction numérique.
+\begin{itemize}
+    \item La fonction $f(x) = \ln(u(x))$ est définie pour tous les réels $x$ tels que : $\mathbf{u(x) > 0}$.
+    \item La fonction $g(x) = \ln|u(x)|$ est définie pour tous les réels $x$ tels que : $\mathbf{u(x) \neq 0}$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=myblue,title=\textbf{Formules de dérivation}]
+Soit $u$ une fonction dérivable et strictement positive sur un intervalle $I$ :
+\[
+(\ln(u(x)))' = \dfrac{u'(x)}{u(x)}
+\]
+De façon plus générale, si $u(x) \neq 0$ sur $I$ :
+\[
+(\ln|u(x)|)' = \dfrac{u'(x)}{u(x)}
+\]
+\end{tcolorbox}
+
+\underline{\textbf{Exemple 3}}
+
+\vspace{0.3cm}
+
+Déterminons $D_f$ et $f'(x)$ pour chacune des fonctions suivantes :
+
+\begin{enumerate}
+    \item $f(x) = \ln(-3x + 1)$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = \ln(\sqrt{2x - 1})$
+    
+    \dotfill
+    
+    \dotfill
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Correction de l'Exemple 3}]
+
+Déterminons $D_f$ et $f'(x)$ pour chacune des fonctions :
+
+\paragraph{1. Pour $f(x) = \ln(-3x + 1)$ :}
+\begin{itemize}
+    \item \textbf{Ensemble de définition $D_f$ :}
+    
+    $f(x)$ est définie si et seulement si $-3x + 1 > 0$.
+    $$ -3x + 1 > 0 \iff -3x > -1 \iff x < \frac{1}{3} $$
+    Ainsi, $\mathbf{D_f = \Big]-\infty \,;\, \frac{1}{3}\Big[}$.
+
+    \item \textbf{Fonction dérivée $f'(x)$ :}
+    
+    En posant $u(x) = -3x + 1$, on a $u'(x) = -3$.
+    
+    En utilisant la formule $\left(\ln[u(x)]\right)' = \dfrac{u'(x)}{u(x)}$, on obtient :
+    $$\mathbf{f'(x) = \frac{-3}{-3x + 1}}$$
+\end{itemize}
+
+\vspace{0.4cm}
+
+\paragraph{2. Pour $f(x) = \ln(\sqrt{2x - 1})$ :}
+\begin{itemize}
+    \item \textbf{Ensemble de définition $D_f$ :}
+    
+    $f(x)$ est définie si et seulement si $\sqrt{2x - 1} > 0$.
+    $$\sqrt{2x - 1} > 0 \iff 2x - 1 > 0 \iff 2x > 1 \iff x > \frac{1}{2}$$
+    Ainsi, $\mathbf{D_f = \Big]\frac{1}{2} \,;\, +\infty\Big[}$.
+
+    \item \textbf{Fonction dérivée $f'(x)$ :}
+    
+    \textit{Méthode (propriété du logarithme) :}
+    
+    Pour tout $x \in D_f$, $f(x) = \ln\left((2x - 1)^{\frac{1}{2}}\right) = \frac{1}{2}\ln(2x - 1)$.
+    
+    On pose $u(x) = 2x - 1$, d'où $u'(x) = 2$.
+    
+    $$f'(x) = \frac{1}{2} \times \frac{u'(x)}{u(x)} = \frac{1}{2} \times \frac{2}{2x - 1}$$
+    $$\mathbf{f'(x) = \frac{1}{2x - 1}}$$
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{center}
+    \Large\bfseries Devoir à la Maison (DM) : Logarithme Népérien
+\end{center}
+
+\vspace{0.5cm}
+
+Déterminer $D_f$ et $f'(x)$ pour chacune des fonctions suivantes :
+
+\begin{enumerate}
+    \item $f(x) = \ln(x^2 - 3x + 2)$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = \ln\left(\dfrac{x - 1}{x + 1}\right)$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    \item $f(x) = \ln(x^2 - 3x + 2)$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = \ln\left(\dfrac{x - 1}{x + 1}\right)$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = \ln|x - 3|$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+    
+    \item $f(x) = x + 2 - \ln x$
+    
+    \dotfill
+    
+    \dotfill
+    
+    \dotfill
+\end{enumerate}
+
+%++++++++++++++++++
+%   2. Limites
+%++++++++++++++++++
+\subsection*{\color{myred}2. Limites}
+
+\textbf{\color{myred} Limites usuelles ( Croissances comparées )}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=myred,title=\textbf{Formules des limites usuelles à retenir}]
+\[
+\begin{array}{rcccl}
+1) & \lim_{x \to 0^+} \ln(x) = -\infty & \quad & 2) & \lim_{x \to +\infty} \ln(x) = +\infty \\[0.3cm]
+3) & \lim_{x \to 0^+} x \ln(x) = 0 & \quad & 4) & \lim_{x \to +\infty} \frac{\ln(x)}{x} = 0 \\[0.3cm]
+5) & \lim_{x \to 1} \frac{\ln(x)}{x - 1} = 1 & \quad & 6) & \lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1\\[0.3cm]
+7) & \lim_{x \to 0^+} x^{n}\ln(x) = 0 & \quad & 8) & \lim_{x \to +\infty} \frac{\ln(x)}{x^{n}} = 0 \quad (n \in \mathbb{N}^*)
+\end{array}
+\]
+\end{tcolorbox}
+
+\vspace{0.4cm}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=myblue,title=\textbf{Exemples d'application}]
+
+\paragraph{Exemple 1 : Calcul de $\lim_{x \to +\infty} (2x - 3 + \ln x)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to +\infty} (2x - 3) = +\infty \\[2mm]
+\lim_{x \to +\infty} \ln x = +\infty \quad (\text{Formule 2})
+\end{array}
+\right\} 
+&\implies \lim_{x \to +\infty} (2x - 3 + \ln x) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 2 : Calcul de $\lim_{x \to 0^+} (x^2 - 5\ln x)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to 0^+} x^2 = 0 \\[2mm]
+\lim_{x \to 0^+} \ln x = -\infty \implies \lim_{x \to 0^+} (-5\ln x) = +\infty \quad (\text{Formule 1})
+\end{array}
+\right\} 
+&\implies \lim_{x \to 0^+} (x^2 - 5\ln x) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 3 : Levée de forme indéterminée pour $\lim_{x \to +\infty} (x - \ln x)$}
+La forme est indéterminée ($+\infty - \infty$). On factorise par $x$ :
+\[
+\begin{aligned}
+\lim_{x \to +\infty} (x - \ln x) &= \lim_{x \to +\infty} x \left(1 - \frac{\ln x}{x}\right) \\[2mm]
+\text{Or }, \lim_{x \to +\infty} \frac{\ln x}{x} = 0 \quad (\text{Formule 4}) &\implies \lim_{x \to +\infty} \left(1 - \frac{\ln x}{x}\right) = 1 \\[2mm]
+\text{Par produit, } &\implies \lim_{x \to +\infty} x \left(1 - \frac{\ln x}{x}\right) = +\infty
+\end{aligned}
+\]
+
+\vspace{0.3cm}
+
+\paragraph{Exemple 4 : Utilisation de la croissance comparée $\lim_{x \to 0^+} (3x\ln x + 2)$}
+\[
+\begin{aligned}
+\left.
+\begin{array}{l}
+\lim_{x \to 0^+} x\ln x = 0 \quad (\text{Formule 3}) \implies \lim_{x \to 0^+} 3x\ln x = 0 \\[2mm]
+\lim_{x \to 0^+} 2 = 2
+\end{array}
+\right\} 
+&\implies \lim_{x \to 0^+} (3x\ln x + 2) = 2
+\end{aligned}
+\]
+
+\end{tcolorbox}
+
+\section*{\color{myred}IV. Etude de la Fonction $\ln$}
+
+\subsection*{\color{myred} Tableau de variations et représentation graphique}
+
+\paragraph{Limites aux bornes :}
+\[
+\lim_{x \to 0^+} \ln(x) = -\infty \quad \text{et} \quad \lim_{x \to +\infty} \ln(x) = +\infty
+\]
+
+\paragraph{Tableau de variations :}
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ /1, $(\ln x)'$ /1, $\ln$ /1.5}
+   {$0$ , $1$, $+\infty$}
+   \tkzTabLine{d, +, t, +}
+   \tkzTabVar{D-/$-\infty$, R/, +/$+\infty$}
+   \tkzTabIma{1}{3}{2}{$0$}
+
+\node (A) at (7.2,-0.7) {$e$};
+\node (B) at (7.2,-2.5) {$1$};
+
+\draw[dotted, thick] (A) -- (B);
+\end{tikzpicture}
+\end{center}
+
+\paragraph{Représentation graphique de $f(x) = \ln(x)$ :}
+La courbe admet l'axe des ordonnées ($x = 0$) comme asymptote verticale et une branche parabolique de direction $(Ox)$ en $+\infty$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=-0.5, xmax=5.5,
+    ymin=-3.5, ymax=2.5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!50},
+    width=9.5cm, height=6.5cm
+]
+    \addplot[domain=0.05:5.2, samples=200, color=myblue, ultra thick] {ln(x)};
+    
+    % Points particuliers
+    \filldraw[color=myred] (axis cs:1,0) circle (2pt) node[above left] {$(1,0)$};
+    \filldraw[color=myred] (axis cs:2.718,1) circle (2pt) node[above left] {$e$};
+    \draw[dashed, color=gray] (axis cs:2.718,0) -- (axis cs:2.718,1) -- (axis cs:0,1);
+    
+    % Asymptote
+    \draw[ultra thick, color=myred, ->, >=Stealth] (axis cs:0,-3) -- (axis cs:0,-0.5);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.3cm}
+\hrule
+\vspace{0.3cm}
+
+\paragraph{Exemple complet d'étude de fonction (type Terminale L) :}
+Soit la fonction $f$ définie sur $]0\,;\,+\infty[$ par $f(x) = x - \ln(x)$.
+
+\begin{enumerate}
+    \item \textbf{Limites aux bornes :}
+    \begin{itemize}
+        \item En $0^+$ : $\lim_{x \to 0^+} x = 0$ et $\lim_{x \to 0^+} \ln(x) = -\infty \implies \lim_{x \to 0^+} f(x) = +\infty$. (Asymptote verticale $x = 0$).
+        \item En $+\infty$ : Forme indéterminée "$\infty - \infty$". On met $x$ en facteur :
+        \[
+        f(x) = x \left(1 - \frac{\ln x}{x}\right)
+        \]
+        Comme $\lim_{x \to +\infty} \frac{\ln x}{x} = 0$, on a $\lim_{x \to +\infty} \left(1 - \frac{\ln x}{x}\right) = 1$, d'où $\lim_{x \to +\infty} f(x) = +\infty$.
+    \end{itemize}
+
+    \item \textbf{Dérivée et variations :}
+    Pour tout $x > 0$ :
+    \[
+    f'(x) = 1 - \frac{1}{x} = \frac{x - 1}{x}
+    \]
+    Le signe de $f'(x)$ dépend du numérateur $(x - 1)$ car $x > 0$ :
+    \begin{itemize}
+        \item Pour $x \in ]0 \,;\, 1[$, $f'(x) < 0 \implies f$ est strictement décroissante.
+        \item Pour $x \in ]1 \,;\, +\infty[$, $f'(x) > 0 \implies f$ est strictement croissante.
+        \item Minimum local en $x = 1$ : $f(1) = 1 - \ln(1) = 1$.
+    \end{itemize}
+
+    \item \textbf{Tableau de variations :}
+    \begin{center}
+    \begin{tikzpicture}
+      \tkzTabInit[lgt=2, espcl=2.5]
+        {$x$/1, $f'(x)$/1, $f$/2}
+        {$0$, $1$, $+\infty$}
+      \tkzTabLine{d, - , z , + , }
+      \tkzTabVar{D+/$+\infty$ , -/ $1$ , +/ $+\infty$}
+    \end{tikzpicture}
+    \end{center}
+\end{enumerate}
+
+
+\underline{\textbf{Application }}
+
+\vspace{0.3cm}
+
+On pose $f(x) = \ln\left(\dfrac{x - 2}{x + 2}\right)$.
+
+\begin{enumerate}
+    \item Déterminer $D_f$.
+    \item Calculer les limites aux bornes de $D_f$.
+    \item Étudier la parité de $f$.
+    \item Calculer $f'(x)$ puis dresser le tableau de variation de $f$.
+    \item Déterminer les points d'intersection entre $\mathcal{C}_f$ et les axes de coordonnées.
+    \item Déterminer l'équation de la tangente au point d'abscisse $x = 3$.
+    \item Dresser un tableau de valeurs puis tracer $\mathcal{C}_f$.
+\end{enumerate}
+\end{document}
