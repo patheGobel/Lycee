@@ -81,7 +81,7 @@
 \section*{\color{myred}I. Le théorème de Thalès direct et sa  Conséquence}
 \subsubsection*{\color{myred} Activité 1}
 \begin{enumerate}
-    \item Tracer un triangle \textbf{ABCG}.
+    \item Tracer un triangle \textbf{ABC}.
     \begin{itemize}
         \item[\textbullet] Placer un point \textbf{M} sur la droite \textbf{(AB)}, n'appartenant pas à la demi-droite \textbf{[AB)}.
         \item[\textbullet] Construire la parallèle à la droite \textbf{(BC)} passant par \textbf{M} : elle coupe la droite \textbf{(AC)} en \textbf{N}.
@@ -125,6 +125,48 @@
     \node[right=2pt] at (A) {$A$};
 \end{tikzpicture}
 \end{center}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsubsection*{\color{myred} Correction -- Activité 1}
+
+\begin{enumerate}
+    \item \textbf{Construction de la figure :}
+    \begin{itemize}
+        \item[\textbullet] Puisque $M \in (AB)$ et $M \notin [AB)$, le point $M$ est situé sur la droite $(AB)$ de l'autre côté de $A$ par rapport à $B$ ($A$ est entre $M$ et $B$).
+        \item[\textbullet] En traçant la parallèle à $(BC)$ passant par $M$, on obtient le point $N$ sur $(AC)$ tel que $A$ est également entre $N$ et $C$. On obtient une configuration dite « en papillon ».
+    \end{itemize}
+
+    \item \textbf{Mesures relevées sur la figure ci-dessus (à l'échelle 1) :}
+    \[
+        AB = 3\text{ cm} \quad ; \quad AC = 3\text{ cm} \quad ; \quad BC = 4,8\text{ cm}
+    \]
+    \[
+        AM = 2\text{ cm} \quad ; \quad AN = 2\text{ cm} \quad ; \quad MN = 3,2\text{ cm}
+    \]
+
+    \item \textbf{Comparaison des quotients :}
+    \[
+        \dfrac{AB}{AM} = \dfrac{3}{2} = 1,5 \qquad ; \qquad \dfrac{AC}{AN} = \dfrac{3}{2} = 1,5 \qquad ; \qquad \dfrac{BC}{MN} = \dfrac{4,8}{3,2} = 1,5
+    \]
+    On constate que les trois quotients sont égaux :
+    \[
+        \dfrac{AB}{AM} = \dfrac{AC}{AN} = \dfrac{BC}{MN}
+    \]
+
+    \item \textbf{Nouvelle figure et conjecture :}\\
+    En construisant une figure semblable avec d'autres dimensions (par exemple un triangle $ABC$ non isocèle avec $AB = 6\text{ cm}$, $AC = 9\text{ cm}$, $BC = 7,5\text{ cm}$ et $AM = 4\text{ cm}$, ce qui donne $AN = 6\text{ cm}$ et $MN = 5\text{ cm}$), on obtient encore trois quotients égaux :
+    \[
+        \dfrac{6}{4} = \dfrac{9}{6} = \dfrac{7,5}{5} = 1,5
+    \]
+    \textbf{Conjecture :} Si deux droites $(BM)$ et $(CN)$ sont sécantes en $A$, et si les droites $(BC)$ et $(MN)$ sont parallèles, alors les longueurs des côtés des triangles $ABC$ et $AMN$ sont proportionnelles :
+    \[
+        \dfrac{AB}{AM} = \dfrac{AC}{AN} = \dfrac{BC}{MN}
+    \]
+\end{enumerate}
+
 \subsection*{\color{myred} Remarque : Triangles en position de Thalès}
 
 Deux triangles sont dits \textbf{en position de Thalès} s'ils sont formés par deux droites sécantes coupées par deux droites \textbf{parallèles}. 
