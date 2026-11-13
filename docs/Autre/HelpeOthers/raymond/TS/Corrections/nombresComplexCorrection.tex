@@ -286,6 +286,213 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
     \end{itemize}
 \end{enumerate}
 
+\fbox{\textbf{\exo}} [Module et argument]
+
+\textbf{Rappels :} Pour $z = a + ib$ (avec $a, b \in \mathbb{R}$) non nul :
+\begin{itemize}
+    \item Le module est $|z| = \sqrt{a^2 + b^2}$.
+    \item Un argument $\theta = \arg(z)$ vérifie $\cos(\theta) = \dfrac{a}{|z|}$ et $\sin(\theta) = \dfrac{b}{|z|}$.
+    \item Propriétés des modules et arguments : $|z \cdot z'| = |z| \cdot |z'|$, $\left|\dfrac{z}{z'}\right| = \dfrac{|z|}{|z'|}$, $|z^n| = |z|^n$, $\arg(z \cdot z') \equiv \arg(z) + \arg(z') \pmod{2\pi}$, $\arg\left(\dfrac{z}{z'}\right) \equiv \arg(z) - \arg(z') \pmod{2\pi}$ et $\arg(z^n) \equiv n\arg(z) \pmod{2\pi}$.
+\end{itemize}
+
+\begin{enumerate}
+    \item $z_1 = -\sqrt{3} + i$
+    
+    $
+    \begin{aligned}
+        |z_1| &= \sqrt{(-\sqrt{3})^2 + 1^2} 
+        &= \sqrt{3 + 1}\\ 
+        &= \mathbf{2} 
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        z_1 &= 2\left(-\frac{\sqrt{3}}{2} + \frac{1}{2}i\right)\\
+        &= 2\left(\cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6}\right) \implies \arg(z_1) \equiv \mathbf{\frac{5\pi}{6}} \pmod{2\pi}
+    \end{aligned}
+    $
+    
+    \item $z_2 = -1 + i\sqrt{3}$
+    
+    $
+    \begin{aligned}
+        |z_2| &= \sqrt{(-1)^2 + (\sqrt{3})^2}\\ 
+        &= \sqrt{1 + 3}\\ 
+        &= \mathbf{2} 
+    \end{aligned}$
+
+	$
+    \begin{aligned}
+        z_2 &= 2\left(-\frac{1}{2} + \frac{\sqrt{3}}{2}i\right)\\ 
+        &= 2\left(\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\right) \implies \arg(z_2) \equiv \mathbf{\frac{2\pi}{3}} \pmod{2\pi}
+    \end{aligned}$
+
+    \item $z_3 = 1 - i$
+    
+    $
+    \begin{aligned}
+        |z_3| &= \sqrt{1^2 + (-1)^2}\\
+        &= \mathbf{\sqrt{2}} \\
+    \end{aligned}$
+
+    $\begin{aligned}
+        z_3 &= \sqrt{2}\left(\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}i\right)\\
+        &= \sqrt{2}\left(\cos\left(-\frac{\pi}{4}\right) + i\sin\left(-\frac{\pi}{4}\right)\right) \implies \arg(z_3) \equiv \mathbf{-\frac{\pi}{4}} \pmod{2\pi}
+    \end{aligned}$
+    
+    \item $z_4 = 1 + i$
+    
+    $
+    \begin{aligned}
+        |z_4| &= \sqrt{1^2 + 1^2}\\
+        &= \mathbf{\sqrt{2}}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        z_4 &= \sqrt{2}\left(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i\right)\\
+        &= \sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right) \implies \arg(z_4) \equiv \mathbf{\frac{\pi}{4}} \pmod{2\pi}
+    \end{aligned}
+    $
+    
+    \item $z_5 = -\sqrt{3} + i$ \\
+    Identique à $z_1$ : $\mathbf{|z_5| = 2}$ et $\mathbf{\arg(z_5) \equiv \dfrac{5\pi}{6} \pmod{2\pi}}$.
+
+	$
+    \begin{aligned}
+        |z_5| &= \sqrt{(-\sqrt{3})^2 + 1^2}\\
+        &= \sqrt{3 + 1}\\
+        &= \mathbf{2}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        z_5 &= 2\left(-\frac{\sqrt{3}}{2} + \frac{1}{2}i\right)\\
+        &= 2\left(\cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6}\right) \implies \arg(z_5) \equiv \mathbf{\frac{5\pi}{6}} \pmod{2\pi}
+    \end{aligned}
+    $
+
+    \item .
+    
+	$
+    \begin{aligned}
+    z_6 &= \dfrac{2i - 2\sqrt{3}}{4i + 4}\\ 
+    &= \dfrac{2(-\sqrt{3} + i)}{4(1 + i)}\\ 
+    &= \dfrac{1}{2} \cdot \dfrac{z_1}{z_4}
+        \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        |z_6| &= \frac{1}{2} \cdot \frac{|z_1|}{|z_4|}\\
+        &= \frac{1}{2} \cdot \frac{2}{\sqrt{2}}\\
+        &= \mathbf{\frac{\sqrt{2}}{2}}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        \arg(z_6) &\equiv \arg(z_1) - \arg(z_4) \pmod{2\pi}\\
+        &\equiv \frac{5\pi}{6} - \frac{\pi}{4} \pmod{2\pi}\\
+        &\equiv \frac{10\pi - 3\pi}{12}\\ 
+        &\equiv \mathbf{\frac{7\pi}{12}} \pmod{2\pi}
+    \end{aligned}
+    $
+
+    \item $z_7 = (\sqrt{3} + i)(1 - i)^2$
+    
+    On pose $a = \sqrt{3} + i$, d'où $|a| = 2$ et $\arg(a) \equiv \dfrac{\pi}{6} \pmod{2\pi}$. 
+    
+    On a $z_7 = a \cdot z_3^2$ :
+    
+    $
+    \begin{aligned}
+        |z_7| &= |a| \cdot |z_3|^2\\
+        &= 2 \cdot (\sqrt{2})^2\\
+        &= \mathbf{4}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        \arg(z_7) &\equiv \arg(a) + 2\arg(z_3) \pmod{2\pi}\\
+        &\equiv \frac{\pi}{6} + 2\left(-\frac{\pi}{4}\right) \pmod{2\pi}\\
+        &\equiv \frac{\pi}{6} - \frac{\pi}{2}\\ 
+        &\equiv \mathbf{-\frac{\pi}{3}} \pmod{2\pi}
+    \end{aligned}
+    $
+    
+    \item $z_8 = \dfrac{(-\sqrt{3} + i)^3}{(1 + i)^2} = \dfrac{z_1^3}{z_4^2}$
+    
+    $
+    \begin{aligned}
+        |z_8| &= \frac{|z_1|^3}{|z_4|^2}\\
+        &= \frac{2^3}{(\sqrt{2})^2}\\
+        &= \frac{8}{2}\\ 
+        &= \mathbf{4}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        \arg(z_8) &\equiv 3\arg(z_1) - 2\arg(z_4) \pmod{2\pi}\\
+        &\equiv 3\left(\frac{5\pi}{6}\right) - 2\left(\frac{\pi}{4}\right) \pmod{2\pi}\\
+        &\equiv \frac{5\pi}{2} - \frac{\pi}{2}\\ 
+        &\equiv 2\pi\\ 
+        &\equiv \mathbf{0} \pmod{2\pi}
+    \end{aligned}
+    $
+
+    \item $z_9 = 2 \dfrac{(\sqrt{3} + i)^2}{(-1 - i)^2}$
+    
+    On a $|\sqrt{3} + i| = 2$ avec $\arg(\sqrt{3} + i) \equiv \dfrac{\pi}{6} \pmod{2\pi}$, et $|-1 - i| = \sqrt{2}$ 
+    
+    avec $\arg(-1 - i) \equiv -\dfrac{3\pi}{4} \pmod{2\pi}$.
+    
+    $
+    \begin{aligned}
+        |z_9| &= 2 \cdot \frac{2^2}{(\sqrt{2})^2}\\
+        &= 2 \cdot \frac{4}{2}\\
+        &= \mathbf{4}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        \arg(z_9) &\equiv \arg(2) + 2\arg(\sqrt{3} + i) - 2\arg(-1 - i) \pmod{2\pi}\\
+        &\equiv 0 + 2\left(\frac{\pi}{6}\right) - 2\left(-\frac{3\pi}{4}\right) \pmod{2\pi}\\
+        &\equiv \frac{\pi}{3} + \frac{3\pi}{2} \\
+        &\equiv \frac{11\pi}{6} \\
+        &\equiv \mathbf{-\frac{\pi}{6}} \pmod{2\pi}
+    \end{aligned}
+    $
+
+    \item $z_{10} = -2i (1 + i\sqrt{3})^6$
+    
+    On a $|-2i| = 2$ avec $\arg(-2i) \equiv -\dfrac{\pi}{2} \pmod{2\pi}$, et $|1 + i\sqrt{3}| = 2$ avec $\arg(1 + i\sqrt{3}) \equiv \dfrac{\pi}{3} \pmod{2\pi}$.
+    
+    $
+    \begin{aligned}
+        |z_{10}| &= |-2i| \cdot |1 + i\sqrt{3}|^6\\
+        &= 2 \cdot 2^6\\
+        &= 2^7 \\
+        &= \mathbf{128}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        \arg(z_{10}) &\equiv \arg(-2i) + 6\arg(1 + i\sqrt{3}) \pmod{2\pi}\\
+        &\equiv -\frac{\pi}{2} + 6\left(\frac{\pi}{3}\right) \pmod{2\pi}\\
+        &\equiv -\frac{\pi}{2} + 2\pi \\
+        &\equiv \mathbf{-\frac{\pi}{2}} \pmod{2\pi}
+    \end{aligned}
+    $
+\end{enumerate}
+
 \fbox{\textbf{\exo}} [Formes trigonométrique et exponentielle]
 
 \fbox{\textbf{\exo}} [Forme trigonométrique]

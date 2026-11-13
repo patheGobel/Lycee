@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  13 NOV 2026 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  13 NOV 2026 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1114,12 +1114,12 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
+[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [4] [5] [6]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 342.
+(Font)              <17.28> on input line 549.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 342.
- [4] [5] [6]
+(Font)              <10> on input line 549.
+ [7] [8]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/nombresComplexCorrection.aux)
@@ -1127,17 +1127,13 @@ enddocument/afterlastpage (AED): lastpage setting LastPage.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `nombresComplexCorrection.out' has not change
 d.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30274 strings out of 467533
- 609065 string characters out of 5422138
+ 30287 strings out of 467533
+ 609158 string characters out of 5422138
  1065895 words of memory out of 5000000
  58563 multiletter control sequences out of 15000+600000
  696730 words of font info for 91 fonts, out of 8000000 for 9000
@@ -1153,10 +1149,10 @@ onts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/nombresComplexCorrection.pdf (6 pages, 223330 bytes).
+Output written on build/nombresComplexCorrection.pdf (8 pages, 239334 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 77 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
