@@ -1,0 +1,367 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{array,multirow}
+\usepackage{geometry}
+\geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.7cm}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows,patterns}
+
+% Macros de mise en forme
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55, minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan, minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{CORRECTION DU TD : ÉQUATIONS ET INÉQUATIONS}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 1L}\\[0.1cm]
+    \textbf{Année scolaire : 2026 -- 2027}
+\end{center}
+
+\hrule
+\vspace{0.5cm}
+
+% ----------------------------------------------------
+% EXERCICE 1
+% ----------------------------------------------------
+\section*{Exercice 1 : QCM}
+
+\begin{enumerate}
+    \item \textbf{Réponse c) $S = \{(1, -2, 0)\}$}
+    
+    \textit{Démonstration :}
+    \begin{itemize}[label=$\bullet$]
+        \item De la 3\textsuperscript{ème} équation : $4z = 0 \implies z = 0$.
+        \item Dans la 2\textsuperscript{nde} équation : $-10y + 2(0) = 20 \implies -10y = 20 \implies y = -2$.
+        \item Dans la 1\textsuperscript{ère} équation : $2x + (-2) - 5(0) = 0 \implies 2x = 2 \implies x = 1$.
+    \end{itemize}
+
+    \item \textbf{Réponse c) $S = \{(3, 7, 5)\}$}
+    
+    \textit{Démonstration :} En vérifiant le triplet $(3,7,5)$ dans le système :
+    \[
+    \begin{cases}
+    3 + 7 + 5 = 15 \quad (\text{Vrai}) \\
+    -3 - 7 + 2(5) = 0 \quad (\text{Vrai}) \\
+    2(3) + 7 - 5 = 8 \quad (\text{Vrai})
+    \end{cases}
+    \]
+
+    \item \textbf{Réponse b) $(-3, 1)$}
+    
+    \textit{Démonstration :} Pour le point $(-3, 1)$, on a : $2(-3) - 5(1) + 9 = -6 - 5 + 9 = -2 < 0$.
+
+    \item \textbf{Réponse b) $(-3, 1)$}
+    
+    \textit{Démonstration :} Pour le point $(-3, 1)$, on a $5(-3) - 7(1) = -22$. C'est la seule paire de coordonnées proposée qui vérifie l'égalité de la 1\textsuperscript{ère} ligne.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+% ----------------------------------------------------
+% EXERCICE 2
+% ----------------------------------------------------
+\section*{Exercice 2 : Pivot de Gauss}
+
+\subsection*{1. Système 1}
+\[
+\begin{cases}
+2x + y - 5z = 0 & (L_1) \\
+3x - y + 2z = -12 & (L_2) \\
+2x - 4y - 10z = 10 & (L_3)
+\end{cases}
+\]
+\textbf{Étape 1 : Élimination de $x$ dans $L_2$ et $L_3$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_2' \leftarrow 2L_2 - 3L_1 \implies -5y + 19z = -24$
+    \item $L_3' \leftarrow L_3 - L_1 \implies -5y - 5z = 10 \implies y + z = -2$
+\end{itemize}
+
+\textbf{Étape 2 : Élimination de $y$ dans $L_3'$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_3'' \leftarrow 5L_3' + L_2' \implies 24z = -34 \implies z = -\dfrac{17}{12}$
+\end{itemize}
+
+\textbf{Étape 3 : Calcul des autres inconnues}
+\begin{itemize}[label=$\bullet$]
+    \item Dans $L_3'$ : $y = -2 - z = -2 - \left(-\dfrac{17}{12}\right) = -\dfrac{7}{12}$
+    \item Dans $L_1$ : $2x = -y + 5z = \dfrac{7}{12} - \dfrac{85}{12} = -\dfrac{78}{12} = -\dfrac{13}{2} \implies x = -\dfrac{13}{4}$
+\end{itemize}
+\[
+S = \left\{\left(-\frac{13}{4}, -\frac{7}{12}, -\frac{17}{12}\right)\right\}
+\]
+
+\subsection*{2. Système 2}
+\[
+\begin{cases}
+x + y - z = 1 & (L_1) \\
+6x - 2y - 4z = 0 & (L_2) \\
+5x - 5y + z = 1 & (L_3)
+\end{cases}
+\]
+\textbf{Étape 1 : Élimination de $x$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_2' \leftarrow L_2 - 6L_1 \implies -8y + 2z = -6 \implies -4y + z = -3$
+    \item $L_3' \leftarrow L_3 - 5L_1 \implies -10y + 6z = -4 \implies -5y + 3z = -2$
+\end{itemize}
+
+\textbf{Étape 2 : Élimination de $y$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_3'' \leftarrow 4L_3' - 5L_2' \implies 7z = 7 \implies z = 1$
+\end{itemize}
+
+\textbf{Étape 3 : Remontée des valeurs}
+\begin{itemize}[label=$\bullet$]
+    \item Dans $L_2'$ : $-4y + 1 = -3 \implies -4y = -4 \implies y = 1$
+    \item Dans $L_1$ : $x + 1 - 1 = 1 \implies x = 1$
+\end{itemize}
+\[
+S = \{(1, 1, 1)\}
+\]
+
+\subsection*{3. Système 3}
+\[
+\begin{cases}
+a - 4b - c = -6 & (L_1) \\
+3a + 2b - 5c = -8 & (L_2) \\
+2a - b + 3c = 5 & (L_3)
+\end{cases}
+\]
+\textbf{Étape 1 : Élimination de $a$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_2' \leftarrow L_2 - 3L_1 \implies 14b - 2c = 10 \implies 7b - c = 5$
+    \item $L_3' \leftarrow L_3 - 2L_1 \implies 7b + 5c = 17$
+\end{itemize}
+
+\textbf{Étape 2 : Élimination de $b$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_3'' \leftarrow L_3' - L_2' \implies 6c = 12 \implies c = 2$
+\end{itemize}
+
+\textbf{Étape 3 : Remontée des valeurs}
+\begin{itemize}[label=$\bullet$]
+    \item Dans $L_2'$ : $7b - 2 = 5 \implies b = 1$
+    \item Dans $L_1$ : $a - 4(1) - 2 = -6 \implies a = 0$
+\end{itemize}
+\[
+S = \{(0, 1, 2)\}
+\]
+
+\subsection*{4. Système à 4 inconnues $(x,y,z,t)$}
+\[
+\begin{cases}
+3x - 2y - 5z + t = -5 & (L_1) \\
+2x + 3y - 3z + 2t = -6 & (L_2) \\
+5x - 2y + 2z - 3t = -4 & (L_3) \\
+2x - 4y + z - t = 2 & (L_4)
+\end{cases}
+\]
+\textbf{Étape 1 : Élimination de $t$}
+\begin{itemize}[label=$\bullet$]
+    \item $L_2' \leftarrow L_2 - 2L_1 \implies -4x + 7y + 7z = 4$
+    \item $L_3' \leftarrow L_3 + 3L_1 \implies 14x - 8y - 13z = -19$
+    \item $L_4' \leftarrow L_4 + L_1 \implies 5x - 6y - 4z = -3$
+\end{itemize}
+
+\textbf{Étape 2 : Élimination de $z$}
+\begin{itemize}[label=$\bullet$]
+    \item $7L_3' + 13L_2' \implies 46x + 35y = -81$
+    \item $7L_4' + 4L_2' \implies 19x - 14y = -5$
+\end{itemize}
+
+\textbf{Étape 3 : Élimination de $y$}
+\begin{itemize}[label=$\bullet$]
+    \item $2(46x + 35y) + 5(19x - 14y) = 2(-81) + 5(-5) \implies 187x = -187 \implies x = -1$
+\end{itemize}
+
+\textbf{Étape 4 : Remontée des valeurs}
+\begin{itemize}[label=$\bullet$]
+    \item $19(-1) - 14y = -5 \implies -14y = 14 \implies y = -1$
+    \item $-4(-1) + 7(-1) + 7z = 4 \implies 7z = 7 \implies z = 1$
+    \item $3(-1) - 2(-1) - 5(1) + t = -5 \implies -6 + t = -5 \implies t = 1$
+\end{itemize}
+\[
+S = \{(-1, -1, 1, 1)\}
+\]
+
+\vspace{0.3cm}
+
+% ----------------------------------------------------
+% EXERCICE 3
+% ----------------------------------------------------
+\section*{Exercice 3 : Résolution graphique d'inéquations}
+
+\begin{enumerate}
+    \item \textbf{Système 1 :}
+    $\begin{cases} 3x + y < 2 \\ 2x - 3y > 1 \end{cases}$
+    \begin{itemize}[label=$\bullet$]
+        \item Tracer $(D_1) : 3x + y = 2$ (passe par $(0,2)$ et $(1,-1)$). Le demi-plan contient $O(0,0)$ car $0 < 2$.
+        \item Tracer $(D_2) : 2x - 3y = 1$ (passe par $(2,1)$ et $(-1,-1)$). Le demi-plan ne contient pas $O(0,0)$ car $0 \ngtr 1$.
+    \end{itemize}
+
+    \item \textbf{Système 2 :}
+    $\begin{cases} x + y - 2 \le 0 \\ x \ge 0 \\ y < 3 \end{cases}$
+    \begin{itemize}[label=$\bullet$]
+        \item $(D_1) : x + y = 2$, demi-plan situé en dessous de la droite.
+        \item $x \ge 0$ : demi-plan situé à droite de l'axe des ordonnées.
+        \item $y < 3$ : demi-plan situé en dessous de la droite horizontale $y = 3$.
+    \end{itemize}
+
+    \item \textbf{Système 3 :}
+    $\begin{cases} 4x - 5y + 6 > 0 \\ 5x + y - 7 < 0 \\ x + 6y + 16 > 0 \end{cases}$
+    \begin{itemize}[label=$\bullet$]
+        \item Pour les trois droites, le point $O(0,0)$ vérifie chacune des trois inéquations. L'ensemble solution est la région triangulaire intérieure bordée par les trois droites et contenant le point origine $O$.
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.3cm}
+
+% ----------------------------------------------------
+% EXERCICE 4
+% ----------------------------------------------------
+\section*{Exercice 4 : Problème des fruits}
+
+Soient $x, y, z$ les prix unitaires respectifs (en Francs) d'une orange, d'une mandarine et d'une banane.
+\[
+\begin{cases}
+x + 2y + z = 65 & (L_1) \\
+2x + y + 3z = 125 & (L_2) \\
+3x + y + z = 95 & (L_3)
+\end{cases}
+\]
+\textbf{Résolution :}
+\begin{itemize}[label=$\bullet$]
+    \item $L_3 - L_1 \implies 2x - y = 30 \implies y = 2x - 30$
+    \item $L_3 - L_2 \implies x - 2z = -30 \implies z = \dfrac{x + 30}{2}$
+    \item En remplaçant dans $L_1$ :
+    \[
+    x + 2(2x - 30) + \frac{x + 30}{2} = 65 \implies 5x - 60 + \frac{x + 30}{2} = 65
+    \]
+    \[
+    10x - 120 + x + 30 = 130 \implies 11x = 220 \implies x = 20
+    \]
+    \item D'où $y = 2(20) - 30 = 10$ et $z = \dfrac{20 + 30}{2} = 25$.
+\end{itemize}
+\textbf{Prix unitaire :} Une orange coûte \textbf{20 F}, une mandarine \textbf{10 F} et une banane \textbf{25 F}.
+
+\vspace{0.3cm}
+
+% ----------------------------------------------------
+% EXERCICE 5
+% ----------------------------------------------------
+\section*{Exercice 5 : Sacs de céréales}
+
+\begin{enumerate}
+    \item \textbf{Système $(S)$ :}
+    \[
+    \begin{cases}
+    x + y + z = 120 \\
+    x + z = 2y \implies x - 2y + z = 0 \\
+    z + 75 = 2(x + y) \implies 2x + 2y - z = 75
+    \end{cases}
+    \]
+
+    \item \textbf{Résolution :}
+    \begin{itemize}[label=$\bullet$]
+        \item Soustraire la 2\textsuperscript{nde} équation de la 1\textsuperscript{ère} : $3y = 120 \implies y = 40$ kg.
+        \item Le système devient :
+        $\begin{cases} x + z = 80 \\ 2x - z = -5 \end{cases}$
+        \item Additionner ces deux équations : $3x = 75 \implies x = 25$ kg.
+        \item D'où $z = 80 - 25 = 55$ kg.
+    \end{itemize}
+    \textbf{Conclusion :} Sac de maïs : \textbf{25 kg}, sac d'igname : \textbf{40 kg}, sac de riz : \textbf{55 kg}.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+% ----------------------------------------------------
+% EXERCICE 6
+% ----------------------------------------------------
+\section*{Exercice 6 : Polynôme et système}
+
+\begin{enumerate}
+    \item \textbf{Résolution du système :}
+    \[
+    \begin{cases}
+    x + y + z = -1 & (L_1) \\
+    x - y + z = 2 & (L_2) \\
+    4x + 2y + z = -4 & (L_3)
+    \end{cases}
+    \]
+    \begin{itemize}[label=$\bullet$]
+        \item $L_1 - L_2 \implies 2y = -3 \implies y = -\dfrac{3}{2}$
+        \item $L_1$ et $L_3$ deviennent : $\begin{cases} x + z = \frac{1}{2} \\ 4x + z = -1 \end{cases}$
+        \item Soustraction : $3x = -\dfrac{3}{2} \implies x = -\dfrac{1}{2}$
+        \item D'où $z = \dfrac{1}{2} - \left(-\dfrac{1}{2}\right) = 1$.
+    \end{itemize}
+    \[
+    S = \left\{\left(-\frac{1}{2}, -\frac{3}{2}, 1\right)\right\}
+    \]
+
+    \item \textbf{Détermination de $a, b, c$ :}
+    $P(x) = x^3 + ax^2 + bx + c$.
+    \begin{itemize}[label=$\bullet$]
+        \item $P(1) = 0 \implies a + b + c = -1$
+        \item $P(-1) = 1 \implies a - b + c = 2$
+        \item $P(2) = 4 \implies 4a + 2b + c = -4$
+    \end{itemize}
+    On retrouve exactement le système de la question 1, d'où :
+    \[
+    a = -\frac{1}{2}, \quad b = -\frac{3}{2}, \quad c = 1 \implies P(x) = x^3 - \frac{1}{2}x^2 - \frac{3}{2}x + 1
+    \]
+
+    \item \textbf{Factorisation de $P(x)$ :}
+    Comme $P(1) = 0$, $1$ est racine de $P(x)$.
+    \[
+    P(x) = (x - 1)\left(x^2 + \frac{1}{2}x - 1\right)
+    \]
+\end{enumerate}
+
+\vspace{0.3cm}
+
+% ----------------------------------------------------
+% EXERCICE 7
+% ----------------------------------------------------
+\section*{Exercice 7 : Optimisation sous contraintes}
+
+\begin{enumerate}
+    \item \textbf{Bénéfice :} $B(x, y) = 10x + 15y$
+    \item \textbf{Contrainte machine :} $2x + 4y \le 60 \iff x + 2y \le 30$
+    \item \textbf{Contrainte matière première :} $3x + 2y \le 40$
+    \item \textbf{Système de contraintes :}
+    \[
+    \begin{cases}
+    x \ge 0 \\
+    y \ge 0 \\
+    x + 2y \le 30 \\
+    3x + 2y \le 40
+    \end{cases}
+    \]
+    \item \textbf{Maximisation :}
+    L'intersection des droites d'équation $x + 2y = 30$ et $3x + 2y = 40$ donne :
+    \[
+    (3x + 2y) - (x + 2y) = 40 - 30 \implies 2x = 10 \implies x = 5 \implies y = 12,5
+    \]
+    \begin{itemize}[label=$\bullet$]
+        \item En valeurs continues : $x = 5$ unités de $A$ et $y = 12,5$ unités de $B$ pour un bénéfice maximal de \textbf{237,5}.
+        \item En valeurs entières : $x = 5$ unités de $A$ et $y = 12$ unités de $B$ pour un bénéfice maximal de \textbf{230}.
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
