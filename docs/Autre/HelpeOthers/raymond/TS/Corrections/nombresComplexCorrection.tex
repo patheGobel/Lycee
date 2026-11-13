@@ -1,0 +1,484 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=red, urlcolor=red, citecolor=red]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+% Filigrane "PGB" centré sur chaque page
+\AddToShipoutPicture{
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{50}{\textcolor[gray]{0.6}{\fontsize{1.5cm}{1.5cm}\selectfont maths-mes-maths}}}
+  }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{red}\ding{45}\ \textbf{2026}
+}
+\fancyfoot[L]{
+\color{red}\ding{45}\ \textbf{Prof:M. Diatta}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tcolorbox}[
+    colback=white,
+    colframe=blue!60!black,
+    boxrule=0.8pt,
+    arc=3pt,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm
+]
+    \begin{center}
+        \textbf{\large Lycée de Diattacounda} \hfill \textbf{A.S. : 2026/2027} \\[1mm]
+        \textbf{Mathématiques} $\bullet$ \textbf{Niveau : TS2} \hfill \textbf{Date : 13/11/2026} \\[2mm]
+        \rule{0.8\linewidth}{0.4pt} \\[1.5mm]
+        {\Large\bfseries\sffamily TD : Nombres Complexes}
+    \end{center}
+\end{tcolorbox}
+\vspace{4mm}
+
+
+\fbox{\textbf{\exo}} [Forme algébrique et calcul de $i^n$]
+
+\begin{enumerate}
+    \item Formes algébriques des nombres complexes
+
+\textbf{Rappel :} La forme algébrique d'un nombre complexe s'écrit $z = a + ib$, avec $a, b \in \mathbb{R}$ et $i^2 = -1$.
+
+\begin{enumerate}
+    \item $z_1 = i(1 - 4i) + 3(2 - i)$
+    
+$    
+\begin{aligned}
+        z_1 &= i - 4i^2 + 6 - 3i \\
+        &= i + 4 + 6 - 3i \\
+        &= 10 - 2i
+\end{aligned}
+$
+
+    C'est un nombre complexe quelconque (ni réel, ni imaginaire pur).
+
+    \item $z_2 = (3 - i)^2 + 6i$
+    
+    $    
+\begin{aligned}
+        z_2 &= 3^2 - 2(3)(i) + i^2 + 6i \\
+        &= 9 - 6i - 1 + 6i \\
+        &= 8
+\end{aligned}
+$
+
+    C'est un nombre \textbf{réel}.
+
+    \item $z_3 = \dfrac{3}{1 - i}$
+    
+    $    
+\begin{aligned}
+        z_3 &= \frac{3(1 + i)}{(1 - i)(1 + i)} \\
+        &= \frac{3 + 3i}{1^2 - i^2} \\
+        &= \frac{3 + 3i}{2} \\
+        &= \frac{3}{2} + \frac{3}{2}i
+\end{aligned}
+$
+
+    C'est un nombre complexe quelconque.
+
+    \item $z_4 = \dfrac{1 + 2i}{2 - i}$
+
+    $    
+\begin{aligned}
+        z_4 &= \frac{(1 + 2i)(2 + i)}{(2 - i)(2 + i)} \\
+        &= \frac{2 + i + 4i + 2i^2}{2^2 - i^2} \\
+        &= \frac{2 + 5i - 2}{4 + 1} \\
+        &= \frac{5i}{5} \\
+        &= i
+\end{aligned}
+$
+
+    C'est un nombre \textbf{imaginaire pur}.
+
+    \item $z_5 = (2 + i\sqrt{3})(\sqrt{3} - i)$
+
+    $    
+\begin{aligned}
+        z_5 &= 2\sqrt{3} - 2i + i\sqrt{3}\cdot\sqrt{3} - i^2\sqrt{3} \\
+        &= 2\sqrt{3} - 2i + 3i + \sqrt{3} \\
+        &= 3\sqrt{3} + i
+\end{aligned}
+$
+
+    C'est un nombre complexe quelconque.
+
+    \item $z_6 = (2 + 5i)^2$
+
+    $    
+\begin{aligned}
+        z_6 &= 2^2 + 2(2)(5i) + (5i)^2 \\
+        &= 4 + 20i + 25i^2 \\
+        &= 4 + 20i - 25 \\
+        &= -21 + 20i
+\end{aligned}
+$
+
+    C'est un nombre complexe quelconque.
+
+    \item $z_7 = \dfrac{3 - 3i}{1 + i}$
+
+    $    
+\begin{aligned}
+        z_7 &= \frac{(3 - 3i)(1 - i)}{(1 + i)(1 - i)} \\
+        &= \frac{3 - 3i - 3i + 3i^2}{1^2 - i^2} \\
+        &= \frac{3 - 6i - 3}{2} \\
+        &= \frac{-6i}{2} \\
+        &= -3i
+\end{aligned}
+$
+
+    C'est un nombre \textbf{imaginaire pur}.
+\end{enumerate}
+
+\item Calcul des puissances de $i$
+
+\textbf{Rappel :} $i^0 = 1$, $i^1 = i$, $i^2 = -1$, $i^3 = -i$ et $i^4 = 1$. Si $n = 4q + r$ (avec $0 \le r < 4$), alors $i^n = i^r$.
+
+\begin{enumerate}
+    \item $2025 = 4 \times 506 + 1 \implies i^{2025} = i^{4 \times 506 + 1} =(i^4)^{506} \times i^1 = 1^{506} \times i = \mathbf{i}$
+    \item $40 = 4 \times 10 + 0 \implies i^{40} = i^{4 \times 10} =(i^4)^{10} = 1^{10} = \mathbf{1}$
+    \item $27 = 4 \times 6 + 3 \implies i^{27} = i^{4 \times 6 + 3} = (i^4)^6 \times i^3 = 1^6 \times (-i) = \mathbf{-i}$
+    \item $34 = 4 \times 8 + 2 \implies i^{34} = i^{4 \times 8 + 2} =(i^4)^8 \times i^2 = 1^8 \times (-1) = \mathbf{-1}$
+\end{enumerate}
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Conjugué]
+
+\textbf{Rappel :} Si $z = a + ib$ (avec $a, b \in \mathbb{R}$), alors son conjugué est $\overline{z} = a - ib$. \\
+On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \overline{z'}$, $\overline{z \times z'} = \overline{z} \times \overline{z'}$, $\overline{z^n} = (\overline{z})^n$ et $\overline{\left(\dfrac{z}{z'}\right)} = \dfrac{\overline{z}}{\overline{z'}}$ (avec $z' \neq 0$).
+
+\begin{enumerate}
+    \item \textbf{Déterminer le conjugué des nombres complexes suivants :}
+    \begin{enumerate}
+        \item $z_1 = 3i$
+        \[
+            \overline{z_1} = \overline{3i} = \mathbf{-3i}
+        \]
+
+        \item $z_2 = -i(1 + 4i)$
+        
+        $\begin{aligned}
+            \overline{z_2} &= \overline{-i} \times \overline{(1 + 4i)} \\
+            &= i(1 - 4i) \\
+            &= i - 4i^2 \\
+            &= \mathbf{4 + i}
+        \end{aligned}$
+
+        \item $z_3 = (3 - 5i)^3$
+        
+        $\begin{aligned}
+            \overline{z_3} &= \overline{(3 - 5i)^3} \\
+            &= \left(\overline{3 - 5i}\right)^3 \\
+            &= \mathbf{(3 + 5i)^3}
+        \end{aligned}$
+        
+        \textit{(Sous forme algébrique développée : $\overline{z_3} = 27 + 135i - 225 - 125i = \mathbf{-198 + 10i}$.)}
+
+        \item $z_4 = \dfrac{2i}{i + 3} - \dfrac{3}{2 + i}$
+        
+        $\begin{aligned}
+            \overline{z_4} &= \overline{\left(\frac{2i}{3 + i}\right)} - \overline{\left(\frac{3}{2 + i}\right)} \\
+            &= \frac{\overline{2i}}{\overline{3 + i}} - \frac{\overline{3}}{\overline{2 + i}} \\
+            &= \mathbf{\frac{-2i}{3 - i} - \frac{3}{2 - i}}
+        \end{aligned}$
+        
+        \textit{Mise sous forme algébrique :}
+        
+        $\begin{aligned}
+            \overline{z_4} &= \frac{-2i(3 + i)}{(3 - i)(3 + i)} - \frac{3(2 + i)}{(2 - i)(2 + i)} \\
+            &= \frac{-6i - 2i^2}{9 + 1} - \frac{6 + 3i}{4 + 1} \\
+            &= \frac{2 - 6i}{10} - \frac{6 + 3i}{5} \\
+            &= \frac{1 - 3i}{5} - \frac{6 + 3i}{5} \\
+            &= \mathbf{-1 - \frac{6}{5}i}
+        \end{aligned}$
+        
+    \end{enumerate}
+
+    \item \textbf{Étude de $z_5$ et $z_6$ :}
+    \begin{itemize}
+        \item \textbf{Démonstration :}
+        
+        $\begin{aligned}
+            \overline{z_6} &= \overline{\left(\frac{2 + i}{1 - i}\right)} \\
+            &= \frac{\overline{2 + i}}{\overline{1 - i}} \\
+            &= \frac{2 - i}{1 + i} \\
+            &= z_5
+        \end{aligned}$
+        
+        On a donc bien $\overline{z_6} = z_5$ (soit $z_6 = \overline{z_5}$).
+
+        \item \textbf{Déduction :} \\
+        Pour tout nombre complexe $z$, $z + \overline{z} = 2\operatorname{Re}(z) \in \mathbb{R}$ et $z - \overline{z} = 2i\operatorname{Im}(z) \in i\mathbb{R}$. \\
+        Comme $z_6 = \overline{z_5}$, on en déduit sans calcul que :
+        \begin{itemize}
+            \item $z_5 + z_6 = z_5 + \overline{z_5}$ est un \textbf{nombre réel}.
+            \item $z_5 - z_6 = z_5 - \overline{z_5}$ est un \textbf{nombre imaginaire pur}.
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\fbox{\textbf{\exo}} [Formes trigonométrique et exponentielle]
+
+\fbox{\textbf{\exo}} [Forme trigonométrique]
+
+\fbox{\textbf{\exo}} [Classique !]
+
+\fbox{\textbf{\exo}} [Racines carrées et Equations]
+
+\fbox{\textbf{\exo}} [Racines $n$-ièmes]
+
+On donne $z_0 = 1 - i\sqrt{3}$
+
+\begin{enumerate}
+    \item Donner une écriture trigonométrique de $z_0$.
+    \item Montrer que $z_0^4 = -8 + 8i\sqrt{3}$.
+    \item Résoudre dans $\mathbb{C}$ l'équation $z^4 = 1$.
+    \item En déduire les solutions de $(E) : z^4 = -8 + 8i\sqrt{3}$ sous forme algébrique et sous forme trigonométrique.
+\end{enumerate}
+\fbox{\textbf{\exo}} [Racines $n$-ièmes]
+
+\fbox{\textbf{\exo}}[Linéarisation]
+
+\fbox{\textbf{\exo}} [Lieux géométriques]
+
+\fbox{\textbf{\exo}} [Lieux géométriques]
+
+\fbox{\textbf{\exo}} [Deux méthodes pour un problème]
+
+\fbox{\textbf{\exo}} [Complexe et géométrie]
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+\section*{\underline{\textbf{Exercice :}} Nombres complexes}
+
+On donne 
+\[
+a = \sqrt{2 - \sqrt{3}} - i\sqrt{2 + \sqrt{3}}.
+\]
+
+\begin{enumerate}
+    \item \textbf{Calcul de $a^2$ et du module de $a$}
+
+    Posons 
+    \[
+    x = \sqrt{2 - \sqrt{3}}, \qquad y = \sqrt{2 + \sqrt{3}}.
+    \]
+    Alors $a = x - iy$.
+
+    On calcule :
+    \[
+    a^2 = (x - iy)^2 = x^2 - 2ixy - y^2.
+    \]
+
+    Or
+    \[
+    x^2 = 2 - \sqrt{3}, \qquad y^2 = 2 + \sqrt{3}.
+    \]
+
+    Donc
+    \[
+    a^2 = (2 - \sqrt{3}) - (2 + \sqrt{3}) - 2i\sqrt{(2-\sqrt3)(2+\sqrt3)}
+    = -2\sqrt{3} - 2i.
+    \]
+
+    Ainsi,
+    \[
+    \boxed{a^2 = -2\sqrt{3} - 2i.}
+    \]
+
+    Le module de $a$ vérifie :
+    \[
+    |a|^2 = |a^2| = \sqrt{(-2\sqrt3)^2 + (-2)^2} = \sqrt{12 + 4} = 4,
+    \]
+    d'où
+    \[
+    \boxed{|a| = 2.}
+    \]
+
+    \item \textbf{Forme trigonométrique de $a^2$ et argument de $a$}
+
+    On a
+    \[
+    a^2 = -2\sqrt{3} - 2i.
+    \]
+
+    Son module est $|a^2| = 4$. On écrit
+    \[
+    a^2 = 4(\cos\theta + i\sin\theta),
+    \]
+    avec
+    \[
+    \cos\theta = \frac{-2\sqrt3}{4} = -\frac{\sqrt3}{2}, 
+    \qquad
+    \sin\theta = \frac{-2}{4} = -\frac{1}{2}.
+    \]
+
+    On reconnaît
+    \[
+    \theta = \frac{7\pi}{6} \quad (\text{ou } -\tfrac{5\pi}{6}).
+    \]
+
+    Donc
+    \[
+    \boxed{a^2 = 4\left(\cos\frac{7\pi}{6} + i\sin\frac{7\pi}{6}\right).}
+    \]
+
+    Comme $a^2 = |a|^2 e^{i2\arg(a)}$, on a :
+    \[
+    2\arg(a) = \frac{7\pi}{6} + 2k\pi
+    \quad\Rightarrow\quad
+    \arg(a) = \frac{7\pi}{12} + k\pi.
+    \]
+
+    Une valeur positive possible est donc :
+    \[
+    \boxed{\arg(a) = \frac{19\pi}{12}.}
+    \]
+
+    \item \textbf{Valeurs exactes des cosinus et sinus}
+
+    On a 
+    \[
+    a = 2\left(\cos\frac{19\pi}{12} + i\sin\frac{19\pi}{12}\right).
+    \]
+
+    Donc
+    \[
+    \cos\frac{19\pi}{12} = \frac{\Re(a)}{2} = \frac{\sqrt{2-\sqrt3}}{2}, 
+    \]
+    \[
+    \sin\frac{19\pi}{12} = \frac{\Im(a)}{2} = -\frac{\sqrt{2+\sqrt3}}{2}.
+    \]
+
+    Or 
+    \[
+    \frac{19\pi}{12} = \frac{7\pi}{12} + \pi,
+    \]
+    donc
+    \[
+    \cos\frac{19\pi}{12} = -\cos\frac{7\pi}{12}, 
+    \qquad
+    \sin\frac{19\pi}{12} = -\sin\frac{7\pi}{12}.
+    \]
+
+    Ainsi :
+    \[
+    \boxed{
+    \begin{aligned}
+    \cos\frac{7\pi}{12} &= \frac{\sqrt{2-\sqrt3}}{2},\\
+    \sin\frac{7\pi}{12} &= \frac{\sqrt{2+\sqrt3}}{2}.
+    \end{aligned}}
+    \]
+
+    Enfin,
+    \[
+    \boxed{
+    \begin{aligned}
+    \cos\frac{\pi}{12} &= \frac{\sqrt{2+\sqrt3}}{2},\\
+    \sin\frac{\pi}{12} &= \frac{\sqrt{2-\sqrt3}}{2}.
+    \end{aligned}}
+    \]
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}(POLYNÔMES COMPLEXES)
+
+\fbox{\textbf{\exo}} (POLYNÔMES COMPLEXES)
+
+\fbox{\textbf{\exo}} (POLYNÔMES COMPLEXES)
+
+\fbox{\textbf{\exo}}
+
+\end{document}
