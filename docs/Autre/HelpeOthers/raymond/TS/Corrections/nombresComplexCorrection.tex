@@ -4555,7 +4555,153 @@ D'où :
     $$
 \end{enumerate}
 
-\fbox{\textbf{\exo}}
+\fbox{\textbf{\exo}} (POLYNÔMES COMPLEXES)
+
+\begin{enumerate}
+    \item \textbf{Démonstration de $P(\bar{\alpha}) = \overline{P(\alpha)}$ et déduction :}
+    
+    Soit $\alpha \in \mathbb{C}$. En utilisant les propriétés de compatibilité de la conjugaison avec la somme, le produit et les puissances entières ($\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$, $\overline{z_1 z_2} = \overline{z_1}\,\overline{z_2}$ et $\overline{z^n} = (\overline{z})^n$), et en remarquant que les coefficients $1, -6, 23, -34, 26$ sont des nombres réels (donc égaux à leurs conjugués), on a :
+    $$
+    \begin{aligned}
+        \overline{P(\alpha)} &= \overline{\alpha^4 - 6\alpha^3 + 23\alpha^2 - 34\alpha + 26} \\
+        &= \overline{\alpha^4} - \overline{6\alpha^3} + \overline{23\alpha^2} - \overline{34\alpha} + \overline{26} \\
+        &= \overline{\alpha^4} - \overline{6}\,\overline{\alpha^3} + \overline{23}\,\overline{\alpha^2} - \overline{34}\,\overline{\alpha} + \overline{26} \\
+        &= (\bar{\alpha})^4 - 6(\bar{\alpha})^3 + 23(\bar{\alpha})^2 - 34\bar{\alpha} + 26 \\
+        &= P(\bar{\alpha})
+    \end{aligned}
+    $$
+    On a donc bien $P(\bar{\alpha}) = \overline{P(\alpha)}$.
+
+    \medskip
+    \textbf{Déduction :}
+    
+    Supposons que $P(\alpha) = 0$. Alors :
+    $$
+    \begin{aligned}
+        P(\alpha) = 0 &\implies \overline{P(\alpha)} = \overline{0} \\
+        &\implies P(\bar{\alpha}) = 0
+    \end{aligned}
+    $$
+    Ainsi, si $\alpha$ est une racine de $P$, alors son conjugué $\bar{\alpha}$ est également une racine de $P$.
+
+    \item \textbf{Calcul de $P(1+i)$ et déduction de deux solutions :}
+    
+    Calculons les puissances successives de $1 + i$ :
+    $$
+    \begin{aligned}
+        (1 + i)^2 &= 1 + 2i + i^2 = 2i \\
+        (1 + i)^3 &= (1 + i)^2(1 + i) = 2i(1 + i) = 2i + 2i^2 = -2 + 2i \\
+        (1 + i)^4 &= \left[(1 + i)^2\right]^2 = (2i)^2 = 4i^2 = -4
+    \end{aligned}
+    $$
+    Substituons ces résultats dans l'expression de $P(1 + i)$ :
+    $$
+    \begin{aligned}
+        P(1 + i) &= (1 + i)^4 - 6(1 + i)^3 + 23(1 + i)^2 - 34(1 + i) + 26 \\
+        &= -4 - 6(-2 + 2i) + 23(2i) - 34(1 + i) + 26 \\
+        &= -4 + 12 - 12i + 46i - 34 - 34i + 26 \\
+        &= (-4 + 12 - 34 + 26) + (-12 + 46 - 34)i \\
+        &= 0 + 0i \\
+        &= 0
+    \end{aligned}
+    $$
+    Puisque $P(1 + i) = 0$, le nombre complexe $z_1 = 1 + i$ est une solution de l'équation $P(z) = 0$.
+    
+    D'après la question 1, son conjugué $z_2 = \overline{1 + i} = 1 - i$ est également solution de $P(z) = 0$.
+    
+    Deux solutions complexes de $P(z) = 0$ sont donc **$1 + i$ et $1 - i$**.
+
+    \item \textbf{Calcul de $Q(z)$ :}
+    
+    Développons $Q(z)$ :
+    $$
+    \begin{aligned}
+        Q(z) &= \left(z - (1 + i)\right)\left(z - (1 - i)\right) \\
+        &= \left((z - 1) - i\right)\left((z - 1) + i\right) \\
+        &= (z - 1)^2 - i^2 \\
+        &= (z^2 - 2z + 1) - (-1) \\
+        &= z^2 - 2z + 1 + 1 \\
+        &= z^2 - 2z + 2
+    \end{aligned}
+    $$
+    On obtient donc $Q(z) = z^2 - 2z + 2$.
+
+    \item \textbf{Vérification que $P(z)$ est divisible par $Q(z)$ :}
+    
+    Comme $1 + i$ et $1 - i$ sont deux racines distinctes de $P(z)$, le polynôme $P(z)$ est divisible par $(z - (1 + i))(z - (1 - i)) = Q(z)$.
+    
+    Déterminons le polynôme quotient $R(z)$ tel que $P(z) = Q(z)R(z)$. Puisque $\deg(P) = 4$ et $\deg(Q) = 2$, $R(z)$ est un polynôme de degré $2$ de la forme $R(z) = az^2 + bz + c$. Développons $Q(z)R(z)$ :
+    $$
+    \begin{aligned}
+        Q(z)R(z) &= (z^2 - 2z + 2)(az^2 + bz + c) \\
+        &= az^4 + bz^3 + cz^2 - 2az^3 - 2bz^2 - 2cz + 2az^2 + 2bz + 2c \\
+        &= az^4 + (b - 2a)z^3 + (c - 2b + 2a)z^2 + (2b - 2c)z + 2c
+    \end{aligned}
+    $$
+    Par identification avec $P(z) = z^4 - 6z^3 + 23z^2 - 34z + 26$, on obtient le système :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            a = 1 \\
+            b - 2a = -6 \\
+            c - 2b + 2a = 23 \\
+            2b - 2c = -34 \\
+            2c = 26
+        \end{array}
+        \right.
+        &\iff
+        \left\{
+        \begin{array}{l}
+            a = 1 \\
+            b = -6 + 2(1) = -4 \\
+            c = \dfrac{26}{2} = 13 \\
+            13 - 2(-4) + 2(1) = 13 + 8 + 2 = 23 \quad \text{(vérifié)} \\
+            2(-4) - 2(13) = -8 - 26 = -34 \quad \text{(vérifié)}
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    On en déduit que pour tout $z \in \mathbb{C}$ :
+    $$
+    \begin{aligned}
+        P(z) &= (z^2 - 2z + 2)(z^2 - 4z + 13)
+    \end{aligned}
+    $$
+    Le polynôme $P(z)$ est donc bien divisible par $Q(z)$.
+
+    \item \textbf{Résolution dans $\mathbb{C}$ de l'équation $P(z) = 0$ :}
+    
+    D'après la factorisation précédente, on a :
+    $$
+    \begin{aligned}
+        P(z) = 0 &\iff (z^2 - 2z + 2)(z^2 - 4z + 13) = 0 \\
+        &\iff z^2 - 2z + 2 = 0 \quad \text{ou} \quad z^2 - 4z + 13 = 0
+    \end{aligned}
+    $$
+    \begin{itemize}
+        \item Les solutions de $z^2 - 2z + 2 = 0$ sont déjà connues : $z_1 = 1 + i$ et $z_2 = 1 - i$.
+        \item Résolvons $z^2 - 4z + 13 = 0$. Calculons son discriminant $\Delta$ :
+        $$
+        \begin{aligned}
+            \Delta &= (-4)^2 - 4 \times 1 \times 13 \\
+            &= 16 - 52 \\
+            &= -36 \\
+            &= (6i)^2
+        \end{aligned}
+        $$
+        Comme $\Delta < 0$, l'équation admet deux racines complexes conjuguées $z_3$ et $z_4$ :
+        $$
+        \begin{aligned}
+            z_3 &= \dfrac{4 - 6i}{2} = 2 - 3i \qquad \text{et} \qquad z_4 = \dfrac{4 + 6i}{2} = 2 + 3i
+        \end{aligned}
+        $$
+    \end{itemize}
+    L'ensemble des solutions dans $\mathbb{C}$ de l'équation $P(z) = 0$ est donc :
+    $$
+    \mathcal{S} = \left\{ 1 + i \,;\, 1 - i \,;\, 2 - 3i \,;\, 2 + 3i \right\}
+    $$
+\end{enumerate}
 
 \fbox{\textbf{\exo}}
 
