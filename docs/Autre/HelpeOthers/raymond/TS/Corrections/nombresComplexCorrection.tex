@@ -949,6 +949,287 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
 
 \fbox{\textbf{\exo}} [Racines carrées et Equations]
 
+\textbf{Rappels :} 
+\begin{itemize}
+    \item Un nombre complexe $\delta = x + iy$ ($x, y \in \mathbb{R}$) est une racine carrée de $z = a + ib$ si et seulement si $\delta^2 = z$, ce qui équivaut au système :
+    \[
+        \begin{cases}
+            x^2 - y^2 = a \\
+            x^2 + y^2 = |z| \\
+            2xy = b
+        \end{cases}
+    \]
+    \item Pour résoudre $az^2 + bz + c = 0$ ($a \neq 0$) dans $\mathbb{C}$, on calcule $\Delta = b^2 - 4ac$. Si $\delta$ est une racine carrée de $\Delta$, alors les solutions sont $z_1 = \dfrac{-b - \delta}{2a}$ et $z_2 = \dfrac{-b + \delta}{2a}$.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Racines carrées de nombres complexes :}
+    
+    \begin{enumerate}
+        \item $z = 3 + 4i$
+        
+        On a $|z| = \sqrt{3^2 + 4^2} = \sqrt{25} = 5$. Soit $\delta = x + iy$ ($x, y \in \mathbb{R}$) tel que $\delta^2 = 3 + 4i$ :
+        
+        $
+        \begin{cases}
+            x^2 - y^2 = 3 \quad (L_1) \\
+            x^2 + y^2 = 5 \quad (L_2) \\
+            2xy = 4 \quad (L_3)
+        \end{cases}
+        $
+        
+        \begin{itemize}
+            \item $(L_1) + (L_2) \implies 2x^2 = 8 \implies x^2 = 4 \implies x = 2 \text{ ou } x = -2$.
+            \item $(L_2) - (L_1) \implies 2y^2 = 2 \implies y^2 = 1 \implies y = 1 \text{ ou } y = -1$.
+            \item $(L_3) \implies xy = 2 > 0$, donc $x$ et $y$ sont de même signe.
+        \end{itemize}
+        
+        Les racines carrées de $3 + 4i$ sont donc $\mathbf{2 + i}$ et $\mathbf{-2 - i}$.
+
+        \item $z = 8 - 6i$
+        
+        On a $|z| = \sqrt{8^2 + (-6)^2} = \sqrt{100} = 10$. Soit $\delta = x + iy$ ($x, y \in \mathbb{R}$) tel que $\delta^2 = 8 - 6i$ :
+        
+        $
+        \begin{cases}
+            x^2 - y^2 = 8 \quad (L_1) \\
+            x^2 + y^2 = 10 \quad (L_2) \\
+            2xy = -6 \quad (L_3)
+        \end{cases}
+        $
+        
+        \begin{itemize}
+            \item $(L_1) + (L_2) \implies 2x^2 = 18 \implies x^2 = 9 \implies x = 3 \text{ ou } x = -3$.
+            \item $(L_2) - (L_1) \implies 2y^2 = 2 \implies y^2 = 1 \implies y = 1 \text{ ou } y = -1$.
+            \item $(L_3) \implies xy = -3 < 0$, donc $x$ et $y$ sont de signes contraires.
+        \end{itemize}
+        
+        Les racines carrées de $8 - 6i$ sont donc $\mathbf{3 - i}$ et $\mathbf{-3 + i}$.
+
+        \item $z = -5 + 12i$
+        
+        On a $|z| = \sqrt{(-5)^2 + 12^2} = \sqrt{169} = 13$. Soit $\delta = x + iy$ ($x, y \in \mathbb{R}$) tel que $\delta^2 = -5 + 12i$ :
+        
+        $
+        \begin{cases}
+            x^2 - y^2 = -5 \quad (L_1) \\
+            x^2 + y^2 = 13 \quad (L_2) \\
+            2xy = 12 \quad (L_3)
+        \end{cases}
+        $
+        
+        \begin{itemize}
+            \item $(L_1) + (L_2) \implies 2x^2 = 8 \implies x^2 = 4 \implies x = 2 \text{ ou } x = -2$.
+            \item $(L_2) - (L_1) \implies 2y^2 = 18 \implies y^2 = 9 \implies y = 3 \text{ ou } y = -3$.
+            \item $(L_3) \implies xy = 6 > 0$, donc $x$ et $y$ sont de même signe.
+        \end{itemize}
+        
+        Les racines carrées de $-5 + 12i$ sont donc $\mathbf{2 + 3i}$ et $\mathbf{-2 - 3i}$.
+
+        \item $z = 7 + 24i$
+        
+        On a $|z| = \sqrt{7^2 + 24^2} = \sqrt{625} = 25$. Soit $\delta = x + iy$ ($x, y \in \mathbb{R}$) tel que $\delta^2 = 7 + 24i$ :
+        
+        $
+        \begin{cases}
+            x^2 - y^2 = 7 \quad (L_1) \\
+            x^2 + y^2 = 25 \quad (L_2) \\
+            2xy = 24 \quad (L_3)
+        \end{cases}
+        $
+        
+        \begin{itemize}
+            \item $(L_1) + (L_2) \implies 2x^2 = 32 \implies x^2 = 16 \implies x = 4 \text{ ou } x = -4$.
+            \item $(L_2) - (L_1) \implies 2y^2 = 18 \implies y^2 = 9 \implies y = 3 \text{ ou } y = -3$.
+            \item $(L_3) \implies xy = 12 > 0$, donc $x$ et $y$ sont de même signe.
+        \end{itemize}
+        
+        Les racines carrées de $7 + 24i$ sont donc $\mathbf{4 + 3i}$ et $\mathbf{-4 - 3i}$.
+    \end{enumerate}
+
+    \item \textbf{Résolution des équations dans $\mathbb{C}$ :}
+    
+    \begin{enumerate}
+        \item $4z^2 - 12z + 153 = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (-12)^2 - 4(4)(153)\\
+            &= 144 - 2448\\
+            &= -2304\\
+            &= (48i)^2
+        \end{aligned}
+        $
+        
+        Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \frac{12 - 48i}{8} = \mathbf{\frac{3}{2} - 6i} \\
+            z_2 &= \frac{12 + 48i}{8} = \mathbf{\frac{3}{2} + 6i}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{\dfrac{3}{2} - 6i \,;\, \dfrac{3}{2} + 6i}\right\}$.
+
+        \item $z^2 - 4z + 5 = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (-4)^2 - 4(1)(5)\\
+            &= 16 - 20\\
+            &= -4\\
+            &= (2i)^2
+        \end{aligned}
+        $
+        
+        Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \frac{4 - 2i}{2} = \mathbf{2 - i} \\
+            z_2 &= \frac{4 + 2i}{2} = \mathbf{2 + i}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{2 - i \,;\, 2 + i}\right\}$.
+
+        \item $z^2 + z + 1 = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= 1^2 - 4(1)(1)\\
+            &= 1 - 4\\
+            &= -3\\
+            &= (i\sqrt{3})^2
+        \end{aligned}
+        $
+        
+        Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \mathbf{\frac{-1 - i\sqrt{3}}{2}} \\
+            z_2 &= \mathbf{\frac{-1 + i\sqrt{3}}{2}}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{\dfrac{-1 - i\sqrt{3}}{2} \,;\, \dfrac{-1 + i\sqrt{3}}{2}}\right\}$.
+
+        \item $iz^2 - iz - 3 - i = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (-i)^2 - 4(i)(-3 - i)\\
+            &= -1 + 12i + 4i^2\\
+            &= -5 + 12i
+        \end{aligned}
+        $
+        
+        D'après la question 1.c), une racine carrée de $\Delta$ est $\delta = 2 + 3i$. Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \frac{i - (2 + 3i)}{2i} = \frac{-2 - 2i}{2i} = \frac{-1 - i}{i} = \mathbf{-1 + i} \\
+            z_2 &= \frac{i + (2 + 3i)}{2i} = \frac{2 + 4i}{2i} = \frac{1 + 2i}{i} = \mathbf{2 - i}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{-1 + i \,;\, 2 - i}\right\}$.
+
+        \item $iz^2 + (1 - 5i)z + 6i - 2 = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (1 - 5i)^2 - 4(i)(6i - 2)\\
+            &= 1 - 10i - 25 - 24i^2 + 8i\\
+            &= -24 - 2i + 24\\
+            &= -2i\\
+            &= (1 - i)^2
+        \end{aligned}
+        $
+        
+        Une racine carrée de $\Delta$ est $\delta = 1 - i$. Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \frac{-(1 - 5i) - (1 - i)}{2i} = \frac{-2 + 6i}{2i} = \frac{-1 + 3i}{i} = \mathbf{3 + i} \\
+            z_2 &= \frac{-(1 - 5i) + (1 - i)}{2i} = \frac{4i}{2i} = \mathbf{2}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{3 + i \,;\, 2}\right\}$.
+
+        \item $z^2 - (2 + 4i)z - 2 + 4i = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (2 + 4i)^2 - 4(1)(-2 + 4i)\\
+            &= 4 + 16i - 16 + 8 - 16i\\
+            &= -4\\
+            &= (2i)^2
+        \end{aligned}
+        $
+        
+        Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \frac{2 + 4i - 2i}{2} = \frac{2 + 2i}{2} = \mathbf{1 + i} \\
+            z_2 &= \frac{2 + 4i + 2i}{2} = \frac{2 + 6i}{2} = \mathbf{1 + 3i}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{1 + i \,;\, 1 + 3i}\right\}$.
+
+        \item $(3 + i)z^2 - (7 - i)z + 10 = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (7 - i)^2 - 4(3 + i)(10)\\
+            &= 49 - 14i - 1 - 120 - 40i\\
+            &= -72 - 54i\\
+            &= 9(-8 - 6i)
+        \end{aligned}
+        $
+        
+        Or $-8 - 6i = -(8 + 6i) = [i(3 + i)]^2 = (-1 + 3i)^2$, donc $\Delta = [3(-1 + 3i)]^2 = (-3 + 9i)^2$.
+        
+        Une racine carrée de $\Delta$ est $\delta = -3 + 9i$. Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \frac{7 - i - (-3 + 9i)}{2(3 + i)} = \frac{10 - 10i}{2(3 + i)} = \frac{(5 - 5i)(3 - i)}{9 + 1} = \frac{10 - 20i}{10} = \mathbf{1 - 2i} \\
+            z_2 &= \frac{7 - i + (-3 + 9i)}{2(3 + i)} = \frac{4 + 8i}{2(3 + i)} = \frac{(2 + 4i)(3 - i)}{9 + 1} = \frac{10 + 10i}{10} = \mathbf{1 + i}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{1 - 2i \,;\, 1 + i}\right\}$.
+
+        \item $z^2 - (1 + i\sqrt{3})z - 1 + i\sqrt{3} = 0$
+        
+        $
+        \begin{aligned}
+            \Delta &= (1 + i\sqrt{3})^2 - 4(1)(-1 + i\sqrt{3})\\
+            &= 1 + 2i\sqrt{3} - 3 + 4 - 4i\sqrt{3}\\
+            &= 2 - 2i\sqrt{3}\\
+            &= (\sqrt{3} - i)^2
+        \end{aligned}
+        $
+        
+        Une racine carrée de $\Delta$ est $\delta = \sqrt{3} - i$. Les solutions sont :
+        
+        $
+        \begin{aligned}
+            z_1 &= \mathbf{\frac{(1 - \sqrt{3}) + i(\sqrt{3} + 1)}{2}} \\
+            z_2 &= \mathbf{\frac{(1 + \sqrt{3}) + i(\sqrt{3} - 1)}{2}}
+        \end{aligned}
+        $
+        
+        D'où $\mathcal{S} = \left\{\mathbf{\dfrac{(1 - \sqrt{3}) + i(\sqrt{3} + 1)}{2} \,;\, \dfrac{(1 + \sqrt{3}) + i(\sqrt{3} - 1)}{2}}\right\}$.
+    \end{enumerate}
+\end{enumerate}
+
 \fbox{\textbf{\exo}} [Racines $n$-ièmes]
 
 On donne $z_0 = 1 - i\sqrt{3}$
