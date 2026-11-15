@@ -4413,7 +4413,147 @@ D'où :
     Puisque $(\mathcal{E})$ contient au moins un point du segment $[AB]$ (en l'occurrence le point $C$), **le jeune agriculteur atteindra bien son objectif**.
 \end{enumerate}
 
-\fbox{\textbf{\exo}}
+\fbox{\textbf{\exo}}(POLYNÔMES COMPLEXES)
+
+\begin{enumerate}
+    \item \textbf{Existence et détermination de la solution réelle $\alpha$ de $P(z) = 0$ :}
+    
+    Soit $\alpha \in \mathbb{R}$ une éventuelle solution réelle de l'équation $P(z) = 0$. En remplaçant $z$ par $\alpha$, on obtient :
+    $$
+    \begin{aligned}
+        P(\alpha) = 0 &\iff \alpha^3 - (11 + 2i)\alpha^2 + 2(17 + 7i)\alpha - 42 = 0 \\
+        &\iff \alpha^3 - 11\alpha^2 - 2i\alpha^2 + 34\alpha + 14i\alpha - 42 = 0 \\
+        &\iff (\alpha^3 - 11\alpha^2 + 34\alpha - 42) + i(-2\alpha^2 + 14\alpha) = 0
+    \end{aligned}
+    $$
+    Comme $\alpha \in \mathbb{R}$, les quantités $\alpha^3 - 11\alpha^2 + 34\alpha - 42$ et $-2\alpha^2 + 14\alpha$ sont des nombres réels. Un nombre complexe est nul si et seulement si sa partie réelle et sa partie imaginaire sont nulles :
+    $$
+    \begin{aligned}
+        P(\alpha) = 0 &\iff
+        \left\{
+        \begin{array}{l}
+            \alpha^3 - 11\alpha^2 + 34\alpha - 42 = 0 \quad (1) \\
+            -2\alpha^2 + 14\alpha = 0 \quad (2)
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Résolvons d'abord l'équation $(2)$ en factorisant par $-2\alpha$ :
+    $$
+    \begin{aligned}
+        -2\alpha^2 + 14\alpha = 0 &\iff -2\alpha(\alpha - 7) = 0 \\
+        &\iff \alpha = 0 \quad \text{ou} \quad \alpha = 7
+    \end{aligned}
+    $$
+    Vérifions laquelle de ces deux valeurs annule également l'équation $(1)$ :
+    $$
+    \begin{aligned}
+        \text{Pour } \alpha = 0 &: \quad 0^3 - 11(0)^2 + 34(0) - 42 = -42 \neq 0 \\
+        \text{Pour } \alpha = 7 &: \quad 7^3 - 11(7)^2 + 34(7) - 42 = 343 - 539 + 238 - 42 = 0
+    \end{aligned}
+    $$
+    Il existe donc un unique nombre réel solution de l'équation $P(z) = 0$, à savoir $\alpha = 7$.
+
+    \item \textbf{Détermination du polynôme $Q$ :}
+    
+    Puisque $\deg(P) = 3$ et $\alpha = 7$, le polynôme $Q$ est de degré $2$. Il existe donc trois complexes $a, b, c$ tels que pour tout $z \in \mathbb{C}$, $Q(z) = az^2 + bz + c$. Développons $(z - 7)Q(z)$ :
+    $$
+    \begin{aligned}
+        (z - 7)(az^2 + bz + c) &= az^3 + bz^2 + cz - 7az^2 - 7bz - 7c \\
+        &= az^3 + (b - 7a)z^2 + (c - 7b)z - 7c
+    \end{aligned}
+    $$
+    Par identification des coefficients avec $P(z) = z^3 - (11 + 2i)z^2 + (34 + 14i)z - 42$, on obtient le système :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            a = 1 \\
+            b - 7a = -11 - 2i \\
+            c - 7b = 34 + 14i \\
+            -7c = -42
+        \end{array}
+        \right.
+        &\iff
+        \left\{
+        \begin{array}{l}
+            a = 1 \\
+            b = -11 - 2i + 7(1) = -4 - 2i \\
+            c = \dfrac{-42}{-7} = 6 \\
+            6 - 7(-4 - 2i) = 6 + 28 + 14i = 34 + 14i \quad \text{(vérifié)}
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Ainsi, pour tout $z \in \mathbb{C}$, on a :
+    $$
+    Q(z) = z^2 - (4 + 2i)z + 6
+    $$
+    et par conséquent :
+    $$
+    P(z) = (z - 7)\left(z^2 - (4 + 2i)z + 6\right)
+    $$
+
+    \item \textbf{Résolution dans $\mathbb{C}$ de l'équation $P(z) = 0$ :}
+    
+    D'après la factorisation précédente :
+    $$
+    \begin{aligned}
+        P(z) = 0 &\iff (z - 7)\left(z^2 - (4 + 2i)z + 6\right) = 0 \\
+        &\iff z - 7 = 0 \quad \text{ou} \quad z^2 - (4 + 2i)z + 6 = 0
+    \end{aligned}
+    $$
+    Résolvons l'équation du second degré $z^2 - (4 + 2i)z + 6 = 0$. Calculons son discriminant $\Delta$ :
+    $$
+    \begin{aligned}
+        \Delta &= \left[-(4 + 2i)\right]^2 - 4 \times 1 \times 6 \\
+        &= (16 + 16i + 4i^2) - 24 \\
+        &= 12 + 16i - 24 \\
+        &= -12 + 16i
+    \end{aligned}
+    $$
+    Cherchons une racine carrée $\delta = x + iy$ ($x, y \in \mathbb{R}$) de $\Delta = -12 + 16i$ :
+    $$
+    \begin{aligned}
+        \delta^2 = -12 + 16i &\iff
+        \left\{
+        \begin{array}{l}
+            x^2 - y^2 = -12 \\
+            x^2 + y^2 = \sqrt{(-12)^2 + 16^2} = \sqrt{144 + 256} = \sqrt{400} = 20 \\
+            2xy = 16
+        \end{array}
+        \right. \\
+        &\iff
+        \left\{
+        \begin{array}{l}
+            2x^2 = 8 \implies x^2 = 4 \implies x = \pm 2 \\
+            2y^2 = 32 \implies y^2 = 16 \implies y = \pm 4 \\
+            xy = 8 > 0 \quad (x \text{ et } y \text{ sont de même signe})
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    On choisit donc $\delta = 2 + 4i$. Les deux racines de $Q(z)$ sont alors :
+    $$
+    \begin{aligned}
+        z_1 &= \dfrac{(4 + 2i) - (2 + 4i)}{2} \\
+        &= \dfrac{4 + 2i - 2 - 4i}{2} \\
+        &= \dfrac{2 - 2i}{2} \\
+        &= 1 - i
+    \end{aligned}
+    \qquad \text{et} \qquad
+    \begin{aligned}
+        z_2 &= \dfrac{(4 + 2i) + (2 + 4i)}{2} \\
+        &= \dfrac{4 + 2i + 2 + 4i}{2} \\
+        &= \dfrac{6 + 6i}{2} \\
+        &= 3 + 3i
+    \end{aligned}
+    $$
+    L'ensemble des solutions dans $\mathbb{C}$ de l'équation $P(z) = 0$ est donc :
+    $$
+    \mathcal{S} = \left\{ 7 \,;\, 1 - i \,;\, 3 + 3i \right\}
+    $$
+\end{enumerate}
 
 \fbox{\textbf{\exo}}
 
