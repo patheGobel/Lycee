@@ -1837,7 +1837,85 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
     
     L'ensemble $(\mathcal{E}_5)$ est donc le \textbf{cercle de diamètre $[BC]$ privé des points $B(1 - i)$ et $C(2i)$}.
 \end{enumerate}
-\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}} [Lieux géométriques]
+
+\textbf{Rappels :} Soient $A$ et $B$ les points d'affixes respectives $z_A = -1$ et $z_B = 2i$, et $M(z)$ un point du plan distinct de $A$ et de $B$ (soit $z \neq -1$ et $z \neq 2i$). 
+
+On a :
+\[
+    Z = \frac{z + 1}{z - 2i} = \frac{z - (-1)}{z - 2i} = \frac{z - z_A}{z - z_B}
+\]
+
+D'où :
+\begin{itemize}
+    \item $\arg(Z) \equiv \left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \pmod{2\pi}$
+    \item $Z \in \mathbb{R} \iff Z = 0 \text{ ou } \arg(Z) \equiv 0 \pmod{\pi}$
+    \item $Z \in i\mathbb{R} \iff Z = 0 \text{ ou } \arg(Z) \equiv \dfrac{\pi}{2} \pmod{\pi}$
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Ensemble $(\mathcal{E}_1)$ des points $M(z)$ tels que $Z$ soit réel :}
+    
+    \begin{itemize}
+        \item Si $z = -1$, alors $Z = 0 \in \mathbb{R}$, donc le point $A(-1)$ appartient à l'ensemble $(\mathcal{E}_1)$.
+        \item Si $z \neq -1$ et $z \neq 2i$ (soit $M \neq A$ et $M \neq B$), alors :
+    \end{itemize}
+    
+    $
+    \begin{aligned}
+        Z \in \mathbb{R}^* &\iff \arg(Z) \equiv 0 \pmod{\pi}\\
+        &\iff \left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \equiv 0 \pmod{\pi}\\
+        &\iff \text{les points } M, A \text{ et } B \text{ sont alignés}
+    \end{aligned}
+    $
+    
+    En réunissant les deux cas (inclusion de $A$ et exclusion de $B$ car $z \neq 2i$), l'ensemble $(\mathcal{E}_1)$ est la \textbf{droite $(AB)$ privée du point $B(2i)$}.
+
+    \item \textbf{Ensemble $(\mathcal{E}_2)$ des points $M(z)$ tels que $Z$ soit imaginaire pur :}
+    
+    \begin{itemize}
+        \item Si $z = -1$, alors $Z = 0 \in i\mathbb{R}$ ($0$ est à la fois réel et imaginaire pur), donc le point $A(-1)$ appartient à l'ensemble $(\mathcal{E}_2)$.
+        \item Si $z \neq -1$ et $z \neq 2i$ (soit $M \neq A$ et $M \neq B$), alors :
+    \end{itemize}
+    
+    $
+    \begin{aligned}
+        Z \in i\mathbb{R}^* &\iff \arg(Z) \equiv \frac{\pi}{2} \pmod{\pi}\\
+        &\iff \left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \equiv \frac{\pi}{2} \pmod{\pi}\\
+        &\iff \overrightarrow{MB} \perp \overrightarrow{MA}
+    \end{aligned}
+    $
+    
+    Le triangle $MAB$ est rectangle en $M$, donc $M$ appartient au cercle de diamètre $[AB]$. En incluant le point $A$ et en excluant le point $B$, l'ensemble $(\mathcal{E}_2)$ est le \textbf{cercle de diamètre $[AB]$ privé du point $B(2i)$}.
+
+    \item \textbf{Ensemble $(\mathcal{E}_3)$ des points $M(z)$ tels que $\arg(Z) \equiv \dfrac{\pi}{2} \pmod{2\pi}$ :}
+    
+    Pour que $\arg(Z)$ existe, il faut $Z \neq 0$ et $z \neq 2i$, c'est-à-dire $M \neq A$ et $M \neq B$.
+    
+    $
+    \begin{aligned}
+        \arg(Z) \equiv \frac{\pi}{2} \pmod{2\pi} &\iff \left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \equiv \frac{\pi}{2} \pmod{2\pi}
+    \end{aligned}
+    $
+    
+    Cette condition caractérise l'un des deux demi-cercles ouverts de diamètre $[AB]$. Pour déterminer lequel, on teste un point particulier du cercle :
+    
+    Soit $I$ le milieu de $[AB]$ d'affixe $z_I = \dfrac{-1 + 2i}{2} = -\dfrac{1}{2} + i$. Le rayon du cercle vaut $R = \dfrac{AB}{2} = \dfrac{|2i - (-1)|}{2} = \dfrac{\sqrt{5}}{2}$.
+    
+    On vérifie que l'origine $O(0)$ appartient au cercle de diamètre $[AB]$ (car $\overrightarrow{OB} \perp \overrightarrow{OA}$ sur les axes) :
+    
+    $
+    \begin{aligned}
+        \arg\left(Z_O\right) &= \arg\left(\frac{0 + 1}{0 - 2i}\right)\\
+        &= \arg\left(\frac{1}{-2i}\right)\\
+        &= \arg\left(\frac{i}{2}\right)\\
+        &\equiv \frac{\pi}{2} \pmod{2\pi}
+    \end{aligned}
+    $
+    
+    Le point $O(0)$ vérifie bien la condition. L'ensemble $(\mathcal{E}_3)$ est donc le \textbf{demi-cercle ouvert de diamètre $[AB]$ contenant l'origine $O$ (privé des points $A(-1)$ et $B(2i)$)}.
+\end{enumerate}
 
 \fbox{\textbf{\exo}}
 
