@@ -2376,6 +2376,134 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\textbf{Rappels :} 
+\begin{itemize}
+    \item Un nombre complexe $x + iy$ ($x, y \in \mathbb{R}$) est nul si et seulement si $x = 0$ et $y = 0$.
+    \item Pour un polynôme de degré $3$ de la forme $P(z) = z^3 + az^2 + bz + c$ admettant trois racines $z_0, z_1, z_2$, la somme des racines vérifie $z_0 + z_1 + z_2 = -a$ (et le produit vérifie $z_0 z_1 z_2 = -c$).
+    \item Pour deux points $A(z_A)$ et $M(z)$ du plan complexe, la distance $MA$ est donnée par $MA = |z - z_A|$.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Résolution de l'équation $(E) : z^3 + (-5 + 6i)z + 12 + 18i = 0$ :}
+    
+    \begin{enumerate}
+        \item \textbf{Recherche d'une solution réelle $z_0$ :}
+        
+        Soit $z_0 = x$ ($x \in \mathbb{R}$) une éventuelle solution réelle de $(E)$. On a :
+        
+        $
+        \begin{aligned}
+            x^3 + (-5 + 6i)x + 12 + 18i = 0 &\iff x^3 - 5x + 6ix + 12 + 18i = 0\\
+            &\iff (x^3 - 5x + 12) + i(6x + 18) = 0
+        \end{aligned}
+        $
+        
+        Comme $x \in \mathbb{R}$, $(x^3 - 5x + 12) \in \mathbb{R}$ et $(6x + 18) \in \mathbb{R}$. Par nullité d'un nombre complexe, cela équivaut au système :
+        
+        $
+        \begin{cases}
+            x^3 - 5x + 12 = 0 \quad (L_1) \\
+            6x + 18 = 0 \quad (L_2)
+        \end{cases}
+        $
+        
+        Résolvons $(L_2)$ :
+        
+        $
+        \begin{aligned}
+            6x + 18 = 0 &\iff 6x = -18\\
+            &\iff x = -3
+        \end{aligned}
+        $
+        
+        Vérifions si $x = -3$ satisfait $(L_1)$ :
+        
+        $
+        \begin{aligned}
+            (-3)^3 - 5(-3) + 12 &= -27 + 15 + 12\\
+            &= 0
+        \end{aligned}
+        $
+        
+        L'équation $(E)$ admet donc une unique solution réelle : $\mathbf{z_0 = -3}$.
+
+        \item \textbf{Vérification que $2i$ est solution de $(E)$ :}
+        
+        On pose $P(z) = z^3 + (-5 + 6i)z + 12 + 18i$ et on calcule $P(2i)$ :
+        
+        $
+        \begin{aligned}
+            P(2i) &= (2i)^3 + (-5 + 6i)(2i) + 12 + 18i\\
+            &= 8i^3 - 10i + 12i^2 + 12 + 18i\\
+            &= -8i - 10i - 12 + 12 + 18i\\
+            &= (-12 + 12) + (-8 - 10 + 18)i\\
+            &= 0
+        \end{aligned}
+        $
+        
+        Comme $P(2i) = 0$, le nombre complexe $\mathbf{z_1 = 2i}$ est bien solution de $(E)$.
+
+        \item \textbf{Fin de la résolution de $(E)$ :}
+        
+        Le polynôme $P(z)$ est de degré $3$ et son coefficient dominant est $1$. Il admet donc trois racines dans $\mathbb{C}$ (comptées avec leur multiplicité) : $z_0 = -3$, $z_1 = 2i$ et une troisième racine $z_2$.
+        
+        On utilise les relations coefficients-racines (ou la factorisation par $(z + 3)(z - 2i)$). Ici, le coefficient en $z^2$ de $P(z)$ étant nul ($a = 0$), la somme des trois racines est nulle :
+        
+        $
+        \begin{aligned}
+            z_0 + z_1 + z_2 &= 0\\
+            -3 + 2i + z_2 &= 0\\
+            z_2 &= \mathbf{3 - 2i}
+        \end{aligned}
+        $
+        
+        \textit{(Vérification par le produit : $z_0 z_1 z_2 = (-3)(2i)(3 - 2i) = -6i(3 - 2i) = -18i - 12 = -(12 + 18i)$, ce qui correspond bien au terme constant $-c$.)}
+        
+        L'ensemble des solutions de $(E)$ dans $\mathbb{C}$ est donc :
+        
+        $
+        \mathcal{S} = \left\{\mathbf{-3 \,;\, 2i \,;\, 3 - 2i}\right\}
+        $
+    \end{enumerate}
+
+    \item \textbf{Étude géométrique :}
+    
+    \textit{(Note : dans l'énoncé, l'affixe de $M'$ est notée $z'$ avec $z' = Z = \dfrac{z - 2i}{z + 3}$ pour $z \neq -3$.)}
+
+    \begin{enumerate}
+        \item \textbf{Démonstration de $OM' = \dfrac{MA}{MB}$ :}
+        
+        Pour tout point $M(z)$ distinct de $B(-3)$ (soit $z \neq -3$), on a :
+        
+        $
+        \begin{aligned}
+            OM' &= |z' - z_O|\\
+            &= |z'|\\
+            &= \left|\frac{z - 2i}{z + 3}\right|\\
+            &= \frac{|z - 2i|}{|z - (-3)|}\\
+            &= \frac{|z - z_A|}{|z - z_B|}\\
+            &= \mathbf{\frac{MA}{MB}}
+        \end{aligned}
+        $
+
+        \item \textbf{Détermination de l'ensemble $(\mathcal{G})$ des points $M$ tels que $OM' = 1$ :}
+        
+        Pour tout point $M$ du plan distinct de $B(-3)$ :
+        
+        $
+        \begin{aligned}
+            M \in (\mathcal{G}) &\iff OM' = 1\\
+            &\iff \frac{MA}{MB} = 1\\
+            &\iff MA = MB \quad (\text{car } MB > 0)
+        \end{aligned}
+        $
+        
+        \textit{(Remarque : le point $B$ lui-même n'appartient pas à $(\mathcal{G})$ car $BA = |-3 - 2i| = \sqrt{13} \neq 0 = BB$, et de toute façon $z'$ n'est pas défini en $B$.)}
+        
+        L'ensemble $(\mathcal{G})$ des points $M$ équidistants de $A$ et de $B$ est donc la \textbf{médiatrice du segment $[AB]$}, où $A(2i)$ et $B(-3)$.
+    \end{enumerate}
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
