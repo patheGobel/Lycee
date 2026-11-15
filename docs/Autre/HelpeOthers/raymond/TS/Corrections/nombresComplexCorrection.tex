@@ -220,9 +220,10 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
     \item \textbf{Déterminer le conjugué des nombres complexes suivants :}
     \begin{enumerate}
         \item $z_1 = 3i$
-        \[
-            \overline{z_1} = \overline{3i} = \mathbf{-3i}
-        \]
+        
+                $\begin{aligned}
+            \overline{z_1} &= \overline{3i}\\ &= \mathbf{-3i}
+        \end{aligned}$
 
         \item $z_2 = -i(1 + 4i)$
         
@@ -1631,101 +1632,212 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
     D'où $\mathcal{S} = \left\{\mathbf{2e^{i\frac{\pi}{4}} \,;\, 2e^{i\frac{11\pi}{12}} \,;\, 2e^{-i\frac{5\pi}{12}}}\right\}$.
 \end{enumerate}
 
-\fbox{\textbf{\exo}}[Linéarisation]
+\fbox{\textbf{\exo}} [Racines $n$-ièmes]
 
-\textbf{Rappels (Formules d'Euler) :} Pour tout réel $\theta$ :
-\[
-    \cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2} \quad \text{et} \quad \sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}
-\]
+\begin{enumerate}
+    \item \textbf{Écriture trigonométrique de $z_0$ :}
+    
+    Calculons d'abord le module de $z_0 = 1 - i\sqrt{3}$ :
+    $$
+    \begin{aligned}
+        |z_0| &= \sqrt{1^2 + (-\sqrt{3})^2} \\
+        &= \sqrt{1 + 3} \\
+        &= \sqrt{4} \\
+        &= 2
+    \end{aligned}
+    $$
+    Factorisons $z_0$ par son module :
+    $$
+    \begin{aligned}
+        z_0 &= 2\left(\dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\right) \\
+        &= 2\left(\cos\left(-\dfrac{\pi}{3}\right) + i\sin\left(-\dfrac{\pi}{3}\right)\right)
+    \end{aligned}
+    $$
+    Une écriture trigonométrique de $z_0$ est donc $z_0 = 2\left(\cos\left(-\dfrac{\pi}{3}\right) + i\sin\left(-\dfrac{\pi}{3}\right)\right)$.
+
+    \item \textbf{Démonstration que $z_0^4 = -8 + 8i\sqrt{3}$ :}
+    
+    En utilisant la forme trigonométrique et la formule de Moivre, on obtient :
+    $$
+    \begin{aligned}
+        z_0^4 &= \left[2\left(\cos\left(-\dfrac{\pi}{3}\right) + i\sin\left(-\dfrac{\pi}{3}\right)\right)\right]^4 \\
+        &= 2^4\left(\cos\left(-\dfrac{4\pi}{3}\right) + i\sin\left(-\dfrac{4\pi}{3}\right)\right) \\
+        &= 16\left(\cos\left(\dfrac{2\pi}{3}\right) + i\sin\left(\dfrac{2\pi}{3}\right)\right) \\
+        &= 16\left(-\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right) \\
+        &= -8 + 8i\sqrt{3}
+    \end{aligned}
+    $$
+
+    \item \textbf{Résolution dans $\mathbb{C}$ de l'équation $z^4 = 1$ :}
+    
+    Posons $z = r e^{i\theta}$ avec $r > 0$ et $\theta \in \mathbb{R}$. On a :
+    $$
+    \begin{aligned}
+        z^4 = 1 &\iff r^4 e^{i4\theta} = 1 e^{i0} \\
+        &\iff \left\{
+        \begin{array}{l}
+            r^4 = 1 \\
+            4\theta \equiv 0 \pmod{2\pi}
+        \end{array}
+        \right. \\
+        &\iff \left\{
+        \begin{array}{l}
+            r = 1 \quad (\text{car } r > 0) \\
+            \theta = \dfrac{2k\pi}{4} = \dfrac{k\pi}{2}, \quad k \in \{0, 1, 2, 3\}
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Les quatre racines quatrièmes de l'unité sont donc :
+    $$
+    \begin{aligned}
+        \omega_0 &= e^{i0} = 1 \\
+        \omega_1 &= e^{i\frac{\pi}{2}} = i \\
+        \omega_2 &= e^{i\pi} = -1 \\
+        \omega_3 &= e^{i\frac{3\pi}{2}} = e^{-i\frac{\pi}{2}} = -i
+    \end{aligned}
+    $$
+    L'ensemble des solutions dans $\mathbb{C}$ de l'équation $z^4 = 1$ est donc :
+    $$
+    \mathcal{S}_1 = \left\{ 1 \,;\, i \,;\, -1 \,;\, -i \right\}
+    $$
+
+    \item \textbf{Déduction des solutions de $(E) : z^4 = -8 + 8i\sqrt{3}$ :}
+    
+    D'après la question 2, on a $-8 + 8i\sqrt{3} = z_0^4$ avec $z_0 \neq 0$. L'équation $(E)$ s'écrit donc :
+    $$
+    \begin{aligned}
+        z^4 = z_0^4 &\iff \left(\dfrac{z}{z_0}\right)^4 = 1 \\
+        &\iff \dfrac{z}{z_0} \in \left\{ 1 \,;\, i \,;\, -1 \,;\, -i \right\} \\
+        &\iff z \in \left\{ z_0 \,;\, iz_0 \,;\, -z_0 \,;\, -iz_0 \right\}
+    \end{aligned}
+    $$
+    Déterminons chaque solution sous forme algébrique et trigonométrique :
+    \begin{itemize}
+        \item \textbf{Pour $k = 0$ :}
+        $$
+        \begin{aligned}
+            z_0 &= 1 - i\sqrt{3} \\
+            &= 2\left(\cos\left(-\dfrac{\pi}{3}\right) + i\sin\left(-\dfrac{\pi}{3}\right)\right)
+        \end{aligned}
+        $$
+        \item \textbf{Pour $k = 1$ :}
+        $$
+        \begin{aligned}
+            z_1 &= iz_0 = i(1 - i\sqrt{3}) = \sqrt{3} + i \\
+            &= 2\left(\cos\left(-\dfrac{\pi}{3} + \dfrac{\pi}{2}\right) + i\sin\left(-\dfrac{\pi}{3} + \dfrac{\pi}{2}\right)\right) \\
+            &= 2\left(\cos\left(\dfrac{\pi}{6}\right) + i\sin\left(\dfrac{\pi}{6}\right)\right)
+        \end{aligned}
+        $$
+        \item \textbf{Pour $k = 2$ :}
+        $$
+        \begin{aligned}
+            z_2 &= -z_0 = -(1 - i\sqrt{3}) = -1 + i\sqrt{3} \\
+            &= 2\left(\cos\left(-\dfrac{\pi}{3} + \pi\right) + i\sin\left(-\dfrac{\pi}{3} + \pi\right)\right) \\
+            &= 2\left(\cos\left(\dfrac{2\pi}{3}\right) + i\sin\left(\dfrac{2\pi}{3}\right)\right)
+        \end{aligned}
+        $$
+        \item \textbf{Pour $k = 3$ :}
+        $$
+        \begin{aligned}
+            z_3 &= -iz_0 = -i(1 - i\sqrt{3}) = -\sqrt{3} - i \\
+            &= 2\left(\cos\left(-\dfrac{\pi}{3} - \dfrac{\pi}{2}\right) + i\sin\left(-\dfrac{\pi}{3} - \dfrac{\pi}{2}\right)\right) \\
+            &= 2\left(\cos\left(-\dfrac{5\pi}{6}\right) + i\sin\left(-\dfrac{5\pi}{6}\right)\right)
+        \end{aligned}
+        $$
+    \end{itemize}
+\end{enumerate}
+
+\medskip
+
+\fbox{\textbf{\exo}}[Linéarisation]
 
 \begin{enumerate}
     \item \textbf{Linéarisation des polynômes trigonométriques :}
     
+    Rappelons les formules d'Euler pour tout $x \in \mathbb{R}$ :
+    $$
+    \cos x = \dfrac{e^{ix} + e^{-ix}}{2} \qquad \text{et} \qquad \sin x = \dfrac{e^{ix} - e^{-ix}}{2i}
+    $$
     \begin{enumerate}
-        \item $h(x) = \cos x \sin^2 x$
-        
-        $
+        \item \textbf{Linéarisation de $h(x) = \cos x \sin^2 x$ :}
+        $$
         \begin{aligned}
-            h(x) &= \left(\frac{e^{ix} + e^{-ix}}{2}\right) \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^2\\
-            &= \left(\frac{e^{ix} + e^{-ix}}{2}\right) \left(\frac{e^{i2x} - 2 + e^{-i2x}}{-4}\right)\\
-            &= -\frac{1}{8} \left(e^{i3x} - 2e^{ix} + e^{-ix} + e^{ix} - 2e^{-ix} + e^{-i3x}\right)\\
-            &= -\frac{1}{8} \left[\left(e^{i3x} + e^{-i3x}\right) - \left(e^{ix} + e^{-ix}\right)\right]\\
-            &= -\frac{1}{8} (2\cos 3x - 2\cos x)\\
-            &= \mathbf{-\frac{1}{4}\cos 3x + \frac{1}{4}\cos x}
+            h(x) &= \left(\dfrac{e^{ix} + e^{-ix}}{2}\right)\left(\dfrac{e^{ix} - e^{-ix}}{2i}\right)^2 \\
+            &= \left(\dfrac{e^{ix} + e^{-ix}}{2}\right)\left(\dfrac{e^{i2x} - 2 + e^{-i2x}}{-4}\right) \\
+            &= -\dfrac{1}{8}\left(e^{ix} + e^{-ix}\right)\left(e^{i2x} - 2 + e^{-i2x}\right) \\
+            &= -\dfrac{1}{8}\left(e^{i3x} - 2e^{ix} + e^{-ix} + e^{ix} - 2e^{-ix} + e^{-i3x}\right) \\
+            &= -\dfrac{1}{8}\left[\left(e^{i3x} + e^{-i3x}\right) - \left(e^{ix} + e^{-ix}\right)\right] \\
+            &= -\dfrac{1}{8}\left(2\cos 3x - 2\cos x\right) \\
+            &= \dfrac{1}{4}\cos x - \dfrac{1}{4}\cos 3x
         \end{aligned}
-        $
+        $$
 
-        \item $k(x) = \cos 2x \sin 3x$
-        
-        $
+        \item \textbf{Linéarisation de $k(x) = \cos 2x \sin 3x$ :}
+        $$
         \begin{aligned}
-            k(x) &= \left(\frac{e^{i2x} + e^{-i2x}}{2}\right) \left(\frac{e^{i3x} - e^{-i3x}}{2i}\right)\\
-            &= \frac{1}{4i} \left(e^{i5x} - e^{-ix} + e^{ix} - e^{-i5x}\right)\\
-            &= \frac{1}{2} \left(\frac{e^{i5x} - e^{-i5x}}{2i} + \frac{e^{ix} - e^{-ix}}{2i}\right)\\
-            &= \mathbf{\frac{1}{2}\sin 5x + \frac{1}{2}\sin x}
+            k(x) &= \left(\dfrac{e^{i2x} + e^{-i2x}}{2}\right)\left(\dfrac{e^{i3x} - e^{-i3x}}{2i}\right) \\
+            &= \dfrac{1}{4i}\left(e^{i5x} - e^{-ix} + e^{ix} - e^{-i5x}\right) \\
+            &= \dfrac{1}{2}\left(\dfrac{e^{i5x} - e^{-i5x}}{2i} + \dfrac{e^{ix} - e^{-ix}}{2i}\right) \\
+            &= \dfrac{1}{2}\sin 5x + \dfrac{1}{2}\sin x
         \end{aligned}
-        $
+        $$
 
-        \item $m(x) = \sin^3 x$
-        
-        $
+        \item \textbf{Linéarisation de $m(x) = \sin^3 x$ :}
+        $$
         \begin{aligned}
-            m(x) &= \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^3\\
-            &= \frac{1}{-8i} \left(e^{i3x} - 3e^{i2x}e^{-ix} + 3e^{ix}e^{-i2x} - e^{-i3x}\right)\\
-            &= -\frac{1}{4} \left(\frac{e^{i3x} - e^{-i3x}}{2i} - 3\frac{e^{ix} - e^{-ix}}{2i}\right)\\
-            &= -\frac{1}{4} (\sin 3x - 3\sin x)\\
-            &= \mathbf{-\frac{1}{4}\sin 3x + \frac{3}{4}\sin x}
+            m(x) &= \left(\dfrac{e^{ix} - e^{-ix}}{2i}\right)^3 \\
+            &= \dfrac{1}{-8i}\left(e^{i3x} - 3e^{i2x}e^{-ix} + 3e^{ix}e^{-i2x} - e^{-i3x}\right) \\
+            &= -\dfrac{1}{4}\left[\dfrac{e^{i3x} - e^{-i3x}}{2i} - 3\left(\dfrac{e^{ix} - e^{-ix}}{2i}\right)\right] \\
+            &= -\dfrac{1}{4}\left(\sin 3x - 3\sin x\right) \\
+            &= \dfrac{3}{4}\sin x - \dfrac{1}{4}\sin 3x
         \end{aligned}
-        $
+        $$
     \end{enumerate}
 
     \item 
     \begin{enumerate}
         \item \textbf{Linéarisation de $f(x) = \sin^4 x + \cos^4 x$ :}
         
-        Calculons d'abord $\sin^4 x$ et $\cos^4 x$ séparément :
-        
-        $
+        Calculons séparément $\sin^4 x$ et $\cos^4 x$ :
+        $$
         \begin{aligned}
-            \sin^4 x &= \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^4\\
-            &= \frac{1}{16} \left(e^{i4x} - 4e^{i2x} + 6 - 4e^{-i2x} + e^{-i4x}\right)\\
-            &= \frac{1}{16} \left[\left(e^{i4x} + e^{-i4x}\right) - 4\left(e^{i2x} + e^{-i2x}\right) + 6\right]\\
-            &= \frac{1}{16} (2\cos 4x - 8\cos 2x + 6)\\
-            &= \frac{1}{8}\cos 4x - \frac{1}{2}\cos 2x + \frac{3}{8}
+            \sin^4 x &= \left(\dfrac{e^{ix} - e^{-ix}}{2i}\right)^4 \\
+            &= \dfrac{1}{16}\left(e^{i4x} - 4e^{i2x} + 6 - 4e^{-i2x} + e^{-i4x}\right) \\
+            &= \dfrac{1}{16}\left[\left(e^{i4x} + e^{-i4x}\right) - 4\left(e^{i2x} + e^{-i2x}\right) + 6\right] \\
+            &= \dfrac{1}{16}\left(2\cos 4x - 8\cos 2x + 6\right) \\
+            &= \dfrac{1}{8}\cos 4x - \dfrac{1}{2}\cos 2x + \dfrac{3}{8}
         \end{aligned}
-        $
-        
-        $
+        $$
+        et
+        $$
         \begin{aligned}
-            \cos^4 x &= \left(\frac{e^{ix} + e^{-ix}}{2}\right)^4\\
-            &= \frac{1}{16} \left(e^{i4x} + 4e^{i2x} + 6 + 4e^{-i2x} + e^{-i4x}\right)\\
-            &= \frac{1}{16} \left[\left(e^{i4x} + e^{-i4x}\right) + 4\left(e^{i2x} + e^{-i2x}\right) + 6\right]\\
-            &= \frac{1}{16} (2\cos 4x + 8\cos 2x + 6)\\
-            &= \frac{1}{8}\cos 4x + \frac{1}{2}\cos 2x + \frac{3}{8}
+            \cos^4 x &= \left(\dfrac{e^{ix} + e^{-ix}}{2}\right)^4 \\
+            &= \dfrac{1}{16}\left(e^{i4x} + 4e^{i2x} + 6 + 4e^{-i2x} + e^{-i4x}\right) \\
+            &= \dfrac{1}{16}\left[\left(e^{i4x} + e^{-i4x}\right) + 4\left(e^{i2x} + e^{-i2x}\right) + 6\right] \\
+            &= \dfrac{1}{16}\left(2\cos 4x + 8\cos 2x + 6\right) \\
+            &= \dfrac{1}{8}\cos 4x + \dfrac{1}{2}\cos 2x + \dfrac{3}{8}
         \end{aligned}
-        $
-        
-        En additionnant les deux expressions, on obtient :
-        
-        $
+        $$
+        En additionnant les deux expressions, les termes en $\cos 2x$ s'éliminent :
+        $$
         \begin{aligned}
-            f(x) &= \sin^4 x + \cos^4 x\\
-            &= \left(\frac{1}{8}\cos 4x - \frac{1}{2}\cos 2x + \frac{3}{8}\right) + \left(\frac{1}{8}\cos 4x + \frac{1}{2}\cos 2x + \frac{3}{8}\right)\\
-            &= \frac{2}{8}\cos 4x + \frac{6}{8}\\
-            &= \mathbf{\frac{1}{4}\cos 4x + \frac{3}{4}}
+            f(x) &= \sin^4 x + \cos^4 x \\
+            &= \left(\dfrac{1}{8}\cos 4x - \dfrac{1}{2}\cos 2x + \dfrac{3}{8}\right) + \left(\dfrac{1}{8}\cos 4x + \dfrac{1}{2}\cos 2x + \dfrac{3}{8}\right) \\
+            &= \dfrac{2}{8}\cos 4x + \dfrac{6}{8} \\
+            &= \dfrac{1}{4}\cos 4x + \dfrac{3}{4}
         \end{aligned}
-        $
+        $$
 
         \item \textbf{Déduction d'une primitive $F$ de $f$ sur $\mathbb{R}$ :}
         
-        La fonction $f$ est continue sur $\mathbb{R}$ (comme somme et composée de fonctions continues). Une primitive $F$ de $f$ sur $\mathbb{R}$ est donnée par :
-        
-        $
+        À partir de la forme linéarisée $f(x) = \dfrac{1}{4}\cos(4x) + \dfrac{3}{4}$, une primitive $F$ de $f$ sur $\mathbb{R}$ est donnée par :
+        $$
         \begin{aligned}
-            F(x) &= \frac{1}{4} \times \frac{\sin 4x}{4} + \frac{3}{4}x\\
-            &= \mathbf{\frac{1}{16}\sin 4x + \frac{3}{4}x}
+            F(x) &= \dfrac{1}{4} \times \dfrac{\sin(4x)}{4} + \dfrac{3}{4}x \\
+            &= \dfrac{1}{16}\sin(4x) + \dfrac{3}{4}x
         \end{aligned}
-        $
+        $$
     \end{enumerate}
 \end{enumerate}
 
@@ -4703,6 +4815,160 @@ D'où :
     $$
 \end{enumerate}
 
+\fbox{\textbf{\exo}} (POLYNÔMES COMPLEXES)
+
+\textbf{Rappels :} 
+\begin{itemize}
+    \item Pour tout polynôme $P$ à coefficients réels et tout complexe $z$, on a $\overline{P(z)} = P(\overline{z})$.
+    \item Un polynôme de degré $4$ à coefficients réels admet au plus $4$ racines complexes distinctes.
+    \item Si $z_0 \in \mathbb{C} \setminus \mathbb{R}$ est racine d'un polynôme à coefficients réels, alors $\overline{z_0}$ est aussi racine, et le produit $(z - z_0)(z - \overline{z_0}) = z^2 - 2\operatorname{Re}(z_0)z + |z_0|^2$ est un polynôme du second degré à coefficients réels.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Propriétés des racines de $P$ :}
+    
+    Soit $\alpha \in \mathbb{C}$ une solution de l'équation $P(z) = 0$, c'est-à-dire $P(\alpha) = 0$.
+    
+    Remarquons d'abord que $P(0) = 0^4 - 3(0)^3 + \dfrac{9}{2}(0)^2 - 3(0) + 1 = 1 \neq 0$, donc $\alpha \neq 0$ et l'inverse $\dfrac{1}{\alpha}$ est bien défini.
+
+    \begin{itemize}
+        \item \textbf{Montrons que $\overline{\alpha}$ est solution de $P(z) = 0$ :}
+        
+        Tous les coefficients de $P(z)$ ($1$, $-3$, $\dfrac{9}{2}$, $-3$ et $1$) sont des nombres réels, donc égaux à leurs conjugués. En prenant le conjugué de $P(\alpha)$ :
+        
+        $
+        \begin{aligned}
+            P(\overline{\alpha}) &= \overline{\alpha}^4 - 3\overline{\alpha}^3 + \frac{9}{2}\overline{\alpha}^2 - 3\overline{\alpha} + 1\\
+            &= \overline{\alpha^4} - \overline{3}\overline{\alpha^3} + \overline{\left(\frac{9}{2}\right)}\overline{\alpha^2} - \overline{3}\overline{\alpha} + \overline{1}\\
+            &= \overline{\alpha^4 - 3\alpha^3 + \frac{9}{2}\alpha^2 - 3\alpha + 1}\\
+            &= \overline{P(\alpha)}\\
+            &= \overline{0}\\
+            &= 0
+        \end{aligned}
+        $
+        
+        Ainsi, $P(\overline{\alpha}) = 0$, donc $\mathbf{\overline{\alpha}}$ est solution de $P(z) = 0$.
+
+        \item \textbf{Montrons que $\dfrac{1}{\alpha}$ est solution de $P(z) = 0$ :}
+        
+        Puisque $\alpha \neq 0$, calculons $P\left(\dfrac{1}{\alpha}\right)$ en mettant au même dénominateur $\alpha^4$ :
+        
+        $
+        \begin{aligned}
+            P\left(\frac{1}{\alpha}\right) &= \left(\frac{1}{\alpha}\right)^4 - 3\left(\frac{1}{\alpha}\right)^3 + \frac{9}{2}\left(\frac{1}{\alpha}\right)^2 - 3\left(\frac{1}{\alpha}\right) + 1\\
+            &= \frac{1}{\alpha^4} - \frac{3}{\alpha^3} + \frac{9}{2\alpha^2} - \frac{3}{\alpha} + 1\\
+            &= \frac{1 - 3\alpha + \dfrac{9}{2}\alpha^2 - 3\alpha^3 + \alpha^4}{\alpha^4}\\
+            &= \frac{P(\alpha)}{\alpha^4}\\
+            &= \frac{0}{\alpha^4}\\
+            &= 0
+        \end{aligned}
+        $
+        
+        Ainsi, $P\left(\dfrac{1}{\alpha}\right) = 0$, donc $\mathbf{\dfrac{1}{\alpha}}$ est également solution de $P(z) = 0$.
+    \end{itemize}
+
+    \item \textbf{Calcul de $P(1 + i)$ et résolution de $P(z) = 0$ :}
+    
+    Calculons d'abord les puissances de $1 + i$ :
+    
+    $
+    \begin{aligned}
+        (1 + i)^2 &= 1 + 2i + i^2\\
+        &= 2i
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        (1 + i)^3 &= (1 + i)^2 (1 + i)\\
+        &= 2i(1 + i)\\
+        &= -2 + 2i
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        (1 + i)^4 &= \left[(1 + i)^2\right]^2\\
+        &= (2i)^2\\
+        &= -4
+    \end{aligned}
+    $
+    
+    On en déduit la valeur de $P(1 + i)$ :
+    
+    $
+    \begin{aligned}
+        P(1 + i) &= (1 + i)^4 - 3(1 + i)^3 + \frac{9}{2}(1 + i)^2 - 3(1 + i) + 1\\
+        &= -4 - 3(-2 + 2i) + \frac{9}{2}(2i) - 3(1 + i) + 1\\
+        &= -4 + 6 - 6i + 9i - 3 - 3i + 1\\
+        &= (-4 + 6 - 3 + 1) + (-6 + 9 - 3)i\\
+        &= \mathbf{0}
+    \end{aligned}
+    $
+    
+    Puisque $P(1 + i) = 0$, le nombre complexe $\alpha = 1 + i$ est une solution de l'équation $P(z) = 0$.
+    
+    D'après la question 1, on en déduit immédiatement trois autres solutions :
+    
+    \begin{itemize}
+        \item $z_1 = \alpha = \mathbf{1 + i}$
+        \item $z_2 = \overline{\alpha} = \mathbf{1 - i}$
+        \item $z_3 = \dfrac{1}{\alpha} = \dfrac{1}{1 + i} = \dfrac{1 - i}{2} = \mathbf{\dfrac{1}{2} - \dfrac{1}{2}i}$
+        \item Et en appliquant à nouveau la propriété du conjugué à $z_3$, on obtient une quatrième solution : $z_4 = \overline{z_3} = \dfrac{1}{\overline{\alpha}} = \mathbf{\dfrac{1}{2} + \dfrac{1}{2}i}$
+    \end{itemize}
+    
+    Ces quatre nombres complexes sont deux à deux distincts et le polynôme $P(z)$ est de degré $4$ : il admet donc exactement ces $4$ racines.
+    
+    L'ensemble des solutions dans $\mathbb{C}$ de l'équation $P(z) = 0$ est :
+    
+    $
+    \mathcal{S} = \left\{\mathbf{1 + i \,;\, 1 - i \,;\, \frac{1}{2} - \frac{1}{2}i \,;\, \frac{1}{2} + \frac{1}{2}i}\right\}
+    $
+
+    \item \textbf{Factorisation de $P(z)$ en produit de deux polynômes du second degré à coefficients réels :}
+    
+    Le coefficient dominant de $P(z)$ est $1$, donc $P(z)$ se factorise sous la forme :
+    
+    $
+    \begin{aligned}
+        P(z) &= (z - z_1)(z - z_2)(z - z_3)(z - z_4)\\
+        &= \left[(z - (1 + i))(z - (1 - i))\right] \left[\left(z - \left(\frac{1}{2} - \frac{1}{2}i\right)\right)\left(z - \left(\frac{1}{2} + \frac{1}{2}i\right)\right)\right]
+    \end{aligned}
+    $
+    
+    Regroupons chaque racine avec sa conjuguée pour obtenir des facteurs à coefficients réels :
+    
+    \begin{itemize}
+        \item Premier facteur :
+        
+        $
+        \begin{aligned}
+            Q_1(z) &= (z - 1 - i)(z - 1 + i)\\
+            &= (z - 1)^2 - i^2\\
+            &= z^2 - 2z + 1 + 1\\
+            &= z^2 - 2z + 2
+        \end{aligned}
+        $
+        
+        \item Second facteur :
+        
+        $
+        \begin{aligned}
+            Q_2(z) &= \left(z - \frac{1}{2} + \frac{1}{2}i\right)\left(z - \frac{1}{2} - \frac{1}{2}i\right)\\
+            &= \left(z - \frac{1}{2}\right)^2 - \left(\frac{1}{2}i\right)^2\\
+            &= z^2 - z + \frac{1}{4} + \frac{1}{4}\\
+            &= z^2 - z + \frac{1}{2}
+        \end{aligned}
+        $
+    \end{itemize}
+    
+    On obtient finalement la factorisation cherchée :
+    
+    $
+    P(z) = \mathbf{\left(z^2 - 2z + 2\right)\left(z^2 - z + \frac{1}{2}\right)}
+    $
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \textbf{Première partie : Résolution de $(\mathcal{E})$}
@@ -4935,5 +5201,4 @@ D'où :
     $$
 \end{enumerate}
 
-\fbox{\textbf{\exo}}
 \end{document}
