@@ -777,7 +777,105 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
     \end{aligned}
     $
 \end{enumerate}
+
 \fbox{\textbf{\exo}} [Forme trigonométrique]
+
+\textbf{Rappels :}
+\begin{itemize}
+    \item La forme trigonométrique d'un nombre complexe non nul $z$ de module $r = |z|$ et d'argument $\theta = \arg(z)$ est $z = r(\cos\theta + i\sin\theta)$.
+    \item Pour le quotient de deux complexes non nuls : $\left|\dfrac{z_1}{z_2}\right| = \dfrac{|z_1|}{|z_2|}$ et $\arg\left(\dfrac{z_1}{z_2}\right) \equiv \arg(z_1) - \arg(z_2) \pmod{2\pi}$.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Écriture trigonométrique de $z_1$, $z_2$ et $z_3$ :}
+    
+    \begin{itemize}
+        \item Pour $z_1 = \dfrac{\sqrt{6} - i\sqrt{2}}{2} = \dfrac{\sqrt{6}}{2} - i\dfrac{\sqrt{2}}{2}$ :
+        
+        $
+        \begin{aligned}
+            |z_1| &= \sqrt{\left(\frac{\sqrt{6}}{2}\right)^2 + \left(-\frac{\sqrt{2}}{2}\right)^2}\\
+            &= \sqrt{\frac{6}{4} + \frac{2}{4}}\\
+            &= \sqrt{\frac{8}{4}}\\
+            &= \mathbf{\sqrt{2}}
+        \end{aligned}
+        $
+        
+        $
+        \begin{aligned}
+            z_1 &= \sqrt{2}\left(\frac{\sqrt{6}}{2\sqrt{2}} - i\frac{\sqrt{2}}{2\sqrt{2}}\right)\\
+            &= \sqrt{2}\left(\frac{\sqrt{3}}{2} - \frac{1}{2}i\right)\\
+            &= \mathbf{\sqrt{2}\left(\cos\left(-\frac{\pi}{6}\right) + i\sin\left(-\frac{\pi}{6}\right)\right)} \implies \arg(z_1) \equiv -\frac{\pi}{6} \pmod{2\pi}
+        \end{aligned}
+        $
+        
+        \item Pour $z_2 = 1 - i$ :
+        
+        $
+        \begin{aligned}
+            |z_2| &= \sqrt{1^2 + (-1)^2}\\
+            &= \mathbf{\sqrt{2}}
+        \end{aligned}
+        $
+        
+        $
+        \begin{aligned}
+            z_2 &= \sqrt{2}\left(\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}i\right)\\
+            &= \mathbf{\sqrt{2}\left(\cos\left(-\frac{\pi}{4}\right) + i\sin\left(-\frac{\pi}{4}\right)\right)} \implies \arg(z_2) \equiv -\frac{\pi}{4} \pmod{2\pi}
+        \end{aligned}
+        $
+        
+        \item Pour $z_3 = \dfrac{z_1}{z_2}$ :
+        
+        $
+        \begin{aligned}
+            |z_3| &= \frac{|z_1|}{|z_2|}\\
+            &= \frac{\sqrt{2}}{\sqrt{2}}\\
+            &= \mathbf{1}
+        \end{aligned}
+        $
+        
+        $
+        \begin{aligned}
+            \arg(z_3) &\equiv \arg(z_1) - \arg(z_2) \pmod{2\pi}\\
+            &\equiv -\frac{\pi}{6} - \left(-\frac{\pi}{4}\right) \pmod{2\pi}\\
+            &\equiv -\frac{\pi}{6} + \frac{\pi}{4}\\
+            &\equiv \frac{-2\pi + 3\pi}{12}\\
+            &\equiv \mathbf{\frac{\pi}{12}} \pmod{2\pi}
+        \end{aligned}
+        $
+        
+        On en déduit l'écriture trigonométrique de $z_3$ :
+        
+        $
+        z_3 = \mathbf{\cos\frac{\pi}{12} + i\sin\frac{\pi}{12}}
+        $
+    \end{itemize}
+
+    \item \textbf{Forme algébrique de $z_3$ et déduction des valeurs exactes :}
+    
+    $
+    \begin{aligned}
+        z_3 &= \frac{\dfrac{\sqrt{6} - i\sqrt{2}}{2}}{1 - i}\\
+        &= \frac{\sqrt{6} - i\sqrt{2}}{2(1 - i)}\\
+        &= \frac{(\sqrt{6} - i\sqrt{2})(1 + i)}{2(1 - i)(1 + i)}\\
+        &= \frac{\sqrt{6} + i\sqrt{6} - i\sqrt{2} - i^2\sqrt{2}}{2(1^2 - i^2)}\\
+        &= \frac{(\sqrt{6} + \sqrt{2}) + i(\sqrt{6} - \sqrt{2})}{4}\\
+        &= \mathbf{\frac{\sqrt{6} + \sqrt{2}}{4} + i\frac{\sqrt{6} - \sqrt{2}}{4}}
+    \end{aligned}
+    $
+    
+    Or, d'après la question précédente, $z_3 = \cos\dfrac{\pi}{12} + i\sin\dfrac{\pi}{12}$.
+    
+    Par unicité de l'écriture algébrique d'un nombre complexe, on identifie les parties réelles et imaginaires :
+    
+    $
+    \begin{aligned}
+        \cos\frac{\pi}{12} &= \mathbf{\frac{\sqrt{6} + \sqrt{2}}{4}} \\
+        \sin\frac{\pi}{12} &= \mathbf{\frac{\sqrt{6} - \sqrt{2}}{4}}
+    \end{aligned}
+    $
+\end{enumerate}
 
 \fbox{\textbf{\exo}} [Classique !]
 
