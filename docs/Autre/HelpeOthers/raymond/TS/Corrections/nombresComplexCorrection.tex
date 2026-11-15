@@ -3437,6 +3437,164 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+    \item \textbf{Existence et détermination de la solution réelle de $p(z) = 0$ :}
+    
+    Soit $x \in \mathbb{R}$ une éventuelle solution réelle de l'équation $p(z) = 0$. On a :
+    $$
+    \begin{aligned}
+        p(x) = 0 &\iff x^3 - (5 + i)x^2 + 6(1 + i)x - 8(1 + i) = 0 \\
+        &\iff x^3 - 5x^2 - ix^2 + 6x + 6ix - 8 - 8i = 0 \\
+        &\iff (x^3 - 5x^2 + 6x - 8) + i(-x^2 + 6x - 8) = 0
+    \end{aligned}
+    $$
+    Comme $x \in \mathbb{R}$, les expressions $x^3 - 5x^2 + 6x - 8$ et $-x^2 + 6x - 8$ sont des nombres réels. Un nombre complexe est nul si et seulement si sa partie réelle et sa partie imaginaire sont simultanément nulles :
+    $$
+    \begin{aligned}
+        p(x) = 0 &\iff
+        \left\{
+        \begin{array}{l}
+            x^3 - 5x^2 + 6x - 8 = 0 \quad (1) \\
+            -x^2 + 6x - 8 = 0 \quad (2)
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Résolvons d'abord l'équation du second degré $(2) : -x^2 + 6x - 8 = 0$, soit $x^2 - 6x + 8 = 0$. Calculons son discriminant $\Delta$ :
+    $$
+    \begin{aligned}
+        \Delta &= (-6)^2 - 4 \times 1 \times 8 \\
+        &= 36 - 32 \\
+        &= 4
+    \end{aligned}
+    $$
+    Les racines de $(2)$ sont donc :
+    $$
+    \begin{aligned}
+        x' &= \dfrac{6 - 2}{2} = 2 \qquad \text{et} \qquad x'' = \dfrac{6 + 2}{2} = 4
+    \end{aligned}
+    $$
+    Vérifions laquelle de ces deux valeurs annule également l'équation $(1)$ :
+    $$
+    \begin{aligned}
+        \text{Pour } x = 2 &: \quad 2^3 - 5(2)^2 + 6(2) - 8 = 8 - 20 + 12 - 8 = -8 \neq 0 \\
+        \text{Pour } x = 4 &: \quad 4^3 - 5(4)^2 + 6(4) - 8 = 64 - 80 + 24 - 8 = 0
+    \end{aligned}
+    $$
+    Ainsi, l'équation $p(z) = 0$ admet une unique solution réelle qui est $x_0 = 4$.
+
+    \item \textbf{Vérification que $2i$ est une solution de $p(z) = 0$ :}
+    
+    Calculons $p(2i)$ en remplaçant $z$ par $2i$ :
+    $$
+    \begin{aligned}
+        p(2i) &= (2i)^3 - (5 + i)(2i)^2 + 6(1 + i)(2i) - 8(1 + i) \\
+        &= 8i^3 - (5 + i)(4i^2) + 12i(1 + i) - 8 - 8i \\
+        &= -8i - (5 + i)(-4) + (12i + 12i^2) - 8 - 8i \\
+        &= -8i + 20 + 4i + 12i - 12 - 8 - 8i \\
+        &= (20 - 12 - 8) + (-8 + 4 + 12 - 8)i \\
+        &= 0 + 0i \\
+        &= 0
+    \end{aligned}
+    $$
+    Puisque $p(2i) = 0$, $2i$ est bien une solution de l'équation $p(z) = 0$.
+
+    \item \textbf{Factorisation de $p(z)$ et résolution de $p(z) = 0$ dans $\mathbb{C}$ :}
+    
+    Puisque $4$ et $2i$ sont deux racines distinctes du polynôme $p(z)$ de degré $3$ et de coefficient dominant $1$, $p(z)$ est factorisable par $(z - 4)(z - 2i)$. Il existe donc un nombre complexe $c$ tel que pour tout $z \in \mathbb{C}$ :
+    $$
+    \begin{aligned}
+        p(z) &= (z - 4)(z - 2i)(z - c) \\
+        &= (z^2 - 2iz - 4z + 8i)(z - c) \\
+        &= z^3 - cz^2 - 2iz^2 + 2icz - 4z^2 + 4cz + 8iz - 8ic \\
+        &= z^3 - (4 + 2i + c)z^2 + \left[8i + (4 + 2i)c\right]z - 8ic
+    \end{aligned}
+    $$
+    Par identification du terme constant avec celui de $p(z) = z^3 - (5 + i)z^2 + 6(1 + i)z - 8(1 + i)$, on obtient :
+    $$
+    \begin{aligned}
+        -8ic = -8(1 + i) &\iff ic = 1 + i \\
+        &\iff c = \dfrac{1 + i}{i} \\
+        &\iff c = \dfrac{(1 + i)(-i)}{i(-i)} \\
+        &\iff c = \dfrac{-i - i^2}{1} \\
+        &\iff c = 1 - i
+    \end{aligned}
+    $$
+    Vérifions le coefficient de $z^2$ :
+    $$
+    \begin{aligned}
+        -(4 + 2i + c) &= -(4 + 2i + 1 - i) \\
+        &= -(5 + i) \quad \text{(vérifié)}
+    \end{aligned}
+    $$
+    La forme factorisée de $p(z)$ est donc :
+    $$
+    p(z) = (z - 4)(z - 2i)(z - 1 + i)
+    $$
+    Résolvons l'équation $p(z) = 0$ dans $\mathbb{C}$ :
+    $$
+    \begin{aligned}
+        p(z) = 0 &\iff (z - 4)(z - 2i)(z - 1 + i) = 0 \\
+        &\iff z - 4 = 0 \quad \text{ou} \quad z - 2i = 0 \quad \text{ou} \quad z - 1 + i = 0 \\
+        &\iff z = 4 \quad \text{ou} \quad z = 2i \quad \text{ou} \quad z = 1 - i
+    \end{aligned}
+    $$
+    L'ensemble des solutions dans $\mathbb{C}$ est donc :
+    $$
+    \mathcal{S} = \left\{ 1 - i \,;\, 2i \,;\, 4 \right\}
+    $$
+
+    \item \textbf{Identification de $z_1, z_2, z_3$ par leurs modules :}
+    
+    Calculons le module de chacune des trois solutions :
+    $$
+    \begin{aligned}
+        |1 - i| &= \sqrt{1^2 + (-1)^2} = \sqrt{2} \approx 1{,}41 \\
+        |2i| &= 2 \\
+        |4| &= 4
+    \end{aligned}
+    $$
+    Comme $\sqrt{2} < 2 < 4$, on a $|1 - i| < |2i| < |4|$. On en déduit que :
+    $$
+    z_1 = 1 - i, \qquad z_2 = 2i, \qquad z_3 = 4
+    $$
+
+    \begin{enumerate}
+        \item \textbf{Placement des points $M_1$, $M_2$ et $M_3$ :}
+        
+        Dans le plan complexe muni d'un repère orthonormé $(O, \vec{u}, \vec{v})$, les points ont pour coordonnées :
+        $$
+        M_1(1 \,;\, -1), \qquad M_2(0 \,;\, 2), \qquad M_3(4 \,;\, 0)
+        $$
+        *(Remarque : $M_2$ est situé sur l'axe des ordonnées à $2$ unités au-dessus de $O$, et $M_3$ est situé sur l'axe des abscisses à $4$ unités à droite de $O$).*
+
+        \item \textbf{Nature du triangle $M_1 M_2 M_3$ :}
+        
+        Calculons le rapport complexe $\dfrac{z_3 - z_1}{z_2 - z_1}$ :
+        $$
+        \begin{aligned}
+            \dfrac{z_3 - z_1}{z_2 - z_1} &= \dfrac{4 - (1 - i)}{2i - (1 - i)} \\
+            &= \dfrac{4 - 1 + i}{2i - 1 + i} \\
+            &= \dfrac{3 + i}{-1 + 3i} \\
+            &= \dfrac{(3 + i)(-1 - 3i)}{(-1 + 3i)(-1 - 3i)} \\
+            &= \dfrac{-3 - 9i - i - 3i^2}{(-1)^2 - (3i)^2} \\
+            &= \dfrac{-3 - 10i + 3}{1 + 9} \\
+            &= \dfrac{-10i}{10} \\
+            &= -i
+        \end{aligned}
+        $$
+        Interprétons géométriquement ce résultat en module et en argument :
+        $$
+        \begin{aligned}
+            \dfrac{z_3 - z_1}{z_2 - z_1} = -i &\implies \left| \dfrac{z_3 - z_1}{z_2 - z_1} \right| = |-i| = 1 \quad \text{et} \quad \arg\left( \dfrac{z_3 - z_1}{z_2 - z_1} \right) \equiv \arg(-i) \pmod{2\pi} \\
+            &\implies \dfrac{M_1 M_3}{M_1 M_2} = 1 \quad \text{et} \quad \left( \overrightarrow{M_1 M_2}, \overrightarrow{M_1 M_3} \right) \equiv -\dfrac{\pi}{2} \pmod{2\pi} \\
+            &\implies M_1 M_3 = M_1 M_2 \quad \text{et} \quad (M_1 M_2) \perp (M_1 M_3)
+        \end{aligned}
+        $$
+        Le triangle $M_1 M_2 M_3$ est donc \textbf{rectangle et isocèle en $M_1$}.
+    \end{enumerate}
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
