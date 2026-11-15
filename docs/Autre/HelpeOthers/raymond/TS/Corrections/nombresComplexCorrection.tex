@@ -879,6 +879,74 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
 
 \fbox{\textbf{\exo}} [Classique !]
 
+\textbf{Rappel (Formule de Moivre) :} Pour tout réel $\theta$ et tout entier relatif $n$, on a :
+\[
+    (\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)
+\]
+
+\begin{enumerate}
+    \item \textbf{Forme trigonométrique de $1 + i$ et déduction de $(1 + i)^6$ :}
+    
+    On pose $z = 1 + i$.
+    
+    $
+    \begin{aligned}
+        |z| &= \sqrt{1^2 + 1^2}\\
+        &= \mathbf{\sqrt{2}}
+    \end{aligned}
+    $
+    
+    $
+    \begin{aligned}
+        1 + i &= \sqrt{2}\left(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i\right)\\
+        &= \mathbf{\sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)}
+    \end{aligned}
+    $
+    
+    En utilisant la formule de Moivre, on en déduit :
+    
+    $
+    \begin{aligned}
+        (1 + i)^6 &= \left[\sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right)\right]^6\\
+        &= (\sqrt{2})^6 \left(\cos\left(6 \times \frac{\pi}{4}\right) + i\sin\left(6 \times \frac{\pi}{4}\right)\right)\\
+        &= 2^3 \left(\cos\frac{3\pi}{2} + i\sin\frac{3\pi}{2}\right)\\
+        &= 8(0 - i)\\
+        &= \mathbf{-8i}
+    \end{aligned}
+    $
+
+    \item \textbf{Calcul de $\left(-\dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}\right)^{2026}$ :}
+    
+    On reconnaît les valeurs remarquables $\cos\left(\dfrac{2\pi}{3}\right) = -\dfrac{1}{2}$ et $\sin\left(\dfrac{2\pi}{3}\right) = \dfrac{\sqrt{3}}{2}$. Ainsi :
+    
+    $
+    \begin{aligned}
+        -\frac{1}{2} + i\frac{\sqrt{3}}{2} &= \cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}
+    \end{aligned}
+    $
+    
+    En appliquant la formule de Moivre :
+    
+    $
+    \begin{aligned}
+        \left(-\frac{1}{2} + i\frac{\sqrt{3}}{2}\right)^{2026} &= \left(\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\right)^{2026}\\
+        &= \cos\left(2026 \times \frac{2\pi}{3}\right) + i\sin\left(2026 \times \frac{2\pi}{3}\right)\\
+        &= \cos\left(\frac{4052\pi}{3}\right) + i\sin\left(\frac{4052\pi}{3}\right)
+    \end{aligned}
+    $
+    
+    Effectuons la division euclidienne de $4052$ par $3$ : $4052 = 3 \times 1350 + 2$, soit $\dfrac{4052\pi}{3} = 1350\pi + \dfrac{2\pi}{3} = 675 \times 2\pi + \dfrac{2\pi}{3}$.
+    
+    Par $2\pi$-périodicité des fonctions cosinus et sinus :
+    
+    $
+    \begin{aligned}
+        \left(-\frac{1}{2} + i\frac{\sqrt{3}}{2}\right)^{2026} &= \cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\\
+        &= \mathbf{-\frac{1}{2} + i\frac{\sqrt{3}}{2}}
+    \end{aligned}
+    $
+\end{enumerate}
+
 \fbox{\textbf{\exo}} [Racines carrées et Equations]
 
 \fbox{\textbf{\exo}} [Racines $n$-ièmes]
