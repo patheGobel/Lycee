@@ -2274,6 +2274,106 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\textbf{Rappels :} Pour trois points distincts $A(z_A)$, $B(z_B)$ et $C(z_C)$ du plan complexe :
+\begin{itemize}
+    \item $\left|\dfrac{z_C - z_B}{z_A - z_B}\right| = \dfrac{BC}{BA}$
+    \item $\arg\left(\dfrac{z_C - z_B}{z_A - z_B}\right) \equiv \left(\overrightarrow{BA}\,;\,\overrightarrow{BC}\right) \pmod{2\pi}$
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Module et argument du quotient $Z = \dfrac{z_C - z_B}{z_A - z_B}$ :}
+    
+    Calculons d'abord la forme algébrique de $Z$ :
+    
+    $
+    \begin{aligned}
+        Z &= \frac{z_C - z_B}{z_A - z_B}\\
+        &= \frac{(1 + 2i) - (-2)}{-3i - (-2)}\\
+        &= \frac{3 + 2i}{2 - 3i}\\
+        &= \frac{(3 + 2i)(2 + 3i)}{(2 - 3i)(2 + 3i)}\\
+        &= \frac{6 + 9i + 4i + 6i^2}{2^2 + 3^2}\\
+        &= \frac{6 + 13i - 6}{4 + 9}\\
+        &= \frac{13i}{13}\\
+        &= i
+    \end{aligned}
+    $
+    
+    On en déduit le module et un argument de $Z$ :
+    
+    $
+    \begin{aligned}
+        |Z| &= |i| = \mathbf{1} \\
+        \arg(Z) &\equiv \arg(i) \equiv \mathbf{\frac{\pi}{2}} \pmod{2\pi}
+    \end{aligned}
+    $
+
+    \item \textbf{Nature du triangle $ABC$ :}
+    
+    D'après la question précédente, on a :
+    
+    $
+    \begin{cases}
+        \dfrac{BC}{BA} = \left|\dfrac{z_C - z_B}{z_A - z_B}\right| = 1 \implies BC = BA \\
+        \left(\overrightarrow{BA}\,;\,\overrightarrow{BC}\right) \equiv \arg\left(\dfrac{z_C - z_B}{z_A - z_B}\right) \equiv \dfrac{\pi}{2} \pmod{2\pi} \implies \overrightarrow{BA} \perp \overrightarrow{BC}
+    \end{cases}
+    $
+    
+    Le triangle $ABC$ possède donc deux côtés de même longueur ($BA = BC$) et un angle droit en $B$.
+    
+    Le triangle $ABC$ est donc \textbf{rectangle et isocèle en $B$} (et direct).
+
+    \item \textbf{Détermination de l'affixe $z_D$ du point $D$ tel que $BADC$ soit un carré :}
+    
+    Comme le triangle $ABC$ est déjà rectangle et isocèle en $B$, le quadrilatère $BADC$ est un carré si et seulement si c'est un parallélogramme, c'est-à-dire si et seulement si $\overrightarrow{BA} = \overrightarrow{CD}$ (ou $\overrightarrow{BD} = \overrightarrow{BA} + \overrightarrow{BC}$).
+    
+    En termes d'affixes, $\overrightarrow{BA} = \overrightarrow{CD}$ équivaut à :
+    
+    $
+    \begin{aligned}
+        z_A - z_B &= z_D - z_C\\
+        z_D &= z_A - z_B + z_C\\
+        &= (-3i) - (-2) + (1 + 2i)\\
+        &= -3i + 2 + 1 + 2i\\
+        &= \mathbf{3 - i}
+    \end{aligned}
+    $
+    
+    L'affixe du point $D$ est donc $\mathbf{z_D = 3 - i}$.
+
+    \item \textbf{Appartenance des points $A, B, C$ et $D$ à un même cercle :}
+    
+    Le quadrilatère $BADC$ étant un carré, ses diagonales $[AC]$ et $[BD]$ se coupent en leur milieu $\Omega$ et ont la même longueur ($AC = BD$).
+    
+    Ainsi, $\Omega A = \Omega B = \Omega C = \Omega D$, ce qui prouve que les quatre points $A$, $B$, $C$ et $D$ appartiennent à un même cercle $(\mathcal{C})$ de centre $\Omega$ (milieu de $[AC]$) et de rayon $R = \dfrac{AC}{2}$.
+    
+    \begin{itemize}
+        \item \textbf{Affixe du centre $\Omega$ :}
+        
+        $
+        \begin{aligned}
+            z_\Omega &= \frac{z_A + z_C}{2}\\
+            &= \frac{-3i + (1 + 2i)}{2}\\
+            &= \mathbf{\frac{1}{2} - \frac{1}{2}i}
+        \end{aligned}
+        $
+        
+        \item \textbf{Calcul du rayon $R$ :}
+        
+        $
+        \begin{aligned}
+            R &= \frac{AC}{2}\\
+            &= \frac{|z_C - z_A|}{2}\\
+            &= \frac{|(1 + 2i) - (-3i)|}{2}\\
+            &= \frac{|1 + 5i|}{2}\\
+            &= \frac{\sqrt{1^2 + 5^2}}{2}\\
+            &= \mathbf{\frac{\sqrt{26}}{2}}
+        \end{aligned}
+        $
+    \end{itemize}
+    
+    Les points $A, B, C$ et $D$ appartiennent donc au cercle de centre $\mathbf{\Omega\left(\dfrac{1}{2} - \dfrac{1}{2}i\right)}$ et de rayon $\mathbf{R = \dfrac{\sqrt{26}}{2}}$.
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
