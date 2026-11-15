@@ -2895,6 +2895,249 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item \textbf{Démontrons que $2 + i$ est une racine de $p(z)$ :}
+        
+        Calculons $p(2 + i)$ en remplaçant $z$ par $2 + i$ :
+        $$
+        \begin{aligned}
+            p(2 + i) &= (2 + i)^3 + 3(2 + i)^2 - 3(2 + i) - 5 - 20i
+        \end{aligned}
+        $$
+        Calculons séparément $(2 + i)^2$ et $(2 + i)^3$ :
+        $$
+        \begin{aligned}
+            (2 + i)^2 &= 2^2 + 2 \times 2 \times i + i^2 \\
+            &= 4 + 4i - 1 \\
+            &= 3 + 4i
+        \end{aligned}
+        $$
+        et
+        $$
+        \begin{aligned}
+            (2 + i)^3 &= (2 + i)^2 (2 + i) \\
+            &= (3 + 4i)(2 + i) \\
+            &= 6 + 3i + 8i + 4i^2 \\
+            &= 6 + 11i - 4 \\
+            &= 2 + 11i
+        \end{aligned}
+        $$
+        Injectons ces résultats dans l'expression de $p(2 + i)$ :
+        $$
+        \begin{aligned}
+            p(2 + i) &= (2 + 11i) + 3(3 + 4i) - 3(2 + i) - 5 - 20i \\
+            &= 2 + 11i + 9 + 12i - 6 - 3i - 5 - 20i \\
+            &= (2 + 9 - 6 - 5) + (11 + 12 - 3 - 20)i \\
+            &= 0 + 0i \\
+            &= 0
+        \end{aligned}
+        $$
+        Puisque $p(2 + i) = 0$, $2 + i$ est bien une racine de $p(z)$.
+
+        \item \textbf{Déduisons-en les solutions de l'équation $p(z) = 0$ dans $\mathbb{C}$ :}
+        
+        Comme $2 + i$ est une racine de $p(z)$, le polynôme $p(z)$ est factorisable par $(z - (2 + i))$. Il existe donc trois nombres complexes $a$, $b$ et $c$ tels que pour tout $z \in \mathbb{C}$ :
+        $$
+        \begin{aligned}
+            p(z) &= (z - (2 + i))(az^2 + bz + c) \\
+            &= az^3 + bz^2 + cz - (2 + i)az^2 - (2 + i)bz - (2 + i)c \\
+            &= az^3 + \left[b - (2 + i)a\right]z^2 + \left[c - (2 + i)b\right]z - (2 + i)c
+        \end{aligned}
+        $$
+        Par identification avec $p(z) = z^3 + 3z^2 - 3z - 5 - 20i$, on obtient le système :
+        $$
+        \begin{aligned}
+            \left\{
+            \begin{array}{l}
+                a = 1 \\
+                b - (2 + i)a = 3 \\
+                c - (2 + i)b = -3 \\
+                -(2 + i)c = -5 - 20i
+            \end{array}
+            \right.
+            &\iff
+            \left\{
+            \begin{array}{l}
+                a = 1 \\
+                b = 3 + (2 + i)(1) = 5 + i \\
+                c = -3 + (2 + i)(5 + i) \\
+                -(2 + i)c = -5 - 20i
+            \end{array}
+            \right.
+        \end{aligned}
+        $$
+        Calculons $c$ et vérifions la dernière équation :
+        $$
+        \begin{aligned}
+            c &= -3 + (10 + 2i + 5i + i^2) \\
+            &= -3 + (10 + 7i - 1) \\
+            &= -3 + 9 + 7i \\
+            &= 6 + 7i
+        \end{aligned}
+        $$
+        Vérification :
+        $$
+        \begin{aligned}
+            -(2 + i)(6 + 7i) &= -(12 + 14i + 6i + 7i^2) \\
+            &= -(12 + 20i - 7) \\
+            &= -(5 + 20i) \\
+            &= -5 - 20i \quad \text{(vérifié)}
+        \end{aligned}
+        $$
+        Ainsi, pour tout $z \in \mathbb{C}$ :
+        $$
+        p(z) = (z - 2 - i)\left(z^2 + (5 + i)z + 6 + 7i\right)
+        $$
+        L'équation $p(z) = 0$ équivaut alors à :
+        $$
+        \begin{aligned}
+            z - 2 - i = 0 \quad &\text{ou} \quad z^2 + (5 + i)z + 6 + 7i = 0
+        \end{aligned}
+        $$
+        Résolvons l'équation du second degré $z^2 + (5 + i)z + 6 + 7i = 0$. Calculons son discriminant $\Delta$ :
+        $$
+        \begin{aligned}
+            \Delta &= (5 + i)^2 - 4(1)(6 + 7i) \\
+            &= (25 + 10i + i^2) - (24 + 28i) \\
+            &= 24 + 10i - 24 - 28i \\
+            &= -18i
+        \end{aligned}
+        $$
+        Cherchons une racine carrée $\delta = x + iy$ ($x, y \in \mathbb{R}$) de $\Delta = -18i$ :
+        $$
+        \begin{aligned}
+            \delta^2 = -18i &\iff
+            \left\{
+            \begin{array}{l}
+                x^2 - y^2 = 0 \\
+                x^2 + y^2 = |-18i| = 18 \\
+                2xy = -18
+            \end{array}
+            \right.
+            &\iff
+            \left\{
+            \begin{array}{l}
+                2x^2 = 18 \implies x^2 = 9 \implies x = \pm 3 \\
+                y^2 = 9 \implies y = \pm 3 \\
+                xy = -9 < 0 \quad (x \text{ et } y \text{ de signes contraires})
+            \end{array}
+            \right.
+        \end{aligned}
+        $$
+        On peut donc choisir $\delta = 3 - 3i$. Les deux solutions de l'équation du second degré sont alors :
+        $$
+        \begin{aligned}
+            z_1 &= \dfrac{-(5 + i) - (3 - 3i)}{2} \\
+            &= \dfrac{-5 - i - 3 + 3i}{2} \\
+            &= \dfrac{-8 + 2i}{2} \\
+            &= -4 + i
+        \end{aligned}
+        \qquad \text{et} \qquad
+        \begin{aligned}
+            z_2 &= \dfrac{-(5 + i) + (3 - 3i)}{2} \\
+            &= \dfrac{-5 - i + 3 - 3i}{2} \\
+            &= \dfrac{-2 - 4i}{2} \\
+            &= -1 - 2i
+        \end{aligned}
+        $$
+        L'ensemble des solutions de l'équation $p(z) = 0$ dans $\mathbb{C}$ est donc :
+        $$
+        \mathcal{S} = \left\{ 2 + i \,;\, -1 - 2i \,;\, -4 + i \right\}
+        $$
+    \end{enumerate}
+
+    \vspace{0.5cm}
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Placement des points et calcul des distances $AB$ et $BC$ :}
+        
+        Dans le repère orthonormé direct $(O, \vec{u}, \vec{v})$ d'unité $1 \text{ cm}$, les points ont pour coordonnées :
+        $$
+        A(2 \,;\, 1), \qquad B(-1 \,;\, -2), \qquad C(-4 \,;\, 1)
+        $$
+        *(Remarque : On place $A$ à $2 \text{ cm}$ à droite et $1 \text{ cm}$ en haut, $B$ à $1 \text{ cm}$ à gauche et $2 \text{ cm}$ en bas, et $C$ à $4 \text{ cm}$ à gauche et $1 \text{ cm}$ en haut).*
+        
+        Calculons la distance $AB$ :
+        $$
+        \begin{aligned}
+            AB &= |z_B - z_A| \\
+            &= |(-1 - 2i) - (2 + i)| \\
+            &= |-3 - 3i| \\
+            &= \sqrt{(-3)^2 + (-3)^2} \\
+            &= \sqrt{9 + 9} \\
+            &= \sqrt{18} \\
+            &= 3\sqrt{2} \text{ cm}
+        \end{aligned}
+        $$
+        Calculons la distance $BC$ :
+        $$
+        \begin{aligned}
+            BC &= |z_C - z_B| \\
+            &= |(-4 + i) - (-1 - 2i)| \\
+            &= |-3 + 3i| \\
+            &= \sqrt{(-3)^2 + 3^2} \\
+            &= \sqrt{9 + 9} \\
+            &= \sqrt{18} \\
+            &= 3\sqrt{2} \text{ cm}
+        \end{aligned}
+        $$
+
+        \item \textbf{Démonstration de la relation angulaire :}
+        
+        Par propriété de l'argument d'un quotient de deux nombres complexes non nuls :
+        $$
+        \begin{aligned}
+            \arg\left( \dfrac{z_C - z_B}{z_A - z_B} \right) &\equiv \arg(z_C - z_B) - \arg(z_A - z_B) \pmod{2\pi} \\
+            &\equiv \left(\vec{u}, \overrightarrow{BC}\right) - \left(\vec{u}, \overrightarrow{BA}\right) \pmod{2\pi} \\
+            &\equiv \left(\overrightarrow{BA}, \vec{u}\right) + \left(\vec{u}, \overrightarrow{BC}\right) \pmod{2\pi} \\
+            &\equiv \left(\overrightarrow{BA}, \overrightarrow{BC}\right) \pmod{2\pi} \quad \text{(d'après la relation de Chasles)}
+        \end{aligned}
+        $$
+
+        \item \textbf{Déduction d'une mesure en radian de $\left(\overrightarrow{BA}, \overrightarrow{BC}\right)$ :}
+        
+        Calculons le quotient $\dfrac{z_C - z_B}{z_A - z_B}$ :
+        $$
+        \begin{aligned}
+            \dfrac{z_C - z_B}{z_A - z_B} &= \dfrac{-3 + 3i}{-3 - 3i} \\
+            &= \dfrac{-3(1 - i)}{-3(1 + i)} \\
+            &= \dfrac{1 - i}{1 + i} \\
+            &= \dfrac{(1 - i)^2}{(1 + i)(1 - i)} \\
+            &= \dfrac{1 - 2i + i^2}{1^2 - i^2} \\
+            &= \dfrac{1 - 2i - 1}{1 + 1} \\
+            &= \dfrac{-2i}{2} \\
+            &= -i
+        \end{aligned}
+        $$
+        D'après la question précédente, on en déduit :
+        $$
+        \begin{aligned}
+            \left(\overrightarrow{BA}, \overrightarrow{BC}\right) &\equiv \arg(-i) \pmod{2\pi} \\
+            &\equiv -\dfrac{\pi}{2} \pmod{2\pi}
+        \end{aligned}
+        $$
+        Une mesure en radian de l'angle orienté $\left(\overrightarrow{BA}, \overrightarrow{BC}\right)$ est donc $-\dfrac{\pi}{2}$.
+
+        \item \textbf{Nature du triangle $ABC$ :}
+        
+        D'après les questions précédentes, on a :
+        $$
+        \begin{aligned}
+            \left\{
+            \begin{array}{l}
+                AB = BC = 3\sqrt{2} \text{ cm} \implies \text{le triangle } ABC \text{ est isocèle en } B \\
+                \left(\overrightarrow{BA}, \overrightarrow{BC}\right) \equiv -\dfrac{\pi}{2} \pmod{2\pi} \implies (BA) \perp (BC) \implies \text{le triangle } ABC \text{ est rectangle en } B
+            \end{array}
+            \right.
+        \end{aligned}
+        $$
+        Le triangle $ABC$ est donc \textbf{rectangle et isocèle en $B$}.
+    \end{enumerate}
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
