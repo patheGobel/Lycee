@@ -2751,6 +2751,148 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item \textbf{Détermination de la solution réelle de $(E)$ :}
+        
+        Soit $z_0 \in \mathbb{R}$ une solution réelle de l'équation $(E)$. Cherchons une racine évidente parmi les diviseurs (à savoir $-3, -2, -1, 0, 1, 2, 3$).
+        
+        Testons $z_0 = 3$ 
+        $$
+        \begin{aligned}
+            3^3 - 13(3)^2 + 59(3) - 87 &= 27 - 117 + 177 - 87 \\
+            &= -90 + 90 \\
+            &= 0
+        \end{aligned}
+        $$
+        Ainsi, la solution réelle de $(E)$ est $z_0 = 3$.
+
+        \item \textbf{Résolution dans $\mathbb{C}$ de l'équation $(E)$ :}
+        
+        Puisque $3$ est une racine de $(E)$, on peut factoriser le polynôme par $(z - 3)$. Il existe trois réels $\alpha, \beta, \gamma$ tels que pour tout $z \in \mathbb{C}$ :
+        $$
+        \begin{aligned}
+            z^3 - 13z^2 + 59z - 87 &= (z - 3)(\alpha z^2 + \beta z + \gamma) \\
+            &= \alpha z^3 + \beta z^2 + \gamma z - 3\alpha z^2 - 3\beta z - 3\gamma \\
+            &= \alpha z^3 + (\beta - 3\alpha)z^2 + (\gamma - 3\beta)z - 3\gamma
+        \end{aligned}
+        $$
+        Par identification des coefficients, on obtient le système :
+        $$
+        \begin{aligned}
+            \left\{
+            \begin{array}{l}
+                \alpha = 1 \\
+                \beta - 3\alpha = -13 \\
+                \gamma - 3\beta = 59 \\
+                -3\gamma = -87
+            \end{array}
+            \right.
+            &\iff
+            \left\{
+            \begin{array}{l}
+                \alpha = 1 \\
+                \beta = -13 + 3(1) = -10 \\
+                \gamma = \dfrac{-87}{-3} = 29 \\
+                29 - 3(-10) = 59 \quad \text{(vérifié)}
+            \end{array}
+            \right.
+        \end{aligned}
+        $$
+        L'équation $(E)$ s'écrit donc :
+        $$
+        \begin{aligned}
+            (z - 3)(z^2 - 10z + 29) = 0 &\iff z - 3 = 0 \quad \text{ou} \quad z^2 - 10z + 29 = 0
+        \end{aligned}
+        $$
+        Résolvons l'équation du second degré $z^2 - 10z + 29 = 0$. Calculons son discriminant $\Delta$ :
+        $$
+        \begin{aligned}
+            \Delta &= (-10)^2 - 4 \times 1 \times 29 \\
+            &= 100 - 116 \\
+            &= -16 \\
+            &= (4i)^2
+        \end{aligned}
+        $$
+        Comme $\Delta < 0$, l'équation admet deux racines complexes conjuguées $z_1$ et $z_2$ :
+        $$
+        \begin{aligned}
+            z_1 &= \dfrac{10 - 4i}{2} = 5 - 2i \\
+            z_2 &= \dfrac{10 + 4i}{2} = 5 + 2i
+        \end{aligned}
+        $$
+        L'ensemble des solutions dans $\mathbb{C}$ est donc :
+        $$
+        \mathcal{S} = \left\{ 3 \,;\, 5 - 2i \,;\, 5 + 2i \right\}
+        $$
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Calcul de $\dfrac{b - a}{c - a}$ et nature du triangle $ABC$ :}
+        
+        On a $a = 3$, $b = 5 - 2i$ et $c = 5 + 2i$. Calculons le rapport :
+        $$
+        \begin{aligned}
+            \dfrac{b - a}{c - a} &= \dfrac{(5 - 2i) - 3}{(5 + 2i) - 3} \\
+            &= \dfrac{2 - 2i}{2 + 2i} \\
+            &= \dfrac{2(1 - i)}{2(1 + i)} \\
+            &= \dfrac{1 - i}{1 + i} \\
+            &= \dfrac{(1 - i)^2}{(1 + i)(1 - i)} \\
+            &= \dfrac{1 - 2i + i^2}{1^2 - i^2} \\
+            &= \dfrac{1 - 2i - 1}{1 + 1} \\
+            &= \dfrac{-2i}{2} \\
+            &= -i
+        \end{aligned}
+        $$
+        Déduisons-en la nature du triangle $ABC$ :
+        $$
+        \begin{aligned}
+            \dfrac{b - a}{c - a} = -i &\implies \left| \dfrac{b - a}{c - a} \right| = |-i| = 1 \quad \text{et} \quad \arg\left(\dfrac{b - a}{c - a}\right) \equiv \arg(-i) \pmod{2\pi} \\
+            &\implies \dfrac{AB}{AC} = 1 \quad \text{et} \quad \left(\overrightarrow{AC}, \overrightarrow{AB}\right) \equiv -\dfrac{\pi}{2} \pmod{2\pi} \\
+            &\implies AB = AC \quad \text{et} \quad (AB) \perp (AC)
+        \end{aligned}
+        $$
+        Le triangle $ABC$ est donc \textbf{rectangle et isocèle en $A$}.
+
+        \item \textbf{Interprétation géométrique de $\arg(Z)$ et ensemble des points $M$ :}
+        
+        Remarquons que $3 = a$ et $5 - 2i = b$. Pour tout point $M(z)$ distinct de $A$ et de $B$ ($z \neq a$ et $z \neq b$), on a :
+        $$
+        \begin{aligned}
+            Z &= \dfrac{z - 3}{z - 5 + 2i} \\
+            &= \dfrac{z - 3}{z - (5 - 2i)} \\
+            &= \dfrac{z - a}{z - b} \\
+            &= \dfrac{z_M - z_A}{z_M - z_B}
+        \end{aligned}
+        $$
+        Par définition de l'argument d'un quotient de différences d'affixes, on obtient :
+        $$
+        \begin{aligned}
+            \arg(Z) &\equiv \arg\left( \dfrac{z_M - z_A}{z_M - z_B} \right) \pmod{2\pi} \\
+            &\equiv \left( \overrightarrow{BM}, \overrightarrow{AM} \right) \pmod{2\pi} \\
+            &\equiv \left( \overrightarrow{MB}, \overrightarrow{MA} \right) \pmod{2\pi}
+        \end{aligned}
+        $$
+        L'argument de $Z$ est donc une mesure en radians de l'angle orienté $\left( \overrightarrow{MB}, \overrightarrow{MA} \right)$.
+        
+        \medskip
+        \textbf{Détermination de l'ensemble des points $M$ :}
+        
+        $Z$ est un nombre réel non nul si et seulement si $Z \in \mathbb{R}^*$, ce qui équivaut à :
+        $$
+        \begin{aligned}
+            Z \in \mathbb{R}^* &\iff \arg(Z) \equiv 0 \pmod{\pi} \quad (\text{avec } z \neq a \text{ et } z \neq b) \\
+            &\iff \left( \overrightarrow{MB}, \overrightarrow{MA} \right) \equiv 0 \pmod{\pi} \quad (\text{avec } M \neq A \text{ et } M \neq B) \\
+            &\iff \text{Les vecteurs } \overrightarrow{MB} \text{ et } \overrightarrow{MA} \text{ sont colinéaires et non nuls} \\
+            &\iff \text{Les points } A, B \text{ et } M \text{ sont alignés, avec } M \neq A \text{ et } M \neq B
+        \end{aligned}
+        $$
+        L'ensemble des points $M$ recherché est donc la \textbf{droite $(AB)$ privée des points $A$ et $B$}.
+    \end{enumerate}
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
