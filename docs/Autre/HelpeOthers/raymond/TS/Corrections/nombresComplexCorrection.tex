@@ -4121,136 +4121,132 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
-\fbox{\textbf{\exo}}
-
-On donne 
-\[
-a = \sqrt{2 - \sqrt{3}} - i\sqrt{2 + \sqrt{3}}.
-\]
-
 \begin{enumerate}
-    \item \textbf{Calcul de $a^2$ et du module de $a$}
-
-    Posons 
-    \[
-    x = \sqrt{2 - \sqrt{3}}, \qquad y = \sqrt{2 + \sqrt{3}}.
-    \]
-    Alors $a = x - iy$.
-
-    On calcule :
-    \[
-    a^2 = (x - iy)^2 = x^2 - 2ixy - y^2.
-    \]
-
-    Or
-    \[
-    x^2 = 2 - \sqrt{3}, \qquad y^2 = 2 + \sqrt{3}.
-    \]
-
-    Donc
-    \[
-    a^2 = (2 - \sqrt{3}) - (2 + \sqrt{3}) - 2i\sqrt{(2-\sqrt3)(2+\sqrt3)}
-    = -2\sqrt{3} - 2i.
-    \]
-
-    Ainsi,
-    \[
-    \boxed{a^2 = -2\sqrt{3} - 2i.}
-    \]
-
-    Le module de $a$ vérifie :
-    \[
-    |a|^2 = |a^2| = \sqrt{(-2\sqrt3)^2 + (-2)^2} = \sqrt{12 + 4} = 4,
-    \]
-    d'où
-    \[
-    \boxed{|a| = 2.}
-    \]
-
-    \item \textbf{Forme trigonométrique de $a^2$ et argument de $a$}
-
-    On a
-    \[
-    a^2 = -2\sqrt{3} - 2i.
-    \]
-
-    Son module est $|a^2| = 4$. On écrit
-    \[
-    a^2 = 4(\cos\theta + i\sin\theta),
-    \]
-    avec
-    \[
-    \cos\theta = \frac{-2\sqrt3}{4} = -\frac{\sqrt3}{2}, 
-    \qquad
-    \sin\theta = \frac{-2}{4} = -\frac{1}{2}.
-    \]
-
-    On reconnaît
-    \[
-    \theta = \frac{7\pi}{6} \quad (\text{ou } -\tfrac{5\pi}{6}).
-    \]
-
-    Donc
-    \[
-    \boxed{a^2 = 4\left(\cos\frac{7\pi}{6} + i\sin\frac{7\pi}{6}\right).}
-    \]
-
-    Comme $a^2 = |a|^2 e^{i2\arg(a)}$, on a :
-    \[
-    2\arg(a) = \frac{7\pi}{6} + 2k\pi
-    \quad\Rightarrow\quad
-    \arg(a) = \frac{7\pi}{12} + k\pi.
-    \]
-
-    Une valeur positive possible est donc :
-    \[
-    \boxed{\arg(a) = \frac{19\pi}{12}.}
-    \]
-
-    \item \textbf{Valeurs exactes des cosinus et sinus}
-
-    On a 
-    \[
-    a = 2\left(\cos\frac{19\pi}{12} + i\sin\frac{19\pi}{12}\right).
-    \]
-
-    Donc
-    \[
-    \cos\frac{19\pi}{12} = \frac{\Re(a)}{2} = \frac{\sqrt{2-\sqrt3}}{2}, 
-    \]
-    \[
-    \sin\frac{19\pi}{12} = \frac{\Im(a)}{2} = -\frac{\sqrt{2+\sqrt3}}{2}.
-    \]
-
-    Or 
-    \[
-    \frac{19\pi}{12} = \frac{7\pi}{12} + \pi,
-    \]
-    donc
-    \[
-    \cos\frac{19\pi}{12} = -\cos\frac{7\pi}{12}, 
-    \qquad
-    \sin\frac{19\pi}{12} = -\sin\frac{7\pi}{12}.
-    \]
-
-    Ainsi :
-    \[
-    \boxed{
+    \item \textbf{Calcul de $a^2$ et déduction du module de $a$ :}
+    
+    Développons $a^2$ à l'aide de l'identité remarquable $(x - iy)^2 = x^2 - y^2 - 2ixy$ :
+    $$
     \begin{aligned}
-    \cos\frac{7\pi}{12} &= \frac{\sqrt{2-\sqrt3}}{2},\\
-    \sin\frac{7\pi}{12} &= \frac{\sqrt{2+\sqrt3}}{2}.
-    \end{aligned}}
-    \]
-
-    Enfin,
-    \[
-    \boxed{
+        a^2 &= \left(\sqrt{2 - \sqrt{3}} - i\sqrt{2 + \sqrt{3}}\right)^2 \\
+        &= \left(\sqrt{2 - \sqrt{3}}\right)^2 - 2i\sqrt{2 - \sqrt{3}}\sqrt{2 + \sqrt{3}} + \left(i\sqrt{2 + \sqrt{3}}\right)^2 \\
+        &= (2 - \sqrt{3}) - 2i\sqrt{(2 - \sqrt{3})(2 + \sqrt{3})} - (2 + \sqrt{3}) \\
+        &= 2 - \sqrt{3} - 2i\sqrt{2^2 - (\sqrt{3})^2} - 2 - \sqrt{3} \\
+        &= -2\sqrt{3} - 2i\sqrt{4 - 3} \\
+        &= -2\sqrt{3} - 2i
+    \end{aligned}
+    $$
+    Déduisons-en le module de $a$. On sait que $|a^2| = |a|^2$, calculons donc $|a^2|$ :
+    $$
     \begin{aligned}
-    \cos\frac{\pi}{12} &= \frac{\sqrt{2+\sqrt3}}{2},\\
-    \sin\frac{\pi}{12} &= \frac{\sqrt{2-\sqrt3}}{2}.
-    \end{aligned}}
-    \]
+        |a^2| &= |-2\sqrt{3} - 2i| \\
+        &= \sqrt{(-2\sqrt{3})^2 + (-2)^2} \\
+        &= \sqrt{12 + 4} \\
+        &= \sqrt{16} \\
+        &= 4
+    \end{aligned}
+    $$
+    Comme $|a|^2 = 4$ et que $|a| > 0$, on obtient :
+    $$
+    \begin{aligned}
+        |a| &= \sqrt{4} = 2
+    \end{aligned}
+    $$
 
+    \item \textbf{Forme trigonométrique de $a^2$ et argument de $a$ :}
+    
+    Factorisons $a^2$ par son module $|a^2| = 4$ :
+    $$
+    \begin{aligned}
+        a^2 &= 4\left( -\dfrac{2\sqrt{3}}{4} - i\dfrac{2}{4} \right) \\
+        &= 4\left( -\dfrac{\sqrt{3}}{2} - i\dfrac{1}{2} \right)
+    \end{aligned}
+    $$
+    Or, on sait que $\cos\left(\dfrac{7\pi}{6}\right) = \cos\left(\pi + \dfrac{\pi}{6}\right) = -\dfrac{\sqrt{3}}{2}$ et $\sin\left(\dfrac{7\pi}{6}\right) = \sin\left(\pi + \dfrac{\pi}{6}\right) = -\dfrac{1}{2}$. Ainsi, la forme trigonométrique de $a^2$ est :
+    $$
+    \begin{aligned}
+        a^2 &= 4\left( \cos\dfrac{7\pi}{6} + i\sin\dfrac{7\pi}{6} \right)
+    \end{aligned}
+    $$
+    Déduisons-en les arguments possibles de $a$. Soit $\theta = \arg(a)$ :
+    $$
+    \begin{aligned}
+        \arg(a^2) \equiv \dfrac{7\pi}{6} \pmod{2\pi} &\iff 2\theta \equiv \dfrac{7\pi}{6} \pmod{2\pi} \\
+        &\iff \theta \equiv \dfrac{7\pi}{12} \pmod{\pi}
+    \end{aligned}
+    $$
+    Les deux mesures principales possibles (à $2\pi$ près) sont donc $\theta_1 = \dfrac{7\pi}{12}$ et $\theta_2 = \dfrac{7\pi}{12} + \pi = \dfrac{19\pi}{12}$.
+    
+    Déterminons laquelle correspond à $a$ en étudiant le signe de sa partie réelle et de sa partie imaginaire :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            \operatorname{Re}(a) = \sqrt{2 - \sqrt{3}} > 0 \\
+            \operatorname{Im}(a) = -\sqrt{2 + \sqrt{3}} < 0
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Le point image de $a$ se situe donc dans le quatrième quadrant (cosinus positif et sinus négatif), ce qui correspond à un angle dans $\left]\dfrac{3\pi}{2} \,;\, 2\pi\right[$. Comme $\dfrac{3\pi}{2} = \dfrac{18\pi}{12} < \dfrac{19\pi}{12} < \dfrac{24\pi}{12} = 2\pi$, une mesure de l'argument de $a$ est bien :
+    $$
+    \begin{aligned}
+        \arg(a) &= \dfrac{19\pi}{12}
+    \end{aligned}
+    $$
+
+    \item \textbf{Valeurs exactes de $\cos\left(\dfrac{7\pi}{12}\right)$, $\sin\left(\dfrac{7\pi}{12}\right)$, $\cos\left(\dfrac{\pi}{12}\right)$ et $\sin\left(\dfrac{\pi}{12}\right)$ :}
+    
+    D'après les questions précédentes, la forme trigonométrique de $a$ est :
+    $$
+    \begin{aligned}
+        a &= 2\left( \cos\dfrac{19\pi}{12} + i\sin\dfrac{19\pi}{12} \right)
+    \end{aligned}
+    $$
+    Par identification avec la forme algébrique $a = \sqrt{2 - \sqrt{3}} - i\sqrt{2 + \sqrt{3}}$, on obtient :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            2\cos\left(\dfrac{19\pi}{12}\right) = \sqrt{2 - \sqrt{3}} \\
+            2\sin\left(\dfrac{19\pi}{12}\right) = -\sqrt{2 + \sqrt{3}}
+        \end{array}
+        \right.
+        &\iff
+        \left\{
+        \begin{array}{l}
+            \cos\left(\dfrac{19\pi}{12}\right) = \dfrac{\sqrt{2 - \sqrt{3}}}{2} \\
+            \sin\left(\dfrac{19\pi}{12}\right) = -\dfrac{\sqrt{2 + \sqrt{3}}}{2}
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Or, $\dfrac{19\pi}{12} = \pi + \dfrac{7\pi}{12}$. En utilisant les formules des angles associés $\cos(\pi + x) = -\cos(x)$ et $\sin(\pi + x) = -\sin(x)$, on a :
+    $$
+    \begin{aligned}
+        \cos\left(\dfrac{7\pi}{12}\right) &= -\cos\left(\dfrac{19\pi}{12}\right) = -\dfrac{\sqrt{2 - \sqrt{3}}}{2} \\
+        \sin\left(\dfrac{7\pi}{12}\right) &= -\sin\left(\dfrac{19\pi}{12}\right) = \dfrac{\sqrt{2 + \sqrt{3}}}{2}
+    \end{aligned}
+    $$
+    Ensuite, remarquons que $\dfrac{7\pi}{12} = \dfrac{\pi}{2} + \dfrac{\pi}{12}$. En utilisant les relations $\cos\left(\dfrac{\pi}{2} + x\right) = -\sin(x)$ et $\sin\left(\dfrac{\pi}{2} + x\right) = \cos(x)$, on déduit :
+    $$
+    \begin{aligned}
+        \cos\left(\dfrac{\pi}{12}\right) &= \sin\left(\dfrac{7\pi}{12}\right) = \dfrac{\sqrt{2 + \sqrt{3}}}{2} \\
+        \sin\left(\dfrac{\pi}{12}\right) &= -\cos\left(\dfrac{7\pi}{12}\right) = \dfrac{\sqrt{2 - \sqrt{3}}}{2}
+    \end{aligned}
+    $$
+
+    \item \textbf{Représentation graphique des points images :}
+    
+    Notons $M_1$, $M_2$ et $M_3$ les points images respectifs de $a$, $-a$ et $a^2$ :
+    $$
+    \begin{aligned}
+        M_1(a) &: \text{ situé sur le cercle } \mathcal{C}(O, 2) \text{ à l'angle } \dfrac{19\pi}{12} \equiv -\dfrac{5\pi}{12} \pmod{2\pi} \quad (\text{soit } -75^\circ). \\
+        M_2(-a) &: \text{ symétrique de } M_1 \text{ par rapport à l'origine } O \text{ (sur le cercle } \mathcal{C}(O, 2) \text{ à l'angle } \dfrac{7\pi}{12} \text{ soit } 105^\circ\text{)}. \\
+        M_3(a^2) &: \text{ situé sur le cercle } \mathcal{C}(O, 4) \text{ à l'angle } \dfrac{7\pi}{6} \equiv -\dfrac{5\pi}{6} \pmod{2\pi} \quad (\text{soit } -150^\circ), \\
+        &\quad \text{ de coordonnées } \left(-2\sqrt{3} \,;\, -2\right) \approx (-3{,}46 \,;\, -2).
+    \end{aligned}
+    $$
+    *(Construction géométrique rapide : pour placer $M_3(a^2)$, on trace le cercle de centre $O$ et de rayon $4$, puis la droite horizontale $y = -2$ ; le point d'intersection d'abscisse négative est $M_3$. Pour $M_1(a)$, on trace le cercle de centre $O$ et de rayon $2$ et on reporte la bissectrice intérieure de l'angle formé par la demi-droite $[OM_3)$ et l'axe des ordonnées négatives ; enfin $M_2(-a)$ est diamétralement opposé à $M_1$).*
 \end{enumerate}
 
 \fbox{\textbf{\exo}}
