@@ -3140,7 +3140,300 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+    \item \textbf{Déterminons $Z_2$ et $Z_3$ sous forme algébrique :}
+    
+    On a $a = -1 - i$, d'où :
+    $$
+    \begin{aligned}
+        1 - a &= 1 - (-1 - i) \\
+        &= 1 + 1 + i \\
+        &= 2 + i
+    \end{aligned}
+    $$
+    Pour $n = 1$, la relation de récurrence donne :
+    $$
+    \begin{aligned}
+        Z_2 &= (1 - a)Z_1 + aZ_0 \\
+        &= (2 + i) \times i + (-1 - i) \times 0 \\
+        &= 2i + i^2 + 0 \\
+        &= -1 + 2i
+    \end{aligned}
+    $$
+    Pour $n = 2$, la relation de récurrence donne :
+    $$
+    \begin{aligned}
+        Z_3 &= (1 - a)Z_2 + aZ_1 \\
+        &= (2 + i)(-1 + 2i) + (-1 - i)i \\
+        &= (-2 + 4i - i + 2i^2) + (-i - i^2) \\
+        &= (-2 + 3i - 2) + (-i + 1) \\
+        &= (-4 + 3i) + (1 - i) \\
+        &= -3 + 2i
+    \end{aligned}
+    $$
+    Ainsi, $Z_2 = -1 + 2i$ et $Z_3 = -3 + 2i$.
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Déterminons $U_0$ :}
+        
+        Pour $n = 0$, on a :
+        $$
+        \begin{aligned}
+            U_0 &= Z_1 - Z_0 \\
+            &= i - 0 \\
+            &= i
+        \end{aligned}
+        $$
+
+        \item \textbf{Démontrons que $(U_n)$ est une suite géométrique de raison $-a$ :}
+        
+        Soit $n \in \mathbb{N}$. Exprimons $U_{n+1}$ en fonction de $U_n$ :
+        $$
+        \begin{aligned}
+            U_{n+1} &= Z_{n+2} - Z_{n+1} \\
+            &= \left[ (1 - a)Z_{n+1} + aZ_n \right] - Z_{n+1} \\
+            &= Z_{n+1} - aZ_{n+1} + aZ_n - Z_{n+1} \\
+            &= -aZ_{n+1} + aZ_n \\
+            &= -a(Z_{n+1} - Z_n) \\
+            &= -aU_n
+        \end{aligned}
+        $$
+        Ainsi, pour tout $n \in \mathbb{N}$, $U_{n+1} = -aU_n$. La suite $(U_n)$ est donc une suite géométrique de raison $q = -a$ et de premier terme $U_0 = i$.
+
+        \item \textbf{Exprimons $U_n$ en fonction de $n$ et $a$ :}
+        
+        Puisque $(U_n)$ est une suite géométrique de premier terme $U_0 = i$ et de raison $q = -a$, on a pour tout $n \in \mathbb{N}$ :
+        $$
+        \begin{aligned}
+            U_n &= U_0 \times q^n \\
+            &= i(-a)^n
+        \end{aligned}
+        $$
+    \end{enumerate}
+
+    \item \textbf{Exprimons $S_n$ en fonction de $Z_n$ et déduisons-en l'expression de $Z_n$ :}
+    
+    Soit $n \in \mathbb{N}^*$. Calculons $S_n$ par somme télescopique :
+    $$
+    \begin{aligned}
+        S_n &= U_0 + U_1 + U_2 + \dots + U_{n-1} \\
+        &= (Z_1 - Z_0) + (Z_2 - Z_1) + (Z_3 - Z_2) + \dots + (Z_n - Z_{n-1}) \\
+        &= Z_n - Z_0 \\
+        &= Z_n - 0 \\
+        &= Z_n
+    \end{aligned}
+    $$
+    On obtient donc $S_n = Z_n$.
+
+    \medskip
+    D'autre part, $S_n$ est la somme des $n$ premiers termes de la suite géométrique $(U_n)$ de premier terme $U_0 = i$ et de raison $q = -a = -(-1 - i) = 1 + i \neq 1$. On a donc :
+    $$
+    \begin{aligned}
+        S_n &= U_0 \times \dfrac{1 - q^n}{1 - q} \\
+        &= i \times \dfrac{1 - (1 + i)^n}{1 - (1 + i)} \\
+        &= i \times \dfrac{1 - (1 + i)^n}{-i} \\
+        &= -\left[ 1 - (1 + i)^n \right] \\
+        &= -1 + (1 + i)^n
+    \end{aligned}
+    $$
+    Comme $Z_n = S_n$ (et la formule reste vraie pour $n = 0$ puisque $-1 + (1 + i)^0 = -1 + 1 = 0 = Z_0$), on en déduit que pour tout $n \in \mathbb{N}$ :
+    $$
+    Z_n = -1 + (1 + i)^n
+    $$
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item \textbf{Résolution dans $\mathbb{C}$ des équations :}
+    \begin{enumerate}
+        \item Résolvons $z^2 - 2z + 5 = 0$. Calculons son discriminant $\Delta_1$ :
+        $$
+        \begin{aligned}
+            \Delta_1 &= (-2)^2 - 4 \times 1 \times 5 \\
+            &= 4 - 20 \\
+            &= -16 \\
+            &= (4i)^2
+        \end{aligned}
+        $$
+        Comme $\Delta_1 < 0$, l'équation admet deux racines complexes conjuguées $z_1$ et $z_2$ :
+        $$
+        \begin{aligned}
+            z_1 &= \dfrac{2 - 4i}{2} = 1 - 2i \\
+            z_2 &= \dfrac{2 + 4i}{2} = 1 + 2i
+        \end{aligned}
+        $$
+        L'ensemble des solutions est donc :
+        $$
+        \mathcal{S}_1 = \left\{ 1 - 2i \,;\, 1 + 2i \right\}
+        $$
+
+        \item Résolvons $z^2 - 2(1 + \sqrt{3})z + 5 + 2\sqrt{3} = 0$. Calculons son discriminant $\Delta_2$ :
+        $$
+        \begin{aligned}
+            \Delta_2 &= \left[-2(1 + \sqrt{3})\right]^2 - 4 \times 1 \times (5 + 2\sqrt{3}) \\
+            &= 4(1 + 2\sqrt{3} + 3) - (20 + 8\sqrt{3}) \\
+            &= 4(4 + 2\sqrt{3}) - 20 - 8\sqrt{3} \\
+            &= 16 + 8\sqrt{3} - 20 - 8\sqrt{3} \\
+            &= -4 \\
+            &= (2i)^2
+        \end{aligned}
+        $$
+        Comme $\Delta_2 < 0$, l'équation admet deux racines complexes conjuguées $z_3$ et $z_4$ :
+        $$
+        \begin{aligned}
+            z_3 &= \dfrac{2(1 + \sqrt{3}) - 2i}{2} = 1 + \sqrt{3} - i \\
+            z_4 &= \dfrac{2(1 + \sqrt{3}) + 2i}{2} = 1 + \sqrt{3} + i
+        \end{aligned}
+        $$
+        L'ensemble des solutions est donc :
+        $$
+        \mathcal{S}_2 = \left\{ 1 + \sqrt{3} - i \,;\, 1 + \sqrt{3} + i \right\}
+        $$
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Placement des points $A$, $B$, $C$ et $D$ :}
+        
+        Dans le repère orthonormé $(O, \vec{u}, \vec{v})$, les points ont pour coordonnées :
+        $$
+        A(1 \,;\, 2), \qquad B(1 + \sqrt{3} \,;\, 1), \qquad C(1 + \sqrt{3} \,;\, -1), \qquad D(1 \,;\, -2)
+        $$
+        *(Remarque : On a $1 + \sqrt{3} \approx 2{,}73$. De plus, $A$ et $D$ sont symétriques par rapport à l'axe des abscisses, tout comme $B$ et $C$).*
+
+        \item \textbf{Vérification du rapport et nature du triangle $ABD$ :}
+        
+        Calculons $\dfrac{z_D - z_B}{z_A - z_B}$ :
+        $$
+        \begin{aligned}
+            \dfrac{z_D - z_B}{z_A - z_B} &= \dfrac{(1 - 2i) - (1 + \sqrt{3} + i)}{(1 + 2i) - (1 + \sqrt{3} + i)} \\
+            &= \dfrac{1 - 2i - 1 - \sqrt{3} - i}{1 + 2i - 1 - \sqrt{3} - i} \\
+            &= \dfrac{-\sqrt{3} - 3i}{-\sqrt{3} + i} \\
+            &= \dfrac{(-\sqrt{3} - 3i)(-\sqrt{3} - i)}{(-\sqrt{3} + i)(-\sqrt{3} - i)} \\
+            &= \dfrac{3 + i\sqrt{3} + 3i\sqrt{3} + 3i^2}{(-\sqrt{3})^2 - i^2} \\
+            &= \dfrac{3 + 4i\sqrt{3} - 3}{3 + 1} \\
+            &= \dfrac{4i\sqrt{3}}{4} \\
+            &= i\sqrt{3}
+        \end{aligned}
+        $$
+        Déduisons-en la nature du triangle $ABD$ :
+        $$
+        \begin{aligned}
+            \dfrac{z_D - z_B}{z_A - z_B} = i\sqrt{3} &\implies \arg\left(\dfrac{z_D - z_B}{z_A - z_B}\right) \equiv \arg(i\sqrt{3}) \pmod{2\pi} \\
+            &\implies \left(\overrightarrow{BA}, \overrightarrow{BD}\right) \equiv \dfrac{\pi}{2} \pmod{2\pi} \\
+            &\implies (BA) \perp (BD)
+        \end{aligned}
+        $$
+        De plus, $\left|\dfrac{z_D - z_B}{z_A - z_B}\right| = |i\sqrt{3}| = \sqrt{3} \neq 1$, donc $BD = \sqrt{3}\,BA \neq BA$. Le triangle $ABD$ est donc un \textbf{triangle rectangle en $B$}.
+
+        \item \textbf{Appartenance des points à un même cercle $(\mathcal{C})$ :}
+        
+        Le triangle $ABD$ étant rectangle en $B$, il est inscrit dans le cercle $(\mathcal{C})$ de diamètre $[AD]$.
+        
+        Déterminons le centre $\Omega$ et le rayon $R$ de ce cercle :
+        $$
+        \begin{aligned}
+            z_{\Omega} &= \dfrac{z_A + z_D}{2} \\
+            &= \dfrac{(1 + 2i) + (1 - 2i)}{2} \\
+            &= \dfrac{2}{2} \\
+            &= 1
+        \end{aligned}
+        $$
+        et
+        $$
+        \begin{aligned}
+            R &= \dfrac{AD}{2} \\
+            &= \dfrac{|z_D - z_A|}{2} \\
+            &= \dfrac{|(1 - 2i) - (1 + 2i)|}{2} \\
+            &= \dfrac{|-4i|}{2} \\
+            &= \dfrac{4}{2} \\
+            &= 2
+        \end{aligned}
+        $$
+        Vérifions que les points $B$ et $C$ appartiennent également à ce cercle de centre $\Omega(1)$ et de rayon $R = 2$ :
+        $$
+        \begin{aligned}
+            \Omega B &= |z_B - z_{\Omega}| \\
+            &= |(1 + \sqrt{3} + i) - 1| \\
+            &= |\sqrt{3} + i| \\
+            &= \sqrt{(\sqrt{3})^2 + 1^2} \\
+            &= \sqrt{3 + 1} \\
+            &= \sqrt{4} \\
+            &= 2
+        \end{aligned}
+        \qquad \text{et} \qquad
+        \begin{aligned}
+            \Omega C &= |z_C - z_{\Omega}| \\
+            &= |(1 + \sqrt{3} - i) - 1| \\
+            &= |\sqrt{3} - i| \\
+            &= \sqrt{(\sqrt{3})^2 + (-1)^2} \\
+            &= \sqrt{3 + 1} \\
+            &= \sqrt{4} \\
+            &= 2
+        \end{aligned}
+        $$
+        Ainsi, $\Omega A = \Omega B = \Omega C = \Omega D = 2$. Les points $A$, $B$, $C$ et $D$ appartiennent donc tous au cercle $(\mathcal{C})$ de \textbf{centre $\Omega(1 \,;\, 0)$} et de \textbf{rayon $R = 2$}.
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Résolution de $(\mathcal{E})$ dans $\mathbb{C}$ :}
+        
+        Calculons le discriminant $\Delta_{\theta}$ de l'équation $z^2 - 2(1 + 2\cos\theta)z + 5 + 4\cos\theta = 0$ :
+        $$
+        \begin{aligned}
+            \Delta_{\theta} &= \left[-2(1 + 2\cos\theta)\right]^2 - 4 \times 1 \times (5 + 4\cos\theta) \\
+            &= 4(1 + 4\cos\theta + 4\cos^2\theta) - (20 + 16\cos\theta) \\
+            &= 4 + 16\cos\theta + 16\cos^2\theta - 20 - 16\cos\theta \\
+            &= 16\cos^2\theta - 16 \\
+            &= -16(1 - \cos^2\theta) \\
+            &= -16\sin^2\theta \\
+            &= (4i\sin\theta)^2
+        \end{aligned}
+        $$
+        Quel que soit le signe de $\sin\theta$, $\delta_{\theta} = 4i\sin\theta$ vérifie $\delta_{\theta}^2 = \Delta_{\theta}$. L'équation $(\mathcal{E})$ admet donc les solutions :
+        $$
+        \begin{aligned}
+            z' &= \dfrac{2(1 + 2\cos\theta) - 4i\sin\theta}{2} = 1 + 2\cos\theta - 2i\sin\theta \\
+            z'' &= \dfrac{2(1 + 2\cos\theta) + 4i\sin\theta}{2} = 1 + 2\cos\theta + 2i\sin\theta
+        \end{aligned}
+        $$
+        L'ensemble des solutions dans $\mathbb{C}$ est donc :
+        $$
+        \mathcal{S}_{\theta} = \left\{ 1 + 2\cos\theta - 2i\sin\theta \,;\, 1 + 2\cos\theta + 2i\sin\theta \right\}
+        $$
+        *(Remarque : Si $\theta \equiv 0 \pmod{\pi}$, $\sin\theta = 0$ et les deux racines sont confondues en une solution réelle double).*
+
+        \item \textbf{Appartenance des points images au cercle $(\mathcal{C})$ :}
+        
+        Soient $M'$ et $M''$ les points images respectifs de $z'$ et $z''$. Calculons les distances $\Omega M'$ et $\Omega M''$ où $\Omega$ a pour affixe $z_{\Omega} = 1$ :
+        $$
+        \begin{aligned}
+            \Omega M' &= |z' - z_{\Omega}| \\
+            &= |(1 + 2\cos\theta - 2i\sin\theta) - 1| \\
+            &= |2\cos\theta - 2i\sin\theta| \\
+            &= |2(\cos\theta - i\sin\theta)| \\
+            &= 2\sqrt{\cos^2\theta + (-\sin\theta)^2} \\
+            &= 2\sqrt{\cos^2\theta + \sin^2\theta} \\
+            &= 2 \times 1 \\
+            &= 2
+        \end{aligned}
+        $$
+        De même pour $M''$ :
+        $$
+        \begin{aligned}
+            \Omega M'' &= |z'' - z_{\Omega}| \\
+            &= |(1 + 2\cos\theta + 2i\sin\theta) - 1| \\
+            &= |2(\cos\theta + i\sin\theta)| \\
+            &= 2\sqrt{\cos^2\theta + \sin^2\theta} \\
+            &= 2
+        \end{aligned}
+        $$
+        Puisque $\Omega M' = \Omega M'' = 2 = R$, les points images des solutions de $(\mathcal{E})$ appartiennent bien au cercle $(\mathcal{C})$ pour tout $\theta \in \mathbb{R}$.
+    \end{enumerate}
+\end{enumerate}
 
 \fbox{\textbf{\exo}}
 
