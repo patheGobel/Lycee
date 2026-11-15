@@ -4251,6 +4251,168 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+    \item \textbf{Vérification que $1$ et $i$ sont des racines de $P$ :}
+    
+    Calculons $P(1)$ et $P(i)$ :
+    $$
+    \begin{aligned}
+        P(1) &= 2(1)^3 - 3(1 + i)(1)^2 + 4i(1) + 1 - i \\
+        &= 2 - 3 - 3i + 4i + 1 - i \\
+        &= (2 - 3 + 1) + (-3 + 4 - 1)i \\
+        &= 0 + 0i \\
+        &= 0
+    \end{aligned}
+    $$
+    et
+    $$
+    \begin{aligned}
+        P(i) &= 2(i)^3 - 3(1 + i)(i)^2 + 4i(i) + 1 - i \\
+        &= 2(-i) - 3(1 + i)(-1) + 4i^2 + 1 - i \\
+        &= -2i + 3 + 3i - 4 + 1 - i \\
+        &= (3 - 4 + 1) + (-2 + 3 - 1)i \\
+        &= 0 + 0i \\
+        &= 0
+    \end{aligned}
+    $$
+    Puisque $P(1) = 0$ et $P(i) = 0$, les nombres $1$ et $i$ sont bien des racines de $P$.
+
+    \item \textbf{Détermination du polynôme $g$ :}
+    
+    Comme $\deg(P) = 3$ et $\deg\left[(z - 1)(z - i)\right] = 2$, le polynôme $g$ est de degré $1$. Il existe donc deux nombres complexes $a$ et $b$ tels que pour tout $z \in \mathbb{C}$, $g(z) = az + b$. Développons $(z - 1)(z - i)(az + b)$ :
+    $$
+    \begin{aligned}
+        (z - 1)(z - i)(az + b) &= \left[z^2 - (1 + i)z + i\right](az + b) \\
+        &= az^3 + bz^2 - a(1 + i)z^2 - b(1 + i)z + aiz + bi \\
+        &= az^3 + \left[b - a(1 + i)\right]z^2 + \left[ai - b(1 + i)\right]z + bi
+    \end{aligned}
+    $$
+    Par identification avec $P(z) = 2z^3 - 3(1 + i)z^2 + 4iz + 1 - i$, on obtient le système :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            a = 2 \\
+            b - a(1 + i) = -3(1 + i) \\
+            ai - b(1 + i) = 4i \\
+            bi = 1 - i
+        \end{array}
+        \right.
+        &\iff
+        \left\{
+        \begin{array}{l}
+            a = 2 \\
+            b = -3(1 + i) + 2(1 + i) = -(1 + i) = -1 - i \\
+            2i - (-1 - i)(1 + i) = 2i + (1 + i)^2 = 2i + 2i = 4i \quad \text{(vérifié)} \\
+            (-1 - i)i = -i - i^2 = 1 - i \quad \text{(vérifié)}
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    On en déduit que pour tout $z \in \mathbb{C}$ :
+    $$
+    g(z) = 2z - 1 - i
+    $$
+
+    \item \textbf{Résolution dans $\mathbb{C}$ de l'équation $P(z) = 0$ :}
+    
+    D'après la factorisation précédente, on a :
+    $$
+    \begin{aligned}
+        P(z) = 0 &\iff (z - 1)(z - i)(2z - 1 - i) = 0 \\
+        &\iff z - 1 = 0 \quad \text{ou} \quad z - i = 0 \quad \text{ou} \quad 2z - 1 - i = 0 \\
+        &\iff z = 1 \quad \text{ou} \quad z = i \quad \text{ou} \quad z = \dfrac{1 + i}{2} = \dfrac{1}{2} + \dfrac{1}{2}i
+    \end{aligned}
+    $$
+    L'ensemble des solutions dans $\mathbb{C}$ est donc :
+    $$
+    \mathcal{S} = \left\{ 1 \,;\, i \,;\, \dfrac{1}{2} + \dfrac{1}{2}i \right\}
+    $$
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Placement des points $A$, $B$ et $C$ :}
+        
+        Dans le repère orthonormé $(O; \vec{u}, \vec{v})$ d'unité graphique $4 \text{ cm}$, les points ont pour coordonnées :
+        $$
+        A(1 \,;\, 0), \qquad B(0 \,;\, 1), \qquad C\left(\dfrac{1}{2} \,;\, \dfrac{1}{2}\right)
+        $$
+        *(Remarque : $1$ unité correspond à $4 \text{ cm}$, donc $A$ est à $4 \text{ cm}$ sur l'axe des abscisses, $B$ à $4 \text{ cm}$ sur l'axe des ordonnées et $C$ au point de coordonnées $(2 \text{ cm} \,;\, 2 \text{ cm})$).*
+
+        \item \textbf{Démonstration que $C$ est le milieu de $[AB]$ et appartient à $(\mathcal{E})$ :}
+        
+        Calculons l'affixe du milieu $I$ du segment $[AB]$ :
+        $$
+        \begin{aligned}
+            z_I &= \dfrac{z_A + z_B}{2} \\
+            &= \dfrac{1 + i}{2} \\
+            &= \dfrac{1}{2} + \dfrac{1}{2}i \\
+            &= z_C
+        \end{aligned}
+        $$
+        Donc $C$ est bien le milieu du segment $[AB]$.
+
+        \medskip
+        Vérifions maintenant que $C \in (\mathcal{E})$ en calculant $\lVert \overrightarrow{CA} + \overrightarrow{CB} + 2\overrightarrow{CO} \rVert$ :
+        
+        Puisque $C$ est le milieu de $[AB]$, on a $\overrightarrow{CA} + \overrightarrow{CB} = \vec{0}$. Ainsi :
+        $$
+        \begin{aligned}
+            \lVert \overrightarrow{CA} + \overrightarrow{CB} + 2\overrightarrow{CO} \rVert &= \lVert \vec{0} + 2\overrightarrow{CO} \rVert \\
+            &= 2 \, CO \\
+            &= 2 \, |z_O - z_C| \\
+            &= 2 \left| 0 - \left(\dfrac{1}{2} + \dfrac{1}{2}i\right) \right| \\
+            &= 2 \sqrt{\left(-\dfrac{1}{2}\right)^2 + \left(-\dfrac{1}{2}\right)^2} \\
+            &= 2 \sqrt{\dfrac{1}{4} + \dfrac{1}{4}} \\
+            &= 2 \sqrt{\dfrac{2}{4}} \\
+            &= 2 \times \dfrac{\sqrt{2}}{2} \\
+            &= \sqrt{2}
+        \end{aligned}
+        $$
+        Comme $\sqrt{2} \approx 1{,}414 \le 2$, le point $C$ vérifie bien la condition d'appartenance à $(\mathcal{E})$ : $C \in (\mathcal{E})$.
+
+        \item \textbf{Détermination de l'affixe $z_G$ du barycentre $G$ :}
+        
+        La somme des coefficients du système $\{(A, 1); (B, 1); (O, 2)\}$ vaut $1 + 1 + 2 = 4 \neq 0$. L'affixe de $G$ est donnée par :
+        $$
+        \begin{aligned}
+            z_G &= \dfrac{1 \cdot z_A + 1 \cdot z_B + 2 \cdot z_O}{1 + 1 + 2} \\
+            &= \dfrac{1 + i + 2(0)}{4} \\
+            &= \dfrac{1 + i}{4} \\
+            &= \dfrac{1}{4} + \dfrac{1}{4}i
+        \end{aligned}
+        $$
+        Le point $G$ a pour coordonnées $\left(\dfrac{1}{4} \,;\, \dfrac{1}{4}\right)$ (soit $1 \text{ cm}$ en abscisse et $1 \text{ cm}$ en ordonnée sur le graphique, c'est-à-dire le milieu du segment $[OC]$).
+    \end{enumerate}
+
+    \item \textbf{Détermination et construction de l'ensemble $(\mathcal{E})$ :}
+    
+    Par propriété fondamentale du barycentre $G$ de $\{(A, 1); (B, 1); (O, 2)\}$, pour tout point $M$ du plan, on a :
+    $$
+    \begin{aligned}
+        \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MO} &= (1 + 1 + 2)\overrightarrow{MG} \\
+        &= 4\overrightarrow{MG}
+    \end{aligned}
+    $$
+    L'inéquation caractérisant l'ensemble $(\mathcal{E})$ devient alors :
+    $$
+    \begin{aligned}
+        M \in (\mathcal{E}) &\iff \lVert \overrightarrow{MA} + \overrightarrow{MB} + 2\overrightarrow{MO} \rVert \le 2 \\
+        &\iff \lVert 4\overrightarrow{MG} \rVert \le 2 \\
+        &\iff 4 \, MG \le 2 \\
+        &\iff MG \le \dfrac{2}{4} \\
+        &\iff MG \le \dfrac{1}{2}
+    \end{aligned}
+    $$
+    L'ensemble $(\mathcal{E})$ est donc le **disque fermé de centre $G$ et de rayon $R = \dfrac{1}{2}$** (soit un disque de rayon $R = \dfrac{1}{2} \times 4 = 2 \text{ cm}$ sur le graphique).
+
+    \item \textbf{Conclusion sur l'objectif du jeune agriculteur :}
+    
+    D'après la question 4.(b), le point $C$ est le milieu du segment $[AB]$ (donc $C \in [AB]$) et $C$ appartient également à l'ensemble $(\mathcal{E})$. 
+    
+    Puisque $(\mathcal{E})$ contient au moins un point du segment $[AB]$ (en l'occurrence le point $C$), **le jeune agriculteur atteindra bien son objectif**.
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
