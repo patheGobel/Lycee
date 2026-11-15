@@ -3667,7 +3667,7 @@ D'où :
             &= 0
         \end{aligned}
         $$
-        }
+        }x
         Donc $1 + 2i$ est bien solution de $(\mathcal{E})$.
 
         \medskip
@@ -3771,6 +3771,121 @@ D'où :
 \end{enumerate}
 
 \fbox{\textbf{\exo}}
+
+\begin{enumerate}
+    \item \textbf{Calcul de $z_1$ et $z_2$ :}
+    
+    Pour $n = 0$, la relation de récurrence donne :
+    $$
+    \begin{aligned}
+        z_1 &= (1 + i)z_0 + 2i \\
+        &= (1 + i)i + 2i \\
+        &= i + i^2 + 2i \\
+        &= -1 + 3i
+    \end{aligned}
+    $$
+    Pour $n = 1$, la relation de récurrence donne :
+    $$
+    \begin{aligned}
+        z_2 &= (1 + i)z_1 + 2i \\
+        &= (1 + i)(-1 + 3i) + 2i \\
+        &= -1 + 3i - i + 3i^2 + 2i \\
+        &= -1 + 4i - 3 \\
+        &= -4 + 4i
+    \end{aligned}
+    $$
+    Ainsi, $z_1 = -1 + 3i$ et $z_2 = -4 + 4i$.
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Démonstration de $u_n = (2 + i)(1 + i)^n$ :}
+        
+        Montrons d'abord que la suite $(u_n)$ est géométrique. Pour tout $n \in \mathbb{N}$, on a :
+        $$
+        \begin{aligned}
+            u_{n+1} &= z_{n+1} + 2 \\
+            &= (1 + i)z_n + 2i + 2 \\
+            &= (1 + i)z_n + 2(1 + i) \\
+            &= (1 + i)(z_n + 2) \\
+            &= (1 + i)u_n
+        \end{aligned}
+        $$
+        Ainsi, $(u_n)$ est une suite géométrique de raison $q = 1 + i$. Calculons son premier terme $u_0$ :
+        $$
+        \begin{aligned}
+            u_0 &= z_0 + 2 \\
+            &= i + 2 \\
+            &= 2 + i
+        \end{aligned}
+        $$
+        Par conséquent, pour tout $n \in \mathbb{N}$ :
+        $$
+        \begin{aligned}
+            u_n &= u_0 \times q^n \\
+            &= (2 + i)(1 + i)^n
+        \end{aligned}
+        $$
+
+        \item \textbf{Expression de $z_n$ en fonction de $n$ :}
+        
+        Puisque $u_n = z_n + 2$, on a $z_n = u_n - 2$, soit pour tout $n \in \mathbb{N}$ :
+        $$
+        \begin{aligned}
+            z_n &= (2 + i)(1 + i)^n - 2
+        \end{aligned}
+        $$
+    \end{enumerate}
+
+    \item \textbf{Démonstration des relations géométriques :}
+    
+    On donne $z_A = i$ et $z_B = -\dfrac{1}{2} - \dfrac{1}{2}i$. Pour tout $n \in \mathbb{N}$, calculons le rapport des affixes des vecteurs $\overrightarrow{AM_{n+1}}$ et $\overrightarrow{BM_n}$ (en remarquant que $M_n \neq B$ puisque $z_n \neq -\frac{1}{2} - \frac{1}{2}i$) :
+    $$
+    \begin{aligned}
+        \dfrac{z_{\overrightarrow{AM_{n+1}}}}{z_{\overrightarrow{BM_n}}} &= \dfrac{z_{n+1} - z_A}{z_n - z_B} \\
+        &= \dfrac{\left[(1 + i)z_n + 2i\right] - i}{z_n - \left(-\dfrac{1}{2} - \dfrac{1}{2}i\right)} \\
+        &= \dfrac{(1 + i)z_n + i}{z_n + \dfrac{1}{2} + \dfrac{1}{2}i}
+    \end{aligned}
+    $$
+    Factorisons le numérateur par $(1 + i)$ :
+    $$
+    \begin{aligned}
+        (1 + i)\left(z_n + \dfrac{1}{2} + \dfrac{1}{2}i\right) &= (1 + i)z_n + (1 + i)\left(\dfrac{1 + i}{2}\right) \\
+        &= (1 + i)z_n + \dfrac{1 + 2i + i^2}{2} \\
+        &= (1 + i)z_n + \dfrac{2i}{2} \\
+        &= (1 + i)z_n + i
+    \end{aligned}
+    $$
+    On obtient donc :
+    $$
+    \begin{aligned}
+        \dfrac{z_{n+1} - z_A}{z_n - z_B} &= \dfrac{(1 + i)\left(z_n + \dfrac{1}{2} + \dfrac{1}{2}i\right)}{z_n + \dfrac{1}{2} + \dfrac{1}{2}i} \\
+        &= 1 + i
+    \end{aligned}
+    $$
+    Écrivons $1 + i$ sous forme trigonométrique :
+    $$
+    \begin{aligned}
+        1 + i &= \sqrt{1^2 + 1^2}\left( \dfrac{1}{\sqrt{2}} + i\dfrac{1}{\sqrt{2}} \right) \\
+        &= \sqrt{2}\left( \cos\dfrac{\pi}{4} + i\sin\dfrac{\pi}{4} \right)
+    \end{aligned}
+    $$
+    En passant au module et à l'argument dans l'égalité $\dfrac{z_{n+1} - z_A}{z_n - z_B} = 1 + i$, on en déduit :
+    $$
+    \begin{aligned}
+        \dfrac{AM_{n+1}}{BM_n} &= \left| \dfrac{z_{n+1} - z_A}{z_n - z_B} \right| \\
+        &= |1 + i| \\
+        &= \sqrt{2}
+    \end{aligned}
+    $$
+    et
+    $$
+    \begin{aligned}
+        \left(\overrightarrow{BM_n}, \overrightarrow{AM_{n+1}}\right) &\equiv \arg\left( \dfrac{z_{n+1} - z_A}{z_n - z_B} \right) \pmod{2\pi} \\
+        &\equiv \arg(1 + i) \pmod{2\pi} \\
+        &\equiv \dfrac{\pi}{4} \pmod{2\pi}
+    \end{aligned}
+    $$
+\end{enumerate}
 
 \fbox{\textbf{\exo}}
 
