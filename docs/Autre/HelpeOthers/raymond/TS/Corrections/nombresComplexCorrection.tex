@@ -1917,7 +1917,165 @@ D'où :
     Le point $O(0)$ vérifie bien la condition. L'ensemble $(\mathcal{E}_3)$ est donc le \textbf{demi-cercle ouvert de diamètre $[AB]$ contenant l'origine $O$ (privé des points $A(-1)$ et $B(2i)$)}.
 \end{enumerate}
 
-\fbox{\textbf{\exo}}
+\fbox{\textbf{\exo}} [Deux méthodes pour un problème]
+
+\textbf{Remarque sur l'énoncé :} Dans l'expression de $\operatorname{Im}(Z)$, il y a une petite coquille typographique dans l'énoncé original (« $x - x - y + 2$ » au lieu de « $-x - y + 2$ »). Nous allons le montrer rigoureusement par le calcul.
+
+\begin{enumerate}
+    \item \textbf{Détermination de $\operatorname{Re}(Z)$ et $\operatorname{Im}(Z)$ :}
+    
+    Soit $z = x + iy$ avec $(x\,;\,y) \in \mathbb{R}^2 \setminus \{(1\,;\,1)\}$. On remplace $z$ par $x + iy$ dans $Z$ :
+    
+    $
+    \begin{aligned}
+        Z &= \frac{x + iy - 2i}{x + iy - 1 - i}\\
+        &= \frac{x + i(y - 2)}{(x - 1) + i(y - 1)}
+    \end{aligned}
+    $
+    
+    Multiplions le numérateur et le dénominateur par le conjugué du dénominateur, soit $(x - 1) - i(y - 1)$ :
+    
+    $
+    \begin{aligned}
+        Z &= \frac{[x + i(y - 2)][(x - 1) - i(y - 1)]}{[(x - 1) + i(y - 1)][(x - 1) - i(y - 1)]}\\
+        &= \frac{x(x - 1) - ix(y - 1) + i(y - 2)(x - 1) - i^2(y - 2)(y - 1)}{(x - 1)^2 + (y - 1)^2}\\
+        &= \frac{[x(x - 1) + (y - 2)(y - 1)] + i[(y - 2)(x - 1) - x(y - 1)]}{(x - 1)^2 + (y - 1)^2}
+    \end{aligned}
+    $
+    
+    Développons séparément la partie réelle et la partie imaginaire du numérateur :
+    
+    \begin{itemize}
+        \item Partie réelle du numérateur :
+        
+        $
+        \begin{aligned}
+            x(x - 1) + (y - 2)(y - 1) &= x^2 - x + y^2 - y - 2y + 2\\
+            &= x^2 + y^2 - x - 3y + 2
+        \end{aligned}
+        $
+        
+        \item Partie imaginaire du numérateur :
+        
+        $
+        \begin{aligned}
+            (y - 2)(x - 1) - x(y - 1) &= xy - y - 2x + 2 - xy + x\\
+            &= -x - y + 2
+        \end{aligned}
+        $
+    \end{itemize}
+    
+    On obtient ainsi la forme algébrique de $Z$ pour $(x\,;\,y) \neq (1\,;\,1)$ :
+    
+    $
+    \begin{aligned}
+        Z &= \frac{x^2 + y^2 - x - 3y + 2}{(x - 1)^2 + (y - 1)^2} + i\frac{-x - y + 2}{(x - 1)^2 + (y - 1)^2}
+    \end{aligned}
+    $
+    
+    D'où :
+    
+    $
+    \begin{aligned}
+        \operatorname{Re}(Z) &= \mathbf{\frac{x^2 + y^2 - x - 3y + 2}{(x - 1)^2 + (y - 1)^2}} \quad \text{et} \quad \operatorname{Im}(Z) = \mathbf{\frac{-x - y + 2}{(x - 1)^2 + (y - 1)^2}}
+    \end{aligned}
+    $
+
+    \item \textbf{Détermination des ensembles $(E)$ et $(F)$ :}
+    
+    \begin{enumerate}
+        \item \textbf{Méthode algébrique :}
+        
+        \begin{itemize}
+            \item \textbf{Détermination de $(E)$ ($Z \in \mathbb{R}$) :}
+            
+            Pour $(x\,;\,y) \neq (1\,;\,1)$, on a :
+            
+            $
+            \begin{aligned}
+                M(x\,;\,y) \in (E) &\iff \operatorname{Im}(Z) = 0\\
+                &\iff \frac{-x - y + 2}{(x - 1)^2 + (y - 1)^2} = 0\\
+                &\iff -x - y + 2 = 0 \quad \text{avec } (x\,;\,y) \neq (1\,;\,1)\\
+                &\iff x + y - 2 = 0 \quad \text{avec } (x\,;\,y) \neq (1\,;\,1)
+            \end{aligned}
+            $
+            
+            Or $x + y - 2 = 0$ est une équation cartésienne de droite. On vérifie que les coordonnées de $A(0\,;\,2)$ et $B(1\,;\,1)$ vérifient cette équation ($0 + 2 - 2 = 0$ et $1 + 1 - 2 = 0$). Il s'agit donc de la droite $(AB)$.
+            
+            L'ensemble $(E)$ est donc la \textbf{droite $(AB)$ d'équation $x + y - 2 = 0$ privée du point $B(1\,;\,1)$}.
+
+            \item \textbf{Détermination de $(F)$ ($Z \in i\mathbb{R}$) :}
+            
+            Pour $(x\,;\,y) \neq (1\,;\,1)$, on a :
+            
+            $
+            \begin{aligned}
+                M(x\,;\,y) \in (F) &\iff \operatorname{Re}(Z) = 0\\
+                &\iff \frac{x^2 + y^2 - x - 3y + 2}{(x - 1)^2 + (y - 1)^2} = 0\\
+                &\iff x^2 + y^2 - x - 3y + 2 = 0 \quad \text{avec } (x\,;\,y) \neq (1\,;\,1)
+            \end{aligned}
+            $
+            
+            Mettons cette équation sous forme canonique :
+            
+            $
+            \begin{aligned}
+                x^2 - x + y^2 - 3y + 2 = 0 &\iff \left(x - \frac{1}{2}\right)^2 - \frac{1}{4} + \left(y - \frac{3}{2}\right)^2 - \frac{9}{4} + 2 = 0\\
+                &\iff \left(x - \frac{1}{2}\right)^2 + \left(y - \frac{3}{2}\right)^2 - \frac{10}{4} + \frac{8}{4} = 0\\
+                &\iff \left(x - \frac{1}{2}\right)^2 + \left(y - \frac{3}{2}\right)^2 = \frac{1}{2}
+            \end{aligned}
+            $
+            
+            Il s'agit de l'équation du cercle $(\mathcal{C})$ de centre $\Omega\left(\dfrac{1}{2}\,;\,\dfrac{3}{2}\right)$ (qui est le milieu du segment $[AB]$) et de rayon $R = \sqrt{\dfrac{1}{2}} = \dfrac{\sqrt{2}}{2} = \dfrac{AB}{2}$.
+            
+            L'ensemble $(F)$ est donc le \textbf{cercle de diamètre $[AB]$ privé du point $B(1\,;\,1)$}.
+        \end{itemize}
+
+        \item \textbf{Méthode géométrique (à l'aide des arguments) :}
+        
+        On remarque que pour tout point $M(z)$ distinct de $B(1 + i)$ :
+        
+        $
+        \begin{aligned}
+            Z &= \frac{z - 2i}{z - (1 + i)} = \frac{z - z_A}{z - z_B}
+        \end{aligned}
+        $
+        
+        \begin{itemize}
+            \item \textbf{Détermination de $(E)$ ($Z \in \mathbb{R}$) :}
+            
+            Si $z = 2i$, alors $Z = 0 \in \mathbb{R}$, donc le point $A$ appartient à $(E)$.
+            
+            Si $z \neq 2i$ et $z \neq 1 + i$ (c'est-à-dire $M \neq A$ et $M \neq B$), alors :
+            
+            $
+            \begin{aligned}
+                Z \in \mathbb{R}^* &\iff \arg(Z) \equiv 0 \pmod{\pi}\\
+                &\iff \left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \equiv 0 \pmod{\pi}\\
+                &\iff \text{les points } M, A \text{ et } B \text{ sont alignés}
+            \end{aligned}
+            $
+            
+            En incluant $A$ et en excluant $B$, on retrouve que l'ensemble $(E)$ est la \textbf{droite $(AB)$ privée du point $B$}.
+
+            \item \textbf{Détermination de $(F)$ ($Z \in i\mathbb{R}$) :}
+            
+            Si $z = 2i$, alors $Z = 0 \in i\mathbb{R}$, donc le point $A$ appartient à $(F)$.
+            
+            Si $z \neq 2i$ et $z \neq 1 + i$ (c'est-à-dire $M \neq A$ et $M \neq B$), alors :
+            
+            $
+            \begin{aligned}
+                Z \in i\mathbb{R}^* &\iff \arg(Z) \equiv \frac{\pi}{2} \pmod{\pi}\\
+                &\iff \left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \equiv \frac{\pi}{2} \pmod{\pi}\\
+                &\iff \overrightarrow{MB} \perp \overrightarrow{MA}
+            \end{aligned}
+            $
+            
+            Le triangle $MAB$ est rectangle en $M$, donc $M$ décrit le cercle de diamètre $[AB]$ privé de $A$ et $B$. En réintégrant le point $A$, on retrouve que l'ensemble $(F)$ est le \textbf{cercle de diamètre $[AB]$ privé du point $B$}.
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
 
 \fbox{\textbf{\exo}}
 
