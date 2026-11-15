@@ -1728,18 +1728,115 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
         $
     \end{enumerate}
 \end{enumerate}
-\fbox{\textbf{\exo}}[Linéarisation]
 
 \fbox{\textbf{\exo}} [Lieux géométriques]
 
-\fbox{\textbf{\exo}} [Lieux géométriques]
+\textbf{Rappels :} Soient $A(z_A)$ et $B(z_B)$ deux points distincts du plan complexe, et $M(z)$ un point quelconque :
+\begin{itemize}
+    \item La distance $AM$ est donnée par $AM = |z - z_A|$.
+    \item Pour tout complexe $Z$, $|\overline{Z}| = |Z|$ et $|k \cdot Z| = |k| \cdot |Z|$.
+    \item Si $M \neq A$ et $M \neq B$, alors $\left(\overrightarrow{MB}\,;\,\overrightarrow{MA}\right) \equiv \arg\left(\dfrac{z - z_A}{z - z_B}\right) \pmod{2\pi}$.
+\end{itemize}
 
-\fbox{\textbf{\exo}} [Deux méthodes pour un problème]
+\begin{enumerate}
+    \item \textbf{Ensemble $(\mathcal{E}_1)$ des points $M(z)$ tels que $|z + 1 + 4i| = |z - 1 + i|$ :}
+    
+    On réécrit l'égalité sous la forme $|z - z_A| = |z - z_B|$ :
+    
+    $
+    \begin{aligned}
+        |z + 1 + 4i| = |z - 1 + i| &\iff |z - (-1 - 4i)| = |z - (1 - i)|
+    \end{aligned}
+    $
+    
+    Soient $A$ et $B$ les points d'affixes respectives $z_A = -1 - 4i$ et $z_B = 1 - i$. L'égalité équivaut à :
+    
+    $
+    \begin{aligned}
+        AM &= BM
+    \end{aligned}
+    $
+    
+    L'ensemble $(\mathcal{E}_1)$ est donc la \textbf{médiatrice du segment $[AB]$}, où $A(-1 - 4i)$ et $B(1 - i)$.
 
-\fbox{\textbf{\exo}} [Complexe et géométrie]
+    \item \textbf{Ensemble $(\mathcal{E}_2)$ des points $M(z)$ tels que $|z + 1 + 4i| = 4$ :}
+    
+    $
+    \begin{aligned}
+        |z + 1 + 4i| = 4 &\iff |z - (-1 - 4i)| = 4
+    \end{aligned}
+    $
+    
+    En posant $A$ le point d'affixe $z_A = -1 - 4i$, la relation s'écrit :
+    
+    $
+    \begin{aligned}
+        AM &= 4
+    \end{aligned}
+    $
+    
+    L'ensemble $(\mathcal{E}_2)$ est donc le \textbf{cercle de centre $A(-1 - 4i)$ et de rayon $R = 4$}.
 
-\fbox{\textbf{\exo}}
+    \item \textbf{Ensemble $(\mathcal{E}_3)$ des points $M(z)$ tels que $|\overline{z} + 1 - 4i| = |z - 2i|$ :}
+    
+    On utilise la propriété $|\overline{Z}| = |Z|$ en remarquant que $\overline{z} + 1 - 4i = \overline{z + 1 + 4i}$ :
+    
+    $
+    \begin{aligned}
+        |\overline{z} + 1 - 4i| = |z - 2i| &\iff |\overline{z + 1 + 4i}| = |z - 2i|\\
+        &\iff |z + 1 + 4i| = |z - 2i|\\
+        &\iff |z - (-1 - 4i)| = |z - 2i|
+    \end{aligned}
+    $
+    
+    Soient $A$ et $C$ les points d'affixes respectives $z_A = -1 - 4i$ et $z_C = 2i$. La relation équivaut à :
+    
+    $
+    \begin{aligned}
+        AM &= CM
+    \end{aligned}
+    $
+    
+    L'ensemble $(\mathcal{E}_3)$ est donc la \textbf{médiatrice du segment $[AC]$}, où $A(-1 - 4i)$ et $C(2i)$.
 
+    \item \textbf{Ensemble $(\mathcal{E}_4)$ des points $M(z)$ tels que $|3iz + 6| = 3|z - 1 + i|$ :}
+    
+    Factorisons par $3i$ dans le membre de gauche (en sachant que $|3i| = 3$ et $\dfrac{6}{3i} = \dfrac{2}{i} = -2i$) :
+    
+    $
+    \begin{aligned}
+        |3iz + 6| = 3|z - 1 + i| &\iff |3i(z - 2i)| = 3|z - (1 - i)|\\
+        &\iff |3i| \cdot |z - 2i| = 3|z - (1 - i)|\\
+        &\iff 3|z - 2i| = 3|z - (1 - i)|\\
+        &\iff |z - 2i| = |z - (1 - i)|
+    \end{aligned}
+    $
+    
+    Soient $C$ et $B$ les points d'affixes respectives $z_C = 2i$ et $z_B = 1 - i$. L'égalité équivaut à :
+    
+    $
+    \begin{aligned}
+        CM &= BM
+    \end{aligned}
+    $
+    
+    L'ensemble $(\mathcal{E}_4)$ est donc la \textbf{médiatrice du segment $[BC]$}, où $B(1 - i)$ et $C(2i)$.
+
+    \item \textbf{Ensemble $(\mathcal{E}_5)$ des points $M(z)$ tels que $\arg\left(\dfrac{z - 2i}{z - 1 + i}\right) \equiv \dfrac{\pi}{2} \pmod{\pi}$ :}
+    
+    Soient $C(2i)$ et $B(1 - i)$. La relation n'a de sens que si $z \neq 2i$ et $z \neq 1 - i$, c'est-à-dire $M \neq C$ et $M \neq B$.
+    
+    On traduit l'argument en angle de vecteurs :
+    
+    $
+    \begin{aligned}
+        \arg\left(\frac{z - 2i}{z - (1 - i)}\right) \equiv \frac{\pi}{2} \pmod{\pi} &\iff \left(\overrightarrow{MB}\,;\,\overrightarrow{MC}\right) \equiv \frac{\pi}{2} \pmod{\pi}\\
+        &\iff \overrightarrow{MB} \perp \overrightarrow{MC} \quad (\text{avec } M \neq B \text{ et } M \neq C)
+    \end{aligned}
+    $
+    
+    L'ensemble $(\mathcal{E}_5)$ est donc le \textbf{cercle de diamètre $[BC]$ privé des points $B(1 - i)$ et $C(2i)$}.
+\end{enumerate}
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
