@@ -2506,6 +2506,249 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\textbf{Rappels :} 
+\begin{itemize}
+    \item Un nombre complexe $x + iy$ ($x, y \in \mathbb{R}$) est nul si et seulement si $x = 0$ et $y = 0$.
+    \item Le symétrique d'un point $M(z)$ par rapport à l'axe réel a pour affixe le conjugué $\overline{z}$.
+    \item Pour trois points distincts $A(z_A)$, $C(z_C)$ et $D(z_D)$ du plan complexe : $\left|\dfrac{z_D - z_C}{z_A - z_C}\right| = \dfrac{CD}{CA}$ et \\
+    $\arg\left(\dfrac{z_D - z_C}{z_A - z_C}\right) \equiv \left(\overrightarrow{CA}\,;\,\overrightarrow{CD}\right) \pmod{2\pi}$.
+\end{itemize}
+
+\begin{enumerate}
+    \item \textbf{Calcul de $\left(\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2}\right)^{2}$ et résolution de $z^2 - i = 0$ :}
+    
+    $
+    \begin{aligned}
+        \left(\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right)^2 &= \left(\frac{\sqrt{2}}{2}\right)^2 + 2 \cdot \frac{\sqrt{2}}{2} \cdot i\frac{\sqrt{2}}{2} + \left(i\frac{\sqrt{2}}{2}\right)^2\\
+        &= \frac{2}{4} + i\frac{4}{4} + i^2\frac{2}{4}\\
+        &= \frac{1}{2} + i - \frac{1}{2}\\
+        &= \mathbf{i}
+    \end{aligned}
+    $
+    
+    On en déduit la résolution de $z^2 - i = 0$ dans $\mathbb{C}$ :
+    
+    $
+    \begin{aligned}
+        z^2 - i = 0 &\iff z^2 = i\\
+        &\iff z^2 = \left(\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right)^2\\
+        &\iff z = \frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2} \quad \text{ou} \quad z = -\frac{\sqrt{2}}{2} - i\frac{\sqrt{2}}{2}
+    \end{aligned}
+    $
+    
+    L'ensemble des solutions dans $\mathbb{C}$ est donc :
+    
+    $
+    \mathcal{S} = \left\{\mathbf{\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2} \,;\, -\dfrac{\sqrt{2}}{2} - i\dfrac{\sqrt{2}}{2}}\right\}
+    $
+
+    \item \textbf{Étude du polynôme $P(z) = z^3 + z^2 - iz - i$ :}
+    
+    \begin{enumerate}
+        \item \textbf{Recherche d'une solution réelle de $P(z) = 0$ :}
+        
+        Soit $z_0 = x$ ($x \in \mathbb{R}$) une éventuelle solution réelle de l'équation $P(z) = 0$ :
+        
+        $
+        \begin{aligned}
+            P(x) = 0 &\iff x^3 + x^2 - ix - i = 0\\
+            &\iff (x^3 + x^2) + i(-x - 1) = 0
+        \end{aligned}
+        $
+        
+        Comme $x \in \mathbb{R}$, $(x^3 + x^2) \in \mathbb{R}$ et $(-x - 1) \in \mathbb{R}$. Par nullité d'un nombre complexe, cela équivaut au système :
+        
+        $
+        \begin{cases}
+            x^3 + x^2 = 0 \quad (L_1) \\
+            -x - 1 = 0 \quad (L_2)
+        \end{cases}
+        $
+        
+        Résolvons $(L_2)$ :
+        
+        $
+        \begin{aligned}
+            -x - 1 = 0 &\iff x = -1
+        \end{aligned}
+        $
+        
+        Vérifions dans $(L_1)$ :
+        
+        $
+        \begin{aligned}
+            (-1)^3 + (-1)^2 &= -1 + 1\\
+            &= 0
+        \end{aligned}
+        $
+        
+        L'équation $P(z) = 0$ admet donc une unique solution réelle : $\mathbf{z_0 = -1}$.
+
+        \item \textbf{Résolution de $P(z) = 0$ dans $\mathbb{C}$ :}
+        
+        Factorisons $P(z)$ par regroupement de termes (ou par identification après mise en facteur de $(z + 1)$) :
+        
+        $
+        \begin{aligned}
+            P(z) &= z^3 + z^2 - iz - i\\
+            &= z^2(z + 1) - i(z + 1)\\
+            &= (z + 1)(z^2 - i)
+        \end{aligned}
+        $
+        
+        Un produit de facteurs est nul si et seulement si l'un au moins de ses facteurs est nul :
+        
+        $
+        \begin{aligned}
+            P(z) = 0 &\iff (z + 1)(z^2 - i) = 0\\
+            &\iff z + 1 = 0 \quad \text{ou} \quad z^2 - i = 0
+        \end{aligned}
+        $
+        
+        En utilisant le résultat de la question 1, on obtient l'ensemble des solutions dans $\mathbb{C}$ :
+        
+        $
+        \mathcal{S} = \left\{\mathbf{-1 \,;\, \dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2} \,;\, -\dfrac{\sqrt{2}}{2} - i\dfrac{\sqrt{2}}{2}}\right\}
+        $
+    \end{enumerate}
+
+    \item \textbf{Formes exponentielles et construction géométrique :}
+    
+    \begin{enumerate}
+        \item \textbf{Formes exponentielles de $z_A$ et $z_B$ :}
+        
+        \begin{itemize}
+            \item Pour $z_A = \dfrac{\sqrt{2}}{2}(1 + i) = \dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2}$ :
+            
+            $
+            \begin{aligned}
+                |z_A| &= \sqrt{\left(\frac{\sqrt{2}}{2}\right)^2 + \left(\frac{\sqrt{2}}{2}\right)^2}\\
+                &= \sqrt{\frac{2}{4} + \frac{2}{4}}\\
+                &= \sqrt{1}\\
+                &= 1
+            \end{aligned}
+            $
+            
+            $
+            \begin{aligned}
+                z_A &= \cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\\
+                &= \mathbf{e^{i\frac{\pi}{4}}}
+            \end{aligned}
+            $
+            
+            \item Pour $z_B = -\dfrac{\sqrt{2}}{2}(1 + i) = -z_A$ :
+            
+            Comme $-1 = e^{i\pi}$, on a :
+            
+            $
+            \begin{aligned}
+                z_B &= -e^{i\frac{\pi}{4}}\\
+                &= e^{i\pi} \cdot e^{i\frac{\pi}{4}}\\
+                &= e^{i\frac{5\pi}{4}}\\
+                &= \mathbf{e^{-i\frac{3\pi}{4}}}
+            \end{aligned}
+            $
+        \end{itemize}
+
+        \item \textbf{Placement précis des points $A$, $B$ et $C$ :}
+        
+        On a $|z_A| = |z_B| = |z_C| = 1$ : les trois points $A$, $B$ et $C$ appartiennent donc au cercle trigonométrique $(\mathcal{C})$ de centre $O$ et de rayon $1$ unité graphique (soit $2\text{ cm}$).
+        \begin{itemize}
+            \item $C(-1)$ est le point d'intersection de $(\mathcal{C})$ avec le demi-axe réel négatif.
+            \item $A\left(e^{i\frac{\pi}{4}}\right)$ est l'intersection de $(\mathcal{C})$ avec la première bissectrice ($y = x$) dans le premier quadrant ($x > 0, y > 0$).
+            \item $B\left(e^{-i\frac{3\pi}{4}}\right)$ est le symétrique de $A$ par rapport à l'origine $O$ (intersection de $(\mathcal{C})$ avec la première bissectrice dans le troisième quadrant).
+        \end{itemize}
+        
+        \textit{(Voir la figure complète ci-dessous.)}
+    \end{enumerate}
+
+    \item \textbf{Étude du point $D$ et nature du triangle $ACD$ :}
+    
+    \begin{enumerate}
+        \item \textbf{Affixe $z_D$ sous forme algébrique :}
+        
+        Le point $D$ étant le symétrique de $A$ par rapport à l'axe réel, son affixe est le conjugué de $z_A$ :
+        
+        $
+        \begin{aligned}
+            z_D &= \overline{z_A}\\
+            &= \mathbf{\frac{\sqrt{2}}{2} - i\frac{\sqrt{2}}{2}}
+        \end{aligned}
+        $
+
+        \item \textbf{Calcul du quotient et nature du triangle $ACD$ :}
+        
+        Calculons $\dfrac{z_D - z_C}{z_A - z_C}$ :
+        
+        $
+        \begin{aligned}
+            \frac{z_D - z_C}{z_A - z_C} &= \frac{\dfrac{\sqrt{2}}{2} - i\dfrac{\sqrt{2}}{2} - (-1)}{\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2} - (-1)}\\
+            &= \frac{\left(1 + \dfrac{\sqrt{2}}{2}\right) - i\dfrac{\sqrt{2}}{2}}{\left(1 + \dfrac{\sqrt{2}}{2}\right) + i\dfrac{\sqrt{2}}{2}}\\
+            &= \frac{(2 + \sqrt{2}) - i\sqrt{2}}{(2 + \sqrt{2}) + i\sqrt{2}}
+        \end{aligned}
+        $
+        
+        Multiplions le numérateur et le dénominateur par le conjugué du dénominateur, soit $(2 + \sqrt{2}) - i\sqrt{2}$ :
+        
+        $
+        \begin{aligned}
+            \frac{z_D - z_C}{z_A - z_C} &= \frac{\left[(2 + \sqrt{2}) - i\sqrt{2}\right]^2}{(2 + \sqrt{2})^2 + (\sqrt{2})^2}\\
+            &= \frac{(2 + \sqrt{2})^2 - 2i\sqrt{2}(2 + \sqrt{2}) + i^2(\sqrt{2})^2}{(4 + 4\sqrt{2} + 2) + 2}\\
+            &= \frac{(4 + 4\sqrt{2} + 2) - i(4\sqrt{2} + 4) - 2}{8 + 4\sqrt{2}}\\
+            &= \frac{(4 + 4\sqrt{2}) - i(4 + 4\sqrt{2})}{4(2 + \sqrt{2})}\\
+            &= \frac{4(1 + \sqrt{2})(1 - i)}{4\sqrt{2}(\sqrt{2} + 1)}\\
+            &= \frac{1 - i}{\sqrt{2}}\\
+            &= \frac{\sqrt{2}}{2} - i\frac{\sqrt{2}}{2}\\
+            &= \cos\left(-\frac{\pi}{4}\right) + i\sin\left(-\frac{\pi}{4}\right)\\
+            &= \mathbf{e^{-i\frac{\pi}{4}}}
+        \end{aligned}
+        $
+        
+        On en déduit que :
+        
+        $
+        \begin{cases}
+            \dfrac{CD}{CA} = \left|\dfrac{z_D - z_C}{z_A - z_C}\right| = \left|e^{-i\frac{\pi}{4}}\right| = 1 \implies CD = CA \\
+            \left(\overrightarrow{CA}\,;\,\overrightarrow{CD}\right) \equiv \arg\left(\dfrac{z_D - z_C}{z_A - z_C}\right) \equiv -\dfrac{\pi}{4} \pmod{2\pi}
+        \end{cases}
+        $
+        
+        Le triangle $ACD$ est donc \textbf{isocèle en $C$} (avec un angle au sommet $\widehat{ACD} = \dfrac{\pi}{4}$).
+    \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+    % Axes et grille
+    \draw[very thin, color=gray!30] (-1.5,-1.5) grid[step=0.5] (1.5,1.5);
+    \draw[->, thick] (-1.5,0) -- (1.5,0) node[right] {$x$};
+    \draw[->, thick] (0,-1.5) -- (0,1.5) node[above] {$y$};
+    \draw[->, very thick] (0,0) -- (1,0) node[midway, below] {$\vec{u}$};
+    \draw[->, very thick] (0,0) -- (0,1) node[midway, left] {$\vec{v}$};
+    \node[below left] at (0,0) {$O$};
+
+    % Cercle trigonométrique et première bissectrice
+    \draw[blue, thick] (0,0) circle (1);
+    \draw[dashed, gray] (-1.1,-1.1) -- (1.1,1.1);
+    \draw[dashed, gray] (0.7071,-0.7071) -- (0.7071,0.7071);
+
+    % Coordonnées des points
+    \coordinate (A) at (0.7071,0.7071);
+    \coordinate (B) at (-0.7071,-0.7071);
+    \coordinate (C) at (-1,0);
+    \coordinate (D) at (0.7071,-0.7071);
+
+    % Triangle ACD
+    \draw[thick, red] (A) -- (C) -- (D) -- cycle;
+
+    % Points
+    \fill (A) circle (1.2pt) node[above right] {$A$};
+    \fill (B) circle (1.2pt) node[below left] {$B$};
+    \fill (C) circle (1.2pt) node[above left] {$C$};
+    \fill (D) circle (1.2pt) node[below right] {$D$};
+\end{tikzpicture}
+\end{center}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
