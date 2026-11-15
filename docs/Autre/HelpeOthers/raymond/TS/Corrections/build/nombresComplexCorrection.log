@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  15 NOV 2026 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  15 NOV 2026 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1135,7 +1135,7 @@ Overfull \hbox (4.89066pt too wide) detected at line 4311
 [][]
  []
 
-[58] [59] [60] [61] [62] [63]
+[58] [59] [60] [61] [62] [63] [64] [65] [66]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/nombresComplexCorrection.aux)
@@ -1152,8 +1152,8 @@ d.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30614 strings out of 467533
- 612859 string characters out of 5422138
+ 30623 strings out of 467533
+ 612928 string characters out of 5422138
  1070865 words of memory out of 5000000
  58679 multiletter control sequences out of 15000+600000
  689559 words of font info for 84 fonts, out of 8000000 for 9000
@@ -1172,10 +1172,10 @@ sr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on build/nombresComplexCorrection.pdf (63 pages, 510886 bytes).
+Output written on build/nombresComplexCorrection.pdf (66 pages, 521315 bytes).
 PDF statistics:
- 767 PDF objects out of 1000 (max. 8388607)
- 632 compressed objects within 7 object streams
- 286 named destinations out of 1000 (max. 500000)
+ 791 PDF objects out of 1000 (max. 8388607)
+ 653 compressed objects within 7 object streams
+ 295 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

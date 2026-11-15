@@ -4705,5 +4705,235 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\textbf{Première partie : Résolution de $(\mathcal{E})$}
+
+\begin{enumerate}
+    \item \textbf{Démonstration que $(\mathcal{E})$ admet une solution imaginaire pure :}
+    
+    Soit $z_0 = iy$ (avec $y \in \mathbb{R}$) une éventuelle solution imaginaire pure de $(\mathcal{E})$. En remplaçant $z$ par $iy$, on obtient :
+    $$
+    \begin{aligned}
+        (iy)^3 + (4 - 5i)(iy)^2 + (8 - 20i)(iy) - 40i = 0 &\iff -iy^3 - y^2(4 - 5i) + 8iy - 20i^2 y - 40i = 0 \\
+        &\iff -iy^3 - 4y^2 + 5iy^2 + 8iy + 20y - 40i = 0 \\
+        &\iff (-4y^2 + 20y) + i(-y^3 + 5y^2 + 8y - 40) = 0
+    \end{aligned}
+    $$
+    Comme $y \in \mathbb{R}$, les expressions $-4y^2 + 20y$ et $-y^3 + 5y^2 + 8y - 40$ sont des nombres réels. Un nombre complexe est nul si et seulement si sa partie réelle et sa partie imaginaire sont nulles :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            -4y^2 + 20y = 0 \quad (1) \\
+            -y^3 + 5y^2 + 8y - 40 = 0 \quad (2)
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    Résolvons l'équation $(1)$ en factorisant par $-4y$ :
+    $$
+    \begin{aligned}
+        -4y^2 + 20y = 0 &\iff -4y(y - 5) = 0 \\
+        &\iff y = 0 \quad \text{ou} \quad y = 5
+    \end{aligned}
+    $$
+    Vérifions laquelle de ces deux valeurs annule également l'équation $(2)$ :
+    $$
+    \begin{aligned}
+        \text{Pour } y = 0 &: \quad -0^3 + 5(0)^2 + 8(0) - 40 = -40 \neq 0 \\
+        \text{Pour } y = 5 &: \quad -5^3 + 5(5)^2 + 8(5) - 40 = -125 + 125 + 40 - 40 = 0
+    \end{aligned}
+    $$
+    Ainsi, l'équation $(\mathcal{E})$ admet une unique solution imaginaire pure qui est $z_0 = 5i$.
+
+    \item \textbf{Résolution de $(\mathcal{E})$ dans $\mathbb{C}$ :}
+    
+    Puisque $5i$ est une racine du polynôme $z^3 + (4 - 5i)z^2 + (8 - 20i)z - 40i$, celui-ci est factorisable par $(z - 5i)$. Il existe donc trois nombres complexes $a, b, c$ tels que pour tout $z \in \mathbb{C}$ :
+    $$
+    \begin{aligned}
+        z^3 + (4 - 5i)z^2 + (8 - 20i)z - 40i &= (z - 5i)(az^2 + bz + c) \\
+        &= az^3 + bz^2 + cz - 5iaz^2 - 5ibz - 5ic \\
+        &= az^3 + (b - 5ia)z^2 + (c - 5ib)z - 5ic
+    \end{aligned}
+    $$
+    Par identification des coefficients, on obtient le système :
+    $$
+    \begin{aligned}
+        \left\{
+        \begin{array}{l}
+            a = 1 \\
+            b - 5ia = 4 - 5i \\
+            c - 5ib = 8 - 20i \\
+            -5ic = -40i
+        \end{array}
+        \right.
+        &\iff
+        \left\{
+        \begin{array}{l}
+            a = 1 \\
+            b = 4 - 5i + 5i(1) = 4 \\
+            c = \dfrac{-40i}{-5i} = 8 \\
+            8 - 5i(4) = 8 - 20i \quad \text{(vérifié)}
+        \end{array}
+        \right.
+    \end{aligned}
+    $$
+    L'équation $(\mathcal{E})$ s'écrit donc :
+    $$
+    \begin{aligned}
+        (z - 5i)(z^2 + 4z + 8) = 0 &\iff z - 5i = 0 \quad \text{ou} \quad z^2 + 4z + 8 = 0
+    \end{aligned}
+    $$
+    Résolvons l'équation du second degré $z^2 + 4z + 8 = 0$. Calculons son discriminant $\Delta$ :
+    $$
+    \begin{aligned}
+        \Delta &= 4^2 - 4 \times 1 \times 8 \\
+        &= 16 - 32 \\
+        &= -16 \\
+        &= (4i)^2
+    \end{aligned}
+    $$
+    Comme $\Delta < 0$, l'équation admet deux racines complexes conjuguées $z_1$ et $z_2$ :
+    $$
+    \begin{aligned}
+        z_1 &= \dfrac{-4 - 4i}{2} = -2 - 2i \\
+        z_2 &= \dfrac{-4 + 4i}{2} = -2 + 2i
+    \end{aligned}
+    $$
+    L'ensemble des solutions dans $\mathbb{C}$ de l'équation $(\mathcal{E})$ est donc :
+    $$
+    \mathcal{S}_{\mathcal{E}} = \left\{ 5i \,;\, -2 - 2i \,;\, -2 + 2i \right\}
+    $$
+\end{enumerate}
+
+\medskip
+\textbf{Deuxième partie : Résolution de $(\mathcal{E}')$}
+
+\begin{enumerate}
+    \item \textbf{Vérification que $0$ n'est pas solution et propriété de stabilité par passage à l'inverse :}
+    
+    En remplaçant $z$ par $0$ dans le membre de gauche de $(\mathcal{E}')$, on obtient :
+    $$
+    \begin{aligned}
+        0^4 - 5(0)^3 + 6(0)^2 - 5(0) + 1 &= 1 \neq 0
+    \end{aligned}
+    $$
+    Donc $0$ n'est pas solution de $(\mathcal{E}')$.
+
+    \medskip
+    Soit $\alpha \in \mathbb{C}$ une solution de $(\mathcal{E}')$. D'après ce qui précède, $\alpha \neq 0$, donc $\dfrac{1}{\alpha}$ est bien défini et on a :
+    $$
+    \alpha^4 - 5\alpha^3 + 6\alpha^2 - 5\alpha + 1 = 0
+    $$
+    Substituons $\dfrac{1}{\alpha}$ dans le membre de gauche de $(\mathcal{E}')$ :
+    $$
+    \begin{aligned}
+        \left(\dfrac{1}{\alpha}\right)^4 - 5\left(\dfrac{1}{\alpha}\right)^3 + 6\left(\dfrac{1}{\alpha}\right)^2 - 5\left(\dfrac{1}{\alpha}\right) + 1 &= \dfrac{1}{\alpha^4} - \dfrac{5}{\alpha^3} + \dfrac{6}{\alpha^2} - \dfrac{5}{\alpha} + 1 \\
+        &= \dfrac{1 - 5\alpha + 6\alpha^2 - 5\alpha^3 + \alpha^4}{\alpha^4} \\
+        &= \dfrac{0}{\alpha^4} \\
+        &= 0
+    \end{aligned}
+    $$
+    Ainsi, si $\alpha$ est solution de $(\mathcal{E}')$, alors $\dfrac{1}{\alpha}$ est aussi solution de $(\mathcal{E}')$.
+
+    \item \textbf{Équivalence entre $(\mathcal{E}')$ et $(\mathcal{E''})$ :}
+    
+    Comme $z = 0$ n'est pas solution de $(\mathcal{E}')$, on peut diviser chaque membre de l'équation $(\mathcal{E}')$ par $z^2 \neq 0$ :
+    $$
+    \begin{aligned}
+        z^4 - 5z^3 + 6z^2 - 5z + 1 = 0 &\iff \dfrac{z^4 - 5z^3 + 6z^2 - 5z + 1}{z^2} = 0 \\
+        &\iff z^2 - 5z + 6 - \dfrac{5}{z} + \dfrac{1}{z^2} = 0 \\
+        &\iff \left(z^2 + \dfrac{1}{z^2}\right) - 5\left(z + \dfrac{1}{z}\right) + 6 = 0
+    \end{aligned}
+    $$
+    Or, on sait que :
+    $$
+    \begin{aligned}
+        \left(z + \dfrac{1}{z}\right)^2 &= z^2 + 2 \times z \times \dfrac{1}{z} + \dfrac{1}{z^2} \\
+        &= z^2 + 2 + \dfrac{1}{z^2}
+    \end{aligned}
+    $$
+    d'où $z^2 + \dfrac{1}{z^2} = \left(z + \dfrac{1}{z}\right)^2 - 2$. En remplaçant dans l'équation précédente, il vient :
+    $$
+    \begin{aligned}
+        (\mathcal{E}') &\iff \left(z + \dfrac{1}{z}\right)^2 - 2 - 5\left(z + \dfrac{1}{z}\right) + 6 = 0 \\
+        &\iff \left(z + \dfrac{1}{z}\right)^2 - 5\left(z + \dfrac{1}{z}\right) + 4 = 0
+    \end{aligned}
+    $$
+    L'équation $(\mathcal{E}')$ est donc bien équivalente à l'équation $(\mathcal{E''})$.
+
+    \item \textbf{Résolution de $(\mathcal{E''})$ :}
+    
+    En posant $Z = z + \dfrac{1}{z}$, l'équation $(\mathcal{E''})$ devient l'équation du second degré :
+    $$
+    Z^2 - 5Z + 4 = 0
+    $$
+    Calculons son discriminant $\Delta_Z$ :
+    $$
+    \begin{aligned}
+        \Delta_Z &= (-5)^2 - 4 \times 1 \times 4 \\
+        &= 25 - 16 \\
+        &= 9
+    \end{aligned}
+    $$
+    L'équation admet deux solutions réelles distinctes $Z_1$ et $Z_2$ :
+    $$
+    \begin{aligned}
+        Z_1 &= \dfrac{5 - 3}{2} = 1 \qquad \text{et} \qquad Z_2 = \dfrac{5 + 3}{2} = 4
+    \end{aligned}
+    $$
+    L'ensemble des solutions de $(\mathcal{E''})$ d'inconnue $Z$ est donc $\mathcal{S}_{\mathcal{E''}} = \{1 \,;\, 4\}$.
+
+    \item \textbf{Déduction des solutions de $(\mathcal{E}')$ dans $\mathbb{C}$ :}
+    
+    D'après les questions précédentes, pour tout $z \in \mathbb{C}^*$ :
+    $$
+    \begin{aligned}
+        z \text{ est solution de } (\mathcal{E}') &\iff z + \dfrac{1}{z} = 1 \quad \text{ou} \quad z + \dfrac{1}{z} = 4 \\
+        &\iff z^2 - z + 1 = 0 \quad \text{ou} \quad z^2 - 4z + 1 = 0
+    \end{aligned}
+    $$
+    \begin{itemize}
+        \item \textbf{Premier cas : $z^2 - z + 1 = 0$}
+        
+        Calculons le discriminant $\Delta_1$ :
+        $$
+        \begin{aligned}
+            \Delta_1 &= (-1)^2 - 4 \times 1 \times 1 \\
+            &= 1 - 4 \\
+            &= -3 \\
+            &= (i\sqrt{3})^2
+        \end{aligned}
+        $$
+        Les deux racines complexes conjuguées sont :
+        $$
+        \begin{aligned}
+            z_1 &= \dfrac{1 - i\sqrt{3}}{2} = \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2} \qquad \text{et} \qquad z_2 = \dfrac{1 + i\sqrt{3}}{2} = \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2}
+        \end{aligned}
+        $$
+
+        \item \textbf{Deuxième cas : $z^2 - 4z + 1 = 0$}
+        
+        Calculons le discriminant $\Delta_2$ :
+        $$
+        \begin{aligned}
+            \Delta_2 &= (-4)^2 - 4 \times 1 \times 1 \\
+            &= 16 - 4 \\
+            &= 12 \\
+            &= (2\sqrt{3})^2
+        \end{aligned}
+        $$
+        Les deux racines réelles distinctes sont :
+        $$
+        \begin{aligned}
+            z_3 &= \dfrac{4 - 2\sqrt{3}}{2} = 2 - \sqrt{3} \qquad \text{et} \qquad z_4 = \dfrac{4 + 2\sqrt{3}}{2} = 2 + \sqrt{3}
+        \end{aligned}
+        $$
+    \end{itemize}
+    L'ensemble des solutions dans $\mathbb{C}$ de l'équation $(\mathcal{E}')$ est donc :
+    $$
+    \mathcal{S}_{\mathcal{E}'} = \left\{ \dfrac{1}{2} - i\dfrac{\sqrt{3}}{2} \,;\, \dfrac{1}{2} + i\dfrac{\sqrt{3}}{2} \,;\, 2 - \sqrt{3} \,;\, 2 + \sqrt{3} \right\}
+    $$
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 \end{document}
