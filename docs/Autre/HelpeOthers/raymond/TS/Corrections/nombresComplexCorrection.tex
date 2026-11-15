@@ -2077,7 +2077,200 @@ D'où :
     \end{enumerate}
 \end{enumerate}
 
-\fbox{\textbf{\exo}}
+\fbox{\textbf{\exo}} [Complexe et géométrie]
+
+\begin{enumerate}
+    \item \textbf{Placement des points $A$, $B$ et $C$ dans le plan ($\mathcal{P}$) :}
+    
+    Dans le repère orthonormé $(O; \vec{u}, \vec{v})$ d'unité $1\text{ cm}$, on place les points de coordonnées :
+    
+    $A(2\,;\,5)$, $\quad B(5\,;\,-4) \quad$ et $\quad C(-1\,;\,-4)$.
+    
+    \textit{(Remarque : le tracé de la figure complète avec tous les points de l'exercice est donné en fin de correction.)}
+
+    \item \textbf{Calcul des distances $AB$, $AC$, $BC$ et nature du triangle $ABC$ :}
+    
+    \begin{itemize}
+        \item Distance $AB$ :
+        
+        $
+        \begin{aligned}
+            AB &= |z_B - z_A|\\
+            &= |(5 - 4i) - (2 + 5i)|\\
+            &= |3 - 9i|\\
+            &= \sqrt{3^2 + (-9)^2}\\
+            &= \sqrt{9 + 81}\\
+            &= \sqrt{90}\\
+            &= \mathbf{3\sqrt{10}\text{ cm}}
+        \end{aligned}
+        $
+        
+        \item Distance $AC$ :
+        
+        $
+        \begin{aligned}
+            AC &= |z_C - z_A|\\
+            &= |(-1 - 4i) - (2 + 5i)|\\
+            &= |-3 - 9i|\\
+            &= \sqrt{(-3)^2 + (-9)^2}\\
+            &= \sqrt{9 + 81}\\
+            &= \sqrt{90}\\
+            &= \mathbf{3\sqrt{10}\text{ cm}}
+        \end{aligned}
+        $
+        
+        \item Distance $BC$ :
+        
+        $
+        \begin{aligned}
+            BC &= |z_C - z_B|\\
+            &= |(-1 - 4i) - (5 - 4i)|\\
+            &= |-6|\\
+            &= \mathbf{6\text{ cm}}
+        \end{aligned}
+        $
+    \end{itemize}
+    
+    On constate que $AB = AC = 3\sqrt{10}$ (et $BC^2 = 36 \neq AB^2 + AC^2$). Le triangle $ABC$ est donc \textbf{isocèle en $A$}.
+
+    \item \textbf{Étude du point $D(2 - 4i)$ :}
+    
+    \begin{enumerate}
+        \item On place le point $D$ de coordonnées $(2\,;\,-4)$ dans le repère.
+        
+        \item Calcul de $\dfrac{z_A - z_D}{z_B - z_D}$ :
+        
+        $
+        \begin{aligned}
+            \frac{z_A - z_D}{z_B - z_D} &= \frac{(2 + 5i) - (2 - 4i)}{(5 - 4i) - (2 - 4i)}\\
+            &= \frac{9i}{3}\\
+            &= \mathbf{3i}
+        \end{aligned}
+        $
+        
+        On en déduit que :
+        
+        $
+        \begin{aligned}
+            \left(\overrightarrow{DB}\,;\,\overrightarrow{DA}\right) &\equiv \arg\left(\frac{z_A - z_D}{z_B - z_D}\right) \pmod{2\pi}\\
+            &\equiv \arg(3i) \pmod{2\pi}\\
+            &\equiv \frac{\pi}{2} \pmod{2\pi}
+        \end{aligned}
+        $
+        
+        De plus, $\left|\dfrac{z_A - z_D}{z_B - z_D}\right| = |3i| = 3 \neq 1$, donc $DA \neq DB$ ($DA = 9$ et $DB = 3$).
+        
+        Le triangle $ADB$ est donc \textbf{rectangle en $D$} (et non isocèle).
+    \end{enumerate}
+
+    \item \textbf{Centre $J$ et rayon $r$ du cercle $(\mathcal{C})$ circonscrit au triangle $ADB$ :}
+    
+    Le triangle $ADB$ étant rectangle en $D$, son cercle circonscrit $(\mathcal{C})$ admet pour diamètre son hypoténuse $[AB]$.
+    
+    \begin{itemize}
+        \item Le centre $J$ de $(\mathcal{C})$ est donc le milieu du segment $[AB]$ :
+        
+        $
+        \begin{aligned}
+            z_J &= \frac{z_A + z_B}{2}\\
+            &= \frac{(2 + 5i) + (5 - 4i)}{2}\\
+            &= \mathbf{\frac{7}{2} + \frac{1}{2}i}
+        \end{aligned}
+        $
+        
+        \item Le rayon $r$ de $(\mathcal{C})$ est la moitié de la longueur $AB$ :
+        
+        $
+        \begin{aligned}
+            r &= \frac{AB}{2}\\
+            &= \mathbf{\frac{3\sqrt{10}}{2}\text{ cm}}
+        \end{aligned}
+        $
+    \end{itemize}
+
+    \item \textbf{Étude du point $E$, symétrique de $D$ par rapport à $J$ :}
+    
+    \begin{enumerate}
+        \item Dire que $E$ est le symétrique de $D$ par rapport à $J$ signifie que $J$ est le milieu du segment $[DE]$, soit $z_J = \dfrac{z_D + z_E}{2}$ :
+        
+        $
+        \begin{aligned}
+            z_E &= 2z_J - z_D\\
+            &= 2\left(\frac{7}{2} + \frac{1}{2}i\right) - (2 - 4i)\\
+            &= (7 + i) - 2 + 4i\\
+            &= \mathbf{5 + 5i}
+        \end{aligned}
+        $
+        
+        Pour montrer que $E$ appartient à $(\mathcal{C})$, calculons la distance $JE$ :
+        
+        $
+        \begin{aligned}
+            JE &= |z_E - z_J|\\
+            &= \left|(5 + 5i) - \left(\frac{7}{2} + \frac{1}{2}i\right)\right|\\
+            &= \left|\frac{3}{2} + \frac{9}{2}i\right|\\
+            &= \sqrt{\left(\frac{3}{2}\right)^2 + \left(\frac{9}{2}\right)^2}\\
+            &= \sqrt{\frac{9}{4} + \frac{81}{4}}\\
+            &= \sqrt{\frac{90}{4}}\\
+            &= \frac{3\sqrt{10}}{2} = r
+        \end{aligned}
+        $
+        
+        Comme $JE = r$, le point $E$ appartient bien au cercle $(\mathcal{C})$.
+
+        \item \textbf{Nature du quadrilatère $AEBD$ :}
+        
+        \begin{itemize}
+            \item $J$ est le milieu de la diagonale $[AB]$ (question 4) et $J$ est également le milieu de la diagonale $[DE]$ (car $E$ est le symétrique de $D$ par rapport à $J$). Les diagonales $[AB]$ et $[DE]$ se coupent donc en leur milieu : $AEBD$ est un \textbf{parallélogramme}.
+            \item De plus, d'après la question 3.b), le triangle $ADB$ est rectangle en $D$, donc l'angle $\widehat{ADB}$ est droit.
+        \end{itemize}
+        
+        Un parallélogramme ayant un angle droit est un rectangle. (On vérifie que les diagonales ne sont pas perpendiculaires car $DA = 9 \neq DB = 3$, ce n'est donc pas un carré).
+        
+        Le quadrilatère $AEBD$ est donc un \textbf{rectangle}.
+    \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+    % Grille et axes
+    \draw[very thin, color=gray!30] (-2.5,-5.5) grid (8.5,6.5);
+    \draw[->, thick] (-2.5,0) -- (8.5,0) node[right] {$x$};
+    \draw[->, thick] (0,-5.5) -- (0,6.5) node[above] {$y$};
+    \draw[->, very thick] (0,0) -- (1,0) node[midway, below] {$\vec{u}$};
+    \draw[->, very thick] (0,0) -- (0,1) node[midway, left] {$\vec{v}$};
+    \node[below left] at (0,0) {$O$};
+
+    % Coordonnées des points
+    \coordinate (A) at (2,5);
+    \coordinate (B) at (5,-4);
+    \coordinate (C) at (-1,-4);
+    \coordinate (D) at (2,-4);
+    \coordinate (J) at (3.5,0.5);
+    \coordinate (E) at (5,5);
+
+    % Cercle circonscrit (C)
+    \draw[blue, thick] (J) circle ({1.5*sqrt(10)});
+    \node[blue] at (7.8, 3.2) {$(\mathcal{C})$};
+
+    % Triangle ABC et rectangle AEBD
+    \draw[thick, dashed, green!50!black] (A) -- (C) -- (B);
+    \draw[thick, red] (A) -- (E) -- (B) -- (D) -- cycle;
+    \draw[thin, dotted] (A) -- (B);
+    \draw[thin, dotted] (D) -- (E);
+
+    % Angle droit en D
+    \draw (2,-3.5) -- (2.5,-3.5) -- (2.5,-4);
+
+    % Points
+    \fill (A) circle (2.5pt) node[above left] {$A$};
+    \fill (B) circle (2.5pt) node[below right] {$B$};
+    \fill (C) circle (2.5pt) node[below left] {$C$};
+    \fill (D) circle (2.5pt) node[below] {$D$};
+    \fill (J) circle (2.5pt) node[right] {$J$};
+    \fill (E) circle (2.5pt) node[above right] {$E$};
+\end{tikzpicture}
+\end{center}
 
 \fbox{\textbf{\exo}}
 
