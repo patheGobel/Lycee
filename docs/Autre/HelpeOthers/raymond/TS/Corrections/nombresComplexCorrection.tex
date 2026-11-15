@@ -3597,6 +3597,179 @@ D'où :
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item \textbf{Existence et détermination de la solution imaginaire pure de $(\mathcal{E})$ :}
+        
+        Soit $z_0 = iy$ (avec $y \in \mathbb{R}$) une éventuelle solution imaginaire pure de $(\mathcal{E})$. En remplaçant $z$ par $iy$ dans $(\mathcal{E})$, on obtient :
+        {\scriptsize
+        $$
+        \begin{aligned}
+            (iy)^3 + (1 - 8i)(iy)^2 - (23 + 4i)(iy) - 3 + 24i = 0 &\Leftrightarrow -iy^3 - y^2(1 - 8i) - 23iy - 4i^2 y - 3 + 24i = 0 \\
+            &\Leftrightarrow -iy^3 - y^2 + 8iy^2 - 23iy + 4y - 3 + 24i = 0 \\
+            &\Leftrightarrow (-y^2 + 4y - 3) + i(-y^3 + 8y^2 - 23y + 24) = 0
+        \end{aligned}
+        $$
+        }
+        Comme $y \in \mathbb{R}$, les expressions $-y^2 + 4y - 3$ et $-y^3 + 8y^2 - 23y + 24$ sont réelles. Un nombre complexe est nul si et seulement si sa partie réelle et sa partie imaginaire sont nulles :
+        $$
+        \begin{aligned}
+            \left\{
+            \begin{array}{l}
+                -y^2 + 4y - 3 = 0 \quad (1) \\
+                -y^3 + 8y^2 - 23y + 24 = 0 \quad (2)
+            \end{array}
+            \right.
+        \end{aligned}
+        $$
+        Résolvons l'équation du second degré $(1) : -y^2 + 4y - 3 = 0$, soit $y^2 - 4y + 3 = 0$. Calculons son discriminant $\Delta$ :
+        $$
+        \begin{aligned}
+            \Delta &= (-4)^2 - 4 \times 1 \times 3 \\
+            &= 16 - 12 \\
+            &= 4
+        \end{aligned}
+        $$
+        Les solutions de $(1)$ sont donc :
+        $$
+        \begin{aligned}
+            y_1 &= \dfrac{4 - 2}{2} = 1 \qquad \text{et} \qquad y_2 = \dfrac{4 + 2}{2} = 3
+        \end{aligned}
+        $$
+        Vérifions laquelle de ces deux valeurs vérifie l'équation $(2)$ :
+        $$
+        \begin{aligned}
+            \text{Pour } y = 1 &: \quad -1^3 + 8(1)^2 - 23(1) + 24 = -1 + 8 - 23 + 24 = 8 \neq 0 \\
+            \text{Pour } y = 3 &: \quad -3^3 + 8(3)^2 - 23(3) + 24 = -27 + 72 - 69 + 24 = 0
+        \end{aligned}
+        $$
+        Ainsi, $(\mathcal{E})$ admet une unique solution imaginaire pure qui est $z_0 = 3i$.
+
+        \item \textbf{Vérification que $1 + 2i$ et $-2 + 3i$ sont solutions de $(\mathcal{E})$ :}
+        
+        Pour $z_1 = 1 + 2i$, calculons :
+        $$
+        \begin{aligned}
+            (1 + 2i)^2 &= 1 + 4i + 4i^2 = -3 + 4i \\
+            (1 + 2i)^3 &= (-3 + 4i)(1 + 2i) = -3 - 6i + 4i + 8i^2 = -11 - 2i
+        \end{aligned}
+        $$
+        Substituons dans le membre de gauche de $(\mathcal{E})$ :
+        {\scriptsize
+        $$
+        \begin{aligned}
+            z_1^3 + (1 - 8i)z_1^2 - (23 + 4i)z_1 - 3 + 24i &= (-11 - 2i) + (1 - 8i)(-3 + 4i) - (23 + 4i)(1 + 2i) - 3 + 24i \\
+            &= (-11 - 2i) + (-3 + 4i + 24i - 32i^2) - (23 + 46i + 4i + 8i^2) - 3 + 24i \\
+            &= (-11 - 2i) + (29 + 28i) - (15 + 50i) - 3 + 24i \\
+            &= (-11 + 29 - 15 - 3) + (-2 + 28 - 50 + 24)i \\
+            &= 0 + 0i \\
+            &= 0
+        \end{aligned}
+        $$
+        }
+        Donc $1 + 2i$ est bien solution de $(\mathcal{E})$.
+
+        \medskip
+        Pour $z_2 = -2 + 3i$, calculons :
+        $$
+        \begin{aligned}
+            (-2 + 3i)^2 &= 4 - 12i + 9i^2 = -5 - 12i \\
+            (-2 + 3i)^3 &= (-5 - 12i)(-2 + 3i) = 10 - 15i + 24i - 36i^2 = 46 + 9i
+        \end{aligned}
+        $$
+        Substituons dans le membre de gauche de $(\mathcal{E})$ :
+        {\scriptsize
+        $$
+        \begin{aligned}
+            z_2^3 + (1 - 8i)z_2^2 - (23 + 4i)z_2 - 3 + 24i &= (46 + 9i) + (1 - 8i)(-5 - 12i) - (23 + 4i)(-2 + 3i) - 3 + 24i \\
+            &= (46 + 9i) + (-5 - 12i + 40i + 96i^2) - (-46 + 69i - 8i + 12i^2) - 3 + 24i \\
+            &= (46 + 9i) + (-101 + 28i) - (-58 + 61i) - 3 + 24i \\
+            &= (46 - 101 + 58 - 3) + (9 + 28 - 61 + 24)i \\
+            &= 0 + 0i \\
+            &= 0
+        \end{aligned}
+        $$
+        }
+        Donc $-2 + 3i$ est également solution de $(\mathcal{E})$.
+
+        \item \textbf{Ensemble des solutions de $(\mathcal{E})$ :}
+        
+        L'équation $(\mathcal{E})$ est une équation polynomiale de degré $3$ dans $\mathbb{C}$ ; elle admet donc au plus $3$ solutions distinctes. Or, nous avons exhibé trois solutions deux à deux distinctes : $3i$, $1 + 2i$ et $-2 + 3i$.
+        
+        L'ensemble des solutions de $(\mathcal{E})$ dans $\mathbb{C}$ est donc :
+        $$
+        \mathcal{S} = \left\{ 3i \,;\, 1 + 2i \,;\, -2 + 3i \right\}
+        $$
+    \end{enumerate}
+
+    \item \textbf{Étude du barycentre $G$ et des vecteurs $\overrightarrow{GA}$, $\overrightarrow{GB}$ et $\overrightarrow{GC}$ :}
+    
+    Déterminons l'affixe $z_G$ du barycentre $G$ de $\{(A, 2) \,;\, (B, -2) \,;\, (C, 1)\}$ (la somme des coefficients vaut $2 - 2 + 1 = 1 \neq 0$) :
+    $$
+    \begin{aligned}
+        z_G &= \dfrac{2z_A - 2z_B + z_C}{2 - 2 + 1} \\
+        &= 2(1 + 2i) - 2(3i) + (-2 + 3i) \\
+        &= 2 + 4i - 6i - 2 + 3i \\
+        &= i
+    \end{aligned}
+    $$
+    Calculons maintenant les affixes respectives des vecteurs $\overrightarrow{GA}$, $\overrightarrow{GB}$ et $\overrightarrow{GC}$ et écrivons-les sous forme exponentielle :
+    \begin{itemize}
+        \item Pour $\overrightarrow{GA}$ :
+        $$
+        \begin{aligned}
+            z_{\overrightarrow{GA}} &= z_A - z_G \\
+            &= (1 + 2i) - i \\
+            &= 1 + i \\
+            &= \sqrt{2}\left( \dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2} \right) \\
+            &= \sqrt{2}\left( \cos\dfrac{\pi}{4} + i\sin\dfrac{\pi}{4} \right) \\
+            &= \sqrt{2}e^{i\frac{\pi}{4}}
+        \end{aligned}
+        $$
+
+        \item Pour $\overrightarrow{GB}$ :
+        $$
+        \begin{aligned}
+            z_{\overrightarrow{GB}} &= z_B - z_G \\
+            &= 3i - i \\
+            &= 2i
+        \end{aligned}
+        $$
+
+        \item Pour $\overrightarrow{GC}$ :
+        $$
+        \begin{aligned}
+            z_{\overrightarrow{GC}} &= z_C - z_G \\
+            &= (-2 + 3i) - i \\
+            &= -2 + 2i \\
+            &= 2\sqrt{2}\left( -\dfrac{\sqrt{2}}{2} + i\dfrac{\sqrt{2}}{2} \right) \\
+            &= 2\sqrt{2}\left( \cos\dfrac{3\pi}{4} + i\sin\dfrac{3\pi}{4} \right) \\
+            &= 2\sqrt{2}e^{i\frac{3\pi}{4}}
+        \end{aligned}
+        $$
+    \end{itemize}
+
+    \medskip
+    \textbf{Progression géométrique :}
+    
+    Écrivons également $z_{\overrightarrow{GB}} = 2i$ sous forme exponentielle : $2i = 2e^{i\frac{\pi}{2}}$. Calculons les quotients successifs des affixes :
+    $$
+    \begin{aligned}
+        \dfrac{z_{\overrightarrow{GB}}}{z_{\overrightarrow{GA}}} &= \dfrac{2e^{i\frac{\pi}{2}}}{\sqrt{2}e^{i\frac{\pi}{4}}} \\
+        &= \dfrac{2}{\sqrt{2}} e^{i\left(\frac{\pi}{2} - \frac{\pi}{4}\right)} \\
+        &= \sqrt{2}e^{i\frac{\pi}{4}}
+    \end{aligned}
+    \qquad \text{et} \qquad
+    \begin{aligned}
+        \dfrac{z_{\overrightarrow{GC}}}{z_{\overrightarrow{GB}}} &= \dfrac{2\sqrt{2}e^{i\frac{3\pi}{4}}}{2e^{i\frac{\pi}{2}}} \\
+        &= \dfrac{2\sqrt{2}}{2} e^{i\left(\frac{3\pi}{4} - \frac{\pi}{2}\right)} \\
+        &= \sqrt{2}e^{i\frac{\pi}{4}}
+    \end{aligned}
+    $$
+    Puisque $\dfrac{z_{\overrightarrow{GB}}}{z_{\overrightarrow{GA}}} = \dfrac{z_{\overrightarrow{GC}}}{z_{\overrightarrow{GB}}} = \sqrt{2}e^{i\frac{\pi}{4}}$, les affixes des vecteurs $\overrightarrow{GA}$, $\overrightarrow{GB}$ et $\overrightarrow{GC}$ sont bien, dans cet ordre, en **progression géométrique** de raison $q = \sqrt{2}e^{i\frac{\pi}{4}} = 1 + i$.
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
