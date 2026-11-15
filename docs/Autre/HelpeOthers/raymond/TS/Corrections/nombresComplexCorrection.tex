@@ -1631,8 +1631,103 @@ On utilise les propriétés suivantes : $\overline{z + z'} = \overline{z} + \ove
     D'où $\mathcal{S} = \left\{\mathbf{2e^{i\frac{\pi}{4}} \,;\, 2e^{i\frac{11\pi}{12}} \,;\, 2e^{-i\frac{5\pi}{12}}}\right\}$.
 \end{enumerate}
 
-\fbox{\textbf{\exo}} [Racines $n$-ièmes]
+\fbox{\textbf{\exo}}[Linéarisation]
 
+\textbf{Rappels (Formules d'Euler) :} Pour tout réel $\theta$ :
+\[
+    \cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2} \quad \text{et} \quad \sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}
+\]
+
+\begin{enumerate}
+    \item \textbf{Linéarisation des polynômes trigonométriques :}
+    
+    \begin{enumerate}
+        \item $h(x) = \cos x \sin^2 x$
+        
+        $
+        \begin{aligned}
+            h(x) &= \left(\frac{e^{ix} + e^{-ix}}{2}\right) \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^2\\
+            &= \left(\frac{e^{ix} + e^{-ix}}{2}\right) \left(\frac{e^{i2x} - 2 + e^{-i2x}}{-4}\right)\\
+            &= -\frac{1}{8} \left(e^{i3x} - 2e^{ix} + e^{-ix} + e^{ix} - 2e^{-ix} + e^{-i3x}\right)\\
+            &= -\frac{1}{8} \left[\left(e^{i3x} + e^{-i3x}\right) - \left(e^{ix} + e^{-ix}\right)\right]\\
+            &= -\frac{1}{8} (2\cos 3x - 2\cos x)\\
+            &= \mathbf{-\frac{1}{4}\cos 3x + \frac{1}{4}\cos x}
+        \end{aligned}
+        $
+
+        \item $k(x) = \cos 2x \sin 3x$
+        
+        $
+        \begin{aligned}
+            k(x) &= \left(\frac{e^{i2x} + e^{-i2x}}{2}\right) \left(\frac{e^{i3x} - e^{-i3x}}{2i}\right)\\
+            &= \frac{1}{4i} \left(e^{i5x} - e^{-ix} + e^{ix} - e^{-i5x}\right)\\
+            &= \frac{1}{2} \left(\frac{e^{i5x} - e^{-i5x}}{2i} + \frac{e^{ix} - e^{-ix}}{2i}\right)\\
+            &= \mathbf{\frac{1}{2}\sin 5x + \frac{1}{2}\sin x}
+        \end{aligned}
+        $
+
+        \item $m(x) = \sin^3 x$
+        
+        $
+        \begin{aligned}
+            m(x) &= \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^3\\
+            &= \frac{1}{-8i} \left(e^{i3x} - 3e^{i2x}e^{-ix} + 3e^{ix}e^{-i2x} - e^{-i3x}\right)\\
+            &= -\frac{1}{4} \left(\frac{e^{i3x} - e^{-i3x}}{2i} - 3\frac{e^{ix} - e^{-ix}}{2i}\right)\\
+            &= -\frac{1}{4} (\sin 3x - 3\sin x)\\
+            &= \mathbf{-\frac{1}{4}\sin 3x + \frac{3}{4}\sin x}
+        \end{aligned}
+        $
+    \end{enumerate}
+
+    \item 
+    \begin{enumerate}
+        \item \textbf{Linéarisation de $f(x) = \sin^4 x + \cos^4 x$ :}
+        
+        Calculons d'abord $\sin^4 x$ et $\cos^4 x$ séparément :
+        
+        $
+        \begin{aligned}
+            \sin^4 x &= \left(\frac{e^{ix} - e^{-ix}}{2i}\right)^4\\
+            &= \frac{1}{16} \left(e^{i4x} - 4e^{i2x} + 6 - 4e^{-i2x} + e^{-i4x}\right)\\
+            &= \frac{1}{16} \left[\left(e^{i4x} + e^{-i4x}\right) - 4\left(e^{i2x} + e^{-i2x}\right) + 6\right]\\
+            &= \frac{1}{16} (2\cos 4x - 8\cos 2x + 6)\\
+            &= \frac{1}{8}\cos 4x - \frac{1}{2}\cos 2x + \frac{3}{8}
+        \end{aligned}
+        $
+        
+        $
+        \begin{aligned}
+            \cos^4 x &= \left(\frac{e^{ix} + e^{-ix}}{2}\right)^4\\
+            &= \frac{1}{16} \left(e^{i4x} + 4e^{i2x} + 6 + 4e^{-i2x} + e^{-i4x}\right)\\
+            &= \frac{1}{16} \left[\left(e^{i4x} + e^{-i4x}\right) + 4\left(e^{i2x} + e^{-i2x}\right) + 6\right]\\
+            &= \frac{1}{16} (2\cos 4x + 8\cos 2x + 6)\\
+            &= \frac{1}{8}\cos 4x + \frac{1}{2}\cos 2x + \frac{3}{8}
+        \end{aligned}
+        $
+        
+        En additionnant les deux expressions, on obtient :
+        
+        $
+        \begin{aligned}
+            f(x) &= \sin^4 x + \cos^4 x\\
+            &= \left(\frac{1}{8}\cos 4x - \frac{1}{2}\cos 2x + \frac{3}{8}\right) + \left(\frac{1}{8}\cos 4x + \frac{1}{2}\cos 2x + \frac{3}{8}\right)\\
+            &= \frac{2}{8}\cos 4x + \frac{6}{8}\\
+            &= \mathbf{\frac{1}{4}\cos 4x + \frac{3}{4}}
+        \end{aligned}
+        $
+
+        \item \textbf{Déduction d'une primitive $F$ de $f$ sur $\mathbb{R}$ :}
+        
+        La fonction $f$ est continue sur $\mathbb{R}$ (comme somme et composée de fonctions continues). Une primitive $F$ de $f$ sur $\mathbb{R}$ est donnée par :
+        
+        $
+        \begin{aligned}
+            F(x) &= \frac{1}{4} \times \frac{\sin 4x}{4} + \frac{3}{4}x\\
+            &= \mathbf{\frac{1}{16}\sin 4x + \frac{3}{4}x}
+        \end{aligned}
+        $
+    \end{enumerate}
+\end{enumerate}
 \fbox{\textbf{\exo}}[Linéarisation]
 
 \fbox{\textbf{\exo}} [Lieux géométriques]
