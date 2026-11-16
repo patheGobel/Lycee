@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  16 NOV 2026 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  16 NOV 2026 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1120,8 +1120,8 @@ Package rerunfilecheck Info: File `polynome.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30236 strings out of 467533
- 607680 string characters out of 5422138
+ 30242 strings out of 467533
+ 607726 string characters out of 5422138
  1078799 words of memory out of 5000000
  58509 multiletter control sequences out of 15000+600000
  657005 words of font info for 68 fonts, out of 8000000 for 9000
@@ -1134,10 +1134,10 @@ lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/zapfding/uzdr.pfb>
-Output written on build/polynome.pdf (3 pages, 164700 bytes).
+Output written on build/polynome.pdf (3 pages, 165528 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 96 named destinations out of 1000 (max. 500000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 102 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
