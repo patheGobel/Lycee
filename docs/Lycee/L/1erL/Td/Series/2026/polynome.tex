@@ -64,7 +64,7 @@ middle color = tcbcolback!80!black]
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footruleskip}{10pt}
 \fancyfoot[R]{
-\color{blue}\ding{45}\ \textbf{2025}
+\color{blue}\ding{45}\ \textbf{2026}
 }
 \fancyfoot[L]{
 \color{blue}\ding{45}\ \textbf{Prof:M. BA}
@@ -84,8 +84,8 @@ middle color = tcbcolback!80!black]
 \begin{tikzpicture}[overlay,remember picture]
     \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
                 \hline
-                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026}                                              \\ \hline
-                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{L} & \textbf{Date: 13/01/2026} & \textbf{} \\ \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2026/2027}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1}\textbf{L} & \textbf{Date: 16/11/2026} & \textbf{} \\ \hline
                 \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
                                                                   \textbf{{\Large\sffamily Td Polynomes}}
                                                               \end{center}}}                                                                                                        \\ \hline
@@ -128,7 +128,11 @@ Soit $P$ le polynôme défini par $P(x) = 3x^3 - x^2 - 8x - 4$.
     \item Déterminer le polynôme $Q$ tel que $P(x) = (x - 2)Q(x)$.
     \item Factoriser $Q(x)$ puis en déduire une factorisation complète de $P(x)$.
     \item Résoudre dans $\mathbb{R}$ :
-        a) $P(x) = 0$ \hfill b) $P(x + 2) = 0$ \hfill c) $P(x) < 0$
+        \begin{enumerate}
+        \item $P(x) = 0$ 
+        \item $P(x + 2) = 0$ 
+        \item $P(x) < 0$
+        \end{enumerate}
 \end{enumerate}
 
 \fbox{\textbf{\exo}}
@@ -226,7 +230,8 @@ Soit le polynôme $f(x) = x^3 + ax^2 + bx + 6$ avec $a$ et $b$ sont deux nombres
 \end{enumerate}
 
 \fbox{\textbf{\exo}} On considère le polynôme $P(x) = x^3 - 2x^2 - x + 2$
-
+ \begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes  
 \begin{enumerate}
     \item Montrer que 1 est racine de $P(x)$. 
     
@@ -241,16 +246,17 @@ Soit le polynôme $f(x) = x^3 + ax^2 + bx + 6$ avec $a$ et $b$ sont deux nombres
     \end{enumerate}
     \item Résoudre l'inéquation $\dfrac{x^3 - 2x^2 - x + 2}{x^2 - x - 6} > 0$.
 \end{enumerate}
+ \end{multicols}
 
-
+  \begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes 
 \fbox{\textbf{\exo}}
-
 On donne $P(x) = 2x^4 - 7x^3 - 2x^2 + 13x + 6$
 
 \begin{enumerate}
     \item Calculer $P(0)$ et $P(-1)$ puis conclure. 
     \item Déterminer le polynôme $Q(x)$ tel que $P(x) = (x + 1)Q(x)$ 
-    \item Dans la suite de l'exercice, on suppose que $Q(x) = 2x^3 - 9x^2 + 7x + 6$
+    \item Dans la suite de l'exercice, on suppose que $Q(x) = 2x^3 - 9x^2 + 7x + 6$    
     \begin{enumerate}
         \item Sachant que 2 est une racine de $Q(x)$, factoriser complètement $Q(x)$. 
         \item En déduire une factorisation de $P(x)$.
@@ -264,20 +270,22 @@ On donne $P(x) = 2x^4 - 7x^3 - 2x^2 + 13x + 6$
         \item Simplifier $f(x)$ puis résoudre dans $\mathbb{R}$ l'inéquation $f(x) > 0$.
     \end{enumerate}
 \end{enumerate}
-
+\end{multicols}
 \fbox{\textbf{\exo}}
 
 On considère le polynôme $P$ défini par : $P(x) = x^3 + 3x^2 - 4$.
-
+ \begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes  
 \begin{enumerate}
     \item Montrer que 1 est une racine de $P$.
     \item Donner une factorisation de $P(x)$.
-    \item Résoudre dans $\mathbb{R}$ :
+    \item Résoudre dans $\mathbb{R}$ : 
     \begin{enumerate}
         \item l'équation $P(x) = 0$.
         \item l'inéquation $P(x) \geq 0$.
     \end{enumerate}
 \end{enumerate}
+\end{multicols}
 
 \fbox{\textbf{\exo}}
 
@@ -286,11 +294,14 @@ On considère le polynôme $P$ défini par : $P(x) = -x^3 + 6x^2 - 9x + k$ où $
 \begin{enumerate}
     \item Déterminer la valeur du réel $k$ pour que 4 soit une racine de $P$.
     \item Pour la valeur de $k$ trouvée en 1) :
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
     \begin{enumerate}
         \item Factoriser $P$.
         \item Résoudre dans $\mathbb{R}$ l'équation $P(x) = 0$.
         \item Résoudre dans $\mathbb{R}$ l'inéquation $P(x) < 0$.
     \end{enumerate}
+\end{multicols}
 \end{enumerate}
 
 \end{document}
