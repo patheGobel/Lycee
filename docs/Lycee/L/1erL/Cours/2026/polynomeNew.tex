@@ -1,0 +1,462 @@
+\documentclass[12pt,a4paper]{article}
+
+% -----------------------------------------------------
+% PACKAGES
+% -----------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tikz}
+\usetikzlibrary{patterns,arrows,shapes.geometric,fit}
+
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{times}
+\usepackage{pifont}
+
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+\usepackage{varwidth}
+\usepackage{float}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+
+\usepackage{tkz-tab}
+\usepackage{systeme}
+\usepackage{verbatim}
+\usepackage{color,soul}
+
+% -----------------------------------------------------
+% TEXTE EN ARRIÈRE-PLAN (1 seule fois)
+% -----------------------------------------------------
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+
+% -----------------------------------------------------
+% COMMANDES PERSONNALISÉES
+% -----------------------------------------------------
+
+% Items
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+\everymath{\displaystyle}
+
+% EXEMPLES
+\newcounter{exemple}
+\newcommand{\exemple}{%
+  \refstepcounter{exemple}%
+  \textbf{\textcolor{green!60!black}{Exemple \theexemple :}} \ignorespaces
+}
+
+% EXERCICES D’APPLICATION
+\definecolor{myorange}{rgb}{1.0, 0.55, 0.0}
+
+\newcounter{exerciceapp}
+\newcommand{\exerciceapp}{%
+  \refstepcounter{exerciceapp}%
+  \textbf{\textcolor{myorange}{Exercice d'application \theexerciceapp :}} \ignorespaces
+}
+
+% CORRECTIONS
+\newcounter{correction}
+\newcommand{\correction}{%
+  \refstepcounter{correction}%
+  \textbf{\textcolor{myorange}{Correction \thecorrection :}} \ignorespaces
+}
+
+% Soulignement coloré
+\newcommand{\myul}[2][black]{\setulcolor{#1}\ul{#2}\setulcolor{black}}
+
+% Tabulation
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+% -----------------------------------------------------
+% DOCUMENT
+% -----------------------------------------------------
+\begin{document}
+
+\begin{center}
+    \Large\textbf{\underline{Polynômes}}\\[-0.1cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 1erL}\\[-0.1cm]
+    \textbf{Année scolaire : 2025 -- 2026}
+\end{center}
+
+\section*{Introduction aux Polynômes}
+Les polynômes font partie des expressions algébriques les plus fondamentales en mathématiques. Utilisés depuis l'Antiquité pour résoudre des problèmes géométriques et économiques (calculs d'aires, de volumes, optimisation de coûts), ils permettent aujourd'hui de modéliser des trajectoires, d'approximer des fonctions complexes et de résoudre des équations de degré supérieur ou égal à 2.
+
+\section*{\underline{\textbf{\textcolor{red}{I. Généralités }}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Monômes}}}} 
+\underline{\textbf{\textcolor{red}{Définition et vocabulaire}}} \\
+On appelle \textbf{monôme} d'indéterminée (ou de variable) $x$ toute expression algébrique de la forme :
+$$ax^{n}$$
+où $a$ est un nombre réel non nul ($a \in \mathbb{R}^*$) appelé \textbf{coefficient} du monôme, et $n$ est un entier naturel ($n \in \mathbb{N}$) appelé \textbf{degré} du monôme.
+
+\medskip
+\underline{\exemple}
+\begin{itemize}[label=\ding{228}]
+    \item $5x^3$ est un monôme de coefficient $5$ et de degré $3$.
+    \item $-\frac{2}{3}x^4$ est un monôme de coefficient $-\frac{2}{3}$ et de degré $4$.
+    \item $7x = 7x^1$ est un monôme de coefficient $7$ et de degré $1$.
+    \item $-4 = -4x^0$ est un monôme constant de coefficient $-4$ et de degré $0$.
+\end{itemize}
+
+\medskip
+\underline{\textbf{\textcolor{red}{Remarque}}}
+\begin{itemize}[label=\ding{111}]
+    \item Les expressions $\frac{3}{x} = 3x^{-1}$ ou $2\sqrt{x} = 2x^{\frac{1}{2}}$ ne sont \textbf{pas} des monômes car les exposants ($-1$ et $\frac{1}{2}$) ne sont pas des entiers naturels.
+    \item Deux monômes sont dits \textbf{semblables} lorsqu'ils ont le même degré (par exemple $3x^2$ et $-5x^2$). On peut alors les additionner ou les soustraire.
+\end{itemize}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Polynômes}}}} 
+\underline{\textbf{\textcolor{red}{Définition}}} \\
+On appelle \textbf{polynôme} toute somme algébrique d'un nombre fini de monômes. Un polynôme non nul $P(x)$ s'écrit de manière réduite et ordonnée sous la forme :
+$$P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$$
+où $a_0, a_1, \dots, a_n$ sont des nombres réels appelés coefficients du polynôme, avec $a_n \neq 0$.
+\begin{itemize}[label=\ding{228}]
+    \item L'entier naturel $n$ (le plus grand exposant de $x$ dont le coefficient est non nul) est appelé le \textbf{degré} du polynôme $P$, noté $\deg(P) = n$.
+    \item Le terme $a_n x^n$ est appelé le \textbf{monôme dominant} et $a_0$ le \textbf{terme constant}.
+\end{itemize}
+
+\medskip
+\underline{\exemple}
+\begin{itemize}[label=\ding{228}]
+    \item $P(x) = 4x^3 - 2x^2 + x - 7$ est un polynôme de degré $3$ ($\deg(P) = 3$). Ses coefficients sont $a_3 = 4$, $a_2 = -2$, $a_1 = 1$ et $a_0 = -7$.
+    \item $Q(x) = (x^2 + 1)(x^2 - 1) - x^4 + 3x = x^4 - 1 - x^4 + 3x = 3x - 1$. Après réduction, $Q$ est un polynôme de degré $1$.
+\end{itemize}
+
+\medskip
+\underline{\textbf{\textcolor{red}{Remarque}}}
+\begin{itemize}[label=\ding{111}]
+    \item Si tous les coefficients d'un polynôme sont nuls ($P(x) = 0$), on l'appelle le \textbf{polynôme nul}. Par convention, le polynôme nul n'a pas de degré.
+    \item \textbf{Égalité de deux polynômes :} Deux polynômes non nuls sont égaux si et seulement s'ils ont le même degré et les mêmes coefficients pour les monômes de même degré.
+\end{itemize}
+
+\section*{\underline{\textbf{\textcolor{red}{II. Trinômes du second degré }}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Définition et exemple}}}} 
+On appelle \textbf{trinôme du second degré} (ou polynôme du second degré) tout polynôme $P(x)$ de degré $2$, c'est-à-dire pouvant s'écrire sous la forme :
+$$P(x) = ax^2 + bx + c \quad \text{avec } a \neq 0, \; b \in \mathbb{R} \text{ et } c \in \mathbb{R}.$$
+\textbf{Exemple :} $P(x) = 2x^2 - 5x + 3$ est un trinôme du second degré avec $a = 2$, $b = -5$ et $c = 3$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Factorisation de $ax^{2}+bx+c$}}}} 
+Pour factoriser un trinôme $P(x) = ax^2 + bx + c$ ($a \neq 0$), on calcule son \textbf{discriminant} :
+$$\Delta = b^2 - 4ac$$
+
+Trois cas se présentent selon le signe de $\Delta$ :
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Signe de $\Delta$} & \textbf{Racines de $P(x)$} & \textbf{Forme factorisée de $P(x)$} \\
+\hline
+$\Delta > 0$ & Deux racines distinctes : $x_1 = \frac{-b - \sqrt{\Delta}}{2a}$ et $x_2 = \frac{-b + \sqrt{\Delta}}{2a}$ & $P(x) = a(x - x_1)(x - x_2)$ \\
+\hline
+$\Delta = 0$ & Une racine double : $x_0 = \frac{-b}{2a}$ & $P(x) = a(x - x_0)^2$ \\
+\hline
+$\Delta < 0$ & Aucune racine réelle & $P(x)$ n'est pas factorisable dans $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Signe de $ax^{2}+bx+c$}}}}
+Le signe du trinôme $P(x) = ax^2 + bx + c$ dépend du signe de $a$ et du signe de $\Delta$ :
+
+\begin{itemize}[label=\ding{228}]
+    \item \textbf{Si $\Delta > 0$} (en supposant $x_1 < x_2$) : $P(x)$ est du \textbf{signe de $a$ à l'extérieur des racines} et du \textbf{signe de $(-a)$ à l'intérieur des racines}.
+    \begin{center}
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=2.5,espcl=2.5]{$x$/0.8, $ax^2+bx+c$/1}{$-\infty$, $x_1$, $x_2$, $+\infty$}
+    \tkzTabLine{, \text{signe de } a, z, \text{signe de } (-a), z, \text{signe de } a, }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Si $\Delta = 0$} : $P(x)$ est toujours du \textbf{signe de $a$}, sauf en $x_0$ où il s'annule.
+    \begin{center}
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=2.5,espcl=3.5]{$x$/0.8, $ax^2+bx+c$/1}{$-\infty$, $x_0$, $+\infty$}
+    \tkzTabLine{, \text{signe de } a, z, \text{signe de } a, }
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{Si $\Delta < 0$} : $P(x)$ ne s'annule jamais et est toujours strictement du \textbf{signe de $a$} sur $\mathbb{R}$.
+    \begin{center}
+    \begin{tikzpicture}
+    \tkzTabInit[lgt=2.5,espcl=6]{$x$/0.8, $ax^2+bx+c$/1}{$-\infty$, $+\infty$}
+    \tkzTabLine{, \text{signe de } a, }
+    \end{tikzpicture}
+    \end{center}
+\end{itemize}
+
+\medskip
+\underline{\exemple} \\
+Factorisons et étudions le signe de $P(x) = 2x^2 - 5x + 2$. \\
+On a $a = 2$, $b = -5$ et $c = 2$.
+$$\Delta = (-5)^2 - 4(2)(2) = 25 - 16 = 9 > 0$$
+Comme $\Delta > 0$, $P(x)$ admet deux racines distinctes :
+$$x_1 = \frac{5 - \sqrt{9}}{2 \times 2} = \frac{5 - 3}{4} = \frac{1}{2} \quad \text{et} \quad x_2 = \frac{5 + \sqrt{9}}{2 \times 2} = \frac{5 + 3}{4} = 2.$$
+Ainsi, la forme factorisée est : $P(x) = 2\left(x - \frac{1}{2}\right)(x - 2) = (2x - 1)(x - 2)$. \\
+Comme $a = 2 > 0$, on dresse le tableau de signes suivant :
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=2,espcl=2.5]{$x$/0.8, $P(x)$/1}{$-\infty$, $\frac{1}{2}$, $2$, $+\infty$}
+\tkzTabLine{, +, z, -, z, +, }
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\underline{\exemple} \\
+Étudions le signe de $Q(x) = -x^2 + 4x - 5$. \\
+On a $a = -1$, $b = 4$ et $c = -5$.
+$$\Delta = 4^2 - 4(-1)(-5) = 16 - 20 = -4 < 0$$
+Comme $\Delta < 0$, $Q(x)$ n'a pas de racine réelle et n'est pas factorisable. Comme $a = -1 < 0$, $Q(x)$ est strictement négatif pour tout réel $x$ ($Q(x) < 0$ sur $\mathbb{R}$).
+
+\section*{\underline{\textbf{\textcolor{red}{III. Théorème fondamental des polynômes }}}}
+
+\subsection*{\underline{\textbf{\textcolor{red}{1. Racine d’un polynôme}}}}
+
+\underline{\textbf{\textcolor{red}{Définition}}} \\
+Soit $P(x)$ un polynôme et $\alpha$ un nombre réel ($\alpha \in \mathbb{R}$). \\
+On dit que $\alpha$ est une \textbf{racine} (ou un \textbf{zéro}) du polynôme $P$ si et seulement si :
+$$P(\alpha) = 0$$
+
+\medskip
+\underline{\exemple} \\
+Soit $P(x) = x^3 - 2x^2 - 5x + 6$. Vérifions si $1$ et $2$ sont des racines de $P$ :
+\begin{itemize}[label=\ding{228}]
+    \item $P(1) = 1^3 - 2(1)^2 - 5(1) + 6 = 1 - 2 - 5 + 6 = 0$. Donc $1$ est une racine de $P$.
+    \item $P(2) = 2^3 - 2(2)^2 - 5(2) + 6 = 8 - 8 - 10 + 6 = -4 \neq 0$. Donc $2$ n'est pas une racine de $P$.
+\end{itemize}
+
+\medskip
+\textbf{\exerciceapp} \\
+Soit le polynôme $P(x) = 2x^3 - 3x^2 - 3x + 2$.
+\begin{enumerate}
+    \item Calculer $P(-1)$, $P(0)$ et $P(2)$.
+    \item En déduire deux racines de $P$.
+\end{enumerate}
+
+\noindent\correction
+\begin{enumerate}
+    \item $P(-1) = 2(-1)^3 - 3(-1)^2 - 3(-1) + 2 = -2 - 3 + 3 + 2 = 0$. \\
+    $P(0) = 2(0)^3 - 3(0)^2 - 3(0) + 2 = 2$. \\
+    $P(2) = 2(2)^3 - 3(2)^2 - 3(2) + 2 = 16 - 12 - 6 + 2 = 0$.
+    \item Comme $P(-1) = 0$ et $P(2) = 0$, les réels $-1$ et $2$ sont des racines de $P$.
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{2. Théorème fondamental}}}}
+
+\underline{\textbf{\textcolor{red}{Activité}}} \\
+Soit le polynôme $P(x) = x^3 - 4x^2 + x + 6$.
+\begin{enumerate}
+    \item Calculer $P(2)$. Que peut-on dire du réel $2$ ?
+    \item Développer, réduire et ordonner l'expression $(x - 2)(x^2 - 2x - 3)$.
+    \item Comparer le résultat obtenu avec $P(x)$.
+\end{enumerate}
+
+\medskip
+\underline{\textbf{\textcolor{red}{Exploitation de l’activité}}}
+\begin{enumerate}
+    \item $P(2) = 2^3 - 4(2)^2 + 2 + 6 = 8 - 16 + 2 + 6 = 0$. Donc $2$ est une racine de $P$.
+    \item $(x - 2)(x^2 - 2x - 3) = x^3 - 2x^2 - 3x - 2x^2 + 4x + 6 = x^3 - 4x^2 + x + 6$.
+    \item On constate que $P(x) = (x - 2)(x^2 - 2x - 3)$. Le polynôme $P(x)$ de degré $3$ est factorisable par $(x - 2)$, et le second facteur $Q(x) = x^2 - 2x - 3$ est un polynôme de degré $2$.
+\end{enumerate}
+
+\medskip
+\underline{\textbf{\textcolor{red}{Théorème}}} \\
+Soit $P(x)$ un polynôme de degré $n$ ($n \geq 1$) et $\alpha$ un nombre réel. \\
+$\alpha$ est une racine de $P(x)$ (c'est-à-dire $P(\alpha) = 0$) \textbf{si et seulement si} il existe un polynôme $Q(x)$ de degré $n - 1$ tel que, pour tout $x \in \mathbb{R}$ :
+$$P(x) = (x - \alpha)Q(x)$$
+On dit alors que $P(x)$ est factorisable (ou divisible) par $(x - \alpha)$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{3. Division euclidienne}}}}
+Lorsque $\alpha$ est une racine de $P(x)$, la division euclidienne de $P(x)$ par $(x - \alpha)$ donne un reste nul et permet de trouver directement le polynôme quotient $Q(x)$.
+
+\medskip
+\underline{\exemple} \\
+Soit $P(x) = x^3 - 3x^2 - 4x + 12$. On vérifie que $P(3) = 27 - 27 - 12 + 12 = 0$, donc $3$ est une racine de $P$. Effectuons la division euclidienne de $P(x)$ par $(x - 3)$ :
+
+\begin{center}
+\begin{tabular}{r|l}
+$x^3 - 3x^2 - 4x + 12$ & $x - 3$ \\
+\cline{2-2}
+$-(x^3 - 3x^2) \phantom{- 4x + 12}$ & $x^2 - 4$ \\
+\cline{1-1}
+$0 - 4x + 12$ & \\
+$-(-4x + 12)$ & \\
+\cline{1-1}
+$0$ & \\
+\end{tabular}
+\end{center}
+On obtient le quotient $Q(x) = x^2 - 4$ et le reste $R(x) = 0$. Donc :
+$$P(x) = (x - 3)(x^2 - 4).$$
+
+\medskip
+\textbf{\exerciceapp} \\
+Soit $P(x) = 2x^3 - x^2 - 5x - 2$.
+\begin{enumerate}
+    \item Vérifier que $-1$ est une racine de $P$.
+    \item Déterminer le polynôme $Q(x)$ tel que $P(x) = (x + 1)Q(x)$ par division euclidienne.
+\end{enumerate}
+
+\noindent\correction
+\begin{enumerate}
+    \item $P(-1) = 2(-1)^3 - (-1)^2 - 5(-1) - 2 = -2 - 1 + 5 - 2 = 0$. Donc $-1$ est bien une racine de $P$.
+    \item Division euclidienne de $2x^3 - x^2 - 5x - 2$ par $(x + 1)$ :
+    \begin{center}
+    \begin{tabular}{r|l}
+    $2x^3 - x^2 - 5x - 2$ & $x + 1$ \\
+    \cline{2-2}
+    $-(2x^3 + 2x^2) \phantom{- 5x - 2}$ & $2x^2 - 3x - 2$ \\
+    \cline{1-1}
+    $-3x^2 - 5x - 2$ & \\
+    $-(-3x^2 - 3x) \phantom{- 2}$ & \\
+    \cline{1-1}
+    $-2x - 2$ & \\
+    $-(-2x - 2)$ & \\
+    \cline{1-1}
+    $0$ & \\
+    \end{tabular}
+    \end{center}
+    D'où $Q(x) = 2x^2 - 3x - 2$, et $P(x) = (x + 1)(2x^2 - 3x - 2)$.
+\end{enumerate}
+
+\subsection*{\underline{\textbf{\textcolor{red}{4. Identification des coefficients}}}}
+Pour déterminer $Q(x)$ lorsque $\deg(P) = 3$, on pose $Q(x) = ax^2 + bx + c$, on développe $(x - \alpha)(ax^2 + bx + c)$, puis on identifie les coefficients terme à terme avec ceux de $P(x)$.
+
+\medskip
+\underline{\exemple} \\
+Soit $P(x) = x^3 - 6x^2 + 11x - 6$. On a $P(1) = 1 - 6 + 11 - 6 = 0$, donc $1$ est racine. \\
+Il existe trois réels $a, b, c$ tels que $P(x) = (x - 1)(ax^2 + bx + c)$. \\
+Développons :
+\begin{align*}
+(x - 1)(ax^2 + bx + c) &= ax^3 + bx^2 + cx - ax^2 - bx - c \\
+&= ax^3 + (b - a)x^2 + (c - b)x - c.
+\end{align*}
+Par identification avec $P(x) = 1x^3 - 6x^2 + 11x - 6$, on obtient le système :
+$$\systeme{a = 1, b - a = -6, c - b = 11, -c = -6} \iff \systeme{a = 1, b = -6 + 1 = -5, c = 6}$$
+(On vérifie : $c - b = 6 - (-5) = 11$, cohérent). Donc $P(x) = (x - 1)(x^2 - 5x + 6)$.
+
+\medskip
+\underline{\exemple} \\
+Soit $P(x) = 2x^3 + 3x^2 - 8x + 3$. On vérifie que $P(1) = 2 + 3 - 8 + 3 = 0$. \\
+On cherche $a, b, c$ tels que $P(x) = (x - 1)(ax^2 + bx + c) = ax^3 + (b - a)x^2 + (c - b)x - c$. \\
+Par identification :
+$$\systeme{a = 2, b - a = 3, c - b = -8, -c = 3} \iff \systeme{a = 2, b = 3 + 2 = 5, c = -3}$$
+Vérification : $c - b = -3 - 5 = -8$. Ainsi, $P(x) = (x - 1)(2x^2 + 5x - 3)$.
+
+\subsection*{\underline{\textbf{\textcolor{red}{5. Tableau de Horner}}}}
+La méthode de Horner est un algorithme rapide permettant de trouver les coefficients du quotient $Q(x)$ connaissant une racine $\alpha$ de $P(x)$. \\
+\textbf{Principe (pour un degré 3) :} On place les coefficients de $P(x)$ dans l'ordre décroissant des puissances sur la première ligne, et la racine $\alpha$ à gauche. On abaisse le premier coefficient, puis on multiplie en diagonale par $\alpha$ et on additionne en colonne.
+
+\medskip
+\underline{\exemple} \\
+Reprenons $P(x) = x^3 - 6x^2 + 11x - 6$ avec la racine $\alpha = 1$. Les coefficients sont $1$, $-6$, $11$ et $-6$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|c|c|c|c|}
+\cline{2-5}
+ & $1$ & $-6$ & $11$ & $-6$ \\
+\hline
+$\alpha = 1$ & $\downarrow$ & $1 \times 1 = 1$ & $1 \times (-5) = -5$ & $1 \times 6 = 6$ \\
+\hline
+ & $\mathbf{1}$ & $-6 + 1 = \mathbf{-5}$ & $11 - 5 = \mathbf{6}$ & $-6 + 6 = \mathbf{0}$ \\
+\cline{2-5}
+\end{tabular}
+\end{center}
+La dernière case vaut $0$ (reste nul). Les trois premiers nombres de la dernière ligne donnent les coefficients de $Q(x)$ : $a = 1$, $b = -5$ et $c = 6$. \\
+D'où $Q(x) = x^2 - 5x + 6$ et $P(x) = (x - 1)(x^2 - 5x + 6)$.
+
+\medskip
+\underline{\exemple} \\
+Factorisons $P(x) = 3x^3 + 2x^2 - 7x + 2$ sachant que $\alpha = -2$ est une racine ($P(-2) = 3(-8) + 2(4) - 7(-2) + 2 = -24 + 8 + 14 + 2 = 0$).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|c|c|c|c|}
+\cline{2-5}
+ & $3$ & $2$ & $-7$ & $2$ \\
+\hline
+$\alpha = -2$ & $\downarrow$ & $-2 \times 3 = -6$ & $-2 \times (-4) = 8$ & $-2 \times 1 = -2$ \\
+\hline
+ & $\mathbf{3}$ & $2 - 6 = \mathbf{-4}$ & $-7 + 8 = \mathbf{1}$ & $2 - 2 = \mathbf{0}$ \\
+\cline{2-5}
+\end{tabular}
+\end{center}
+On lit directement $Q(x) = 3x^2 - 4x + 1$, soit $P(x) = (x + 2)(3x^2 - 4x + 1)$.
+
+\section*{\underline{\textbf{\textcolor{red}{IV. Factorisation pour $ n \geq 3 $ }}}}
+
+Pour factoriser complètement un polynôme $P(x)$ de degré $n \geq 3$ en un produit de facteurs du premier degré (lorsque cela est possible), on procède en trois étapes :
+\begin{enumerate}
+    \item \textbf{Trouver une racine évidente $\alpha$} (en testant généralement $-2, -1, 0, 1, 2$ ou les diviseurs du terme constant).
+    \item \textbf{Factoriser par $(x - \alpha)$} à l'aide de la division euclidienne, de l'identification des coefficients ou du tableau de Horner pour obtenir $P(x) = (x - \alpha)Q(x)$ où $\deg(Q) = n - 1$.
+    \item \textbf{Factoriser $Q(x)$} en utilisant le discriminant $\Delta$ (si $Q$ est de degré $2$) ou en répétant le processus (si $\deg(Q) \geq 3$).
+\end{enumerate}
+
+\medskip
+\underline{\exemple} \\
+Factorisons complètement le polynôme $P(x) = x^3 - 2x^2 - 5x + 6$.
+\begin{itemize}[label=\ding{228}]
+    \item \textbf{Étape 1 (Racine évidente) :} On calcule $P(1) = 1 - 2 - 5 + 6 = 0$. Donc $\alpha = 1$ est une racine de $P$.
+    \item \textbf{Étape 2 (Factorisation par $x - 1$) :} Utilisons le tableau de Horner :
+    \begin{center}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{c|c|c|c|c|}
+    \cline{2-5}
+     & $1$ & $-2$ & $-5$ & $6$ \\
+    \hline
+    $1$ & $\downarrow$ & $1$ & $-1$ & $-6$ \\
+    \hline
+     & $\mathbf{1}$ & $\mathbf{-1}$ & $\mathbf{-6}$ & $\mathbf{0}$ \\
+    \cline{2-5}
+    \end{tabular}
+    \end{center}
+    On obtient $P(x) = (x - 1)(x^2 - x - 6)$.
+    \item \textbf{Étape 3 (Factorisation du trinôme $Q(x) = x^2 - x - 6$) :} \\
+    $\Delta = (-1)^2 - 4(1)(-6) = 1 + 24 = 25 > 0$. \\
+    Les racines sont $x_1 = \frac{1 - 5}{2} = -2$ et $x_2 = \frac{1 + 5}{2} = 3$. \\
+    Donc $x^2 - x - 6 = (x + 2)(x - 3)$.
+\end{itemize}
+\textbf{Conclusion :} $P(x) = (x - 1)(x + 2)(x - 3)$.
+
+\medskip
+\underline{\exemple} \\
+Factorisons complètement le polynôme $P(x) = 2x^3 + 3x^2 - 8x + 3$ (vu à l'exemple 7).
+\begin{itemize}[label=\ding{228}]
+    \item \textbf{Étape 1 :} Nous avons déjà vu que $P(1) = 0$.
+    \item \textbf{Étape 2 :} Par identification des coefficients, nous avions trouvé $P(x) = (x - 1)(2x^2 + 5x - 3)$.
+    \item \textbf{Étape 3 :} Factorisons $Q(x) = 2x^2 + 5x - 3$. \\
+    $\Delta = 5^2 - 4(2)(-3) = 25 + 24 = 49 > 0$. \\
+    Les racines sont $x_1 = \frac{-5 - 7}{4} = -3$ et $x_2 = \frac{-5 + 7}{4} = \frac{1}{2}$. \\
+    Donc $2x^2 + 5x - 3 = 2(x + 3)\left(x - \frac{1}{2}\right) = (x + 3)(2x - 1)$.
+\end{itemize}
+\textbf{Conclusion :} $P(x) = (x - 1)(x + 3)(2x - 1)$.
+
+\end{document}
