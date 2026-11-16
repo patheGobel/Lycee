@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  16 NOV 2026 20:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  16 NOV 2026 21:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1108,7 +1108,7 @@ enc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [2] [3]
-
+ [4]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/polynome.aux)
@@ -1116,12 +1116,16 @@ enddocument/afterlastpage (AED): lastpage setting LastPage.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `polynome.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30229 strings out of 467533
- 607583 string characters out of 5422138
+ 30232 strings out of 467533
+ 607603 string characters out of 5422138
  1079799 words of memory out of 5000000
  58507 multiletter control sequences out of 15000+600000
  657005 words of font info for 68 fonts, out of 8000000 for 9000
@@ -1134,10 +1138,10 @@ lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/zapfding/uzdr.pfb>
-Output written on build/polynome.pdf (3 pages, 164085 bytes).
+Output written on build/polynome.pdf (4 pages, 165145 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
+ 94 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
