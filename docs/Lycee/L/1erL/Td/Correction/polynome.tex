@@ -117,27 +117,86 @@ middle color = tcbcolback!80!black]
     \item Un polynôme qui a pour racine $\alpha$ et $\beta$ est factorisable par $(x - \alpha)(x - \beta)$ : \textbf{Faux} (en général). \\
     \textit{Justification :} Cela n'est vrai que si $\alpha$ et $\beta$ sont \textbf{distincts} ($\alpha \neq \beta$). Dans ce cas, il existe un polynôme $Q(x)$ tel que $P(x) = (x - \alpha)(x - \beta)Q(x)$ (où $Q(x)$ a le même coefficient dominant $a$ que $P(x)$ ; en particulier, si $P$ est de degré $2$, alors $Q(x) = a$ et $P(x) = a(x - \alpha)(x - \beta)$).
 \end{enumerate}
-\fbox{\textbf{\exo}}
+
+\fbox{\textbf{Correction 2}}
+
 Complète les pointillés
 
 \begin{enumerate}
-    \item On appelle racine réelle d'un polynôme $P$ tout nombre réel $\alpha$ tel que \dotfill
-    \item Si un polynôme $P$ a une racine réelle $\alpha$, alors il existe un polynôme $Q$ tel que $P(x) =$ \dotfill
+    \item On appelle racine réelle d'un polynôme $P$ tout nombre réel $\alpha$ tel que $\mathbf{P(\alpha) = 0}$.
+    \item Si un polynôme $P$ a une racine réelle $\alpha$, alors il existe un polynôme $Q$ tel que $P(x) = \mathbf{(x - \alpha)Q(x)}$.
     \item Soit $P(x) = ax^2 + bx + c$ un trinôme du second degré.
     \begin{enumerate}
-        \item Si $P(x)$ admet deux racines $x_1$ et $x_2$ distinctes, alors sa forme factorisée est $P(x) =$ \dotfill
-        \item Si $P(x)$ admet une racine double $x_0$, alors sa forme factorisée est $P(x) =$ \dotfill
+        \item Si $P(x)$ admet deux racines $x_1$ et $x_2$ distinctes, alors sa forme factorisée est $P(x) = \mathbf{a(x - x_1)(x - x_2)}$.
+        \item Si $P(x)$ admet une racine double $x_0$, alors sa forme factorisée est $P(x) = \mathbf{a(x - x_0)^2}$.
     \end{enumerate}
 \end{enumerate}
-\fbox{\textbf{\exo}}
+
+\fbox{\textbf{Correction 3}}
+
 Soit le polynôme $P$ défini par : $P(x) = 2x^3 - 9x^2 - 8x + 15$.
 
 \begin{enumerate}
-    \item Calculer $P(5)$.
-    \item Factoriser $P(x)$ par la méthode :
+    \item \textbf{Calcul de $P(5)$ :}
+    \begin{align*}
+        P(5) &= 2(5)^3 - 9(5)^2 - 8(5) + 15 \\
+             &= 2 \times 125 - 9 \times 25 - 40 + 15 \\
+             &= 250 - 225 - 40 + 15 \\
+             &= 25 - 40 + 15 \\
+             &= 0
+    \end{align*}
+    Donc $5$ est une racine de $P$.
+
+    \item \textbf{Factorisation de $P(x)$ :} \\
+    Puisque $P(5) = 0$ et que $\deg(P) = 3$, il existe un polynôme $Q(x)$ de degré $2$ tel que $P(x) = (x - 5)Q(x)$.
+
     \begin{enumerate}
-        \item d'identification des coefficients ;
-        \item de la division euclidienne ;
+        \item \textbf{Méthode d'identification des coefficients :} \\
+        Posons $Q(x) = ax^2 + bx + c$ (avec $a \neq 0$). Développons l'expression $(x - 5)(ax^2 + bx + c)$ :
+        \begin{align*}
+            (x - 5)(ax^2 + bx + c) &= ax^3 + bx^2 + cx - 5ax^2 - 5bx - 5c \\
+                                   &= ax^3 + (b - 5a)x^2 + (c - 5b)x - 5c
+        \end{align*}
+        Par identification avec $P(x) = 2x^3 - 9x^2 - 8x + 15$, on obtient le système :
+        \[
+        \begin{cases}
+            a = 2 \\
+            b - 5a = -9 \\
+            c - 5b = -8 \\
+            -5c = 15
+        \end{cases}
+        \iff
+        \begin{cases}
+            a = 2 \\
+            b = -9 + 5(2) = 1 \\
+            c = \dfrac{15}{-5} = -3 \\
+            c - 5b = -3 - 5(1) = -8 \quad \text{(vérifié)}
+        \end{cases}
+        \]
+        Ainsi, $Q(x) = 2x^2 + x - 3$ et $P(x) = (x - 5)(2x^2 + x - 3)$.
+
+        \item \textbf{Méthode de la division euclidienne :} \\
+        En effectuant la division euclidienne de $2x^3 - 9x^2 - 8x + 15$ par $(x - 5)$ :
+        \begin{itemize}
+            \item $2x^3 \div x = 2x^2$ ; on soustrait $2x^2(x - 5) = 2x^3 - 10x^2$, il reste $x^2 - 8x + 15$.
+            \item $x^2 \div x = x$ ; on soustrait $x(x - 5) = x^2 - 5x$, il reste $-3x + 15$.
+            \item $-3x \div x = -3$ ; on soustrait $-3(x - 5) = -3x + 15$, il reste $0$.
+        \end{itemize}
+        On retrouve le quotient $Q(x) = 2x^2 + x - 3$, d'où :
+        \[
+            P(x) = (x - 5)(2x^2 + x - 3)
+        \]
+
+        \textbf{Factorisation complète de $P(x)$ :} \\
+        Factorisons le trinôme $Q(x) = 2x^2 + x - 3$. On remarque que $1$ est une racine évidente ($2(1)^2 + 1 - 3 = 0$), ou par le discriminant $\Delta = 1^2 - 4(2)(-3) = 25 > 0$ :
+        \[
+            x_1 = \frac{-1 - 5}{4} = -\frac{3}{2} \quad \text{et} \quad x_2 = \frac{-1 + 5}{4} = 1
+        \]
+        Donc $2x^2 + x - 3 = 2(x - 1)\left(x + \frac{3}{2}\right) = (x - 1)(2x + 3)$. \\
+        Finalement, la forme complètement factorisée de $P(x)$ est :
+        \[
+            \mathbf{P(x) = (x - 5)(x - 1)(2x + 3)}
+        \]
     \end{enumerate}
 \end{enumerate}
 \fbox{\textbf{\exo}}
