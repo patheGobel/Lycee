@@ -1,0 +1,346 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont Diop}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2025}}
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof : M. DIOP}}
+\cfoot{\bf \thepage / \pageref{LastPage}}
+
+\newcommand{\exo}[1]{%
+        \textbf{\underline{Exercice #1}}
+}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Maciré BA}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2025/2026} \\ \hline
+                \textbf{Matière : Mathématiques} & \textbf{Niveau : 2ndS} & \textbf{Date : 21/10/2025} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                  \textbf{{\Large\sffamily TD : Calcul dans $\mathbb{R}$}}
+                \end{center}}} \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{4cm}
+
+\exo{1} Effectuez les calculs suivants :
+\begin{enumerate}[align=left]
+    \item \( (a + b)(x - y) - (a - b)(x + y) - b(x - y) \)
+    \item \( x(a - by) - y(b - ax) - xy(x - y) \)
+    \item \( 4 \left[ \frac{1}{10}(5(2a + 3) + 5) - a + 7 \right] \)
+    \item \( 3[5(x - a) - 2(b - y)] - 6(a - b) + 15(x + y) \)
+    \item \( x - y - [z - y - (t - x)] - [y + t - (x + z)] - [x - (y - z + t)] \)
+\end{enumerate}
+
+\exo{2} Développer à l’aide des égalités remarquables.
+\begin{enumerate}
+    \item \( (a^2b + c)^2 \)
+    \item \( \left( \frac{2a}{3} + \frac{b}{4} \right)^2 \)
+    \item \( \left(( \dfrac{a^{2}}{2} - b \right)^3 \)
+    \item \( \left( -\frac{1}{4} \right) \left[ 5 \left\{ \frac{9}{10} - \frac{3}{20}\left( 1 - \frac{1}{2} + \frac{1}{3} \right) \right\} - \left( \frac{2}{3} + 5 - \frac{1}{7} \right) \right] \)
+\end{enumerate}
+
+\exo{3} Factoriser les expressions suivantes :
+\begin{enumerate}
+    \item \( a^2xy + aby^2 + b^2xy + abx^2 \)
+    \item \( 3a^2 + 3b^2 - 12c^2 - 6ab \)
+    \item \( y^2 - x^2 + 2x - 1 \)
+    \item \( a^2b^2 - 1 + a^2 - b^2 \)
+    \item \( (ab - 1)^2 - (a - b)^2 \)
+    \item \( (2a^2 - 3a - 5)^2 - (2a^2 + 3a + 4)^2  \)
+    \item \( 8 + 36a b^2 + 54a^2b + 27ab \)
+    \item \( a + 8 - 2a^2 + 4aab \)
+    \item \( (a + b)^2 - (c + d)^2 + (a + c)^2 - (b + d)^2 \)
+    \item \( ab(a + b) + bc(b + c) + ca(c + a) + 2abc \)
+\end{enumerate}
+
+\exo{4}Démontrer que $(a, b, c, x, y \in \mathbb{R})$
+\begin{enumerate}
+\item \( (ax + by)^2 + (ay - bx)^2 = (a^2 + b^2)(x^2 + y^2) \)
+\item \( (ax + by)^2 - (ay + bx)^2 = (a^2 - b^2)(x^2 - y^2) \)
+\item \( (a + b + c)^3 - 3(a + b)(b + c)(c + a) = a^3 + b^3 + c^3 \)
+\item \( (a - b)^3 + (b - c)^3 + (c - a)^3 = a^3 + b^3 + c^3 \)
+\item \( (a^2 + b^2)(a'^2 + b'^2) = (aa' + bb')^2 + (ab' - ba')^2 \)
+\item \( (a + b + c)^2 + (b - c)^2 + (c - a)^2 + (a - b)^2 = 3(a^2 + b^2 + c^2) \)
+\end{enumerate}
+\exo{5} 
+\begin{enumerate}
+\item Écrire sous la forme $2^m \times 3^n \times 5^p$ (avec $m, n, p$ des entiers relatifs) les réels suivants :
+  \[
+  A = \dfrac{(0{,}009)^{-3} \times (0{,}016)^2 \times 250}{(0{,}00075)^{-1} \times 810^3 \times 30}
+  \quad ; \quad
+  B = \dfrac{(-6)^4 \times 30^{-2} \times (-10)^{-3} \times 15^4}{(-25)^2 \times (36)^{-5} \times (-12)^3}
+  \]
+\item Écrire sous la forme $a^m b^n c^p$ (avec $m, n, p$ entiers relatifs)
+  \[
+  Q = \dfrac{(a^2 b)^{-3} \times (b c^3) \times (a^{-2} b^5)^3}{(b^2 c^2 a)^{-4} \times (a^{-1} b^6)^2}
+  \quad ; \quad
+  R = \dfrac{(a^{-2} c)^{-4} \times (-b^2 c)^5 \times (a^3 b c^{-1})^{-2}}{(-a^2 b^{-3} c)^3 \times (-b^4) \times (a^{-5} c)^2}
+  \]
+\item Calculer $AB$, $A^2 B^2$, $A^3 B^4$ où $A = -\left(\dfrac{1}{5}\right)^{-1} \times 3^2$
+  et $B = \left(-\dfrac{1}{3}\right)^{-4} \times 5$
+\end{enumerate}
+\exo{6}Simplifier les expressions suivantes :
+\begin{enumerate}
+\item \[
+A = \dfrac{(-a)^7 \times (b^3 c^2)^4}{-b^3 c (-a)^4}
+\quad ; \quad
+B = \dfrac{91^{{-1}} \times (-39)^3 \times 25}{26^2 \times 45 \times (-21)^{-2} \times 72}
+\quad ; \quad
+C = \dfrac{(28 \times 12^{-2})^3 \times 105^{-3}}{7^{-2} \times (-60)^{-4} \times 63^4} \div \left(\dfrac{5}{3}\right)^5
+\]
+\item \[
+D = \dfrac{\left[\left(-\dfrac{2}{3}\right)^2\right]^6 \times \left[\left(\dfrac{3}{5}\right)^{-2}\right]^3 \times \left[\left(\dfrac{5}{2}\right)^2\right]^{-3}}{\left(-\dfrac{4}{9}\right)^6}
+\quad ; \quad
+E = \dfrac{(a^2 b^3 c)^2 \times a^3 c}{(ab)^4 (c^2 a)^2 b c}
+\]
+\end{enumerate}
+\exo{7} m et n étant deux entiers positifs ou nuls, donner les différentes valeurs possibles de l’expression :
+\[
+f(m,n) = \dfrac{5(-1)^m \times 7(-1)^{n+1} + 8(-1)^{m+n}}{2(-1)^{m+n}}
+\]
+\exo{8} Factoriser les expressions suivantes :
+\begin{enumerate}
+    \item $(4a^2 + b^2 - 9)^2 - 16a^2b^2$
+    
+    \item $(a^2 + b^2 - 5)^2 - 4(ab + 2)^2$
+    
+    \item $(a^2 + b^2 - 9)^2 - 4a^2b^2$
+    
+    \item $(ax + by)^2 - (ay + bx)^2$
+    
+    \item $(ax + by)^2 + (ay - bx)^2$
+    
+    \item $(9x^2 - 12x + 4) + (x - 3)^2 - (2x + 1)^2$
+    
+    \item $a^4 - b^4 + 2ab(a^2 - b^2) - (a^3 - b^3) + ab^2 - a^2b$
+    
+    \item $(x + y)^3 - x^3 - y^3$
+    
+    \item $a^5 + b^5 - ab^4 - a^4b$
+    
+    \item $25a^4 - (9b^2 - 4a^2)^2$
+    
+    \item $(a^2 + ab + b^2)^2 - (a^2 - ab + b^2)^2$
+\end{enumerate}
+\exo{9} Factoriser les expressions suivantes :
+
+\begin{enumerate}
+\item $A = xy - xy^2 + yz^2 - xz^2 + x^2z - xyz + y^2z - xyz$ (on trouvera trois facteurs)
+    
+    \item $B = (xy^2z^3)^2 \times (8y^5z^4) \times (x^8y^5z)^2 \times (xyz)^2$ 
+    (on exprimera B sous forme de puissance d'un seul réel)
+    
+    \item $C = 25[4x^3(y^2z)^2]^2 - 2[10x^2(yz)^3]^2 - [10(xyz)^2]^2$
+\end{enumerate}
+
+\exo{10} 
+Soit $a, b, c$ trois réels non nul tels que $ab + bc + ca = 0$ \\
+Calculer la somme $S=\frac{b+c}{a} + \frac{c+a}{b} + \frac{a+b}{c}$
+
+\exo{11}
+\begin{enumerate}
+    \item Développer $(a + b + c)^2$.
+    \item Montrer que si $a + b + c = 0$ alors $a^2 + b^2 + c^2 = -2 (ab + bc + ca)$.
+    \item On suppose $a$, $b$ et $c$ sont non nuls. \\
+    Montrer que $\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = 0 \implies (a + b + c)^2 = a^2 + b^2 + c^2$.
+\end{enumerate}
+\exo{12} Soit $a, b, c$ trois réels :
+\begin{enumerate}
+    \item Développer $(a + b + c)(ab + bc + ca)$ puis $(a + b + c)^3$
+    \item Démontrer que si $a + b + c = 0$ alors $a^3 + b^3 + c^3 = 3abc$
+    \item En déduire que, pour tous réel $x, y, z$ on a :
+    $$(x - y)^3 - (y - z)^3 + (z - x)^3 = 3 (x - y) (y - z) (z - x)$$
+\end{enumerate}
+
+\exo{13} \\
+Soit $a, b, c$ trois réels non nul tels que $ab + bc + ca = 0$ \\
+Calculer la somme $S=\frac{b+c}{a} + \frac{c+a}{b} + \frac{a+b}{c}$
+
+\exo{14} Soient 4 entiers naturels consécutifs $n, n+1, n+2, n+3$, ($n > 0$)
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Démontrer que $(n+1) (n+2) = n (n+3) + 2$
+        \item On pose $(n+1) (n+2) = a$. Exprimer en fonction de $a$ le produit $p = n (n+1) (n+2) (n+3)$
+        \item En déduire que $p + 1$ est le carré d'un entier (on dit carré parfait)
+    \end{enumerate}
+    \item Déterminer $n$ sachant que $p = 5040$.
+\end{enumerate}
+
+\exo{15}
+
+\begin{enumerate}
+    \item[a)] Calculer, pour tout entier $n$ supérieur ou égal à $2$ : $A = \left(1+\frac{1}{n-1}\right) \left(1-\frac{1}{n}\right)$
+    \item[b)] Calculer $B = \left(1-\frac{1}{2^2}\right) \left(1-\frac{1}{3^2}\right) \left(1-\frac{1}{4^2}\right)$
+    \item[c)] Calculer en fonction de $n$ : $X_n = \left(1-\frac{1}{2^2}\right) \left(1-\frac{1}{3^2}\right) \left(1-\frac{1}{4^2}\right) \dots \left(1-\frac{1}{n^2}\right)$
+\end{enumerate}
+
+\exo{16}
+
+Simplifier les expressions suivantes (on suppose que tous les dénominateurs sont non nuls).
+
+\vspace{0.5em} % Un peu d'espace vertical
+
+\begin{flalign*}
+A &= \frac{1}{(a+b)^2} \left(\frac{1}{a^2} + \frac{1}{b^2}\right) + \frac{2}{(a+b)^3} \left(\frac{1}{a} + \frac{1}{b}\right) \\
+B &= \left[\frac{(x^2+y^2)a + (x^2-y^2)b}{2xy}\right]^2 - \left[\frac{(x^2-y^2)a + (x^2+y^2)b}{2xy}\right]^2 \\
+C &= \frac{\frac{x+y}{1-xy} - \frac{x-y}{1+xy}}{1 - \frac{x^2-y^2}{1-x^2y^2}} \\
+D &= \frac{\frac{1}{a} - \frac{1}{b+c}}{\frac{1}{a} + \frac{1}{b+c}} \times \frac{\frac{1}{b} + \frac{1}{a+c}}{\frac{1}{b} - \frac{1}{a+c}} \\
+E &= \frac{\frac{1}{a} + \frac{1}{b+c}}{\frac{1}{a} - \frac{1}{b+c}} \div \frac{a+b+c}{a-b-c} \\
+F &= \frac{x^2-yz+xy-xz}{x^2+yz-xy-xz} \\
+G &= \frac{\frac{x+t}{x-t} - \frac{x-t}{x+t}}{\frac{1}{(x+t)^2} + \frac{1}{(x-t)^2}} \\
+H &= \frac{1 - \frac{b^2+c^2-a^2}{2bc}}{1 + \frac{a^2+b^2-c^2}{2ab}} \\
+I &= \frac{\frac{1}{a} - \frac{1}{b}}{\frac{1}{a} + \frac{1}{b}} \div \frac{a^2-b^2}{(a+b)^2} \\
+J &= \frac{\frac{a}{b} + \frac{b}{a} + 1}{\frac{1}{a} + \frac{1}{b}} \times \frac{a^2-b^2}{a^3-b^3}
+\end{flalign*}
+
+\exo{17}
+
+On donne les expressions : $A = \frac{x}{t+z} ; B = \frac{t}{z+x} ; C = \frac{z}{x+t}$ \\
+Calculer les expressions : $X = \frac{x^2}{A(1-BC)} ; Y = \frac{t^2}{B(1-CA)} ; Z = \frac{t^2}{C(1-AB)}$
+
+\exo{18}
+
+On donne les expressions : $A = \frac{1}{1+\frac{a}{b+c}} ; B = \frac{1}{1+\frac{b}{c+a}} ; C = \frac{1}{1+\frac{c}{a+b}}$ \\
+Calculer la somme $A+B+C$
+
+\exo{19}
+
+Vérifier les identités suivantes :
+
+\begin{enumerate}
+    \item[a)] $(x+y+z)\left(\frac{1}{x} + \frac{1}{y} + \frac{1}{z}\right) = 1 + \frac{(x+y)(y+z)(z+x)}{xyz}$
+    \item[b)] $\frac{x^2}{(x-t)(x-z)} + \frac{t^2}{(t-z)(t-x)} + \frac{z^2}{(z-x)(z-t)} = 1$
+\end{enumerate}
+
+\exo{20}
+\begin{enumerate}
+    \item[a)] Calculer $A = (a^2+b^2+c^2)^2$
+    \item[b)] Démontrer que : $(a+b+c=0) \implies [(a^2+b^2+c^2)^2 = 4(ab+bc+ca)^2]$
+\end{enumerate}
+
+\exo{21}
+
+$a, b$ et $c$ étant trois réels non nuls, simplifier l’expression :
+\[
+A = \frac{a+b}{ab} (a^2 + b^2 - c^2) + \frac{b+c}{bc} (b^2 + c^2 - a^2) + \frac{c+a}{ca} (c^2 + a^2 - b^2)
+\]
+
+\exo{22}
+
+Soit $x, y$ et $z$ trois réels tels que: $xyz = 1$. \\
+Montrer que :
+\[
+\frac{x}{xy+x+1} + \frac{y}{yz+y+1} + \frac{z}{zx+z+1} = 1
+\]
+
+\exo{23}
+
+Démontrer que, $a, b$ et $c$ désignant trois nombres réels non nuls, on ne peut avoir :
+\[
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{1}{a+b+c}
+\]
+que si deux de ces nombres sont opposés (c'est-à-dire qu'on a : $a = -b$ ou $b = -c$ ou $c = -a$).
+
+\exo{24} Montrer que l'expression :
+\[
+E = \frac{4a^2-1}{(a-b)(a-c)} + \frac{4b^2-1}{(b-c)(b-a)} + \frac{4c^2-1}{(c-a)(c-b)} \text{ est égale à } 4.
+\]
+
+\exo{25}
+Soient $a, b$ et $c$ trois nombres réels deux à deux inégaux.
+\begin{enumerate}
+    \item[\textbf{1$^\circ$)}] Démontrer l'identité :
+    \[
+    \left(\frac{a}{b-c} + \frac{b}{c-a} + \frac{c}{a-b}\right) \left(\frac{1}{b-c} + \frac{1}{c-a} + \frac{1}{a-b}\right) = \frac{a}{(b-c)^2} + \frac{b}{(c-a)^2} + \frac{c}{(a-b)^2}
+    \]
+    \item[\textbf{2$^\circ$)}] Montrer que : $\frac{1}{b-c} + \frac{1}{c-a} + \frac{1}{a-b}$ est \textit{non nul quels que soient $a, b$ et $c$ distincts deux à deux}.
+\end{enumerate}
+
+\exo{26}
+
+\textbf{I.} On donne : $a = \sqrt{x + \sqrt{x^2 - y^2}}$ et $b = \sqrt{x - \sqrt{x^2 - y^2}}$ ; avec $x > y \geq 0$.
+\begin{enumerate}
+    \item Calculer $a^2$, $b^2$ et $ab$. 
+    \item En déduire que $(a+b)^2 = 2(x+y)$.
+\end{enumerate}
+
+\vspace{0.5em}
+
+\noindent \textbf{II.} Soient $x$ et $y$ deux nombres réels tels que $x > y \geq 0$. \\
+Montrer que $\frac{\sqrt{x} - \sqrt{y}}{\sqrt{x} - \sqrt{y}} = \frac{\sqrt{x} + \sqrt{y}}{\sqrt{x} - \sqrt{y}}$
+\begin{flushright}
+ 
+\end{flushright}
+
+\vspace{0.5em}
+
+\noindent \textbf{III.} Soient $a$ et $b$ deux nombres réels strictement positifs.
+\begin{enumerate}[label=\alph*)]
+    \item Développer l'expression $(\sqrt{a} - \sqrt{b})^2$.
+    \item En déduire que $\sqrt{ab} \leq \frac{a+b}{2}$.
+\end{enumerate}
+
+\vspace{0.5em}
+
+\noindent \textbf{IV.} Simplifier $A = \sqrt{2} \times \sqrt{2+\sqrt{2}} \times \sqrt{2+\sqrt{2+\sqrt{2}}} \times \sqrt{2-\sqrt{2+\sqrt{2}}}$.
+\end{document}
