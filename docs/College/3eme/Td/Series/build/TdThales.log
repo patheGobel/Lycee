@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 NOV 2026 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 NOV 2026 17:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1272,8 +1272,8 @@ Package rerunfilecheck Info: File `TdThales.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53416 strings out of 467533
- 1304198 string characters out of 5422138
+ 53423 strings out of 467533
+ 1304253 string characters out of 5422138
  1989128 words of memory out of 5000000
  81665 multiletter control sequences out of 15000+600000
  665769 words of font info for 71 fonts, out of 8000000 for 9000
@@ -1285,10 +1285,10 @@ r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/TdThales.pdf (3 pages, 172365 bytes).
+Output written on build/TdThales.pdf (3 pages, 174560 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 31 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
