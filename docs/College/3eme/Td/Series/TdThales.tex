@@ -194,4 +194,97 @@ Les droites (EM) et (OG) sont-elles parallèles ? \hspace{3.2cm} \textbf{(1point
 \end{enumerate}
 \end{enumerate}
 
+
+\fbox{\textbf{\exo}}  \textbf{6 pts}
+
+Dans chacun des cas de figures, calculer la longueur inconnue.
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+
+\begin{enumerate}
+    \item \textbf{(MN) // (BC)} ; $AB = 22$ ; $AC = 26$ ; $AM = 34$ ; $AN = ?$
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5] % Échelle réduite
+        % Configuration papillon
+        \coordinate (A) at (0,0);
+        \coordinate (M) at (1.2, 1.6);
+        \coordinate (B) at (-1.2, -1.6);
+        \coordinate (N) at (-1.2, 1.6);
+        \coordinate (C) at (1.2, -1.6);
+        
+        % Tracé des droites sécantes
+        \draw (M) -- (B);
+        \draw (N) -- (C);
+        
+        % Tracé des parallèles
+        \draw[thick] (M) -- (N);
+        \draw[thick] (B) -- (C);
+        
+        % Noeuds / Étiquettes
+        \node[above right] at (A) {$A$};
+        \node[above] at (M) {$M$};
+        \node[below left] at (B) {$B$};
+        \node[above] at (N) {$N$};
+        \node[below right] at (C) {$C$};
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{(IF) // (JG)} ; $EJ = 6,4$ ; $EI = 2$ ; $FG = 5,5$ ; $EF = ?$
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5] % Échelle réduite
+        % Triangle EJG plus petit
+        \coordinate (E) at (0,0);
+        \coordinate (J) at (4,2.5);
+        \coordinate (G) at (5,0);
+        
+        % Points I sur [EJ] et F sur [EG]
+        \coordinate (I) at (1.6, 1);
+        \coordinate (F) at (1.8, 0);
+        
+        % Tracé du triangle et de la sécante
+        \draw[thick] (E) -- (J) -- (G) -- cycle;
+        \draw[thick] (I) -- (F);
+        
+        % Étiquettes
+        \node[left] at (E) {$E$};
+        \node[above right] at (J) {$J$};
+        \node[right] at (G) {$G$};
+        \node[above left] at (I) {$I$};
+        \node[below] at (F) {$F$};
+    \end{tikzpicture}
+    \end{center}
+
+    \item \textbf{(EF) // (BC)} ; $AE = 3$ ; $AF = 4$ ; $EB = 2,1$ ; $FC = ?$
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.5] % Échelle réduite
+        % Triangle ABC
+        \coordinate (A) at (2.5, 4);
+        \coordinate (B) at (0, 0);
+        \coordinate (C) at (5, 0);
+        
+        % Points E sur [AB] et F sur [AC] (parallèles à (BC))
+        % Rapport AE/AB = 3 / (3 + 2.1) = 3 / 5.1 ≈ 0.588
+        \coordinate (E) at ($(A)!0.588!(B)$);
+        \coordinate (F) at ($(A)!0.588!(C)$);
+        
+        % Tracé
+        \draw[thick] (A) -- (B) -- (C) -- cycle;
+        \draw[thick] (E) -- (F);
+        
+        % Étiquettes
+        \node[above] at (A) {$A$};
+        \node[below left] at (B) {$B$};
+        \node[below right] at (C) {$C$};
+        \node[left] at (E) {$E$};
+        \node[right] at (F) {$F$};
+    \end{tikzpicture}
+    \end{center}
+
+\end{enumerate}
+
+\end{multicols}
 \end{document}

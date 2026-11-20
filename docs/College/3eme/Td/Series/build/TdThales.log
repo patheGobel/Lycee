@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 NOV 2026 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 NOV 2026 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1268,10 +1268,10 @@ Package rerunfilecheck Info: File `TdThales.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53330 strings out of 467533
- 1302838 string characters out of 5422138
+ 53361 strings out of 467533
+ 1303232 string characters out of 5422138
  1988128 words of memory out of 5000000
- 81591 multiletter control sequences out of 15000+600000
+ 81618 multiletter control sequences out of 15000+600000
  662985 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,426b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1280,10 +1280,10 @@ pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/TdThales.pdf (2 pages, 126040 bytes).
+Output written on build/TdThales.pdf (2 pages, 129101 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
