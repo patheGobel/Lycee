@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 NOV 2026 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  20 NOV 2026 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1256,8 +1256,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 c/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [2]
+dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (4.01845pt too wide) in paragraph at lines 294--327
+[]$[]$  $[]$ 
+ []
 
+[2] [3] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/TdThales.aux)
  ***********
@@ -1268,22 +1272,23 @@ Package rerunfilecheck Info: File `TdThales.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53361 strings out of 467533
- 1303232 string characters out of 5422138
- 1988128 words of memory out of 5000000
- 81618 multiletter control sequences out of 15000+600000
- 662985 words of font info for 70 fonts, out of 8000000 for 9000
+ 53415 strings out of 467533
+ 1304117 string characters out of 5422138
+ 1989128 words of memory out of 5000000
+ 81664 multiletter control sequences out of 15000+600000
+ 665769 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,426b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/TdThales.pdf (2 pages, 129101 bytes).
+lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on build/TdThales.pdf (3 pages, 171890 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 24 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
