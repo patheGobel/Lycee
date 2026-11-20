@@ -95,50 +95,52 @@ middle color = tcbcolback!80!black]
             \end{tabular}}\endgroup};
 \end{tikzpicture}
 \vspace{3cm}
-\begin{multicols}{2}
-\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+
 \fbox{\textbf{\exo}} \textbf{4pts}
 
-\end{multicols}
-On donne $OA = 4\text{ cm}$ ; $OB = 5\text{ cm}$ ; $OJ = 12\text{ cm}$ et $OK = 15\text{ cm}$.
+\begin{minipage}[c]{0.60\textwidth}
+    On donne $OA = 4\text{ cm}$ ; $OB = 5\text{ cm}$ ; $OJ = 12\text{ cm}$ et $OK = 15\text{ cm}$.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.55]
-    % Définition des coordonnées à l'échelle (1 unité = 1 cm)
-    % Intersection O à l'origine
-    \coordinate (O) at (0,0);
-    % Droite (AJ) avec un angle de -30 degrés
-    \coordinate (A) at (150:4);
-    \coordinate (J) at (-30:12);
-    % Droite (BK) avec un angle de 15 degrés
-    \coordinate (B) at (-165:5);
-    \coordinate (K) at (15:15);
+    \begin{enumerate}
+    \item Les droites $(AB)$ et $(KJ)$ sont-elles parallèles ? Justifie ta réponse. \hfill \textbf{(2 pts)}
+    \item On donne aussi $AB = 3\text{ cm}$, calcule $KJ$. \hfill \textbf{(2 pts)}
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.36\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.32]
+        % Définition des coordonnées à l'échelle (1 unité = 1 cm)
+        % Intersection O à l'origine
+        \coordinate (O) at (0,0);
+        % Droite (AJ) avec un angle de -30 degrés
+        \coordinate (A) at (150:4);
+        \coordinate (J) at (-30:12);
+        % Droite (BK) avec un angle de 15 degrés
+        \coordinate (B) at (-165:5);
+        \coordinate (K) at (15:15);
 
-    % Tracé des droites (AB) et (KJ) prolongées
-    \draw[thin] ($(B)!-0.45!(A)$) -- ($(A)!-0.45!(B)$);
-    \draw[thin] ($(J)!-0.2!(K)$) -- ($(K)!-0.2!(J)$);
+        % Tracé des droites (AB) et (KJ) prolongées
+        \draw[thin] ($(B)!-0.45!(A)$) -- ($(A)!-0.45!(B)$);
+        \draw[thin] ($(J)!-0.2!(K)$) -- ($(K)!-0.2!(J)$);
 
-    % Tracé des segments sécants [AJ] et [BK]
-    \draw[thick] (A) -- (J);
-    \draw[thick] (B) -- (K);
+        % Tracé des segments sécants [AJ] et [BK]
+        \draw[thick] (A) -- (J);
+        \draw[thick] (B) -- (K);
 
-    % Marquage des points
-    \foreach \p in {A,B,J,K} {
-        \filldraw[fill=white, draw=black] (\p) circle (2.2pt);
-    }
+        % Marquage des points
+        \foreach \p in {A,B,J,K} {
+            \filldraw[fill=white, draw=black] (\p) circle (2.2pt);
+        }
 
-    % Étiquettes des points
-    \node[above left, font=\bfseries] at (A) {A};
-    \node[above left, font=\bfseries] at (B) {B};
-    \node[below=5pt, font=\bfseries] at (O) {O};
-    \node[right=4pt, font=\bfseries] at (J) {J};
-    \node[right=4pt, font=\bfseries] at (K) {K};
-\end{tikzpicture}
-\end{center}
-\begin{enumerate}
-\item Les droites $(AB)$ et $(KJ)$ sont-elles parallèles ? Justifie ta réponse. \hfill \textbf{(2 pts)}
-\item On donne aussi $AB = 3\text{ cm}$, calcule $KJ$. \hfill \textbf{(2 pts)}
-\end{enumerate}
+        % Étiquettes des points
+        \node[above left, font=\bfseries\small] at (A) {A};
+        \node[above left, font=\bfseries\small] at (B) {B};
+        \node[below=4pt, font=\bfseries\small] at (O) {O};
+        \node[right=3pt, font=\bfseries\small] at (J) {J};
+        \node[right=3pt, font=\bfseries\small] at (K) {K};
+    \end{tikzpicture}
+\end{minipage}
 
 \fbox{\textbf{\exo}}  \textbf{6,5 pts}
 
@@ -327,111 +329,127 @@ Compléter le tableau ci-dessous qui concerne la figure dans laquelle les droite
 
 \fbox{\textbf{\exo}}
 
-Le quadrilatère $ABCD$ est un parallélogramme. Le point $E$ est un point quelconque de la diagonale $[BD]$. La droite $(AE)$ coupe $(DC)$ en $G$ et $(BC)$ en $F$.
+\noindent
+\begin{minipage}[c]{0.56\textwidth}
+    Le quadrilatère $ABCD$ est un parallélogramme. Le point $E$ est un point quelconque de la diagonale $[BD]$. La droite $(AE)$ coupe $(DC)$ en $G$ et $(BC)$ en $F$.
 
-\begin{enumerate}
-    \item Montrer que : $\dfrac{EB}{ED} = \dfrac{EA}{EG} = \dfrac{EF}{EA}$
-    \item En déduire que : $EA^2 = EF \times EG$.
-\end{enumerate}
+    \begin{enumerate}
+        \item Montrer que : $\dfrac{EB}{ED} = \dfrac{EA}{EG} = \dfrac{EF}{EA}$
+        \item En déduire que : $EA^2 = EF \times EG$.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.42\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.75]
+        % Sommets du parallélogramme ABCD
+        \coordinate (D) at (0,0);
+        \coordinate (C) at (5,0);
+        \coordinate (A) at (1.3,2.2);
+        \coordinate (B) at (6.3,2.2);
 
-\begin{center}
-\begin{tikzpicture}[scale=1.1]
-    % Sommets du parallélogramme ABCD
-    \coordinate (D) at (0,0);
-    \coordinate (C) at (5,0);
-    \coordinate (A) at (1.3,2.2);
-    \coordinate (B) at (6.3,2.2);
+        % Tracé du parallélogramme ABCD
+        \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
 
-    % Tracé du parallélogramme ABCD
-    \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+        % Prolongement du côté [BC] vers le bas pour placer F
+        \coordinate (F) at ($(B)!1.65!(C)$);
+        \draw[thick] (C) -- (F);
 
-    % Prolongement du côté [BC] vers le bas pour placer F
-    \coordinate (F) at ($(B)!1.65!(C)$);
-    \draw[thick] (C) -- (F);
+        % Tracé de la diagonale [BD] et du segment [AF]
+        \draw[thick, name path=BD] (B) -- (D);
+        \draw[thick, name path=AF] (A) -- (F);
 
-    % Tracé de la diagonale [BD] et du segment [AF]
-    \draw[thick, name path=BD] (B) -- (D);
-    \draw[thick, name path=AF] (A) -- (F);
+        % Calcul des points d'intersection E (sur [BD]) et G (sur [DC])
+        \path[name path=DC] (D) -- (C);
+        \path[name intersections={of=AF and BD, by=E}];
+        \path[name intersections={of=AF and DC, by=G}];
 
-    % Calcul des points d'intersection E (sur [BD]) et G (sur [DC])
-    \path[name path=DC] (D) -- (C);
-    \path[name intersections={of=AF and BD, by=E}];
-    \path[name intersections={of=AF and DC, by=G}];
-
-    % Étiquettes des points positionnées comme sur l'original
-    \node[above, font=\sffamily] at (A) {A};
-    \node[above, font=\sffamily] at (B) {B};
-    \node[right=3pt, font=\sffamily] at (C) {C};
-    \node[left=3pt, font=\sffamily] at (D) {D};
-    \node[above=3pt, font=\sffamily] at (E) {E};
-    \node[right=3pt, font=\sffamily] at (F) {F};
-    \node[below=3pt, font=\sffamily] at (G) {G};
-\end{tikzpicture}
-\end{center}
-
-\fbox{\textbf{\exo}}
-
-Les droites $(AB)$ et $(RP)$ de la figure ci-dessous sont-elles parallèles ?
-
-\begin{center}
-\begin{tikzpicture}[scale=1.1]
-    % Sommets du triangle RPC
-    \coordinate (P) at (0,0);
-    \coordinate (C) at (5.4,0);
-    \coordinate (R) at (1.3,2.5);
-
-    % Points A sur [RC] (rapport RA/RC = 22/33 = 2/3) et B sur [PC] (rapport PB/PC = 30/45 = 2/3)
-    \coordinate (A) at ($(R)!0.6667!(C)$);
-    \coordinate (B) at ($(P)!0.6667!(C)$);
-
-    % Tracé du triangle RPC
-    \draw[thick] (R) -- (P) -- (C) -- cycle;
-
-    % Marquage des points A et B par un disque noir
-    \fill (A) circle (2.2pt);
-    \fill (B) circle (2.2pt);
-
-    % Étiquettes des sommets et des points
-    \node[above=3pt] at (R) {R};
-    \node[left=3pt] at (P) {P};
-    \node[right=3pt] at (C) {C};
-    \node[above right=2pt] at (A) {A};
-    \node[above left=2pt] at (B) {B};
-
-    % Longueurs sur le segment [RC]
-    \node[above right] at ($(R)!0.5!(A)$) {22};
-    \node[above right] at ($(A)!0.5!(C)$) {11};
-
-    % Flèches de cotation inférieures (15 et 45)
-    \draw[thick, {Stealth[scale=1.2]}-{Stealth[scale=1.2]}] ($(B)-(0,0.45)$) -- ($(C)-(0,0.45)$) node[midway, above=1pt] {15};
-    \draw[thick, {Stealth[scale=1.2]}-{Stealth[scale=1.2]}] ($(P)-(0,0.9)$) -- ($(C)-(0,0.9)$) node[midway, above=1pt] {45};
-\end{tikzpicture}
-\end{center}
+        % Étiquettes des points positionnées comme sur l'original
+        \node[above, font=\sffamily] at (A) {A};
+        \node[above, font=\sffamily] at (B) {B};
+        \node[right=3pt, font=\sffamily] at (C) {C};
+        \node[left=3pt, font=\sffamily] at (D) {D};
+        \node[above=3pt, font=\sffamily] at (E) {E};
+        \node[right=3pt, font=\sffamily] at (F) {F};
+        \node[below=3pt, font=\sffamily] at (G) {G};
+    \end{tikzpicture}
+\end{minipage}
 
 \fbox{\textbf{\exo}}
 
-On donne pour la figure ci-dessous : $LO = 3$ ; $OK = 3,9$ ; $ON = 4,5$ ; $OM = 2,6$.
+\vspace{0.2cm}
+\noindent
+\begin{minipage}[c]{0.52\textwidth}
+    Les droites $(AB)$ et $(RP)$ de la figure ci-contre sont-elles parallèles ?
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.75]
+        % Sommets du triangle RPC
+        \coordinate (P) at (0,0);
+        \coordinate (C) at (5.4,0);
+        \coordinate (R) at (1.3,2.5);
 
-\noindent Les droites $(LM)$ et $(KN)$ sont-elles parallèles ?
+        % Points A sur [RC] et B sur [PC]
+        \coordinate (A) at ($(R)!0.6667!(C)$);
+        \coordinate (B) at ($(P)!0.6667!(C)$);
 
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-    \coordinate (O) at (0,0);
-    \coordinate (L) at (-2,1.5);
-    \coordinate (N) at (2,-1.5);
-    \coordinate (K) at (-2,-1.5);
-    \coordinate (M) at (2,1.5);
+        % Tracé du triangle RPC
+        \draw[thick] (R) -- (P) -- (C) -- cycle;
+
+        % Marquage des points A et B par un disque noir
+        \fill (A) circle (2.2pt);
+        \fill (B) circle (2.2pt);
+
+        % Étiquettes des sommets et des points
+        \node[above=3pt] at (R) {R};
+        \node[left=3pt] at (P) {P};
+        \node[right=3pt] at (C) {C};
+        \node[above right=2pt] at (A) {A};
+        \node[above left=2pt] at (B) {B};
+
+        % Longueurs sur le segment [RC]
+        \node[above right] at ($(R)!0.5!(A)$) {22};
+        \node[above right] at ($(A)!0.5!(C)$) {11};
+
+        % Flèches de cotation inférieures (15 et 45)
+        \draw[thick, {Stealth[scale=1.2]}-{Stealth[scale=1.2]}] ($(B)-(0,0.45)$) -- ($(C)-(0,0.45)$) node[midway, above=1pt] {15};
+        \draw[thick, {Stealth[scale=1.2]}-{Stealth[scale=1.2]}] ($(P)-(0,0.9)$) -- ($(C)-(0,0.9)$) node[midway, above=1pt] {45};
+    \end{tikzpicture}
+\end{minipage}
+
+\fbox{\textbf{\exo}}
+
+\vspace{0.2cm}
+\noindent
+\begin{minipage}[c]{0.60\textwidth} % Bloc de gauche (60 % de la largeur)
+    On donne pour la figure ci-contre : \\
+    $LO = 3$ ; $OK = 3,9$ ; $ON = 4,5$ ; $OM = 2,6$.
     
-    \draw[thick] (L) -- (N);
-    \draw[thick] (K) -- (M);
-    
-    \node[above left] at (L) {$L$};
-    \node[below left] at (K) {$K$};
-    \node[above right] at (M) {$M$};
-    \node[below right] at (N) {$N$};
-    \node[above] at (O) {$O$};
-\end{tikzpicture}
-\end{center}
+    \vspace{0.2cm}
+    Les droites $(LM)$ et $(KN)$ sont-elles parallèles ?
+\end{minipage}
+\hfill % Pousse le deuxième bloc complètement à droite
+\begin{minipage}[c]{0.36\textwidth} % Bloc de droite (36 % de la largeur)
+    \centering
+    \begin{tikzpicture}[scale=0.65] % Échelle légèrement ajustée pour tenir dans la colonne
+        \coordinate (O) at (0,0);
+        \coordinate (L) at (-2,1.5);
+        \coordinate (N) at (2,-1.5);
+        \coordinate (K) at (-2,-1.5);
+        \coordinate (M) at (2,1.5);
+        
+        \draw[thick] (L) -- (N);
+        \draw[thick] (K) -- (M);
+        
+        \node[above left] at (L) {$L$};
+        \node[below left] at (K) {$K$};
+        \node[above right] at (M) {$M$};
+        \node[below right] at (N) {$N$};
+        \node[above] at (O) {$O$};
+    \end{tikzpicture}
+\end{minipage}
 
 
 \fbox{\textbf{\exo}}
@@ -488,8 +506,6 @@ On considère un rectangle $ABCD$ tel que $AB = 8\text{ cm}$ et $AD = 6\text{ cm
     Calculer $BM$, $BN$ et $MN$ en fonction de $x$.
 \end{enumerate}
 
-\end{document}
-
 \fbox{\textbf{\exo}}
 
 $A$, $B$ et $C$ sont trois points alignés tels que $AC = \dfrac{3}{2} AB$. Place un point $E$ qui n'appartient pas à la droite $(AB)$. Construis le point $F$ tel que $AF = \dfrac{3}{2} AE$. La droite passant par $B$ et parallèle à $(CE)$ coupe la droite $(AE)$ au point $G$.
@@ -506,6 +522,38 @@ On considère un rectangle $ABCD$ tel que $AB = 8\text{ cm}$ et $AD = 6\text{ cm
     \item Calculer $AC$.
     \item Soit $M \in (AB)$ ; on pose $AM = x$ ($x$ est en $\text{cm}$ et $x \in \mathbb{R}$). La droite passant par $M$ et parallèle à $(AC)$ coupe $[BC]$ en $N$. \\
     Calculer $BM$, $BN$ et $MN$ en fonction de $x$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Le segment $[AB]$ de longueur $10\text{ cm}$ et sa médiatrice $(D)$ se coupent en $K$. Sur la droite $(D)$ place le point $C$ tel que $BC = 10\text{ cm}$. Le point $F \in [CB]$ tel que $CF = 4\text{ cm}$. Place le point $P$ sur $(D)$ tel que $PF = 2\text{ cm}$. On donne $CP = 2\sqrt{3}\text{ cm}$.
+\begin{enumerate}
+    \item Faire la figure.
+    \item Démontre que $(PF) \parallel (BK)$.
+    \item $Q$ est un autre point de $[BC]$ tel que $CQ = x$. La parallèle à $(AB)$ passant par $Q$ coupe $(CK)$ en $R$. \\
+    Calcule $CR$ en fonction de $x$. Calcule l'aire du triangle $CQR$ en fonction de $x$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Dans un triangle $ABC$ tel que $BC = 6\text{ cm}$, $M$ est le milieu du segment $[BC]$. On désigne par $P$ le point du segment $[BC]$ tel que $BP = 2\text{ cm}$. La parallèle à $(AC)$ passant par $P$ coupe $(AM)$ en $Q$ et $(AB)$ en $R$.
+\begin{enumerate}
+    \item Montrer que $\dfrac{RP}{AC} = \dfrac{1}{3}$ puis que $\dfrac{PQ}{AC} = \dfrac{1}{3}$.
+    \item En déduire que $P$ est le milieu du segment $[RQ]$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+$C_1$ est un cercle de centre $O$ et de rayon $7,5\text{ cm}$. $[AB]$ est un diamètre de $C_1$. \\
+$E$ est le point du segment $[OB]$ tel que $OE = 5\text{ cm}$. \\
+$C_2$ est le cercle de centre $E$ passant par $B$ ; il recoupe $[OB]$ en $N$.
+\begin{enumerate}
+    \item Faire la figure.
+    \item Construire un point $M$ de $C_2$ situé à $4\text{ cm}$ de $B$. La droite $(BM)$ coupe $C_1$ en $P$. Quelle est la nature du triangle $NMB$ ? Celle du triangle $APB$ ? Justifier.
+    \item Calculer la distance $MN$.
+    \item Démontrer que les droites $(AP)$ et $(NM)$ sont parallèles. En déduire la distance $BP$.
+    \item Démontrer que les droites $(PO)$ et $(ME)$ sont parallèles.
+    \item La droite $(PO)$ coupe $C_1$ en $K$. $(PN)$ coupe $(BK)$ en $I$. Évaluer le rapport $\dfrac{BN}{BO}$. Démontrer que $I$ est le milieu de $[BK]$.
 \end{enumerate}
 
 \end{document}
