@@ -840,6 +840,166 @@ b = z_{A'} - a\,z_A .
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+
+    \item On pose $z = x + iy$ et $z' = x' + iy'$.
+
+    $
+    \begin{aligned}
+    z' &= x' + iy' \\[1mm]
+       &= \left(-\dfrac12 x - \dfrac{\sqrt3}{2}y + \dfrac32\right) + i\left(\dfrac{\sqrt3}{2}x - \dfrac12 y - \dfrac{\sqrt3}{2}\right) \\[1mm]
+       &= \left(-\dfrac12 + i\,\dfrac{\sqrt3}{2}\right)x + \left(-\dfrac{\sqrt3}{2} - \dfrac{i}{2}\right)y + \dfrac32 - i\,\dfrac{\sqrt3}{2}.
+    \end{aligned}
+    $
+
+    Or $-\dfrac{\sqrt3}{2} - \dfrac{i}{2} = i\left(-\dfrac12 + i\,\dfrac{\sqrt3}{2}\right)$, donc
+
+    $
+    \begin{aligned}
+    z' &= \left(-\dfrac12 + i\,\dfrac{\sqrt3}{2}\right)(x + iy) + \dfrac32 - i\,\dfrac{\sqrt3}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{S_1 : z' = \left(-\dfrac12 + i\,\dfrac{\sqrt3}{2}\right)z + \dfrac32 - i\,\dfrac{\sqrt3}{2}}
+    \]
+
+    \item On a $a = -\dfrac12 + i\,\dfrac{\sqrt3}{2}$ et $b = \dfrac32 - i\,\dfrac{\sqrt3}{2}$.
+
+    $
+    \begin{aligned}
+    a &= e^{2i\pi/3}, \qquad |a| = 1,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{\dfrac32 - i\,\dfrac{\sqrt3}{2}}{1 + \dfrac12 - i\,\dfrac{\sqrt3}{2}} \\[1mm]
+           &= \dfrac{\dfrac32 - i\,\dfrac{\sqrt3}{2}}{\dfrac32 - i\,\dfrac{\sqrt3}{2}} \\[1mm]
+           &= 1.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{S_1 \text{ est la rotation de centre } \Omega(1) \text{ et d'angle } \dfrac{2\pi}{3}.}
+    \]
+
+    \item Soit $S_2 : z' = a\,z + b$ avec $S_2(A) = O$ et $S_2(B) = B$.
+
+    $
+    \begin{aligned}
+    a &= \dfrac{z_O - z_B}{z_A - z_B} \\[1mm]
+      &= \dfrac{0 - (-1)}{1 - (-1)} \\[1mm]
+      &= \dfrac12,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= z_O - a\,z_A \\[1mm]
+      &= 0 - \dfrac12 \times 1 \\[1mm]
+      &= -\dfrac12.
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{-\dfrac12}{\dfrac12} \\[1mm]
+           &= -1.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{S_2 : z' = \dfrac12\,z - \dfrac12 \text{ est l'homothétie de centre } B(-1) \text{ et de rapport } \dfrac12.}
+    \]
+
+    \item Pour tout $z$, $S(z) = S_1\bigl(S_2(z)\bigr)$.
+
+    $
+    \begin{aligned}
+    z' &= a\left(\dfrac12 z - \dfrac12\right) + b \\[1mm]
+       &= \dfrac{a}{2}\,z - \dfrac{a}{2} + b \\[1mm]
+       &= \left(-\dfrac14 + i\,\dfrac{\sqrt3}{4}\right)z + \left(\dfrac14 - i\,\dfrac{\sqrt3}{4}\right) + \left(\dfrac32 - i\,\dfrac{\sqrt3}{2}\right) \\[1mm]
+       &= \left(-\dfrac14 + i\,\dfrac{\sqrt3}{4}\right)z + \dfrac74 - i\,\dfrac{3\sqrt3}{4}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{S : z' = \left(-\dfrac14 + i\,\dfrac{\sqrt3}{4}\right)z + \dfrac74 - i\,\dfrac{3\sqrt3}{4}}
+    \]
+
+    \item On note $a' = -\dfrac14 + i\,\dfrac{\sqrt3}{4}$ et $b' = \dfrac74 - i\,\dfrac{3\sqrt3}{4}$. Comme $|a'| = \dfrac12$, $S$ est une similitude directe de rapport $\dfrac12$ et d'angle $\dfrac{2\pi}{3}$.
+
+    \textbf{Écriture réelle de $S^{-1}$.} On a $z = \dfrac{z' - b'}{a'}$ et
+
+    $
+    \begin{aligned}
+    \dfrac{1}{a'} &= \dfrac{\overline{a'}}{|a'|^2} \\[1mm]
+                  &= \dfrac{-\dfrac14 - i\,\dfrac{\sqrt3}{4}}{\dfrac14} \\[1mm]
+                  &= -1 - i\sqrt3.
+    \end{aligned}
+    $
+
+    On pose $X = x' - \dfrac74$ et $Y = y' + \dfrac{3\sqrt3}{4}$.
+
+    $
+    \begin{aligned}
+    z &= (-1 - i\sqrt3)(X + iY) \\[1mm]
+      &= (-X + \sqrt3\,Y) + i\,(-Y - \sqrt3\,X),
+    \end{aligned}
+    $
+
+    d'où
+
+    \[
+    \left\{
+    \begin{aligned}
+    x &= -x' + \sqrt3\,y' + 4 \\
+    y &= -\sqrt3\,x' - y' + \sqrt3
+    \end{aligned}
+    \right.
+    \]
+
+    \begin{enumerate}
+
+        \item Un point $M'(x',y')$ appartient à $S(\mathscr{D})$ si et seulement si $S^{-1}(M') \in \mathscr{D}$.
+
+        $
+        \begin{aligned}
+        2x + y - 1 = 0 &\iff 2\left(-x' + \sqrt3\,y' + 4\right) + \left(-\sqrt3\,x' - y' + \sqrt3\right) - 1 = 0 \\[1mm]
+                       &\iff -(2 + \sqrt3)\,x' + (2\sqrt3 - 1)\,y' + 7 + \sqrt3 = 0 \\[1mm]
+                       &\iff (2 + \sqrt3)\,x' - (2\sqrt3 - 1)\,y' - 7 - \sqrt3 = 0.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{S(\mathscr{D}) \text{ est la droite d'équation } (2 + \sqrt3)\,x - (2\sqrt3 - 1)\,y - 7 - \sqrt3 = 0.}
+        \]
+
+        \item Le cercle $(\mathscr{C})$ a pour centre $K(-3 ; 2)$, d'affixe $-3 + 2i$, et pour rayon $2$.
+        Son image est un cercle de centre $S(K)$ et de rayon $\dfrac12 \times 2 = 1$.
+
+        $
+        \begin{aligned}
+        z_{K'} &= a'\,z_K + b' \\[1mm]
+               &= \left(-\dfrac14 + i\,\dfrac{\sqrt3}{4}\right)(-3 + 2i) + \dfrac74 - i\,\dfrac{3\sqrt3}{4} \\[1mm]
+               &= \dfrac34 - \dfrac{i}{2} - \dfrac{3i\sqrt3}{4} - \dfrac{\sqrt3}{2} + \dfrac74 - i\,\dfrac{3\sqrt3}{4} \\[1mm]
+               &= \dfrac{5 - \sqrt3}{2} - i\,\dfrac{1 + 3\sqrt3}{2}.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{S(\mathscr{C}) \text{ est le cercle de centre } K'\left(\dfrac{5 - \sqrt3}{2}\, ;\, -\dfrac{1 + 3\sqrt3}{2}\right) \text{ et de rayon } 1.}
+        \]
+
+        Son équation est $\left(x - \dfrac{5 - \sqrt3}{2}\right)^2 + \left(y + \dfrac{1 + 3\sqrt3}{2}\right)^2 = 1$.
+
+    \end{enumerate}
+
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
