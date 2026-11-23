@@ -1,0 +1,210 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=red, urlcolor=red, citecolor=red]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+% Filigrane "PGB" centré sur chaque page
+\AddToShipoutPicture{
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{50}{\textcolor[gray]{0.6}{\fontsize{1.5cm}{1.5cm}\selectfont maths-mes-maths}}}
+  }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{red}\ding{45}\ \textbf{2026}
+}
+\fancyfoot[L]{
+\color{red}\ding{45}\ \textbf{Prof:M. Diatta}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tcolorbox}[
+    colback=white,
+    colframe=blue!60!black,
+    boxrule=0.8pt,
+    arc=3pt,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm
+]
+    \begin{center}
+        \textbf{\large Lycée de Diattacounda} \hfill \textbf{A.S. : 2026/2027} \\[1mm]
+        \textbf{Mathématiques} $\bullet$ \textbf{Niveau : TS2} \hfill \textbf{Date : 13/11/2026} \\[2mm]
+        \rule{0.8\linewidth}{0.4pt} \\[1.5mm]
+        {\Large\bfseries\sffamily TD : Similitudes}
+    \end{center}
+\end{tcolorbox}
+\vspace{4mm}
+
+
+\fbox{\textbf{\exo}} 
+Soit $s$ la similitude directe de centre $\Omega$ d'affixe $\omega$, de rapport $k$ et d'angle $\theta$.
+Son écriture complexe est
+
+\[
+z' - \omega = k\,e^{i\theta}\,(z-\omega)
+\iff z' = az + b,
+\quad \text{avec} \quad a = k\,e^{i\theta} \ \text{ et } \ b = (1-a)\,\omega .
+\]
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+
+\begin{enumerate}
+
+    \item $\omega = 0$, $k=2$, $\theta=\dfrac{\pi}{6}$.
+
+    $
+    \begin{aligned}
+    a &= 2\,e^{i\pi/6} \\[1mm]
+      &= 2\left(\dfrac{\sqrt3}{2}+\dfrac{i}{2}\right) \\[1mm]
+      &= \sqrt3 + i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= (1-a)\,\omega \\[1mm]
+      &= (1-a)\times 0 \\[1mm]
+      &= 0.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z' = (\sqrt3 + i)\,z}
+    \]
+
+    \item $\omega = 1$, $k=\sqrt2$, $\theta=\dfrac{\pi}{2}$.
+
+    $
+    \begin{aligned}
+    a &= \sqrt2\,e^{i\pi/2} \\[1mm]
+      &= \sqrt2\,(0 + i) \\[1mm]
+      &= i\sqrt2,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= (1-a)\,\omega \\[1mm]
+      &= \left(1 - i\sqrt2\right)\times 1 \\[1mm]
+      &= 1 - i\sqrt2.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z' = i\sqrt2\,z + 1 - i\sqrt2}
+    \]
+
+    \item $\omega = 2 - i$, $k=1$, $\theta=\dfrac{5\pi}{6}$.
+
+    $
+    \begin{aligned}
+    a &= e^{5i\pi/6} \\[1mm]
+      &= \cos\dfrac{5\pi}{6} + i\sin\dfrac{5\pi}{6} \\[1mm]
+      &= -\dfrac{\sqrt3}{2}+\dfrac{i}{2},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= (1-a)\,\omega \\[1mm]
+      &= \left(1+\dfrac{\sqrt3}{2}-\dfrac{i}{2}\right)(2-i) \\[1mm]
+      &= 2 + \sqrt3 - i\left(1+\dfrac{\sqrt3}{2}\right) - i - \dfrac12 \\[1mm]
+      &= \dfrac32+\sqrt3 - i\left(2+\dfrac{\sqrt3}{2}\right).
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z' = \left(-\dfrac{\sqrt3}{2}+\dfrac{i}{2}\right)z + \dfrac32+\sqrt3 - i\left(2+\dfrac{\sqrt3}{2}\right)}
+    \]
+
+    \item $\omega = -2 + \dfrac{i}{2}$, $k=\dfrac12$, $\theta=-\dfrac{\pi}{3}$.
+
+    $
+    \begin{aligned}
+    a &= \dfrac12\,e^{-i\pi/3} \\[1mm]
+      &= \dfrac12\left(\dfrac12 - \dfrac{i\sqrt3}{2}\right) \\[1mm]
+      &= \dfrac14 - \dfrac{i\sqrt3}{4},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= (1-a)\,\omega \\[1mm]
+      &= \left(\dfrac34+\dfrac{i\sqrt3}{4}\right)\left(-2+\dfrac{i}{2}\right) \\[1mm]
+      &= -\dfrac32 + \dfrac{3i}{8} - \dfrac{i\sqrt3}{2} - \dfrac{\sqrt3}{8} \\[1mm]
+      &= -\dfrac32-\dfrac{\sqrt3}{8} + i\left(\dfrac38-\dfrac{\sqrt3}{2}\right).
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z' = \left(\dfrac14-\dfrac{i\sqrt3}{4}\right)z - \dfrac32-\dfrac{\sqrt3}{8} + i\left(\dfrac38-\dfrac{\sqrt3}{2}\right)}
+    \]
+
+\end{enumerate}
+\end{multicols}
+
+\end{document}
