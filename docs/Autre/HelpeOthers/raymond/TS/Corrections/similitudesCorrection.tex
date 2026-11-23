@@ -1002,6 +1002,167 @@ b = z_{A'} - a\,z_A .
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+
+    \item
+
+    \begin{enumerate}
+
+        \item On calcule le quotient $\dfrac{z_C - z_B}{z_A - z_B}$.
+
+        $
+        \begin{aligned}
+        \dfrac{z_C - z_B}{z_A - z_B} &= \dfrac{(1 + 2i) - (-2)}{-3i - (-2)} \\[1mm]
+                                     &= \dfrac{3 + 2i}{2 - 3i} \\[1mm]
+                                     &= \dfrac{(3 + 2i)(2 + 3i)}{(2 - 3i)(2 + 3i)} \\[1mm]
+                                     &= \dfrac{6 + 9i + 4i + 6i^2}{13} \\[1mm]
+                                     &= \dfrac{13i}{13} \\[1mm]
+                                     &= i.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{\left|\dfrac{z_C - z_B}{z_A - z_B}\right| = 1 \quad \text{et} \quad \arg\left(\dfrac{z_C - z_B}{z_A - z_B}\right) = \dfrac{\pi}{2} \ [2\pi].}
+        \]
+
+        \item D'après la question précédente :
+
+        $
+        \begin{aligned}
+        \dfrac{BC}{BA} &= \left|\dfrac{z_C - z_B}{z_A - z_B}\right| \\[1mm]
+                       &= 1,
+        \end{aligned}
+        $
+        \qquad
+        $
+        \begin{aligned}
+        \left(\overrightarrow{BA}, \overrightarrow{BC}\right) &= \arg\left(\dfrac{z_C - z_B}{z_A - z_B}\right) \\[1mm]
+                                                              &= \dfrac{\pi}{2} \ [2\pi].
+        \end{aligned}
+        $
+
+        \[
+        \boxed{\text{Le triangle } ABC \text{ est rectangle isocèle en } B.}
+        \]
+
+        \item Le quadrilatère $BADC$ est un carré si et seulement si $\overrightarrow{BA} = \overrightarrow{CD}$, c'est-à-dire $z_A - z_B = z_D - z_C$ (le triangle $ABC$ étant rectangle isocèle en $B$).
+
+        $
+        \begin{aligned}
+        z_D &= z_A - z_B + z_C \\[1mm]
+            &= -3i + 2 + 1 + 2i \\[1mm]
+            &= 3 - i.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{z_D = 3 - i}
+        \]
+
+        \item $BADC$ est un carré, donc ses diagonales $[AC]$ et $[BD]$ ont même milieu $I$ et même longueur. Les quatre sommets sont donc équidistants de $I$.
+
+        $
+        \begin{aligned}
+        z_I &= \dfrac{z_A + z_C}{2} \\[1mm]
+            &= \dfrac{-3i + 1 + 2i}{2} \\[1mm]
+            &= \dfrac{1 - i}{2},
+        \end{aligned}
+        $
+
+        $
+        \begin{aligned}
+        AC &= |z_C - z_A| \\[1mm]
+           &= |1 + 5i| \\[1mm]
+           &= \sqrt{26}.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{A, B, C \text{ et } D \text{ appartiennent au cercle de centre } I\left(\dfrac{1 - i}{2}\right) \text{ et de rayon } \dfrac{\sqrt{26}}{2}.}
+        \]
+
+    \end{enumerate}
+
+    \item
+
+    \begin{enumerate}
+
+        \item On pose $z = x + iy$ et $z' = x' + iy'$.
+
+        $
+        \begin{aligned}
+        z' &= x' + iy' \\[1mm]
+           &= (x - y + 2) + i\,(x + y - 1) \\[1mm]
+           &= (x + ix) + (-y + iy) + 2 - i \\[1mm]
+           &= (1 + i)\,x + i\,(1 + i)\,y + 2 - i \\[1mm]
+           &= (1 + i)(x + iy) + 2 - i.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{S : z' = (1 + i)\,z + 2 - i}
+        \]
+
+        \item On a $a = 1 + i$ et $b = 2 - i$ avec $a \neq 1$.
+
+        $
+        \begin{aligned}
+        a &= 1 + i \\[1mm]
+          &= \sqrt2\left(\dfrac{\sqrt2}{2} + i\,\dfrac{\sqrt2}{2}\right) \\[1mm]
+          &= \sqrt2\,e^{i\pi/4},
+        \end{aligned}
+        $
+
+        $
+        \begin{aligned}
+        \omega &= \dfrac{b}{1 - a} \\[1mm]
+               &= \dfrac{2 - i}{-i} \\[1mm]
+               &= \dfrac{(2 - i)\,i}{-i^2} \\[1mm]
+               &= 1 + 2i.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{S \text{ est la similitude directe de centre } C(1 + 2i) \text{, de rapport } \sqrt2 \text{ et d'angle } \dfrac{\pi}{4}.}
+        \]
+
+        \item Soit $M(x\,;y) \in (D)$, donc $x + y + 1 = 0$, et $M'(x'\,;y') = S(M)$.
+
+        $
+        \begin{aligned}
+        y' &= x + y - 1 \\[1mm]
+           &= (x + y + 1) - 2 \\[1mm]
+           &= 0 - 2 \\[1mm]
+           &= -2.
+        \end{aligned}
+        $
+
+        Donc $S(D)$ est contenue dans la droite d'équation $y = -2$. Comme $S$ est une bijection du plan qui transforme une droite en une droite, $S(D)$ est cette droite.
+
+        \[
+        \boxed{S(D) \text{ est la droite d'équation } y = -2.}
+        \]
+
+        \item On cherche l'ensemble $(E)$ des points $M$ d'affixe $z$ tels que $|(1 + i)z + 2 - i| = 2$, c'est-à-dire $|z'| = 2$ avec $z' = S(z)$.
+
+        $
+        \begin{aligned}
+        |(1 + i)z + 2 - i| = 2 &\iff |1 + i|\,\left|z + \dfrac{2 - i}{1 + i}\right| = 2 \\[1mm]
+                               &\iff \sqrt2\,\left|z + \dfrac{1 - 3i}{2}\right| = 2 \\[1mm]
+                               &\iff \left|z - \dfrac{-1 + 3i}{2}\right| = \sqrt2.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{(E) \text{ est le cercle de centre } K\left(\dfrac{-1 + 3i}{2}\right) \text{ et de rayon } \sqrt2.}
+        \]
+
+        On a utilisé $\dfrac{2 - i}{1 + i} = \dfrac{(2 - i)(1 - i)}{2} = \dfrac{1 - 3i}{2}$.
+
+    \end{enumerate}
+
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
