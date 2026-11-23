@@ -1,0 +1,316 @@
+\documentclass[12pt,a4paper]{article}
+
+% ==========================================
+% 1. ENCODAGE ET POLICES (FONTS)
+% ==========================================
+\usepackage[T1]{fontenc}   % Encodage des polices de sortie pour la gestion des accents
+\usepackage{times}        % Police Times New Roman pour le texte
+\usepackage{lmodern}      % Police Latin Modern améliorée
+\usepackage{pifont}       % Symboles et caractères spéciaux (ex: \ding{45})
+
+% ==========================================
+% 2. DISPOSITION DE LA PAGE ET EN-TÊTES/PIEDS DE PAGE
+% ==========================================
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1.7cm]{geometry} % Configuration des marges
+\usepackage{fancyhdr}     % Personnalisation des en-têtes et pieds de page
+\usepackage{lastpage}     % Accès au numéro de la dernière page pour "page X/Y"
+\usepackage{multicol}     % Gestion de la mise en page sur plusieurs colonnes
+
+% Configuration du style des pieds de page
+\pagestyle{fancy}
+\fancyhf{} % Réinitialise les en-têtes et pieds de page
+\renewcommand{\headrulewidth}{0pt}  % Pas de ligne sous l'en-tête
+\renewcommand{\footrulewidth}{1pt}  % Ligne au-dessus du pied de page
+\renewcommand{\footruleskip}{10pt}  % Espacement de la ligne de pied de page
+
+%\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof: M. Diatta}} % Pied de page gauche
+%\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2026}}        % Pied de page droit
+%\cfoot{\bf\thepage\ / \pageref{LastPage}}                 % Numérotation centrale (X/Y)
+
+% ==========================================
+% 3. MATHÉMATIQUES ET SYSTÈMES
+% ==========================================
+\usepackage{amsmath}     % Environnements et commandes mathématiques de base
+\usepackage{amssymb}     % Symboles mathématiques avancés
+\usepackage{mathrsfs}    % Police calligraphique mathématique (\mathscr)
+
+% Force l'affichage grand format (displaystyle) pour les formules intégrées au texte
+\everymath{\displaystyle}
+
+% ==========================================
+% 4. TABLEAUX ET FIGURES
+% ==========================================
+\usepackage{array}       % Amélioration du traitement des tableaux
+\usepackage{multirow}    % Fusion de cellules sur plusieurs lignes
+\usepackage{float}        % Contrôle avancé du placement des figures ([H])
+\usepackage{varwidth}    % Ajustement automatique de la largeur des boîtes
+
+% ==========================================
+% 5. LISTES ET PUCES PERSONNALISÉES
+% ==========================================
+\usepackage{enumitem}    % Personnalisation avancée des listes à puces et numérotées
+
+% Styles TikZ pour puces circulaires et carrées
+\newcommand\circitem[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[circle, draw=gray, fill=red!55, minimum size=1.2em, inner sep=0] (char) {#1};
+  }%
+}
+\newcommand\boxitem[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[fill=cyan, minimum size=1.2em, inner sep=0] (char) {#1};
+  }%
+}
+
+% Application aux niveaux 1 et 2 des listes numérotées
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+% ==========================================
+% 6. GRAPHISMES, TIKZ ET TABLEAUX DE VARIATION
+% ==========================================
+\usepackage{tikz}        % Moteur de dessin vectoriel
+\usetikzlibrary{patterns, trees} % Extensions TikZ :
+                                 % - patterns : motifs de hachures et remplissages
+                                 % - trees : réalisation d'arbres de dénombrement/probabilités
+
+\usepackage{tkz-tab}     % Tableaux de variations et de signes mathématiques
+
+% ==========================================
+% 7. BOÎTES ET ENCADRÉS (TCOLORBOX)
+% ==========================================
+\usepackage[most]{tcolorbox} % Boîtes encadrées stylisées
+\tcbuselibrary{skins, hooks} % Extensions graphiques (skins) et accroches d'actions (hooks)
+
+% Environnement de boîte personnalisée pour les exemples
+\newtcolorbox{exa}[2][]{
+  enhanced, breakable,
+  before skip=2mm, after skip=5mm,
+  colback=yellow!20!white, colframe=black!20!blue, boxrule=0.5mm,
+  attach boxed title to top left={xshift=0.6cm, yshift*=1mm-\tcboxedtitleheight},
+  fonttitle=\bfseries,
+  title={#2}, #1,
+  boxed title style={
+    frame code={
+      \path[fill=tcbcolback!30!black]
+        ([yshift=-1mm, xshift=-1mm]frame.north west)
+        arc[start angle=0, end angle=180, radius=1mm]
+        ([yshift=-1mm, xshift=1mm]frame.north east)
+        arc[start angle=180, end angle=0, radius=1mm];
+      \path[left color=tcbcolback!60!black, right color=tcbcolback!60!black, middle color=tcbcolback!80!black]
+        ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+        [rounded corners=1mm]-- ([xshift=1mm, yshift=-1mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=-1mm, yshift=-1mm]frame.north west)
+        [sharp corners]-- cycle;
+    },
+    interior engine=empty,
+  },
+  interior style={top color=yellow!5}
+}
+
+% ==========================================
+% 8. ARRIÈRE-PLAN ET FILIGRANE (WATERMARK)
+% ==========================================
+\usepackage{eso-pic}     % Ajout d'éléments en arrière-plan des pages
+
+% Filigrane "PGB" centré sur chaque page
+\AddToShipoutPicture{
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{50}{\textcolor[gray]{0.6}{\fontsize{1.5cm}{1.5cm}\selectfont maths-mes-maths}}}
+  }
+}
+
+% ==========================================
+% 9. COMPTEURS ET COMMANDES DE COURS
+% ==========================================
+% Compteur et commande pour la numérotation des exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}\ }
+
+% ==========================================
+% 10. HYPERLIENS ET INTERACTIVITÉ
+% ==========================================
+% Chargé en tout dernier pour éviter les conflits de redéfinition de commandes
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tcolorbox}[
+    colback=white,
+    colframe=blue!60!black,
+    boxrule=0.8pt,
+    arc=3pt,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm
+]
+    \begin{center}
+        \textbf{\large Lycée de Diattacounda} \hfill \textbf{A.S. : 2026/2027} \\[1mm]
+        \textbf{Mathématiques} $\bullet$ \textbf{Niveau : TS2} \hfill \textbf{Date : 13/11/2026} \\[2mm]
+        \rule{0.8\linewidth}{0.4pt} \\[1.5mm]
+        {\Large\bfseries\sffamily TD : Nombres Complexes}
+    \end{center}
+\end{tcolorbox}
+\vspace{4mm}
+
+\fbox{\textbf{\exo}}
+
+Dans chacun des cas suivants, déterminer l’écriture complexe de la similitude directe de centre \( \Omega \), de rapport \( k \) et d’angle \( \theta \).
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+    \item \( \Omega = O \), \( k = 2 \) et \( \theta = \dfrac{\pi}{6} \).
+    
+    \item \( \Omega \begin{pmatrix} 1 \\ 0 \end{pmatrix} \), \( k = \sqrt{2} \) et \( \theta = \dfrac{\pi}{2} \).
+    
+    \item \( \Omega \begin{pmatrix} 2 \\ -1 \end{pmatrix} \), \( k = 1 \) et \( \theta = \dfrac{5\pi}{6} \).
+    
+    \item \( \Omega (-2 + i \frac{1}{2}) \), \( k = \dfrac{1}{2} \), \( \theta = \dfrac{-\pi}{3} \).
+\end{enumerate}
+\end{multicols}
+
+\fbox{\textbf{\exo}}
+
+Dans chacun des cas suivants, déterminer la nature et les éléments caractéristiques de l’application \( f \) du plan dans lui-même, qui au point \( M \) d’affixe \( z \) associe le point \( M' \) d’affixe \( z' \) :
+
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+    \item \( z' = (\sqrt{3} + i)z \)
+    \item \( z' = -2z + i \)
+    \item \( z' = -z + 2i \)
+    \item \( z' = \dfrac{3 + i\sqrt{3}}{4}z + \dfrac{1 - i\sqrt{3}}{2} \)
+    \item \( z' = iz + 1 \)
+    \item \( z' = z + 3 - i \)
+\end{enumerate}
+\end{multicols}
+
+\fbox{\textbf{\exo}}
+
+Dans chacun des cas suivants, déterminer l’écriture complexe de la similitude directe \( s \) définie par :  
+\( S(A) = A' \) et \( S(B) = B' \).
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+    \item \( A(3+2i), A'(3), B(1) \) et \( B'(i) \);
+    \item \( A(2+i), A'(3+2i), B(2) \) et \( B'(3i) \).
+\end{enumerate}
+\end{multicols}
+
+\fbox{\textbf{\exo}}
+
+Soit \( s \) la similitude directe d’écriture complexe :  \( z' = 3iz - 9 - 3i. \)
+
+\begin{enumerate}
+    \item Déterminer les éléments caractéristiques de \( s \).
+    \item Déterminer l’expression analytique de \( s \).
+    \item Déterminer l’image par \( s \) :
+    \begin{enumerate}
+        \item du cercle de centre \( K(1 - 3i) \) et de rayon 1;
+        \item de la droite \( (\mathscr{D}) \) d’équation : \( x = 1 \);
+        \item de la droite passant par le point \( A(5;3) \) et dont un vecteur directeur est \( \vec{u}(-1;3) \).
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit \( A, B \) et \( C \) les points d’affixes respectives :  
+\( i, 1 + i \) et \( 2 + 2i \).
+
+\begin{enumerate}
+    \item Déterminer l’affixe du barycentre \( G \) des points \( A, B \) et \( C \) affectés respectivement des coefficients \( 2, -2 \) et \( 1 \).
+    \item Démontrer que la similitude directe \( s \), qui transforme \( A \) en \( B \) et \( B \) en \( C \), a pour centre le point \( G \).
+    \item Déterminer l’angle et le rapport de \( s \).
+\end{enumerate}
+
+\fbox{\textbf{\exo}} (BAC)
+
+On considère les applications \( T_1 \) et \( T_2 \) dont les écritures complexes sont :  
+\( T_1 : z_1 = (\sqrt{3} + i)z \) et \( T_2 : z_2 = (1 - i\sqrt{3})z + 3 \).
+
+\begin{enumerate}
+    \item Déterminer la nature et les éléments caractéristiques de \( T_1 \) et \( T_2 \).
+    \item Déterminer l’écriture complexe, la nature et les éléments caractéristiques de \( T_2 \circ T_1 \).
+    \item Démontrer qu’il existe un seul point \( K \) tel que \( T_1(K) = T_2(K) \). Soit \( L = T_1(K) \).  
+          Calculer les affixes des points \( K \) et \( L \).
+    \item Démontrer que le point \( L \) est invariable pour chacune des applications \( T_2 \circ T_1^{-1} \) et \( T_1 \circ T_2^{-1} \).
+    \item Déterminer l’écriture complexe de chacune des applications \( T_2 \circ T_1^{-1} \) et \( T_1 \circ T_2^{-1} \).  
+          Préciser leurs natures et éléments caractéristiques.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+Soit \( S_1 \) l’application qui à tout point \( M(x,y) \) associe \( M'(x',y') \) définie par :
+
+\[
+\begin{cases}
+    x' = -\frac{1}{2}x - \frac{\sqrt{3}}{2}y + \frac{3}{2} \\
+    y' = \frac{\sqrt{3}}{2}x - \frac{1}{2}y - \frac{\sqrt{3}}{2}
+\end{cases}
+\]
+
+\begin{enumerate}
+    \item Déterminer l’écriture complexe de \( S_1 \).
+    \item En déduire la nature et les éléments caractéristiques de \( S_1 \).
+    \item Soient les points \( A(1) \) et \( B(-1) \). Déterminer l’écriture complexe de la similitude directe  
+          \( S_2 \) telle que \( S_2(A) = O \) et \( S_2(B) = B \) puis caractériser \( S_2 \).
+    \item On pose \( S = S_1 \circ S_2 \). Déterminer l’écriture complexe de \( S \).
+    \item Déterminer l’image par \( S \) :
+    \begin{enumerate}
+        \item de la droite \( (\mathscr{D}) \) d’équation \( 2x + y - 1 = 0 \);
+        \item du cercle \( (\mathscr{C}) \) d’équation \( (x + 3)^2 + (y - 2)^2 = 4 \).
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}} Bac 2024 \hfill \textbf{(05 points)}
+
+\begin{enumerate}
+
+\item Dans le plan complexe muni d’un repère orthonormé direct \( (O; \vec{i}, \vec{j}) \), on considère les points \( A, B \) et \( C \) d’affixes respectives :  
+   \( z_A = -3i \), \( z_B = -2 \) et \( z_C = 1 + 2i \).
+
+\begin{enumerate}
+    \item Déterminer le module et un argument du quotient  
+          \[
+          \frac{2z_C - z_B}{z_A - z_B}.
+          \]
+          \hfill \textbf{(0,75 point)}
+          
+    \item En déduire la nature du triangle \( ABC \).  
+          \hfill \textbf{(0,75 point)}
+          
+    \item Déterminer l’affixe \( z_D \) du point \( D \) tel que le quadrilatère \( BADC \) soit un carré.  
+          \hfill \textbf{(0,5 point)}
+          
+    \item Montrer que les points \( A, B, C \) et \( D \) appartiennent à un même cercle dont on précisera le centre et le rayon.  
+          \hfill \textbf{(0,75 point)}
+\end{enumerate}
+
+\item On considère les points \( M \) et \( M' \) d’affixes respectives \( z = x + iy \) et \( z' = x' + iy' \) où \( x, y, x', y' \) sont des réels.
+
+Soit \( S \) l’application du plan dans le plan d’expression analytique : \( \begin{cases}
+    x' = x - y + 2 \\
+    y' = x + y - 1
+\end{cases} \)
+
+\begin{enumerate}
+    \item Montrer que l’écriture complexe de \( S \) est :  
+          \[
+          z' = (1 + i)z + 2 - i.
+          \]
+          \hfill \textbf{(0,5 point)}
+          
+    \item Déterminer la nature et les éléments caractéristiques de \( S \).  
+          \hfill \textbf{(0,5 point)}
+          
+    \item Déterminer l’image par \( S \) de la droite \( (D) \) d’équation \( x + y + 1 = 0 \).  
+          \hfill \textbf{(0,5 point)}
+          
+    \item Déterminer l’ensemble des points \( M \) dont l’affixe \( z \) vérifie \( |(1 + i)z + 2 - i| = 2 \).  
+          \hfill \textbf{(0,5 point)}
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
