@@ -207,4 +207,141 @@ z' - \omega = k\,e^{i\theta}\,(z-\omega)
 \end{enumerate}
 \end{multicols}
 
+\fbox{\textbf{\exo}} 
+
+On écrit $f$ sous la forme $z' = az + b$ et on étudie $a$ :
+\begin{itemize}
+    \item si $a = 1$, $f$ est la \textbf{translation} de vecteur $\vec{u}$ d'affixe $b$ ;
+    \item si $a \neq 1$, $f$ admet un unique point invariant $\Omega$ d'affixe $\omega = \dfrac{b}{1-a}$, et
+    \[
+    z' - \omega = a\,(z-\omega).
+    \]
+    Alors $f$ est la similitude directe de centre $\Omega$, de rapport $|a|$ et d'angle $\arg(a)$.
+    En particulier : si $a \in \mathbb{R}\setminus\{1\}$, c'est une \textbf{homothétie} de rapport $a$ ;
+    si $|a| = 1$, c'est une \textbf{rotation}.
+\end{itemize}
+
+\begin{enumerate}
+
+    \item $z' = (\sqrt3 + i)\,z$.
+
+    $
+    \begin{aligned}
+    a &= \sqrt3 + i \\[1mm]
+      &= 2\left(\dfrac{\sqrt3}{2}+\dfrac{i}{2}\right) \\[1mm]
+      &= 2\,e^{i\pi/6},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{0}{1-a} \\[1mm]
+           &= 0.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f \text{ est la similitude directe de centre } O \text{, de rapport } 2 \text{ et d'angle } \dfrac{\pi}{6}.}
+    \]
+
+    \item $z' = -2z + i$.
+
+    $
+    \begin{aligned}
+    a &= -2 \in \mathbb{R}\setminus\{1\},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{i}{1-(-2)} \\[1mm]
+           &= \dfrac{i}{3}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f \text{ est l'homothétie de centre } \Omega\left(\dfrac{i}{3}\right) \text{ et de rapport } -2.}
+    \]
+
+    \item $z' = -z + 2i$.
+
+    $
+    \begin{aligned}
+    a &= -1,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{2i}{1-(-1)} \\[1mm]
+           &= \dfrac{2i}{2} \\[1mm]
+           &= i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f \text{ est la symétrie centrale (homothétie de rapport } -1\text{) de centre } \Omega(i).}
+    \]
+
+    \item $z' = \dfrac{3 + i\sqrt3}{4}\,z + \dfrac{1 - i\sqrt3}{2}$.
+
+    $
+    \begin{aligned}
+    a &= \dfrac{3 + i\sqrt3}{4} \\[1mm]
+      &= \dfrac{\sqrt3}{2}\left(\dfrac{\sqrt3}{2}+\dfrac{i}{2}\right) \\[1mm]
+      &= \dfrac{\sqrt3}{2}\,e^{i\pi/6},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{\dfrac{1 - i\sqrt3}{2}}{\dfrac{1 - i\sqrt3}{4}} \\[1mm]
+           &= 2.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f \text{ est la similitude directe de centre } \Omega(2) \text{, de rapport } \dfrac{\sqrt3}{2} \text{ et d'angle } \dfrac{\pi}{6}.}
+    \]
+
+    \item $z' = iz + 1$.
+
+    $
+    \begin{aligned}
+    a &= i \\[1mm]
+      &= e^{i\pi/2}, \qquad |a| = 1,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{1}{1-i} \\[1mm]
+           &= \dfrac{1+i}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f \text{ est la rotation de centre } \Omega\left(\dfrac{1+i}{2}\right) \text{ et d'angle } \dfrac{\pi}{2}.}
+    \]
+
+    \item $z' = z + 3 - i$.
+
+    $
+    \begin{aligned}
+    a &= 1,
+    \end{aligned}
+    $
+
+    donc $f$ n'a pas de point invariant.
+
+    \[
+    \boxed{f \text{ est la translation de vecteur } \vec{u} \text{ d'affixe } 3 - i.}
+    \]
+
+\end{enumerate}
 \end{document}
