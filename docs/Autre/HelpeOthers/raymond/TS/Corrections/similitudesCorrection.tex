@@ -344,4 +344,85 @@ On écrit $f$ sous la forme $z' = az + b$ et on étudie $a$ :
     \]
 
 \end{enumerate}
+
+\fbox{\textbf{\exo}} 
+
+Soit $s$ la similitude directe d'écriture complexe $z' = az + b$ avec $a \in \mathbb{C}^*$ et $b \in \mathbb{C}$.
+Si $s(A) = A'$ et $s(B) = B'$, alors
+\[
+\left\{
+\begin{aligned}
+z_{A'} &= a\,z_A + b \\
+z_{B'} &= a\,z_B + b
+\end{aligned}
+\right.
+\]
+En soustrayant ces deux égalités, on obtient $z_{A'} - z_{B'} = a\,(z_A - z_B)$, d'où
+\[
+a = \dfrac{z_{A'} - z_{B'}}{z_A - z_B}
+\quad \text{et} \quad
+b = z_{A'} - a\,z_A .
+\]
+
+\begin{multicols}{2}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+\begin{enumerate}
+
+    \item $A(3+2i)$, $A'(3)$, $B(1)$ et $B'(i)$.
+
+    $
+    \begin{aligned}
+    a &= \dfrac{z_{A'} - z_{B'}}{z_A - z_B} \\[1mm]
+      &= \dfrac{3 - i}{(3+2i) - 1} \\[1mm]
+      &= \dfrac{3 - i}{2 + 2i} \\[1mm]
+      &= \dfrac{(3 - i)(2 - 2i)}{(2+2i)(2-2i)} \\[1mm]
+      &= \dfrac{6 - 6i - 2i + 2i^2}{8} \\[1mm]
+      &= \dfrac{4 - 8i}{8} \\[1mm]
+      &= \dfrac12 - i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= z_{A'} - a\,z_A \\[1mm]
+      &= 3 - \left(\dfrac12 - i\right)(3 + 2i) \\[1mm]
+      &= 3 - \left(\dfrac32 + i - 3i - 2i^2\right) \\[1mm]
+      &= 3 - \left(\dfrac72 - 2i\right) \\[1mm]
+      &= -\dfrac12 + 2i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z' = \left(\dfrac12 - i\right)z - \dfrac12 + 2i}
+    \]
+
+    \item $A(2+i)$, $A'(3+2i)$, $B(2)$ et $B'(3i)$.
+
+    $
+    \begin{aligned}
+    a &= \dfrac{z_{A'} - z_{B'}}{z_A - z_B} \\[1mm]
+      &= \dfrac{(3+2i) - 3i}{(2+i) - 2} \\[1mm]
+      &= \dfrac{3 - i}{i} \\[1mm]
+      &= \dfrac{(3 - i)(-i)}{i\times(-i)} \\[1mm]
+      &= -3i + i^2 \\[1mm]
+      &= -1 - 3i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= z_{B'} - a\,z_B \\[1mm]
+      &= 3i - (-1 - 3i)\times 2 \\[1mm]
+      &= 3i + 2 + 6i \\[1mm]
+      &= 2 + 9i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z' = (-1 - 3i)\,z + 2 + 9i}
+    \]
+
+\end{enumerate}
+\end{multicols}
+
 \end{document}
