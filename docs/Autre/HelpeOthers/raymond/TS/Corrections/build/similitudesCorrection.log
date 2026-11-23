@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 NOV 2026 23:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  23 NOV 2026 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,7 +1116,7 @@ enc/dvips/lm/lm-ec.enc}
 dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
 lm-ts1.enc}]
-[2] [3] [4] [5] [6]
+[2] [3] [4] [5] [6] [7]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/similitudesCorrection.aux)
@@ -1132,8 +1132,8 @@ Package rerunfilecheck Info: File `similitudesCorrection.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30218 strings out of 467533
- 608375 string characters out of 5422138
+ 30222 strings out of 467533
+ 608402 string characters out of 5422138
  1093841 words of memory out of 5000000
  58543 multiletter control sequences out of 15000+600000
  669373 words of font info for 73 fonts, out of 8000000 for 9000
@@ -1149,10 +1149,10 @@ f/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on build/similitudesCorrection.pdf (6 pages, 195065 bytes).
+Output written on build/similitudesCorrection.pdf (7 pages, 199027 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

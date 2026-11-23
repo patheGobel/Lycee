@@ -566,6 +566,87 @@ b = z_{A'} - a\,z_A .
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+
+    \item Les coefficients ont pour somme $2 - 2 + 1 = 1 \neq 0$, donc le barycentre $G$ existe.
+
+    $
+    \begin{aligned}
+    z_G &= \dfrac{2\,z_A - 2\,z_B + z_C}{2 - 2 + 1} \\[1mm]
+        &= 2i - 2(1 + i) + (2 + 2i) \\[1mm]
+        &= 2i - 2 - 2i + 2 + 2i \\[1mm]
+        &= 2i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z_G = 2i}
+    \]
+
+    \item Soit $s : z' = az + b$ la similitude directe telle que $s(A) = B$ et $s(B) = C$.
+
+    $
+    \begin{aligned}
+    a &= \dfrac{z_B - z_C}{z_A - z_B} \\[1mm]
+      &= \dfrac{(1 + i) - (2 + 2i)}{i - (1 + i)} \\[1mm]
+      &= \dfrac{-1 - i}{-1} \\[1mm]
+      &= 1 + i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    b &= z_B - a\,z_A \\[1mm]
+      &= (1 + i) - (1 + i)\,i \\[1mm]
+      &= 1 + i - i - i^2 \\[1mm]
+      &= 2.
+    \end{aligned}
+    $
+
+    Donc $s : z' = (1 + i)\,z + 2$.
+
+    On calcule l'image de $G$ :
+
+    $
+    \begin{aligned}
+    s(G) &= (1 + i)\,z_G + 2 \\[1mm]
+         &= (1 + i)(2i) + 2 \\[1mm]
+         &= 2i + 2i^2 + 2 \\[1mm]
+         &= 2i - 2 + 2 \\[1mm]
+         &= 2i \\[1mm]
+         &= z_G.
+    \end{aligned}
+    $
+
+    Comme $a \neq 1$, $s$ admet un unique point invariant, qui est son centre. Or $G$ est invariant par $s$.
+
+    \[
+    \boxed{s \text{ a pour centre le point } G(2i).}
+    \]
+
+    \item Le rapport de $s$ est $|a|$ et son angle est $\arg(a)$.
+
+    $
+    \begin{aligned}
+    |a| &= |1 + i| \\[1mm]
+        &= \sqrt{1^2 + 1^2} \\[1mm]
+        &= \sqrt2,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    a &= \sqrt2\left(\dfrac{\sqrt2}{2} + i\,\dfrac{\sqrt2}{2}\right) \\[1mm]
+      &= \sqrt2\,e^{i\pi/4}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{s \text{ est la similitude directe de centre } G(2i) \text{, de rapport } \sqrt2 \text{ et d'angle } \dfrac{\pi}{4}.}
+    \]
+
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
