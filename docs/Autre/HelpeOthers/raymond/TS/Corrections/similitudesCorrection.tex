@@ -425,4 +425,157 @@ b = z_{A'} - a\,z_A .
 \end{enumerate}
 \end{multicols}
 
+\fbox{\textbf{\exo}}
+
+\begin{enumerate}
+
+    \item On a $s : z' = az + b$ avec $a = 3i$ et $b = -9 - 3i$. Comme $a \neq 1$, $s$ admet un unique point invariant $\Omega$ d'affixe $\omega = \dfrac{b}{1-a}$.
+
+    $
+    \begin{aligned}
+    a &= 3i \\[1mm]
+      &= 3\,e^{i\pi/2},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1-a} \\[1mm]
+           &= \dfrac{-9 - 3i}{1 - 3i} \\[1mm]
+           &= \dfrac{(-9 - 3i)(1 + 3i)}{(1-3i)(1+3i)} \\[1mm]
+           &= \dfrac{-9 - 27i - 3i - 9i^2}{10} \\[1mm]
+           &= \dfrac{-30i}{10} \\[1mm]
+           &= -3i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{s \text{ est la similitude directe de centre } \Omega(-3i) \text{, de rapport } 3 \text{ et d'angle } \dfrac{\pi}{2}.}
+    \]
+
+    \item Posons $z = x + iy$ et $z' = x' + iy'$ avec $x, y, x', y' \in \mathbb{R}$.
+
+    $
+    \begin{aligned}
+    z' &= 3iz - 9 - 3i \\[1mm]
+       &= 3i(x + iy) - 9 - 3i \\[1mm]
+       &= 3ix - 3y - 9 - 3i \\[1mm]
+       &= (-3y - 9) + i\,(3x - 3).
+    \end{aligned}
+    $
+
+    Par identification des parties réelle et imaginaire :
+
+    \[
+    \boxed{\left\{
+    \begin{aligned}
+    x' &= -3y - 9 \\
+    y' &= 3x - 3
+    \end{aligned}
+    \right.}
+    \]
+
+    \item On rappelle que $s$ transforme un cercle de centre $K$ et de rayon $r$ en un cercle de centre $s(K)$ et de rayon $3r$, et une droite en une droite.
+
+    \begin{enumerate}
+
+        \item Soit $\mathscr{C}$ le cercle de centre $K(1 - 3i)$ et de rayon $1$.
+
+        $
+        \begin{aligned}
+        z_{K'} &= 3i\,z_K - 9 - 3i \\[1mm]
+               &= 3i(1 - 3i) - 9 - 3i \\[1mm]
+               &= 3i + 9 - 9 - 3i \\[1mm]
+               &= 0.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{s(\mathscr{C}) \text{ est le cercle de centre } O \text{ et de rayon } 3.}
+        \]
+
+        \item De $y' = 3x - 3$ et $x' = -3y - 9$, on tire
+        \[
+        x = \dfrac{y' + 3}{3}
+        \quad \text{et} \quad
+        y = -\dfrac{x' + 9}{3}.
+        \]
+
+        Soit $M'(x', y') \in s(\mathscr{D})$. Alors il existe $M(x, y) \in \mathscr{D}$ tel que $s(M) = M'$.
+
+        $
+        \begin{aligned}
+        M \in \mathscr{D} &\iff x = 1 \\[1mm]
+                          &\iff \dfrac{y' + 3}{3} = 1 \\[1mm]
+                          &\iff y' = 0.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{s(\mathscr{D}) \text{ est la droite d'équation } y = 0 \text{ (l'axe des abscisses).}}
+        \]
+
+        \item Soit $\Delta$ la droite passant par $A(5;3)$ de vecteur directeur $\vec{u}(-1;3)$.
+
+        On calcule d'abord l'image de $A$ :
+
+        $
+        \begin{aligned}
+        x_{A'} &= -3y_A - 9 \\[1mm]
+               &= -9 - 9 \\[1mm]
+               &= -18,
+        \end{aligned}
+        $
+        \qquad
+        $
+        \begin{aligned}
+        y_{A'} &= 3x_A - 3 \\[1mm]
+               &= 15 - 3 \\[1mm]
+               &= 12.
+        \end{aligned}
+        $
+
+        Puis l'image du vecteur directeur : l'affixe de $\vec{u}$ est $-1 + 3i$, et la partie linéaire de $s$ est $z \mapsto 3iz$.
+
+        $
+        \begin{aligned}
+        z_{\vec{u}'} &= 3i\,(-1 + 3i) \\[1mm]
+                     &= -3i + 9i^2 \\[1mm]
+                     &= -9 - 3i,
+        \end{aligned}
+        $
+
+        donc $\vec{u}'(-9;-3)$, colinéaire à $\vec{v}(3;1)$.
+
+        $s(\Delta)$ est la droite passant par $A'(-18;12)$ de vecteur directeur $\vec{v}(3;1)$. Un point $M(x;y)$ appartient à $s(\Delta)$ si et seulement si $\overrightarrow{A'M}$ et $\vec{v}$ sont colinéaires :
+
+        $
+        \begin{aligned}
+        \det\left(\overrightarrow{A'M}, \vec{v}\right) = 0 &\iff (x + 18)\times 1 - (y - 12)\times 3 = 0 \\[1mm]
+                                                           &\iff x - 3y + 54 = 0.
+        \end{aligned}
+        $
+
+        \[
+        \boxed{s(\Delta) \text{ est la droite d'équation } x - 3y + 54 = 0.}
+        \]
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
+\fbox{\textbf{\exo}}
+
 \end{document}
