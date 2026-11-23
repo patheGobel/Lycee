@@ -649,6 +649,195 @@ b = z_{A'} - a\,z_A .
 
 \fbox{\textbf{\exo}}
 
+\begin{enumerate}
+
+    \item \textbf{Étude de $T_1$.} On a $a_1 = \sqrt3 + i$ et $b_1 = 0$.
+
+    $
+    \begin{aligned}
+    a_1 &= \sqrt3 + i \\[1mm]
+        &= 2\left(\dfrac{\sqrt3}{2}+\dfrac{i}{2}\right) \\[1mm]
+        &= 2\,e^{i\pi/6},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega_1 &= \dfrac{b_1}{1-a_1} \\[1mm]
+             &= 0.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{T_1 \text{ est la similitude directe de centre } O \text{, de rapport } 2 \text{ et d'angle } \dfrac{\pi}{6}.}
+    \]
+
+    \textbf{Étude de $T_2$.} On a $a_2 = 1 - i\sqrt3$ et $b_2 = 3$.
+
+    $
+    \begin{aligned}
+    a_2 &= 1 - i\sqrt3 \\[1mm]
+        &= 2\left(\dfrac12 - i\,\dfrac{\sqrt3}{2}\right) \\[1mm]
+        &= 2\,e^{-i\pi/3},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega_2 &= \dfrac{b_2}{1-a_2} \\[1mm]
+             &= \dfrac{3}{i\sqrt3} \\[1mm]
+             &= \dfrac{-3i}{\sqrt3} \\[1mm]
+             &= -i\sqrt3.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{T_2 \text{ est la similitude directe de centre } \Omega_2(-i\sqrt3) \text{, de rapport } 2 \text{ et d'angle } -\dfrac{\pi}{3}.}
+    \]
+
+    \item Pour tout $z$, $T_2\circ T_1(z) = a_2\,(a_1 z) + 3 = a_1 a_2\, z + 3$.
+
+    $
+    \begin{aligned}
+    a_1 a_2 &= (\sqrt3 + i)(1 - i\sqrt3) \\[1mm]
+            &= \sqrt3 - 3i + i - i^2\sqrt3 \\[1mm]
+            &= 2\sqrt3 - 2i \\[1mm]
+            &= 4\left(\dfrac{\sqrt3}{2} - \dfrac{i}{2}\right) \\[1mm]
+            &= 4\,e^{-i\pi/6}.
+    \end{aligned}
+    $
+
+    L'écriture complexe de $T_2\circ T_1$ est donc $z' = (2\sqrt3 - 2i)\,z + 3$.
+
+    Comme $a_1a_2 \neq 1$, il y a un unique point invariant d'affixe $\omega$ :
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{3}{1 - 2\sqrt3 + 2i} \\[1mm]
+           &= \dfrac{3\,(1 - 2\sqrt3 - 2i)}{(1 - 2\sqrt3)^2 + 4} \\[1mm]
+           &= \dfrac{3\,(1 - 2\sqrt3 - 2i)}{17 - 4\sqrt3}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{T_2\circ T_1 \text{ est la similitude directe de centre } \Omega\left(\dfrac{3\,(1 - 2\sqrt3 - 2i)}{17 - 4\sqrt3}\right) \text{, de rapport } 4 \text{ et d'angle } -\dfrac{\pi}{6}.}
+    \]
+
+    \item Soit $K$ d'affixe $z$. On a
+    \[
+    T_1(K) = T_2(K)
+    \iff a_1 z = a_2 z + 3
+    \iff (a_1 - a_2)\,z = 3 .
+    \]
+
+    $
+    \begin{aligned}
+    a_1 - a_2 &= (\sqrt3 + i) - (1 - i\sqrt3) \\[1mm]
+              &= (\sqrt3 - 1) + i\,(\sqrt3 + 1) \\[1mm]
+              &\neq 0,
+    \end{aligned}
+    $
+
+    donc l'équation admet une unique solution : il existe un seul point $K$ tel que $T_1(K) = T_2(K)$.
+
+    $
+    \begin{aligned}
+    z_K &= \dfrac{3}{(\sqrt3 - 1) + i(\sqrt3 + 1)} \\[1mm]
+        &= \dfrac{3\left[(\sqrt3 - 1) - i(\sqrt3 + 1)\right]}{(\sqrt3 - 1)^2 + (\sqrt3 + 1)^2} \\[1mm]
+        &= \dfrac{3\left[(\sqrt3 - 1) - i(\sqrt3 + 1)\right]}{8},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    z_L &= (\sqrt3 + i)\,z_K \\[1mm]
+        &= \dfrac{3}{8}\,(\sqrt3 + i)\left[(\sqrt3 - 1) - i(\sqrt3 + 1)\right] \\[1mm]
+        &= \dfrac{3}{8}\,(4 - 4i) \\[1mm]
+        &= \dfrac{3}{2} - \dfrac{3}{2}\,i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{z_K = \dfrac{3\left[(\sqrt3 - 1) - i(\sqrt3 + 1)\right]}{8} \qquad \text{et} \qquad z_L = \dfrac{3}{2} - \dfrac{3}{2}\,i.}
+    \]
+
+    \item On a $T_1(K) = T_2(K) = L$, donc $T_1^{-1}(L) = K$ et $T_2^{-1}(L) = K$.
+
+    $
+    \begin{aligned}
+    \left(T_2\circ T_1^{-1}\right)(L) &= T_2\left(T_1^{-1}(L)\right) \\[1mm]
+                                      &= T_2(K) \\[1mm]
+                                      &= L,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \left(T_1\circ T_2^{-1}\right)(L) &= T_1\left(T_2^{-1}(L)\right) \\[1mm]
+                                      &= T_1(K) \\[1mm]
+                                      &= L.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{L \text{ est invariant par } T_2\circ T_1^{-1} \text{ et par } T_1\circ T_2^{-1}.}
+    \]
+
+    \item $T_1^{-1}$ a pour écriture complexe $z = \dfrac{z_1}{a_1}$, et $T_2^{-1}$ a pour écriture complexe $z = \dfrac{z_2 - 3}{a_2}$.
+
+    \textbf{Pour $T_2\circ T_1^{-1}$} : $z' = a_2\,\dfrac{z}{a_1} + 3$.
+
+    $
+    \begin{aligned}
+    \dfrac{a_2}{a_1} &= \dfrac{2\,e^{-i\pi/3}}{2\,e^{i\pi/6}} \\[1mm]
+                     &= e^{-i\pi/2} \\[1mm]
+                     &= -i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{3}{1 - (-i)} \\[1mm]
+           &= \dfrac{3}{1 + i} \\[1mm]
+           &= \dfrac{3\,(1 - i)}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{T_2\circ T_1^{-1} : z' = -i\,z + 3 \text{ est la rotation de centre } L \text{ et d'angle } -\dfrac{\pi}{2}.}
+    \]
+
+    \textbf{Pour $T_1\circ T_2^{-1}$} : $z' = a_1\,\dfrac{z - 3}{a_2}$.
+
+    $
+    \begin{aligned}
+    \dfrac{a_1}{a_2} &= \dfrac{2\,e^{i\pi/6}}{2\,e^{-i\pi/3}} \\[1mm]
+                     &= e^{i\pi/2} \\[1mm]
+                     &= i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    z' &= i\,(z - 3) \\[1mm]
+       &= i\,z - 3i,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{-3i}{1 - i} \\[1mm]
+           &= \dfrac{-3i\,(1 + i)}{2} \\[1mm]
+           &= \dfrac{3 - 3i}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{T_1\circ T_2^{-1} : z' = i\,z - 3i \text{ est la rotation de centre } L \text{ et d'angle } \dfrac{\pi}{2}.}
+    \]
+
+\end{enumerate}
+
 \fbox{\textbf{\exo}}
 
 \fbox{\textbf{\exo}}
