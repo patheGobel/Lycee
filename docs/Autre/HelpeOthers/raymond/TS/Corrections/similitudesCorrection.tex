@@ -91,7 +91,7 @@ middle color = tcbcolback!80!black]
 ]
     \begin{center}
         \textbf{\large Lycée de Diattacounda} \hfill \textbf{A.S. : 2026/2027} \\[1mm]
-        \textbf{Mathématiques} $\bullet$ \textbf{Niveau : TS2} \hfill \textbf{Date : 13/11/2026} \\[2mm]
+        \textbf{Mathématiques} $\bullet$ \textbf{Niveau : TS2} \hfill \textbf{Date : 23/11/2026} \\[2mm]
         \rule{0.8\linewidth}{0.4pt} \\[1.5mm]
         {\Large\bfseries\sffamily TD : Similitudes}
     \end{center}
@@ -1163,10 +1163,237 @@ b = z_{A'} - a\,z_A .
 
 \end{enumerate}
 
-\fbox{\textbf{\exo}}
+\fbox{\textbf{\exo}} \hfill \textbf{(5,25 points)}
 
-\fbox{\textbf{\exo}}
+\begin{enumerate}
 
-\fbox{\textbf{\exo}}
+\item
+
+\begin{enumerate}
+
+    \item On calcule le module et un argument de $\sqrt3 - i$.
+
+    $
+    \begin{aligned}
+    \sqrt3 - i &= 2\left(\dfrac{\sqrt3}{2} - \dfrac{i}{2}\right) \\[1mm]
+               &= 2\left(\cos\left(-\dfrac{\pi}{6}\right) + i\sin\left(-\dfrac{\pi}{6}\right)\right).
+    \end{aligned}
+    $
+
+    \[
+    \boxed{\sqrt3 - i = 2\,e^{-i\pi/6}}
+    \]
+
+    \item L'écriture complexe de la rotation de centre $O$ et d'angle $\dfrac{\pi}{4}$ est $z' = e^{i\pi/4}\,z$.
+
+    $
+    \begin{aligned}
+    e^{i\pi/4} &= \cos\dfrac{\pi}{4} + i\sin\dfrac{\pi}{4} \\[1mm]
+               &= \dfrac{\sqrt2}{2} + i\,\dfrac{\sqrt2}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{r : z' = \dfrac{\sqrt2}{2}\,(1 + i)\,z}
+    \]
+
+    \item $B = r(A)$, donc $b = e^{i\pi/4}\,z_A$.
+
+    $
+    \begin{aligned}
+    b &= \dfrac{\sqrt2}{2}\,(1 + i)\,(\sqrt3 - i) \\[1mm]
+      &= \dfrac{\sqrt2}{2}\,\left(\sqrt3 - i + i\sqrt3 - i^2\right) \\[1mm]
+      &= \dfrac{\sqrt2}{2}\,\left[(\sqrt3 + 1) + i\,(\sqrt3 - 1)\right] \\[1mm]
+      &= \dfrac{\sqrt6 + \sqrt2}{2} + i\,\dfrac{\sqrt6 - \sqrt2}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{b = \dfrac{\sqrt6 + \sqrt2}{2} + i\,\dfrac{\sqrt6 - \sqrt2}{2}}
+    \]
+
+    \item Forme exponentielle de $b$ :
+
+    $
+    \begin{aligned}
+    b &= e^{i\pi/4}\times 2\,e^{-i\pi/6} \\[1mm]
+      &= 2\,e^{i\left(\frac{\pi}{4} - \frac{\pi}{6}\right)} \\[1mm]
+      &= 2\,e^{i\pi/12}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{b = 2\,e^{i\pi/12}}
+    \]
+
+    Forme trigonométrique de $b$ :
+
+    \[
+    \boxed{b = 2\left(\cos\dfrac{\pi}{12} + i\sin\dfrac{\pi}{12}\right)}
+    \]
+
+    \item On identifie les parties réelle et imaginaire des deux écritures de $b$ :
+
+    $
+    \begin{aligned}
+    2\cos\dfrac{\pi}{12} = \dfrac{\sqrt6 + \sqrt2}{2}
+    \quad &\Longrightarrow \quad
+    \cos\dfrac{\pi}{12} = \dfrac{\sqrt6 + \sqrt2}{4},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    2\sin\dfrac{\pi}{12} = \dfrac{\sqrt6 - \sqrt2}{2}
+    \quad &\Longrightarrow \quad
+    \sin\dfrac{\pi}{12} = \dfrac{\sqrt6 - \sqrt2}{4}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{\cos\dfrac{\pi}{12} = \dfrac{\sqrt6 + \sqrt2}{4} \qquad \text{et} \qquad \sin\dfrac{\pi}{12} = \dfrac{\sqrt6 - \sqrt2}{4}}
+    \]
+
+    \item On factorise : $z^3 - 1 = (z - 1)(z^2 + z + 1)$.
+
+    $
+    \begin{aligned}
+    z^3 = 1 &\iff z = 1 \quad \text{ou} \quad z^2 + z + 1 = 0.
+    \end{aligned}
+    $
+
+    Pour $z^2 + z + 1 = 0$, on a $\Delta = 1 - 4 = -3 = \left(i\sqrt3\right)^2$, donc
+    \[
+    z = \dfrac{-1 + i\sqrt3}{2} \quad \text{ou} \quad z = \dfrac{-1 - i\sqrt3}{2}.
+    \]
+
+    \[
+    \boxed{S = \left\{\,1\,;\ j = -\dfrac12 + i\,\dfrac{\sqrt3}{2}\,;\ \bar{j} = j^2 = -\dfrac12 - i\,\dfrac{\sqrt3}{2}\,\right\}}
+    \]
+
+    \item Comme $b \neq 0$,
+
+    $
+    \begin{aligned}
+    z^3 = b^3 &\iff \left(\dfrac{z}{b}\right)^3 = 1 \\[1mm]
+              &\iff \dfrac{z}{b} \in \{1\,;\,j\,;\,j^2\} \\[1mm]
+              &\iff z \in \{b\,;\,bj\,;\,bj^2\}.
+    \end{aligned}
+    $
+
+    On calcule sous forme algébrique, en utilisant $j = e^{2i\pi/3}$ :
+
+    $
+    \begin{aligned}
+    bj &= 2\,e^{i\pi/12}\,e^{2i\pi/3} \\[1mm]
+       &= 2\,e^{3i\pi/4} \\[1mm]
+       &= 2\left(-\dfrac{\sqrt2}{2} + i\,\dfrac{\sqrt2}{2}\right) \\[1mm]
+       &= -\sqrt2 + i\sqrt2,
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    bj^2 &= 2\,e^{i\pi/12}\,e^{4i\pi/3} \\[1mm]
+         &= 2\,e^{17i\pi/12} \\[1mm]
+         &= 2\left(-\cos\dfrac{5\pi}{12} - i\sin\dfrac{5\pi}{12}\right) \\[1mm]
+         &= 2\left(-\dfrac{\sqrt6 - \sqrt2}{4} - i\,\dfrac{\sqrt6 + \sqrt2}{4}\right) \\[1mm]
+         &= \dfrac{\sqrt2 - \sqrt6}{2} - i\,\dfrac{\sqrt6 + \sqrt2}{2}.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{S = \left\{\,\dfrac{\sqrt6 + \sqrt2}{2} + i\,\dfrac{\sqrt6 - \sqrt2}{2}\,;\ -\sqrt2 + i\sqrt2\,;\ \dfrac{\sqrt2 - \sqrt6}{2} - i\,\dfrac{\sqrt6 + \sqrt2}{2}\,\right\}}
+    \]
+
+\end{enumerate}
+
+\item
+
+\begin{enumerate}
+
+    \item On a $a = 1 - i\sqrt3$ et $b = 2i\sqrt3$, avec $a \neq 1$.
+
+    $
+    \begin{aligned}
+    a &= 1 - i\sqrt3 \\[1mm]
+      &= 2\left(\dfrac12 - i\,\dfrac{\sqrt3}{2}\right) \\[1mm]
+      &= 2\,e^{-i\pi/3},
+    \end{aligned}
+    $
+
+    $
+    \begin{aligned}
+    \omega &= \dfrac{b}{1 - a} \\[1mm]
+           &= \dfrac{2i\sqrt3}{i\sqrt3} \\[1mm]
+           &= 2.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f \text{ est la similitude directe de centre } \Omega(2) \text{, de rapport } 2 \text{ et d'angle } -\dfrac{\pi}{3}.}
+    \]
+
+    \item On détermine l'écriture réelle de $f^{-1}$. On a $z = \dfrac{z' - 2i\sqrt3}{1 - i\sqrt3}$ et
+
+    $
+    \begin{aligned}
+    \dfrac{1}{1 - i\sqrt3} &= \dfrac{1 + i\sqrt3}{4}.
+    \end{aligned}
+    $
+
+    On pose $z' = x' + iy'$.
+
+    $
+    \begin{aligned}
+    z &= \dfrac{1}{4}\left(x' + i\,(y' - 2\sqrt3)\right)\left(1 + i\sqrt3\right) \\[1mm]
+      &= \dfrac{1}{4}\left[\left(x' - \sqrt3\,y' + 6\right) + i\left(\sqrt3\,x' + y' - 2\sqrt3\right)\right],
+    \end{aligned}
+    $
+
+    d'où
+
+    \[
+    \left\{
+    \begin{aligned}
+    x &= \dfrac{x' - \sqrt3\,y' + 6}{4} \\[1mm]
+    y &= \dfrac{\sqrt3\,x' + y' - 2\sqrt3}{4}
+    \end{aligned}
+    \right.
+    \]
+
+    Un point $M'(x'\,;y')$ appartient à $(\Delta')$ si et seulement si $f^{-1}(M') \in (\Delta)$.
+
+    $
+    \begin{aligned}
+    -x + y - 1 = 0 &\iff -\left(x' - \sqrt3\,y' + 6\right) + \left(\sqrt3\,x' + y' - 2\sqrt3\right) - 4 = 0 \\[1mm]
+                   &\iff \left(\sqrt3 - 1\right)x' + \left(\sqrt3 + 1\right)y' - 10 - 2\sqrt3 = 0.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{(\Delta') : \left(\sqrt3 - 1\right)x + \left(\sqrt3 + 1\right)y - 10 - 2\sqrt3 = 0}
+    \]
+
+    \item L'image du cercle $(\mathscr{C})$ de centre $A$ et de rayon $\dfrac12$ est le cercle de centre $f(A)$ et de rayon $2\times\dfrac12 = 1$.
+
+    $
+    \begin{aligned}
+    z_{A'} &= \left(1 - i\sqrt3\right)\left(\sqrt3 - i\right) + 2i\sqrt3 \\[1mm]
+           &= \sqrt3 - i - 3i + i^2\sqrt3 + 2i\sqrt3 \\[1mm]
+           &= \sqrt3 - 4i - \sqrt3 + 2i\sqrt3 \\[1mm]
+           &= \left(2\sqrt3 - 4\right)i.
+    \end{aligned}
+    $
+
+    \[
+    \boxed{f(\mathscr{C}) \text{ est le cercle de centre } A'\left(0\,;\,2\sqrt3 - 4\right) \text{ et de rayon } 1.}
+    \]
+
+    Son équation est $x^2 + \left(y - 2\sqrt3 + 4\right)^2 = 1$.
+
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}
