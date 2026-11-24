@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  24 NOV 2026 21:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.12.11)  24 NOV 2026 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,7 +1099,51 @@ Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 \ESO@tempdima=\dimen331
 \ESO@tempdimb=\dimen332
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 67
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen333
+\lightrulewidth=\dimen334
+\cmidrulewidth=\dimen335
+\belowrulesep=\dimen336
+\belowbottomsep=\dimen337
+\aboverulesep=\dimen338
+\abovetopsep=\dimen339
+\cmidrulesep=\dimen340
+\cmidrulekern=\dimen341
+\defaultaddspace=\dimen342
+\@cmidla=\count373
+\@cmidlb=\count374
+\@aboverulesep=\dimen343
+\@belowrulesep=\dimen344
+\@thisruleclass=\count375
+\@lastruleclass=\count376
+\@thisrulewidth=\dimen345
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen346
+\TX@old@table=\dimen347
+\TX@old@col=\dimen348
+\TX@target=\dimen349
+\TX@delta=\dimen350
+\TX@cols=\count377
+\TX@ftn=\toks61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+\everycr=\toks62
+\minrowclearance=\skip62
+\rownum=\count378
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip63
+\fb@frw=\dimen351
+\fb@frh=\dimen352
+\FrameRule=\dimen353
+\FrameSep=\dimen354
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 77
 .
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
@@ -1107,51 +1151,52 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count373
+\l__color_backend_stack_int=\count379
 \l__pdf_internal_box=\box131
 )
-No file statistiquesNew.aux.
+(build/statistiquesNew.aux)
 \openout1 = `statistiquesNew.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Info: Redefining \degres on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Info: Redefining \degres on input line 77.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 67.
+(french.ldf)             reported on input line 77.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 67.
-LaTeX Info: Redefining \up on input line 67.
+(french.ldf)             reported on input line 77.
+LaTeX Info: Redefining \up on input line 77.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count374
-\scratchdimen=\dimen333
+\scratchcounter=\count380
+\scratchdimen=\dimen355
 \scratchbox=\box132
-\nofMPsegments=\count375
-\nofMParguments=\count376
-\everyMPshowfont=\toks61
-\MPscratchCnt=\count377
-\MPscratchDim=\dimen334
-\MPnumerator=\count378
-\makeMPintoPDFobject=\count379
-\everyMPtoPDFconversion=\toks62
+\nofMPsegments=\count381
+\nofMParguments=\count382
+\everyMPshowfont=\toks63
+\MPscratchCnt=\count383
+\MPscratchDim=\dimen356
+\MPnumerator=\count384
+\makeMPintoPDFobject=\count385
+\everyMPtoPDFconversion=\toks64
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1198,64 +1243,66 @@ e
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.15).
 
-\c@lstlisting=\count380
-Package hyperref Info: Link coloring ON on input line 67.
+\c@lstlisting=\count386
+Package hyperref Info: Link coloring ON on input line 77.
+(build/statistiquesNew.out) (build/statistiquesNew.out)
 \@outlinefile=\write4
 \openout4 = `statistiquesNew.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
 1.
+
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
 1.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-71.
+81.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-71.
+81.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 71.
+(Font)              <17.28> on input line 81.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 71.
+(Font)              <12> on input line 81.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 71.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+(Font)              <10> on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 71
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 81
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 87.
+(Font)              <8> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 87.
+(Font)              <6> on input line 97.
 
-Overfull \hbox (35.05415pt too wide) in paragraph at lines 106--108
+Overfull \hbox (35.05415pt too wide) in paragraph at lines 116--118
 \T1/lmr/m/it/12 Exemple : \T1/lmr/m/n/12 Les mo-da-li-tés de la sé-rie pré-cé-d
 ente sont les dif-fé-rentes notes ob-te-nues : $[]$. 
  []
@@ -1270,21 +1317,14 @@ ild/statistiquesNew.aux)
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-Package rerunfilecheck Warning: File `statistiquesNew.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `statistiquesNew.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `statistiquesNew.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41815 strings out of 474222
- 974088 string characters out of 5748732
+ 42097 strings out of 474222
+ 978588 string characters out of 5748732
  1945975 words of memory out of 5000000
- 63380 multiletter control sequences out of 15000+600000
+ 63642 multiletter control sequences out of 15000+600000
  620665 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,11n,121p,736b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1294,7 +1334,7 @@ r/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy10.pfb>
-Output written on build/statistiquesNew.pdf (2 pages, 141533 bytes).
+Output written on build/statistiquesNew.pdf (2 pages, 141534 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
