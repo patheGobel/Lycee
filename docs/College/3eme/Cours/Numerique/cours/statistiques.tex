@@ -18,6 +18,7 @@
 \definecolor{accent}{HTML}{B22222}
 \definecolor{lightbg}{HTML}{F4F6F9}
 \definecolor{shadecolor}{HTML}{F2F2F2}
+\definecolor{highlight}{HTML}{FFF59D}
 
 \title{\textcolor{primary}{\textbf{COURS DE STATISTIQUES — CLASSE DE 3\textsuperscript{ème}}}}
 \author{Mathématiques}
@@ -30,71 +31,101 @@
 
 \section*{\textcolor{accent}{LEÇON 1 : EXPLOITATION DE DONNÉES STATISTIQUES}}
 
-\subsection*{\textcolor{primary}{I° Rappel du vocabulaire de base}}
-
-\begin{enumerate}
-    \item \textbf{\underline{Population}} : C'est l'ensemble des individus (ou objets) sur lesquels porte une étude statistique.
-    \item \textbf{\underline{Individu}} : C'est chaque élément de la population étudiée.
-    \item \textbf{\underline{Échantillon}} : C'est une partie (un sous-ensemble) de la population.
-    \item \textbf{\underline{Caractère}} : Le caractère est l'information (la propriété) sur laquelle l'étude statistique est réalisée. Il peut être :
-    \begin{itemize}
-        \item \textbf{Qualitatif} : s'il n'est pas mesurable par un nombre (\textit{exemples : la couleur, la nationalité, le moyen de transport}).
-        \item \textbf{Quantitatif} : s'il est mesurable par un nombre (\textit{exemples : la taille, la masse, une note}). Il est dit \textbf{discret} s'il prend des valeurs isolées, ou \textbf{continu} s'il prend toutes les valeurs d'un intervalle (regroupé en classes).
-    \end{itemize}
-    \item \textbf{\underline{Modalité}} : C'est l'une des différentes valeurs ou qualités que peut prendre le caractère d'une série statistique.
-    \item \textbf{\underline{Effectif ($n_i$)}} : C'est le nombre d'individus d'une population ou d'une partie de cette population (qui possèdent une modalité donnée). L'\textbf{effectif total ($N$)} est la somme de tous les effectifs : $N = n_1 + n_2 + \dots + n_k$.
-    \item \textbf{\underline{Fréquence ($f_i$)}} : C'est le quotient de l'effectif d'une modalité par l'effectif total ($f_i = \frac{n_i}{N}$). Elle est donc toujours comprise entre $0$ et $1$, et la somme totale de toutes les fréquences donne $1$ (ou $100\,\%$ en pourcentage).
-\end{enumerate}
-
-\subsubsection*{\textcolor{accent}{Exemple illustratif du vocabulaire statistique}}
+\subsection*{\textcolor{primary}{\underline{I° RAPPEL VOCABULAIRE DE BASE :}}}
 
 \begin{shaded}
-\noindent\textbf{Situation :} Un professeur interroge les élèves d'une classe de 3\textsuperscript{ème} (soit $25$ élèves) pour connaître leur moyen de transport principal pour venir à l'école. Il note les réponses suivantes :
+\noindent\textbf{Situation introductive :} À la suite d'un devoir de mathématiques, un professeur relève les notes (sur $20$) obtenues par un groupe de $12$ élèves de 3\textsuperscript{ème} :
 \begin{center}
-\textit{Bus, Bus, Voiture, Marche, Bus, Vélo, Voiture, Bus, Vélo, Bus, Voiture, Bus, Marche, Vélo, Bus, Bus, Bus, Voiture, Marche, Bus, Vélo, Voiture, Bus, Vélo, Bus}
+$10 \quad 12 \quad 10 \quad 14 \quad 12 \quad 14 \quad 12 \quad 16 \quad 16 \quad 12 \quad 10 \quad 13$
 \end{center}
 \end{shaded}
 
-\textbf{Analyse :}
 \begin{itemize}
-    \item \textbf{Population} : L'ensemble des $25$ élèves de la classe ($N = 25$).
-    \item \textbf{Individu} : Chaque élève interrogé.
-    \item \textbf{Échantillon} : Si on avait choisi uniquement $10$ élèves sur les $25$, cela aurait constitué un échantillon.
-    \item \textbf{Caractère} : Le moyen de transport utilisé pour venir à l'école. C'est un caractère \textbf{qualitatif}.
-    \item \textbf{Modalités} : Les différentes réponses possibles : \textit{Bus, Voiture, Marche, Vélo}.
-    \item \textbf{Effectifs} :
+    \item \textbf{\underline{Série statistique}} : Ces données (les $12$ notes relevées) forment \textbf{une série statistique}.
+    \item \textbf{\underline{Population}} : L'ensemble des $12$ élèves interrogés constitue \textbf{la population} étudiée. \\
+    \textit{Exemples :} les élèves d'une classe de 3\textsuperscript{ème} ; les élèves du lycée ; les habitants d'un village ou d'un pays...
+    \item \textbf{\underline{Échantillon}} : C'est un ensemble d'individus prélevés dans une population déterminée (une partie de la population). \\
+    \textit{Exemple :} Les $5$ élèves assis au premier rang de la classe forment un échantillon de la classe.
+    \item \textbf{\underline{Unité statistique, individu}} : Chaque élève de ce groupe est une \textbf{\underline{unité statistique}} appelée \textbf{\underline{individu}}.
+    \item \textbf{\underline{Caractère ou Variable}} : C'est la propriété étudiée sur la population. Dans l'exemple, le caractère (ou la variable) étudié est \textbf{la note obtenue au devoir}.
     \begin{itemize}
-        \item Bus : $12$ élèves
-        \item Voiture : $5$ élèves
-        \item Marche : $3$ élèves
-        \item Vélo : $5$ élèves
+        \item \textbf{\underline{Caractère quantitatif}} : Un caractère est dit quantitatif s'il est mesurable par un nombre. \\
+        \textit{Exemples :} une note, l'âge, la taille, le poids d'un élève, le nombre de frères et sœurs, le salaire d'un employé.
+        \item \textbf{\underline{Caractère qualitatif}} : Un caractère est dit qualitatif s'il est repérable sans être mesurable par un nombre. \\
+        \textit{Exemples :} le sport préféré, le quartier d'habitation, la nationalité, le sexe, le moyen de transport utilisé pour venir à l'école.
     \end{itemize}
-    \item \textbf{Fréquences} :
-    \begin{itemize}
-        \item Bus : $\frac{12}{25} = 0,48$ \quad (soit $48\,\%$)
-        \item Voiture : $\frac{5}{25} = 0,20$ \quad (soit $20\,\%$)
-        \item Marche : $\frac{3}{25} = 0,12$ \quad (soit $12\,\%$)
-        \item Vélo : $\frac{5}{25} = 0,20$ \quad (soit $20\,\%$)
-    \end{itemize}
+    \item \textbf{\underline{La modalité}} : C'est la valeur (ou qualité) prise par un caractère. \\
+    \textit{Exemple :} Les modalités de la série précédente sont les différentes notes obtenues : $\mathbf{10 \,;\, 12 \,;\, 13 \,;\, 14 \,;\, 16}$.
+    \item \textbf{\underline{Les modalités extrêmes}} : Ce sont la plus petite et la plus grande valeur prise par le caractère. \\
+    \textit{Exemple des notes obtenues :} la note minimale est $10$ et la note maximale est $16$.
+    \item \textbf{\underline{L'étendue d'une série statistique}} : L'étendue d'une série statistique est la différence entre la plus grande et la plus petite des valeurs du caractère. \textbf{C'est un indicateur de dispersion.} \\
+    \textit{Exemple :} $\text{Étendue} = 16 - 10 = 6\text{ points}$.
+    \item \textbf{\underline{L'effectif total ($N$)}} : C'est le nombre total d'individus de la population (la somme de tous les effectifs partiels). \\
+    \textit{Exemple :} Dans la série précédente, l'effectif total est le nombre total de copies corrigées : $N = \mathbf{12}$.
+    \item \textbf{\underline{L'effectif partiel ($n_i$)}} : C'est le nombre d'individus correspondant à une modalité donnée du caractère. \\
+    \textit{Exemple :} L'effectif de la note $12$ est $4$ (la note $12/20$ apparaît $4$ fois).
+    \item \textbf{\underline{La fréquence ($f_i$)}} : La fréquence d'une valeur est le quotient de l'effectif partiel de cette valeur par l'effectif total. Elle est toujours comprise entre $0$ et $1$, et la somme de toutes les fréquences vaut $1$.
+    \[
+        \text{Fréquence} = \frac{\text{Effectif partiel}}{\text{Effectif total}} = \frac{n_i}{N} \qquad \text{ou} \qquad \text{Pourcentage} = \text{Fréquence} \times 100
+    \]
+    \textit{Exemple :} La fréquence de la note $10$ est $\frac{3}{12} = 0,25$ (soit $25\,\%$ des élèves du groupe ont eu $10/20$).
 \end{itemize}
 
-\subsection*{\textcolor{primary}{II° Exemples et Vocabulaire (Données groupées en classes)}}
+\subsection*{\textcolor{primary}{\underline{II° EXEMPLES ET VOCABULAIRE :}}}
 
-\subsubsection*{II - 1) Activité}
-On relève les notes obtenues par $40$ élèves d'une classe de 3\textsuperscript{ème} lors d'un devoir de mathématiques. Pour faciliter la lecture, on regroupe ces notes en intervalles appelés \textbf{classes} :
+\subsubsection*{\textcolor{accent}{\underline{II - 1) Activité :}}}
+À l'occasion d'un devoir blanc de mathématiques en vue du BFEM, un professeur a relevé les $26$ notes suivantes (sur $20$) :
 \[
-    [0\,;\,5[ \quad ; \quad [5\,;\,10[ \quad ; \quad [10\,;\,15[ \quad ; \quad [15\,;\,20[
+    8 \,;\, 4 \,;\, 19 \,;\, 5 \,;\, 5 \,;\, 12 \,;\, 9 \,;\, 18 \,;\, 10 \,;\, 10 \,;\, 11 \,;\, 15 \,;\, 11 \,;\, 12 \,;\, 2 \,;\, 12 \,;\, 13 \,;\, 11 \,;\, 14 \,;\, 14 \,;\, 15 \,;\, 13 \,;\, 15 \,;\, 15 \,;\, 16 \,;\, 10.
 \]
-\textbf{Convention d'écriture :} La classe $[10\,;\,15[$ regroupe toutes les notes $x$ telles que $10 \le x < 15$. La borne $10$ est incluse dans la classe, tandis que la borne $15$ en est exclue (elle appartient à la classe suivante $[15\,;\,20[$).
 
-\subsubsection*{II - 2) Amplitude et centre d'une classe}
-Soit une classe notée $[a\,;\,b[$ où $a$ est la borne inférieure et $b$ la borne supérieure ($a < b$).
+\begin{enumerate}
+    \item Regroupe ces notes en intervalles (ou classes) du type $[a \,;\, b[$ dans les cas suivants :
+    \begin{itemize}
+        \item[1 -- 1)] $b - a = 4\text{ points}$ (en commençant à $0$)
+        \item[1 -- 2)] $b - a = 5\text{ points}$ (en commençant à $0$)
+    \end{itemize}
+    \item Trouve les centres des classes (intervalles) pour chacun de ces cas en posant $c_i = \frac{b + a}{2}$.
+\end{enumerate}
+
+\textbf{\underline{Solution :}}
+
+\begin{itemize}
+    \item \textbf{1 -- 1) Regroupons les notes en classes du type $[a \,;\, b[$ telles que $b - a = 4$, puis calculons leurs centres :}
+\end{itemize}
+\begin{center}
+\begin{tabularx}{\textwidth}{l *{5}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{Notes (sur 20)} & $[0 \,;\, 4[$ & $[4 \,;\, 8[$ & $[8 \,;\, 12[$ & $[12 \,;\, 16[$ & $[16 \,;\, 20[$ \\
+\midrule
+\textbf{Effectif ($n_i$)} & $1$ & $3$ & $7$ & $12$ & $3$ \\
+\textbf{Centre ($c_i$)} & $2$ & $6$ & $10$ & $14$ & $18$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{1 -- 2) Regroupons les notes en classes du type $[a \,;\, b[$ telles que $b - a = 5$, puis calculons leurs centres :}
+\end{itemize}
+\begin{center}
+\begin{tabularx}{0.9\textwidth}{l *{4}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{Notes (sur 20)} & $[0 \,;\, 5[$ & $[5 \,;\, 10[$ & $[10 \,;\, 15[$ & $[15 \,;\, 20[$ \\
+\midrule
+\textbf{Effectif ($n_i$)} & $2$ & $2$ & $15$ & $7$ \\
+\textbf{Centre ($c_i$)} & $2,5$ & $7,5$ & $12,5$ & $17,5$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection*{\textcolor{accent}{\underline{II - 2) Amplitude et centre d'une classe}}}
+Soit une classe notée $[a\,;\,b[$ où $a$ est la borne inférieure et $b$ la borne supérieure ($a < b$). La borne $a$ est incluse dans la classe ($a \le x < b$), tandis que la borne $b$ en est exclue.
 \begin{itemize}
     \item \textbf{Amplitude d'une classe :} C'est la différence entre sa borne supérieure et sa borne inférieure :
     \[
         \text{Amplitude} = b - a
     \]
-    \textit{Exemple :} Pour la classe $[10\,;\,15[$, l'amplitude est $15 - 10 = 5$.
+    \textit{Exemple :} Pour la classe $[8\,;\,12[$, l'amplitude est $12 - 8 = 4$.
     \item \textbf{Centre d'une classe ($c_i$) :} C'est le milieu de l'intervalle, égal à la demi-somme de ses bornes :
     \[
         c_i = \frac{a + b}{2}
