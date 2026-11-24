@@ -1,0 +1,123 @@
+\documentclass[12pt,a4paper]{article}
+
+%=========================================================
+%                   ENCODAGE ET POLICES
+%=========================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+%=========================================================
+%                     MATHÉMATIQUES
+%=========================================================
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{tkz-tab}
+\everymath{\displaystyle}
+
+%=========================================================
+%                     MISE EN PAGE
+%=========================================================
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.8cm]{geometry}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{color, soul}
+
+%=========================================================
+%                GRAPHISMES ET COULEURS
+%=========================================================
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,hooks}
+
+%=========================================================
+%                  LIENS ET ARRIÈRE-PLAN
+%=========================================================
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{eso-pic}
+
+%=========================================================
+%                   COULEURS ET STYLES
+%=========================================================
+\definecolor{myred}{RGB}{180, 40, 40}
+\definecolor{myblue}{RGB}{20, 50, 120}
+\definecolor{mygreen}{RGB}{30, 120, 40}
+
+%=========================================================
+%                       FILIGRANE
+%=========================================================
+\AddToShipoutPicture{
+    \AtTextCenter{
+        \makebox[0pt]{
+            \rotatebox{45}{
+                \textcolor[gray]{0.92}{
+                    \fontsize{5cm}{5cm}\selectfont PGB
+                }
+            }
+        }
+    }
+}
+
+\begin{document}
+
+% En-tête
+\begin{center}
+    \Large\textbf{\underline{\textcolor{myred}{ STATISTIQUES }}}\\[0.2cm]
+    \normalsize\textbf{Prof : M. BA} \hfill \textbf{Classe : 3 ème}\\[0.1cm]
+    \textbf{Durée : 6 heures} \hfill \textbf{Année scolaire : 2026 -- 2027}
+\end{center}
+\hrule
+\vspace{0.3cm}
+
+%=========================================================
+%    I. Définitions et notations, valeur exacte et valeur approchée
+%=========================================================
+\section*{\color{myred}I. RAPPEL VOCABULAIRE DE BASE :}
+
+
+\subsection*{\color{myred}1) Situation introductive :}
+
+
+À la suite d'un devoir de mathématiques, un professeur relève les notes (sur $20$) obtenues par un groupe de $12$ élèves de 3\textsuperscript{ème} :
+\begin{center}
+$10 \quad 12 \quad 10 \quad 14 \quad 12 \quad 14 \quad 12 \quad 16 \quad 16 \quad 12 \quad 10 \quad 13$
+\end{center}
+
+\begin{itemize}
+    \item \textcolor{red}{\textbf{\underline{Série statistique}}} : Ces données (les $12$ notes relevées) forment \textbf{une série statistique}.
+    \item \textcolor{red}{\textbf{\underline{Population}}} : L'ensemble des $12$ élèves interrogés constitue \textbf{la population} étudiée. \\
+    \textit{Exemples :} les élèves d'une classe de 3\textsuperscript{ème} ; les élèves du lycée ; les habitants d'un village ou d'un pays...
+    \item \textcolor{red}{\textbf{\underline{Échantillon}}} : C'est un ensemble d'individus prélevés dans une population déterminée (une partie de la population). \\
+    \textit{Exemple :} Les $5$ élèves assis au premier rang de la classe forment un échantillon de la classe.
+    \item \textcolor{red}{\textbf{\underline{Individu}}} : Chaque élève de ce groupe est un \textbf{\underline{individu}}.
+    \item \textcolor{red}{\textbf{\underline{Caractère}}} : C'est la propriété étudiée sur la population. Dans l'exemple, le caractère (ou la variable) étudié est \textbf{la note obtenue au devoir}.
+    \begin{itemize}
+        \item \textcolor{red}{\textbf{\underline{Caractère quantitatif}}} : Un caractère est dit quantitatif s'il est mesurable par un nombre. \\
+        \textit{Exemples :} une note, l'âge, la taille, le poids d'un élève, le nombre de frères et sœurs, le salaire d'un employé.
+        \item \textcolor{red}{\textbf{\underline{Caractère qualitatif}}} : Un caractère est dit qualitatif s'il est repérable sans être mesurable par un nombre. \\
+        \textit{Exemples :} le sport préféré, le quartier d'habitation, la nationalité, le sexe, le moyen de transport utilisé pour venir à l'école.
+    \end{itemize}
+    \item \textcolor{red}{\textbf{\underline{La modalité}}} : C'est la valeur (ou qualité) prise par un caractère. \\
+    \textit{Exemple :} Les modalités de la série précédente sont les différentes notes obtenues : $\mathbf{10 \,;\, 12 \,;\, 13 \,;\, 14 \,;\, 16}$.
+    \item \textcolor{red}{\textbf{\underline{Les modalités}}} : Ce sont la plus petite et la plus grande valeur prise par le caractère. \\
+    \textit{Exemple des notes obtenues :} la note minimale est $10$ et la note maximale est $16$.
+    \item \textcolor{red}{\textbf{\underline{L'étendue d'une série statistique}}} : L'étendue d'une série statistique est la différence entre la plus grande et la plus petite des valeurs du caractère. \textbf{C'est un indicateur de dispersion.} \\
+    \textit{Exemple :} $\text{Étendue} = 16 - 10 = 6\text{ points}$.
+    \item \textcolor{red}{\textbf{\underline{L'effectif total ($N$)}}} : C'est le nombre total d'individus de la population (la somme de tous les effectifs partiels). \\
+    \textit{Exemple :} Dans la série précédente, l'effectif total est le nombre total de copies corrigées : $N = \mathbf{12}$.
+    \item \textcolor{red}{\textbf{\underline{L'effectif partiel ($n_i$)}}} : C'est le nombre d'individus correspondant à une modalité donnée du caractère. \\
+    \textit{Exemple :} L'effectif de la note $12$ est $4$ (la note $12/20$ apparaît $4$ fois).
+    \item \textcolor{red}{\textbf{\underline{La fréquence ($f_i$)}}} : La fréquence d'une valeur est le quotient de l'effectif partiel de cette valeur par l'effectif total. Elle est toujours comprise entre $0$ et $1$, et la somme de toutes les fréquences vaut $1$.
+    \[
+        \text{Fréquence} = \frac{\text{Effectif partiel}}{\text{Effectif total}} = \frac{n_i}{N} \qquad \text{ou} \qquad \text{Pourcentage} = \text{Fréquence} \times 100
+    \]
+    \textit{Exemple :} La fréquence de la note $10$ est $\frac{3}{12} = 0,25$ (soit $25\,\%$ des élèves du groupe ont eu $10/20$).
+\end{itemize}
+
+\end{document}
