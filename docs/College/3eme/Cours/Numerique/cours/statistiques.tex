@@ -1,0 +1,285 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\setlist[itemize]{label=-}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{framed}
+\usepackage{hyperref}
+
+\definecolor{primary}{HTML}{1B365D}
+\definecolor{accent}{HTML}{B22222}
+\definecolor{lightbg}{HTML}{F4F6F9}
+\definecolor{shadecolor}{HTML}{F2F2F2}
+
+\title{\textcolor{primary}{\textbf{COURS DE STATISTIQUES — CLASSE DE 3\textsuperscript{ème}}}}
+\author{Mathématiques}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section*{\textcolor{accent}{LEÇON 1 : EXPLOITATION DE DONNÉES STATISTIQUES}}
+
+\subsection*{\textcolor{primary}{I° Rappel du vocabulaire de base}}
+
+\begin{enumerate}
+    \item \textbf{\underline{Population}} : C'est l'ensemble des individus (ou objets) sur lesquels porte une étude statistique.
+    \item \textbf{\underline{Individu}} : C'est chaque élément de la population étudiée.
+    \item \textbf{\underline{Échantillon}} : C'est une partie (un sous-ensemble) de la population.
+    \item \textbf{\underline{Caractère}} : Le caractère est l'information (la propriété) sur laquelle l'étude statistique est réalisée. Il peut être :
+    \begin{itemize}
+        \item \textbf{Qualitatif} : s'il n'est pas mesurable par un nombre (\textit{exemples : la couleur, la nationalité, le moyen de transport}).
+        \item \textbf{Quantitatif} : s'il est mesurable par un nombre (\textit{exemples : la taille, la masse, une note}). Il est dit \textbf{discret} s'il prend des valeurs isolées, ou \textbf{continu} s'il prend toutes les valeurs d'un intervalle (regroupé en classes).
+    \end{itemize}
+    \item \textbf{\underline{Modalité}} : C'est l'une des différentes valeurs ou qualités que peut prendre le caractère d'une série statistique.
+    \item \textbf{\underline{Effectif ($n_i$)}} : C'est le nombre d'individus d'une population ou d'une partie de cette population (qui possèdent une modalité donnée). L'\textbf{effectif total ($N$)} est la somme de tous les effectifs : $N = n_1 + n_2 + \dots + n_k$.
+    \item \textbf{\underline{Fréquence ($f_i$)}} : C'est le quotient de l'effectif d'une modalité par l'effectif total ($f_i = \frac{n_i}{N}$). Elle est donc toujours comprise entre $0$ et $1$, et la somme totale de toutes les fréquences donne $1$ (ou $100\,\%$ en pourcentage).
+\end{enumerate}
+
+\subsubsection*{\textcolor{accent}{Exemple illustratif du vocabulaire statistique}}
+
+\begin{shaded}
+\noindent\textbf{Situation :} Un professeur interroge les élèves d'une classe de 3\textsuperscript{ème} (soit $25$ élèves) pour connaître leur moyen de transport principal pour venir à l'école. Il note les réponses suivantes :
+\begin{center}
+\textit{Bus, Bus, Voiture, Marche, Bus, Vélo, Voiture, Bus, Vélo, Bus, Voiture, Bus, Marche, Vélo, Bus, Bus, Bus, Voiture, Marche, Bus, Vélo, Voiture, Bus, Vélo, Bus}
+\end{center}
+\end{shaded}
+
+\textbf{Analyse :}
+\begin{itemize}
+    \item \textbf{Population} : L'ensemble des $25$ élèves de la classe ($N = 25$).
+    \item \textbf{Individu} : Chaque élève interrogé.
+    \item \textbf{Échantillon} : Si on avait choisi uniquement $10$ élèves sur les $25$, cela aurait constitué un échantillon.
+    \item \textbf{Caractère} : Le moyen de transport utilisé pour venir à l'école. C'est un caractère \textbf{qualitatif}.
+    \item \textbf{Modalités} : Les différentes réponses possibles : \textit{Bus, Voiture, Marche, Vélo}.
+    \item \textbf{Effectifs} :
+    \begin{itemize}
+        \item Bus : $12$ élèves
+        \item Voiture : $5$ élèves
+        \item Marche : $3$ élèves
+        \item Vélo : $5$ élèves
+    \end{itemize}
+    \item \textbf{Fréquences} :
+    \begin{itemize}
+        \item Bus : $\frac{12}{25} = 0,48$ \quad (soit $48\,\%$)
+        \item Voiture : $\frac{5}{25} = 0,20$ \quad (soit $20\,\%$)
+        \item Marche : $\frac{3}{25} = 0,12$ \quad (soit $12\,\%$)
+        \item Vélo : $\frac{5}{25} = 0,20$ \quad (soit $20\,\%$)
+    \end{itemize}
+\end{itemize}
+
+\subsection*{\textcolor{primary}{II° Exemples et Vocabulaire (Données groupées en classes)}}
+
+\subsubsection*{II - 1) Activité}
+On relève les notes obtenues par $40$ élèves d'une classe de 3\textsuperscript{ème} lors d'un devoir de mathématiques. Pour faciliter la lecture, on regroupe ces notes en intervalles appelés \textbf{classes} :
+\[
+    [0\,;\,5[ \quad ; \quad [5\,;\,10[ \quad ; \quad [10\,;\,15[ \quad ; \quad [15\,;\,20[
+\]
+\textbf{Convention d'écriture :} La classe $[10\,;\,15[$ regroupe toutes les notes $x$ telles que $10 \le x < 15$. La borne $10$ est incluse dans la classe, tandis que la borne $15$ en est exclue (elle appartient à la classe suivante $[15\,;\,20[$).
+
+\subsubsection*{II - 2) Amplitude et centre d'une classe}
+Soit une classe notée $[a\,;\,b[$ où $a$ est la borne inférieure et $b$ la borne supérieure ($a < b$).
+\begin{itemize}
+    \item \textbf{Amplitude d'une classe :} C'est la différence entre sa borne supérieure et sa borne inférieure :
+    \[
+        \text{Amplitude} = b - a
+    \]
+    \textit{Exemple :} Pour la classe $[10\,;\,15[$, l'amplitude est $15 - 10 = 5$.
+    \item \textbf{Centre d'une classe ($c_i$) :} C'est le milieu de l'intervalle, égal à la demi-somme de ses bornes :
+    \[
+        c_i = \frac{a + b}{2}
+    \]
+    \textit{Exemple :} Pour la classe $[10\,;\,15[$, le centre est $c_i = \frac{10 + 15}{2} = 12,5$.
+\end{itemize}
+
+\subsection*{\textcolor{primary}{III° Classement et représentation des données statistiques}}
+
+\subsubsection*{III - 1) Activité}
+Voici la liste brute des tailles (en cm) de $20$ élèves d'une classe :
+\[
+    152 \,;\, 164 \,;\, 158 \,;\, 171 \,;\, 160 \,;\, 154 \,;\, 168 \,;\, 173 \,;\, 162 \,;\, 159 \,;\, 165 \,;\, 176 \,;\, 155 \,;\, 161 \,;\, 167 \,;\, 157 \,;\, 172 \,;\, 163 \,;\, 169 \,;\, 166.
+\]
+On regroupe ces données en classes d'amplitude $5\text{ cm}$ : $[150\,;\,155[$, $[155\,;\,160[$, $[160\,;\,165[$, $[165\,;\,170[$, $[170\,;\,175[$, $[175\,;\,180[$.
+
+\subsubsection*{III - 2) Distribution groupée en classes d'égale amplitude}
+Lorsque toutes les classes d'une série statistique ont la \textbf{même amplitude}, on parle de distribution groupée en classes d'égale amplitude. Le tableau statistique associé se présente ainsi :
+
+\begin{center}
+\begin{tabularx}{\textwidth}{l *{6}{>{\centering\arraybackslash}X} c}
+\toprule
+\textbf{Classes (tailles en cm)} & $[150\,;\,155[$ & $[155\,;\,160[$ & $[160\,;\,165[$ & $[165\,;\,170[$ & $[170\,;\,175[$ & $[175\,;\,180[$ & \textbf{Total} \\
+\midrule
+\textbf{Centres ($c_i$)} & $152,5$ & $157,5$ & $162,5$ & $167,5$ & $172,5$ & $177,5$ & --- \\
+\textbf{Effectifs ($n_i$)} & $2$ & $3$ & $5$ & $5$ & $4$ & $1$ & $N = 20$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection*{III - 3) Histogramme}
+\textbf{Définition :} Un \textbf{histogramme} est la représentation graphique d'une série statistique dont les valeurs sont regroupées en classes. Il est constitué de \textbf{rectangles accolés} les uns aux autres :
+\begin{itemize}
+    \item Sur l'axe horizontal (abscisses), on porte les bornes des classes (chaque rectangle a pour base l'amplitude de la classe).
+    \item Sur l'axe vertical (ordonnées), lorsque les classes ont la \textbf{même amplitude}, la hauteur de chaque rectangle est directement proportionnelle à l'effectif (ou à la fréquence) de la classe.
+\end{itemize}
+
+\subsubsection*{III - 4) Diagramme des effectifs}
+\begin{itemize}
+    \item \textbf{Cas d'un caractère discret :} On utilise un \textbf{diagramme en bâtons} (segments verticaux dont la hauteur est proportionnelle à l'effectif de chaque modalité).
+    \item \textbf{Cas d'un caractère continu :} En reliant les milieux des côtés supérieurs des rectangles d'un histogramme, on obtient le \textbf{polygone des effectifs}.
+\end{itemize}
+
+\subsection*{\textcolor{primary}{IV° Effectifs cumulés, fréquences cumulées, diagramme cumulatif}}
+
+\subsubsection*{IV - 1) Effectifs cumulés}
+\begin{itemize}
+    \item \textbf{Effectif Cumulé Croissant (E.C.C.) :} L'effectif cumulé croissant d'une valeur $x_i$ (ou d'une classe) est la somme de son effectif et des effectifs de toutes les valeurs (ou classes) qui la précèdent. Il indique le nombre d'individus ayant une valeur \textbf{inférieure ou égale} à $x_i$ (ou strictement inférieure à la borne supérieure de la classe).
+    \item \textbf{Effectif Cumulé Décroissant (E.C.D.) :} L'effectif cumulé décroissant d'une valeur $x_i$ (ou d'une classe) est la somme de son effectif et des effectifs de toutes les valeurs (ou classes) qui la suivent. Il indique le nombre d'individus ayant une valeur \textbf{supérieure ou égale} à $x_i$ (ou supérieure ou égale à la borne inférieure de la classe).
+\end{itemize}
+
+\textbf{Exemple (suite de l'activité sur les tailles) :}
+\begin{center}
+\begin{tabularx}{\textwidth}{l *{6}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{Classes} & $[150\,;\,155[$ & $[155\,;\,160[$ & $[160\,;\,165[$ & $[165\,;\,170[$ & $[170\,;\,175[$ & $[175\,;\,180[$ \\
+\midrule
+\textbf{Effectifs ($n_i$)} & $2$ & $3$ & $5$ & $5$ & $4$ & $1$ \\
+\textbf{E.C.C.} & $2$ & $2+3=\mathbf{5}$ & $5+5=\mathbf{10}$ & $10+5=\mathbf{15}$ & $15+4=\mathbf{19}$ & $19+1=\mathbf{20}$ \\
+\textbf{E.C.D.} & $20$ & $20-2=\mathbf{18}$ & $18-3=\mathbf{15}$ & $15-5=\mathbf{10}$ & $10-5=\mathbf{5}$ & $5-4=\mathbf{1}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\textit{Lecture :} Il y a $15$ élèves qui mesurent moins de $170\text{ cm}$ (E.C.C.), et $10$ élèves qui mesurent au moins $165\text{ cm}$ (E.C.D.).
+
+\subsubsection*{IV - 2) Diagramme des E.C.C. et des E.C.D. d'un caractère continu}
+\begin{itemize}
+    \item \textbf{Polygone des E.C.C. :} On place les points ayant pour abscisse la \textbf{borne supérieure} de chaque classe et pour ordonnée son E.C.C. (en partant du point de coordonnée $(\text{borne inférieure de la 1\textsuperscript{ère} classe} \,;\, 0)$), puis on relie ces points par des segments. La courbe obtenue est croissante de $0$ à $N$.
+    \item \textbf{Polygone des E.C.D. :} On place les points ayant pour abscisse la \textbf{borne inférieure} de chaque classe et pour ordonnée son E.C.D. (en terminant au point $(\text{borne supérieure de la dernière classe} \,;\, 0)$), puis on relie ces points par des segments. La courbe obtenue est décroissante de $N$ à $0$.
+\end{itemize}
+
+\subsubsection*{IV - 3) Fréquences cumulées en \%}
+\begin{itemize}
+    \item \textbf{Fréquence Cumulée Croissante (F.C.C.) en \% :}
+    \[
+        \text{F.C.C.}(\%) = \frac{\text{E.C.C.}}{N} \times 100
+    \]
+    \item \textbf{Fréquence Cumulée Décroissante (F.C.D.) en \% :}
+    \[
+        \text{F.C.D.}(\%) = \frac{\text{E.C.D.}}{N} \times 100
+    \]
+\end{itemize}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\section*{\textcolor{accent}{LEÇON 2 : PARAMÈTRES DE POSITION}}
+
+Les paramètres de position (mode, médiane, moyenne) permettent de résumer une série statistique à l'aide d'une valeur centrale représentative.
+
+\subsection*{\textcolor{primary}{I° Mode — Classe modale}}
+
+\subsubsection*{I - 1) Mode et I - 2) Définition}
+\textbf{Définition :} Le \textbf{mode} d'une série statistique à caractère discret (ou qualitatif) est la modalité (ou valeur) du caractère qui possède le \textbf{plus grand effectif} (ou la plus grande fréquence).
+\textit{Remarque :} Une série peut avoir un seul mode (unimodale), deux modes (bimodale) ou plusieurs modes.
+
+\subsubsection*{I - 3) Exemple}
+On relève le nombre d'enfants par famille dans un immeuble : $0\,;\, 2\,;\, 1\,;\, 3\,;\, 2\,;\, 1\,;\, 2\,;\, 4\,;\, 2\,;\, 1$.
+La valeur $2$ apparaît $4$ fois (effectif maximal). Le mode de cette série est donc \textbf{$2$ enfants}.
+
+\subsubsection*{I - 4) Classe modale}
+\textbf{Définition :} Dans le cas d'un caractère continu regroupé en classes d'égale amplitude, on appelle \textbf{classe modale} toute classe qui possède le \textbf{plus grand effectif}.
+\textit{Exemple :} Dans le tableau des tailles de la Leçon 1, les classes $[160\,;\,165[$ et $[165\,;\,170[$ ont toutes deux l'effectif maximal $5$ ; ce sont les deux classes modales.
+
+\subsection*{\textcolor{primary}{II° La médiane ($M_e$)}}
+
+\textbf{Définition générale :} La \textbf{médiane} $M_e$ d'une série statistique ordonnée est une valeur du caractère qui partage la population en deux sous-ensembles de même effectif :
+\begin{itemize}
+    \item au moins $50\,\%$ des individus ont une valeur inférieure ou égale à $M_e$ ;
+    \item au moins $50\,\%$ des individus ont une valeur supérieure ou égale à $M_e$.
+\end{itemize}
+
+\subsubsection*{II - 1) Médiane d'un caractère discret}
+\textbf{Méthode :} On commence toujours par ranger les $N$ valeurs de la série dans l'\textbf{ordre croissant}.
+\begin{itemize}
+    \item \textbf{Si l'effectif total $N$ est impair :} La médiane est la valeur centrale située exactement au rang $\frac{N + 1}{2}$.
+    \textit{Exemple :} Pour $N = 7$ notes ordonnées : $6 \,;\, 8 \,;\, 10 \,;\, \mathbf{11} \,;\, 13 \,;\, 15 \,;\, 18$. Le rang central est $\frac{7+1}{2} = 4$. La 4\textsuperscript{ème} valeur est $11$, donc $M_e = 11$.
+    \item \textbf{Si l'effectif total $N$ est pair :} Il n'y a pas de valeur centrale unique. On prend pour médiane la demi-somme (la moyenne) des deux valeurs centrales situées aux rangs $\frac{N}{2}$ et $\frac{N}{2} + 1$.
+    \textit{Exemple :} Pour $N = 6$ notes ordonnées : $7 \,;\, 9 \,;\, \mathbf{10} \,;\, \mathbf{14} \,;\, 15 \,;\, 17$. Les rangs centraux sont $\frac{6}{2} = 3$ et $3+1 = 4$ (valeurs $10$ et $14$). On calcule :
+    \[
+        M_e = \frac{10 + 14}{2} = 12
+    \]
+\end{itemize}
+
+\subsubsection*{II - 2) Médiane d'un caractère continu}
+Lorsque les données sont regroupées en classes, on repère d'abord la \textbf{classe médiane} : c'est la première classe dont l'effectif cumulé croissant (E.C.C.) atteint ou dépasse la moitié de l'effectif total $\frac{N}{2}$ (ou $50\,\%$ en F.C.C.).
+\begin{itemize}
+    \item \textbf{Détermination graphique :} Sur le polygone des E.C.C., on repère $\frac{N}{2}$ sur l'axe vertical des effectifs, on trace la droite horizontale jusqu'à couper le polygone, puis on lit l'abscisse du point d'intersection sur l'axe horizontal.
+    \item \textbf{Point d'intersection des courbes :} L'abscisse du point d'intersection du polygone des E.C.C. et du polygone des E.C.D. est également égale à la médiane $M_e$.
+\end{itemize}
+
+\subsubsection*{II - 3) Détermination de la médiane par calcul (Interpolation linéaire)}
+Soit $[a\,;\,b[$ la classe médiane. On note :
+\begin{itemize}
+    \item $E_a$ : l'effectif cumulé croissant à la borne inférieure $a$ (c'est-à-dire l'E.C.C. de la classe précédente) ;
+    \item $E_b$ : l'effectif cumulé croissant à la borne supérieure $b$ (c'est-à-dire l'E.C.C. de la classe médiane).
+\end{itemize}
+En supposant que les individus sont répartis régulièrement dans la classe médiane (application du théorème de Thalès sur le segment du polygone des E.C.C.), on a l'égalité des rapports :
+\[
+    \frac{M_e - a}{b - a} = \frac{\frac{N}{2} - E_a}{E_b - E_a} \qquad \Longleftrightarrow \qquad M_e = a + (b - a) \times \frac{\frac{N}{2} - E_a}{E_b - E_a}
+\]
+\textit{Exemple :} Dans la série des $N = 20$ tailles, $\frac{N}{2} = 10$. La classe $[160\,;\,165[$ a un E.C.C. égal à $10$ (et la classe précédente $[155\,;\,160[$ a un E.C.C. égal à $5$). Ici $a = 160$, $b = 165$, $E_a = 5$ et $E_b = 10$ :
+\[
+    M_e = 160 + (165 - 160) \times \frac{10 - 5}{10 - 5} = 160 + 5 \times 1 = 165\text{ cm}.
+\]
+
+\subsubsection*{II - 4) Calcul des antécédents}
+La même méthode d'interpolation linéaire permet de trouver la valeur $x$ du caractère correspondant à n'importe quel effectif cumulé donné $E_x$ (ou pourcentage cumulé) situé dans une classe $[a\,;\,b[$ :
+\[
+    \frac{x - a}{b - a} = \frac{E_x - E_a}{E_b - E_a} \qquad \Longleftrightarrow \qquad x = a + (b - a) \times \frac{E_x - E_a}{E_b - E_a}
+\]
+\textit{Application :} Déterminer la note au-dessous de laquelle se trouvent $25\,\%$ des élèves ($E_x = 0,25 \times N$) ou le nombre d'élèves ayant une taille inférieure à $168\text{ cm}$ (en isolant $E_x$).
+
+\subsection*{\textcolor{primary}{III° Moyenne d'une série ($\bar{x}$)}}
+
+\subsubsection*{III - 1) Cas d'un caractère discret}
+La \textbf{moyenne} $\bar{x}$ d'une série statistique dont les valeurs sont $x_1, x_2, \dots, x_k$ d'effectifs respectifs $n_1, n_2, \dots, n_k$ est le quotient de la somme de toutes les valeurs par l'effectif total $N$ :
+\[
+    \bar{x} = \frac{n_1 x_1 + n_2 x_2 + \dots + n_k x_k}{N} = \frac{\sum_{i=1}^{k} n_i x_i}{N}
+\]
+\textit{Remarque :} Avec les fréquences $f_i = \frac{n_i}{N}$, on peut aussi écrire : $\bar{x} = f_1 x_1 + f_2 x_2 + \dots + f_k x_k$.
+
+\subsubsection*{III - 2) Cas d'un caractère continu}
+Lorsque la série est regroupée en classes, on remplace chaque classe par son \textbf{centre $c_i$} pour calculer une valeur approchée de la moyenne :
+\[
+    \bar{x} = \frac{n_1 c_1 + n_2 c_2 + \dots + n_k c_k}{N} = \frac{\sum_{i=1}^{k} n_i c_i}{N}
+\]
+\textit{Exemple (tailles des $20$ élèves) :}
+\[
+    \bar{x} = \frac{2 \times 152,5 + 3 \times 157,5 + 5 \times 162,5 + 5 \times 167,5 + 4 \times 172,5 + 1 \times 177,5}{20} = \frac{3295}{20} = 164,75\text{ cm}.
+\]
+
+\subsection*{\textcolor{primary}{IV° Interprétation d'une série statistique}}
+
+Interpréter une série statistique consiste à rédiger une conclusion claire en français courant à partir des paramètres calculés :
+\begin{itemize}
+    \item \textbf{Sensibilité aux valeurs extrêmes :} La \textbf{moyenne} est sensible aux valeurs très grandes ou très petites (valeurs aberrantes), alors que la \textbf{médiane} n'est pas influencée par les extrêmes.
+    \item \textbf{Comparaison moyenne / médiane :}
+    \begin{itemize}
+        \item Si $\bar{x} \approx M_e$, la répartition des données est globalement équilibrée autour du centre.
+        \item Si $\bar{x} > M_e$, quelques valeurs très élevées tirent la moyenne vers le haut.
+        \item Si $\bar{x} < M_e$, quelques valeurs très faibles tirent la moyenne vers le bas.
+    \end{itemize}
+    \item \textbf{Modèle de phrase d'interprétation :} \textit{« La taille moyenne des élèves de cette classe est de $164,75\text{ cm}$ et la taille médiane est de $165\text{ cm}$, ce qui signifie qu'au moins la moitié des élèves mesurent $165\text{ cm}$ ou plus. »}
+\end{itemize}
+
+\end{document}
