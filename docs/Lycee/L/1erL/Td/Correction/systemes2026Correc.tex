@@ -1,0 +1,2339 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees,patterns}
+
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float}
+\tcbuselibrary{skins,hooks}
+
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{darkgreen}{rgb}{0, 0.5, 0}
+
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tkz-tab}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{\color{blue}\ding{45}\ \textbf{2026}}
+\fancyfoot[L]{\color{blue}\ding{45}\ \textbf{Prof : M. BA}}
+\cfoot{\bf \thepage / \pageref{LastPage}}
+
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice}}
+
+\begin{document}
+\renewcommand{\arraystretch}{1.4}
+\renewcommand{\arrayrulewidth}{1.2pt}
+
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots] at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+        \hline
+        \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2026/2027} \\ \hline
+        \textbf{Matière : Mathématiques} & \textbf{Niveau : $1^{\text{ère}}$ L} & \textbf{Date : 05/11/2026} & \textbf{Correction TD} \\ \hline
+        \multicolumn{4}{|c|}{\parbox[c]{12cm}{\begin{center}
+            \textbf{{\Large\sffamily Correction TD : Équations et Systèmes}}
+        \end{center}}} \\ \hline
+    \end{tabular}}\endgroup};
+\end{tikzpicture}
+
+\vspace{3cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Correction QCM}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item Remontons le système triangulaire :
+  \begin{align*}
+  4z = 0 &\implies z = 0 \\
+  -10y + 2(0) = 20 &\implies -10y = 20 \implies y = -2 \\
+  2x + (-2) - 5(0) = 0 &\implies 2x = 2 \implies x = 1
+  \end{align*}
+  \textcolor{red}{\textbf{Réponse exacte : c) $S = \{(1,-2,0)\}$}}
+
+  \item Testons le triplet $(4,7,4)$ dans les trois équations :
+  \[
+  \begin{cases}
+  4 + 7 + 4 = 15 & (\text{Vrai}) \\
+  -4 - 7 + 2(4) = -11 + 8 = -3 \neq 0 & (\text{Faux})
+  \end{cases}
+  \]
+  Testons $(3,7,5)$ :
+  \[
+  \begin{cases}
+  3 + 7 + 5 = 15 & (\text{Vrai}) \\
+  -3 - 7 + 2(5) = -10 + 10 = 0 & (\text{Vrai}) \\
+  2(3) + 7 - 5 = 6 + 2 = 8 & (\text{Vrai})
+  \end{cases}
+  \]
+  \textcolor{red}{\textbf{Réponse exacte : c) $\{(3,7,5)\}$}}
+
+  \item Remplaçons $(x,y)$ par les coordonnées de chaque point dans $2x - 5y + 9$ :
+  \begin{itemize}
+      \item Pour $(0,0)$ : $2(0) - 5(0) + 9 = 9 \not< 0$.
+      \item Pour $(-3,1)$ : $2(-3) - 5(1) + 9 = -6 - 5 + 9 = -2 < 0$ (Vrai).
+  \end{itemize}
+  \textcolor{red}{\textbf{Réponse exacte : b) $(-3,1)$}}
+
+  \item Vérifions la première équation $5x - 7y = -22$ et l'inéquation $x + 2y < -1$ :
+  \begin{itemize}
+      \item Pour $(-3,1)$ : $5(-3) - 7(1) = -15 - 7 = -22$ (Vrai) et $-3 + 2(1) = -1 \not< -1$ (Faux, inégalité stricte).
+      \item Pour $(2,-5)$ : $5(2) - 7(-5) = 10 + 35 = 45 \neq -22$.
+      \item Aucun des points proposés ne vérifie simultanément l'égalité et l'inégalité stricte (coquille probable dans l'énoncé sur le signe $\le -1$ pour $(-3,1)$, qui donne $5(-3)-7(1)=-22$ et $-3+2(1)=-1$).
+  \end{itemize}
+  \textcolor{red}{\textbf{Réponse retenue (avec $\le -1$) : b) $(-3,1)$}}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Résolution par la méthode du pivot de Gauss}}}
+\vspace{0.3cm}
+
+\subsection*{\textcolor{darkred}{1) Premier système}}
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + &  y & - &  5z &   0 \\
+3x & - &  y & + &  2z & -12 \\
+2x & - & 4y & - & 10z &  10
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+Considérons $(L_1)$ comme pivot pour éliminer $x$ dans $(L_2)$ et $(L_3)$.
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+-3 \times \\
+2 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + & y & - & 5z &   0 \\
+3x & - & y & + & 2z & -12
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-6x & - & 3y & + & 15z &   0 \\
+ 6x & - & 2y & + &  4z & -24
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-3L_1) \\
+(2L_2)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-5y & + & 19z & -24 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-1 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + &  y & - &  5z &  0 \\
+2x & - & 4y & - & 10z & 10
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-2x & - &  y & + &  5z &  0 \\
+ 2x & - & 4y & - & 10z & 10
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-L_1) \\
+(L_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-5y & - & 5z & 10 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Éliminons $y$ entre $(L'_2)$ et $(L'_3)$ :
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+-1 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-5y & + & 19z & -24 \\
+-5y & - &  5z &  10
+\end{array}
+\right.
+\begin{array}{l}
+(L'_2) \\
+(L'_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ 5y & - & 19z & 24 \\
+-5y & - &  5z & 10
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-L'_2) \\
+(L'_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{5y} & & -24z & 34 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Le système devient :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + &   y & - &   5z &   0 \\
+   &   & -5y & + &  19z & -24 \\
+   &   &     &   & -24z &  34
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L'_2) \\
+(L''_3)
+\end{array}
+\]
+
+\begin{align*}
+(L''_3) :\; -24z = 34 &\implies z = -\dfrac{34}{24} = -\dfrac{17}{12} \\[6pt]
+(L'_2) :\; -5y + 19\left(-\dfrac{17}{12}\right) = -24 &\implies -5y = -24 + \dfrac{323}{12} = \dfrac{35}{12} \implies y = -\dfrac{7}{12} \\[6pt]
+(L_1) :\; 2x - \dfrac{7}{12} - 5\left(-\dfrac{17}{12}\right) = 0 &\implies 2x + \dfrac{78}{12} = 0 \implies 2x = -\dfrac{13}{2} \implies x = -\dfrac{13}{4}
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace \left(-\dfrac{13}{4},\; -\dfrac{7}{12},\; -\dfrac{17}{12}\right) \right\rbrace}}
+\]
+
+%----------------------------------------------------------------------
+\subsection*{\textcolor{darkred}{2) Deuxième système}}
+Réordonnons les lignes pour prendre $(L_2)$ comme pivot en première position :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & - &  z & 1 \\
+6x & - & 2y & - & 4z & 0 \\
+5x & - & 5y & + &  z & 1
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+-6 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & - &  z & 1 \\
+6x & - & 2y & - & 4z & 0
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-6x & - & 6y & + & 6z & -6 \\
+ 6x & - & 2y & - & 4z &  0
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-6L_1) \\
+(L_2)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-8y & + & 2z & -6 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-5 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & - & z & 1 \\
+5x & - & 5y & + & z & 1
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-5x & - & 5y & + & 5z & -5 \\
+ 5x & - & 5y & + &  z &  1
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-5L_1) \\
+(L_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-10y & + & 6z & -4 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Éliminons $y$ entre $(L'_2)$ et $(L'_3)$ :
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+5 \times \\
+-4 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ -8y & + & 2z & -6 \\
+-10y & + & 6z & -4
+\end{array}
+\right.
+\begin{array}{l}
+(L'_2) \\
+(L'_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-40y & + & 10z & -30 \\
+ 40y & - & 24z &  16
+\end{array}
+\right.
+}
+\begin{array}{l}
+(5L'_2) \\
+(-4L'_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{-40y} & & -14z & -14 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Le système devient :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+x & + &   y & - &   z &   1 \\
+  &   & -8y & + &  2z &  -6 \\
+  &   &     &   & -14z & -14
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L'_2) \\
+(L''_3)
+\end{array}
+\]
+
+\begin{align*}
+(L''_3) :\; -14z = -14 &\implies z = 1 \\[4pt]
+(L'_2) :\; -8y + 2(1) = -6 &\implies -8y = -8 \implies y = 1 \\[4pt]
+(L_1) :\; x + 1 - 1 = 1 &\implies x = 1
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (1,\,1,\,1) \right\rbrace}}
+\]
+
+%----------------------------------------------------------------------
+\subsection*{\textcolor{darkred}{3) Troisième système}}
+Permutons $(L_1)$ et $(L_2)$ pour avoir $-a$ comme pivot :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + & 4b & + &  c &  6 \\
+3a & + & 2b & - & 5c & -8 \\
+2a & - &  b & + & 3c &  5
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+3 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + & 4b & + &  c &  6 \\
+3a & + & 2b & - & 5c & -8
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-3a & + & 12b & + & 3c & 18 \\
+ 3a & + &  2b & - & 5c & -8
+\end{array}
+\right.
+}
+\begin{array}{l}
+(3L_1) \\
+(L_2)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+14b & - & 2c & 10 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+2 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + & 4b & + &  c & 6 \\
+2a & - &  b & + & 3c & 5
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-2a & + & 8b & + & 2c & 12 \\
+ 2a & - &  b & + & 3c &  5
+\end{array}
+\right.
+}
+\begin{array}{l}
+(2L_1) \\
+(L_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+7b & + & 5c & 17 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Éliminons $b$ entre $(L'_2)$ et $(L'_3)$ :
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+\\
+-2 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+14b & - & 2c & 10 \\
+ 7b & + & 5c & 17
+\end{array}
+\right.
+\begin{array}{l}
+(L'_2) \\
+(L'_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ 14b & - &  2c &  10 \\
+-14b & - & 10c & -34
+\end{array}
+\right.
+}
+\begin{array}{l}
+(L'_2) \\
+(-2L'_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{14b} & & -12c & -24 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Le système devient :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + &  4b & + &   c &   6 \\
+   &   & 14b & - &  2c &  10 \\
+   &   &     &   & -12c & -24
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L'_2) \\
+(L''_3)
+\end{array}
+\]
+
+\begin{align*}
+(L''_3) :\; -12c = -24 &\implies c = 2 \\[4pt]
+(L'_2) :\; 14b - 2(2) = 10 &\implies 14b = 14 \implies b = 1 \\[4pt]
+(L_1) :\; -a + 4(1) + 2 = 6 &\implies -a + 6 = 6 \implies a = 0
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (0,\,1,\,2) \right\rbrace}}
+\]
+
+%----------------------------------------------------------------------
+\subsection*{\textcolor{darkred}{4) Système à quatre inconnues}}
+Plaçons en premier l'équation ayant le coefficient $+1$ devant $z$ ou permutons les colonnes/lignes. Ici, gardons $t$ comme premier pivot en remontant $(L_4)$ en première ligne :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-t & + & 2x & - & 4y & + &  z &  2 \\
+ t & + & 3x & - & 2y & - & 5z & -5 \\
+2t & + & 2x & + & 3y & - & 3z & -6 \\
+-3t& + & 5x & - & 2y & + & 2z & -4
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3) \\
+(L_4)
+\end{array}
+\]
+
+\textbf{Étape 1 : Élimination de $t$ à l'aide du pivot $(L_1)$}
+\begin{itemize}
+    \item $(L'_2) \leftarrow L_1 + L_2$ : $5x - 6y - 4z = -3$
+    \item $(L'_3) \leftarrow 2L_1 + L_3$ : $6x - 5y - z = -2$
+    \item $(L'_4) \leftarrow -3L_1 + L_4$ : $-x + 10y - z = -10$
+\end{itemize}
+
+\textbf{Étape 2 : Système $3\times 3$ obtenu (en remontant $L'_4$ en tête pour le pivot $-x$)}
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & + & 10y & - &  z & -10 \\
+5x & - &  6y & - & 4z &  -3 \\
+6x & - &  5y & - &  z &  -2
+\end{array}
+\right.
+\begin{array}{l}
+(L'_4) \\
+(L'_2) \\
+(L'_3)
+\end{array}
+\]
+
+\noindent
+\(
+\begin{aligned}
+5 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & + & 10y & - &  z & -10 \\
+5x & - &  6y & - & 4z &  -3
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-5x & + & 50y & - & 5z & -50 \\
+ 5x & - &  6y & - & 4z &  -3
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+44y & - & 9z & -53 & (L''_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+6 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & + & 10y & - & z & -10 \\
+6x & - &  5y & - & z &  -2
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-6x & + & 60y & - & 6z & -60 \\
+ 6x & - &  5y & - &  z &  -2
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+55y & - & 7z & -62 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\textbf{Étape 3 : Élimination de $y$ (remarquons que $44 = 4\times 11$ et $55 = 5\times 11$)}
+
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+5 \times \\
+-4 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+44y & - & 9z & -53 \\
+55y & - & 7z & -62
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ 220y & - & 45z & -265 \\
+-220y & + & 28z &  248
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{220y} & & -17z & -17 & (L'''_3)
+\end{array}
+\end{aligned}
+\)
+
+\textbf{Remontée :}
+\begin{align*}
+-17z = -17 &\implies z = 1 \\
+44y - 9(1) = -53 &\implies 44y = -44 \implies y = -1 \\
+-x + 10(-1) - 1 = -10 &\implies -x - 11 = -10 \implies x = -1 \\
+-t + 2(-1) - 4(-1) + 1 = 2 &\implies -t + 3 = 2 \implies t = 1
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (-1,\,-1,\,1,\,1) \right\rbrace}}
+\]
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Résolution graphique de systèmes d'inéquations}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item $\begin{cases} 3x + y < 2 \\ 2x - 3y > 1 \end{cases}$
+  
+  On trace les droites frontières $(D_1) : y = -3x + 2$ et $(D_2) : y = \dfrac{2}{3}x - \dfrac{1}{3}$ en pointillés (inégalités strictes). Le point $O(0,0)$ donne $0 < 2$ (vrai pour $D_1$) et $0 > 1$ (faux pour $D_2$). On hachure les demi-plans qui ne conviennent pas.
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \clip (-3,-3) rectangle (4,4);
+    \fill[red!15] (-3,11) -- (4,-10) -- (4,4) -- cycle;
+    \fill[blue!15] (-3,-2.33) -- (4,2.33) -- (-3,4) -- cycle;
+    \draw[gray!30, thin] (-3,-3) grid (4,4);
+    \draw[->, thick] (-3,0) -- (4,0) node[below left] {$x$};
+    \draw[->, thick] (0,-3) -- (0,4) node[below left] {$y$};
+    \draw[red, thick, dashed, domain=-1:2] plot (\x, {-3*\x + 2}) node[right] {$(D_1)$};
+    \draw[blue, thick, dashed, domain=-3:4] plot (\x, {(2*\x - 1)/3}) node[above left] {$(D_2)$};
+    \node[darkgreen, font=\bfseries] at (2.2,-1.5) {Zone Solution};
+  \end{tikzpicture}
+  \end{center}
+  \textcolor{red}{L'ensemble des solutions est la partie non hachurée du plan (frontières exclues).}
+
+  \item $\begin{cases} x + y - 2 \le 0 \\ x \ge 0 \\ y < 3 \end{cases}$
+  
+  On trace $(D_1) : y = -x + 2$ (trait plein), l'axe $(Oy) : x = 0$ (trait plein) et $(D_3) : y = 3$ (pointillés).
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \clip (-2,-2) rectangle (4.5,4.5);
+    \fill[red!15] (-2,4) -- (4,-2) -- (4.5,4.5) -- (-2,4.5) -- cycle;
+    \fill[blue!15] (-2,-2) rectangle (0,4.5);
+    \fill[orange!20] (-2,3) rectangle (4.5,4.5);
+    \draw[gray!30, thin] (-2,-2) grid (4.5,4.5);
+    \draw[->, thick] (-2,0) -- (4.5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-2) -- (0,4.5) node[below left] {$y$};
+    \draw[red, thick, domain=-1:4] plot (\x, {-\x + 2}) node[above right] {$(D_1)$};
+    \draw[orange, thick, dashed] (-2,3) -- (4.5,3) node[below left] {$y=3$};
+    \node[font=\bfseries] at (1,-0.8) {Zone Solution};
+  \end{tikzpicture}
+  \end{center}
+  \textcolor{red}{L'ensemble des solutions est la partie non hachurée du plan (frontières $x=0$ et $x+y=2$ incluses, droite $y=3$ exclue).}
+
+  \item $\begin{cases} 4x - 5y + 6 > 0 \\ 5x + y - 7 < 0 \\ x + 6y + 16 > 0 \end{cases}$
+  
+  On trace $(D_1) : y = \dfrac{4x+6}{5}$, $(D_2) : y = -5x + 7$ et $(D_3) : y = \dfrac{-x-16}{6}$ en pointillés. Le point $O(0,0)$ vérifie les trois inégalités ($6>0$, $-7<0$, $16>0$).
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.55]
+    \clip (-5,-4) rectangle (5,5);
+    \fill[red!15] (-5,-2.8) -- (5,5.2) -- (-5,5) -- cycle;
+    \fill[blue!15] (0.4,5) -- (2.2,-4) -- (5,-4) -- (5,5) -- cycle;
+    \fill[green!15] (-5,-1.83) -- (5,-3.5) -- (5,-4) -- (-5,-4) -- cycle;
+    \draw[gray!30, thin] (-5,-4) grid (5,5);
+    \draw[->, thick] (-5,0) -- (5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-4) -- (0,5) node[below left] {$y$};
+    \draw[red, thick, dashed, domain=-5:4] plot (\x, {(4*\x+6)/5});
+    \draw[blue, thick, dashed, domain=0.4:2.2] plot (\x, {-5*\x+7});
+    \draw[green!50!black, thick, dashed, domain=-5:5] plot (\x, {(-\x-16)/6});
+    \node[font=\bfseries] at (0,0.5) {$O$};
+    \node[font=\bfseries] at (-0.5,-1) {Zone Solution};
+  \end{tikzpicture}
+  \end{center}
+  \textcolor{red}{L'ensemble des solutions est l'intérieur du triangle ouvert délimité par ces trois droites.}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Problème des fruits au marché}}}
+\vspace{0.3cm}
+
+Soient $x$ le prix d'une orange, $y$ le prix d'une mandarine et $z$ le prix d'une banane (en francs). L'énoncé se traduit par le système :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + & 2y & + &  z &  65 \\
+2x & + &  y & + & 3z & 125 \\
+3x & + &  y & + &  z &  95
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\noindent
+\(
+\begin{aligned}
+-2 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + & 2y & + &  z &  65 \\
+2x & + &  y & + & 3z & 125
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-2x & - & 4y & - & 2z & -130 \\
+ 2x & + &  y & + & 3z &  125
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-3y & + & z & -5 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-3 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + & 2y & + & z & 65 \\
+3x & + &  y & + & z & 95
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-3x & - & 6y & - & 3z & -195 \\
+ 3x & + &  y & + &  z &   95
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-5y & - & 2z & -100 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+2 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-3y & + &  z &   -5 \\
+-5y & - & 2z & -100
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-6y & + & 2z &  -10 \\
+-5y & - & 2z & -100
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;=\;}r@{\quad}l}
+-11y & -110 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\begin{align*}
+(L''_3) :\; -11y = -110 &\implies y = 10 \\
+(L'_2) :\; -3(10) + z = -5 &\implies z = 25 \\
+(L_1) :\; x + 2(10) + 25 = 65 &\implies x = 20
+\end{align*}
+
+\textcolor{red}{\textbf{Conclusion :} Une orange coûte \textbf{20 F}, une mandarine coûte \textbf{10 F} et une banane coûte \textbf{25 F}.}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Problème des trois sacs}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item \textbf{Mise en équation :}
+  \begin{itemize}
+      \item Poids total : $x + y + z = 120$.
+      \item Maïs + riz = double de l'igname : $x + z = 2y \iff x - 2y + z = 0$.
+      \item Riz $+ 75$ = double de (maïs + igname) : $z + 75 = 2(x + y) \iff 2x + 2y - z = 75$.
+  \end{itemize}
+  \[
+  (S) : \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+   x & + &  y & + & z & 120 \\
+   x & - & 2y & + & z &   0 \\
+  2x & + & 2y & - & z &  75
+  \end{array}
+  \right.
+  \begin{array}{l}
+  (L_1) \\
+  (L_2) \\
+  (L_3)
+  \end{array}
+  \]
+
+  \item \textbf{Résolution par le pivot de Gauss :}
+
+  \noindent
+  \(
+  \begin{aligned}
+  -1 \times
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+  x & + &  y & + & z & 120 \\
+  x & - & 2y & + & z &   0
+  \end{array}
+  \right.
+  &\implies
+  \underline{
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+  -x & - &  y & - & z & -120 \\
+   x & - & 2y & + & z &    0
+  \end{array}
+  \right.
+  } \\
+  &\qquad
+  \begin{array}{r@{\;=\;}r@{\quad}l}
+  -3y & -120 & (L'_2)
+  \end{array}
+  \end{aligned}
+  \)
+
+  \vspace{0.4cm}
+  \noindent
+  \(
+  \begin{aligned}
+  -2 \times
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+   x & + &  y & + & z & 120 \\
+  2x & + & 2y & - & z &  75
+  \end{array}
+  \right.
+  &\implies
+  \underline{
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+  -2x & - & 2y & - & 2z & -240 \\
+   2x & + & 2y & - &  z &   75
+  \end{array}
+  \right.
+  } \\
+  &\qquad
+  \begin{array}{r@{\;=\;}r@{\quad}l}
+  -3z & -165 & (L'_3)
+  \end{array}
+  \end{aligned}
+  \)
+
+  \begin{align*}
+  (L'_2) :\; -3y = -120 &\implies y = 40 \\
+  (L'_3) :\; -3z = -165 &\implies z = 55 \\
+  (L_1) :\; x + 40 + 55 = 120 &\implies x = 25
+  \end{align*}
+
+  \textcolor{red}{\textbf{Conclusion :} Le sac de maïs pèse \textbf{25 kg}, celui d'igname \textbf{40 kg} et celui de riz \textbf{55 kg}.}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Système et factorisation d'un polynôme}}}
+\vspace{0.3cm}
+
+\textbf{1) Résolution du système :}
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & + & z & -1 \\
+ x & - &  y & + & z &  2 \\
+4x & + & 2y & + & z & -4
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\noindent
+\(
+\begin{aligned}
+-1 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+x & + & y & + & z & -1 \\
+x & - & y & + & z &  2
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & - & y & - & z & 1 \\
+ x & - & y & + & z & 2
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;=\;}r@{\quad}l}
+-2y & 3 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-4 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & + & z & -1 \\
+4x & + & 2y & + & z & -4
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-4x & - & 4y & - & 4z &  4 \\
+ 4x & + & 2y & + &  z & -4
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-2y & - & 3z & 0 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\begin{align*}
+(L'_2) :\; -2y = 3 &\implies y = -\dfrac{3}{2} \\[4pt]
+(L'_3) :\; -2\left(-\dfrac{3}{2}\right) - 3z = 0 &\implies 3 - 3z = 0 \implies z = 1 \\[4pt]
+(L_1) :\; x - \dfrac{3}{2} + 1 = -1 &\implies x - \dfrac{1}{2} = -1 \implies x = -\dfrac{1}{2}
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace \left(-\dfrac{1}{2},\; -\dfrac{3}{2},\; 1\right) \right\rbrace}}
+\]
+
+\textbf{2) Détermination des coefficients $a$, $b$, $c$ :}
+\[
+\begin{cases}
+P(1) = 0 \iff 1 + a + b + c = 0 \iff a + b + c = -1 \\
+P(-1) = 1 \iff -1 + a - b + c = 1 \iff a - b + c = 2 \\
+P(2) = 4 \iff 8 + 4a + 2b + c = 4 \iff 4a + 2b + c = -4
+\end{cases}
+\]
+On retrouve exactement le système résolu à la question 1). Donc :
+\[
+\boxed{\textcolor{red}{a = -\dfrac{1}{2}, \quad b = -\dfrac{3}{2}, \quad c = 1}}
+\]
+
+\textbf{3) Factorisation de $P(x)$ :}
+On a $P(x) = x^3 - \dfrac{1}{2}x^2 - \dfrac{3}{2}x + 1$. Comme $P(1) = 0$, $P(x)$ est factorisable par $(x - 1)$ :
+\[
+P(x) = (x - 1)\left(x^2 + \dfrac{1}{2}x - 1\right)
+\]
+Calculons le discriminant du trinôme $x^2 + \dfrac{1}{2}x - 1$ :
+\[
+\Delta = \left(\dfrac{1}{2}\right)^2 - 4(1)(-1) = \dfrac{1}{4} + 4 = \dfrac{17}{4} > 0
+\]
+Les racines sont $x_1 = \dfrac{-\frac{1}{2} - \frac{\sqrt{17}}{2}}{2} = \dfrac{-1 - \sqrt{17}}{4}$ et $x_2 = \dfrac{-1 + \sqrt{17}}{4}$.
+\[
+\boxed{\textcolor{red}{P(x) = (x - 1)\left(x - \dfrac{-1 - \sqrt{17}}{4}\right)\left(x - \dfrac{-1 + \sqrt{17}}{4}\right)}}
+\]
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Programmation linéaire (Production)}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item \textbf{Expression du bénéfice :}
+  \[
+  \textcolor{red}{B(x,y) = 10x + 15y}
+  \]
+
+  \item \textbf{Contrainte sur les heures de machine :}
+  \[
+  2x + 4y \le 60 \iff \textcolor{red}{x + 2y \le 30}
+  \]
+
+  \item \textbf{Contrainte sur la matière première :}
+  \[
+  \textcolor{red}{3x + 2y \le 40}
+  \]
+
+  \item \textbf{Système des contraintes (avec $x \ge 0$ et $y \ge 0$) :}
+  \[
+  \textcolor{red}{
+  \begin{cases}
+  x + 2y \le 30 \\
+  3x + 2y \le 40 \\
+  x \ge 0 \\
+  y \ge 0
+  \end{cases}
+  }
+  \]
+
+  \item \textbf{Maximisation du bénéfice :}
+  Le domaine des contraintes est un polygone convexe délimité par quatre sommets :
+  \begin{itemize}
+      \item $O(0,0)$ : intersection de $x=0$ et $y=0$.
+      \item $A(0,15)$ : intersection de $x=0$ et $x + 2y = 30$.
+      \item $C\left(\dfrac{40}{3}, 0\right)$ : intersection de $y=0$ et $3x + 2y = 40$.
+      \item $I$ : intersection des droites $(D_1) : x + 2y = 30$ et $(D_2) : 3x + 2y = 40$.
+  \end{itemize}
+  Résolvons le système pour trouver les coordonnées du sommet $I$ :
+
+  \noindent
+  \(
+  \begin{aligned}
+  -1 \times
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+   x & + & 2y & 30 \\
+  3x & + & 2y & 40
+  \end{array}
+  \right.
+  &\implies
+  \underline{
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+  -x & - & 2y & -30 \\
+  3x & + & 2y &  40
+  \end{array}
+  \right.
+  } \\
+  &\qquad
+  \begin{array}{r@{\;=\;}r}
+  2x & 10 \implies x = 5
+  \end{array}
+  \end{aligned}
+  \)
+
+  On en déduit $5 + 2y = 30 \implies 2y = 25 \implies y = 12{,}5$. Donc $I(5;\, 12{,}5)$.
+
+  Évaluons le bénéfice $B(x,y) = 10x + 15y$ en chaque sommet :
+  \begin{itemize}
+      \item $B(0,0) = 0$
+      \item $B(0,15) = 10(0) + 15(15) = 225$
+      \item $B(5;\, 12{,}5) = 10(5) + 15(12{,}5) = 50 + 187{,}5 = \mathbf{237{,}5}$
+      \item $B\left(\dfrac{40}{3}, 0\right) = \dfrac{400}{3} \approx 133{,}33$
+  \end{itemize}
+
+  \textcolor{red}{\textbf{Conclusion :} Pour maximiser son bénéfice (qui s'élève à \textbf{237,5}), l'entreprise doit fabriquer \textbf{5 unités du produit $A$} et \textbf{12,5 unités du produit $B$} (ou, si les quantités doivent être entières, vérifier les points entiers voisins $(5,12)$ donnant $230$ et $(4,13)$ donnant $235$ : le maximum entier est atteint pour \textbf{4 unités de $A$ et 13 unités de $B$} avec un bénéfice de \textbf{235}).}
+\end{enumerate}
+
+\end{document}
+
+\vspace{3cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Correction QCM}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item Remontons le système triangulaire :
+  \begin{align*}
+  4z = 0 &\implies z = 0 \\
+  -10y + 2(0) = 20 &\implies -10y = 20 \implies y = -2 \\
+  2x + (-2) - 5(0) = 0 &\implies 2x = 2 \implies x = 1
+  \end{align*}
+  \textcolor{red}{\textbf{Réponse exacte : c) $S = \{(1,-2,0)\}$}}
+
+  \item Testons le triplet $(4,7,4)$ dans les trois équations :
+  \[
+  \begin{cases}
+  4 + 7 + 4 = 15 & (\text{Vrai}) \\
+  -4 - 7 + 2(4) = -11 + 8 = -3 \neq 0 & (\text{Faux})
+  \end{cases}
+  \]
+  Testons $(3,7,5)$ :
+  \[
+  \begin{cases}
+  3 + 7 + 5 = 15 & (\text{Vrai}) \\
+  -3 - 7 + 2(5) = -10 + 10 = 0 & (\text{Vrai}) \\
+  2(3) + 7 - 5 = 6 + 2 = 8 & (\text{Vrai})
+  \end{cases}
+  \]
+  \textcolor{red}{\textbf{Réponse exacte : c) $\{(3,7,5)\}$}}
+
+  \item Remplaçons $(x,y)$ par les coordonnées de chaque point dans $2x - 5y + 9$ :
+  \begin{itemize}
+      \item Pour $(0,0)$ : $2(0) - 5(0) + 9 = 9 \not< 0$.
+      \item Pour $(-3,1)$ : $2(-3) - 5(1) + 9 = -6 - 5 + 9 = -2 < 0$ (Vrai).
+  \end{itemize}
+  \textcolor{red}{\textbf{Réponse exacte : b) $(-3,1)$}}
+
+  \item Vérifions la première équation $5x - 7y = -22$ et l'inéquation $x + 2y < -1$ :
+  \begin{itemize}
+      \item Pour $(-3,1)$ : $5(-3) - 7(1) = -15 - 7 = -22$ (Vrai) et $-3 + 2(1) = -1 \not< -1$ (Faux, inégalité stricte).
+      \item Pour $(2,-5)$ : $5(2) - 7(-5) = 10 + 35 = 45 \neq -22$.
+      \item Aucun des points proposés ne vérifie simultanément l'égalité et l'inégalité stricte (coquille probable dans l'énoncé sur le signe $\le -1$ pour $(-3,1)$, qui donne $5(-3)-7(1)=-22$ et $-3+2(1)=-1$).
+  \end{itemize}
+  \textcolor{red}{\textbf{Réponse retenue (avec $\le -1$) : b) $(-3,1)$}}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Résolution par la méthode du pivot de Gauss}}}
+\vspace{0.3cm}
+
+\subsection*{\textcolor{darkred}{1) Premier système}}
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + &  y & - &  5z &   0 \\
+3x & - &  y & + &  2z & -12 \\
+2x & - & 4y & - & 10z &  10
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+Considérons $(L_1)$ comme pivot pour éliminer $x$ dans $(L_2)$ et $(L_3)$.
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+-3 \times \\
+2 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + & y & - & 5z &   0 \\
+3x & - & y & + & 2z & -12
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-6x & - & 3y & + & 15z &   0 \\
+ 6x & - & 2y & + &  4z & -24
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-3L_1) \\
+(2L_2)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-5y & + & 19z & -24 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-1 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + &  y & - &  5z &  0 \\
+2x & - & 4y & - & 10z & 10
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-2x & - &  y & + &  5z &  0 \\
+ 2x & - & 4y & - & 10z & 10
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-L_1) \\
+(L_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-5y & - & 5z & 10 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Éliminons $y$ entre $(L'_2)$ et $(L'_3)$ :
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+-1 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-5y & + & 19z & -24 \\
+-5y & - &  5z &  10
+\end{array}
+\right.
+\begin{array}{l}
+(L'_2) \\
+(L'_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ 5y & - & 19z & 24 \\
+-5y & - &  5z & 10
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-L'_2) \\
+(L'_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{5y} & & -24z & 34 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Le système devient :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+2x & + &   y & - &   5z &   0 \\
+   &   & -5y & + &  19z & -24 \\
+   &   &     &   & -24z &  34
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L'_2) \\
+(L''_3)
+\end{array}
+\]
+
+\begin{align*}
+(L''_3) :\; -24z = 34 &\implies z = -\dfrac{34}{24} = -\dfrac{17}{12} \\[6pt]
+(L'_2) :\; -5y + 19\left(-\dfrac{17}{12}\right) = -24 &\implies -5y = -24 + \dfrac{323}{12} = \dfrac{35}{12} \implies y = -\dfrac{7}{12} \\[6pt]
+(L_1) :\; 2x - \dfrac{7}{12} - 5\left(-\dfrac{17}{12}\right) = 0 &\implies 2x + \dfrac{78}{12} = 0 \implies 2x = -\dfrac{13}{2} \implies x = -\dfrac{13}{4}
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace \left(-\dfrac{13}{4},\; -\dfrac{7}{12},\; -\dfrac{17}{12}\right) \right\rbrace}}
+\]
+
+%----------------------------------------------------------------------
+\subsection*{\textcolor{darkred}{2) Deuxième système}}
+Réordonnons les lignes pour prendre $(L_2)$ comme pivot en première position :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & - &  z & 1 \\
+6x & - & 2y & - & 4z & 0 \\
+5x & - & 5y & + &  z & 1
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+-6 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & - &  z & 1 \\
+6x & - & 2y & - & 4z & 0
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-6x & - & 6y & + & 6z & -6 \\
+ 6x & - & 2y & - & 4z &  0
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-6L_1) \\
+(L_2)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-8y & + & 2z & -6 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-5 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & - & z & 1 \\
+5x & - & 5y & + & z & 1
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-5x & - & 5y & + & 5z & -5 \\
+ 5x & - & 5y & + &  z &  1
+\end{array}
+\right.
+}
+\begin{array}{l}
+(-5L_1) \\
+(L_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-10y & + & 6z & -4 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Éliminons $y$ entre $(L'_2)$ et $(L'_3)$ :
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+5 \times \\
+-4 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ -8y & + & 2z & -6 \\
+-10y & + & 6z & -4
+\end{array}
+\right.
+\begin{array}{l}
+(L'_2) \\
+(L'_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-40y & + & 10z & -30 \\
+ 40y & - & 24z &  16
+\end{array}
+\right.
+}
+\begin{array}{l}
+(5L'_2) \\
+(-4L'_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{-40y} & & -14z & -14 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Le système devient :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+x & + &   y & - &   z &   1 \\
+  &   & -8y & + &  2z &  -6 \\
+  &   &     &   & -14z & -14
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L'_2) \\
+(L''_3)
+\end{array}
+\]
+
+\begin{align*}
+(L''_3) :\; -14z = -14 &\implies z = 1 \\[4pt]
+(L'_2) :\; -8y + 2(1) = -6 &\implies -8y = -8 \implies y = 1 \\[4pt]
+(L_1) :\; x + 1 - 1 = 1 &\implies x = 1
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (1,\,1,\,1) \right\rbrace}}
+\]
+
+%----------------------------------------------------------------------
+\subsection*{\textcolor{darkred}{3) Troisième système}}
+Permutons $(L_1)$ et $(L_2)$ pour avoir $-a$ comme pivot :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + & 4b & + &  c &  6 \\
+3a & + & 2b & - & 5c & -8 \\
+2a & - &  b & + & 3c &  5
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+3 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + & 4b & + &  c &  6 \\
+3a & + & 2b & - & 5c & -8
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-3a & + & 12b & + & 3c & 18 \\
+ 3a & + &  2b & - & 5c & -8
+\end{array}
+\right.
+}
+\begin{array}{l}
+(3L_1) \\
+(L_2)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+14b & - & 2c & 10 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+2 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + & 4b & + &  c & 6 \\
+2a & - &  b & + & 3c & 5
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-2a & + & 8b & + & 2c & 12 \\
+ 2a & - &  b & + & 3c &  5
+\end{array}
+\right.
+}
+\begin{array}{l}
+(2L_1) \\
+(L_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+7b & + & 5c & 17 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Éliminons $b$ entre $(L'_2)$ et $(L'_3)$ :
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+\\
+-2 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+14b & - & 2c & 10 \\
+ 7b & + & 5c & 17
+\end{array}
+\right.
+\begin{array}{l}
+(L'_2) \\
+(L'_3)
+\end{array}
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ 14b & - &  2c &  10 \\
+-14b & - & 10c & -34
+\end{array}
+\right.
+}
+\begin{array}{l}
+(L'_2) \\
+(-2L'_3)
+\end{array} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{14b} & & -12c & -24 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+Le système devient :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-a & + &  4b & + &   c &   6 \\
+   &   & 14b & - &  2c &  10 \\
+   &   &     &   & -12c & -24
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L'_2) \\
+(L''_3)
+\end{array}
+\]
+
+\begin{align*}
+(L''_3) :\; -12c = -24 &\implies c = 2 \\[4pt]
+(L'_2) :\; 14b - 2(2) = 10 &\implies 14b = 14 \implies b = 1 \\[4pt]
+(L_1) :\; -a + 4(1) + 2 = 6 &\implies -a + 6 = 6 \implies a = 0
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (0,\,1,\,2) \right\rbrace}}
+\]
+
+%----------------------------------------------------------------------
+\subsection*{\textcolor{darkred}{4) Système à quatre inconnues}}
+Plaçons en premier l'équation ayant le coefficient $+1$ devant $z$ ou permutons les colonnes/lignes. Ici, gardons $t$ comme premier pivot en remontant $(L_4)$ en première ligne :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-t & + & 2x & - & 4y & + &  z &  2 \\
+ t & + & 3x & - & 2y & - & 5z & -5 \\
+2t & + & 2x & + & 3y & - & 3z & -6 \\
+-3t& + & 5x & - & 2y & + & 2z & -4
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3) \\
+(L_4)
+\end{array}
+\]
+
+\textbf{Étape 1 : Élimination de $t$ à l'aide du pivot $(L_1)$}
+\begin{itemize}
+    \item $(L'_2) \leftarrow L_1 + L_2$ : $5x - 6y - 4z = -3$
+    \item $(L'_3) \leftarrow 2L_1 + L_3$ : $6x - 5y - z = -2$
+    \item $(L'_4) \leftarrow -3L_1 + L_4$ : $-x + 10y - z = -10$
+\end{itemize}
+
+\textbf{Étape 2 : Système $3\times 3$ obtenu (en remontant $L'_4$ en tête pour le pivot $-x$)}
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & + & 10y & - &  z & -10 \\
+5x & - &  6y & - & 4z &  -3 \\
+6x & - &  5y & - &  z &  -2
+\end{array}
+\right.
+\begin{array}{l}
+(L'_4) \\
+(L'_2) \\
+(L'_3)
+\end{array}
+\]
+
+\noindent
+\(
+\begin{aligned}
+5 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & + & 10y & - &  z & -10 \\
+5x & - &  6y & - & 4z &  -3
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-5x & + & 50y & - & 5z & -50 \\
+ 5x & - &  6y & - & 4z &  -3
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+44y & - & 9z & -53 & (L''_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.3cm}
+\noindent
+\(
+\begin{aligned}
+6 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & + & 10y & - & z & -10 \\
+6x & - &  5y & - & z &  -2
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-6x & + & 60y & - & 6z & -60 \\
+ 6x & - &  5y & - &  z &  -2
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+55y & - & 7z & -62 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\textbf{Étape 3 : Élimination de $y$ (remarquons que $44 = 4\times 11$ et $55 = 5\times 11$)}
+
+\noindent
+\(
+\begin{aligned}
+\begin{array}{r}
+5 \times \\
+-4 \times
+\end{array}
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+44y & - & 9z & -53 \\
+55y & - & 7z & -62
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+ 220y & - & 45z & -265 \\
+-220y & + & 28z &  248
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+\phantom{220y} & & -17z & -17 & (L'''_3)
+\end{array}
+\end{aligned}
+\)
+
+\textbf{Remontée :}
+\begin{align*}
+-17z = -17 &\implies z = 1 \\
+44y - 9(1) = -53 &\implies 44y = -44 \implies y = -1 \\
+-x + 10(-1) - 1 = -10 &\implies -x - 11 = -10 \implies x = -1 \\
+-t + 2(-1) - 4(-1) + 1 = 2 &\implies -t + 3 = 2 \implies t = 1
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace (-1,\,-1,\,1,\,1) \right\rbrace}}
+\]
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Résolution graphique de systèmes d'inéquations}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item $\begin{cases} 3x + y < 2 \\ 2x - 3y > 1 \end{cases}$
+  
+  On trace les droites frontières $(D_1) : y = -3x + 2$ et $(D_2) : y = \dfrac{2}{3}x - \dfrac{1}{3}$ en pointillés (inégalités strictes). Le point $O(0,0)$ donne $0 < 2$ (vrai pour $D_1$) et $0 > 1$ (faux pour $D_2$). On hachure les demi-plans qui ne conviennent pas.
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \clip (-3,-3) rectangle (4,4);
+    % Hachures des zones rejetées
+    \fill[red!15] (-3,11) -- (4,-10) -- (4,4) -- cycle; % 3x+y >= 2
+    \fill[blue!15] (-3,-2.33) -- (4,2.33) -- (-3,4) -- cycle; % 2x-3y <= 1
+    \draw[gray!30, thin] (-3,-3) grid (4,4);
+    \draw[->, thick] (-3,0) -- (4,0) node[below left] {$x$};
+    \draw[->, thick] (0,-3) -- (0,4) node[below left] {$y$};
+    \draw[red, thick, dashed, domain=-1:2] plot (\x, {-3*\x + 2}) node[right] {$(D_1)$};
+    \draw[blue, thick, dashed, domain=-3:4] plot (\x, {(2*\x - 1)/3}) node[above left] {$(D_2)$};
+    \node[darkgreen!60!black, font=\bfseries] at (2.2,-1.5) {Zone Solution};
+  \end{tikzpicture}
+  \end{center}
+  \textcolor{red}{L'ensemble des solutions est la partie non hachurée du plan (frontières exclues).}
+
+  \item $\begin{cases} x + y - 2 \le 0 \\ x \ge 0 \\ y < 3 \end{cases}$
+  
+  On trace $(D_1) : y = -x + 2$ (trait plein), l'axe $(Oy) : x = 0$ (trait plein) et $(D_3) : y = 3$ (pointillés).
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \clip (-2,-2) rectangle (4.5,4.5);
+    \fill[red!15] (-2,4) -- (4,-2) -- (4.5,4.5) -- (-2,4.5) -- cycle; % x+y-2 > 0
+    \fill[blue!15] (-2,-2) rectangle (0,4.5); % x < 0
+    \fill[orange!20] (-2,3) rectangle (4.5,4.5); % y >= 3
+    \draw[gray!30, thin] (-2,-2) grid (4.5,4.5);
+    \draw[->, thick] (-2,0) -- (4.5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-2) -- (0,4.5) node[below left] {$y$};
+    \draw[red, thick, domain=-1:4] plot (\x, {-\x + 2}) node[above right] {$(D_1)$};
+    \draw[orange, thick, dashed] (-2,3) -- (4.5,3) node[below left] {$y=3$};
+    \node[font=\bfseries] at (1,-0.8) {Zone Solution};
+  \end{tikzpicture}
+  \end{center}
+  \textcolor{red}{L'ensemble des solutions est la partie non hachurée du plan (frontières $x=0$ et $x+y=2$ incluses, droite $y=3$ exclue).}
+
+  \item $\begin{cases} 4x - 5y + 6 > 0 \\ 5x + y - 7 < 0 \\ x + 6y + 16 > 0 \end{cases}$
+  
+  On trace $(D_1) : y = \dfrac{4x+6}{5}$, $(D_2) : y = -5x + 7$ et $(D_3) : y = \dfrac{-x-16}{6}$ en pointillés. Le point $O(0,0)$ vérifie les trois inégalités ($6>0$, $-7<0$, $16>0$).
+
+  \begin{center}
+  \begin{tikzpicture}[scale=0.55]
+    \clip (-5,-4) rectangle (5,5);
+    \fill[red!15] (-5,-2.8) -- (5,5.2) -- (-5,5) -- cycle;
+    \fill[blue!15] (0.4,5) -- (2.2,-4) -- (5,-4) -- (5,5) -- cycle;
+    \fill[green!15] (-5,-1.83) -- (5,-3.5) -- (5,-4) -- (-5,-4) -- cycle;
+    \draw[gray!30, thin] (-5,-4) grid (5,5);
+    \draw[->, thick] (-5,0) -- (5,0) node[below left] {$x$};
+    \draw[->, thick] (0,-4) -- (0,5) node[below left] {$y$};
+    \draw[red, thick, dashed, domain=-5:4] plot (\x, {(4*\x+6)/5});
+    \draw[blue, thick, dashed, domain=0.4:2.2] plot (\x, {-5*\x+7});
+    \draw[green!50!black, thick, dashed, domain=-5:5] plot (\x, {(-\x-16)/6});
+    \node[font=\bfseries] at (0,0.5) {$O$};
+    \node[font=\bfseries] at (-0.5,-1) {Zone Solution};
+  \end{tikzpicture}
+  \end{center}
+  \textcolor{red}{L'ensemble des solutions est l'intérieur du triangle ouvert délimité par ces trois droites.}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Problème des fruits au marché}}}
+\vspace{0.3cm}
+
+Soient $x$ le prix d'une orange, $y$ le prix d'une mandarine et $z$ le prix d'une banane (en francs). L'énoncé se traduit par le système :
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + & 2y & + &  z &  65 \\
+2x & + &  y & + & 3z & 125 \\
+3x & + &  y & + &  z &  95
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\noindent
+\(
+\begin{aligned}
+-2 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + & 2y & + &  z &  65 \\
+2x & + &  y & + & 3z & 125
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-2x & - & 4y & - & 2z & -130 \\
+ 2x & + &  y & + & 3z &  125
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-3y & + & z & -5 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-3 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + & 2y & + & z & 65 \\
+3x & + &  y & + & z & 95
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-3x & - & 6y & - & 3z & -195 \\
+ 3x & + &  y & + &  z &   95
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-5y & - & 2z & -100 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+2 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-3y & + &  z &   -5 \\
+-5y & - & 2z & -100
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+-6y & + & 2z &  -10 \\
+-5y & - & 2z & -100
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;=\;}r@{\quad}l}
+-11y & -110 & (L''_3)
+\end{array}
+\end{aligned}
+\)
+
+\begin{align*}
+(L''_3) :\; -11y = -110 &\implies y = 10 \\
+(L'_2) :\; -3(10) + z = -5 &\implies z = 25 \\
+(L_1) :\; x + 2(10) + 25 = 65 &\implies x = 20
+\end{align*}
+
+\textcolor{red}{\textbf{Conclusion :} Une orange coûte \textbf{20 F}, une mandarine coûte \textbf{10 F} et une banane coûte \textbf{25 F}.}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Problème des trois sacs}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item \textbf{Mise en équation :}
+  \begin{itemize}
+      \item Poids total : $x + y + z = 120$.
+      \item Maïs + riz = double de l'igname : $x + z = 2y \iff x - 2y + z = 0$.
+      \item Riz $+ 75$ = double de (maïs + igname) : $z + 75 = 2(x + y) \iff 2x + 2y - z = 75$.
+  \end{itemize}
+  \[
+  (S) : \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+   x & + &  y & + & z & 120 \\
+   x & - & 2y & + & z &   0 \\
+  2x & + & 2y & - & z &  75
+  \end{array}
+  \right.
+  \begin{array}{l}
+  (L_1) \\
+  (L_2) \\
+  (L_3)
+  \end{array}
+  \]
+
+  \item \textbf{Résolution par le pivot de Gauss :}
+
+  \noindent
+  \(
+  \begin{aligned}
+  -1 \times
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+  x & + &  y & + & z & 120 \\
+  x & - & 2y & + & z &   0
+  \end{array}
+  \right.
+  &\implies
+  \underline{
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+  -x & - &  y & - & z & -120 \\
+   x & - & 2y & + & z &    0
+  \end{array}
+  \right.
+  } \\
+  &\qquad
+  \begin{array}{r@{\;=\;}r@{\quad}l}
+  -3y & -120 & (L'_2)
+  \end{array}
+  \end{aligned}
+  \)
+
+  \vspace{0.4cm}
+  \noindent
+  \(
+  \begin{aligned}
+  -2 \times
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+   x & + &  y & + & z & 120 \\
+  2x & + & 2y & - & z &  75
+  \end{array}
+  \right.
+  &\implies
+  \underline{
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+  -2x & - & 2y & - & 2z & -240 \\
+   2x & + & 2y & - &  z &   75
+  \end{array}
+  \right.
+  } \\
+  &\qquad
+  \begin{array}{r@{\;=\;}r@{\quad}l}
+  -3z & -165 & (L'_3)
+  \end{array}
+  \end{aligned}
+  \)
+
+  \begin{align*}
+  (L'_2) :\; -3y = -120 &\implies y = 40 \\
+  (L'_3) :\; -3z = -165 &\implies z = 55 \\
+  (L_1) :\; x + 40 + 55 = 120 &\implies x = 25
+  \end{align*}
+
+  \textcolor{red}{\textbf{Conclusion :} Le sac de maïs pèse \textbf{25 kg}, celui d'igname \textbf{40 kg} et celui de riz \textbf{55 kg}.}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Système et factorisation d'un polynôme}}}
+\vspace{0.3cm}
+
+\textbf{1) Résolution du système :}
+\[
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & + & z & -1 \\
+ x & - &  y & + & z &  2 \\
+4x & + & 2y & + & z & -4
+\end{array}
+\right.
+\begin{array}{l}
+(L_1) \\
+(L_2) \\
+(L_3)
+\end{array}
+\]
+
+\noindent
+\(
+\begin{aligned}
+-1 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+x & + & y & + & z & -1 \\
+x & - & y & + & z &  2
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-x & - & y & - & z & 1 \\
+ x & - & y & + & z & 2
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;=\;}r@{\quad}l}
+-2y & 3 & (L'_2)
+\end{array}
+\end{aligned}
+\)
+
+\vspace{0.4cm}
+\noindent
+\(
+\begin{aligned}
+-4 \times
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+ x & + &  y & + & z & -1 \\
+4x & + & 2y & + & z & -4
+\end{array}
+\right.
+&\implies
+\underline{
+\left\{
+\begin{array}{r@{\;}c@{\;}r@{\;}c@{\;}r@{\;=\;}r}
+-4x & - & 4y & - & 4z &  4 \\
+ 4x & + & 2y & + &  z & -4
+\end{array}
+\right.
+} \\
+&\qquad
+\begin{array}{r@{\;}c@{\;}r@{\;=\;}r@{\quad}l}
+-2y & - & 3z & 0 & (L'_3)
+\end{array}
+\end{aligned}
+\)
+
+\begin{align*}
+(L'_2) :\; -2y = 3 &\implies y = -\dfrac{3}{2} \\[4pt]
+(L'_3) :\; -2\left(-\dfrac{3}{2}\right) - 3z = 0 &\implies 3 - 3z = 0 \implies z = 1 \\[4pt]
+(L_1) :\; x - \dfrac{3}{2} + 1 = -1 &\implies x - \dfrac{1}{2} = -1 \implies x = -\dfrac{1}{2}
+\end{align*}
+
+\[
+\boxed{\textcolor{red}{S = \left\lbrace \left(-\dfrac{1}{2},\; -\dfrac{3}{2},\; 1\right) \right\rbrace}}
+\]
+
+\textbf{2) Détermination des coefficients $a$, $b$, $c$ :}
+\[
+\begin{cases}
+P(1) = 0 \iff 1 + a + b + c = 0 \iff a + b + c = -1 \\
+P(-1) = 1 \iff -1 + a - b + c = 1 \iff a - b + c = 2 \\
+P(2) = 4 \iff 8 + 4a + 2b + c = 4 \iff 4a + 2b + c = -4
+\end{cases}
+\]
+On retrouve exactement le système résolu à la question 1). Donc :
+\[
+\boxed{\textcolor{red}{a = -\dfrac{1}{2}, \quad b = -\dfrac{3}{2}, \quad c = 1}}
+\]
+
+\textbf{3) Factorisation de $P(x)$ :}
+On a $P(x) = x^3 - \dfrac{1}{2}x^2 - \dfrac{3}{2}x + 1$. Comme $P(1) = 0$, $P(x)$ est factorisable par $(x - 1)$ :
+\[
+P(x) = (x - 1)\left(x^2 + \dfrac{1}{2}x - 1\right)
+\]
+Calculons le discriminant du trinôme $x^2 + \dfrac{1}{2}x - 1$ :
+\[
+\Delta = \left(\dfrac{1}{2}\right)^2 - 4(1)(-1) = \dfrac{1}{4} + 4 = \dfrac{17}{4} > 0
+\]
+Les racines sont $x_1 = \dfrac{-\frac{1}{2} - \frac{\sqrt{17}}{2}}{2} = \dfrac{-1 - \sqrt{17}}{4}$ et $x_2 = \dfrac{-1 + \sqrt{17}}{4}$.
+\[
+\boxed{\textcolor{red}{P(x) = (x - 1)\left(x - \dfrac{-1 - \sqrt{17}}{4}\right)\left(x - \dfrac{-1 + \sqrt{17}}{4}\right)}}
+\]
+
+\vspace{0.5cm}
+
+%======================================================================
+\fbox{\textbf{\exo}} \quad \textcolor{darkred}{\textbf{\underline{Programmation linéaire (Production)}}}
+\vspace{0.3cm}
+
+\begin{enumerate}
+  \item \textbf{Expression du bénéfice :}
+  \[
+  \textcolor{red}{B(x,y) = 10x + 15y}
+  \]
+
+  \item \textbf{Contrainte sur les heures de machine :}
+  \[
+  2x + 4y \le 60 \iff \textcolor{red}{x + 2y \le 30}
+  \]
+
+  \item \textbf{Contrainte sur la matière première :}
+  \[
+  \textcolor{red}{3x + 2y \le 40}
+  \]
+
+  \item \textbf{Système des contraintes (avec $x \ge 0$ et $y \ge 0$) :}
+  \[
+  \textcolor{red}{
+  \begin{cases}
+  x + 2y \le 30 \\
+  3x + 2y \le 40 \\
+  x \ge 0 \\
+  y \ge 0
+  \end{cases}
+  }
+  \]
+
+  \item \textbf{Maximisation du bénéfice :}
+  Le domaine des contraintes est un polygone convexe délimité par quatre sommets :
+  \begin{itemize}
+      \item $O(0,0)$ : intersection de $x=0$ et $y=0$.
+      \item $A(0,15)$ : intersection de $x=0$ et $x + 2y = 30$.
+      \item $C\left(\dfrac{40}{3}, 0\right)$ : intersection de $y=0$ et $3x + 2y = 40$.
+      \item $I$ : intersection des droites $(D_1) : x + 2y = 30$ et $(D_2) : 3x + 2y = 40$.
+  \end{itemize}
+  Résolvons le système pour trouver les coordonnées du sommet $I$ :
+
+  \noindent
+  \(
+  \begin{aligned}
+  -1 \times
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+   x & + & 2y & 30 \\
+  3x & + & 2y & 40
+  \end{array}
+  \right.
+  &\implies
+  \underline{
+  \left\{
+  \begin{array}{r@{\;}c@{\;}r@{\;=\;}r}
+  -x & - & 2y & -30 \\
+  3x & + & 2y &  40
+  \end{array}
+  \right.
+  } \\
+  &\qquad
+  \begin{array}{r@{\;=\;}r}
+  2x & 10 \implies x = 5
+  \end{array}
+  \end{aligned}
+  \)
+
+  On en déduit $5 + 2y = 30 \implies 2y = 25 \implies y = 12{,}5$. Donc $I(5;\, 12{,}5)$.
+
+  Évaluons le bénéfice $B(x,y) = 10x + 15y$ en chaque sommet :
+  \begin{itemize}
+      \item $B(0,0) = 0$
+      \item $B(0,15) = 10(0) + 15(15) = 225$
+      \item $B(5;\, 12{,}5) = 10(5) + 15(12{,}5) = 50 + 187{,}5 = \mathbf{237{,}5}$
+      \item $B\left(\dfrac{40}{3}, 0\right) = \dfrac{400}{3} \approx 133{,}33$
+  \end{itemize}
+
+  \textcolor{red}{\textbf{Conclusion :} Pour maximiser son bénéfice (qui s'élève à \textbf{237,5}), l'entreprise doit fabriquer \textbf{5 unités du produit $A$} et \textbf{12,5 unités du produit $B$} (ou, si les quantités doivent être entières, vérifier les points entiers voisins $(5,12)$ donnant $230$ et $(4,13)$ donnant $235$ : le maximum entier est atteint pour \textbf{4 unités de $A$ et 13 unités de $B$} avec un bénéfice de \textbf{235}).}
+\end{enumerate}
+
+\end{document}
