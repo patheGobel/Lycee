@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  26 NOV 2026 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.15)  26 NOV 2026 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1186,10 +1186,10 @@ Package rerunfilecheck Info: File `systemes2026Correc.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32395 strings out of 467533
- 650144 string characters out of 5422138
+ 32399 strings out of 467533
+ 650194 string characters out of 5422138
  1114461 words of memory out of 5000000
- 60698 multiletter control sequences out of 15000+600000
+ 60702 multiletter control sequences out of 15000+600000
  683796 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,16n,107p,515b,891s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1201,7 +1201,7 @@ blic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share
 mssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/zapfding/uzdr.pfb>
-Output written on build/systemes2026Correc.pdf (9 pages, 214742 bytes).
+Output written on build/systemes2026Correc.pdf (9 pages, 214325 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams
