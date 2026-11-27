@@ -1,0 +1,338 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\usepackage{tikz}
+\usepackage[siunitx, european, RPvoltages]{circuitikz}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2026}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2026/2027}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 3}\textbf{M1} & \textbf{Date: 18/10/2026} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Racine Carrée}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{3cm}
+
+\fbox{\textbf{\exo}(07 points)}
+
+\noindent On considère le polynôme P défini par $p(x) = 2x^3 - 7x^2 - 5x + 4$
+
+\begin{enumerate}
+    \item Montrer que 4 est une racine de P . \hfill \textbf{(0,5pt)}
+    \item Factoriser $P(x)$ \hfill \textbf{(1,5 pts)}
+    \item Résoudre $P(x) = 0$ et $P(x) \geq 0$ \hfill \textbf{(3pts)}
+    \item En déduire les solutions de :
+    \begin{enumerate}
+        \item $2x^6 - 7x^4 - 5x^2 + 4 = 0$ \hfill \textbf{(1pt)}
+        \item $P(-2x + 1) = 0$ \hfill \textbf{(1pt)}
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}(07 points)}
+
+\begin{enumerate}
+    \item On donne le polynôme $P(x) = 2x^3 + ax^2 - 18x + b$ ; ou a et b sont réels.\\
+    Déterminer a et b sachant que $P(\frac{1}{2}) = 0$ et $P(2) = 0$.\hfill \textbf{(1,5pts)}
+
+    \item Dans la suite, on considère que $P(x) = 2x^3 + 3x^2 - 18x + 8$ .
+    \begin{enumerate}
+        \item Factoriser complètement $P(x)$\hfill \textbf{(1,5pts)}
+        \item Résoudre dans $\mathbb{R}$ ,l'équation: $P(x) = 0$\hfill \textbf{(1 pt)}
+        \item Résoudre dans $\mathbb{R}$ ,l'inéquation : $P(x) \leq 0$\hfill \textbf{(1,5 pts)}
+    \end{enumerate}
+
+    \item Déduire de la question 2) b) les solutions dans $\mathbb{R}$ de :\\
+    (E) : $2(x - 3)^3 + 3(x - 3)^2 - 18(x - 3) + 8 = 0$\hfill \textbf{(1,5pt)}
+\end{enumerate}
+
+\fbox{\textbf{\exo}(10 points)}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\underline{Partie A}}
+
+\vspace{0.2cm}
+
+\noindent On considère le polynôme $P(x) = 2x^3 - 7x^2 + \mathbf{a}x + \mathbf{b}$.
+
+\begin{enumerate}
+    \item Déterminer les réels \textbf{a} et \textbf{b} sachant que $P(-1) = 0$ et $P(1) = 6$. \hfill \textbf{1 pt}
+    \item Pour la suite on donne $P(x) = 2x^3 - 7x^2 + x + 10$.
+    \begin{enumerate}
+        \item Vérifier que $P(x)$ est factorisable par $(x + 1)$. \hfill \textbf{1 pt}
+        \item Déterminer le polynôme $Q(x)$ tel que $P(x) = (x + 1)Q(x)$. \hfill \textbf{1 pt}
+        \item Factoriser le trinôme du second degré $Q(x)$. \hfill \textbf{1 pt}
+        \item En déduire une factorisation complète de $P(x)$. \hfill \textbf{0,5 pt}
+    \end{enumerate}
+    \item Résoudre dans $\mathbb{R}$ l'équation $P(x) = 0$. \hfill \textbf{1 pt}
+    \item Résoudre dans $\mathbb{R}$ l'inéquation $P(x) < 0$. \hfill \textbf{1 pt}
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\noindent\textbf{\underline{Partie B}}
+
+\vspace{0.2cm}
+
+\noindent On donne la fonction $f$ définie par :
+\[ f(x) = \frac{P(x)}{-3x^2 - x + 2} \]
+
+\begin{enumerate}
+    \item Montrer que : $-3x^2 - x + 2 = (x + 1)(-3x + 2)$. \hfill \textbf{0,5 pt}
+    \item En déduire l'ensemble de définition $D_f$ de la fonction $f$. \hfill \textbf{1 pt}
+    \item Simplifier $f(x)$ en utilisant la forme factorisée de $P(x)$. \hfill \textbf{1 pt}
+    \item Résoudre dans $D_f$ l'inéquation $f(x) \geq 0$. \hfill \textbf{1 pt}
+\end{enumerate}
+
+\fbox{\textbf{\exo}} \textbf{Déterminer le domaine de définition des fonctions suivantes :}
+
+\begin{enumerate}
+\begin{multicols}{3}
+\setlength{\columnseprule}{0.1mm} % La largeur de la ligne verticale entre les colonnes
+    \item $f(x) = \dfrac{2x^2 - 5x + 15}{8x^2 - 5x - 3}$
+    \item $f(x) = \dfrac{4x^2 - 5x + 15}{x^3 + 6x}$
+    \item $f(x) = \sqrt{x^2 - 3x - 18}$
+    \item $f(x) = \sqrt{4x - x^3}$
+    \item $f(x) = \sqrt{\dfrac{x^2 + x - 6}{-x^2 + x - 1}}$
+    \item $f(x) = \dfrac{\sqrt{-4x+1}}{x+2}$
+    \item $f(x) = \dfrac{x^2 + 5x - 7}{\sqrt{2x^2 + 3x - 2}}$
+    \item $f(x) = \dfrac{\sqrt{x^2 - x}}{(x-2)(x+3)}$
+    \item $f(x) = \sqrt{\dfrac{(1-x)(2+x)}{x^2 + x}}$
+    \item $f(x) = \sqrt{|x-1|} - 2$
+    \item $f(x) = \dfrac{\sqrt{x-1}}{|2x-5| -2}$
+    \item $f(x) = \sqrt{|1 - 3x| - x + 2}$
+    \item $f(x) = \dfrac{4x^2 -1}{6x^2 - |13x - 5|}$
+    \item $f(x) = \dfrac{\sqrt{2-3x+1}}{|x| - 1}$
+    \item $f(x) = \dfrac{x^2 + 2x}{\sqrt{x+3} - \sqrt{2x-1}}$
+    \item $f(x) = \dfrac{1}{|x| + x}$
+    \item $f(x) = \sqrt{3 - |2x + 5|}$
+    \item $f(x) = \sqrt{2x + 1} - \sqrt{7 - 6x}$
+    \item $f(x) = \dfrac{x^2 + 1}{x - E(x)}$
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{x}{x^2 - 1}, & \text{si } x \leq 0 \\[2mm]
+            f(x) = \sqrt{x - 1}, & \text{si } x > 0
+        \end{array}
+    \right.$
+        \item $\left\{
+        \begin{array}{ll}
+            f(x) = x \sqrt{\left| \dfrac{x+1}{x} \right|}, & \text{si } x < 0 \\[3mm]
+            f(x) = \dfrac{x^3 - x^2}{x^2 + 1}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = x\sqrt{-x} + 1, & \text{si } x \leq 0 \\[2mm]
+            f(x) = \dfrac{1 - x}{1 + x^3}, & \text{si } x > 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{x(x-2)}{x-1}, & \text{si } x < 0 \\[2mm]
+            f(x) = x + \sqrt{x^2 - 4}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+    
+    \item $\left\{
+        \begin{array}{ll}
+            f(x) = \dfrac{3}{|x+1| - 2}, & \text{si } x \leq 1 \\[2mm]
+            f(x) = \sqrt{x - 3}, & \text{si } x > 1
+        \end{array}
+    \right.$
+\end{multicols}
+\item   $\left\{
+        \begin{array}{ll}
+            f(x) = \sqrt{x^2 - 2x} + x, & \text{si } x > 0 \\[2mm]
+            f(x) = \dfrac{x^2}{x+1}, & \text{si } x < 0
+        \end{array}
+    \right.$
+\item $\left\{
+        \begin{array}{ll}
+            f(x) = |x + 1| - \dfrac{2}{x+2}, & \text{si } x < 0 \\[2mm]
+            f(x) = x^2 \sqrt{4 - x}, & \text{si } x \geq 0
+        \end{array}
+    \right.$
+\end{enumerate}
+    
+\fbox{\textbf{\exo}}
+
+On considère les fonctions suivantes :  
+\( f(x) = \sqrt{x + 3} \) et \( g(x) = \dfrac{1}{x^2 - 4} \).
+
+\begin{enumerate}
+    \item Déterminer \( D_f \), \( D_g \), \( D_{fog} \) et \( D_{gof} \).
+    \item Calculer \( f \circ g(x) \) et \( g \circ f(x) \).
+\end{enumerate}
+\fbox{\textbf{\exo}}
+
+On considère deux fonctions définies par : $f(x) = 2x^2 + 1 \quad \text{et} \quad g(x) = \sqrt{x - 3}$
+
+\begin{enumerate}
+    \item Déterminer le domaine de définition de $f$ et de $g$ 
+    \item Donner les expressions de : $f \circ g$ et $g \circ f$ 
+    \item Calculer $f \circ g(3)$ et $g \circ f(-2)$ 
+\end{enumerate}
+
+\fbox{\textbf{\exo}}
+
+On donne les applications $f$ et $g$ définies sur $]2 ; +\infty[$ par :
+
+$f(x) = -x^2 + 3x \quad \text{et} \quad g(x) = \frac{x+1}{x-2}$.
+
+\begin{enumerate}
+    \item Calculer $g \circ f(x)$ et $f \circ g(x)$.
+    \item Déterminer de deux façons différentes l'image de $-1$ par $g \circ f$.
+\end{enumerate}
+
+\fbox{\textbf{\exo}}(6,5 points)
+
+\noindent\textbf{Partie A}
+
+On considère l'application $f : [-4; 4] \to [-2; 4]$ définie par la représentation graphique ci-dessous :
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Grille et axes
+    \draw[help lines, color=gray!30, dashed] (-5,-2) grid (5,4);
+    \draw[->, thick] (-5.2,0) -- (5.2,0) node[right] {$x$};
+    \draw[->, thick] (0,-2.2) -- (0,4.2) node[above] {$y$};
+
+    % Graduations
+    \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+        \draw (\x, 0.1) -- (\x, -0.1) node[below=2pt, scale=0.8] {\x};
+    \foreach \y in {-2,-1,1,2,3,4}
+        \draw (0.1, \y) -- (-0.1, \y) node[left=2pt, scale=0.8] {\y};
+    \node at (-0.3,-0.3) [scale=0.8] {0};
+
+    % Courbe représentative (Cf)
+    \draw[red, very thick] (-4,-2) -- (-2,1) -- (0,-1) -- (4,3);
+
+    % Étiquette de la courbe
+    \node[red, above left] at (-2.5, 1) {\large $\mathcal{C}_f$};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item $f$ est-elle une application injective ? surjective ? bijective ? justifier vos réponses. \hfill \textbf{(0,5pt+0,5pt+0,5pt)}
+    \item Quelles sont les images respectives des nombres $-4$ et $0$ ? \hfill \textbf{(0,25pt+0,25pt)}
+    \item Quelle est l'image directe de l'intervalle $[-4; 0]$ ? \hfill \textbf{0,5pt}
+    \item Donner l'image réciproque de l'intervalle $[-2; 1]$. \hfill \textbf{0,5pt}
+\end{enumerate}
+
+\vspace{0.3em}
+\noindent\textbf{Partie B}
+
+Soient $f$ et $g$ les applications définies par :
+\[
+f : \begin{array}[t]{rcl}
+    ]1; +\infty[ & \to & \mathbb{R} \\
+    x & \mapsto & \dfrac{2x}{x^2+1}
+\end{array}
+\quad \text{et} \quad
+g : \begin{array}[t]{rcl}
+    \mathbb{R} & \to & ]2; +\infty[ \\
+    x & \mapsto & \dfrac{x+3}{x^2-1}
+\end{array}
+\]
+
+\begin{enumerate}
+    \item $f$ et $g$ sont-elles des applications ? justifier les réponses. \hfill \textbf{0,5pt + 0,5pt}
+    \item Soit l'application $h$ définie par :
+    \[
+    h : \begin{array}[t]{rcl}
+        ]1; +\infty[ & \to & ]2; +\infty[ \\
+        x & \mapsto & \dfrac{2x + 1}{x - 1}
+    \end{array}
+    \]
+    \begin{enumerate}
+        \item Montrer que $h$ est injective. \hfill \textbf{0,75pt}
+        \item Montrer que $h$ est surjective. \hfill \textbf{0,75pt}
+        \item En déduire que $h$ est bijective puis donner l'expression de la bijection réciproque $h^{-1}$. \hfill \textbf{0,5pt + 0,5pt}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
