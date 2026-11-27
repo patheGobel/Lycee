@@ -1,0 +1,202 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathrsfs,tikz,times,pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usetikzlibrary{trees}
+\newcommand\circitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[circle,draw=gray, fill=red!55,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\newcommand\boxitem[1]{%
+\tikz[baseline=(char.base)]{
+\node[fill=cyan,
+minimum size=1.2em,inner sep=0] (char) {#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*}}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+%%%::::::by chnini ameur :::::::%%%
+\everymath{\displaystyle}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1.7cm]{geometry}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{array,multirow}
+\usepackage[most]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{float} %pour utiliser l'option [H] qui force l'image à apparaître exactement à l'endroit où elle est placée dans le code.
+\tcbuselibrary{skins,hooks}
+\usetikzlibrary{patterns}
+%%%::::::by chnini ameur :::::::%%%
+\newtcolorbox{exa}[2][]{enhanced,breakable,before skip=2mm,after skip=5mm,
+colback=yellow!20!white,colframe=black!20!blue,boxrule=0.5mm,
+attach boxed title to top left ={xshift=0.6cm,yshift*=1mm-\tcboxedtitleheight},
+fonttitle=\bfseries,
+title={#2},#1,
+% varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=tcbcolback!30!black]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=tcbcolback!60!black,right color = tcbcolback!60!black,
+middle color = tcbcolback!80!black]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},interior style={top color=yellow!5}}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage{eso-pic}         % Pour ajouter des éléments en arrière-plan
+% Commande pour ajouter du texte en arrière-plan
+\usepackage{tkz-tab}
+\usepackage{tikz}
+\usepackage[siunitx, european, RPvoltages]{circuitikz}
+\AddToShipoutPicture{
+    \AtTextCenter{%
+        \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.7}{\fontsize{5cm}{5cm}\selectfont PGB}}}
+    }
+}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footruleskip}{10pt}
+\fancyfoot[R]{
+\color{blue}\ding{45}\ \textbf{2026}
+}
+\fancyfoot[L]{
+\color{blue}\ding{45}\ \textbf{Prof:M. BA}
+}
+\cfoot{\bf
+\thepage /
+\pageref{LastPage}}
+% Création du compteur pour les exercices
+\newcounter{exercice}
+\renewcommand{\theexercice}{\arabic{exercice}}  % Définit l'affichage du compteur en chiffres arabes
+
+% Définir la commande \exo
+\newcommand{\exo}{\refstepcounter{exercice}\textbf{Exercice \theexercice} }
+\begin{document}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arrayrulewidth}{1.2pt}
+\begin{tikzpicture}[overlay,remember picture]
+    \node[draw=blue,line width=1.2pt,fill=purple,text=blue,inner sep=3mm,rounded corners,pattern=dots]at ([yshift=-2.5cm]current page.north) {\begingroup\setlength{\fboxsep}{0pt}\colorbox{white}{\begin{tabular}{|*1{>{\centering \arraybackslash}p{0.28\textwidth}} |*2{>{\centering \arraybackslash}p{0.2\textwidth}|} *1{>{\centering \arraybackslash}p{0.19\textwidth}|} }
+                \hline
+                \multicolumn{3}{|c|}{$\diamond$$\diamond$$\diamond$\ \textbf{Lycée de Dindéfélo}\ $\diamond$$\diamond$$\diamond$ } & \textbf{A.S. : 2026/2027}                                              \\ \hline
+                \textbf{Matière: Mathématiques}                                                                                    & \textbf{Niveau : 1$^{er}$}\textbf{S} & \textbf{Date: 27/11/2026} & \textbf{} \\ \hline
+                \multicolumn{4}{|c|}{\parbox[c]{10cm}{\begin{center}
+                                                                  \textbf{{\Large\sffamily Polynômes}}
+                                                              \end{center}}}                                                                                                        \\ \hline
+            \end{tabular}}\endgroup};
+\end{tikzpicture}
+\vspace{4cm}
+
+\fbox{\textbf{\exo}(07 points)}
+
+\noindent On considère le polynôme P défini par $p(x) = 2x^3 - 7x^2 - 5x + 4$
+
+\begin{enumerate}
+    \item Montrer que 4 est une racine de P . \hfill \textbf{(0,5pt)}
+    \item Factoriser $P(x)$ \hfill \textbf{(1,5 pts)}
+    \item Résoudre $P(x) = 0$ et $P(x) \geq 0$ \hfill \textbf{(3pts)}
+    \item En déduire les solutions de :
+    \begin{enumerate}
+        \item $2x^6 - 7x^4 - 5x^2 + 4 = 0$ \hfill \textbf{(1pt)}
+        \item $P(-2x + 1) = 0$ \hfill \textbf{(1pt)}
+    \end{enumerate}
+\end{enumerate}
+
+\fbox{\textbf{\exo}(07 points)}
+
+\begin{enumerate}
+    \item On donne le polynôme $P(x) = 2x^3 + ax^2 - 18x + b$ ; ou a et b sont réels.\\
+    Déterminer a et b sachant que $P(\frac{1}{2}) = 0$ et $P(2) = 0$.\hfill \textbf{(1,5pts)}
+
+    \item Dans la suite, on considère que $P(x) = 2x^3 + 3x^2 - 18x + 8$ .
+    \begin{enumerate}
+        \item Factoriser complètement $P(x)$\hfill \textbf{(1,5pts)}
+        \item Résoudre dans $\mathbb{R}$ ,l'équation: $P(x) = 0$\hfill \textbf{(1 pt)}
+        \item Résoudre dans $\mathbb{R}$ ,l'inéquation : $P(x) \leq 0$\hfill \textbf{(1,5 pts)}
+    \end{enumerate}
+
+    \item Déduire de la question 2) b) les solutions dans $\mathbb{R}$ de :\\
+    (E) : $2(x - 3)^3 + 3(x - 3)^2 - 18(x - 3) + 8 = 0$\hfill \textbf{(1,5pt)}
+\end{enumerate}
+
+\fbox{\textbf{\exo}(10 points)}
+
+\vspace{0.2cm}
+
+\noindent\textbf{\underline{Partie A}}
+
+\vspace{0.2cm}
+
+\noindent On considère le polynôme $P(x) = 2x^3 - 7x^2 + \mathbf{a}x + \mathbf{b}$.
+
+\begin{enumerate}
+    \item Déterminer les réels \textbf{a} et \textbf{b} sachant que $P(-1) = 0$ et $P(1) = 6$. \hfill \textbf{1 pt}
+    \item Pour la suite on donne $P(x) = 2x^3 - 7x^2 + x + 10$.
+    \begin{enumerate}
+        \item Vérifier que $P(x)$ est factorisable par $(x + 1)$. \hfill \textbf{1 pt}
+        \item Déterminer le polynôme $Q(x)$ tel que $P(x) = (x + 1)Q(x)$. \hfill \textbf{1 pt}
+        \item Factoriser le trinôme du second degré $Q(x)$. \hfill \textbf{1 pt}
+        \item En déduire une factorisation complète de $P(x)$. \hfill \textbf{0,5 pt}
+    \end{enumerate}
+    \item Résoudre dans $\mathbb{R}$ l'équation $P(x) = 0$. \hfill \textbf{1 pt}
+    \item Résoudre dans $\mathbb{R}$ l'inéquation $P(x) < 0$. \hfill \textbf{1 pt}
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\noindent\textbf{\underline{Partie B}}
+
+\vspace{0.2cm}
+
+\noindent On donne la fonction $f$ définie par :
+\[ f(x) = \frac{P(x)}{-3x^2 - x + 2} \]
+
+\begin{enumerate}
+    \item Montrer que : $-3x^2 - x + 2 = (x + 1)(-3x + 2)$. \hfill \textbf{0,5 pt}
+    \item En déduire l'ensemble de définition $D_f$ de la fonction $f$. \hfill \textbf{1 pt}
+    \item Simplifier $f(x)$ en utilisant la forme factorisée de $P(x)$. \hfill \textbf{1 pt}
+    \item Résoudre dans $D_f$ l'inéquation $f(x) \geq 0$. \hfill \textbf{1 pt}
+\end{enumerate}
+
+\fbox{\textbf{\exo}(4 points)}
+
+Soit $P(x) = x^3 - 9x^2 + 26x - 24$\\
+On suppose que $P$ admet trois racines $\alpha, \beta$ et $\gamma$
+\begin{enumerate}
+    \item Déterminer $\alpha + \beta + \gamma$, $\alpha\beta + \alpha\gamma + \beta\gamma$ et $\alpha\beta\gamma$ \hfill \textbf{1pt}
+    \item En déduire $\alpha^2 + \beta^2 + \gamma^2$, $\dfrac{1}{\alpha} + \dfrac{1}{\beta} + \dfrac{1}{\gamma}$ ; $\alpha^3 + \beta^3 + \gamma^3$ \hfill \textbf{1pt}
+    \item Si $\alpha = 2$, retrouver les deux autres racines de $P$. \hfill \textbf{1pt}
+    \item Résoudre l'inéquation $P(x) \leq 0$ \hfill \textbf{1pt}
+\end{enumerate}
+
+\fbox{\textbf{\exo}(4 points)} \textbf{04,75 points}
+
+\vspace{0.5em}
+\noindent Soit $\mathbf{P}$ un polynôme tel que $P(x) = x^3 - 3x + 1$.
+
+\vspace{0.5em}
+\noindent On admet que $P(x)$ admet a trois racines distinctes $a$, $b$ et $c$.
+
+\begin{enumerate}
+    \item[1)] Sans calculer ces racines, déterminer : $\mathbf{(0,75 \times 6 = 04,5pts)}$
+    
+    \vspace{0.5em}
+    $\mathbf{A} = a + b + c \quad ; \quad \mathbf{B} = ab + bc + ca \quad ; \quad \mathbf{C} = abc \quad ; \quad \mathbf{D} = a^2 + b^2 + c^2 \quad ; \quad \mathbf{E} = \dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$
+    
+    \vspace{0.5em}
+    $\mathbf{F} = \dfrac{1}{a^2} + \dfrac{1}{b^2} + \dfrac{1}{c^2}$
+
+    \item[\textbf{2)}] En effectuant la division euclidienne de $\mathbf{x^5}$ par $x^3 - 3x + 1$, calculer $\text{G} = a^5 + b^5 + c^5$. \hfill \textbf{0,25pt}
+\end{enumerate}
+
+\end{document}
+```[cite: 11]
+\end{document}
