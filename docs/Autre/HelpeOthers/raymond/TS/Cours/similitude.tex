@@ -1,0 +1,491 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   COURS : SIMILITUDE PLANE DIRECTE  (version améliorée)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  LANGUE, ENCODAGE, POLICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}      % typographie française (espaces, coupures)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  MATHÉMATIQUES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+% NB : \everymath{\displaystyle} supprimé (formules en ligne trop hautes).
+%      Utiliser \dfrac ou \displaystyle ponctuellement.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  MISE EN PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[left=1.6cm,right=1.6cm,top=1.5cm,bottom=2cm]{geometry}
+\usepackage{array}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+\usepackage{eso-pic}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  FILIGRANE (plus discret)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AddToShipoutPicture{%
+  \AtTextCenter{%
+    \makebox[0pt]{\rotatebox{80}{\textcolor[gray]{0.9}{\fontsize{5cm}{5cm}\selectfont PGB}}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  TITRES (numérotation automatique)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\titleformat{\section}{\color{red}\Large\bfseries}{\thesection)}{0.6em}{}
+\titleformat{\subsection}{\color{red}\large\bfseries}{\thesubsection)}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1em}{0.4em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  RACCOURCIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\zO}{z_{\Omega}}
+\newcommand{\arge}{\operatorname{arg}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  LISTES NUMÉROTÉES (cercles rouges / carrés cyan)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\circitem[1]{%
+  \tikz[baseline=(char.base)]{\node[circle,draw=gray,fill=red!55,minimum size=1.2em,inner sep=0](char){#1};}}
+\newcommand\boxitem[1]{%
+  \tikz[baseline=(char.base)]{\node[fill=cyan,minimum size=1.2em,inner sep=0](char){#1};}}
+\setlist[enumerate,1]{label=\protect\circitem{\arabic*},itemsep=0.3em}
+\setlist[enumerate,2]{label=\protect\boxitem{\alph*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  ENVIRONNEMENTS (boîtes)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcolorbox{defi}{colback=orange!8,colframe=orange!80!black,title={Définition},breakable}
+\newtcolorbox{prop}[1][Propriété]{colback=blue!5,colframe=blue!70!black,title={#1},breakable}
+\newtcolorbox{methode}[1][Méthode]{colback=green!6,colframe=green!50!black,title={#1},breakable}
+\newtcolorbox{exo}[1][Exercice d'application]{colback=gray!8,colframe=gray!60!black,title={#1},breakable}
+\newtcolorbox{resultat}{colback=yellow!12,colframe=red!60!black,boxrule=0.6pt,breakable}
+
+\newenvironment{demo}
+  {\par\smallskip\noindent\textbf{\textcolor{red}{Démonstration.}}\ }
+  {\hfill$\square$\par\smallskip}
+\newcommand{\solution}{\par\smallskip\noindent\textbf{\textcolor{red}{Solution.}}\par}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  EN-TÊTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+  {\Large\bfseries\underline{\textcolor{red}{Similitude plane directe}}}\\[0.3em]
+  \textbf{Prof : M. BA} \hfill \textbf{Classe : TS2} \\
+  \textbf{Année scolaire : 2026 -- 2027}
+\end{center}
+
+Dans tout le cours, le plan complexe est rapporté à un repère orthonormé direct $(O;\vec u,\vec v)$.
+On note $I$ et $J$ les points d'affixes $1$ et $i$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Complexes et transformations du plan}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Transformation du plan associée à une fonction de $\C$}
+
+Soit $f:\C\to\C,\ z\mapsto f(z)$ et soit $F:\mathcal P\to\mathcal P,\ M(z)\mapsto M'(z')$ avec $z'=f(z)$.
+
+\begin{prop}[Propriété]
+Si $f$ est une bijection de $\C$ dans $\C$, alors $F$ est une transformation du plan (une bijection de $\mathcal P$ dans $\mathcal P$).
+On dit que $F$ est \emph{la transformation associée à $f$} et que $z'=f(z)$ est son \emph{écriture complexe}.
+\end{prop}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Transformations élémentaires du plan}
+
+Soient $M$, $N$, $P$, $Q$ les points d'affixes respectives $z$, $\bar z$, $-z$ et $-\bar z$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7,>=Stealth]
+  \draw[very thin,gray!30] (-4.5,-3.5) grid (4.5,3.5);
+  \draw[->,thick] (-4.5,0) -- (4.5,0) node[below] {$x$};
+  \draw[->,thick] (0,-3.5) -- (0,3.5) node[left] {$y$};
+  \draw[->,ultra thick,blue] (0,0) -- (1,0) node[midway,below] {$\vec u$};
+  \draw[->,ultra thick,blue] (0,0) -- (0,1) node[midway,left] {$\vec v$};
+  \node[below left] at (0,0) {$O$};
+  \node[below] at (1,0) {$I$};
+  \node[left] at (0,1) {$J$};
+  \coordinate (M) at (2,2); \coordinate (N) at (2,-2);
+  \coordinate (P) at (-2,-2); \coordinate (Q) at (-2,2);
+  \draw[thick,red!70] (M) -- (N) -- (P) -- (Q) -- cycle;
+  \fill (M) circle (2pt) node[above right] {$M(z)$};
+  \fill (N) circle (2pt) node[below right] {$N(\bar z)$};
+  \fill (P) circle (2pt) node[below left] {$P(-z)$};
+  \fill (Q) circle (2pt) node[above left] {$Q(-\bar z)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{prop}[Symétries usuelles]
+\begin{itemize}
+  \item La symétrie d'axe $(OI)$ a pour écriture complexe $z'=\bar z$.
+  \item La symétrie d'axe $(OJ)$ a pour écriture complexe $z'=-\bar z$.
+  \item La symétrie de centre $O$ a pour écriture complexe $z'=-z$.
+\end{itemize}
+\end{prop}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Translation}
+
+\begin{prop}
+Une transformation du plan d'écriture complexe $z'=z+b$, avec $b\in\C$, est la translation de vecteur $\vec u$ d'affixe $b$.
+Réciproquement, la translation de vecteur $\vec u$ d'affixe $b$ a pour écriture complexe $z'=z+b$.
+\end{prop}
+
+\begin{demo}
+Soit $t_{\vec u}$ la translation de vecteur $\vec u$ d'affixe $b$. Alors
+\[
+t_{\vec u}(M)=M' \iff \vec u=\overrightarrow{MM'} \iff z_{\vec u}=z_{\overrightarrow{MM'}}
+\iff b=z'-z \iff z'=z+b .
+\]
+La chaîne d'équivalences donne les deux sens de la propriété.
+\end{demo}
+
+\begin{exo}
+\begin{enumerate}
+  \item Donner la nature de la transformation d'écriture complexe $z'=z-3+2i$.
+  \item Donner l'écriture complexe de la translation de vecteur $\vec u$ d'affixe $-2+i$.
+\end{enumerate}
+\end{exo}
+
+\solution
+\begin{enumerate}
+  \item On a $z'=z+b$ avec $b=-3+2i$.
+  \begin{resultat}
+  C'est la translation de vecteur $\vec u$ d'affixe $-3+2i$.
+  \end{resultat}
+  \item Ici $b=-2+i$.
+  \begin{resultat}
+  L'écriture complexe est $z'=z-2+i$.
+  \end{resultat}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Homothétie}
+
+\begin{prop}
+Une transformation du plan d'écriture complexe $z'=az+b$ avec $a\in\R\setminus\{0;1\}$ et $b\in\C$
+est l'homothétie de rapport $k=a$ et de centre $\Omega$ d'affixe $\zO=\dfrac{b}{1-a}$.
+
+Réciproquement, l'homothétie $h(\Omega,k)$ a pour écriture complexe $z'=kz+(1-k)\zO$.
+\end{prop}
+
+\begin{demo}
+\emph{Sens direct (homothétie $\Rightarrow$ écriture).} Pour $M(z)$ et $M'(z')$ :
+\[
+h(\Omega,k)(M)=M' \iff \overrightarrow{\Omega M'}=k\,\overrightarrow{\Omega M}
+\iff z'-\zO=k(z-\zO)\iff z'=kz+(1-k)\zO .
+\]
+Avec $a=k$ et $b=(1-k)\zO$, on a bien $z'=az+b$ et $\zO=\dfrac{b}{1-a}$.
+
+\emph{Réciproque.} Soit $z'=az+b$ avec $a\in\R\setminus\{0;1\}$. Comme $a\neq1$, le point $\Omega$ d'affixe
+$\zO=\dfrac{b}{1-a}$ existe et vérifie $\zO=a\zO+b$. En retranchant : $z'-\zO=a(z-\zO)$, c'est-à-dire
+$\overrightarrow{\Omega M'}=a\,\overrightarrow{\Omega M}$ : c'est l'homothétie de centre $\Omega$ et de rapport $a$.
+\end{demo}
+
+\begin{exo}
+\begin{enumerate}
+  \item Donner la nature de la transformation d'écriture complexe $z'=-\dfrac12 z+3-6i$.
+  \item Donner l'écriture complexe de l'homothétie de rapport $-2$ et de centre $A$ d'affixe $-1+i$.
+\end{enumerate}
+\end{exo}
+
+\solution
+\begin{enumerate}
+  \item On a $a=-\dfrac12\in\R\setminus\{0;1\}$ et $b=3-6i$, donc
+  \[
+  \zO=\frac{b}{1-a}=\frac{3-6i}{\frac32}=2-4i .
+  \]
+  \begin{resultat}
+  C'est l'homothétie de rapport $-\dfrac12$ et de centre $\Omega$ d'affixe $2-4i$.
+  \end{resultat}
+  \item On a $a=k=-2$ et $z_A=-1+i$, donc
+  $b=(1-a)z_A=3(-1+i)=-3+3i$.
+  \begin{resultat}
+  L'écriture complexe est $z'=-2z-3+3i$.
+  \end{resultat}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rotation}
+
+\begin{prop}
+Une transformation du plan d'écriture complexe $z'=az+b$ avec $a\in\C\setminus\R$, $|a|=1$ et $b\in\C$
+est la rotation d'angle $\theta=\arge(a)\ [2\pi]$ et de centre $\Omega$ d'affixe $\zO=\dfrac{b}{1-a}$.
+
+Réciproquement, la rotation $r(\Omega,\theta)$ a pour écriture complexe $z'=az+b$ avec
+$a=e^{i\theta}$ et $b=(1-a)\zO$.
+\end{prop}
+
+\begin{demo}
+\emph{Sens direct.} Soit $M\neq\Omega$ et $M'=r(\Omega,\theta)(M)$. Alors
+\[
+\begin{cases}
+\Omega M'=\Omega M\\
+(\overrightarrow{\Omega M},\overrightarrow{\Omega M'})=\theta\ [2\pi]
+\end{cases}
+\iff
+\begin{cases}
+\left|\dfrac{z'-\zO}{z-\zO}\right|=1\\[2mm]
+\arge\!\left(\dfrac{z'-\zO}{z-\zO}\right)=\theta\ [2\pi]
+\end{cases}
+\iff \dfrac{z'-\zO}{z-\zO}=e^{i\theta}.
+\]
+Donc $z'-\zO=e^{i\theta}(z-\zO)$, soit $z'=e^{i\theta}z+(1-e^{i\theta})\zO$. Cette relation reste vraie
+pour $M=\Omega$ (alors $M'=\Omega$). On pose $a=e^{i\theta}$ et $b=(1-a)\zO$ : on a $|a|=1$,
+$\theta=\arge(a)\ [2\pi]$ et $\zO=\dfrac{b}{1-a}$.
+
+\emph{Réciproque.} Soit $z'=az+b$ avec $|a|=1$, $a\neq1$. Le point $\Omega$ d'affixe $\dfrac{b}{1-a}$ vérifie
+$\zO=a\zO+b$, d'où $z'-\zO=a(z-\zO)$. Pour $M\neq\Omega$, on obtient
+$\left|\dfrac{z'-\zO}{z-\zO}\right|=|a|=1$ et $\arge\!\left(\dfrac{z'-\zO}{z-\zO}\right)=\arge(a)$ :
+$\Omega M'=\Omega M$ et $(\overrightarrow{\Omega M},\overrightarrow{\Omega M'})=\arge(a)$.
+C'est la rotation de centre $\Omega$ et d'angle $\arge(a)$.
+\end{demo}
+
+\begin{exo}
+\begin{enumerate}
+  \item Donner la nature de la transformation d'écriture complexe $z'=\dfrac12(1-i\sqrt3)\,z-\sqrt3+i$.
+  \item Donner l'écriture complexe de la rotation d'angle $-\dfrac{2\pi}{3}$ et de centre $A$ d'affixe $-2i$.
+\end{enumerate}
+\end{exo}
+
+\solution
+\begin{enumerate}
+  \item On a $a=\dfrac12-i\dfrac{\sqrt3}{2}$ et $b=-\sqrt3+i$.
+  \begin{itemize}
+    \item $|a|=\sqrt{\dfrac14+\dfrac34}=1$ et $a\notin\R$ : c'est une rotation.
+    \item $\cos\theta=\dfrac12$ et $\sin\theta=-\dfrac{\sqrt3}{2}$, donc $\theta=-\dfrac{\pi}{3}\ [2\pi]$.
+    \item $1-a=\dfrac12+i\dfrac{\sqrt3}{2}$, donc
+    \[
+    \zO=\frac{-\sqrt3+i}{\frac12+i\frac{\sqrt3}{2}}
+    =\frac{(-\sqrt3+i)\left(\frac12-i\frac{\sqrt3}{2}\right)}{\frac14+\frac34}
+    =-\frac{\sqrt3}{2}+\frac32 i+\frac12 i+\frac{\sqrt3}{2}=2i .
+    \]
+  \end{itemize}
+  \begin{resultat}
+  C'est la rotation d'angle $-\dfrac{\pi}{3}$ et de centre $\Omega$ d'affixe $2i$.
+  \end{resultat}
+  \item On a $a=e^{-2i\pi/3}=-\dfrac12-i\dfrac{\sqrt3}{2}$ et $z_A=-2i$, donc
+  \[
+  b=(1-a)z_A=\left(\frac32+i\frac{\sqrt3}{2}\right)(-2i)=-3i+\sqrt3 .
+  \]
+  \begin{resultat}
+  L'écriture complexe est $z'=\left(-\dfrac12-i\dfrac{\sqrt3}{2}\right)z+\sqrt3-3i$.
+  \end{resultat}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Similitude plane directe}
+
+\begin{defi}
+On appelle \emph{similitude plane directe} toute transformation du plan d'écriture complexe
+\[
+z'=az+b,\qquad a\in\C^{*},\ b\in\C .
+\]
+Lorsque $a\neq1$, ses \emph{éléments caractéristiques} sont :
+\begin{itemize}
+  \item son \textbf{rapport} $\lambda=|a|$ ;
+  \item son \textbf{angle} $\theta=\arge(a)\ [2\pi]$ ;
+  \item son \textbf{centre} $\Omega$ d'affixe $\zO=\dfrac{b}{1-a}$ (seul point invariant).
+\end{itemize}
+On a alors $a=\lambda e^{i\theta}$ et $b=(1-a)\zO$. On dit que $S$ est \emph{la similitude directe de rapport $\lambda$, d'angle $\theta$ et de centre $\Omega$}.
+\end{defi}
+
+\textbf{Remarque.} Les deux écritures suivantes sont équivalentes :
+\[
+\text{forme développée : } z'=az+b
+\qquad\Longleftrightarrow\qquad
+\text{forme réduite : } z'-\zO=\lambda e^{i\theta}(z-\zO).
+\]
+En effet, $\zO$ est invariant ($\zO=a\zO+b$) ; en retranchant cette égalité à $z'=az+b$, on obtient
+$z'-\zO=a(z-\zO)$. Cette forme montre que $S$ est la composée, \emph{dans n'importe quel ordre}, de la rotation
+$r(\Omega,\theta)$ et de l'homothétie $h(\Omega,\lambda)$ :
+\[
+S=h(\Omega,\lambda)\circ r(\Omega,\theta)=r(\Omega,\theta)\circ h(\Omega,\lambda).
+\]
+
+\begin{prop}[Cas particuliers]
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor{gray!20} \textbf{Valeur de $a$} & \textbf{Nature de la transformation} & \textbf{Éléments caractéristiques} \\ \hline
+$a=1$ & Translation & vecteur $\vec u$ d'affixe $b$ \\ \hline
+$a\in\R\setminus\{0;1\}$ & Homothétie & rapport $k=a$, centre $\Omega\!\left(\dfrac{b}{1-a}\right)$ \\ \hline
+\begin{tabular}[c]{@{}l@{}}$a\in\C\setminus\R$\\ $|a|=1$\end{tabular} & Rotation & angle $\theta=\arge(a)$, centre $\Omega\!\left(\dfrac{b}{1-a}\right)$ \\ \hline
+\begin{tabular}[c]{@{}l@{}}$a\in\C\setminus\R$\\ $|a|\neq1$\end{tabular} & Similitude directe &
+\begin{tabular}[c]{@{}l@{}}rapport $\lambda=|a|$, angle $\theta=\arge(a)$,\\ centre $\Omega\!\left(\dfrac{b}{1-a}\right)$\end{tabular} \\ \hline
+\end{tabular}
+\end{center}
+\end{prop}
+
+\begin{methode}[Reconnaître la transformation]
+On regarde d'abord le coefficient $a$ (avec $a\neq0$) :
+\begin{enumerate}
+  \item $a=1$ : translation de vecteur d'affixe $b$.
+  \item $a$ réel, $a\neq1$ : homothétie de rapport $a$.
+  \item $a\notin\R$ et $|a|=1$ : rotation.
+  \item $a\notin\R$ et $|a|\neq1$ : similitude plane directe de rapport $|a|$ et d'angle $\arge(a)$.
+\end{enumerate}
+\end{methode}
+
+\begin{prop}[Effet d'une similitude directe sur les figures]
+Soit $S$ une similitude directe de rapport $\lambda$ et d'angle $\theta$. Pour tous points $A\neq B$ d'images $A'$, $B'$ :
+\begin{enumerate}
+  \item $A'B'=\lambda\,AB$ ;
+  \item $(\overrightarrow{AB},\overrightarrow{A'B'})=\theta\ [2\pi]$ ;
+  \item les angles orientés sont conservés ;
+  \item l'image d'une droite est une droite ; l'image d'un cercle de centre $C$ et de rayon $r$ est le cercle de centre $S(C)$ et de rayon $\lambda r$ ;
+  \item les aires sont multipliées par $\lambda^{2}$.
+\end{enumerate}
+\end{prop}
+
+\begin{demo}
+On a $z_{A'}-z_{B'}=a(z_A-z_B)$, d'où $|z_{A'}-z_{B'}|=|a|\,|z_A-z_B|$ et
+$\arge\!\left(\dfrac{z_{A'}-z_{B'}}{z_A-z_B}\right)=\arge(a)$. Ce sont les points 1 et 2 ; les autres s'en déduisent.
+\end{demo}
+
+\begin{exo}
+\textbf{Exemples de lecture.}
+\begin{enumerate}
+  \item Soit $S$ telle que $z_A-z_B=2e^{i\pi/4}(z_C-z_B)$. Alors $S(B)=B$ et $S(C)=A$ : $S$ est la similitude directe de centre $B$, de rapport $2$ et d'angle $\dfrac{\pi}{4}$.
+  \item Soit $S$ telle que $z_E-z_D=5e^{2i\pi/3}(z_F-z_D)$. Alors $S(D)=D$ et $S(F)=E$ : $S$ est de centre $D$, de rapport $5$ et d'angle $\dfrac{2\pi}{3}$.
+\end{enumerate}
+\textbf{Exercice.}
+\begin{enumerate}
+  \item Donner les éléments caractéristiques de la similitude $S$ d'écriture complexe $z'=(1+i)z-2i$.
+  \item Donner l'écriture complexe de la similitude de rapport $2$, d'angle $-\dfrac{\pi}{3}$ et de centre $\Omega$ d'affixe $1+i$.
+\end{enumerate}
+\end{exo}
+
+\solution
+\begin{enumerate}
+  \item $a=1+i$, $b=-2i$.
+  \begin{itemize}
+    \item $\lambda=|1+i|=\sqrt2$.
+    \item $\cos\theta=\sin\theta=\dfrac{\sqrt2}{2}$, donc $\theta=\dfrac{\pi}{4}\ [2\pi]$.
+    \item $\zO=\dfrac{-2i}{1-(1+i)}=\dfrac{-2i}{-i}=2$.
+  \end{itemize}
+  \begin{resultat}
+  $S$ a pour rapport $\sqrt2$, pour angle $\dfrac{\pi}{4}$ et pour centre $\Omega$ d'affixe $2$.
+  \end{resultat}
+  \item $a=2e^{-i\pi/3}=2\left(\dfrac12-i\dfrac{\sqrt3}{2}\right)=1-i\sqrt3$ et
+  \[
+  b=(1-a)\zO=(i\sqrt3)(1+i)=-\sqrt3+i\sqrt3 .
+  \]
+  \begin{resultat}
+  L'écriture complexe est $z'=(1-i\sqrt3)z-\sqrt3+i\sqrt3$.
+  \end{resultat}
+\end{enumerate}
+
+\textbf{Exemple de similitude de centre $O$.} Soit $S : z'=2e^{i\pi/3}z$. On a $a=2e^{i\pi/3}$, donc $\lambda=2$, $\theta=\dfrac{\pi}{3}$ et $\Omega=O$ (car $b=0$). Ainsi
+$S=h(O,2)\circ r(O,\tfrac{\pi}{3})=r(O,\tfrac{\pi}{3})\circ h(O,2)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Déterminer une similitude à partir de données géométriques}
+
+\begin{prop}
+\begin{enumerate}
+  \item \textbf{À partir de deux points et de leurs images.} Soit $S$ la similitude directe telle que $S(A)=A'$ et $S(B)=B'$, avec $A\neq B$ et $A'\neq B'$. Alors $S$ a pour écriture complexe $z'=az+b$ avec
+  \[
+  a=\frac{z_{A'}-z_{B'}}{z_A-z_B}\qquad\text{et}\qquad b=z_{A'}-az_A .
+  \]
+  \item \textbf{À partir du centre, d'un point et de son image.} Soit $S$ telle que $S(\Omega)=\Omega$ et $S(A)=A'$, avec $A\neq\Omega$ et $A'\neq\Omega$. Alors $z'=az+b$ avec
+  \[
+  a=\frac{z_{A'}-\zO}{z_A-\zO}\qquad\text{et}\qquad b=(1-a)\zO .
+  \]
+\end{enumerate}
+\end{prop}
+
+\begin{demo}
+\begin{enumerate}
+  \item $S(A)=A'$ et $S(B)=B'$ donnent $z_{A'}=az_A+b$ (1) et $z_{B'}=az_B+b$ (2).
+  En faisant (1)$-$(2) : $z_{A'}-z_{B'}=a(z_A-z_B)$, d'où $a$. Puis (1) donne $b=z_{A'}-az_A$.
+  \item $S(A)=A'$ et $S(\Omega)=\Omega$ donnent $z_{A'}=az_A+b$ (1) et $\zO=a\zO+b$ (2).
+  En faisant (1)$-$(2) : $z_{A'}-\zO=a(z_A-\zO)$, d'où $a$. Puis (2) donne $b=\zO-a\zO=(1-a)\zO$.
+\end{enumerate}
+\end{demo}
+
+\begin{exo}
+Soit $s$ la similitude directe qui transforme $A(1+i)$ en $A'(2+5i)$ et $B(i)$ en $B'(4+3i)$.
+\begin{enumerate}
+  \item Déterminer le coefficient complexe $a$ de $s$.
+  \item En déduire $b$ et l'écriture complexe de $s$.
+\end{enumerate}
+\end{exo}
+
+\solution
+\begin{enumerate}
+  \item $a=\dfrac{z_{A'}-z_{B'}}{z_A-z_B}=\dfrac{(2+5i)-(4+3i)}{(1+i)-i}=\dfrac{-2+2i}{1}=-2+2i$.
+  \item $b=z_{A'}-az_A=(2+5i)-(-2+2i)(1+i)=(2+5i)-(-4)=6+5i$.
+  \begin{resultat}
+  $s : z'=(-2+2i)z+6+5i$.
+  \end{resultat}
+  \emph{Vérification :} $s(B)=(-2+2i)i+6+5i=-2i-2+6+5i=4+3i=z_{B'}$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exercice de synthèse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{exo}[Étude d'une similitude à partir de son écriture complexe]
+Soit $S$ l'application du plan dans lui-même d'écriture complexe $z'=3iz-1-7i$.
+\begin{enumerate}
+  \item Justifier que $S$ est une similitude plane directe et préciser ses éléments caractéristiques.
+  \item Déterminer l'expression analytique de $S$.
+  \item Déterminer une équation de l'image par $S$ de la droite $(BC)$, où $B$ et $C$ sont les points d'affixes $2$ et $3-i$.
+  \item Déterminer une équation de $(\Gamma')$, image par $S$ du cercle $(\Gamma)$ d'équation $(x-2)^2+y^2=1$.
+\end{enumerate}
+\end{exo}
+
+\solution
+\begin{enumerate}
+  \item On a $a=3i$ et $b=-1-7i$. Comme $a\neq0$, $a\notin\R$ et $|a|=3\neq1$, $S$ est une similitude directe, avec
+  $\lambda=3$ et $\theta=\dfrac{\pi}{2}$ (car $a=3e^{i\pi/2}$). Son centre vérifie
+  \[
+  \zO=\frac{-1-7i}{1-3i}=\frac{(-1-7i)(1+3i)}{(1-3i)(1+3i)}=\frac{20-10i}{10}=2-i .
+  \]
+  \begin{resultat}
+  $S$ est la similitude directe de centre $\Omega(2-i)$, de rapport $3$ et d'angle $\dfrac{\pi}{2}$.
+  \end{resultat}
+  \item Pour $z=x+iy$ : $z'=3i(x+iy)-1-7i=(-3y-1)+i(3x-7)$.
+  \begin{resultat}
+  $\begin{cases}x'=-3y-1\\ y'=3x-7\end{cases}$
+  \end{resultat}
+  \item On a $B(2;0)$ et $C(3;-1)$. Une similitude transforme une droite en une droite ; il suffit donc de calculer les images de $B$ et $C$ :
+  \[
+  S(B)=3i\cdot2-1-7i=-1-i,\qquad S(C)=3i(3-i)-1-7i=2+2i .
+  \]
+  La droite $(B'C')$ passe par $(-1;-1)$ et $(2;2)$ : c'est la droite d'équation $y=x$.
+  \begin{resultat}
+  L'image de $(BC)$ par $S$ est la droite d'équation $y=x$.
+  \end{resultat}
+  \emph{Contrôle :} $(BC)$ a pour équation $y=-x+2$ ; alors $x'=-3(-x+2)-1=3x-7=y'$.
+  \item $(\Gamma)$ est le cercle de centre $B(2;0)$ et de rayon $1$. Son image est le cercle de centre $S(B)=(-1;-1)$ et de rayon $\lambda\times1=3$.
+  \begin{resultat}
+  $(\Gamma') : (x+1)^2+(y+1)^2=9$.
+  \end{resultat}
+\end{enumerate}
+
+\end{document}
